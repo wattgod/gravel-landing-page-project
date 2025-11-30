@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest VO2MAX PEAK</name>
+  <description>• Week 3 increases volume and intensity on your chosen limiter. This is peak loading—by Sunday you should feel limiter-specific fatigue. VO2max block = lungs burn easier. That's intentional overload. Week 4 recovery allows conversion to performance. Push through this week.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

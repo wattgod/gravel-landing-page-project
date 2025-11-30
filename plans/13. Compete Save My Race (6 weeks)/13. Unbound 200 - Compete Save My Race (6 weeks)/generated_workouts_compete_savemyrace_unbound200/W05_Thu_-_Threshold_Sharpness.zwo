@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Thu - Threshold Sharpness</name>
+  <description>• STRUCTURE:
+30 min warmup → 3x15 min @ 100-105% FTP (7 min easy between) → 15 min easy → 5x1 min @ 110% FTP (2 min easy between) → 15 min cooldown.
+
+• Threshold maintains race pace. Openers keep top-end sharp. Should feel powerful and controlled.
+
+★ CADENCE WORK (Changing Pace Foundation):
+All intervals include cadence variation to teach your body to produce power in different ways—fundamental skill for changing pace in races. Base period: Alternate high cadence (100+ rpm, seated) and low cadence (40-60 rpm, seated). First interval: high cadence. Second: low cadence. Continue alternating. If odd number of intervals, last one is self-selected cadence. Build period: Rhythm intervals use self-selected cadence for Z3 portions, high cadence (100+ rpm) for Z4 portions. Loaded intervals: high cadence (100+ rpm) for Z5/Z6 surge, self-selected cadence for Z3 portion.
+
+★ UNBOUND 200 - HEAT TRAINING (Good):
+Protocol: Option 1: 20-40 min Z2 ride inside with reduced airflow. Option 2: 10-15 min sauna/hot bath immediately after training. Keep core temp elevated but manageable. Drink ~500-750 ml + 500-1000 mg sodium during exposure. Finish with only light cooling (no cold shower).
+
+Effect: Start of measurable heat adaptation, raises plasma volume. Training stress increases slightly but manageable.
+
+Use When: Medium weeks, early build phase, you want adaptation without deep fatigue.
+
+★ UNBOUND 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="900" OnPower="1.02" Cadence="90" OffDuration="420" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <IntervalsT Repeat="5" OnDuration="60" OnPower="1.10" OffDuration="120" OffPower="0.55" CadenceLow="40" CadenceHigh="110" />
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

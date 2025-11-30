@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Thu - Threshold + Durability Assessment</name>
+  <description>• STRUCTURE:
+30 min warmup → 2x20 min @ 100-105% FTP (10 min easy between) → 30 min easy → 30 min @ 75-80% FTP (monitor power stability, HR drift) → 15 min cooldown.
+
+• Threshold check: does race pace feel sustainable? Then durability assessment: after threshold work, can you hold steady power for 30 min? Power drops or HR drifts significantly = durability limiter. This completes your limiter profile. You'll focus Weeks 2-3 on biggest weakness.
+
+★ UNBOUND 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="1.02" Cadence="90" OffDuration="600" OffPower="0.55"/>
+    <SteadyState Duration="1800" Power="0.68" Cadence="85"/>
+    <SteadyState Duration="1800" Power="0.78" Cadence="88"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

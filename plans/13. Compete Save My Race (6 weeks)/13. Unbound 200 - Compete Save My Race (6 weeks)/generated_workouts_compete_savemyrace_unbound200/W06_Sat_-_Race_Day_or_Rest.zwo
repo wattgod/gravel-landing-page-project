@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sat - Race Day or Rest</name>
+  <description>• If racing Saturday: EXECUTE COMPETITIVE PLAN
+
+• If racing Sunday: Rest or 60-90 min easy Z2 with 3x30sec openers
+
+• If racing today—position competitively from start, don't waste energy, fuel aggressively (70-90g carbs/hour), execute tactically, attack when it counts.
+
+★ UNBOUND 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+★ UNBOUND 200 - ROBUST TAPER:
+Freshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a 200-mile day.
+
+★ UNBOUND 200 - GRAVEL GRIT:
+If you've been following the Gravel Grit mental training program, this is when it pays off. You've trained your mind to push through discomfort. Trust that training. When it gets hard in the final hours, remember: everyone hurts. Who handles it better? That's you. Mental toughness is the difference between finishing and performing at your best.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

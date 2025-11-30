@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Tue - Light Quality Touch</name>
+  <description>• STRUCTURE:
+20 min warmup → 3x10 min @ 95-100% FTP (5 min easy between) → 20 min cooldown.
+
+• Light threshold work maintains fitness without adding fatigue. Should feel controlled. If it feels hard, skip intervals and just ride easy.
+
+★ CADENCE WORK (Changing Pace Foundation):
+All intervals include cadence variation to teach your body to produce power in different ways—fundamental skill for changing pace in races. Base period: Alternate high cadence (100+ rpm, seated) and low cadence (40-60 rpm, seated). First interval: high cadence. Second: low cadence. Continue alternating. If odd number of intervals, last one is self-selected cadence. Build period: Rhythm intervals use self-selected cadence for Z3 portions, high cadence (100+ rpm) for Z4 portions. Loaded intervals: high cadence (100+ rpm) for Z5/Z6 surge, self-selected cadence for Z3 portion.
+
+★ UNBOUND 200 - HEAT TRAINING (Better Than Nothing):
+Protocol: Finish any normal ride, then shower hot (as hot as tolerated) for 10-12 minutes. Keep HR elevated minimally. Hydrate lightly after (don't chug immediately; small sips).
+
+Effect: Maintains heat adaptations, mild plasma-volume expansion, minimal additional stress.
+
+Use When: Fatigued, limited time, or already did the hard workout of the week.
+
+★ UNBOUND 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="0.98" Cadence="90" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

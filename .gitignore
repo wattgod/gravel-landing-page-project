@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Generated race outputs (keep structure, ignore generated files)
+races/*/race_data.json
+races/*/workouts/
+races/*/marketplace_description.html
+races/*/training_plan_guide.*
+
+# Keep race JSON templates
+!races/*.json
+!races/race_schema_template.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Google API credentials (if added later)
+credentials.json
+token.pickle
+
+# Test outputs
+test_output/
+*.zwo.test
+

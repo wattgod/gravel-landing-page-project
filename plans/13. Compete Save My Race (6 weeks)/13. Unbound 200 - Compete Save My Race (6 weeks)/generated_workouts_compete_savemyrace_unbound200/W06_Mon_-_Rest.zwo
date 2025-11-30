@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• Race week. Volume drops dramatically. You did 5 weeks of smart emergency training: assessment → concentrated loading → recovery → sharpening. You're ready for competitive performance. Now execute tactically.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

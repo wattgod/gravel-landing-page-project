@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest VO2MAX BLOCK</name>
+  <description>• Weeks 2-3 are concentrated loading on your limiter. This is HARD—you're intentionally overloading one capacity. By end of Week 3 you should feel limiter-specific fatigue. That's adaptation. Week 4 recovery allows conversion to performance. VO2max block selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

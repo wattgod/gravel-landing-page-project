@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Tue - FTP Test + VO2max Assessment</name>
+  <description>• STRUCTURE:
+30 min warmup → 5 min all-out → 10 min recovery → 20 min max effort → 15 min easy → 5 min all-out → 10 min easy → 3x3 min @ 110-115% FTP (3 min easy between) → 15 min cooldown.
+
+• Comprehensive testing. FTP test (20-min × 0.95). Then 5-min max for power profile. Finally, VO2max repeatability test (can you hold power across 3 intervals?). This reveals limiters: If 5-min power &amp;lt;120% FTP = VO2max limiter. If power drops &amp;gt;5% on VO2 intervals = VO2max repeatability limiter. If everything tests strong but you fade in long races = durability limiter. Write everything down.
+
+★ UNBOUND 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="300" Power="1.20"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.05"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <SteadyState Duration="300" Power="1.20"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="180" OnPower="1.12" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

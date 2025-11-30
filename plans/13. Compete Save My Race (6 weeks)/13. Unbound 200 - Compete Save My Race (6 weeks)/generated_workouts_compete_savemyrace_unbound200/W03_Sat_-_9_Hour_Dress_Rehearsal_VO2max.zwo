@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Sat - 9 Hour Dress Rehearsal</name>
+  <description>★ STRUCTURE:
+9-HOUR DRESS REHEARSAL: First 3 hours Z2 (65-75% FTP) → Rhythm Interval Block in hour 4: (2 min Z3 + 1 min Z4) × 4 reps × 3 sets with 5 min easy between sets → Hours 5-6: Easy Z2, practice aggressive fueling (80-100g carbs/hour) → Hour 7: Loaded intervals (1 min Z5/Z6 surge then 14 min Z3) × 2 with 8 min easy between → Hours 8-9: Easy Z2 to finish.
+
+• STRUCTURE:
+2 hours Z2 → 6x5 min @ 110-115% FTP (5 min easy between) → Final 90-120 min Z2
+
+• VO2max in fatigue. Building capacity when tired.
+
+★ CADENCE WORK (Changing Pace Foundation):
+All intervals include cadence variation to teach your body to produce power in different ways—fundamental skill for changing pace in races. Base period: Alternate high cadence (100+ rpm, seated) and low cadence (40-60 rpm, seated). First interval: high cadence. Second: low cadence. Continue alternating. If odd number of intervals, last one is self-selected cadence. Build period: Rhythm intervals use self-selected cadence for Z3 portions, high cadence (100+ rpm) for Z4 portions. Loaded intervals: high cadence (100+ rpm) for Z5/Z6 surge, self-selected cadence for Z3 portion.
+
+★ UNBOUND 200 - HEAT TRAINING (Ideal - High Impact):
+Protocol: 1) Ride Outside or Indoors With Minimal Cooling: 45-75 min Z2 OR Intervals with fan on low. 2) Post-ride heat exposure: 15-25 min sauna or hot bath. 3) Hydration Target: 1-1.5 L/hr loss is OK. Replace 75% of losses within 2 hours. Sodium 1000-1500 mg/hr. 4) Avoid cooling for 20-30 min after.
+
+Effect: Maximal heat adaptation, big plasma volume gains, noticeable RPE reductions in hot races.
+
+Use When: Preparing for hot events (Unbound), you're healthy and recovered, you can afford temporary fatigue.
+
+★ UNBOUND 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+★ UNBOUND 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+★ UNBOUND 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.
+
+★ UNBOUND 200 - DRESS REHEARSAL:
+THIS IS YOUR 9-HOUR 'BLOW OUT DAY.' CLEAR YOUR SCHEDULE. This is logistics practice, fueling practice, heat practice, and mental preparation all in one. Test EVERYTHING: nutrition products, hydration system, clothing, bike setup, tire pressure. Practice eating while riding. Practice bottle handoffs. Practice pacing. For Competitors, this 9-hour ride is worth 15 shorter rides for race prep. This is the difference between finishing and performing at your best.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="10800" Power="0.68" Cadence="85"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="300" Power="0.55"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="300" Power="0.55"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="120" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="7200" Power="0.68" Cadence="85"/>
+    <SteadyState Duration="60" Power="1.20" Cadence="100"/>
+    <SteadyState Duration="840" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="480" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.20" Cadence="100"/>
+    <SteadyState Duration="840" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="7200" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>
