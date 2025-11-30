@@ -668,7 +668,9 @@ def get_non_negotiable_phrasing(raw_text: str, race_data: dict = None) -> str:
 
     """
 
-    
+    # Handle both string and dict formats
+    if isinstance(raw_text, dict):
+        raw_text = raw_text.get('requirement', '')
 
     # Extract key information from raw text
 
