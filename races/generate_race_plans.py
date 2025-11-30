@@ -18,10 +18,10 @@ from datetime import datetime
 
 # Import generation modules
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'generation_modules'))
+import subprocess
 try:
     from zwo_generator import generate_all_zwo_files
     from marketplace_generator import generate_marketplace_html
-    from guide_generator import generate_guide_pdf
 except ImportError as e:
     print(f"ERROR: Could not import generation modules: {e}")
     print("Make sure generation_modules/ folder exists with zwo_generator.py, marketplace_generator.py, and guide_generator.py")
@@ -62,6 +62,10 @@ def create_race_folder_structure(race_name, base_path):
     race_folder = base_path / race_name
     race_folder.mkdir(exist_ok=True)
     
+    # Create guides folder for all plan guides
+    guides_folder = race_folder / "guides"
+    guides_folder.mkdir(exist_ok=True)
+    
     # Create folders for each of the 15 plans
     for plan_folder_name in PLAN_MAPPING.keys():
         plan_folder = race_folder / plan_folder_name
@@ -87,15 +91,62 @@ def generate_marketplace_description(race_data, plan_template, plan_info, output
     print(f"     ✓ Generated marketplace description ({len(html_content)} chars)")
     return output_file
 
-def generate_training_guide(race_data, plan_template, plan_info, output_dir):
-    """Generate 35-page training plan guide PDF"""
+def generate_training_guide(race_data, plan_template, plan_info, race_folder, race_json_path):
+    """Generate HTML training guide using guide_generator.py"""
     print(f"  → Generating training plan guide...")
-    output_file = output_dir / "training_plan_guide.pdf"
-    guide_file = generate_guide_pdf(race_data, plan_template, plan_info, output_file)
-    print(f"     ✓ Generated training plan guide")
-    return guide_file
+    
+    # Output to guides folder: races/[race-slug]/guides/
+    guides_folder = race_folder / "guides"
+    guides_folder.mkdir(exist_ok=True)
+    
+    # Create plan JSON file path (temporary, for guide generator)
+    plan_name_slug = plan_info['tier'] + '_' + plan_info['level']
+    plan_json_path = guides_folder / f"{plan_name_slug}_temp.json"
+    
+    # Save plan template to temp JSON file for guide generator
+    with open(plan_json_path, 'w') as f:
+        json.dump(plan_template, f, indent=2)
+    
+    # Call guide generator (works as CLI: --race, --plan, --output-dir)
+    guide_generator_path = Path(__file__).parent / "generation_modules" / "guide_generator.py"
+    
+    try:
+        result = subprocess.run([
+            sys.executable,
+            str(guide_generator_path),
+            "--race", str(race_json_path),
+            "--plan", str(plan_json_path),
+            "--output-dir", str(guides_folder)
+        ], capture_output=True, text=True, check=True)
+        
+        # Clean up temp plan JSON
+        plan_json_path.unlink()
+        
+        # Find the generated guide file
+        guide_files = list(guides_folder.glob(f"*{plan_name_slug}*.html"))
+        if guide_files:
+            guide_file = guide_files[0]
+        else:
+            # Fallback: look for any HTML file with plan name
+            guide_files = list(guides_folder.glob("*.html"))
+            guide_file = guide_files[0] if guide_files else guides_folder / f"{plan_name_slug}_guide.html"
+        
+        print(f"     ✓ Generated training plan guide: {guide_file.name}")
+        return guide_file
+        
+    except subprocess.CalledProcessError as e:
+        print(f"     ⚠️  Guide generation failed: {e.stderr}")
+        # Clean up temp file
+        if plan_json_path.exists():
+            plan_json_path.unlink()
+        return None
+    except Exception as e:
+        print(f"     ⚠️  Guide generation error: {e}")
+        if plan_json_path.exists():
+            plan_json_path.unlink()
+        return None
 
-def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder):
+def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, race_json_path):
     """Generate all outputs for one plan variant"""
     print(f"\n📦 Generating: {plan_folder_name}")
     
@@ -107,7 +158,7 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder):
     # Generate outputs
     zwo_count = generate_zwo_files(plan_template, race_data, plan_info, plan_output_dir)
     marketplace_file = generate_marketplace_description(race_data, plan_template, plan_info, plan_output_dir)
-    guide_file = generate_training_guide(race_data, plan_template, plan_info, plan_output_dir)
+    guide_file = generate_training_guide(race_data, plan_template, plan_info, race_folder, race_json_path)
     
     print(f"  ✅ Complete: {zwo_count} workouts, guide, marketplace description")
     
@@ -137,7 +188,7 @@ def main():
     print(f"📁 Creating folder structure for: {race_name}")
     race_folder = create_race_folder_structure(race_name, base_path)
     
-    # Save race data JSON to race folder
+    # Save race data JSON to race folder (used by guide generator)
     race_data_file = race_folder / "race_data.json"
     with open(race_data_file, 'w') as f:
         json.dump(race_data, f, indent=2)
@@ -147,7 +198,7 @@ def main():
     results = []
     
     for plan_folder_name, plan_info in PLAN_MAPPING.items():
-        result = generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder)
+        result = generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, race_data_file)
         results.append(result)
     
     # Summary
@@ -158,7 +209,7 @@ def main():
     print(f"📊 Generated:")
     print(f"   • 15 plan variants")
     print(f"   • {sum(r['zwo_files'] for r in results)} total ZWO files")
-    print(f"   • 15 training plan guides")
+    print(f"   • 15 training plan guides (HTML) in: {race_folder / 'guides'}")
     print(f"   • 15 marketplace descriptions")
     print(f"\n📝 Next steps:")
     print(f"   1. Review outputs in: {race_folder}")
