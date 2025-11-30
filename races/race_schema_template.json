@@ -39,6 +39,16 @@
       "requirement": "9-hour dress rehearsal in week 9",
       "by_when": "Week 9",
       "why": "This tests nutrition, pacing, and mental preparation. Skipping it means discovering problems on race day."
+    },
+    {
+      "requirement": "Aggressive fueling protocol (60-90g carbs/hour) on long rides",
+      "by_when": "Week 4-8",
+      "why": "Gut training is non-negotiable. Without it, you'll bonk or have GI distress during the race."
+    },
+    {
+      "requirement": "Robust taper protocol in final 2 weeks",
+      "by_when": "Week 11-12",
+      "why": "Proper taper ensures freshness on race day. Overtraining into race week guarantees underperformance."
     }
   ],
   "masterclass_topics": {
@@ -149,6 +159,22 @@
     "podium": {
       "dress_rehearsal_hours": 10,
       "weekly_hours": "18+"
+    }
+  },
+  "_schema_info": {
+    "non_negotiables_format": {
+      "required_format": "dict",
+      "required_keys": [
+        "requirement",
+        "by_when",
+        "why"
+      ],
+      "description": "Each non-negotiable must be a dict with three keys: 'requirement' (string), 'by_when' (string with week/timing), and 'why' (string explaining consequence of skipping). The guide template supports up to 5 non-negotiables.",
+      "example": {
+        "requirement": "Heat adaptation protocol built into weeks 6-10",
+        "by_when": "Week 6",
+        "why": "Heat adaptation takes 2-3 weeks. Starting too late means racing unprepared in dangerous conditions."
+      }
     }
   }
 }
