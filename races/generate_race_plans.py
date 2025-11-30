@@ -179,9 +179,19 @@ def main():
     race_json_file = sys.argv[1]
     base_path = Path(__file__).parent
     
-    # Load race data
+    # Load race data - handle both relative and absolute paths
     print(f"📥 Loading race data: {race_json_file}")
-    race_data = load_race_data(base_path / race_json_file)
+    race_json_path = Path(race_json_file)
+    if not race_json_path.is_absolute():
+        # If relative, try relative to base_path first, then current directory
+        if (base_path / race_json_path).exists():
+            race_json_path = base_path / race_json_path
+        elif Path(race_json_path).exists():
+            race_json_path = Path(race_json_path)
+        else:
+            # Try in races/ folder
+            race_json_path = base_path.parent / "races" / race_json_path.name
+    race_data = load_race_data(race_json_path)
     race_name = race_data["race_metadata"]["name"]
     
     # Create folder structure
