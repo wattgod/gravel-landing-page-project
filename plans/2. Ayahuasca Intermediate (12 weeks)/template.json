@@ -53,86 +53,86 @@
     },
     {
       "week_number": 2,
-      "focus": "G-Spot Foundation Building",
-      "volume_percent": 85,
-      "volume_hours": "2.5-4.25",
+      "focus": "G-Spot Development",
+      "volume_percent": 80,
+      "volume_hours": "2.5-4",
       "workouts": [
         {
           "name": "W02 Mon - Rest",
-          "description": "• Week 2 increases G-Spot interval duration. You're building as much threshold power as possible in limited time. G-Spot is your primary weapon—87-92% FTP is the most time-efficient intensity for FTP gains. Three quality sessions this week. Make every one count.\n\n• WEEK PREVIEW: G-Spot foundation building. Tuesday has extended G-Spot intervals (3x12 min). Thursday introduces threshold work (2x12 min). Saturday is weekend key session (90-105 min with mixed intensity). This week builds sustainable power.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Week 2 builds on your FTP baseline with more G-Spot work. This zone is your bread and butter for time-crunched training—maximum adaptation per minute invested. You'll do 3 quality sessions this week.\n\n• WEEK PREVIEW: Tuesday extends G-Spot intervals (3x12 min). Thursday introduces threshold touch (3x8 min @ 95-100%). Saturday has longer tempo endurance (90 min total). Quality over quantity.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W02 Tue - G-Spot Progression",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Longer intervals than Week 1. Total time at G-Spot = 36 minutes. This should feel sustainably hard. Control your breathing, stay smooth, don't spike power at interval starts. If you're fading on interval 3, you're pushing correctly.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.",
+          "name": "W02 Tue - G-Spot Extension",
+          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Extended intervals. 2 more minutes per interval than last week. Should feel challenging but sustainable. If power drifts >5%, shorten intervals. Building time at this intensity is the key to gravel performance.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.",
           "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W02 Wed - Rest",
-          "description": "• Recovery day. G-Spot fatigues you more than you think. Rest enables Thursday's quality.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest. Tomorrow is threshold work—you need to be fresh.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W02 Thu - Threshold Introduction",
-          "description": "• STRUCTURE:\n15 min warmup → 2x12 min @ 95-100% FTP (6 min easy between) → 10 min cooldown\n\n• First threshold work at race pace intensity. This is HARD—breathing labored but rhythmic. Not gasping, but working. This is what gravel racing feels like—sustained near-max effort. Should finish thinking \"maybe one more.\" If power drops >5% on interval 2, back off 3% next time.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "description": "• STRUCTURE:\n15 min warmup → 3x8 min @ 95-100% FTP (5 min easy between) → 10 min cooldown\n\n• First threshold session. This is right at your limit—8 minutes feels long. Breathing is labored but controlled. Don't blow up in first interval. Find sustainable rhythm. This builds race-day power.\n\n• CADENCE WORK: High cadence (95-100 rpm) on all intervals.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W02 Fri - Rest",
-          "description": "• Rest day. Two quality sessions done this week. Your body needs recovery.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Rest before weekend ride.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W02 Sat - Weekend Key Session",
-          "description": "• STRUCTURE:\n20 min easy → 2x15 min @ 87-92% FTP (6 min easy between) → 10 min easy → 3x8 min @ 80-85% FTP (3 min easy between) → 15 min easy\n\n• Biggest session of week. G-Spot when fresh, tempo when fatigued. This builds both power and endurance in one time-efficient ride. Total structured time = 54 minutes. Eat 50-60g carbs during ride. Practice fueling under stress.\n\n• CADENCE WORK: Mix cadences on G-Spot blocks—one high cadence (100+ rpm), one low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"900\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"600\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.825\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W02 Sat - Tempo Endurance Extended",
+          "description": "• STRUCTURE:\n20 min easy → 4x12 min @ 80-85% FTP (4 min easy between) → 20 min easy\n\n• Longer than last week. Building aerobic endurance through tempo work. Practice fueling—50-60g carbs/hour. This is your weekly \"long\" ride.\n\n• CADENCE WORK: Mix cadences on tempo blocks.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"720\" OnPower=\"0.825\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W02 Sun - Rest or Active Recovery",
-          "description": "• Optional: 30-40 min Z1\n\n• Default is rest. Light spin only if feeling recovered. Time-crunched training = aggressive rest strategy.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W02 Sun - Rest or Very Easy Spin",
+          "description": "• Optional: 30-45 min Z1 (50-60% FTP)\n\n• Default is rest. Save energy for Week 3's progression.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 3,
-      "focus": "Peak G-Spot Volume",
-      "volume_percent": 100,
-      "volume_hours": "3-5",
+      "focus": "Peak Base Volume",
+      "volume_percent": 90,
+      "volume_hours": "2.7-4.5",
       "workouts": [
         {
           "name": "W03 Mon - Rest",
-          "description": "• Week 3 is your biggest volume of base phase. You'll do maximum G-Spot and Threshold your body can handle in 3-5 hours. By Saturday you should feel accumulated fatigue—that's overload working. Week 4 backs off so your body adapts. This week builds the FTP that carries you through race day.\n\n• WEEK PREVIEW: Peak G-Spot volume week. Tuesday has maximum G-Spot volume (4x12 min). Thursday has extended threshold (2x15 min). Saturday is biggest session of plan (105-120 min with mixed intensity). This is your \"A\" week.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Week 3 is peak volume for this base block. After this week, you'll have a recovery week. Push hard but smart—quality still trumps quantity.\n\n• WEEK PREVIEW: Tuesday has extended G-Spot (4x10 min). Thursday has threshold progression (3x10 min). Saturday is your longest ride yet (100-110 min). Three quality sessions, maximum adaptation.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W03 Tue - Peak G-Spot",
-          "description": "• STRUCTURE:\n15 min warmup → 4x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Four intervals—most yet. 48 minutes total at G-Spot. This is HARD. Break it down mentally—one interval at a time. Stay controlled, steady power, don't blow up on interval 1. If you fade on interval 4, that's perfect—you pushed hard enough.\n\n• CADENCE WORK: Mix cadences—intervals 1, 3 at high cadence (100+ rpm), intervals 2, 4 at low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W03 Tue - G-Spot Volume",
+          "description": "• STRUCTURE:\n15 min warmup → 4x10 min @ 87-92% FTP (4 min easy between) → 10 min cooldown\n\n• Four intervals today. Total of 40 minutes at G-Spot. This is significant work in limited time. Pace yourself—interval 4 should be as strong as interval 1.\n\n• CADENCE WORK: Intervals 1, 3 at high cadence (100+ rpm), intervals 2, 4 at low cadence (40-60 rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"600\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W03 Wed - Rest",
-          "description": "• Full rest day after biggest G-Spot session. Non-negotiable.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest before threshold session.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W03 Thu - Threshold Progression",
-          "description": "• STRUCTURE:\n15 min warmup → 2x15 min @ 95-100% FTP (7 min easy between) → 10 min cooldown\n\n• Longer threshold blocks. 30 minutes total at race pace. This should be sustainably hard—breathing labored but controlled. This is what gravel racing demands. If you can't complete 15 min, do 12 min—better to finish strong than blow up.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"900\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"420\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "description": "• STRUCTURE:\n15 min warmup → 3x10 min @ 95-100% FTP (5 min easy between) → 10 min cooldown\n\n• Extended threshold intervals. 10 minutes at threshold is challenging—this is race-pace work. Find your rhythm early, don't start too hard. Should finish thinking \"that was hard but I did it.\"\n\n• CADENCE WORK: High cadence (95-100 rpm) on all intervals.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"600\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W03 Fri - Rest",
-          "description": "• Rest day. Two massive quality sessions this week. Recovery is training.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Rest before longest ride of block.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W03 Sat - Biggest Session of Plan",
-          "description": "• STRUCTURE:\n25 min easy → 3x15 min @ 87-92% FTP (6 min easy between) → 15 min easy → 3x10 min @ 80-85% FTP (4 min easy between) → 15 min easy\n\n• Longest and hardest ride of base phase. 45 min G-Spot + 30 min tempo = 75 minutes structured work in 2-hour ride. This is time-efficient training at its peak. Eat 60g carbs during ride. Practice race nutrition—this matters as much as the power.\n\n• CADENCE WORK: Mix cadences on G-Spot blocks—intervals 1, 3 at high cadence (100+ rpm), interval 2 at low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1500\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"600\" OnPower=\"0.825\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W03 Sat - Long Tempo Ride",
+          "description": "• STRUCTURE:\n20 min easy → 5x12 min @ 80-85% FTP (4 min easy between) → 20 min easy\n\n• Longest ride yet—100-110 minutes total. Building endurance within time-crunched constraints. Practice race nutrition: 60g carbs/hour minimum. Mental rehearsal—this is what race day feels like.\n\n• CADENCE WORK: Mix cadences on tempo blocks.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"5\" OnDuration=\"720\" OnPower=\"0.825\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W03 Sun - Rest or Easy Spin",
-          "description": "• Optional: 30-45 min Z1\n\n• Default is rest. You should feel tired after this week—heavy legs, general fatigue. That's appropriate overload, not overtraining. Only spin if you feel surprisingly good.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W03 Sun - Rest",
+          "description": "• Full rest. You've earned it. Next week is recovery week.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
@@ -141,41 +141,41 @@
       "week_number": 4,
       "focus": "Recovery & Adaptation",
       "volume_percent": 60,
-      "volume_hours": "1.75-3",
+      "volume_hours": "1.8-3",
       "workouts": [
         {
           "name": "W04 Mon - Rest",
-          "description": "• Recovery week. Your body adapts during rest, not during work. By Friday you should feel fresh and strong. If you're still tired by Sunday, you pushed too hard in Week 3 or aren't sleeping/eating enough. This is when the magic happens—your FTP increases during recovery, not during intervals.\n\n• WEEK PREVIEW: Recovery week. Tuesday has light G-Spot (2x10 min, easier). Thursday is easy endurance. Saturday is moderate endurance with light tempo touch. This is when adaptation happens.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Recovery week. Your body adapts during rest, not during training. Volume drops 40% but you maintain some intensity to keep systems firing. By Sunday you should feel fresh, strong, ready for Build phase. If you're still tired, address sleep/nutrition/stress.\n\n• WEEK PREVIEW: Tuesday has light G-Spot touch (3x8 min). Thursday is easy endurance only. Saturday has moderate tempo (60-75 min). Low stress, high recovery.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W04 Tue - Light G-Spot",
-          "description": "• STRUCTURE:\n10 min warmup → 2x10 min @ 85-90% FTP (5 min easy between) → 10 min cooldown\n\n• Lighter than Week 3. Maintains neuromuscular recruitment patterns without adding fatigue. Should feel controlled and relatively comfortable. If it feels hard, you're not recovered—skip intervals and just ride 45 min easy.\n\n• CADENCE WORK: Mix cadences—one high cadence (100+ rpm), one low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.875\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W04 Tue - G-Spot Touch",
+          "description": "• STRUCTURE:\n15 min warmup → 3x8 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Reduced volume but maintaining intensity. Should feel controlled and manageable. Don't push—this is maintenance, not development.\n\n• CADENCE WORK: Self-selected cadence. Comfort focus.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.895\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W04 Wed - Rest",
-          "description": "• Full rest day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W04 Thu - Easy Endurance",
-          "description": "• Duration: 40-50 min\n\n• Zones: Z2 (65-75% FTP)\n\n• Notes: Truly easy. Conversational pace. Just moving legs. Active recovery aids adaptation.\n\n• CADENCE: Self-selected (85-95 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"2400\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "description": "• STRUCTURE:\n45-60 min @ Z2 (65-75% FTP)\n\n• Pure easy riding. Conversational pace. No intensity. Active recovery.\n\n• CADENCE WORK: Comfortable cadence (85-95 rpm).",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"2700\" Power=\"0.70\" Cadence=\"90\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W04 Fri - Rest",
-          "description": "• Rest day. You should be feeling fresh and strong by now.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W04 Sat - Moderate Endurance",
-          "description": "• STRUCTURE:\n20 min easy → 2x12 min @ 75-80% FTP (4 min easy between) → 15 min easy\n\n• No real intensity stress. Light tempo maintains fitness. This should feel comfortable. Check bike—make sure everything works. Address any fit issues now.\n\n• CADENCE WORK: Mix cadences on tempo blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"0.78\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W04 Sat - Moderate Tempo",
+          "description": "• STRUCTURE:\n15 min easy → 3x10 min @ 80-85% FTP (4 min easy between) → 15 min easy\n\n• Light tempo to maintain fitness without adding fatigue. Should feel easy compared to last few weeks.\n\n• CADENCE WORK: Self-selected cadence.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"600\" OnPower=\"0.825\" Cadence=\"90\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W04 Sun - Rest",
-          "description": "• Full rest day. Preparing for build phase.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest. Build phase starts tomorrow. You should feel fresh and eager to train.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
@@ -184,256 +184,256 @@
       "week_number": 5,
       "focus": "Build Phase - Threshold Development",
       "volume_percent": 85,
-      "volume_hours": "2.5-4.25",
+      "volume_hours": "2.5-4.3",
       "workouts": [
         {
           "name": "W05 Mon - Rest",
-          "description": "• Build phase begins. Weeks 5-8 progressively increase threshold work while maintaining G-Spot foundation. You're building race-specific power now—the ability to sustain high percentages of FTP for extended periods. This is what gravel racing demands.\n\n• WEEK PREVIEW: Threshold development week. Tuesday has G-Spot maintenance (3x12 min). Thursday has progressive threshold (3x12 min). Saturday is long mixed ride (100-120 min with G-Spot + threshold). This week increases threshold volume.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Build phase begins. The focus shifts from base building to race-specific power development. More threshold work, longer G-Spot intervals, and your longest rides of the plan. This is where FTP grows.\n\n• WEEK PREVIEW: Tuesday has threshold focus (3x12 min). Thursday has extended G-Spot (3x15 min). Saturday is long tempo + threshold mix (100+ min). Intensity increases.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W05 Tue - G-Spot Maintenance",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Maintaining G-Spot adaptations while emphasizing threshold this phase. Should feel controlled—you've done this before. Quality execution matters.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W05 Tue - Threshold Development",
+          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 95-100% FTP (6 min easy between) → 10 min cooldown\n\n• Extended threshold intervals. 12 minutes is real work. Find your sustainable pace—don't blow up in the first 3 minutes. This builds race-day power.\n\n• CADENCE WORK: High cadence (95-100 rpm) on all intervals.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W05 Wed - Rest",
-          "description": "• Recovery day between quality sessions.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W05 Thu - Threshold Development",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 95-100% FTP (6 min easy between) → 10 min cooldown\n\n• Three 12-minute threshold blocks—36 minutes total at race pace. This is hard but you've built the fitness for this. Breathing labored, legs burning, but sustainable. This builds the power you'll race with.\n\n• CADENCE WORK: Mix cadences—intervals 1, 3 at high cadence (100+ rpm), interval 2 at low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W05 Thu - G-Spot Extension",
+          "description": "• STRUCTURE:\n15 min warmup → 3x15 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• 15-minute G-Spot intervals. This is gravel race simulation—sustained power just below threshold. You're building the ability to hold this pace for hours.\n\n• CADENCE WORK: Mix cadences—interval 1 high (100+ rpm), interval 2 low (40-60 rpm), interval 3 self-selected.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W05 Fri - Rest",
-          "description": "• Rest day. Two quality sessions need proper recovery.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest before weekend ride.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W05 Sat - Long Mixed Ride",
-          "description": "• STRUCTURE:\n30 min easy → 2x20 min @ 87-92% FTP (8 min easy between) → 20 min easy → 2x10 min @ 95-100% FTP (5 min easy between) → 15 min easy\n\n• Big session—G-Spot when fresh, threshold when fatigued. This simulates race demands. 40 min G-Spot + 20 min threshold = 60 minutes quality in 2-hour ride. Eat 60-70g carbs/hour. This is race practice.\n\n• CADENCE WORK: Mix cadences on G-Spot and threshold blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"1200\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"480\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W05 Sat - Long Mixed Intensity",
+          "description": "• STRUCTURE:\n20 min easy → 3x12 min @ 80-85% FTP (4 min easy) → 2x8 min @ 95-100% FTP (5 min easy) → 20 min easy\n\n• Mixed intensity simulates race variability. Tempo followed by threshold mimics gravel racing demands. Practice fueling: 60g carbs/hour.\n\n• CADENCE WORK: Mix cadences throughout.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.825\" Cadence=\"90\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"480\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W05 Sun - Rest or Very Easy Spin",
-          "description": "• Optional: 30 min Z1\n\n• Default is rest. Save energy for Week 6 intensity.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W05 Sun - Rest",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 6,
-      "focus": "Build Phase - Peak Threshold Volume",
+      "focus": "Build Phase - Race-Pace Development",
       "volume_percent": 95,
-      "volume_hours": "2.85-4.75",
+      "volume_hours": "2.8-4.7",
       "workouts": [
         {
           "name": "W06 Mon - Rest",
-          "description": "• Intensity increases this week. Peak threshold volume—the most race-specific training in the plan. By Saturday you should feel threshold-specific fatigue (legs burn faster, threshold feels harder). That's adaptation. Week 8 recovery converts this to performance.\n\n• WEEK PREVIEW: Peak threshold volume week. Tuesday has G-Spot maintenance (3x12 min). Thursday has peak threshold (2x20 min). Saturday is maximum mixed session (110-120 min with G-Spot + threshold). This week builds race-specific power.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Week 6 emphasizes race-pace power. Longer threshold intervals, extended G-Spot work, and your longest quality session of the plan. This is where race fitness develops.\n\n• WEEK PREVIEW: Tuesday has peak threshold (2x15 min). Thursday introduces rhythm intervals. Saturday is peak volume with mixed intensity (110-120 min). Big week.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W06 Tue - G-Spot Maintenance",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Maintaining G-Spot base. Execute cleanly—you need this foundation for threshold work.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W06 Tue - Peak Threshold",
+          "description": "• STRUCTURE:\n15 min warmup → 2x15 min @ 95-100% FTP (8 min easy between) → 10 min cooldown\n\n• 15-minute threshold intervals. This is peak threshold work for time-crunched athletes. Find sustainable pace, control breathing, stay focused. 30 minutes total at threshold is significant.\n\n• CADENCE WORK: High cadence (95-100 rpm) on both intervals.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"900\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"480\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W06 Wed - Rest",
-          "description": "• Recovery day. Preparing for big threshold session.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W06 Thu - Peak Threshold",
-          "description": "• STRUCTURE:\n15 min warmup → 2x20 min @ 95-100% FTP (10 min easy between) → 10 min cooldown\n\n• Classic 2x20 at threshold. 40 minutes total at race pace. This is HARD. Break 20-minute blocks into 4x5 mentally. Stay smooth, controlled breathing, steady power. This is what separates time-crunched athletes who perform from those who just finish.\n\n• RHYTHM INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 4, continuous. This simulates race variability.\n\n• CADENCE WORK: Mix cadences or use rhythm pattern.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"1200\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"600\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W06 Thu - Rhythm Intervals",
+          "description": "• STRUCTURE:\n15 min warmup → 3x12 min rhythm (2 min @ 80% + 1 min @ 95% FTP, continuous) (5 min easy between) → 10 min cooldown\n\n• RHYTHM INTERVALS: Alternating patterns simulate race variability—tempo punctuated by threshold surges. This is gravel racing in miniature. 2 min tempo + 1 min threshold × 4 = 12 min block.\n\n• CADENCE WORK: Tempo at self-selected, threshold surges at high cadence (100+ rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"300\" Power=\"0.55\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"300\" Power=\"0.55\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W06 Fri - Rest",
-          "description": "• Rest after peak threshold. Non-negotiable.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest before big weekend ride.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W06 Sat - Maximum Mixed Session",
-          "description": "• STRUCTURE:\n30 min easy → 3x15 min @ 87-92% FTP (6 min easy between) → 15 min easy → 2x12 min @ 95-100% FTP (7 min easy between) → 15 min easy\n\n• Biggest session—45 min G-Spot + 24 min threshold = 69 minutes quality work. This is maximum time-efficient training. Should feel strong—weeks of build prepared you. Eat 70g carbs/hour. This is full race dress rehearsal for fueling.\n\n• CADENCE WORK: Mix cadences on G-Spot and threshold blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"420\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W06 Sat - Peak Volume Mixed",
+          "description": "• STRUCTURE:\n20 min easy → 4x12 min @ 80-85% FTP (4 min easy) → 2x10 min @ 95-100% FTP (6 min easy) → 20 min easy\n\n• Longest ride of plan so far. Extended tempo followed by threshold work. This simulates gravel racing demands. Practice all race nutrition and hydration. 60-70g carbs/hour.\n\n• CADENCE WORK: Mix cadences throughout.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"720\" OnPower=\"0.825\" Cadence=\"90\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W06 Sun - Rest or Easy Spin",
-          "description": "• Optional: 30-40 min Z1\n\n• Default is rest. You should feel accumulated fatigue from this week.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W06 Sun - Rest",
+          "description": "• Full rest. Big week completed.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 7,
-      "focus": "Build Phase - Sustained Threshold",
+      "focus": "Build Phase - Peak Training Load",
       "volume_percent": 100,
       "volume_hours": "3-5",
       "workouts": [
         {
           "name": "W07 Mon - Rest",
-          "description": "• Final high-volume week before recovery. You're consolidating all the threshold work from Weeks 5-6. Should feel strong in these intervals now—power that felt crushing in Week 5 should feel more sustainable. That's your FTP increasing.\n\n• WEEK PREVIEW: Sustained threshold week. Tuesday has G-Spot + openers (3x10 min + 4x1 min). Thursday has sustained threshold (3x15 min). Saturday is peak long ride (110-120 min with G-Spot + threshold). This week consolidates threshold gains.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Week 7 is peak training load. Biggest week of the plan. After this, you've done the hard work. Recovery week follows, then race sharpening.\n\n• WEEK PREVIEW: Tuesday has combined G-Spot + threshold. Thursday has rhythm intervals with loaded starts. Saturday is peak volume (120+ min). Make these sessions count.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W07 Tue - G-Spot + Openers",
-          "description": "• STRUCTURE:\n15 min warmup → 3x10 min @ 87-92% FTP (5 min easy between) → 5 min easy → 4x1 min @ 105% FTP (2 min easy between) → 5 min cooldown\n\n• G-Spot maintains base, openers add sharpness. The 1-min efforts should feel snappy—keeping neuromuscular system responsive while building threshold base.\n\n• RHYTHM INTERVALS: For one G-Spot interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 3, continuous. This simulates race variability.\n\n• CADENCE WORK: Mix cadences on G-Spot blocks. High cadence (100+ rpm) on openers.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"600\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"300\" Power=\"0.65\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"60\" OnPower=\"1.05\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"300\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W07 Tue - Combined G-Spot + Threshold",
+          "description": "• STRUCTURE:\n15 min warmup → 2x15 min @ 87-92% FTP (5 min easy) → 2x10 min @ 95-100% FTP (6 min easy) → 10 min cooldown\n\n• Peak quality session. G-Spot followed by threshold when fatigued. This simulates race demands—sustained power followed by hard efforts. Should finish knowing you worked.\n\n• CADENCE WORK: G-Spot intervals mix cadences, threshold at high cadence (95-100 rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"900\" OnPower=\"0.895\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W07 Wed - Rest",
-          "description": "• Recovery day between quality sessions.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest. Big session yesterday, big session tomorrow.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W07 Thu - Sustained Threshold",
-          "description": "• STRUCTURE:\n15 min warmup → 3x15 min @ 95-100% FTP (7 min easy between) → 10 min cooldown\n\n• Three 15-minute blocks—45 minutes total at threshold. Should feel controlled and strong. This is race pace for extended periods. You've built this fitness. Execute confidently.\n\n• CADENCE WORK: Mix cadences—intervals 1, 3 at high cadence (100+ rpm), interval 2 at low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"420\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W07 Thu - Loaded Rhythm Intervals",
+          "description": "• STRUCTURE:\n15 min warmup → 3x12 min loaded rhythm (1 min @ 110% → 2 min @ 80% + 1 min @ 95% × 3, continuous) (6 min easy between) → 10 min cooldown\n\n• LOADED INTERVALS: Start each block with 1-min surge @ 110% FTP (simulates race attacks), then settle into rhythm pattern. This is race simulation—hard start, sustained effort.\n\n• CADENCE WORK: Loaded start at high cadence (100+ rpm), rhythm as previous.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <SteadyState Duration=\"60\" Power=\"1.10\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"360\" Power=\"0.55\"/>\n    <SteadyState Duration=\"60\" Power=\"1.10\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"360\" Power=\"0.55\"/>\n    <SteadyState Duration=\"60\" Power=\"1.10\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <SteadyState Duration=\"120\" Power=\"0.80\" Cadence=\"90\"/>\n    <SteadyState Duration=\"60\" Power=\"0.95\" Cadence=\"100\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W07 Fri - Rest",
-          "description": "• Rest day preparing for weekend session.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest before peak volume ride.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W07 Sat - Peak Long Ride",
-          "description": "• STRUCTURE:\n30 min easy → 4x12 min @ 87-92% FTP (5 min easy between) → 15 min easy → 3x8 min @ 95-100% FTP (5 min easy between) → 15 min easy\n\n• Peak session—48 min G-Spot + 24 min threshold = 72 minutes quality. This is your fitness ceiling before recovery phase. Eat 70-80g carbs/hour. Test all race-day gear and nutrition.\n\n• CADENCE WORK: Mix cadences on G-Spot and threshold blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
+          "name": "W07 Sat - Peak Volume Ride",
+          "description": "• STRUCTURE:\n20 min easy → 5x12 min @ 80-85% FTP (4 min easy) → 2x12 min @ 95-100% FTP (6 min easy) → 20 min easy\n\n• Longest, hardest ride of plan. Extended tempo blocks followed by threshold when fatigued. This is race simulation. Practice everything—nutrition (70g carbs/hour), hydration, pacing, mental focus.\n\n• CADENCE WORK: Mix cadences throughout.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"5\" OnDuration=\"720\" OnPower=\"0.825\" Cadence=\"90\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W07 Sun - Rest or Easy Spin",
-          "description": "• Optional: 30-45 min Z1\n\n• Default is rest. You just completed hardest training block.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W07 Sun - Rest",
+          "description": "• Full rest. Biggest week complete. Recovery week next.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 8,
-      "focus": "Recovery & Transmutation",
+      "focus": "Recovery & Absorption",
       "volume_percent": 60,
-      "volume_hours": "1.75-3",
+      "volume_hours": "1.8-3",
       "workouts": [
         {
           "name": "W08 Mon - Rest",
-          "description": "• Recovery week after peak build. By Friday you should feel fresh, strong, powerful. This is when Weeks 5-7 work converts into higher FTP. If you're still tired by Sunday, you pushed too hard or need to address recovery habits (sleep, nutrition, stress).\n\n• WEEK PREVIEW: Recovery week. Tuesday has light G-Spot (2x10 min). Thursday is easy endurance. Saturday is moderate endurance with light tempo touch. This is when training stress converts to performance.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Recovery week. You just completed peak training. Your body needs this time to absorb the work and get stronger. By Sunday you should feel fresh, powerful, ready for race sharpening. If still tired, address recovery factors.\n\n• WEEK PREVIEW: Tuesday has light G-Spot touch. Thursday is easy only. Saturday has moderate mixed intensity (70-80 min). Low stress, high recovery.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W08 Tue - Light G-Spot",
-          "description": "• STRUCTURE:\n10 min warmup → 2x10 min @ 85-90% FTP (5 min easy between) → 10 min cooldown\n\n• Light work maintains fitness. Should feel easy and controlled.\n\n• CADENCE WORK: Mix cadences—one high cadence (100+ rpm), one low cadence (40-60 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.875\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W08 Tue - G-Spot Touch",
+          "description": "• STRUCTURE:\n15 min warmup → 3x8 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Maintenance intensity. Should feel controlled and manageable. Don't push.\n\n• CADENCE WORK: Self-selected cadence.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.895\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W08 Wed - Rest",
-          "description": "• Full rest day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W08 Thu - Easy Endurance",
-          "description": "• Duration: 40-50 min\n\n• Zones: Z2 (65-75% FTP)\n\n• Notes: Easy pace. Just moving legs.\n\n• CADENCE: Self-selected (85-95 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"2400\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "description": "• STRUCTURE:\n45-60 min @ Z2 (65-75% FTP)\n\n• Pure easy riding. Recovery focus.\n\n• CADENCE WORK: Comfortable cadence.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"2700\" Power=\"0.70\" Cadence=\"90\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W08 Fri - Rest",
-          "description": "• Rest day. Feeling fresh now.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W08 Sat - Moderate Endurance",
-          "description": "• STRUCTURE:\nZ2 (65-75% FTP), add 2x10 min @ 80-85% FTP in final 30 min (4 min easy between)\n\n• No real intensity stress. Light tempo touches. Check all equipment.\n\n• CADENCE WORK: Mix cadences on tempo blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"2400\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.825\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"600\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "name": "W08 Sat - Moderate Mixed",
+          "description": "• STRUCTURE:\n15 min easy → 3x10 min @ 80-85% FTP (4 min easy) → 1x8 min @ 95-100% FTP → 15 min easy\n\n• Light mixed intensity maintains fitness without adding fatigue.\n\n• CADENCE WORK: Self-selected cadence.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"600\" OnPower=\"0.825\" Cadence=\"90\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"480\" Power=\"0.98\" Cadence=\"95\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W08 Sun - Rest",
-          "description": "• Full rest. Preparing for race prep phase.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest. Race sharpening starts tomorrow.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 9,
-      "focus": "Race Prep - Specificity Phase 1",
-      "volume_percent": 90,
-      "volume_hours": "2.75-4.5",
+      "focus": "Race Sharpening - Specificity",
+      "volume_percent": 85,
+      "volume_hours": "2.5-4.3",
       "workouts": [
         {
           "name": "W09 Mon - Rest",
-          "description": "• Final four weeks. Training becomes race-specific—sustained efforts at race pace, mixed intensities simulating race surges and sustained climbs. Your FTP is built. Now we sharpen it for race day.\n\n• WEEK PREVIEW: Race prep begins. Tuesday has race pace intervals (3x12 min @ 90-95% FTP). Thursday has G-Spot + race surges (2x12 min + 4x2 min). Saturday is long race simulation (100-110 min). This week practices race-specific efforts.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Race sharpening phase. Volume stays moderate, intensity becomes highly specific. You're not building fitness anymore—you're sharpening it. Quality is paramount. Every session should leave you feeling sharp, not tired.\n\n• WEEK PREVIEW: Tuesday has race-pace intervals. Thursday has sharpening threshold work. Saturday is race simulation with dress rehearsal elements. Three weeks to race day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W09 Tue - Race Pace Intervals",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 90-95% FTP (5 min easy between) → 10 min cooldown\n\n• Race pace—right at threshold. This is what gravel racing feels like for time-crunched athletes who trained smart. Should feel sustainable. Practice drinking while holding power.\n\n• RHYTHM INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 4, continuous. This simulates race variability.\n\n• CADENCE WORK: Mix cadences or use rhythm pattern.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.93\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W09 Tue - Race-Pace Intervals",
+          "description": "• STRUCTURE:\n15 min warmup → 4x10 min @ 90-95% FTP (5 min easy between) → 10 min cooldown\n\n• Race pace. This is your sustainable race effort—between G-Spot and threshold. Should feel \"hard but doable for hours.\" Practice race breathing, race focus.\n\n• CADENCE WORK: Race cadence (self-selected, whatever you'll use race day).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"600\" OnPower=\"0.93\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W09 Wed - Rest",
-          "description": "• Recovery day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W09 Thu - G-Spot + Race Surges",
-          "description": "• STRUCTURE:\n15 min warmup → 2x12 min @ 87-92% FTP (5 min easy between) → 10 min easy → 4x2 min @ 105% FTP (3 min easy between) → 5 min cooldown\n\n• G-Spot simulates sustained efforts. 2-min surges simulate attacks or short climbs. This is race-specific power training.\n\n• CADENCE WORK: Mix cadences on G-Spot blocks. High cadence (100+ rpm) on surges.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"600\" Power=\"0.65\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"120\" OnPower=\"1.05\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"300\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W09 Thu - Sharpening Threshold",
+          "description": "• STRUCTURE:\n15 min warmup → 3x8 min @ 100-105% FTP (5 min easy between) → 10 min cooldown\n\n• Slightly over threshold—sharpening top-end power. Should feel hard but controlled. You're building confidence that you can push when needed.\n\n• CADENCE WORK: High cadence (95-100 rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"1.02\" Cadence=\"95\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W09 Fri - Rest",
-          "description": "• Rest day before weekend key session.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W09 Sat - Long Race Simulation",
-          "description": "• STRUCTURE:\n30 min easy → 3x15 min @ 87-95% FTP (varied within range, 7 min easy between) → Final 30 min easy\n\n• Race simulation—variable efforts when tired. 45 minutes at race-type power. Eat 60-70g carbs/hour. Practice race-day nutrition and hydration protocols.\n\n• LOADED INTERVALS: For one interval, try loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 14 min Z3 (self-selected cadence). This simulates race starts.\n\n• CADENCE WORK: Mix cadences or use loaded/rhythm patterns.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.91\" Cadence=\"100\" OffDuration=\"420\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "name": "W09 Sat - Race Simulation",
+          "description": "• STRUCTURE:\n20 min easy → 2x20 min @ 90-95% FTP (8 min easy) → 2x5 min @ 100-105% FTP (5 min easy) → 20 min easy\n\n• Race simulation. Sustained race pace followed by threshold surges. Practice race nutrition (60-70g carbs/hour). Test all race gear. Mental rehearsal—visualize race day.\n\n• CADENCE WORK: Race cadence throughout.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"1200\" OnPower=\"0.93\" Cadence=\"90\" OffDuration=\"480\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"300\" OnPower=\"1.02\" Cadence=\"95\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W09 Sun - Rest or Easy Spin",
-          "description": "• Optional: 30 min Z1\n\n• Default is rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W09 Sun - Rest",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
     },
     {
       "week_number": 10,
-      "focus": "Race Prep - Peak Sharpness",
-      "volume_percent": 95,
-      "volume_hours": "2.85-4.75",
+      "focus": "Race Sharpening - Final Quality",
+      "volume_percent": 80,
+      "volume_hours": "2.4-4",
       "workouts": [
         {
           "name": "W10 Mon - Rest",
-          "description": "• Second-to-last build week. You should feel strong and sharp now. Two more quality weeks, then taper. Race logistics: check bike, order nutrition products, confirm travel. Mental preparation begins.\n\n• WEEK PREVIEW: Peak sharpness week. Tuesday has threshold + openers (2x15 min + 3x1 min). Thursday has G-Spot maintenance (3x12 min). Saturday is final long race prep (105-120 min). This week is final race-specific sharpening.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Final quality week. After this, you taper. Make these sessions count—they're your last hard work before race day. Quality over everything.\n\n• WEEK PREVIEW: Tuesday has final threshold work. Thursday has race openers. Saturday is final race simulation. Two weeks to race day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W10 Tue - Threshold Sharpness",
-          "description": "• STRUCTURE:\n15 min warmup → 2x15 min @ 95-100% FTP (8 min easy between) → 8 min easy → 3x1 min @ 110% FTP (2 min easy between) → 5 min cooldown\n\n• Threshold maintains race pace fitness. Openers keep top-end sharp. Should feel powerful—this is peak fitness manifesting.\n\n• RHYTHM INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 4, continuous. This simulates race variability.\n\n• CADENCE WORK: Mix cadences or use rhythm pattern. High cadence (100+ rpm) on openers.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"900\" OnPower=\"0.98\" Cadence=\"100\" OffDuration=\"480\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"480\" Power=\"0.65\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.10\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"300\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W10 Tue - Final Threshold",
+          "description": "• STRUCTURE:\n15 min warmup → 2x12 min @ 100-105% FTP (6 min easy between) → 10 min cooldown\n\n• Last hard threshold session. Push these—show yourself what you're capable of. Confidence builder.\n\n• CADENCE WORK: High cadence (95-100 rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"720\" OnPower=\"1.02\" Cadence=\"95\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W10 Wed - Rest",
-          "description": "• Recovery day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W10 Thu - G-Spot Maintenance",
-          "description": "• STRUCTURE:\n15 min warmup → 3x12 min @ 87-92% FTP (5 min easy between) → 10 min cooldown\n\n• Maintaining G-Spot foundation during sharpening phase.\n\n• CADENCE WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"720\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W10 Thu - Race Openers",
+          "description": "• STRUCTURE:\n15 min warmup → 4x3 min @ 105-110% FTP (4 min easy between) → 3x1 min @ 120% FTP (3 min easy between) → 10 min cooldown\n\n• Race openers. Short, sharp efforts to keep top-end power sharp. Should feel snappy, explosive, powerful. Not fatiguing—energizing.\n\n• CADENCE WORK: High cadence (100+ rpm) on all efforts.",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"180\" OnPower=\"1.08\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.20\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W10 Fri - Rest",
-          "description": "• Rest before final long session.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W10 Sat - Final Long Race Prep",
-          "description": "• STRUCTURE:\n30 min easy → 3x15 min @ 90-100% FTP (varied, 7 min easy between) → Final 30-45 min easy\n\n• Final race simulation. Variable race-pace efforts. 45 minutes of quality work. Eat 70g carbs/hour. Test EVERYTHING today—this is your last chance for full race rehearsal.\n\n• LOADED INTERVALS: For one interval, try loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 14 min Z3 (self-selected cadence). This simulates race starts and surges.\n\n• CADENCE WORK: Mix cadences or use loaded/rhythm patterns.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.95\" Cadence=\"100\" OffDuration=\"420\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"2400\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "name": "W10 Sat - Final Race Simulation",
+          "description": "• STRUCTURE:\n20 min easy → 3x15 min @ 90-95% FTP (6 min easy) → 2x3 min @ 105-110% FTP (4 min easy) → 20 min easy\n\n• Final race simulation. Sustained race pace + threshold surges. Test ALL race gear—exactly what you'll use race day. Practice race nutrition. Visualize start, key moments, finish.\n\n• CADENCE WORK: Race cadence throughout.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"900\" OnPower=\"0.93\" Cadence=\"90\" OffDuration=\"360\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"180\" OnPower=\"1.08\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W10 Sun - Rest or Easy Spin",
-          "description": "• Optional: 30 min Z1\n\n• Default is rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W10 Sun - Rest",
+          "description": "• Full rest. Taper begins.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
@@ -441,42 +441,42 @@
     {
       "week_number": 11,
       "focus": "Taper Week 1",
-      "volume_percent": 70,
-      "volume_hours": "2-3.5",
+      "volume_percent": 60,
+      "volume_hours": "1.8-3",
       "workouts": [
         {
           "name": "W11 Mon - Rest",
-          "description": "• Taper begins. Volume drops 30%, intensity stays sharp. You should feel increasingly fresh each day while maintaining power. Time-crunched training + smart taper = race-ready fitness.\n\n• WEEK PREVIEW: Taper begins. Tuesday has taper quality (3x8 min @ 90-95% FTP). Thursday is easy endurance. Saturday has moderate ride with touches (75-90 min). Volume drops, intensity stays sharp.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Taper week 1. Volume drops significantly but intensity stays sharp. You should feel increasingly fresh, powerful, eager to race. Nervous energy is normal—channel it into final preparation. Trust the work you've done.\n\n• WEEK PREVIEW: Tuesday has taper quality (short, sharp). Thursday has easy + openers. Saturday is final tune-up ride. One week to race day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W11 Tue - Taper Quality",
-          "description": "• STRUCTURE:\n15 min warmup → 3x8 min @ 90-95% FTP (4 min easy between) → 10 min cooldown\n\n• Reduced volume, maintained intensity. Should feel controlled and powerful. Race pace should feel easier than it did in Week 10.\n\n• CADENCE WORK: High cadence on all efforts (100+ rpm).",
-          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"480\" OnPower=\"0.93\" Cadence=\"100\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "description": "• STRUCTURE:\n15 min warmup → 3x6 min @ 95-100% FTP (4 min easy between) → 3x1 min @ 110% FTP (2 min easy between) → 10 min cooldown\n\n• Taper intensity. Threshold to maintain race pace feel, plus short VO2 touches for snap. Should feel controlled, not depleting.\n\n• CADENCE WORK: High cadence (95-100 rpm).",
+          "blocks": "    <Warmup Duration=\"900\" PowerLow=\"0.50\" PowerHigh=\"0.75\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"360\" OnPower=\"0.98\" Cadence=\"95\" OffDuration=\"240\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.10\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
         },
         {
           "name": "W11 Wed - Rest",
-          "description": "• Full rest day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W11 Thu - Easy Endurance",
-          "description": "• Duration: 30-40 min\n\n• Zones: Z2 (65-75% FTP)\n\n• Notes: Short easy ride. Just moving legs.\n\n• CADENCE: Self-selected (85-95 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "name": "W11 Thu - Easy + Openers",
+          "description": "• STRUCTURE:\n30 min easy → 3x2 min @ 100-105% FTP (3 min easy between) → 15 min easy\n\n• Easy ride with sharp openers. Keep legs turning, maintain snap. Should feel fresh, powerful.\n\n• CADENCE WORK: High cadence (100+ rpm) on openers.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"120\" OnPower=\"1.02\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W11 Fri - Rest",
-          "description": "• Scheduled rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W11 Sat - Moderate Ride with Touches",
-          "description": "• STRUCTURE:\n30 min easy → 2x10 min @ 87-92% FTP (5 min easy between) → Final 30 min easy\n\n• Shorter ride, maintains intensity stimulus. Should feel strong and fresh. This is final \"reminder\" workout before race week.\n\n• CADENCE WORK: Mix cadences on G-Spot blocks.",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.895\" Cadence=\"100\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.70\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.70\" PowerHigh=\"0.55\"/>\n"
+          "name": "W11 Sat - Final Tune-Up",
+          "description": "• STRUCTURE:\n20 min easy → 2x10 min @ 85-90% FTP (5 min easy between) → 3x1 min @ 105-110% FTP (3 min easy between) → 15 min easy\n\n• Final quality before race week. Should feel great—fresh legs, sharp power, confident execution. You're ready.\n\n• CADENCE WORK: Race cadence on tempo, high cadence on bursts.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"600\" OnPower=\"0.875\" Cadence=\"90\" OffDuration=\"300\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.08\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W11 Sun - Rest",
-          "description": "• Full rest day.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• Full rest. Race week begins tomorrow.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
@@ -485,41 +485,41 @@
       "week_number": 12,
       "focus": "Race Week",
       "volume_percent": 40,
-      "volume_hours": "1.25-2.5",
+      "volume_hours": "1.2-2",
       "workouts": [
         {
           "name": "W12 Mon - Rest",
-          "description": "• Race week. Volume drops dramatically. You should feel fresh, powerful, ready. You trained smart for 11 weeks with limited time. G-Spot and Threshold built your FTP. Now execute: pace conservatively early, fuel from mile 1, push when it counts.\n\n• WEEK PREVIEW: Race week! Tuesday is easy spin (30 min). Wednesday has final openers. Thursday is rest or easy spin. Friday is pre-race shake-out (if racing Sunday). Saturday/Sunday: RACE DAY!\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "description": "• RACE WEEK. Volume drops dramatically. You should feel fresh, powerful, ready. Nervous energy is fuel—use it. Final equipment checks. Mental rehearsal. Trust the work you've done. You're prepared.\n\n• WEEK PREVIEW: Tuesday has activation ride. Wednesday/Thursday are very easy or rest. Friday is pre-race shake-out. Saturday/Sunday is RACE DAY.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W12 Tue - Easy Spin",
-          "description": "• Duration: 30 min\n\n• Zones: Z1-Z2 (55-70% FTP)\n\n• Notes: Easy spin. Just moving legs. No stress.\n\n• CADENCE: Self-selected (85-95 rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.65\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.65\" PowerHigh=\"0.55\"/>\n"
+          "name": "W12 Tue - Activation Ride",
+          "description": "• STRUCTURE:\n30 min easy → 3x3 min @ 90-95% FTP (3 min easy between) → 3x1 min @ 105% FTP (2 min easy between) → 15 min easy\n\n• Activation—wake up the systems, confirm everything works. Should feel snappy, powerful, eager. Not depleting at all.\n\n• CADENCE WORK: High cadence (100+ rpm) on all efforts.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1800\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"180\" OnPower=\"0.93\" Cadence=\"90\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.05\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <SteadyState Duration=\"900\" Power=\"0.68\" Cadence=\"85\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
-          "name": "W12 Wed - Final Openers",
-          "description": "• STRUCTURE:\n15 min easy → 3x4 min @ 90-95% FTP (3 min easy between) → 3x1 min @ 105% FTP (2 min easy between) → 3x30sec @ 110% FTP (90sec easy between) → 5 min easy\n\n• Final intensity. Should feel powerful, snappy, explosive. If legs feel dead, skip the 30sec efforts. This is sharpness check.\n\n• CADENCE WORK: High cadence on all efforts (100+ rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.70\"/>\n    <SteadyState Duration=\"900\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"240\" OnPower=\"0.93\" Cadence=\"100\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"60\" OnPower=\"1.05\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"30\" OnPower=\"1.10\" Cadence=\"100\" OffDuration=\"90\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"300\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
-        },
-        {
-          "name": "W12 Thu - Rest or Easy Spin",
-          "description": "• Optional: 20-30 min Z1\n\n• Notes: If race is Sunday, easy spin. If race is Saturday, rest.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "name": "W12 Wed - Very Easy or Rest",
+          "description": "• Optional: 30 min Z1 (50-60% FTP)\n\n• Default is rest. Only spin if you feel great and need to move. Very easy.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
-          "name": "W12 Fri - Pre-Race Shake-Out (if racing Sunday)",
-          "description": "• STRUCTURE:\n10 min easy → 2x3 min @ race pace (2 min easy between) → 2x1 min @ 105% FTP (2 min easy between) → 2x30sec @ 110% FTP (90sec easy between) → 5 min easy\n\n• Final ride before race. Legs should feel fresh and powerful. Check bike. Visualize execution—conservative start, steady effort, strong finish.\n\n• CADENCE WORK: High cadence on all efforts (100+ rpm).",
-          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.70\"/>\n    <SteadyState Duration=\"600\" Power=\"0.70\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"180\" OnPower=\"0.93\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"60\" OnPower=\"1.05\" Cadence=\"100\" OffDuration=\"120\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"2\" OnDuration=\"30\" OnPower=\"1.10\" Cadence=\"100\" OffDuration=\"90\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"300\" PowerLow=\"0.70\" PowerHigh=\"0.50\"/>\n"
+          "name": "W12 Thu - Rest or Very Easy",
+          "description": "• Rest preferred. If racing Sunday and need to move, 20-30 min very easy spin.\n\n• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.",
+          "blocks": "    <FreeRide Duration=\"60\"/>\n"
+        },
+        {
+          "name": "W12 Fri - Pre-Race Shake-Out",
+          "description": "• STRUCTURE:\n20 min easy → 3x2 min @ race pace (3 min easy between) → 4x30 sec @ 110% FTP (90 sec easy between) → 10 min easy\n\n• Final ride before race. Prime the engine. Legs should feel fresh, powerful, explosive. Check bike one last time. Visualize tomorrow—start, key moments, finish line.\n\n• CADENCE WORK: High cadence (100+ rpm) on all efforts.",
+          "blocks": "    <Warmup Duration=\"600\" PowerLow=\"0.50\" PowerHigh=\"0.65\"/>\n    <SteadyState Duration=\"1200\" Power=\"0.68\" Cadence=\"85\"/>\n    <IntervalsT Repeat=\"3\" OnDuration=\"120\" OnPower=\"0.93\" Cadence=\"90\" OffDuration=\"180\" OffPower=\"0.55\"/>\n    <IntervalsT Repeat=\"4\" OnDuration=\"30\" OnPower=\"1.10\" Cadence=\"100\" OffDuration=\"90\" OffPower=\"0.55\"/>\n    <Cooldown Duration=\"600\" PowerLow=\"0.68\" PowerHigh=\"0.55\"/>\n"
         },
         {
           "name": "W12 Sat - Race Day or Rest",
-          "description": "• If racing Saturday: EXECUTE YOUR PLAN\n\n• If racing Sunday: Rest or 20-30 min easy spin\n\n• Notes: If racing today—start conservatively, fuel from mile 1 (50-60g carbs/hour minimum), use your FTP gains in final third. You trained smart. Race smart.",
+          "description": "• If racing Saturday: RACE DAY—EXECUTE YOUR PLAN\n\n• If racing Sunday: Complete rest or 30-45 min easy with 3x30sec openers\n\n• Race Day Notes: Start conservative, find your rhythm, fuel early and often (60g carbs/hour minimum), pace yourself through the first half, push the second half, finish strong. You trained smart with limited time. Trust it.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         },
         {
           "name": "W12 Sun - Race Day or Recovery",
-          "description": "• If racing Sunday: EXECUTE YOUR PLAN\n\n• If raced Saturday: Easy 20-30 min recovery spin, celebrate\n\n• Notes: Race day. Conservative start. Aggressive fueling. When it gets hard in final third, you have the threshold fitness—12 weeks of G-Spot and Threshold built that. Push when others fade. Finish strong.",
+          "description": "• If racing Sunday: RACE DAY—EXECUTE YOUR PLAN\n\n• If raced Saturday: Easy 30-45 min recovery spin, celebrate your achievement\n\n• Race Day Notes: You've prepared with focused, efficient training. Every session counted. Now execute: conservative start, steady build, strong finish. When it hurts, remember—this is why you trained. You're ready.",
           "blocks": "    <FreeRide Duration=\"60\"/>\n"
         }
       ]
@@ -541,20 +541,12 @@
     },
     "rhythm_intervals": {
       "enabled": true,
-      "weeks": [
-        6,
-        7,
-        9,
-        10
-      ],
+      "weeks": [6, 7],
       "description": "Alternating patterns: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 3-4, continuous"
     },
     "loaded_intervals": {
       "enabled": true,
-      "weeks": [
-        9,
-        10
-      ],
+      "weeks": [7],
       "description": "1 min Z5/Z6 (high cadence, seated) → settle into 9-14 min Z3 (self-selected cadence). Simulates race starts and surges."
     },
     "gspot_terminology": {
