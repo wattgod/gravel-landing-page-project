@@ -63,57 +63,88 @@ def load_json(filepath: str) -> Dict[str, Any]:
 
 def extract_race_data(race_json: Dict[str, Any]) -> Dict[str, str]:
     """Extract and flatten race data for placeholder substitution."""
-    race = race_json.get('race', race_json)
-    vitals = race.get('vitals', {})
-    radar = race.get('radar_scores', {})
-    location = vitals.get('location', {})
-    non_negs = race.get('non_negotiables', [])
-    skills = race_json.get('skills', {})
-    key_workouts = race_json.get('key_workouts', [])
+    # Use the actual JSON structure: race_metadata, race_characteristics, etc.
+    metadata = race_json.get('race_metadata', {})
+    characteristics = race_json.get('race_characteristics', {})
+    hooks = race_json.get('race_hooks', {})
+    guide_vars = race_json.get('guide_variables', {})
+    non_negs = race_json.get('non_negotiables', [])
+    
+    # Parse location from metadata.location (format: "City, State")
+    location_str = metadata.get('location', '')
+    location_parts = [p.strip() for p in location_str.split(',')] if location_str else []
+    location_city = location_parts[0] if location_parts else ''
+    location_state = location_parts[1] if len(location_parts) > 1 else ''
+    
+    # Build key challenges from guide_variables or characteristics
+    challenges = guide_vars.get('race_challenges', [])
+    if isinstance(challenges, list):
+        key_challenges = ', '.join(challenges)
+    else:
+        key_challenges = str(challenges) if challenges else ''
+    
+    # Terrain description
+    terrain = characteristics.get('terrain', '')
+    terrain_map = {
+        'flint_hills': 'Flint Hills gravel roads',
+        'mountain': 'Mountainous terrain',
+        'rolling': 'Rolling hills',
+        'flat': 'Flat terrain'
+    }
+    terrain_desc = terrain_map.get(terrain, terrain)
+    
+    # Duration estimate (rough calculation: 200 miles ≈ 10-12 hours for most)
+    distance = metadata.get('distance_miles', 0)
+    if distance >= 200:
+        duration = '10-12 hours'
+    elif distance >= 100:
+        duration = '5-7 hours'
+    else:
+        duration = '3-5 hours'
     
     data = {
         # Basic race info
-        'RACE_NAME': race.get('name', ''),
-        'RACE_SLUG': race.get('slug', ''),
-        'RACE_TAGLINE': race.get('tagline', ''),
-        'RACE_DESCRIPTION': race.get('description', ''),
-        'DISTANCE': str(vitals.get('distance_miles', '')),
-        'ELEVATION_GAIN': f"{vitals.get('elevation_gain_ft', ''):,}" if vitals.get('elevation_gain_ft') else '',
-        'RACE_ELEVATION': str(vitals.get('elevation_ft', '')),
-        'TERRAIN_DESCRIPTION': race.get('terrain_description', ''),
-        'DURATION_ESTIMATE': race.get('duration_estimate', ''),
-        'RACE_KEY_CHALLENGES': race.get('key_challenges', ''),
-        'LOCATION_CITY': location.get('city', ''),
-        'LOCATION_STATE': location.get('state', ''),
+        'RACE_NAME': metadata.get('name', guide_vars.get('race_name', '')),
+        'RACE_SLUG': metadata.get('name', '').lower().replace(' ', '-'),
+        'RACE_TAGLINE': hooks.get('punchy', ''),
+        'RACE_DESCRIPTION': hooks.get('detail', ''),
+        'DISTANCE': str(metadata.get('distance_miles', guide_vars.get('race_distance', '').replace(' miles', ''))),
+        'ELEVATION_GAIN': f"{metadata.get('elevation_feet', 0):,}" if metadata.get('elevation_feet') else guide_vars.get('race_elevation', ''),
+        'RACE_ELEVATION': str(metadata.get('avg_elevation_feet', characteristics.get('altitude_feet', ''))),
+        'TERRAIN_DESCRIPTION': terrain_desc or guide_vars.get('race_terrain', ''),
+        'DURATION_ESTIMATE': duration,
+        'RACE_KEY_CHALLENGES': key_challenges or guide_vars.get('race_challenges', ''),
+        'LOCATION_CITY': location_city or guide_vars.get('race_location', '').split(',')[0] if guide_vars.get('race_location') else '',
+        'LOCATION_STATE': location_state or (guide_vars.get('race_location', '').split(',')[1].strip() if ',' in guide_vars.get('race_location', '') else ''),
         
-        # Radar scores
-        'RADAR_ELEVATION': str(radar.get('elevation', {}).get('score', 3)),
-        'RADAR_LENGTH': str(radar.get('length', {}).get('score', 3)),
-        'RADAR_TECHNICALITY': str(radar.get('technicality', {}).get('score', 3)),
-        'RADAR_CLIMATE': str(radar.get('climate', {}).get('score', 3)),
-        'RADAR_ALTITUDE': str(radar.get('altitude', {}).get('score', 1)),
-        'RADAR_ADVENTURE': str(radar.get('adventure', {}).get('score', 3)),
+        # Radar scores (defaults if not in JSON)
+        'RADAR_ELEVATION': '3',
+        'RADAR_LENGTH': '3',
+        'RADAR_TECHNICALITY': '3',
+        'RADAR_CLIMATE': '3',
+        'RADAR_ALTITUDE': '1',
+        'RADAR_ADVENTURE': '3',
         
-        # Race-specific content
-        'RACE_SUPPORT_URL': race.get('support_url', ''),
-        'RECOMMENDED_TIRE_WIDTH': race.get('recommended_tire_width', '38-42mm'),
-        'AID_STATION_STRATEGY': race.get('aid_station_strategy', ''),
-        'WEATHER_STRATEGY': race.get('weather_strategy', ''),
-        'RACE_SPECIFIC_SKILL_NOTES': race.get('skill_notes', ''),
-        'RACE_SPECIFIC_TACTICS': race.get('tactics', ''),
-        'EQUIPMENT_CHECKLIST': race.get('equipment_checklist', ''),
+        # Race-specific content (defaults)
+        'RACE_SUPPORT_URL': '',
+        'RECOMMENDED_TIRE_WIDTH': '38-42mm',
+        'AID_STATION_STRATEGY': '',
+        'WEATHER_STRATEGY': characteristics.get('typical_weather', guide_vars.get('race_weather', '')),
+        'RACE_SPECIFIC_SKILL_NOTES': '',
+        'RACE_SPECIFIC_TACTICS': '',
+        'EQUIPMENT_CHECKLIST': '',
         
-        # Tier/level from plan context (may be overridden)
+        # Tier/level from plan context (will be overridden by plan data)
         'ABILITY_LEVEL': race_json.get('ability_level', 'Intermediate'),
         'TIER_NAME': race_json.get('tier_name', 'Finisher'),
         'WEEKLY_HOURS': str(race_json.get('weekly_hours', 10)),
         'WEEKLY_STRUCTURE_DESCRIPTION': race_json.get('weekly_structure', ''),
         
-        # Skill 5 (race-specific)
-        'SKILL_5_NAME': skills.get('skill_5_name', 'Race-Specific Skill'),
-        'SKILL_5_WHY': skills.get('skill_5_why', ''),
-        'SKILL_5_HOW': skills.get('skill_5_how', ''),
-        'SKILL_5_CUE': skills.get('skill_5_cue', ''),
+        # Skill 5 (race-specific) - defaults
+        'SKILL_5_NAME': 'Race-Specific Skill',
+        'SKILL_5_WHY': '',
+        'SKILL_5_HOW': '',
+        'SKILL_5_CUE': '',
     }
     
     # Non-negotiables (up to 5)
@@ -135,6 +166,7 @@ def extract_race_data(race_json: Dict[str, Any]) -> Dict[str, str]:
         data[f'NON_NEG_{i}_WHY'] = ''
     
     # Key workouts (up to 4)
+    key_workouts = race_json.get('key_workouts', [])
     for i, kw in enumerate(key_workouts[:4], 1):
         data[f'KEY_WORKOUT_{i}_NAME'] = kw.get('name', '')
         data[f'KEY_WORKOUT_{i}_PURPOSE'] = kw.get('purpose', '')
