@@ -71,29 +71,53 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     # Load template
     template = load_template()
     
+    # Extract race data from proper JSON structure
+    metadata = race_data.get('race_metadata', {})
+    characteristics = race_data.get('race_characteristics', {})
+    hooks = race_data.get('race_hooks', {})
+    guide_vars = race_data.get('guide_variables', {})
+    
+    # Get elevation gain (try multiple fields)
+    elevation_gain = (characteristics.get('elevation_gain_feet', 0) or 
+                     metadata.get('elevation_gain_feet', 0) or
+                     race_data.get('elevation_gain_feet', 0))
+    try:
+        elevation_gain = int(elevation_gain) if elevation_gain else 0
+        elevation_str = f"{elevation_gain:,} feet of elevation gain" if elevation_gain else "XXX feet of elevation gain"
+    except (ValueError, TypeError):
+        elevation_str = "XXX feet of elevation gain"
+    
+    # Get distance
+    distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
+    try:
+        distance = int(distance) if distance else 0
+        distance_str = str(distance) if distance else 'XXX'
+    except (ValueError, TypeError):
+        distance_str = 'XXX'
+    
     # Build substitution dictionary
     substitutions = {
-        '{{RACE_NAME}}': race_data.get('name', 'Race Name'),
-        '{{DISTANCE}}': str(race_data.get('distance_miles', 'XXX')),
-        '{{TERRAIN_DESCRIPTION}}': race_data.get('terrain_description', 'varied terrain'),
-        '{{ELEVATION_GAIN}}': f"{race_data.get('elevation_gain_feet', 'XXX'):,} feet of elevation gain",
-        '{{DURATION_ESTIMATE}}': race_data.get('duration_estimate', 'X-X hours'),
-        '{{RACE_DESCRIPTION}}': race_data.get('description', 'Race description here'),
+        '{{RACE_NAME}}': metadata.get('name', race_data.get('name', 'Race Name')),
+        '{{DISTANCE}}': distance_str,
+        '{{TERRAIN_DESCRIPTION}}': characteristics.get('terrain_description', guide_vars.get('terrain_description', 'varied terrain')),
+        '{{ELEVATION_GAIN}}': elevation_str,
+        '{{DURATION_ESTIMATE}}': guide_vars.get('duration_estimate', metadata.get('duration_estimate', 'X-X hours')),
+        '{{RACE_DESCRIPTION}}': hooks.get('detail', metadata.get('description', 'Race description here')),
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
         '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
         '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
-        '{{RACE_KEY_CHALLENGES}}': race_data.get('key_challenges', 'technical terrain, elevation, and endurance'),
+        '{{RACE_KEY_CHALLENGES}}': ', '.join(guide_vars.get('race_challenges', [])) if isinstance(guide_vars.get('race_challenges'), list) else guide_vars.get('race_challenges', 'technical terrain, elevation, and endurance'),
         '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
-        '{{RACE_ELEVATION}}': str(race_data.get('elevation_gain_feet', 'XXX')),
-        '{{RACE_SPECIFIC_SKILL_NOTES}}': race_data.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
-        '{{RACE_SPECIFIC_TACTICS}}': race_data.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
-        '{{WEATHER_STRATEGY}}': race_data.get('weather_strategy', 'Check forecast week of. Pack layers.'),
-        '{{AID_STATION_STRATEGY}}': race_data.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
-        '{{ALTITUDE_POWER_LOSS}}': race_data.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
-        '{{RECOMMENDED_TIRE_WIDTH}}': race_data.get('recommended_tire_width', '38-42mm'),
+        '{{RACE_ELEVATION}}': str(elevation_gain) if elevation_gain and isinstance(elevation_gain, (int, float)) else 'XXX',
+        '{{RACE_SPECIFIC_SKILL_NOTES}}': guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
+        '{{RACE_SPECIFIC_TACTICS}}': guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
+        '{{WEATHER_STRATEGY}}': guide_vars.get('weather_strategy', 'Check forecast week of. Pack layers.'),
+        '{{AID_STATION_STRATEGY}}': guide_vars.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
+        '{{ALTITUDE_POWER_LOSS}}': guide_vars.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
+        '{{RECOMMENDED_TIRE_WIDTH}}': characteristics.get('recommended_tire_width', guide_vars.get('recommended_tire_width', '38-42mm')),
         '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
-        '{{RACE_SUPPORT_URL}}': race_data.get('website', 'https://example.com'),
+        '{{RACE_SUPPORT_URL}}': metadata.get('website', race_data.get('website', 'https://example.com')),
         
         # Infographic placeholders (now all generated as HTML tables/diagrams)
         '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',  # Could be enhanced later
@@ -314,7 +338,7 @@ def generate_difficulty_table(race_data):
             </tr>
             <tr>
                 <td><strong>Elevation Gain</strong></td>
-                <td>{race_data.get('elevation_gain_feet', 'N/A'):,} feet</td>
+                <td>{int(race_data.get('elevation_gain_feet', 0) or race_data.get('race_metadata', {}).get('elevation_feet', 0) or 0):,} feet</td>
             </tr>
             <tr>
                 <td><strong>Technical Difficulty</strong></td>
