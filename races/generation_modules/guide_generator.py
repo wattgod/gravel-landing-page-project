@@ -79,6 +79,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     
     # Get elevation gain (try multiple fields - note: JSON uses 'elevation_feet' in metadata for total gain)
     # Also check guide_variables which may have formatted string
+    elevation_gain = 0
     elevation_gain_str = guide_vars.get('race_elevation', '')
     if elevation_gain_str:
         # Extract number from string like "11,000 feet"
@@ -86,14 +87,15 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         match = re.search(r'([\d,]+)', str(elevation_gain_str))
         if match:
             elevation_gain = int(match.group(1).replace(',', ''))
-        else:
-            elevation_gain = 0
-    else:
+    
+    # If not found in guide_vars, try metadata (elevation_feet is the total gain)
+    if not elevation_gain:
         elevation_gain = (metadata.get('elevation_feet', 0) or
-                         characteristics.get('elevation_gain_feet', 0) or 
-                         metadata.get('elevation_gain_feet', 0) or
-                         race_data.get('elevation_gain_feet', 0) or
-                         race_data.get('elevation_feet', 0))
+                          characteristics.get('elevation_gain_feet', 0) or 
+                          metadata.get('elevation_gain_feet', 0) or
+                          race_data.get('elevation_gain_feet', 0) or
+                          race_data.get('elevation_feet', 0))
+    
     try:
         elevation_gain = int(elevation_gain) if elevation_gain else 0
         elevation_str = f"{elevation_gain:,} feet of elevation gain" if elevation_gain else "XXX feet of elevation gain"
@@ -232,12 +234,13 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         if critical_unreplaced:
             print(f"  ⚠️  Warning: Unreplaced placeholders found: {set(critical_unreplaced)}")
     
-    # Conditionally remove altitude section if elevation < 3000 feet
-    # Check multiple possible field names for elevation
+    # Conditionally remove altitude section if elevation < 5000 feet
+    # Check multiple possible field names for elevation (avg_elevation_feet is the race location elevation)
     race_elevation = 0
     if isinstance(race_data, dict):
-        race_elevation = (race_data.get('race_metadata', {}).get('avg_elevation_feet', 0) or
-                         race_data.get('race_characteristics', {}).get('altitude_feet', 0) or
+        race_elevation = (metadata.get('avg_elevation_feet', 0) or
+                         characteristics.get('altitude_feet', 0) or
+                         metadata.get('altitude_feet', 0) or
                          race_data.get('elevation_feet', 0) or
                          race_data.get('avg_elevation_feet', 0) or
                          race_data.get('altitude_feet', 0))
@@ -247,14 +250,22 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     except (ValueError, TypeError):
         race_elevation = 0
     
-    if race_elevation < 3000:
-        # Remove altitude section (between START and END comments)
+    if race_elevation < 5000:
+        # Remove altitude section (between START and END comments - match both instances)
         import re
-        altitude_pattern = r'<!-- START ALTITUDE SECTION[^>]*-->.*?<!-- END ALTITUDE SECTION -->'
-        output = re.sub(altitude_pattern, '', output, flags=re.DOTALL)
-        print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 3000)")
+        # Remove first altitude section marker (ONLY SHOW IF >= 3000)
+        altitude_pattern1 = r'<!-- START ALTITUDE SECTION - ONLY SHOW IF RACE_ELEVATION >= 3000 -->.*?<!-- END ALTITUDE SECTION -->'
+        output = re.sub(altitude_pattern1, '', output, flags=re.DOTALL)
+        # Remove second altitude section (the detailed one - REMOVE IF < 5000)
+        altitude_pattern2 = r'<!-- START ALTITUDE SECTION - REMOVE IF.*?<!-- END ALTITUDE SECTION -->'
+        output = re.sub(altitude_pattern2, '', output, flags=re.DOTALL)
+        print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 5000)")
     else:
-        print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 3000)")
+        # Remove only the "REMOVE IF < 5000" section, keep the main one
+        import re
+        altitude_pattern2 = r'<!-- START ALTITUDE SECTION - REMOVE IF.*?<!-- END ALTITUDE SECTION -->'
+        output = re.sub(altitude_pattern2, '', output, flags=re.DOTALL)
+        print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 5000)")
     
     # Write output
     with open(output_path, 'w', encoding='utf-8') as f:
