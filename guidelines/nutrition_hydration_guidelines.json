@@ -1,0 +1,110 @@
+{
+  "nutrition_model": "Gravel God / SMD_15 Fueling Model",
+  "daily_nutrition": {
+    "calculation_method": "BMR + IEE + Training Expenditure",
+    "macronutrient_targets": {
+      "carbohydrates": {
+        "calculation": "Based on FTP threshold and TSS (10-16g per TSS point)",
+        "ranges_by_ftp": {
+          "<=200": 10,
+          "201-240": 11,
+          "241-270": 12,
+          "271-300": 13,
+          "301-330": 14,
+          "331-360": 15,
+          ">360": 16
+        },
+        "note": "Use daily carbohydrate target as ceiling, allocate strategically around training"
+      },
+      "protein": {
+        "calculation": "Weight (kg) × 2.2 × activity factor",
+        "activity_factors": {
+          "<1 hour training": 0.7,
+          "1-2 hours": 0.8,
+          "2-2.5 hours": 0.9,
+          ">2.5 hours or weight goal": 1.0
+        },
+        "note": "Higher protein needed for weight loss/gain goals or high training volume"
+      },
+      "fat": {
+        "calculation": "Remaining calories after CHO and PRO (9 kcal/g)",
+        "note": "Fill remaining energy needs with healthy fats"
+      }
+    }
+  },
+  "on_bike_fueling": {
+    "guidelines": [
+      {
+        "duration": "<60 min",
+        "intensity": "easy",
+        "carbohydrates": "usually water only",
+        "fluids": "water only",
+        "electrolytes": "not required"
+      },
+      {
+        "duration": "60-90 min",
+        "intensity": "endurance/tempo",
+        "carbohydrates": "20-40 g/hr if needed",
+        "fluids": "500-750 ml/hr",
+        "electrolytes": "light (300-500 mg sodium/liter)"
+      },
+      {
+        "duration": "90-180 min",
+        "intensity": "endurance/tempo",
+        "carbohydrates": "40-70 g/hr",
+        "fluids": "500-750 ml/hr",
+        "electrolytes": "moderate (500-800 mg sodium/liter)"
+      },
+      {
+        "duration": "3-6+ hours",
+        "intensity": "big days / race sims",
+        "carbohydrates": "70-90 g/hr (up to 100-110 g/hr for well-trained guts)",
+        "fluids": "600-900 ml/hr",
+        "electrolytes": "aggressive (500-800 mg sodium/liter)"
+      }
+    ],
+    "heat_modifications": {
+      "fluids": "push toward 750-1000+ ml/hr",
+      "electrolytes": "500-800 mg sodium per liter",
+      "note": "Increase fluid intake and electrolyte replacement in hot conditions"
+    },
+    "workout_notes": {
+      "brief_format": true,
+      "examples": [
+        "<90 min: Water only or 1 bottle/hr with electrolytes",
+        "60-90 min: 20-40g carbs/hr if needed, 500-750ml fluid/hr",
+        "90-180 min: 40-70g carbs/hr, 500-750ml fluid/hr, electrolytes",
+        "3-6+ hours: 70-90g carbs/hr (up to 100g), 600-900ml fluid/hr, aggressive electrolytes"
+      ]
+    }
+  },
+  "daily_baseline_hydration": {
+    "morning": {
+      "water": "~500 ml",
+      "sodium": "500-1000 mg",
+      "timing": "with breakfast",
+      "note": "Start day hydrated"
+    },
+    "pre_ride": {
+      "water": "500 ml",
+      "sodium": "300-600 mg",
+      "timing": "60 minutes before riding",
+      "target": "Light urine color (not clear)"
+    },
+    "monitoring": {
+      "sweat_rate": "If losing >1-1.5% bodyweight, increase sodium",
+      "urine_color": "Light (not clear) = well hydrated"
+    }
+  },
+  "gut_training": {
+    "principle": "Train your gut aggressively for race-day demands",
+    "progression": [
+      "Start with 60g carbs/hr on long rides",
+      "Gradually increase to 70-90g carbs/hr",
+      "Well-trained athletes can handle 100-110g carbs/hr",
+      "Practice race-day nutrition products during training"
+    ],
+    "workout_note": "Train your gut aggressively. Practice race-day nutrition products."
+  }
+}
+

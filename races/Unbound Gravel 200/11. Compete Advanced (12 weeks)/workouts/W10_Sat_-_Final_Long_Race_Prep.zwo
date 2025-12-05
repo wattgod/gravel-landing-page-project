@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Sat - Final Long Race Prep</name>
+  <description>• STRUCTURE:
+30 min easy → 2x (1 min Z5/Z6 → 19 min Z3) (8 min easy between) → Final 30-45 min easy
+
+• Final race simulation with loaded intervals. Loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 19 min Z3 (self-selected cadence). Eat 70g carbs/hour. Test EVERYTHING today—this is your last chance for full race rehearsal.
+
+• LOADED INTERVALS: Starting with high-intensity burst then settling into lower zone simulates race starts and surges.
+
+• CADENCE WORK: High cadence (100+ rpm) on loaded interval starts, self-selected on Z3 portions.
+
+• UNBOUND GRAVEL 200 - HEAT TRAINING (Ideal - High Impact):
+Protocol: 1) Ride Outside or Indoors With Minimal Cooling: 45-75 min Z2 OR Intervals with fan on low. 2) Post-ride heat exposure: 15-25 min sauna or hot bath. 3) Hydration Target: 1-1.5 L/hr loss is OK. Replace 75% of losses within 2 hours. Sodium 1000-1500 mg/hr. 4) Avoid cooling for 20-30 min after.
+
+Effect: Maximal heat adaptation, big plasma volume gains, noticeable RPE reductions in hot races.
+
+Use When: Preparing for hot events (Unbound Gravel 200), you're healthy and recovered, you can afford temporary fatigue.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.
+
+• POSITION ALTERNATION:
+While racing you get as aero as possible (drops), but in training people often try to produce maximum power (hoods, out of saddle). These aren't the same thing. Alternate position every 30 minutes: 30 min in the drops (aero, race position) → 30 min in the hoods (power production, comfort). This builds both aero efficiency and power production. For 118-minute rides, aim for 1 position change.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="0.85" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <SteadyState Duration="2400" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Sun - Strength Training (Peak Load)</name>
+  <description>• Duration: 45-50 min
+
+• Strength: Heavy squats, heavy RDLs, weighted planks, heavy step-ups, hip thrusts (3x6-8 at peak weight, then 1x12 lighter)
+
+• Notes: Peak strength week. Heaviest loads of plan with perfect form. Rest 3-4 min between heavy sets. This is your strength ceiling before maintenance phase. Be conservative—injury prevention over ego.
+
+• STRENGTH TRAINING NOTE: Perform your own strength training program. Suggested focus: Heavy squats, heavy RDLs, weighted planks, heavy step-ups, hip thrusts (3x6-8 at peak weight, then 1x12 lighter). Peak strength week. Heaviest loads of plan with perfect form. Rest 3-4 min between heavy sets. Be conservative—injury prevention over ego. Strength work is best done on days with lighter training load.
+
+• UNBOUND GRAVEL 200 - HEAT TRAINING (Ideal - High Impact):
+Protocol: 1) Ride Outside or Indoors With Minimal Cooling: 45-75 min Z2 OR Intervals with fan on low. 2) Post-ride heat exposure: 15-25 min sauna or hot bath. 3) Hydration Target: 1-1.5 L/hr loss is OK. Replace 75% of losses within 2 hours. Sodium 1000-1500 mg/hr. 4) Avoid cooling for 20-30 min after.
+
+Effect: Maximal heat adaptation, big plasma volume gains, noticeable RPE reductions in hot races.
+
+Use When: Preparing for hot events (Unbound Gravel 200), you're healthy and recovered, you can afford temporary fatigue.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

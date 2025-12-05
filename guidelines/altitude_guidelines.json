@@ -1,0 +1,14 @@
+{
+  "altitude_considerations": {
+    "note": "This file will contain altitude-specific training modifications",
+    "placeholder": true,
+    "future_sections": [
+      "acclimatization_protocols",
+      "training_intensity_adjustments",
+      "hydration_at_altitude",
+      "sleep_quality_considerations",
+      "recovery_needs"
+    ]
+  }
+}
+

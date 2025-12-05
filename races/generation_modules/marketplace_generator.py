@@ -18,8 +18,30 @@ from generation_modules.gravel_god_copy_variations import (
     CHECKMARK
 )
 
+def unicode_to_html_entities(text):
+    """Convert Unicode characters to HTML entities to avoid encoding issues"""
+    if not isinstance(text, str):
+        return text
+    
+    # Map Unicode characters to HTML entities
+    replacements = {
+        '✓': '&#10004;',  # CHECKMARK
+        '→': '&rarr;',    # ARROW
+        '—': '&mdash;',   # EM DASH
+        '•': '&bull;',    # BULLET
+        '·': '&middot;',  # MIDDLE DOT
+        '☆': '&#9734;',  # STAR
+    }
+    
+    result = text
+    for unicode_char, html_entity in replacements.items():
+        result = result.replace(unicode_char, html_entity)
+    
+    return result
+
 # Marketplace HTML Template (neo-brutalist styling)
 # Uses varied copy from gravel_god_copy_variations.py
+# Note: Uses HTML entities instead of Unicode to avoid encoding issues
 MARKETPLACE_TEMPLATE = """<div style="font-family:'Courier New',monospace;background:#F5F5DC;padding:20px;">
 <div style="background:#59473C;color:#F5F5DC;padding:12px 20px;display:inline-block;margin-bottom:16px;">
 GRAVEL GOD CYCLING
@@ -91,13 +113,20 @@ def get_masterclass_topics_html(race_data, copy_variations):
         if variation_key and variation_key in copy_variations:
             topic_name = topic_names.get(topic_key, topic_key.title())
             topic_desc = copy_variations[variation_key]
-            html_lines.append(f'<p style="margin:4px 0;"><strong>→ {topic_name}:</strong> {topic_desc}</p>')
+            # Convert Unicode to HTML entities
+            topic_name = unicode_to_html_entities(topic_name)
+            topic_desc = unicode_to_html_entities(topic_desc)
+            html_lines.append(f'<p style="margin:4px 0;"><strong>&rarr; {topic_name}:</strong> {topic_desc}</p>')
     
     # Add recovery/tires/strength as combined line if not already included
     if "recovery_tires_strength" not in priority_order[:6] and "topic_recovery" in copy_variations:
-        html_lines.append(f'<p style="margin-bottom:0;"><strong>→ Recovery, Tires, Strength:</strong> {copy_variations["topic_recovery"]}</p>')
+        recovery_desc = unicode_to_html_entities(copy_variations["topic_recovery"])
+        html_lines.append(f'<p style="margin-bottom:0;"><strong>&rarr; Recovery, Tires, Strength:</strong> {recovery_desc}</p>')
     
-    return "\n".join(html_lines) if html_lines else '<p style="margin:4px 0;"><strong>→ Training Guide:</strong> Comprehensive 35-page guide included</p>'
+    if not html_lines:
+        return '<p style="margin:4px 0;"><strong>&rarr; Training Guide:</strong> Comprehensive 35-page guide included</p>'
+    
+    return "\n".join(html_lines)
 
 def get_tier_description(tier, level, plan_template):
     """Get tier description from plan template or defaults"""
@@ -183,29 +212,33 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     if not non_negotiables:
         # Fallback to original non-negotiables if copy variations didn't generate them
         non_negs = race_data.get("non_negotiables", [])[:3]
-        non_negotiables = [f"{CHECKMARK} {nn}" for nn in non_negs]
+        non_negotiables = [f"&#10004; {nn}" for nn in non_negs]  # Use HTML entity instead of Unicode
     
-    non_negotiables_html = "\n".join([f'<p style="margin:4px 0;">{nn}</p>' for nn in non_negotiables])
+    # Convert any remaining Unicode characters to HTML entities
+    non_negotiables_html = "\n".join([
+        f'<p style="margin:4px 0;">{unicode_to_html_entities(nn)}</p>' 
+        for nn in non_negotiables
+    ])
     
-    # Fill template with varied copy
+    # Fill template with varied copy (convert Unicode to HTML entities)
     html_content = MARKETPLACE_TEMPLATE.format(
-        race_hook=race_data.get("race_hooks", {}).get("punchy", marketplace_vars.get("race_hook", "")),
-        race_hook_detail=race_data.get("race_hooks", {}).get("detail", marketplace_vars.get("race_hook_detail", "")),
-        fifteen_plans_headline=copy['fifteen_plans_headline'],
-        fifteen_plans_body=copy['fifteen_plans_body'],
-        philosophy_tagline=copy['philosophy_tagline'],
-        masterclass_headline=copy['masterclass_headline'],
-        masterclass_intro=copy['masterclass_intro'],
-        masterclass_topics=masterclass_topics,
-        race_name=marketplace_vars.get("race_name", race_data["race_metadata"]["name"]),
-        non_negotiables_html=non_negotiables_html,
+        race_hook=unicode_to_html_entities(race_data.get("race_hooks", {}).get("punchy", marketplace_vars.get("race_hook", ""))),
+        race_hook_detail=unicode_to_html_entities(race_data.get("race_hooks", {}).get("detail", marketplace_vars.get("race_hook_detail", ""))),
+        fifteen_plans_headline=unicode_to_html_entities(copy['fifteen_plans_headline']),
+        fifteen_plans_body=unicode_to_html_entities(copy['fifteen_plans_body']),
+        philosophy_tagline=unicode_to_html_entities(copy['philosophy_tagline']),
+        masterclass_headline=unicode_to_html_entities(copy['masterclass_headline']),
+        masterclass_intro=unicode_to_html_entities(copy['masterclass_intro']),
+        masterclass_topics=masterclass_topics,  # Already converted in get_masterclass_topics_html
+        race_name=unicode_to_html_entities(marketplace_vars.get("race_name", race_data["race_metadata"]["name"])),
+        non_negotiables_html=non_negotiables_html,  # Already converted above
         plan_weeks=plan_weeks,
         num_workouts=num_workouts,
-        tier=tier,
-        level=level,
+        tier=unicode_to_html_entities(tier),
+        level=unicode_to_html_entities(level),
         weekly_hours=weekly_hours,
-        tier_description=copy['tier_description'],
-        level_modifier=copy['level_modifier']
+        tier_description=unicode_to_html_entities(copy['tier_description']),
+        level_modifier=unicode_to_html_entities(copy['level_modifier'])
     )
     
     # Validate character count (must be <4000)

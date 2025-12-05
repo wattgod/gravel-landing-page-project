@@ -1,0 +1,14 @@
+{
+  "technical_considerations": {
+    "note": "This file will contain technical/equipment-specific guidelines",
+    "placeholder": true,
+    "future_sections": [
+      "bike_setup",
+      "tire_pressure_guidelines",
+      "equipment_checklists",
+      "mechanical_preparation",
+      "race_day_logistics"
+    ]
+  }
+}
+
