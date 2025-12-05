@@ -785,6 +785,8 @@ def main():
         ability_level = 'Beginner'
     elif 'intermediate' in plan_name:
         ability_level = 'Intermediate'
+    elif 'advanced' in plan_name and 'goat' in plan_name:
+        ability_level = 'Advanced GOAT'
     elif 'advanced' in plan_name:
         ability_level = 'Advanced'
     elif 'masters' in plan_name:
