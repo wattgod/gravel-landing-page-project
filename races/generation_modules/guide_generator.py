@@ -1,1367 +1,772 @@
 #!/usr/bin/env python3
 """
-Gravel God Training Guide Generator
-Generates HTML training guides from race JSON + plan JSON templates.
-
-Usage:
-    python guide_generator.py --race unbound_200.json --plan compete_masters_complete.json
-    python guide_generator.py --race-dir races/unbound-200/ --all-plans
+Training Guide Generator
+Reads the HTML template and substitutes race-specific data.
 """
 
-import argparse
 import json
-import os
-import re
-import sys
 from pathlib import Path
-from typing import Dict, Any, Optional
-
-# =============================================================================
-# CONSTANTS
-# =============================================================================
-
-# Neo-brutalist color palette
-COLORS = {
-    'cream': '#f5f5dc',
-    'cream_dark': '#ede5d0',
-    'turquoise': '#4ecdc4',
-    'turquoise_light': 'rgba(78, 205, 196, 0.15)',
-    'yellow': '#f4d03f',
-    'yellow_light': '#fef9e7',
-    'brown_dark': '#59473C',
-    'text_dark': '#2c2c2c',
-    'red': '#e74c3c',
-    'red_light': '#fdedec',
-    'green': '#27ae60',
-    'green_light': '#e9f7ef',
-}
-
-# Plan tier metadata
-TIER_INFO = {
-    'ayahuasca': {'hours': '0-5', 'description': 'Minimal time, maximum efficiency'},
-    'finisher': {'hours': '8-12', 'description': 'Finish strong with focused training'},
-    'compete': {'hours': '12-18', 'description': 'Race competitively with serious training'},
-    'podium': {'hours': '18+', 'description': 'Elite preparation for top performance'},
-}
-
-# =============================================================================
-# DATA LOADING
-# =============================================================================
-
-def load_json(filepath: str) -> Dict[str, Any]:
-    """Load JSON file with error handling."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print(f"ERROR: File not found: {filepath}")
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: Invalid JSON in {filepath}: {e}")
-        sys.exit(1)
 
 
-def extract_race_data(race_json: Dict[str, Any]) -> Dict[str, str]:
-    """Extract and flatten race data for placeholder substitution."""
-    # Use the actual JSON structure: race_metadata, race_characteristics, etc.
-    metadata = race_json.get('race_metadata', {})
-    characteristics = race_json.get('race_characteristics', {})
-    hooks = race_json.get('race_hooks', {})
-    guide_vars = race_json.get('guide_variables', {})
-    non_negs = race_json.get('non_negotiables', [])
-    
-    # Parse location from metadata.location (format: "City, State")
-    location_str = metadata.get('location', '')
-    location_parts = [p.strip() for p in location_str.split(',')] if location_str else []
-    location_city = location_parts[0] if location_parts else ''
-    location_state = location_parts[1] if len(location_parts) > 1 else ''
-    
-    # Build key challenges from guide_variables or characteristics
-    challenges = guide_vars.get('race_challenges', [])
-    if isinstance(challenges, list):
-        key_challenges = ', '.join(challenges)
-    else:
-        key_challenges = str(challenges) if challenges else ''
-    
-    # Terrain description
-    terrain = characteristics.get('terrain', '')
-    terrain_map = {
-        'flint_hills': 'Flint Hills gravel roads',
-        'mountain': 'Mountainous terrain',
-        'rolling': 'Rolling hills',
-        'flat': 'Flat terrain'
-    }
-    terrain_desc = terrain_map.get(terrain, terrain)
-    
-    # Duration estimate (rough calculation: 200 miles ≈ 10-12 hours for most)
-    distance = metadata.get('distance_miles', 0)
-    if distance >= 200:
-        duration = '10-12 hours'
-    elif distance >= 100:
-        duration = '5-7 hours'
-    else:
-        duration = '3-5 hours'
-    
-    data = {
-        # Basic race info
-        'RACE_NAME': metadata.get('name', guide_vars.get('race_name', '')),
-        'RACE_SLUG': metadata.get('name', '').lower().replace(' ', '-'),
-        'RACE_TAGLINE': hooks.get('punchy', ''),
-        'RACE_DESCRIPTION': hooks.get('detail', ''),
-        'DISTANCE': str(metadata.get('distance_miles', guide_vars.get('race_distance', '').replace(' miles', ''))),
-        'ELEVATION_GAIN': f"{metadata.get('elevation_feet', 0):,}" if metadata.get('elevation_feet') else guide_vars.get('race_elevation', ''),
-        'RACE_ELEVATION': str(metadata.get('avg_elevation_feet', characteristics.get('altitude_feet', ''))),
-        'TERRAIN_DESCRIPTION': terrain_desc or guide_vars.get('race_terrain', ''),
-        'DURATION_ESTIMATE': duration,
-        'RACE_KEY_CHALLENGES': key_challenges or guide_vars.get('race_challenges', ''),
-        'LOCATION_CITY': location_city or guide_vars.get('race_location', '').split(',')[0] if guide_vars.get('race_location') else '',
-        'LOCATION_STATE': location_state or (guide_vars.get('race_location', '').split(',')[1].strip() if ',' in guide_vars.get('race_location', '') else ''),
-        
-        # Radar scores (defaults if not in JSON)
-        'RADAR_ELEVATION': '3',
-        'RADAR_LENGTH': '3',
-        'RADAR_TECHNICALITY': '3',
-        'RADAR_CLIMATE': '3',
-        'RADAR_ALTITUDE': '1',
-        'RADAR_ADVENTURE': '3',
-        
-        # Race-specific content (defaults)
-        'RACE_SUPPORT_URL': '',
-        'RECOMMENDED_TIRE_WIDTH': '38-42mm',
-        'AID_STATION_STRATEGY': '',
-        'WEATHER_STRATEGY': characteristics.get('typical_weather', guide_vars.get('race_weather', '')),
-        'RACE_SPECIFIC_SKILL_NOTES': '',
-        'RACE_SPECIFIC_TACTICS': '',
-        'EQUIPMENT_CHECKLIST': '',
-        
-        # Tier/level from plan context (will be overridden by plan data)
-        'ABILITY_LEVEL': race_json.get('ability_level', 'Intermediate'),
-        'TIER_NAME': race_json.get('tier_name', 'Finisher'),
-        'WEEKLY_HOURS': str(race_json.get('weekly_hours', 10)),
-        'WEEKLY_STRUCTURE_DESCRIPTION': race_json.get('weekly_structure', ''),
-        
-        # Skill 5 (race-specific) - defaults
-        'SKILL_5_NAME': 'Race-Specific Skill',
-        'SKILL_5_WHY': '',
-        'SKILL_5_HOW': '',
-        'SKILL_5_CUE': '',
-    }
-    
-    # Non-negotiables (up to 5)
-    for i, nn in enumerate(non_negs[:5], 1):
-        # Handle both string and dict formats
-        if isinstance(nn, str):
-            data[f'NON_NEG_{i}_REQUIREMENT'] = nn
-            data[f'NON_NEG_{i}_BY_WHEN'] = ''
-            data[f'NON_NEG_{i}_WHY'] = ''
+def load_race_data(race_json_path):
+    """Load race data from JSON file"""
+    with open(race_json_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def load_template():
+    """Load the HTML template"""
+    # Get path relative to this script's location
+    script_dir = Path(__file__).parent
+    # Template is in the same directory as the generator
+    template_path = script_dir / 'guide_template_full.html'
+    with open(template_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+
+def extract_non_negotiables(race_data, index):
+    """Extract non-negotiable data, handling both dict and string formats"""
+    # Check multiple possible locations for non_negotiables
+    non_negs = (race_data.get('non_negotiables', []) or
+                race_data.get('race_metadata', {}).get('non_negotiables', []) or
+                race_data.get('guide_variables', {}).get('non_negotiables', []))
+    if index < len(non_negs):
+        nn = non_negs[index]
+        if isinstance(nn, dict):
+            return {
+                'requirement': nn.get('requirement', ''),
+                'by_when': nn.get('by_when', ''),
+                'why': nn.get('why', '')
+            }
         else:
-            data[f'NON_NEG_{i}_REQUIREMENT'] = nn.get('requirement', '')
-            data[f'NON_NEG_{i}_BY_WHEN'] = nn.get('by_when', '')
-            data[f'NON_NEG_{i}_WHY'] = nn.get('why', '')
-
-    # Pad remaining non-negotiables if fewer than 5
-    for i in range(len(non_negs) + 1, 6):
-        data[f'NON_NEG_{i}_REQUIREMENT'] = ''
-        data[f'NON_NEG_{i}_BY_WHEN'] = ''
-        data[f'NON_NEG_{i}_WHY'] = ''
-    
-    # Key workouts (up to 4)
-    key_workouts = race_json.get('key_workouts', [])
-    for i, kw in enumerate(key_workouts[:4], 1):
-        data[f'KEY_WORKOUT_{i}_NAME'] = kw.get('name', '')
-        data[f'KEY_WORKOUT_{i}_PURPOSE'] = kw.get('purpose', '')
-    
-    # Pad remaining key workouts if fewer than 4
-    for i in range(len(key_workouts) + 1, 5):
-        data[f'KEY_WORKOUT_{i}_NAME'] = ''
-        data[f'KEY_WORKOUT_{i}_PURPOSE'] = ''
-    
-    return data
+            # String format - use as requirement
+            return {
+                'requirement': str(nn),
+                'by_when': '',
+                'why': ''
+            }
+    # Defaults
+    defaults = [
+        {'requirement': 'Power meter or heart rate monitor', 'by_when': 'Week 1', 'why': 'Precise power data ensures correct training zones and optimal adaptation'},
+        {'requirement': 'Heart rate monitor', 'by_when': 'Week 1', 'why': 'Heart rate provides backup data and helps gauge recovery status'},
+        {'requirement': 'Professional bike fit', 'by_when': 'Week 2-3', 'why': 'Proper position prevents injury and maximizes power transfer'},
+        {'requirement': 'Consistent training', 'by_when': 'Ongoing', 'why': 'Consistency is the foundation of adaptation - skip weeks, lose gains'},
+        {'requirement': 'Follow the plan', 'by_when': 'Ongoing', 'why': 'The plan works if you work it - modifications undermine the system'}
+    ]
+    return defaults[index] if index < len(defaults) else {'requirement': '', 'by_when': '', 'why': ''}
 
 
-def extract_plan_data(plan_json: Dict[str, Any]) -> Dict[str, str]:
-    """Extract plan metadata for placeholder substitution."""
-    meta = plan_json.get('plan_metadata', {})
-    mods = plan_json.get('default_modifications', {})
+def generate_guide(race_data, tier_name, ability_level, output_path):
+    """
+    Generate a training guide for a specific race, tier, and ability level.
     
-    data = {
-        'PLAN_NAME': meta.get('name', ''),
-        'PLAN_DURATION_WEEKS': str(meta.get('duration_weeks', 12)),
-        'PLAN_PHILOSOPHY': meta.get('philosophy', 'Traditional Pyramidal'),
-        'PLAN_TARGET_HOURS': meta.get('target_hours', ''),
-        'PLAN_TARGET_ATHLETE': meta.get('target_athlete', ''),
-        'PLAN_GOAL': meta.get('goal', ''),
+    Args:
+        race_data: Dict containing race information
+        tier_name: str - "AYAHUASCA", "FINISHER", "COMPETE", or "PODIUM"
+        ability_level: str - "Beginner", "Intermediate", or "Advanced"
+        output_path: str - Where to save the generated HTML
+    """
+    
+    # Load template
+    template = load_template()
+    
+    # Build substitution dictionary
+    substitutions = {
+        '{{RACE_NAME}}': race_data.get('name', 'Race Name'),
+        '{{DISTANCE}}': str(race_data.get('distance_miles', 'XXX')),
+        '{{TERRAIN_DESCRIPTION}}': race_data.get('terrain_description', 'varied terrain'),
+        '{{ELEVATION_GAIN}}': f"{race_data.get('elevation_gain_feet', 'XXX'):,} feet of elevation gain",
+        '{{DURATION_ESTIMATE}}': race_data.get('duration_estimate', 'X-X hours'),
+        '{{RACE_DESCRIPTION}}': race_data.get('description', 'Race description here'),
+        '{{ABILITY_LEVEL}}': ability_level,
+        '{{TIER_NAME}}': tier_name,
+        '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
+        '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
+        '{{RACE_KEY_CHALLENGES}}': race_data.get('key_challenges', 'technical terrain, elevation, and endurance'),
+        '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
+        '{{RACE_ELEVATION}}': str(race_data.get('elevation_gain_feet', 'XXX')),
+        '{{RACE_SPECIFIC_SKILL_NOTES}}': race_data.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
+        '{{RACE_SPECIFIC_TACTICS}}': race_data.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
+        '{{WEATHER_STRATEGY}}': race_data.get('weather_strategy', 'Check forecast week of. Pack layers.'),
+        '{{AID_STATION_STRATEGY}}': race_data.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
+        '{{ALTITUDE_POWER_LOSS}}': race_data.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
+        '{{RECOMMENDED_TIRE_WIDTH}}': race_data.get('recommended_tire_width', '38-42mm'),
+        '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
+        '{{RACE_SUPPORT_URL}}': race_data.get('website', 'https://example.com'),
+        
+        # Infographic placeholders (now all generated as HTML tables/diagrams)
+        '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',  # Could be enhanced later
+        '{{INFOGRAPHIC_RATING_HEX}}': generate_rating_hex(race_data),
+        '{{INFOGRAPHIC_DIFFICULTY_TABLE}}': generate_difficulty_table(race_data),
+        '{{INFOGRAPHIC_FUELING_TABLE}}': generate_fueling_table(race_data),
+        '{{INFOGRAPHIC_MENTAL_MAP}}': generate_mental_map(race_data),
+        '{{INFOGRAPHIC_THREE_ACTS}}': generate_three_acts(race_data),
+        '{{INFOGRAPHIC_INDOOR_OUTDOOR_DECISION}}': generate_indoor_outdoor_decision(race_data),
+        '{{INFOGRAPHIC_TIRE_DECISION}}': generate_tire_decision(race_data),
+        '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': generate_key_workout_summary(race_data),
+        
+        # Non-negotiables (extract from race_data)
+        '{{NON_NEG_1_REQUIREMENT}}': extract_non_negotiables(race_data, 0)['requirement'],
+        '{{NON_NEG_1_BY_WHEN}}': extract_non_negotiables(race_data, 0)['by_when'],
+        '{{NON_NEG_1_WHY}}': extract_non_negotiables(race_data, 0)['why'],
+        '{{NON_NEG_2_REQUIREMENT}}': extract_non_negotiables(race_data, 1)['requirement'],
+        '{{NON_NEG_2_BY_WHEN}}': extract_non_negotiables(race_data, 1)['by_when'],
+        '{{NON_NEG_2_WHY}}': extract_non_negotiables(race_data, 1)['why'],
+        '{{NON_NEG_3_REQUIREMENT}}': extract_non_negotiables(race_data, 2)['requirement'],
+        '{{NON_NEG_3_BY_WHEN}}': extract_non_negotiables(race_data, 2)['by_when'],
+        '{{NON_NEG_3_WHY}}': extract_non_negotiables(race_data, 2)['why'],
+        '{{NON_NEG_4_REQUIREMENT}}': extract_non_negotiables(race_data, 3)['requirement'],
+        '{{NON_NEG_4_BY_WHEN}}': extract_non_negotiables(race_data, 3)['by_when'],
+        '{{NON_NEG_4_WHY}}': extract_non_negotiables(race_data, 3)['why'],
+        '{{NON_NEG_5_REQUIREMENT}}': extract_non_negotiables(race_data, 4)['requirement'],
+        '{{NON_NEG_5_BY_WHEN}}': extract_non_negotiables(race_data, 4)['by_when'],
+        '{{NON_NEG_5_WHY}}': extract_non_negotiables(race_data, 4)['why'],
+        
+        # Skill placeholder examples (would be race-specific)
+        '{{SKILL_5_NAME}}': 'Emergency Repairs',
+        '{{SKILL_5_WHY}}': 'Mechanical issues will happen. Knowing how to fix them keeps you racing.',
+        '{{SKILL_5_HOW}}': 'Practice changing tubes, fixing chains, and adjusting brakes before race day.',
+        '{{SKILL_5_CUE}}': 'Carry tools. Know your bike. Practice fixes.',
     }
     
-    # Extract philosophy-specific guidance if present
-    for key, value in mods.items():
-        if isinstance(value, dict) and value.get('enabled'):
-            data[f'MOD_{key.upper()}_ENABLED'] = 'true'
-            if 'description' in value:
-                data[f'MOD_{key.upper()}_DESC'] = value['description']
+    # Perform all substitutions
+    output = template
+    for placeholder, value in substitutions.items():
+        output = output.replace(placeholder, str(value))
     
-    return data
-
-
-# =============================================================================
-# RADAR CHART SVG GENERATION
-# =============================================================================
-
-def generate_radar_svg(scores: Dict[str, int], size: int = 400) -> str:
-    """Generate SVG radar chart for race difficulty profile."""
-    import math
+    # Conditionally remove altitude section if elevation < 3000 feet
+    # Check multiple possible field names for elevation
+    race_elevation = 0
+    if isinstance(race_data, dict):
+        race_elevation = (race_data.get('race_metadata', {}).get('avg_elevation_feet', 0) or
+                         race_data.get('race_characteristics', {}).get('altitude_feet', 0) or
+                         race_data.get('elevation_feet', 0) or
+                         race_data.get('avg_elevation_feet', 0) or
+                         race_data.get('altitude_feet', 0))
     
-    center = size // 2
-    max_radius = center - 40
+    try:
+        race_elevation = int(race_elevation) if race_elevation else 0
+    except (ValueError, TypeError):
+        race_elevation = 0
     
-    # 6 axes: Elevation, Length, Technical, Climate, Altitude, Adventure
-    labels = ['ELEVATION', 'LENGTH', 'TECHNICAL', 'CLIMATE', 'ALTITUDE', 'ADVENTURE']
-    values = [
-        scores.get('elevation', 3),
-        scores.get('length', 3),
-        scores.get('technicality', 3),
-        scores.get('climate', 3),
-        scores.get('altitude', 1),
-        scores.get('adventure', 3),
-    ]
+    if race_elevation < 3000:
+        # Remove altitude section (between START and END comments)
+        import re
+        altitude_pattern = r'<!-- START ALTITUDE SECTION[^>]*-->.*?<!-- END ALTITUDE SECTION -->'
+        output = re.sub(altitude_pattern, '', output, flags=re.DOTALL)
+        print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 3000)")
+    else:
+        print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 3000)")
     
-    # Calculate polygon points
-    angle_step = 2 * math.pi / 6
-    polygon_points = []
-    label_positions = []
+    # Write output
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(output)
     
-    for i, val in enumerate(values):
-        angle = -math.pi/2 + i * angle_step  # Start at top
-        radius = (val / 5) * max_radius
-        x = center + radius * math.cos(angle)
-        y = center + radius * math.sin(angle)
-        polygon_points.append(f"{x:.0f},{y:.0f}")
-        
-        # Label position (outside the chart)
-        label_radius = max_radius + 30
-        lx = center + label_radius * math.cos(angle)
-        ly = center + label_radius * math.sin(angle)
-        label_positions.append((lx, ly, labels[i], values[i]))
-    
-    # Generate SVG
-    svg_parts = [
-        f'<svg viewBox="0 0 {size} {size}" width="{size}" height="{size}">',
-        f'<rect x="0" y="0" width="{size}" height="{size}" fill="white"/>',
-    ]
-    
-    # Draw concentric circles (5 levels)
-    for level in range(1, 6):
-        r = (level / 5) * max_radius
-        svg_parts.append(f'<circle cx="{center}" cy="{center}" r="{r:.0f}" fill="none" stroke="#e0e0e0" stroke-width="1"/>')
-    
-    # Draw axis lines
-    for i in range(6):
-        angle = -math.pi/2 + i * angle_step
-        x2 = center + max_radius * math.cos(angle)
-        y2 = center + max_radius * math.sin(angle)
-        svg_parts.append(f'<line x1="{center}" y1="{center}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="#ccc" stroke-width="1"/>')
-    
-    # Draw data polygon
-    polygon_str = ' '.join(polygon_points)
-    svg_parts.append(f'<polygon points="{polygon_str}" fill="rgba(78, 205, 196, 0.3)" stroke="#4ecdc4" stroke-width="3"/>')
-    
-    # Draw data points
-    for point in polygon_points:
-        x, y = point.split(',')
-        svg_parts.append(f'<circle cx="{x}" cy="{y}" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>')
-    
-    # Draw labels
-    for lx, ly, label, val in label_positions:
-        anchor = "middle"
-        if lx < center - 20:
-            anchor = "end"
-        elif lx > center + 20:
-            anchor = "start"
-        svg_parts.append(
-            f'<text x="{lx:.0f}" y="{ly:.0f}" text-anchor="{anchor}" '
-            f'font-family="Sometype Mono, monospace" font-size="12" font-weight="700">'
-            f'{label} ({val}/5)</text>'
-        )
-    
-    svg_parts.append('</svg>')
-    return '\n'.join(svg_parts)
+    print(f"✓ Generated: {output_path}")
+    return output_path
 
 
-# =============================================================================
-# PHASE BAR SVG GENERATION
-# =============================================================================
-
-def generate_phase_bar_svg() -> str:
-    """Generate SVG showing 12-week training phases."""
-    return '''<svg viewBox="0 0 600 120" width="600" height="120">
-<text x="10" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#666">WEEK</text>
-<text x="70" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">1</text>
-<text x="110" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">2</text>
-<text x="150" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">3</text>
-<text x="190" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">4</text>
-<text x="230" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">5</text>
-<text x="270" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">6</text>
-<text x="310" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">7</text>
-<text x="350" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">8</text>
-<text x="390" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">9</text>
-<text x="430" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">10</text>
-<text x="470" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">11</text>
-<text x="510" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">12</text>
-<text x="555" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#e74c3c" font-weight="700">RACE</text>
-<rect x="55" y="35" width="120" height="40" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
-<text x="115" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="#2c2c2c">BASE</text>
-<rect x="175" y="35" width="160" height="40" fill="#f4d03f" stroke="#2c2c2c" stroke-width="2"/>
-<text x="255" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="#2c2c2c">BUILD</text>
-<rect x="335" y="35" width="120" height="40" fill="#e74c3c" stroke="#2c2c2c" stroke-width="2"/>
-<text x="395" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="white">PEAK</text>
-<rect x="455" y="35" width="80" height="40" fill="#27ae60" stroke="#2c2c2c" stroke-width="2"/>
-<text x="495" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="white">TAPER</text>
-<rect x="545" y="30" width="40" height="50" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="5,3"/>
-<text x="565" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="10" font-weight="700" fill="#e74c3c">🏁</text>
-<rect x="55" y="95" width="15" height="15" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="1"/>
-<text x="75" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Aerobic Foundation</text>
-<rect x="180" y="95" width="15" height="15" fill="#f4d03f" stroke="#2c2c2c" stroke-width="1"/>
-<text x="200" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Race-Specific Fitness</text>
-<rect x="320" y="95" width="15" height="15" fill="#e74c3c" stroke="#2c2c2c" stroke-width="1"/>
-<text x="340" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Maximum Load</text>
-<rect x="440" y="95" width="15" height="15" fill="#27ae60" stroke="#2c2c2c" stroke-width="1"/>
-<text x="460" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Fresh for Race Day</text>
-</svg>'''
-
-
-# =============================================================================
-# HTML TEMPLATE
-# =============================================================================
-
-def get_css() -> str:
-    """Return the complete neo-brutalist CSS."""
-    return '''/* ============================================
-   GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
-   ============================================ */
-
-:root {
-    --cream: #f5f5dc;
-    --cream-dark: #ede5d0;
-    --turquoise: #4ecdc4;
-    --turquoise-light: rgba(78, 205, 196, 0.15);
-    --yellow: #f4d03f;
-    --yellow-light: #fef9e7;
-    --brown-dark: #59473C;
-    --text-dark: #2c2c2c;
-    --red: #e74c3c;
-    --red-light: #fdedec;
-    --green: #27ae60;
-    --green-light: #e9f7ef;
-    --border-width: 3px;
-    --shadow-offset: 6px;
-    --shadow-color: rgba(0,0,0,0.2);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
-body {
-    font-family: 'Sometype Mono', 'Courier New', Courier, monospace;
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-dark);
-    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-    min-height: 100vh;
-}
-
-/* Navigation */
-.sticky-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--brown-dark);
-    border-bottom: var(--border-width) solid var(--text-dark);
-    box-shadow: 0 var(--shadow-offset) 0 var(--shadow-color);
-    padding: 0.75rem 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.sticky-nav a {
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.35rem 0.6rem;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.sticky-nav a:hover { color: var(--turquoise); border-color: var(--turquoise); }
-.sticky-nav a.active { background: var(--turquoise); color: var(--text-dark); border-color: var(--text-dark); }
-
-/* Header */
-.header {
-    background: var(--brown-dark);
-    color: var(--cream);
-    padding: 3rem 2rem;
-    text-align: center;
-    border-bottom: var(--border-width) solid var(--text-dark);
-}
-
-.header-brand { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: var(--turquoise); margin-bottom: 0.5rem; }
-.header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
-.header-subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1rem; }
-.header-meta { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
-.header-meta-item { background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border: 2px solid var(--turquoise); }
-.header-meta-item strong { color: var(--turquoise); }
-
-/* Sections */
-.section { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; border-bottom: 2px dashed var(--brown-dark); }
-.section:last-of-type { border-bottom: none; }
-.section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: var(--border-width) solid var(--text-dark); }
-.section-number { background: var(--turquoise); color: var(--text-dark); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
-.section-header h2 { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
-.section-content h3 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--brown-dark); border-left: 4px solid var(--turquoise); padding-left: 1rem; }
-.section-content h4 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; color: var(--text-dark); }
-.section-content p { margin-bottom: 1rem; }
-.section-content ul, .section-content ol { margin: 1rem 0 1rem 1.5rem; }
-.section-content li { margin-bottom: 0.5rem; }
-
-/* Intro Box */
-.intro-box { background: white; padding: 1.5rem; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); margin-bottom: 2rem; }
-
-/* Tables */
-.table-wrapper { overflow-x: auto; margin: 1.5rem 0; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
-table { width: 100%; border-collapse: collapse; background: white; }
-th { background: var(--brown-dark); color: var(--cream); padding: 1rem; text-align: left; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
-td { padding: 0.875rem 1rem; border-bottom: 1px solid var(--cream-dark); font-size: 0.9rem; }
-tr:hover { background: var(--cream-dark); }
-tr.g-spot-row { background: var(--turquoise-light); }
-tr.g-spot-row:hover { background: rgba(78, 205, 196, 0.25); }
-
-/* Callouts */
-.callout { padding: 1.5rem; margin: 1.5rem 0; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
-.callout-title { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
-.callout-info { background: var(--turquoise-light); border-color: var(--turquoise); }
-.callout-info .callout-title { color: var(--brown-dark); }
-.callout-warning { background: var(--yellow-light); border-color: var(--yellow); }
-.callout-warning .callout-title { color: var(--brown-dark); }
-.callout-danger { background: var(--red-light); border-color: var(--red); }
-.callout-danger .callout-title { color: var(--red); }
-.callout-success { background: var(--green-light); border-color: var(--green); }
-.callout-success .callout-title { color: var(--green); }
-
-/* Cards */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
-.card { background: white; padding: 1.5rem; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
-.card h4 { color: var(--brown-dark); margin-bottom: 0.75rem; font-size: 1rem; }
-.card p { font-size: 0.9rem; margin: 0; }
-
-/* Graphics */
-.graphic-container { background: white; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
-.graphic-title { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 1rem; color: var(--brown-dark); }
-.graphic-container svg { max-width: 100%; height: auto; }
-
-/* Skills Grid */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
-.skill-item { background: white; padding: 1.25rem; border: var(--border-width) solid var(--text-dark); box-shadow: 4px 4px 0 var(--text-dark); }
-.skill-item h4 { color: var(--brown-dark); margin-bottom: 0.5rem; font-size: 1rem; border-bottom: 2px solid var(--turquoise); padding-bottom: 0.5rem; }
-.skill-item p { font-size: 0.9rem; margin: 0; }
-.skill-cue { font-style: italic; color: var(--turquoise); margin-top: 0.5rem; font-weight: 600; }
-
-/* Glossary */
-.glossary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-.glossary-item { background: white; padding: 1rem; border: 2px solid var(--cream-dark); }
-.glossary-term { font-weight: 700; color: var(--turquoise); margin-bottom: 0.25rem; }
-.glossary-def { font-size: 0.85rem; }
-
-/* Phase List */
-.phase-list { margin: 1.5rem 0; }
-.phase-item { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; margin-bottom: 0.5rem; background: white; border: 2px solid var(--text-dark); }
-.phase-weeks { font-size: 0.85rem; font-weight: 600; min-width: 80px; }
-.phase-name { font-weight: 700; min-width: 80px; }
-.phase-desc { font-size: 0.9rem; }
-.phase-base { border-left: 4px solid #4ecdc4; }
-.phase-build { border-left: 4px solid #f4d03f; }
-.phase-peak { border-left: 4px solid #e74c3c; }
-.phase-taper { border-left: 4px solid #27ae60; }
-
-/* Footer */
-.footer { background: var(--brown-dark); color: var(--cream); text-align: center; padding: 4rem 2rem; border-top: var(--border-width) solid var(--text-dark); }
-.footer-tagline { font-size: 2rem; font-weight: 700; color: var(--turquoise); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; }
-.footer-content { max-width: 700px; margin: 0 auto 2rem; }
-.footer-content p { margin-bottom: 1.25rem; line-height: 1.8; }
-.footer-emphasis { font-size: 1.1rem; font-weight: 700; color: var(--turquoise); }
-.footer-contact { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); }
-.footer-email { font-size: 0.95rem; margin-bottom: 0.5rem; }
-.footer-email a { color: var(--turquoise); }
-.footer-motto { font-size: 1rem; font-style: italic; color: var(--turquoise); margin-top: 1rem; }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .header h1 { font-size: 1.8rem; }
-    .sticky-nav { padding: 0.5rem; }
-    .sticky-nav a { font-size: 0.65rem; padding: 0.3rem 0.5rem; }
-    .section { padding: 2rem 1rem; }
-    .section-header h2 { font-size: 1.4rem; }
-    th, td { padding: 0.5rem; font-size: 0.8rem; }
-}
-
-hr { border: none; border-top: 2px dashed var(--text-dark); margin: 2rem 0; opacity: 0.3; }'''
-
-
-def get_nav_script() -> str:
-    """Return the navigation highlight script."""
-    return '''document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.sticky-nav a');
-    
-    function updateActiveLink() {
-        let current = '';
-        const scrollPos = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
+def get_weekly_hours(tier_name):
+    """Return weekly hours for each tier"""
+    hours = {
+        'AYAHUASCA': '0-5',
+        'FINISHER': '8-12',
+        'COMPETE': '12-18',
+        'PODIUM': '18+'
     }
+    return hours.get(tier_name, '8-12')
+
+
+def get_weekly_structure(tier_name):
+    """Return weekly structure description for each tier"""
+    structures = {
+        'AYAHUASCA': '3-4 sessions per week: 2 high-intensity intervals, 1-2 endurance rides',
+        'FINISHER': '4-5 sessions per week: 1-2 intervals, 2-3 endurance rides, 1 long weekend ride',
+        'COMPETE': '5-6 sessions per week: 2-3 intervals, 2-3 endurance rides, 1 long ride, 1 recovery',
+        'PODIUM': '6-7 sessions per week: 3 intervals, 2-3 endurance rides, 1 long ride, 1-2 recovery'
+    }
+    return structures.get(tier_name, structures['FINISHER'])
+
+
+def generate_equipment_checklist(race_data):
+    """Generate race-specific equipment checklist with checkboxes"""
+    items = [
+        'Power meter (calibrated)',
+        'Heart rate monitor',
+        'GPS bike computer',
+        f'Tires: {race_data.get("recommended_tire_width", "38-42mm")}',
+        'Spare tubes/plugs',
+        'Multi-tool',
+        'Pump/CO2',
+        'Nutrition for race duration',
+        'Water bottles (2-3)',
+        'Race number',
+        'ID and emergency contact'
+    ]
     
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
-});'''
-
-
-# =============================================================================
-# GUIDE GENERATION
-# =============================================================================
-
-def generate_guide_html(race_data: Dict[str, str], plan_data: Dict[str, str], 
-                        radar_scores: Dict[str, int]) -> str:
-    """Generate complete HTML training guide."""
+    # Add race-specific items
+    if race_data.get('elevation_gain_feet', 0) > 5000:
+        items.append('Gear range for climbing')
     
-    # Merge all data for placeholders
-    data = {**race_data, **plan_data}
+    if 'hot' in str(race_data.get('weather_strategy', '')).lower():
+        items.append('Extra electrolytes')
+        items.append('Sun protection')
     
-    # Generate SVG graphics
-    radar_svg = generate_radar_svg(radar_scores)
-    phase_svg = generate_phase_bar_svg()
+    # Generate HTML with checkboxes
+    checklist_html = '<div class="equipment-checklist-items">\n'
+    for item in items:
+        checklist_html += f'  <label class="checklist-item">\n'
+        checklist_html += f'    <input type="checkbox">\n'
+        checklist_html += f'    <span>{item}</span>\n'
+        checklist_html += f'  </label>\n'
+    checklist_html += '</div>\n'
+    checklist_html += '<p class="checklist-download"><a href="#" onclick="downloadChecklistPDF()" class="download-link">📥 Download Printable Checklist (PDF)</a></p>'
     
-    # Build HTML
-    html = f'''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>{data['RACE_NAME']} Training Guide | {data['TIER_NAME']} - {data['ABILITY_LEVEL']}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-{get_css()}
-</style>
-</head>
-<body>
+    return checklist_html
 
-<nav class="sticky-nav">
-    <a href="#welcome">Welcome</a>
-    <a href="#structure">Structure</a>
-    <a href="#before">Before</a>
-    <a href="#how-training-works">Training</a>
-    <a href="#zones">Zones</a>
-    <a href="#execution">Execution</a>
-    <a href="#recovery">Recovery</a>
-    <a href="#strength">Strength</a>
-    <a href="#skills">Skills</a>
-    <a href="#fueling">Fueling</a>
-    <a href="#mental">Mental</a>
-    <a href="#race-day">Race Day</a>
-    <a href="#tires">Tires</a>
-    <a href="#glossary">Glossary</a>
-</nav>
 
-<header class="header">
-    <div class="header-brand">Gravel God Coaching</div>
-    <h1>{data['RACE_NAME']}</h1>
-    <p class="header-subtitle">Training Guide</p>
-    <div class="header-meta">
-        <div class="header-meta-item"><strong>{data['TIER_NAME']}</strong> Tier</div>
-        <div class="header-meta-item"><strong>{data['ABILITY_LEVEL']}</strong> Level</div>
-        <div class="header-meta-item"><strong>{data['WEEKLY_HOURS']}</strong> hrs/week</div>
-        <div class="header-meta-item"><strong>12</strong> weeks</div>
-    </div>
-</header>
-
-<main>
-<section class="section" id="welcome">
-    <div class="section-header">
-        <span class="section-number">01</span>
-        <h2>Welcome to Your Training</h2>
-    </div>
-    <div class="section-content">
-        <div class="intro-box">
-            <p>This plan isn't generic. It's built for <strong>{data['RACE_NAME']}</strong>—its {data['DISTANCE']} miles, {data['TERRAIN_DESCRIPTION']}, {data['ELEVATION_GAIN']} feet of elevation, and what it'll take to be out there for {data['DURATION_ESTIMATE']}.</p>
-            <p>{data['RACE_DESCRIPTION']}</p>
-            <p><strong>By the time you roll to the start, you'll know you're ready.</strong></p>
-        </div>
-        
-        <div class="graphic-container">
-            <div class="graphic-title">Race Difficulty Profile</div>
-            {radar_svg}
-        </div>
-        
-        <h3>What Makes This Plan Different</h3>
-        <div class="card-grid">
-            <div class="card">
-                <h4>Built for Your Ability Level</h4>
-                <p>You're on the <strong>{data['ABILITY_LEVEL']}</strong> version. The load and intensity match where you are right now.</p>
-            </div>
-            <div class="card">
-                <h4>Built for Your Schedule</h4>
-                <p>This is the <strong>{data['TIER_NAME']}</strong> tier, designed around <strong>{data['WEEKLY_HOURS']} hours/week</strong>. The week fits into your life so you can actually complete it.</p>
-            </div>
-            <div class="card">
-                <h4>Built for This Race</h4>
-                <p>The sessions target the key demands of {data['RACE_NAME']}: <strong>{data['RACE_KEY_CHALLENGES']}</strong>.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="structure">
-    <div class="section-header">
-        <span class="section-number">02</span>
-        <h2>Plan Structure</h2>
-    </div>
-    <div class="section-content">
-        <h3>12 Weeks, 4 Phases</h3>
-        
-        <div class="graphic-container">
-            <div class="graphic-title">Training Phases</div>
-            {phase_svg}
-        </div>
-        
-        <div class="phase-list">
-            <div class="phase-item phase-base">
-                <span class="phase-weeks">Weeks 1-3</span>
-                <span class="phase-name">BASE</span>
-                <span class="phase-desc">Building aerobic foundation and endurance</span>
-            </div>
-            <div class="phase-item phase-build">
-                <span class="phase-weeks">Weeks 4-7</span>
-                <span class="phase-name">BUILD</span>
-                <span class="phase-desc">Adding intensity, developing race-specific fitness</span>
-            </div>
-            <div class="phase-item phase-peak">
-                <span class="phase-weeks">Weeks 8-10</span>
-                <span class="phase-name">PEAK</span>
-                <span class="phase-desc">Maximum training load and sharpening</span>
-            </div>
-            <div class="phase-item phase-taper">
-                <span class="phase-weeks">Weeks 11-12</span>
-                <span class="phase-name">TAPER</span>
-                <span class="phase-desc">Reducing volume while maintaining intensity</span>
-            </div>
-        </div>
-        
-        <h3>Weekly Structure</h3>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>Day</th><th>Session</th><th>Duration</th></tr></thead>
-                <tbody>
-{generate_weekly_structure_rows(data['WEEKLY_STRUCTURE_DESCRIPTION'])}
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="callout callout-info">
-            <div class="callout-title">Recovery Weeks</div>
-            <p>Every third or fourth week is a recovery week with 30-40% reduced volume. <strong>Recovery makes you fast.</strong> Don't skip these.</p>
-        </div>
-        
-        <h3>A Note on Compliance vs. Perfection</h3>
-        <p>You won't execute this plan perfectly. No one does.</p>
-        <p>Life happens. Work intrudes. Illness strikes. Weather doesn't cooperate. Kids need attention. That's reality.</p>
-        <p>The goal isn't perfection—it's <strong>consistency</strong>. Complete 85-90% of the prescribed workouts, and you'll arrive at {data['RACE_NAME']} prepared. Complete 95%+, and you'll be exceptionally prepared.</p>
-        <p>Miss multiple weeks, skip the hard workouts, or constantly substitute 'easier' options, and the plan won't work. Not because the plan failed—because you didn't do it.</p>
-        <p><strong>Be honest with yourself about compliance.</strong></p>
-    </div>
-</section>
-
-{generate_before_you_start_section(data)}
-
-{generate_training_fundamentals_section(data)}
-
-{generate_zones_section()}
-
-{generate_execution_section()}
-
-{generate_recovery_section(data)}
-
-{generate_strength_section(data)}
-
-{generate_skills_section(data)}
-
-{generate_fueling_section()}
-
-{generate_mental_section()}
-
-{generate_race_day_section(data)}
-
-{generate_race_specific_section(data)}
-
-{generate_tires_section()}
-
-{generate_glossary_section()}
-
-</main>
-
-<footer class="footer">
-    <div class="footer-tagline">See You at the Finish</div>
-    <div class="footer-content">
-        <p>You have the plan. You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.</p>
-        <p class="footer-emphasis">Now do the work.</p>
-        <p><em>Not perfectly. Not heroically. Consistently. Intelligently. Over 12 weeks.</em></p>
-        <p>On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence—not hope, not optimism, but confidence based on completed work—is what this plan builds.</p>
-        <p class="footer-emphasis">The race will be hard. You trained for hard.</p>
-    </div>
-    <div class="footer-contact">
-        <p class="footer-email"><a href="mailto:gravelgodcoaching@gmail.com">gravelgodcoaching@gmail.com</a></p>
-        <p class="footer-motto">Become what you could be.</p>
-    </div>
-</footer>
-
-<script>
-{get_nav_script()}
-</script>
-
-</body>
-</html>'''
+def generate_fueling_table(race_data):
+    """Generate fueling and hydration calculator table"""
+    distance = race_data.get('distance_miles', 200)
+    duration_hours = distance / 15  # Rough estimate: 15 mph average
+    
+    # Base scenarios
+    scenarios = [
+        {
+            'scenario': 'Training Ride < 2 hours',
+            'carbs': '30-45g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Water + electrolytes. Start fueling after 60 min if needed.'
+        },
+        {
+            'scenario': 'Training Ride 2-4 hours',
+            'carbs': '45-60g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Mix of gels, bars, and real food. Practice your race nutrition.'
+        },
+        {
+            'scenario': 'Long Training Ride 4-6 hours',
+            'carbs': '60-75g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Aggressive gut training. Test race-day nutrition strategy.'
+        },
+        {
+            'scenario': f'Race Day ({distance} miles, ~{int(duration_hours)} hours)',
+            'carbs': '60-90g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Start fueling in first 30 min. Mix multiple carb sources (glucose + fructose).'
+        },
+        {
+            'scenario': 'Hot Conditions (>80°F)',
+            'carbs': '60-90g/hour',
+            'fluid': '750-1000ml/hour',
+            'notes': 'Increase sodium to 500-700mg/hour. Pre-cool if possible.'
+        },
+        {
+            'scenario': 'Cold Conditions (<50°F)',
+            'carbs': '60-90g/hour',
+            'fluid': '400-600ml/hour',
+            'notes': 'Lower fluid needs, but still fuel aggressively. Warm fluids help.'
+        }
+    ]
+    
+    # Build HTML table
+    html = '<table class="fueling-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Scenario</th>\n'
+    html += '      <th>Carbohydrate Intake</th>\n'
+    html += '      <th>Fluid Intake</th>\n'
+    html += '      <th>Notes</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    for scenario in scenarios:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{scenario["scenario"]}</strong></td>\n'
+        html += f'      <td>{scenario["carbs"]}</td>\n'
+        html += f'      <td>{scenario["fluid"]}</td>\n'
+        html += f'      <td>{scenario["notes"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
     
     return html
 
 
-def generate_weekly_structure_rows(weekly_structure: str) -> str:
-    """Parse weekly structure string into table rows."""
-    if not weekly_structure:
-        return '''<tr><td><strong>Monday</strong></td><td>Rest</td><td>—</td></tr>
-<tr><td><strong>Tuesday</strong></td><td>Intensity</td><td>60-75 min</td></tr>
-<tr><td><strong>Wednesday</strong></td><td>Endurance Z2</td><td>60-90 min</td></tr>
-<tr class="g-spot-row"><td><strong>Thursday</strong></td><td>G Spot Work</td><td>60-75 min</td></tr>
-<tr><td><strong>Friday</strong></td><td>Rest/Recovery</td><td>—</td></tr>
-<tr><td><strong>Saturday</strong></td><td>Long Ride</td><td>2.5-4 hours</td></tr>
-<tr><td><strong>Sunday</strong></td><td>Recovery/Skills</td><td>45-60 min</td></tr>'''
+def generate_difficulty_table(race_data):
+    """Generate difficulty rating table"""
+    return f'''
+    <table class="difficulty-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Distance</strong></td>
+                <td>{race_data.get('distance_miles', 'N/A')} miles</td>
+            </tr>
+            <tr>
+                <td><strong>Elevation Gain</strong></td>
+                <td>{race_data.get('elevation_gain_feet', 'N/A'):,} feet</td>
+            </tr>
+            <tr>
+                <td><strong>Technical Difficulty</strong></td>
+                <td>{race_data.get('technical_rating', 'Moderate')}</td>
+            </tr>
+            <tr>
+                <td><strong>Time Cutoff</strong></td>
+                <td>{race_data.get('time_cutoff', 'None')}</td>
+            </tr>
+        </tbody>
+    </table>
+    '''
+
+
+def generate_rating_hex(race_data):
+    """Generate race difficulty rating hex (radar chart as HTML table)"""
+    # Calculate ratings (1-5 scale) based on race characteristics
+    distance = race_data.get('distance_miles', 200)
+    elevation = race_data.get('elevation_gain_feet', 0)
+    terrain = race_data.get('terrain', 'rolling')
+    altitude = race_data.get('altitude_feet', 0)
     
-    rows = []
-    # Parse format: "Monday: Rest | Tuesday: Intensity (60-75 min) | ..."
-    days = weekly_structure.split('|')
-    for day_str in days:
-        day_str = day_str.strip()
-        if ':' in day_str:
-            day, rest = day_str.split(':', 1)
-            rest = rest.strip()
-            # Extract duration if in parentheses
-            duration_match = re.search(r'\(([^)]+)\)', rest)
-            if duration_match:
-                duration = duration_match.group(1)
-                session = rest.replace(f'({duration})', '').strip()
-            else:
-                session = rest
-                duration = '—'
-            
-            row_class = ' class="g-spot-row"' if 'G Spot' in session else ''
-            rows.append(f'<tr{row_class}><td><strong>{day.strip()}</strong></td><td>{session}</td><td>{duration}</td></tr>')
+    # Distance rating (1-5)
+    if distance >= 200:
+        dist_rating = 5
+    elif distance >= 150:
+        dist_rating = 4
+    elif distance >= 100:
+        dist_rating = 3
+    elif distance >= 50:
+        dist_rating = 2
+    else:
+        dist_rating = 1
     
-    return '\n'.join(rows) if rows else generate_weekly_structure_rows('')
-
-
-# =============================================================================
-# SECTION GENERATORS (Abbreviated for brevity - full content in production)
-# =============================================================================
-
-def generate_before_you_start_section(data: Dict[str, str]) -> str:
-    """Generate Before You Start section."""
-    return f'''<section class="section" id="before">
-    <div class="section-header">
-        <span class="section-number">03</span>
-        <h2>Before You Start</h2>
-    </div>
-    <div class="section-content">
-        <h3>Health & Safety Check</h3>
-        <div class="callout callout-danger">
-            <div class="callout-title">You Need To Be Healthy Enough To Train</div>
-            <p>Training puts considerable stress on your cardiovascular system, musculoskeletal system, and your body's ability to recover. Get a physical before starting this plan. Be confident you're healthy enough to handle the training load.</p>
-        </div>
-        
-        <h3>Equipment Requirements</h3>
-        <h4>Mandatory</h4>
-        <ul>
-            <li><strong>GPS bike computer</strong> — For tracking outdoor workouts and following routes</li>
-            <li><strong>Power meter or heart rate monitor</strong> — You need objective data to execute workouts correctly</li>
-            <li><strong>Bike fit</strong> — A poorly fitting bike will break you over 12 weeks and {data['DISTANCE']} miles</li>
-            <li><strong>Indoor training setup</strong> — Smart trainer + fan at minimum</li>
-            <li><strong>Reliable bike</strong> — Mechanically sound, appropriate tires for {data['RACE_NAME']}'s terrain</li>
-        </ul>
-        
-        <h3>FTP Testing</h3>
-        <p>Functional Threshold Power (FTP) is the cornerstone of this plan. All training zones are calculated as percentages of FTP. Wrong FTP = wrong zones = ineffective training.</p>
-        <h4>When to test:</h4>
-        <ul>
-            <li><strong>Week 1:</strong> Establish baseline FTP</li>
-            <li><strong>Week 6-7 (optional):</strong> Check progress</li>
-            <li><strong>Week 11:</strong> Final test during taper</li>
-        </ul>
-    </div>
-</section>'''
-
-
-def generate_training_fundamentals_section(data: Dict[str, str]) -> str:
-    """Generate Training Fundamentals section."""
-    return '''<section class="section" id="how-training-works">
-    <div class="section-header">
-        <span class="section-number">04</span>
-        <h2>How Training Works</h2>
-    </div>
-    <div class="section-content">
-        <h3>The Adaptation Cycle</h3>
-        <p>All training follows the same basic cycle: <strong>Stress → Fatigue → Recovery → Adaptation</strong>.</p>
-        
-        <div class="card-grid">
-            <div class="card">
-                <h4>Step 1: Stress</h4>
-                <p>You apply training stress—a hard workout that exceeds your current capacity. This creates disruption your body needs to solve.</p>
-            </div>
-            <div class="card">
-                <h4>Step 2: Fatigue</h4>
-                <p>Immediately after training, you're weaker than before. Fatigue is the signal that triggers adaptation.</p>
-            </div>
-            <div class="card">
-                <h4>Step 3: Recovery</h4>
-                <p>Given adequate rest, nutrition, and time, your body repairs and rebuilds stronger than before.</p>
-            </div>
-            <div class="card">
-                <h4>Step 4: Adaptation</h4>
-                <p>Supercompensation: your body builds more capacity than it had before to handle similar stress more easily next time.</p>
-            </div>
-        </div>
-        
-        <div class="callout callout-warning">
-            <div class="callout-title">Where It Goes Wrong</div>
-            <p><strong>Insufficient stress:</strong> Workout too easy, no adaptation triggered.<br>
-            <strong>Insufficient recovery:</strong> New stress before recovery complete, accumulated fatigue without adaptation.<br>
-            <strong>Inconsistent stress:</strong> Heroic efforts followed by weeks off—never compound adaptations.</p>
-        </div>
-    </div>
-</section>'''
-
-
-def generate_zones_section() -> str:
-    """Generate Training Zones section."""
-    return '''<section class="section" id="zones">
-    <div class="section-header">
-        <span class="section-number">05</span>
-        <h2>Training Zones</h2>
-    </div>
-    <div class="section-content">
-        <p>Zones exist to quantify intensity. But here's the paradox: <strong>the end goal is to develop a feeling for intensity.</strong></p>
-        
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr><th>Zone</th><th>Name</th><th>% FTP</th><th>RPE</th><th>Feel</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Z1</strong></td><td>Active Recovery</td><td>&lt;55%</td><td>1-2</td><td>Very easy, feels like nothing</td></tr>
-                    <tr><td><strong>Z2</strong></td><td>Endurance</td><td>56-75%</td><td>3-4</td><td>All-day pace, can chat freely</td></tr>
-                    <tr><td><strong>Z3</strong></td><td>Tempo</td><td>76-87%</td><td>5-6</td><td>Comfortably hard, short sentences</td></tr>
-                    <tr class="g-spot-row"><td><strong>G SPOT</strong></td><td>Gravel Race Pace</td><td>88-92%</td><td>6-7</td><td>Uncomfortably sustainable</td></tr>
-                    <tr><td><strong>Z4</strong></td><td>Threshold</td><td>93-105%</td><td>7-8</td><td>Hard, controlled, few words</td></tr>
-                    <tr><td><strong>Z5</strong></td><td>VO2max</td><td>106-120%</td><td>9</td><td>Very hard, heavy breathing</td></tr>
-                    <tr><td><strong>Z6</strong></td><td>Anaerobic</td><td>121-150%</td><td>10</td><td>All-out, 30 sec - 3 min max</td></tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="callout callout-info">
-            <div class="callout-title">Critical: Easy Means Easy</div>
-            <p>Most people train too hard on easy days. Zone 2 should feel genuinely conversational. If you're breathing hard, you're in Z3. Fix this—it's the most common training mistake.</p>
-        </div>
-    </div>
-</section>'''
-
-
-def generate_execution_section() -> str:
-    """Generate Workout Execution section."""
-    return '''<section class="section" id="execution">
-    <div class="section-header">
-        <span class="section-number">06</span>
-        <h2>Workout Execution</h2>
-    </div>
-    <div class="section-content">
-        <h3>Universal Execution Rules</h3>
-        <ol>
-            <li><strong>Warm up properly</strong> — 15-20 minutes progressive before intensity</li>
-            <li><strong>Do the actual workout</strong> — Not more, not less. Trust the plan.</li>
-            <li><strong>Chase time-in-zone</strong> — Highest average across the set, not hero intervals</li>
-            <li><strong>Stop if power drops >10%</strong> — Quality beats quantity</li>
-        </ol>
-        
-        <h3>G Spot Execution (88-92% FTP)</h3>
-        <p>This is gravel race pace—<em>uncomfortably sustainable</em>.</p>
-        <ul>
-            <li>Stay seated, control breathing</li>
-            <li>Hard enough to hurt, easy enough to repeat</li>
-            <li>Could talk in short phrases but wouldn't want to</li>
-            <li>Fuel properly: 60-80g carbs/hour</li>
-        </ul>
-        
-        <div class="callout callout-warning">
-            <div class="callout-title">Common G Spot Mistake</div>
-            <p>Starting at 95% FTP because "it doesn't feel that hard yet." By minute 30, you're dying. Start at 88% and build only if holding that feels too easy.</p>
-        </div>
-    </div>
-</section>'''
-
-
-def generate_recovery_section(data: Dict[str, str]) -> str:
-    """Generate Recovery section."""
-    return f'''<section class="section" id="recovery">
-    <div class="section-header">
-        <span class="section-number">07</span>
-        <h2>Recovery</h2>
-    </div>
-    <div class="section-content">
-        <h3>Recovery Makes You Fast</h3>
-        <p>Training creates stress. Recovery creates adaptation. Skip recovery, skip adaptation.</p>
-        
-        <div class="card-grid">
-            <div class="card">
-                <h4>Sleep</h4>
-                <p>7-9 hours minimum. This is when growth hormone peaks and muscles rebuild. Non-negotiable.</p>
-            </div>
-            <div class="card">
-                <h4>Nutrition</h4>
-                <p>Protein within 30 min post-workout. Carbs to replenish glycogen. Real food over supplements.</p>
-            </div>
-            <div class="card">
-                <h4>Active Recovery</h4>
-                <p>Easy spinning, walking, stretching. Movement promotes blood flow without adding stress.</p>
-            </div>
-            <div class="card">
-                <h4>Recovery Weeks</h4>
-                <p>Every 3-4 weeks, volume drops 30-40%. This is when adaptation consolidates. Don't skip.</p>
-            </div>
-        </div>
-    </div>
-</section>'''
-
-
-def generate_strength_section(data: Dict[str, str]) -> str:
-    """Generate Strength Training section."""
-    return f'''<section class="section" id="strength">
-    <div class="section-header">
-        <span class="section-number">08</span>
-        <h2>Strength Training</h2>
-    </div>
-    <div class="section-content">
-        <h3>The Honest Take</h3>
-        <p>Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.</p>
-        
-        <div class="callout callout-info">
-            <div class="callout-title">During This 12-Week Block</div>
-            <p><strong>Prioritize:</strong><br>
-            • Mobility/stability work (non-negotiable)<br>
-            • Basic core stability (highly recommended)<br>
-            • Maintenance strength if you already lift</p>
-        </div>
-        
-        <p>After {data['RACE_NAME']}, invest in a proper off-season strength block. Your future self—the one still racing at 50, 60, 70—will thank you.</p>
-    </div>
-</section>'''
-
-
-def generate_skills_section(data: Dict[str, str]) -> str:
-    """Generate Skills section with race-specific skill 5."""
-    skill_5_html = ''
-    if data.get('SKILL_5_NAME') and data['SKILL_5_NAME'] != 'Race-Specific Skill':
-        skill_5_html = f'''
-        <div class="skill-item">
-            <h4>Skill 5: {data['SKILL_5_NAME']}</h4>
-            <p><strong>Why:</strong> {data['SKILL_5_WHY']}</p>
-            <p><strong>How:</strong> {data['SKILL_5_HOW']}</p>
-            <p class="skill-cue">Cue: "{data['SKILL_5_CUE']}"</p>
-        </div>'''
+    # Elevation rating
+    if elevation >= 15000:
+        elev_rating = 5
+    elif elevation >= 10000:
+        elev_rating = 4
+    elif elevation >= 5000:
+        elev_rating = 3
+    elif elevation >= 2000:
+        elev_rating = 2
+    else:
+        elev_rating = 1
     
-    skill_notes_html = ''
-    if data.get('RACE_SPECIFIC_SKILL_NOTES'):
-        skill_notes_html = f'''
-        <h3>Race-Specific Skill Notes</h3>
-        <p>{data['RACE_SPECIFIC_SKILL_NOTES']}</p>'''
+    # Technicality rating
+    tech_map = {
+        'mountain': 5,
+        'flint_hills': 4,
+        'rolling': 3,
+        'flat': 2
+    }
+    tech_rating = tech_map.get(terrain, 3)
     
-    return f'''<section class="section" id="skills">
-    <div class="section-header">
-        <span class="section-number">09</span>
-        <h2>Technical Skills for {data['RACE_NAME']}</h2>
-    </div>
-    <div class="section-content">
-        <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently.</p>
-        
-        <div class="skills-grid">
-            <div class="skill-item">
-                <h4>Skill 1: Loose Surface Cornering</h4>
-                <p>Look through the turn, weight your outside pedal, point inside knee toward the turn.</p>
-                <p class="skill-cue">Cue: "Eyes through, weight down, knee out"</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 2: Eating While Riding</h4>
-                <p>Practice on every long ride. Start flat, graduate to rough terrain.</p>
-                <p class="skill-cue">Cue: "Flat road first, both hands work"</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 3: Group Riding</h4>
-                <p>Smooth, predictable movements. No sudden braking or surging. Communicate.</p>
-                <p class="skill-cue">Cue: "Smooth pulls, steady pace, speak up"</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 4: Descending on Loose Gravel</h4>
-                <p>Weight back, elbows bent and loose, grip relaxed. Brake before turns, not during.</p>
-                <p class="skill-cue">Cue: "Weight back, light hands, eyes up"</p>
-            </div>
-            {skill_5_html}
-        </div>
-        {skill_notes_html}
-    </div>
-</section>'''
-
-
-def generate_fueling_section() -> str:
-    """Generate Fueling & Hydration section."""
-    return '''<section class="section" id="fueling">
-    <div class="section-header">
-        <span class="section-number">10</span>
-        <h2>Fueling & Hydration</h2>
-    </div>
-    <div class="section-content">
-        <h3>Quick Reference</h3>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>Scenario</th><th>Carbs</th><th>Fluid</th><th>Notes</th></tr></thead>
-                <tbody>
-                    <tr><td>Pre-Ride (2-3hr before)</td><td>1-2g/kg</td><td>16-24 oz</td><td>Low fiber, familiar foods</td></tr>
-                    <tr><td>Easy Ride (&lt;90 min)</td><td>0-30g/hr</td><td>16-24 oz/hr</td><td>Water usually sufficient</td></tr>
-                    <tr><td>Long Ride (&gt;90 min)</td><td>60-80g/hr</td><td>24-32 oz/hr</td><td>Practice race products</td></tr>
-                    <tr class="g-spot-row"><td><strong>Race Day</strong></td><td><strong>80-100g/hr</strong></td><td><strong>24-32 oz/hr</strong></td><td><strong>Nothing new!</strong></td></tr>
-                    <tr><td>Hot Conditions (&gt;80°F)</td><td>Same</td><td>36-48 oz/hr</td><td>Add 500-1000mg sodium/hr</td></tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <h3>Training Your Gut</h3>
-        <p>Your gut is trainable. Start at 40-50g/hr, increase by 10g every 2-3 weeks. By race day, you should handle 80-100g/hr comfortably.</p>
-        
-        <div class="callout callout-danger">
-            <div class="callout-title">The Bonk is Real</div>
-            <p>Under-fueling isn't grit—it's a guaranteed DNF around mile 120. Eat early, eat often, eat more than you think you need.</p>
-        </div>
-    </div>
-</section>'''
-
-
-def generate_mental_section() -> str:
-    """Generate Mental Training section."""
-    return '''<section class="section" id="mental">
-    <div class="section-header">
-        <span class="section-number">11</span>
-        <h2>Mental Training</h2>
-    </div>
-    <div class="section-content">
-        <h3>Three Tools That Work</h3>
-        
-        <div class="card-grid">
-            <div class="card">
-                <h4>6-2-7 Breathing</h4>
-                <p>Inhale 6 seconds, hold 2, exhale 7. Triggers parasympathetic response, calms panic. Practice until automatic.</p>
-            </div>
-            <div class="card">
-                <h4>Performance Statements</h4>
-                <p>Pre-planned phrases that replace negative self-talk. "This is supposed to be hard." "Just get to the next aid station."</p>
-            </div>
-            <div class="card">
-                <h4>Personal Highlight Reel</h4>
-                <p>Mental movie of past success + race execution + crossing the finish. Triggers confident emotional state on demand.</p>
-            </div>
-        </div>
-        
-        <h3>Crisis Protocol</h3>
-        <p>When things go wrong (they will): <strong>Breathe</strong> (3-5 cycles 6-2-7) → <strong>Statement</strong> (your most powerful one) → <strong>Action</strong> (smallest possible next step)</p>
-    </div>
-</section>'''
-
-
-def generate_race_day_section(data: Dict[str, str]) -> str:
-    """Generate Race Day section."""
-    tactics_html = ''
-    if data.get('RACE_SPECIFIC_TACTICS'):
-        tactics_html = f'''
-        <h3>{data['RACE_NAME']}-Specific Tactics</h3>
-        <p>{data['RACE_SPECIFIC_TACTICS']}</p>'''
+    # Climate rating (default moderate)
+    climate_rating = 3
     
-    aid_html = ''
-    if data.get('AID_STATION_STRATEGY'):
-        aid_html = f'''
-        <h3>Aid Station Strategy</h3>
-        <p>{data['AID_STATION_STRATEGY']}</p>'''
+    # Altitude rating
+    if altitude >= 8000:
+        alt_rating = 5
+    elif altitude >= 5000:
+        alt_rating = 4
+    elif altitude >= 3000:
+        alt_rating = 3
+    elif altitude >= 1000:
+        alt_rating = 2
+    else:
+        alt_rating = 1
     
-    return f'''<section class="section" id="race-day">
-    <div class="section-header">
-        <span class="section-number">12</span>
-        <h2>Race Day</h2>
-    </div>
-    <div class="section-content">
-        <h3>The Three-Act Structure</h3>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>Phase</th><th>When</th><th>Your Job</th></tr></thead>
-                <tbody>
-                    <tr><td><strong>THE MADNESS</strong></td><td>0-90 min</td><td>Survive. Find sustainable group. Eat and drink while others forget.</td></tr>
-                    <tr><td><strong>FALSE DAWN</strong></td><td>90 min - 3 hrs</td><td>Stay fueled. Contribute without overworking. Bank energy.</td></tr>
-                    <tr><td><strong>THE PIPER</strong></td><td>3+ hrs to finish</td><td>Execute your plan while others fall apart. This is the race.</td></tr>
-                </tbody>
-            </table>
-        </div>
-        {tactics_html}
-        {aid_html}
-    </div>
-</section>'''
-
-
-def generate_race_specific_section(data: Dict[str, str]) -> str:
-    """Generate Race-Specific Preparation section with non-negotiables."""
-    # Build non-negotiables table rows
-    nn_rows = []
-    for i in range(1, 6):
-        req = data.get(f'NON_NEG_{i}_REQUIREMENT', '')
-        when = data.get(f'NON_NEG_{i}_BY_WHEN', '')
-        why = data.get(f'NON_NEG_{i}_WHY', '')
-        if req:
-            nn_rows.append(f'<tr><td><strong>{req}</strong></td><td>{when}</td><td>{why}</td></tr>')
+    # Adventure rating (combination of factors)
+    adventure_rating = min(5, max(1, (dist_rating + elev_rating + tech_rating) // 3))
     
-    nn_table = ''
-    if nn_rows:
-        nn_table = f'''<div class="table-wrapper">
-            <table>
-                <thead><tr><th>Requirement</th><th>By When</th><th>Why It Matters</th></tr></thead>
-                <tbody>
-{''.join(nn_rows)}
-                </tbody>
-            </table>
-        </div>'''
+    html = '<div class="rating-hex">\n'
+    html += '  <table class="rating-table">\n'
+    html += '    <thead>\n'
+    html += '      <tr>\n'
+    html += '        <th>Dimension</th>\n'
+    html += '        <th>Rating (1-5)</th>\n'
+    html += '        <th>Visual</th>\n'
+    html += '      </tr>\n'
+    html += '    </thead>\n'
+    html += '    <tbody>\n'
     
-    weather_html = ''
-    if data.get('WEATHER_STRATEGY'):
-        weather_html = f'''
-        <h3>Weather Strategy</h3>
-        <p>{data['WEATHER_STRATEGY']}</p>'''
+    ratings = [
+        ('Elevation', elev_rating),
+        ('Length', dist_rating),
+        ('Technicality', tech_rating),
+        ('Climate', climate_rating),
+        ('Altitude', alt_rating),
+        ('Adventure', adventure_rating)
+    ]
     
-    equipment_html = ''
-    if data.get('EQUIPMENT_CHECKLIST'):
-        equipment_html = f'''
-        <h3>Equipment Checklist</h3>
-        <p>{data['EQUIPMENT_CHECKLIST']}</p>'''
+    for name, rating in ratings:
+        bars = '█' * rating + '░' * (5 - rating)
+        html += f'      <tr>\n'
+        html += f'        <td><strong>{name}</strong></td>\n'
+        html += f'        <td>{rating}/5</td>\n'
+        html += f'        <td class="rating-bars">{bars}</td>\n'
+        html += f'      </tr>\n'
     
-    return f'''<section class="section" id="race-specific">
-    <div class="section-header">
-        <span class="section-number">13</span>
-        <h2>Race-Specific Preparation</h2>
-    </div>
-    <div class="section-content">
-        <h3>The Non-Negotiables for {data['RACE_NAME']}</h3>
-        <p>These aren't suggestions. Skip them and the course will expose the gap in your preparation.</p>
-        {nn_table}
-        {weather_html}
-        {equipment_html}
-    </div>
-</section>'''
+    html += '    </tbody>\n'
+    html += '  </table>\n'
+    html += '</div>'
+    
+    return html
 
 
-def generate_tires_section() -> str:
-    """Generate Tires section."""
-    return '''<section class="section" id="tires">
-    <div class="section-header">
-        <span class="section-number">14</span>
-        <h2>Tires</h2>
-    </div>
-    <div class="section-content">
-        <h3>The Decision Framework</h3>
-        <p>Stop overthinking. Use this:</p>
-        <ol>
-            <li><strong>What width fits?</strong> When in doubt, go 38-42mm</li>
-            <li><strong>What's durable?</strong> Ask people who've raced it</li>
-            <li><strong>Can you test it?</strong> Mounted 2+ weeks before race day</li>
-            <li><strong>Does it feel good?</strong> 3-4 hour test ride</li>
-        </ol>
-        
-        <div class="callout callout-danger">
-            <div class="callout-title">Common Mistakes</div>
-            <p>• Buying new tires race week<br>
-            • Chasing marginal gains over reliability<br>
-            • Ignoring your own testing data</p>
-        </div>
-        
-        <p><strong>The actual best tire</strong> is the one that gets you to the finish line without flatting and doesn't beat you up for 8 hours.</p>
-    </div>
-</section>'''
+def generate_indoor_outdoor_decision(race_data):
+    """Generate indoor vs outdoor decision tree/table"""
+    html = '<table class="decision-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Condition</th>\n'
+    html += '      <th>Ride Indoors</th>\n'
+    html += '      <th>Ride Outdoors</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    decisions = [
+        {
+            'condition': 'Temperature < 20°F or > 100°F',
+            'indoors': 'Yes - Safety risk',
+            'outdoors': 'No - Dangerous conditions'
+        },
+        {
+            'condition': 'Ice, snow, or dangerous road conditions',
+            'indoors': 'Yes - Crash risk too high',
+            'outdoors': 'No - Unsafe'
+        },
+        {
+            'condition': 'Structured intervals (VO2max, Threshold)',
+            'indoors': 'Yes - Better control, no traffic',
+            'outdoors': 'Maybe - If safe route available'
+        },
+        {
+            'condition': 'Endurance ride (Z1-Z2)',
+            'indoors': 'Avoid - Too boring',
+            'outdoors': 'Yes - Mental training, skills practice'
+        },
+        {
+            'condition': 'Time-crunched (< 60 min)',
+            'indoors': 'Yes - No travel time, immediate start',
+            'outdoors': 'No - Travel time wastes workout'
+        },
+        {
+            'condition': 'Long ride (4+ hours)',
+            'indoors': 'No - Mental torture',
+            'outdoors': 'Yes - Essential for race prep'
+        },
+        {
+            'condition': 'Recovery ride',
+            'indoors': 'Maybe - If weather is terrible',
+            'outdoors': 'Yes - Fresh air aids recovery'
+        }
+    ]
+    
+    for item in decisions:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{item["condition"]}</strong></td>\n'
+        html += f'      <td>{item["indoors"]}</td>\n'
+        html += f'      <td>{item["outdoors"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
 
 
-def generate_glossary_section() -> str:
-    """Generate Glossary section."""
-    return '''<section class="section" id="glossary">
-    <div class="section-header">
-        <span class="section-number">15</span>
-        <h2>Glossary</h2>
-    </div>
-    <div class="section-content">
-        <div class="glossary-grid">
-            <div class="glossary-item">
-                <div class="glossary-term">FTP (Functional Threshold Power)</div>
-                <div class="glossary-def">Highest power you can sustain for ~1 hour. All zones calculated as % of FTP.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">TSS (Training Stress Score)</div>
-                <div class="glossary-def">Training load based on duration × intensity. 100 TSS = 1 hour at FTP.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">G Spot (88-92% FTP)</div>
-                <div class="glossary-def">Gravel race pace. Uncomfortably sustainable. Where you'll spend most of the race.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">RPE (Rate of Perceived Exertion)</div>
-                <div class="glossary-def">1-10 scale of how hard effort feels. Trust RPE when devices conflict.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Polarized Training</div>
-                <div class="glossary-def">80% easy (Z1-Z2), 20% hard (Z4+), minimal middle zone.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Taper</div>
-                <div class="glossary-def">Volume drops 30-50% before race while intensity maintains. Arrive fresh.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Bonk</div>
-                <div class="glossary-def">Severe glycogen depletion. Prevention: eat early, eat often.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Supercompensation</div>
-                <div class="glossary-def">Body builds more capacity than before to handle similar stress more easily.</div>
-            </div>
-        </div>
-    </div>
-</section>'''
+def generate_mental_map(race_data):
+    """Generate mental framework diagram as structured content"""
+    html = '<div class="mental-map">\n'
+    html += '  <div class="mental-framework">\n'
+    html += '    <h3>Mental Training Framework</h3>\n'
+    html += '    <div class="mental-layers">\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>1. Foundation: Breathing & Presence</h4>\n'
+    html += '        <p><strong>6-2-7 Technique:</strong> Inhale 6 counts, hold 2, exhale 7. Calms nervous system, brings focus to present moment.</p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>2. Reframing: Change Your Story</h4>\n'
+    html += '        <p><strong>Instead of:</strong> <q>This hurts</q> → <strong>Say:</strong> <q>This is my body adapting. I\'m getting stronger.</q></p>\n'
+    html += '        <p><strong>Instead of:</strong> <q>I can\'t do this</q> → <strong>Say:</strong> <q>I\'m doing it right now. One pedal stroke at a time.</q></p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>3. Anchoring: Physical Cues</h4>\n'
+    html += '        <p><strong>Power position:</strong> Hands in drops, core engaged, smooth pedal stroke. This is your <q>race mode</q> trigger.</p>\n'
+    html += '        <p><strong>Breathing rhythm:</strong> Match cadence to breath (e.g., 2 pedal strokes per breath). Creates flow state.</p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>4. Acceptance: The Suffering Contract</h4>\n'
+    html += '        <p><strong>You signed up for this.</strong> Discomfort is part of the deal. Accept it. Don\'t fight it. Work with it.</p>\n'
+    html += '        <p><strong>Pain is temporary. Quitting lasts forever.</strong></p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>5. Purpose: Remember Your Why</h4>\n'
+    html += '        <p><strong>Why are you here?</strong> Connect to your deeper motivation. This race matters because you chose it.</p>\n'
+    html += '      </div>\n'
+    html += '    </div>\n'
+    html += '  </div>\n'
+    html += '</div>'
+    
+    return html
 
 
-# =============================================================================
-# MAIN ENTRY POINT
-# =============================================================================
+def generate_three_acts(race_data):
+    """Generate three-act race structure table"""
+    distance = race_data.get('distance_miles', 200)
+    duration_hours = distance / 15
+    
+    html = '<table class="three-acts-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Phase</th>\n'
+    html += '      <th>When</th>\n'
+    html += '      <th>What\'s Happening</th>\n'
+    html += '      <th>Your Job</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    acts = [
+        {
+            'phase': 'Act 1: The Start',
+            'when': f'0 - {int(duration_hours * 0.2)} hours',
+            'happening': 'High energy, adrenaline, everyone goes too hard. Groups form. Positioning matters.',
+            'job': 'Stay calm. Don\'t chase. Fuel early (first 30 min). Find your rhythm. Let the race come to you.'
+        },
+        {
+            'phase': 'Act 2: The Grind',
+            'when': f'{int(duration_hours * 0.2)} - {int(duration_hours * 0.8)} hours',
+            'happening': 'The real race. Fatigue sets in. Groups break up. Mental game begins. This is where races are won or lost.',
+            'job': 'Stay consistent. Fuel every 20-30 min. Manage effort (don\'t redline). Use mental techniques. One section at a time.'
+        },
+        {
+            'phase': 'Act 3: The Finish',
+            'when': f'{int(duration_hours * 0.8)} hours - Finish',
+            'happening': 'Everything hurts. Decision fatigue. Final push. This is where training pays off.',
+            'job': 'Empty the tank. Use everything you\'ve got. Remember your why. Push through the pain. Finish strong.'
+        }
+    ]
+    
+    for act in acts:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{act["phase"]}</strong></td>\n'
+        html += f'      <td>{act["when"]}</td>\n'
+        html += f'      <td>{act["happening"]}</td>\n'
+        html += f'      <td>{act["job"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
 
-def get_output_filename(race_name: str, plan_name: str, tier_name: str, ability: str) -> str:
-    """Generate standardized output filename."""
-    race_slug = re.sub(r'[^a-z0-9]+', '_', race_name.lower()).strip('_')
-    plan_slug = re.sub(r'[^a-z0-9]+', '_', plan_name.lower()).strip('_')
-    return f"{race_slug}_{plan_slug}_{tier_name.lower()}_{ability.lower()}_guide.html"
+
+def generate_tire_decision(race_data):
+    """Generate tire selection decision tree/table"""
+    terrain = race_data.get('terrain', 'rolling')
+    distance = race_data.get('distance_miles', 200)
+    
+    html = '<div class="tire-decision">\n'
+    html += '  <table class="tire-table">\n'
+    html += '    <thead>\n'
+    html += '      <tr>\n'
+    html += '        <th>Condition</th>\n'
+    html += '        <th>Tire Width</th>\n'
+    html += '        <th>Tread</th>\n'
+    html += '        <th>Pressure</th>\n'
+    html += '        <th>Why</th>\n'
+    html += '      </tr>\n'
+    html += '    </thead>\n'
+    html += '    <tbody>\n'
+    
+    tire_scenarios = [
+        {
+            'condition': 'Smooth gravel, dry',
+            'width': '38-40mm',
+            'tread': 'Semi-slick or light file tread',
+            'pressure': '35-40 PSI',
+            'why': 'Low rolling resistance. Speed matters more than grip.'
+        },
+        {
+            'condition': 'Rough/loose gravel',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs (2-3mm)',
+            'pressure': '30-35 PSI',
+            'why': 'Need grip and comfort. Wider = lower pressure = better traction.'
+        },
+        {
+            'condition': 'Mud or wet conditions',
+            'width': '42-45mm',
+            'tread': 'Aggressive knobs (4-5mm)',
+            'pressure': '28-32 PSI',
+            'why': 'Maximum grip. Lower pressure helps mud clear from tread.'
+        },
+        {
+            'condition': 'Mixed terrain (your race)',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs (2-3mm)',
+            'pressure': '32-36 PSI',
+            'why': 'Versatile. Handles most conditions. Good balance of speed and grip.'
+        },
+        {
+            'condition': 'Long distance (6+ hours)',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs',
+            'pressure': '32-35 PSI',
+            'why': 'Comfort matters. Lower pressure reduces fatigue. Still fast enough.'
+        }
+    ]
+    
+    for scenario in tire_scenarios:
+        html += '      <tr>\n'
+        html += f'        <td><strong>{scenario["condition"]}</strong></td>\n'
+        html += f'        <td>{scenario["width"]}</td>\n'
+        html += f'        <td>{scenario["tread"]}</td>\n'
+        html += f'        <td>{scenario["pressure"]}</td>\n'
+        html += f'        <td>{scenario["why"]}</td>\n'
+        html += '      </tr>\n'
+    
+    html += '    </tbody>\n'
+    html += '  </table>\n'
+    html += '  <p class="tire-note"><strong>Rule of thumb:</strong> When in doubt, go wider and lower pressure. Comfort and grip beat marginal speed gains on rough terrain.</p>\n'
+    html += '</div>'
+    
+    return html
+
+
+def generate_key_workout_summary(race_data):
+    """Generate key workout types overview table"""
+    html = '<table class="workout-summary-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Workout Type</th>\n'
+    html += '      <th>Zone</th>\n'
+    html += '      <th>Duration</th>\n'
+    html += '      <th>Purpose</th>\n'
+    html += '      <th>Key Focus</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    workouts = [
+        {
+            'type': 'Endurance',
+            'zone': 'Z1-Z2',
+            'duration': '2-6 hours',
+            'purpose': 'Aerobic base, fat adaptation',
+            'focus': 'Easy pace. Conversational. Builds durability.'
+        },
+        {
+            'type': 'G-Spot Intervals',
+            'zone': '87-92% FTP',
+            'duration': '15-60 min blocks',
+            'purpose': 'Race-specific power',
+            'focus': 'Sustained gravel race pace. Practice position.'
+        },
+        {
+            'type': 'Threshold',
+            'zone': 'Z4 (93-105% FTP)',
+            'duration': '10-30 min blocks',
+            'purpose': 'Lactate clearance, sustained power',
+            'focus': 'Hard but controlled. Can say a few words.'
+        },
+        {
+            'type': 'VO2max',
+            'zone': 'Z5 (106-120% FTP)',
+            'duration': '2-8 min intervals',
+            'purpose': 'Max aerobic capacity',
+            'focus': 'Very hard. Near max. Single words only.'
+        },
+        {
+            'type': 'Anaerobic',
+            'zone': 'Z6 (121-150% FTP)',
+            'duration': '30 sec - 3 min',
+            'purpose': 'Power, lactate tolerance',
+            'focus': 'All-out efforts. Sharp, explosive.'
+        },
+        {
+            'type': 'Neuromuscular',
+            'zone': 'Z7 (>150% FTP)',
+            'duration': '5-15 seconds',
+            'purpose': 'Max power, sprint',
+            'focus': 'Pure explosive. All-out sprints.'
+        },
+        {
+            'type': 'Tempo',
+            'zone': 'Z3 (76-90% FTP)',
+            'duration': '20-60 min',
+            'purpose': 'Moderate intensity (limited use)',
+            'focus': 'Comfortably hard. Used sparingly in polarized plans.'
+        }
+    ]
+    
+    for workout in workouts:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{workout["type"]}</strong></td>\n'
+        html += f'      <td>{workout["zone"]}</td>\n'
+        html += f'      <td>{workout["duration"]}</td>\n'
+        html += f'      <td>{workout["purpose"]}</td>\n'
+        html += f'      <td>{workout["focus"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate Gravel God Training Guides')
-    parser.add_argument('--race', required=True, help='Path to race JSON file')
-    parser.add_argument('--plan', required=True, help='Path to plan JSON file')
-    parser.add_argument('--output', help='Output HTML file path (auto-generated if not specified)')
-    parser.add_argument('--output-dir', default='.', help='Output directory')
+    """Example usage"""
     
-    args = parser.parse_args()
+    # Example: Generate guide for Unbound Gravel 200
+    # In practice, you'd load race data from your JSON file
     
-    # Load data
-    print(f"Loading race data from: {args.race}")
-    race_json = load_json(args.race)
-    
-    print(f"Loading plan data from: {args.plan}")
-    plan_json = load_json(args.plan)
-    
-    # Extract data for placeholders
-    race_data = extract_race_data(race_json)
-    plan_data = extract_plan_data(plan_json)
-    
-    # Override tier/ability from plan if present
-    if plan_data.get('PLAN_NAME'):
-        # Infer tier from plan name
-        plan_name = plan_data['PLAN_NAME'].upper()
-        for tier in ['AYAHUASCA', 'FINISHER', 'COMPETE', 'PODIUM']:
-            if tier in plan_name:
-                race_data['TIER_NAME'] = tier.capitalize()
-                break
-        
-        # Infer ability from plan name
-        for ability in ['BEGINNER', 'INTERMEDIATE', 'ADVANCED', 'MASTERS']:
-            if ability in plan_name:
-                race_data['ABILITY_LEVEL'] = ability.capitalize()
-                break
-        
-        # Get hours from plan metadata
-        if plan_data.get('PLAN_TARGET_HOURS'):
-            race_data['WEEKLY_HOURS'] = plan_data['PLAN_TARGET_HOURS']
-    
-    # Extract radar scores
-    race = race_json.get('race', race_json)
-    radar = race.get('radar_scores', {})
-    radar_scores = {
-        'elevation': radar.get('elevation', {}).get('score', 3),
-        'length': radar.get('length', {}).get('score', 3),
-        'technicality': radar.get('technicality', {}).get('score', 3),
-        'climate': radar.get('climate', {}).get('score', 3),
-        'altitude': radar.get('altitude', {}).get('score', 1),
-        'adventure': radar.get('adventure', {}).get('score', 3),
+    race_data = {
+        'name': 'Unbound Gravel 200',
+        'distance_miles': 200,
+        'elevation_gain_feet': 10000,
+        'terrain_description': 'Kansas flint rock, rollers, and endless dirt roads',
+        'duration_estimate': '10-15 hours',
+        'description': 'The original and most iconic gravel race in North America. 200 miles of Kansas flint, heat, and suffering.',
+        'key_challenges': 'extreme distance, heat exposure, rough flint rock, and relentless mental grind',
+        'recommended_tire_width': '40-45mm',
+        'technical_rating': 'Moderate',
+        'time_cutoff': '30 hours',
+        'website': 'https://unboundgravel.com',
+        'weather_strategy': 'Expect heat. Start hydrated. Cool with water at aid stations.',
+        'aid_station_strategy': 'Quick stops only. Have crew support if possible.',
+        'altitude_power_loss': 'Minimal - race is at ~1,200 feet elevation',
+        'specific_skill_notes': 'Practice riding washboard. Learn to float over rough surfaces.',
+        'specific_tactics': 'Start slow. The first 100 miles is just warm-up. Real race starts at mile 150.'
     }
     
-    # Generate HTML
-    print("Generating HTML guide...")
-    html = generate_guide_html(race_data, plan_data, radar_scores)
+    # Generate guide
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    output_dir = repo_root / 'output'
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / 'test_guide_unbound_200_finisher_intermediate.html'
     
-    # Determine output path
-    if args.output:
-        output_path = args.output
-    else:
-        filename = get_output_filename(
-            race_data['RACE_NAME'],
-            plan_data.get('PLAN_NAME', 'plan'),
-            race_data['TIER_NAME'],
-            race_data['ABILITY_LEVEL']
-        )
-        output_path = os.path.join(args.output_dir, filename)
+    generate_guide(
+        race_data=race_data,
+        tier_name='FINISHER',
+        ability_level='Intermediate',
+        output_path=str(output_path)
+    )
     
-    # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else '.', exist_ok=True)
-    
-    # Write output
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(html)
-    
-    print(f"✓ Guide generated: {output_path}")
-    print(f"  Race: {race_data['RACE_NAME']}")
-    print(f"  Plan: {plan_data.get('PLAN_NAME', 'Unknown')}")
-    print(f"  Tier: {race_data['TIER_NAME']}")
-    print(f"  Ability: {race_data['ABILITY_LEVEL']}")
-    
-    return output_path
+    print(f"\n✓ Test guide generated successfully!")
+    print(f"✓ Open {output_path} in a browser to view")
 
 
 if __name__ == '__main__':
