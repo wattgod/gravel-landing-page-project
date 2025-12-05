@@ -77,10 +77,23 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     hooks = race_data.get('race_hooks', {})
     guide_vars = race_data.get('guide_variables', {})
     
-    # Get elevation gain (try multiple fields)
-    elevation_gain = (characteristics.get('elevation_gain_feet', 0) or 
-                     metadata.get('elevation_gain_feet', 0) or
-                     race_data.get('elevation_gain_feet', 0))
+    # Get elevation gain (try multiple fields - note: JSON uses 'elevation_feet' in metadata for total gain)
+    # Also check guide_variables which may have formatted string
+    elevation_gain_str = guide_vars.get('race_elevation', '')
+    if elevation_gain_str:
+        # Extract number from string like "11,000 feet"
+        import re
+        match = re.search(r'([\d,]+)', str(elevation_gain_str))
+        if match:
+            elevation_gain = int(match.group(1).replace(',', ''))
+        else:
+            elevation_gain = 0
+    else:
+        elevation_gain = (metadata.get('elevation_feet', 0) or
+                         characteristics.get('elevation_gain_feet', 0) or 
+                         metadata.get('elevation_gain_feet', 0) or
+                         race_data.get('elevation_gain_feet', 0) or
+                         race_data.get('elevation_feet', 0))
     try:
         elevation_gain = int(elevation_gain) if elevation_gain else 0
         elevation_str = f"{elevation_gain:,} feet of elevation gain" if elevation_gain else "XXX feet of elevation gain"
@@ -91,17 +104,68 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
     try:
         distance = int(distance) if distance else 0
-        distance_str = str(distance) if distance else 'XXX'
+        distance_str = f"{distance} miles" if distance else 'XXX miles'
     except (ValueError, TypeError):
-        distance_str = 'XXX'
+        distance_str = 'XXX miles'
+    
+    # Get terrain description
+    terrain_desc = (guide_vars.get('race_terrain', '') or
+                   guide_vars.get('terrain_description', '') or
+                   characteristics.get('terrain_description', '') or
+                   'varied terrain')
+    
+    # Calculate duration estimate if not provided (rough: 200 miles ≈ 10-15 hours for most)
+    duration_estimate = guide_vars.get('duration_estimate', '')
+    if not duration_estimate and distance:
+        if distance >= 200:
+            duration_estimate = '10-15 hours'
+        elif distance >= 100:
+            duration_estimate = '5-8 hours'
+        elif distance >= 50:
+            duration_estimate = '2-4 hours'
+        else:
+            duration_estimate = '1-2 hours'
+    if not duration_estimate:
+        duration_estimate = 'X-X hours'
+    
+    # Get weather strategy (expand if too short)
+    weather_strategy = guide_vars.get('weather_strategy', '')
+    if not weather_strategy or len(weather_strategy) < 100:
+        # Build comprehensive weather strategy from race data
+        typical_weather = characteristics.get('typical_weather', '')
+        climate = characteristics.get('climate', '')
+        race_date = metadata.get('date', '')
+        
+        weather_strategy = ""
+        
+        if typical_weather:
+            weather_strategy += f"**Typical Conditions:** {typical_weather}. "
+        elif climate:
+            weather_strategy += f"**Typical Conditions:** Expect {climate} conditions. "
+        
+        if 'hot' in str(typical_weather).lower() or 'hot' in str(climate).lower():
+            weather_strategy += "Heat management is critical. Start hydrated. Pre-cool if possible (cold water, ice). Wear light, breathable layers. Sun protection is mandatory (sunscreen, hat, sunglasses). Monitor forecast daily starting 5 days out. If extreme heat is forecast, adjust pacing strategy---start slower, fuel more aggressively. "
+        elif 'cold' in str(typical_weather).lower() or 'cold' in str(climate).lower():
+            weather_strategy += "Cold weather requires careful layering. Start warm, remove layers as you heat up. Protect extremities (toes, fingers, ears). Pack extra layers in case conditions worsen. Monitor forecast for precipitation. "
+        else:
+            weather_strategy += "Monitor forecast daily starting 5 days out. Pack layers for variable conditions. "
+        
+        weather_strategy += "Check forecast again 24 hours before race and adjust gear accordingly. "
+        
+        # Add wind considerations if applicable
+        if 'kansas' in str(metadata.get('location', '')).lower() or 'wind' in str(typical_weather).lower():
+            weather_strategy += "Wind can be a major factor---plan for crosswinds and headwinds. "
+        
+        if not weather_strategy:
+            weather_strategy = "Check forecast week of race. Pack appropriate layers. Start hydrated if hot conditions expected. Monitor conditions daily starting 5 days out."
     
     # Build substitution dictionary
     substitutions = {
         '{{RACE_NAME}}': metadata.get('name', race_data.get('name', 'Race Name')),
         '{{DISTANCE}}': distance_str,
-        '{{TERRAIN_DESCRIPTION}}': characteristics.get('terrain_description', guide_vars.get('terrain_description', 'varied terrain')),
+        '{{TERRAIN_DESCRIPTION}}': terrain_desc,
         '{{ELEVATION_GAIN}}': elevation_str,
-        '{{DURATION_ESTIMATE}}': guide_vars.get('duration_estimate', metadata.get('duration_estimate', 'X-X hours')),
+        '{{DURATION_ESTIMATE}}': duration_estimate,
         '{{RACE_DESCRIPTION}}': hooks.get('detail', metadata.get('description', 'Race description here')),
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
@@ -112,7 +176,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{RACE_ELEVATION}}': str(elevation_gain) if elevation_gain and isinstance(elevation_gain, (int, float)) else 'XXX',
         '{{RACE_SPECIFIC_SKILL_NOTES}}': guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
         '{{RACE_SPECIFIC_TACTICS}}': guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
-        '{{WEATHER_STRATEGY}}': guide_vars.get('weather_strategy', 'Check forecast week of. Pack layers.'),
+        '{{WEATHER_STRATEGY}}': weather_strategy,
         '{{AID_STATION_STRATEGY}}': guide_vars.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
         '{{ALTITUDE_POWER_LOSS}}': guide_vars.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
         '{{RECOMMENDED_TIRE_WIDTH}}': characteristics.get('recommended_tire_width', guide_vars.get('recommended_tire_width', '38-42mm')),
@@ -149,15 +213,24 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         
         # Skill placeholder examples (would be race-specific)
         '{{SKILL_5_NAME}}': 'Emergency Repairs',
-        '{{SKILL_5_WHY}}': 'Mechanical issues will happen. Knowing how to fix them keeps you racing.',
-        '{{SKILL_5_HOW}}': 'Practice changing tubes, fixing chains, and adjusting brakes before race day.',
-        '{{SKILL_5_CUE}}': 'Carry tools. Know your bike. Practice fixes.',
+        '{{SKILL_5_WHY}}': 'Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn\'t have to end your day---if you can fix it quickly. A dropped chain doesn\'t have to cost you 10 minutes---if you\'ve practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can\'t control when mechanicals happen, but you can control how prepared you are to handle them.',
+        '{{SKILL_5_HOW}}': 'Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn\'t perfection---it\'s competence under pressure.',
+        '{{SKILL_5_CUE}}': 'Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.',
     }
     
     # Perform all substitutions
     output = template
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
+    
+    # Validate no unreplaced placeholders remain
+    import re
+    unreplaced = re.findall(r'\{\{[A-Z_]+\}\}', output)
+    if unreplaced:
+        # Filter out known placeholders that are intentionally left (like INFOGRAPHIC placeholders that are handled)
+        critical_unreplaced = [p for p in unreplaced if 'XXX' not in p and 'INFOGRAPHIC' not in p and 'PHASE' not in p]
+        if critical_unreplaced:
+            print(f"  ⚠️  Warning: Unreplaced placeholders found: {set(critical_unreplaced)}")
     
     # Conditionally remove altitude section if elevation < 3000 feet
     # Check multiple possible field names for elevation
