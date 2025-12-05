@@ -4,6 +4,7 @@ Training Guide Generator
 Reads the HTML template and substitutes race-specific data.
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -727,46 +728,68 @@ def generate_key_workout_summary(race_data):
 
 
 def main():
-    """Example usage"""
+    """CLI entry point for guide generator"""
+    parser = argparse.ArgumentParser(description='Generate training plan guide HTML')
+    parser.add_argument('--race', required=True, help='Path to race JSON file')
+    parser.add_argument('--plan', required=True, help='Path to plan JSON file')
+    parser.add_argument('--output-dir', required=True, help='Directory to save generated guide')
     
-    # Example: Generate guide for Unbound Gravel 200
-    # In practice, you'd load race data from your JSON file
+    args = parser.parse_args()
     
-    race_data = {
-        'name': 'Unbound Gravel 200',
-        'distance_miles': 200,
-        'elevation_gain_feet': 10000,
-        'terrain_description': 'Kansas flint rock, rollers, and endless dirt roads',
-        'duration_estimate': '10-15 hours',
-        'description': 'The original and most iconic gravel race in North America. 200 miles of Kansas flint, heat, and suffering.',
-        'key_challenges': 'extreme distance, heat exposure, rough flint rock, and relentless mental grind',
-        'recommended_tire_width': '40-45mm',
-        'technical_rating': 'Moderate',
-        'time_cutoff': '30 hours',
-        'website': 'https://unboundgravel.com',
-        'weather_strategy': 'Expect heat. Start hydrated. Cool with water at aid stations.',
-        'aid_station_strategy': 'Quick stops only. Have crew support if possible.',
-        'altitude_power_loss': 'Minimal - race is at ~1,200 feet elevation',
-        'specific_skill_notes': 'Practice riding washboard. Learn to float over rough surfaces.',
-        'specific_tactics': 'Start slow. The first 100 miles is just warm-up. Real race starts at mile 150.'
-    }
+    # Load race and plan data
+    race_data = load_race_data(args.race)
+    plan_data = load_race_data(args.plan) if args.plan else None
+    
+    # Extract tier and level from plan data or filename
+    tier_name = 'FINISHER'  # Default
+    ability_level = 'Intermediate'  # Default
+    
+    if plan_data:
+        tier_name = plan_data.get('tier', 'FINISHER').upper()
+        ability_level = plan_data.get('level', 'Intermediate').title()
+    else:
+        # Try to extract from filename
+        plan_path = Path(args.plan)
+        plan_name = plan_path.stem.lower()
+        if 'ayahuasca' in plan_name:
+            tier_name = 'AYAHUASCA'
+        elif 'finisher' in plan_name:
+            tier_name = 'FINISHER'
+        elif 'compete' in plan_name:
+            tier_name = 'COMPETE'
+        elif 'podium' in plan_name:
+            tier_name = 'PODIUM'
+        
+        if 'beginner' in plan_name:
+            ability_level = 'Beginner'
+        elif 'intermediate' in plan_name:
+            ability_level = 'Intermediate'
+        elif 'advanced' in plan_name:
+            ability_level = 'Advanced'
+        elif 'masters' in plan_name:
+            ability_level = 'Masters'
+        elif 'save_my_race' in plan_name:
+            ability_level = 'Save My Race'
+    
+    # Create output directory
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate filename
+    race_name_slug = race_data.get('race_metadata', {}).get('name', 'race').lower().replace(' ', '_')
+    plan_slug = f"{tier_name.lower()}_{ability_level.lower().replace(' ', '_')}"
+    output_filename = f"{race_name_slug}_{plan_slug}_guide.html"
+    output_path = output_dir / output_filename
     
     # Generate guide
-    script_dir = Path(__file__).parent
-    repo_root = script_dir.parent
-    output_dir = repo_root / 'output'
-    output_dir.mkdir(exist_ok=True)
-    output_path = output_dir / 'test_guide_unbound_200_finisher_intermediate.html'
-    
     generate_guide(
         race_data=race_data,
-        tier_name='FINISHER',
-        ability_level='Intermediate',
+        tier_name=tier_name,
+        ability_level=ability_level,
         output_path=str(output_path)
     )
     
-    print(f"\n✓ Test guide generated successfully!")
-    print(f"✓ Open {output_path} in a browser to view")
+    print(f"✓ Generated: {output_path}")
 
 
 if __name__ == '__main__':
