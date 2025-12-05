@@ -768,32 +768,36 @@ def main():
     tier_name = 'FINISHER'  # Default
     ability_level = 'Intermediate'  # Default
     
+    # Try to extract from filename first (more reliable)
+    plan_path = Path(args.plan)
+    plan_name = plan_path.stem.lower()
+    
+    if 'ayahuasca' in plan_name:
+        tier_name = 'AYAHUASCA'
+    elif 'finisher' in plan_name:
+        tier_name = 'FINISHER'
+    elif 'compete' in plan_name:
+        tier_name = 'COMPETE'
+    elif 'podium' in plan_name:
+        tier_name = 'PODIUM'
+    
+    if 'beginner' in plan_name:
+        ability_level = 'Beginner'
+    elif 'intermediate' in plan_name:
+        ability_level = 'Intermediate'
+    elif 'advanced' in plan_name:
+        ability_level = 'Advanced'
+    elif 'masters' in plan_name:
+        ability_level = 'Masters'
+    elif 'save_my_race' in plan_name:
+        ability_level = 'Save My Race'
+    
+    # Override with plan_data if available
     if plan_data:
-        tier_name = plan_data.get('tier', 'FINISHER').upper()
-        ability_level = plan_data.get('level', 'Intermediate').title()
-    else:
-        # Try to extract from filename
-        plan_path = Path(args.plan)
-        plan_name = plan_path.stem.lower()
-        if 'ayahuasca' in plan_name:
-            tier_name = 'AYAHUASCA'
-        elif 'finisher' in plan_name:
-            tier_name = 'FINISHER'
-        elif 'compete' in plan_name:
-            tier_name = 'COMPETE'
-        elif 'podium' in plan_name:
-            tier_name = 'PODIUM'
-        
-        if 'beginner' in plan_name:
-            ability_level = 'Beginner'
-        elif 'intermediate' in plan_name:
-            ability_level = 'Intermediate'
-        elif 'advanced' in plan_name:
-            ability_level = 'Advanced'
-        elif 'masters' in plan_name:
-            ability_level = 'Masters'
-        elif 'save_my_race' in plan_name:
-            ability_level = 'Save My Race'
+        if 'tier' in plan_data:
+            tier_name = plan_data.get('tier', tier_name).upper()
+        if 'level' in plan_data:
+            ability_level = plan_data.get('level', ability_level).title()
     
     # Create output directory
     output_dir = Path(args.output_dir)
