@@ -16,6 +16,7 @@
             color: #333;
             border-bottom: 4px solid #000;
             padding-bottom: 10px;
+            margin-bottom: 30px;
         }
         .race-list {
             display: grid;
@@ -32,6 +33,7 @@
         .race-card h2 {
             margin-top: 0;
             color: #000;
+            font-size: 1.3em;
         }
         .plan-link {
             display: block;
@@ -42,46 +44,44 @@
             text-decoration: none;
             color: #000;
             font-weight: bold;
+            transition: background 0.2s;
         }
         .plan-link:hover {
             background: #FFC700;
+        }
+        .intro {
+            color: #666;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <h1>🚴 Gravel God Training Guides</h1>
-    <p>Access your race-specific training plan guides below.</p>
+    <p class="intro">Access your race-specific training plan guides below.</p>
     
-    <div class="race-list" id="race-list">
-        <!-- Guides will be dynamically listed here -->
-        <p>Loading guides...</p>
+    <div class="race-list">
+        <div class="race-card">
+            <h2>Unbound Gravel 200</h2>
+            <a href="guides/unbound-gravel-200/ayahuasca-beginner.html" class="plan-link">Ayahuasca Beginner</a>
+            <a href="guides/unbound-gravel-200/ayahuasca-intermediate.html" class="plan-link">Ayahuasca Intermediate</a>
+            <a href="guides/unbound-gravel-200/ayahuasca-masters.html" class="plan-link">Ayahuasca Masters</a>
+            <a href="guides/unbound-gravel-200/ayahuasca-save-my-race.html" class="plan-link">Ayahuasca Save My Race</a>
+            <a href="guides/unbound-gravel-200/finisher-beginner.html" class="plan-link">Finisher Beginner</a>
+            <a href="guides/unbound-gravel-200/finisher-intermediate.html" class="plan-link">Finisher Intermediate</a>
+            <a href="guides/unbound-gravel-200/finisher-advanced.html" class="plan-link">Finisher Advanced</a>
+            <a href="guides/unbound-gravel-200/finisher-masters.html" class="plan-link">Finisher Masters</a>
+            <a href="guides/unbound-gravel-200/finisher-save-my-race.html" class="plan-link">Finisher Save My Race</a>
+            <a href="guides/unbound-gravel-200/compete-intermediate.html" class="plan-link">Compete Intermediate</a>
+            <a href="guides/unbound-gravel-200/compete-advanced.html" class="plan-link">Compete Advanced</a>
+            <a href="guides/unbound-gravel-200/compete-masters.html" class="plan-link">Compete Masters</a>
+            <a href="guides/unbound-gravel-200/compete-save-my-race.html" class="plan-link">Compete Save My Race</a>
+            <a href="guides/unbound-gravel-200/podium-advanced.html" class="plan-link">Podium Advanced</a>
+            <a href="guides/unbound-gravel-200/podium-advanced-goat.html" class="plan-link">Podium Advanced GOAT</a>
+        </div>
     </div>
 
-    <script>
-        // This will be populated by deployment script
-        const guides = [];
-        
-        if (guides.length === 0) {
-            document.getElementById('race-list').innerHTML = '<p>No guides available yet. Guides will appear here after deployment.</p>';
-        } else {
-            // Group by race
-            const byRace = {};
-            guides.forEach(guide => {
-                if (!byRace[guide.race]) byRace[guide.race] = [];
-                byRace[guide.race].push(guide);
-            });
-            
-            let html = '';
-            Object.keys(byRace).sort().forEach(race => {
-                html += `<div class="race-card"><h2>${race}</h2>`;
-                byRace[race].forEach(guide => {
-                    html += `<a href="${guide.path}" class="plan-link">${guide.tier} ${guide.level}</a>`;
-                });
-                html += '</div>';
-            });
-            document.getElementById('race-list').innerHTML = html;
-        }
-    </script>
+    <p style="margin-top: 40px; color: #666; font-size: 0.9em;">
+        <strong>Note:</strong> More races will appear here as guides are generated and deployed.
+    </p>
 </body>
 </html>
-
