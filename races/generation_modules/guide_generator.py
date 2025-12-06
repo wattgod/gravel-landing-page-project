@@ -5,6 +5,7 @@ Reads the HTML template and substitutes race-specific data.
 """
 
 import argparse
+import html
 import json
 from pathlib import Path
 
@@ -224,6 +225,15 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     output = template
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
+    
+    # Wire in race-specific modules
+    race_specific = race_data.get("race_specific") or {}
+    output = output.replace("{{FLINT_MODULE}}", build_flint_module(race_specific))
+    output = output.replace("{{TIRE_PRESSURE_MODULE}}", build_tire_pressure_module(race_specific))
+    output = output.replace("{{WIND_MODULE}}", build_wind_module(race_specific))
+    output = output.replace("{{TIME_DRIFT_MODULE}}", build_time_drift_module(race_specific))
+    output = output.replace("{{DECISION_TREE_MODULE}}", build_decision_tree_module(race_specific))
+    output = output.replace("{{PSYCH_LANDMARKS_MODULE}}", build_psych_landmarks_module(race_specific))
     
     # Validate no unreplaced placeholders remain
     import re
@@ -872,6 +882,284 @@ def generate_key_workout_summary(race_data):
     html += '</table>'
     
     return html
+
+
+def _html_escape(value):
+    """Simple HTML escape that tolerates None."""
+    if value is None:
+        return ""
+    return html.escape(str(value))
+
+
+def build_flint_module(race_specific):
+    surface = race_specific.get("surface") or {}
+    terrain_type = surface.get("terrain_type")
+    description = surface.get("description")
+    hazard_sectors = surface.get("hazard_sectors") or []
+
+    # Only render if we actually have something meaningful
+    if not (terrain_type and description and hazard_sectors):
+        return ""
+
+    rows = []
+    for sector in hazard_sectors:
+        name = _html_escape(sector.get("name"))
+        mile_marker = _html_escape(sector.get("mile_marker"))
+        risk_level = _html_escape(str(sector.get("risk_level", "")).replace("_", " ").title())
+        tactics = _html_escape(sector.get("tactics"))
+        rows.append(
+            f"<tr>"
+            f"<td><strong>{name}</strong></td>"
+            f"<td>{mile_marker}</td>"
+            f"<td>{risk_level}</td>"
+            f"<td>{tactics}</td>"
+            f"</tr>"
+        )
+
+    rows_html = "\n".join(rows)
+
+    return f"""
+<div class="gg-alert">
+  <h3>⚠️ Flint Rock Hazard Protocol</h3>
+  <p>{_html_escape(description)}</p>
+
+  <table class="gg">
+    <thead>
+      <tr>
+        <th>Sector</th>
+        <th>Miles</th>
+        <th>Risk Level</th>
+        <th>Tactics</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows_html}
+    </tbody>
+  </table>
+
+  <h4>Protection Strategy:</h4>
+  <ul>
+    <li><strong>Line choice:</strong> Avoid the crown where sharp rock concentrates.</li>
+    <li><strong>Body position:</strong> Stay relaxed to reduce pinch-flat risk.</li>
+    <li><strong>Speed:</strong> Maintain momentum over sharp sections instead of panic braking.</li>
+    <li><strong>If wet:</strong> Mud + flint is the worst combo – consider dropping pressure slightly.</li>
+  </ul>
+</div>
+""".strip()
+
+
+def build_tire_pressure_module(race_specific):
+    mechanicals = race_specific.get("mechanicals") or {}
+    recommended_tires = mechanicals.get("recommended_tires") or []
+    pressure_by_weight = mechanicals.get("pressure_by_weight") or {}
+
+    if not (recommended_tires and pressure_by_weight):
+        return ""
+
+    # Build table rows
+    rows = []
+    for weight_class, pressures in pressure_by_weight.items():
+        label = str(weight_class)
+        label = label.replace("_", "-").replace("lbs", " lbs").replace("plus", "+")
+        dry = _html_escape(pressures.get("dry"))
+        mixed = _html_escape(pressures.get("mixed"))
+        mud = _html_escape(pressures.get("mud"))
+        rows.append(
+            f"<tr>"
+            f"<td><strong>{_html_escape(label)}</strong></td>"
+            f"<td>{dry}</td>"
+            f"<td>{mixed}</td>"
+            f"<td>{mud}</td>"
+            f"</tr>"
+        )
+
+    rows_html = "\n".join(rows)
+
+    tires_html = "\n".join(f"<li>{_html_escape(t)}</li>" for t in recommended_tires)
+    headline_tire = _html_escape(recommended_tires[0]) if recommended_tires else "this course"
+
+    return f"""
+<div class="gg-tactical">
+  <h3>Tire Pressure Recommendations for {headline_tire}</h3>
+  <table class="gg">
+    <thead>
+      <tr>
+        <th>Rider Weight</th>
+        <th>Dry Conditions</th>
+        <th>Mixed Conditions</th>
+        <th>Mud/Wet</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows_html}
+    </tbody>
+  </table>
+  <p><strong>Recommended Tires:</strong></p>
+  <ul>
+    {tires_html}
+  </ul>
+  <p><strong>Note:</strong> These are starting points. Adjust based on tire casing, rim width, and your own feel. When in doubt, err slightly lower for comfort and grip, not vanity PSI.</p>
+</div>
+""".strip()
+
+
+def build_wind_module(race_specific):
+    wind = race_specific.get("wind_protocol") or {}
+    prevailing_direction = wind.get("prevailing_direction")
+    when_it_matters = wind.get("when_it_matters")
+    group_tactics = wind.get("group_tactics")
+    solo_tactics = wind.get("solo_tactics")
+
+    if not (prevailing_direction or when_it_matters or group_tactics or solo_tactics):
+        return ""
+
+    return f"""
+<div class="gg-tactical">
+  <h3>Wind Protocol</h3>
+  <p><strong>Prevailing Pattern:</strong> {_html_escape(prevailing_direction)}</p>
+
+  <h4>When It Matters:</h4>
+  <p>{_html_escape(when_it_matters)}</p>
+
+  <h4>Group Tactics:</h4>
+  <p>{_html_escape(group_tactics)}</p>
+
+  <h4>Solo Tactics:</h4>
+  <p>{_html_escape(solo_tactics)}</p>
+
+  <div class="gg-blackpill">
+    <span class="label">Reality Check</span>
+    <p>The wind will be harder than you expect. Lower your power targets 5–10% into sustained headwinds and protect your head. Ego burns more matches than the course.</p>
+  </div>
+</div>
+""".strip()
+
+
+def build_time_drift_module(race_specific):
+    environment = race_specific.get("environment") or {}
+    time_drift = environment.get("time_drift") or {}
+
+    neutral = time_drift.get("neutral")
+    mild_mud = time_drift.get("mild_mud")
+    heavy_mud = time_drift.get("heavy_mud")
+    note = time_drift.get("note")
+
+    if not (neutral or mild_mud or heavy_mud or note):
+        return ""
+
+    return f"""
+<div class="gg-info">
+  <h3>Expected Time Drift</h3>
+  <p><strong>{_html_escape(note)}</strong></p>
+
+  <table class="gg">
+    <thead>
+      <tr>
+        <th>Conditions</th>
+        <th>Time Addition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Neutral (normal wind & conditions)</td>
+        <td><strong>{_html_escape(neutral or "")}</strong></td>
+      </tr>
+      <tr>
+        <td>Mild mud or heavy wind</td>
+        <td><strong>{_html_escape(mild_mud or "")}</strong></td>
+      </tr>
+      <tr>
+        <td>Heavy mud (peanut butter)</td>
+        <td><strong>{_html_escape(heavy_mud or "")}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Plan accordingly:</strong> Bring more food, fluids, and mental patience than your best-case scenario assumes. Most people underestimate how long they'll be out there.</p>
+</div>
+""".strip()
+
+
+def build_decision_tree_module(race_specific):
+    tree = race_specific.get("in_race_decision_tree") or {}
+
+    # If there's nothing, return empty
+    if not tree:
+        return ""
+
+    def _render_steps(label, key):
+        steps = tree.get(key) or []
+        if not steps:
+            return ""
+        items = "\n".join(f"<li>{_html_escape(step)}</li>" for step in steps)
+        return f"""
+  <h4>{label}</h4>
+  <ol>
+    {items}
+  </ol>
+""".rstrip()
+
+    sections = [
+        _render_steps("🛞 Flat Tire", "flat_tire"),
+        _render_steps("🚴 Dropped from Group", "dropped_from_group"),
+        _render_steps("⚡ Bonking", "bonking"),
+        _render_steps("🦵 Cramping", "cramping"),
+    ]
+    sections_html = "\n\n".join(s for s in sections if s)
+
+    if not sections_html:
+        return ""
+
+    return f"""
+<div class="gg-decision-tree">
+  <h3>In-Race Decision Tree</h3>
+  <p>When things go sideways (and at some point they will), follow protocol instead of panic.</p>
+{sections_html}
+</div>
+""".strip()
+
+
+def build_psych_landmarks_module(race_specific):
+    psych = race_specific.get("psychological_landmarks") or {}
+    if not psych:
+        return ""
+
+    dark = psych.get("dark_patch") or {}
+    shatter = psych.get("where_field_shatters") or {}
+    relief = psych.get("late_relief") or {}
+
+    # If all three are completely empty, bail
+    if not (dark or shatter or relief):
+        return ""
+
+    def _render_block(title, node):
+        miles = _html_escape(node.get("miles"))
+        desc = _html_escape(node.get("description"))
+        if not (miles or desc):
+            return ""
+        return f"""
+  <h4>{title} (Miles {miles})</h4>
+  <p>{desc}</p>
+""".rstrip()
+
+    blocks = [
+        _render_block("The Dark Patch", dark),
+        _render_block("Where the Field Shatters", shatter),
+        _render_block("Late-Race Relief", relief),
+    ]
+    blocks_html = "\n\n".join(b for b in blocks if b)
+
+    if not blocks_html:
+        return ""
+
+    return f"""
+<div class="gg-info">
+  <h3>Mental Landmarks</h3>
+  <p>Long races have predictable psychological phases. Knowing when they tend to show up makes them easier to handle.</p>
+{blocks_html}
+  <p><strong>Your job:</strong> Recognize these moments as part of the script, not proof that you're failing. Stay on task, solve the next problem, and let the course come back to you.</p>
+</div>
+""".strip()
 
 
 def main():
