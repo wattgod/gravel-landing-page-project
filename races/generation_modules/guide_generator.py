@@ -407,6 +407,45 @@ def generate_fueling_table(race_data):
 
 def generate_difficulty_table(race_data):
     """Generate difficulty rating table"""
+    metadata = race_data.get('race_metadata', {})
+    characteristics = race_data.get('race_characteristics', {})
+    guide_vars = race_data.get('guide_variables', {})
+    
+    # Extract distance (same logic as main generator)
+    distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
+    try:
+        distance = int(distance) if distance else 0
+        distance_str = f"{distance} miles" if distance else 'N/A miles'
+    except (ValueError, TypeError):
+        distance_str = 'N/A miles'
+    
+    # Extract elevation gain (same logic as main generator)
+    elevation_gain = 0
+    elevation_gain_str = guide_vars.get('race_elevation', '')
+    if elevation_gain_str:
+        import re
+        match = re.search(r'([\d,]+)', str(elevation_gain_str))
+        if match:
+            elevation_gain = int(match.group(1).replace(',', ''))
+    
+    if not elevation_gain:
+        elevation_gain = (metadata.get('elevation_feet', 0) or
+                         characteristics.get('elevation_gain_feet', 0) or
+                         race_data.get('elevation_gain_feet', 0) or 0)
+    
+    try:
+        elevation_gain = int(elevation_gain) if elevation_gain else 0
+        elevation_str = f"{elevation_gain:,} feet" if elevation_gain else 'N/A feet'
+    except (ValueError, TypeError):
+        elevation_str = 'N/A feet'
+    
+    # Get technical difficulty
+    technical = characteristics.get('technical_difficulty', 'Moderate')
+    if technical:
+        technical = technical.title()
+    else:
+        technical = 'Moderate'
+    
     return f'''
     <table class="difficulty-table">
         <thead>
@@ -418,15 +457,15 @@ def generate_difficulty_table(race_data):
         <tbody>
             <tr>
                 <td><strong>Distance</strong></td>
-                <td>{race_data.get('distance_miles', 'N/A')} miles</td>
+                <td>{distance_str}</td>
             </tr>
             <tr>
                 <td><strong>Elevation Gain</strong></td>
-                <td>{int(race_data.get('elevation_gain_feet', 0) or race_data.get('race_metadata', {}).get('elevation_feet', 0) or 0):,} feet</td>
+                <td>{elevation_str}</td>
             </tr>
             <tr>
                 <td><strong>Technical Difficulty</strong></td>
-                <td>{race_data.get('technical_rating', 'Moderate')}</td>
+                <td>{technical}</td>
             </tr>
             <tr>
                 <td><strong>Time Cutoff</strong></td>
