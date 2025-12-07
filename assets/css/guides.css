@@ -1,13 +1,11 @@
 :root {
-  --gg-font-body: system-ui, -apple-system, BlinkMacSystemFont,
-    "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  --gg-font-mono: "SF Mono", ui-monospace, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+  --gg-bg: #ffffff;
+  --gg-fg: #111111;
+  --gg-border: #000000;
+  --gg-muted: #777777;
+  --gg-soft: #f5f5f5;
   --gg-text: #111;
-  --gg-muted: #555;
-  --gg-border: #222;
   --gg-border-soft: #ddd;
-  --gg-bg: #fff;
   --gg-bg-alt: #f7f7f7;
   --content-width: 760px;
   --gg-black: #222;
@@ -17,12 +15,315 @@ html, body {
   margin: 0;
   padding: 0;
   background: var(--gg-bg);
-  color: var(--gg-text);
+  color: var(--gg-fg);
   font-family: var(--gg-font-body);
   line-height: 1.6;
   font-size: 16px;
 }
 
+/* Main page container */
+.gg-guide-page {
+  background: var(--gg-bg);
+  color: var(--gg-fg);
+  font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  padding: 32px 20px 64px 20px;
+}
+
+/* Layout: sticky TOC + narrow content column */
+.gg-guide-layout {
+  margin: 0 auto;
+  max-width: 1120px; /* total width: TOC + content */
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* On smaller screens: single column, TOC on top */
+@media (max-width: 900px) {
+  .gg-guide-layout {
+    display: block;
+  }
+
+  .gg-guide-toc {
+    position: static;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+}
+
+/* Sticky / floating TOC */
+.gg-guide-toc {
+  position: sticky;
+  top: 16px;
+  border: 2px solid var(--gg-border);
+  padding: 12px 14px;
+  background: var(--gg-soft);
+  font-size: 13px;
+}
+
+.gg-guide-toc h2 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-bottom: 1px solid var(--gg-border);
+  padding-bottom: 4px;
+}
+
+.gg-guide-toc-intro {
+  margin: 4px 0 8px 0;
+  font-size: 12px;
+  color: var(--gg-muted);
+}
+
+.gg-guide-toc ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.gg-guide-toc li {
+  margin: 0 0 4px 0;
+}
+
+.gg-guide-toc a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gg-guide-toc a:hover {
+  text-decoration: underline;
+}
+
+/* Content column */
+.gg-guide-content {
+  margin: 0 auto;
+  max-width: 840px; /* this keeps the text narrow like Section 10 */
+}
+
+/* Header + meta strip */
+header.guide-header {
+  border-bottom: 2px solid var(--gg-border);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.guide-header h1 {
+  font-size: 26px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--gg-border);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.guide-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gg-muted);
+}
+
+.guide-meta span {
+  border: 1px solid var(--gg-border);
+  padding: 2px 6px;
+}
+
+/* Typography */
+.gg-guide-content h2,
+.gg-guide-content h3 {
+  font-weight: 600;
+  margin: 1.6rem 0 0.6rem 0;
+  line-height: 1.2;
+}
+
+.gg-guide-content h2 {
+  font-size: 19px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--gg-border);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.gg-guide-content h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gg-muted);
+}
+
+.gg-guide-content h4 {
+  font-size: 12px;
+  margin: 1rem 0 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.gg-guide-content p {
+  margin: 0 0 0.8rem 0;
+}
+
+.gg-guide-content strong {
+  font-weight: 600;
+}
+
+.gg-guide-content ul,
+.gg-guide-content ol {
+  margin: 0.3rem 0 1rem 1.4rem;
+  padding: 0;
+}
+
+.gg-guide-content li {
+  margin: 0 0 0.35rem 0;
+}
+
+.gg-guide-content hr {
+  border: none;
+  border-top: 1px solid var(--gg-border);
+  margin: 2rem 0;
+}
+
+/* Modules (from Section 10 prototype) */
+.gg-module {
+  border: 1px solid var(--gg-border);
+  border-left-width: 6px;
+  padding: 12px 14px;
+  margin: 1.3rem 0;
+  background: var(--gg-soft);
+}
+
+.gg-module h3 {
+  margin-top: 0;
+}
+
+.gg-alert {
+  border-left-color: var(--gg-border);
+}
+
+.gg-tactical {
+  border-style: dashed;
+}
+
+.gg-info {
+  border-left-color: var(--gg-muted);
+}
+
+.gg-decision-tree {
+  border-style: solid;
+  border-left-width: 8px;
+}
+
+.gg-blackpill {
+  background: #f0f0f0;
+  border-style: solid;
+  border-left-width: 8px;
+}
+
+.gg-module h3,
+.gg-alert h3,
+.gg-info h3,
+.gg-tactical h3,
+.gg-decision-tree h3,
+.gg-blackpill h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--gg-text);
+}
+
+/* Label inside modules */
+.gg-label {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 1px solid var(--gg-border);
+  padding: 2px 6px;
+  margin-bottom: 8px;
+}
+
+.gg-blackpill .label,
+.gg-module .label {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--gg-border-soft);
+  margin-bottom: 0.4em;
+}
+
+/* Tables inside guide */
+.gg-guide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1.2rem 0;
+  font-size: 13px;
+}
+
+.gg-guide-content th,
+.gg-guide-content td {
+  border: 1px solid var(--gg-border);
+  padding: 4px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.gg-guide-content th {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+
+.gg-guide-content tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Module table styling */
+.gg-module table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1.2rem 0;
+  font-size: 13px;
+}
+
+.gg-module th,
+.gg-module td {
+  border: 1px solid var(--gg-border);
+  padding: 4px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.gg-module th {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+
+.gg-module tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Footer */
+footer.guide-footer {
+  border-top: 1px solid var(--gg-border);
+  margin-top: 32px;
+  padding-top: 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gg-muted);
+}
+
+/* Legacy support - keep for other pages */
 main {
   max-width: 760px;
   margin: 0 auto;
@@ -133,222 +434,10 @@ tbody tr:nth-child(even) {
   background: #fafafa;
 }
 
-/* Module containers */
-.gg-module {
-  border: 1px solid var(--gg-border, #000000);
-  border-left-width: 6px;
-  padding: 12px 14px;
-  margin: 1.3rem 0;
-  background: #f5f5f5;
-}
-
-.gg-module h3 {
-  margin-top: 0;
-}
-
-.gg-alert {
-  border-left-color: var(--gg-border, #000000);
-}
-
-.gg-tactical {
-  border-style: dashed;
-}
-
-.gg-info {
-  border-left-color: var(--gg-muted, #777777);
-}
-
-.gg-decision-tree {
-  border-style: solid;
-  border-left-width: 8px;
-}
-
-.gg-blackpill {
-  background: #f0f0f0;
-  border-style: solid;
-  border-left-width: 8px;
-}
-
-.gg-module h3,
-.gg-alert h3,
-.gg-info h3,
-.gg-tactical h3,
-.gg-decision-tree h3,
-.gg-blackpill h3 {
-  margin-top: 0;
-  font-size: 1rem;
-  text-transform: none;
-  letter-spacing: 0;
-  color: var(--gg-text);
-}
-
-/* Label */
-.gg-label {
-  display: inline-block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  border: 1px solid var(--gg-border, #000000);
-  padding: 2px 6px;
-  margin-bottom: 8px;
-}
-
-.gg-blackpill .label,
-.gg-module .label {
-  display: inline-block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 2px 6px;
-  border-radius: 999px;
-  border: 1px solid var(--gg-border-soft);
-  margin-bottom: 0.4em;
-}
-
-/* Module table styling */
-.gg-module table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.6rem 0 1.2rem 0;
-  font-size: 13px;
-}
-
-.gg-module th,
-.gg-module td {
-  border: 1px solid var(--gg-border, #000000);
-  padding: 4px 6px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.gg-module th {
-  background: #f0f0f0;
-  font-weight: 600;
-}
-
-.gg-module tbody tr:nth-child(even) {
-  background: #fafafa;
-}
-
-.toc,
-.gg-toc {
-  list-style: none;
-  padding-left: 0;
-  margin: 1em 0 2em;
-  font-size: 0.95em;
-}
-
-.toc li,
-.gg-toc li {
-  margin: 0.2em 0;
-}
-
-.small,
-small {
-  font-size: 0.8em;
-  color: var(--gg-muted);
-}
-
 .container {
   max-width: 760px;
   margin: 0 auto;
   padding: 32px 16px 64px;
-}
-
-/* Guide page layout */
-.gg-guide-page {
-  min-height: 100vh;
-}
-
-.gg-guide-container {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 24px 16px 64px;
-}
-
-/* Breadcrumb */
-.gg-guide-breadcrumb {
-  font-size: 0.875rem;
-  color: var(--gg-muted);
-  margin: 0 0 16px;
-}
-
-.gg-guide-breadcrumb a {
-  color: var(--gg-muted);
-  text-decoration: none;
-}
-
-.gg-guide-breadcrumb a:hover {
-  color: var(--gg-text);
-  text-decoration: underline;
-}
-
-/* Guide TOC */
-.gg-guide-toc {
-  border: 2px solid var(--gg-black);
-  padding: 16px 20px;
-  margin: 16px 0 32px;
-  background: #fff;
-  box-shadow: 6px 6px 0 var(--gg-black);
-}
-
-.gg-guide-toc h2 {
-  margin: 0 0 4px;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.gg-guide-toc-intro {
-  margin: 0 0 12px;
-  font-size: 0.9rem;
-  color: var(--gg-muted);
-}
-
-.gg-guide-toc ol {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.gg-guide-toc ol li {
-  margin: 0.4em 0;
-}
-
-.gg-guide-toc ol li a {
-  text-decoration: none;
-  color: var(--gg-text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.gg-guide-toc ol li a:hover {
-  text-decoration: underline;
-}
-
-/* Guide callouts */
-.gg-guide-callout {
-  border: 1px solid var(--gg-border-soft);
-  background: #fafafa;
-  padding: 16px 20px;
-  margin: 1.25em 0;
-  border-radius: 4px;
-}
-
-.gg-guide-callout--ratings {
-  font-family: var(--gg-font-mono);
-}
-
-.gg-guide-callout h3,
-.gg-guide-callout h4 {
-  margin-top: 0;
-}
-
-/* Plan meta */
-.gg-plan-meta {
-  font-size: 0.875rem;
-  color: var(--gg-muted);
-  margin: 4px 0 0;
 }
 
 .rating-table,
@@ -408,4 +497,3 @@ small {
 .download-link:hover {
   background: #e0e0e0;
 }
-
