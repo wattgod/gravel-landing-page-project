@@ -97,6 +97,57 @@ This template defines the structure for all training plan guides. Replace placeh
     
     <h3>{{PLAN_WEEKS}} Weeks, 4 Phases</h3>
     
+    <ul>
+    <li><strong>Weeks 1-3: Base Phase</strong> — Building aerobic foundation and endurance</li>
+    <li><strong>Weeks 4-7: Build Phase</strong> — Adding intensity, developing race-specific fitness</li>
+    <li><strong>Weeks 8-10: Peak Phase</strong> — Maximum training load and sharpening</li>
+    <li><strong>Weeks 11-12: Taper Phase</strong> — Reducing volume while maintaining intensity, arriving fresh</li>
+    </ul>
+    
+    <h3>Weekly Structure</h3>
+    
+    <p>{{WEEKLY_STRUCTURE}}</p>
+    
+    <h3>Recovery Weeks</h3>
+    
+    <p>Every third or fourth week is a recovery week with 30-40% reduced volume. Recovery makes you fast. Don't skip these.</p>
+    
+    <h2>What You Need to Succeed</h2>
+    
+    <h3>Non-negotiables:</h3>
+    
+    <ol>
+    <li>A power meter</li>
+    <li>A heart rate monitor</li>
+    <li>A bike set up correctly for gravel racing</li>
+    <li>Commitment to the full {{PLAN_WEEKS}} weeks</li>
+    <li>Willingness to follow the plan as written</li>
+    <li>TrainingPeaks Premium (so your workouts sync to your device)</li>
+    <li>Smart trainer for indoor workouts</li>
+    </ol>
+    
+    <h3>A Note on Compliance vs. Perfection</h3>
+    
+    <p>You won't execute this plan perfectly. No one does.</p>
+    
+    <p>Life happens. Work intrudes. Illness strikes. Weather doesn't cooperate. Kids need attention. That's reality.</p>
+    
+    <h3>Built for your ability level.</h3>
+    
+    <p>You're on the <strong>{{ATHLETE_LEVEL}}</strong> version (Beginner / Intermediate / Advanced). The load and intensity match where you are right now.</p>
+    
+    <h3>Built for your schedule.</h3>
+    
+    <p>This is the <strong>{{PLAN_TIER}}</strong> tier, designed around <strong>{{HOURS_PER_WEEK}}</strong> hours. The week fits into your life so you can actually complete it.</p>
+    
+    <h3>Built for this race.</h3>
+    
+    <p>The sessions, long rides, and progressions target the key demands of <strong>{{RACE_NAME}}</strong>: <strong>{{RACE_CHALLENGES}}</strong>.</p>
+    
+    <h2>How This Plan Is Structured</h2>
+    
+    <h3>{{PLAN_WEEKS}} Weeks, 4 Phases</h3>
+    
     <!-- Phase descriptions will vary by plan -->
     
     <h3>Weekly Structure</h3>
