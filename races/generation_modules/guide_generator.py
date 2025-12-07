@@ -11,6 +11,14 @@ import markdown
 from pathlib import Path
 
 
+def convert_markdown_to_html(text):
+    """Convert markdown syntax to HTML"""
+    if not text:
+        return ""
+    md = markdown.Markdown(extensions=['tables', 'fenced_code', 'nl2br', 'sane_lists'])
+    return md.convert(str(text))
+
+
 def load_race_data(race_json_path):
     """Load race data from JSON file"""
     with open(race_json_path, 'r', encoding='utf-8') as f:
@@ -170,7 +178,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{TERRAIN_DESCRIPTION}}': terrain_desc,
         '{{ELEVATION_GAIN}}': elevation_str,
         '{{DURATION_ESTIMATE}}': duration_estimate,
-        '{{RACE_DESCRIPTION}}': hooks.get('detail', metadata.get('description', 'Race description here')),
+        '{{RACE_DESCRIPTION}}': convert_markdown_to_html(hooks.get('detail', metadata.get('description', 'Race description here'))),
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
         '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
@@ -178,10 +186,10 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{RACE_KEY_CHALLENGES}}': ', '.join(guide_vars.get('race_challenges', [])) if isinstance(guide_vars.get('race_challenges'), list) else guide_vars.get('race_challenges', 'technical terrain, elevation, and endurance'),
         '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
         '{{RACE_ELEVATION}}': str(elevation_gain) if elevation_gain and isinstance(elevation_gain, (int, float)) else 'XXX',
-        '{{RACE_SPECIFIC_SKILL_NOTES}}': guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
-        '{{RACE_SPECIFIC_TACTICS}}': guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
-        '{{WEATHER_STRATEGY}}': weather_strategy,
-        '{{AID_STATION_STRATEGY}}': guide_vars.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
+        '{{RACE_SPECIFIC_SKILL_NOTES}}': convert_markdown_to_html(guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.')),
+        '{{RACE_SPECIFIC_TACTICS}}': convert_markdown_to_html(guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.')),
+        '{{WEATHER_STRATEGY}}': convert_markdown_to_html(weather_strategy),
+        '{{AID_STATION_STRATEGY}}': convert_markdown_to_html(guide_vars.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.')),
         '{{ALTITUDE_POWER_LOSS}}': guide_vars.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
         '{{RECOMMENDED_TIRE_WIDTH}}': characteristics.get('recommended_tire_width', guide_vars.get('recommended_tire_width', '38-42mm')),
         '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
@@ -199,27 +207,27 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': generate_key_workout_summary(race_data),
         
         # Non-negotiables (extract from race_data)
-        '{{NON_NEG_1_REQUIREMENT}}': extract_non_negotiables(race_data, 0)['requirement'],
+        '{{NON_NEG_1_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 0)['requirement']),
         '{{NON_NEG_1_BY_WHEN}}': extract_non_negotiables(race_data, 0)['by_when'],
-        '{{NON_NEG_1_WHY}}': extract_non_negotiables(race_data, 0)['why'],
-        '{{NON_NEG_2_REQUIREMENT}}': extract_non_negotiables(race_data, 1)['requirement'],
+        '{{NON_NEG_1_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 0)['why']),
+        '{{NON_NEG_2_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 1)['requirement']),
         '{{NON_NEG_2_BY_WHEN}}': extract_non_negotiables(race_data, 1)['by_when'],
-        '{{NON_NEG_2_WHY}}': extract_non_negotiables(race_data, 1)['why'],
-        '{{NON_NEG_3_REQUIREMENT}}': extract_non_negotiables(race_data, 2)['requirement'],
+        '{{NON_NEG_2_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 1)['why']),
+        '{{NON_NEG_3_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 2)['requirement']),
         '{{NON_NEG_3_BY_WHEN}}': extract_non_negotiables(race_data, 2)['by_when'],
-        '{{NON_NEG_3_WHY}}': extract_non_negotiables(race_data, 2)['why'],
-        '{{NON_NEG_4_REQUIREMENT}}': extract_non_negotiables(race_data, 3)['requirement'],
+        '{{NON_NEG_3_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 2)['why']),
+        '{{NON_NEG_4_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 3)['requirement']),
         '{{NON_NEG_4_BY_WHEN}}': extract_non_negotiables(race_data, 3)['by_when'],
-        '{{NON_NEG_4_WHY}}': extract_non_negotiables(race_data, 3)['why'],
-        '{{NON_NEG_5_REQUIREMENT}}': extract_non_negotiables(race_data, 4)['requirement'],
+        '{{NON_NEG_4_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 3)['why']),
+        '{{NON_NEG_5_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 4)['requirement']),
         '{{NON_NEG_5_BY_WHEN}}': extract_non_negotiables(race_data, 4)['by_when'],
-        '{{NON_NEG_5_WHY}}': extract_non_negotiables(race_data, 4)['why'],
+        '{{NON_NEG_5_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 4)['why']),
         
         # Skill placeholder examples (would be race-specific)
         '{{SKILL_5_NAME}}': 'Emergency Repairs',
-        '{{SKILL_5_WHY}}': 'Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn\'t have to end your day---if you can fix it quickly. A dropped chain doesn\'t have to cost you 10 minutes---if you\'ve practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can\'t control when mechanicals happen, but you can control how prepared you are to handle them.',
-        '{{SKILL_5_HOW}}': 'Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn\'t perfection---it\'s competence under pressure.',
-        '{{SKILL_5_CUE}}': 'Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.',
+        '{{SKILL_5_WHY}}': convert_markdown_to_html('Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn\'t have to end your day---if you can fix it quickly. A dropped chain doesn\'t have to cost you 10 minutes---if you\'ve practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can\'t control when mechanicals happen, but you can control how prepared you are to handle them.'),
+        '{{SKILL_5_HOW}}': convert_markdown_to_html('Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn\'t perfection---it\'s competence under pressure.'),
+        '{{SKILL_5_CUE}}': convert_markdown_to_html('Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.'),
     }
     
     # Perform all substitutions
