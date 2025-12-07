@@ -920,7 +920,7 @@ def build_flint_module(race_specific):
 
     return f"""
 <div class="gg-alert">
-  <h3>⚠️ Flint Rock Hazard Protocol</h3>
+  <h3>Flint Rock Hazard Protocol</h3>
   <p>{_html_escape(description)}</p>
 
   <table class="gg">
@@ -1100,10 +1100,10 @@ def build_decision_tree_module(race_specific):
 """.rstrip()
 
     sections = [
-        _render_steps("🛞 Flat Tire", "flat_tire"),
-        _render_steps("🚴 Dropped from Group", "dropped_from_group"),
-        _render_steps("⚡ Bonking", "bonking"),
-        _render_steps("🦵 Cramping", "cramping"),
+        _render_steps("Flat Tire", "flat_tire"),
+        _render_steps("Dropped from Group", "dropped_from_group"),
+        _render_steps("Bonking", "bonking"),
+        _render_steps("Cramping", "cramping"),
     ]
     sections_html = "\n\n".join(s for s in sections if s)
 
