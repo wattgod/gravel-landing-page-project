@@ -930,7 +930,7 @@ def build_flint_module(race_specific):
         name = _html_escape(sector.get("name"))
         mile_marker = _html_escape(sector.get("mile_marker"))
         risk_level = _html_escape(str(sector.get("risk_level", "")).replace("_", " ").title())
-        tactics = _html_escape(sector.get("tactics"))
+        tactics = convert_markdown_to_html(sector.get("tactics", ""))
         rows.append(
             f"<tr>"
             f"<td><strong>{name}</strong></td>"
@@ -945,7 +945,7 @@ def build_flint_module(race_specific):
     return f"""
 <div class="gg-alert">
   <h3>Flint Rock Hazard Protocol</h3>
-  <p>{_html_escape(description)}</p>
+  <p>{convert_markdown_to_html(description) if description else ''}</p>
 
   <table class="gg">
     <thead>
@@ -1040,16 +1040,16 @@ def build_wind_module(race_specific):
     return f"""
 <div class="gg-tactical">
   <h3>Wind Protocol</h3>
-  <p><strong>Prevailing Pattern:</strong> {_html_escape(prevailing_direction)}</p>
+  <p><strong>Prevailing Pattern:</strong> {_html_escape(prevailing_direction or '')}</p>
 
   <h4>When It Matters:</h4>
-  <p>{_html_escape(when_it_matters)}</p>
+  <p>{convert_markdown_to_html(when_it_matters) if when_it_matters else ''}</p>
 
   <h4>Group Tactics:</h4>
-  <p>{_html_escape(group_tactics)}</p>
+  <p>{convert_markdown_to_html(group_tactics) if group_tactics else ''}</p>
 
   <h4>Solo Tactics:</h4>
-  <p>{_html_escape(solo_tactics)}</p>
+  <p>{convert_markdown_to_html(solo_tactics) if solo_tactics else ''}</p>
 
   <div class="gg-blackpill">
     <span class="label">Reality Check</span>
@@ -1074,7 +1074,7 @@ def build_time_drift_module(race_specific):
     return f"""
 <div class="gg-info">
   <h3>Expected Time Drift</h3>
-  <p><strong>{_html_escape(note)}</strong></p>
+  <p><strong>{convert_markdown_to_html(note) if note else ''}</strong></p>
 
   <table class="gg">
     <thead>
@@ -1111,11 +1111,11 @@ def build_decision_tree_module(race_specific):
     if not tree:
         return ""
 
-    def _render_steps(label, key):
+        def _render_steps(label, key):
         steps = tree.get(key) or []
         if not steps:
             return ""
-        items = "\n".join(f"<li>{_html_escape(step)}</li>" for step in steps)
+        items = "\n".join(f"<li>{convert_markdown_to_html(step)}</li>" for step in steps)
         return f"""
   <h4>{label}</h4>
   <ol>
@@ -1160,7 +1160,7 @@ def build_psych_landmarks_module(race_specific):
 
     def _render_block(title, node):
         miles = _html_escape(node.get("miles"))
-        desc = _html_escape(node.get("description"))
+        desc = convert_markdown_to_html(node.get("description", ""))
         if not (miles or desc):
             return ""
         return f"""
