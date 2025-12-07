@@ -1127,9 +1127,11 @@ def build_psych_landmarks_module(race_specific):
     dark = psych.get("dark_patch") or {}
     shatter = psych.get("where_field_shatters") or {}
     relief = psych.get("late_relief") or {}
+    honeymoon = psych.get("the_honeymoon") or {}
+    second_wind = psych.get("second_wind") or {}
 
-    # If all three are completely empty, bail
-    if not (dark or shatter or relief):
+    # If all are completely empty, bail
+    if not (dark or shatter or relief or honeymoon or second_wind):
         return ""
 
     def _render_block(title, node):
@@ -1143,8 +1145,10 @@ def build_psych_landmarks_module(race_specific):
 """.rstrip()
 
     blocks = [
-        _render_block("The Dark Patch", dark),
+        _render_block("The Honeymoon", honeymoon),
         _render_block("Where the Field Shatters", shatter),
+        _render_block("The Dark Patch", dark),
+        _render_block("Second Wind", second_wind),
         _render_block("Late-Race Relief", relief),
     ]
     blocks_html = "\n\n".join(b for b in blocks if b)
