@@ -242,7 +242,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         # Filter out known placeholders that are intentionally left (like INFOGRAPHIC placeholders that are handled)
         critical_unreplaced = [p for p in unreplaced if 'XXX' not in p and 'INFOGRAPHIC' not in p and 'PHASE' not in p]
         if critical_unreplaced:
-            print(f"  ⚠️  Warning: Unreplaced placeholders found: {set(critical_unreplaced)}")
+            print(f"  Warning: Unreplaced placeholders found: {set(critical_unreplaced)}")
     
     # Conditionally remove altitude section if elevation < 5000 feet
     # Check multiple possible field names for elevation (avg_elevation_feet is the race location elevation)
