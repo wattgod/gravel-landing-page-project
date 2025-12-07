@@ -9,6 +9,8 @@
   --gg-border-soft: #ddd;
   --gg-bg: #fff;
   --gg-bg-alt: #f7f7f7;
+  --content-width: 760px;
+  --gg-black: #222;
 }
 
 html, body {
@@ -193,6 +195,102 @@ small {
   max-width: 760px;
   margin: 0 auto;
   padding: 32px 16px 64px;
+}
+
+/* Guide page layout */
+.gg-guide-page {
+  min-height: 100vh;
+}
+
+.gg-guide-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* Breadcrumb */
+.gg-guide-breadcrumb {
+  font-size: 0.875rem;
+  color: var(--gg-muted);
+  margin: 0 0 16px;
+}
+
+.gg-guide-breadcrumb a {
+  color: var(--gg-muted);
+  text-decoration: none;
+}
+
+.gg-guide-breadcrumb a:hover {
+  color: var(--gg-text);
+  text-decoration: underline;
+}
+
+/* Guide TOC */
+.gg-guide-toc {
+  border: 2px solid var(--gg-black);
+  padding: 16px 20px;
+  margin: 16px 0 32px;
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--gg-black);
+}
+
+.gg-guide-toc h2 {
+  margin: 0 0 4px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.gg-guide-toc-intro {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: var(--gg-muted);
+}
+
+.gg-guide-toc ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.gg-guide-toc ol li {
+  margin: 0.4em 0;
+}
+
+.gg-guide-toc ol li a {
+  text-decoration: none;
+  color: var(--gg-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gg-guide-toc ol li a:hover {
+  text-decoration: underline;
+}
+
+/* Guide callouts */
+.gg-guide-callout {
+  border: 1px solid var(--gg-border-soft);
+  background: #fafafa;
+  padding: 16px 20px;
+  margin: 1.25em 0;
+  border-radius: 4px;
+}
+
+.gg-guide-callout--ratings {
+  font-family: var(--gg-font-mono);
+}
+
+.gg-guide-callout h3,
+.gg-guide-callout h4 {
+  margin-top: 0;
+}
+
+/* Plan meta */
+.gg-plan-meta {
+  font-size: 0.875rem;
+  color: var(--gg-muted);
+  margin: 4px 0 0;
 }
 
 .rating-table,
