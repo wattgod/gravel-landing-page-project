@@ -111,15 +111,13 @@ LAST UPDATED: 2024
     <link rel="stylesheet" href="/gravel-landing-page-project/assets/css/guides.css">
 
 </head>
-<body>
-    <div class="container">
-
+<body><pre><code>&lt;div class="container"&gt;
+</code></pre>
 <div class="plan-title-header">
     <h1 class="plan-title">Unbound Gravel 200</h1>
     <p class="plan-subtitle">FINISHER • Beginner Training Plan</p>
     <p class="plan-meta">8-12 hours/week • 12 weeks</p>
 </div>
-
 
 <!-- ==================== PLAN TITLE ==================== -->
 
@@ -192,7 +190,6 @@ LAST UPDATED: 2024
         </a></li>
     </ul>
 </div>
-
 
 <h1 id="section-1">1: Training Plan Brief</h1>
 
@@ -267,12 +264,6 @@ LAST UPDATED: 2024
 <p>Miss multiple weeks, skip the hard workouts, or constantly substitute "easier" options, and the plan won't work. Not because the plan failed---because you didn't do it.</p>
 
 <p>Be honest with yourself about compliance.</p>
-
-
-
-
-
-
 
 <h1 id="section-2">2: BEFORE YOU START</h1>
 
@@ -3113,10 +3104,10 @@ LAST UPDATED: 2024
         function downloadChecklistPDF() {
             // Get all checklist items
             const items = Array.from(document.querySelectorAll('.checklist-item span')).map(span => span.textContent);
-            
+
             // Create a simple text representation (could be enhanced to actual PDF)
             const checklistText = "EQUIPMENT CHECKLIST\n\n" + items.map((item, i) => `${i+1}. [ ] ${item}`).join("\n");
-            
+
             // Create blob and download
             const blob = new Blob([checklistText], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
@@ -3127,16 +3118,12 @@ LAST UPDATED: 2024
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            
+
             alert('Checklist downloaded! (Note: This is a text file. PDF generation can be added later.)');
         }
         </script>
 
 
-    
-        </div>
-        
-        
-        
-    </body>
+
+        </div></body>
 </html>

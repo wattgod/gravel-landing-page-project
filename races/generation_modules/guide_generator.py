@@ -278,6 +278,21 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         output = re.sub(altitude_pattern2, '', output, flags=re.DOTALL)
         print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 5000)")
     
+    # Convert any remaining markdown syntax to HTML in the body
+    import re
+    body_start = output.find('<body>')
+    body_end = output.find('</body>')
+    
+    if body_start != -1 and body_end != -1:
+        body_content = output[body_start + 6:body_end]
+        
+        # Convert markdown to HTML (handles **bold**, *italic*, # headings, etc.)
+        md = markdown.Markdown(extensions=['tables', 'fenced_code', 'nl2br'])
+        html_body = md.convert(body_content)
+        
+        # Reconstruct output with converted HTML
+        output = output[:body_start + 6] + html_body + output[body_end:]
+    
     # Write output
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(output)
