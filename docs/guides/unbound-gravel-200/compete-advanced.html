@@ -2977,56 +2977,5 @@ LAST UPDATED: 2024
 
 <div class="page-break"></div>
 
-<h1>CLOSING</h1>
-
-<p>You have the plan.</p>
-
-<p>You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.</p>
-
-<p>Now do the work.</p>
-
-<p>Not perfectly. Not heroically.</p>
-
-<p>Consistently. Intelligently. Over 12 weeks.</p>
-
-<p>Show up for the workouts. Do them correctly. Recover properly. Trust the process.</p>
-
-<p>On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence---not hope, not optimism, but confidence based on completed work---is what this plan builds.</p>
-
-</div>
-
-        <script>
-        function downloadChecklistPDF() {
-            // Get all checklist items
-            const items = Array.from(document.querySelectorAll('.checklist-item span')).map(span => span.textContent);
-
-            // Create a simple text representation (could be enhanced to actual PDF)
-            const checklistText = "EQUIPMENT CHECKLIST\n\n" + items.map((item, i) => `${i+1}. [ ] ${item}`).join("\n");
-
-            // Create blob and download
-            const blob = new Blob([checklistText], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'equipment-checklist.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-
-            alert('Checklist downloaded! (Note: This is a text file. PDF generation can be added later.)');
-        }
-        </script>
-
-      
-</section>
-</section>
-</section>
-</section><footer class="guide-footer">
-        Gravel God Cycling · gravelgodcycling.com
-      </footer>
-    </div>
-  </div>
-</main>
 </body>
 </html>
