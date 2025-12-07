@@ -7,6 +7,7 @@ Reads the HTML template and substitutes race-specific data.
 import argparse
 import html
 import json
+import markdown
 from pathlib import Path
 
 
