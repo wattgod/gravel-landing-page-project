@@ -1,151 +1,293 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- 
-========================================
-GRAVEL GOD TRAINING GUIDE TEMPLATE
-========================================
-
-REQUIRED VARIABLES (must be replaced before publishing):
-
-RACE INFO:
-  Unbound Gravel 200 - Full race name
-  200 miles - Distance in miles (number only, e.g., "200")
-  11,000 feet of elevation gain - Total elevation gain with units (e.g., "10,000 feet of elevation gain")
-  11000 - Elevation in feet (number only)
-  10-15 hours - Expected completion time (e.g., "10-15 hours")
-  Flint Hills gravel roads - Brief terrain description (e.g., "Kansas flint rock, rollers, endless dirt roads")
-  <p>Unbound isn't a race you survive by accident. It's a race you prepare for—or it prepares you for a very long day.</p> - 1-2 sentence race overview
-  Extreme heat and humidity, Long distance requiring exceptional endurance, Technical gravel sections requiring bike handling skills - Comma-separated list of main challenges
-  https://example.com - Official race website URL
-
-PLAN CONFIGURATION:
-  Advanced - Beginner, Intermediate, or Advanced
-  COMPETE - AYAHUASCA, FINISHER, COMPETE, or PODIUM
-  12-18 - Time commitment range (e.g., "8-12")
-  5-6 sessions per week: 2-3 intervals, 2-3 endurance rides, 1 long ride, 1 recovery - Weekly session breakdown
-
-RACE-SPECIFIC GUIDANCE:
-  38-42mm - Tire recommendation (e.g., "40-45mm")
-  <p><strong>Typical Conditions:</strong> Hot and humid, 85-95°F. Heat management is critical. Start hydrated. Pre-cool if possible (cold water, ice). Wear light, breathable layers. Sun protection is mandatory (sunscreen, hat, sunglasses). Monitor forecast daily starting 5 days out. If extreme heat is forecast, adjust pacing strategy---start slower, fuel more aggressively. Check forecast again 24 hours before race and adjust gear accordingly. Wind can be a major factor---plan for crosswinds and headwinds. </p> - Weather preparation advice
-  <p>Use aid stations for quick refills. Don't linger.</p> - Aid station tactics
-  5-10% power loss expected above 8,000 feet - Altitude effects or "Minimal" if low elevation
-  <div class="equipment-checklist-items">
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Power meter (calibrated)</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Heart rate monitor</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>GPS bike computer</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Tires: 38-42mm</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Spare tubes/plugs</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Multi-tool</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Pump/CO2</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Nutrition for race duration</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Water bottles (2-3)</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>Race number</span>
-  </label>
-  <label class="checklist-item">
-    <input type="checkbox">
-    <span>ID and emergency contact</span>
-  </label>
-</div>
-<p class="checklist-download"><a href="#" onclick="downloadChecklistPDF()" class="download-link">📥 Download Printable Checklist (PDF)</a></p> - Race-specific gear list (HTML formatted)
-  <p>Practice descending, cornering, and rough terrain handling.</p> - Technical skills needed
-  <p>Start conservatively. Fuel early and often. Be patient on climbs.</p> - Race strategy notes
-
-TRAINING PHILOSOPHY:
-  <p>Heat adaptation takes 2-3 weeks. Starting too late means racing unprepared in dangerous conditions.</p> - Why power meter is essential
-  <p>Technical skills prevent crashes and save energy. Poor handling wastes watts and increases risk.</p> - Why heart rate monitor matters
-  <p>This tests nutrition, pacing, and mental preparation. Skipping it means discovering problems on race day.</p> - Why bike fit is critical
-  <p>Consistency is the foundation of adaptation - skip weeks, lose gains</p> - Why commitment matters
-  <p>The plan works if you work it - modifications undermine the system</p> - Why following the plan matters
-
-SKILL EXAMPLES (race-specific):
-  Emergency Repairs - Fifth technical skill name
-  <p>Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn't have to end your day---if you can fix it quickly. A dropped chain doesn't have to cost you 10 minutes---if you've practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can't control when mechanicals happen, but you can control how prepared you are to handle them.</p> - Why this skill matters
-  <p>Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn't perfection---it's competence under pressure.</p> - How to practice it
-  <p>Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.</p> - Memory cue
-
-INFOGRAPHICS (replace with actual images/charts or leave as placeholders):
-  All infographic placeholders now have descriptive fallback text built in
-
-CONDITIONAL SECTIONS:
-  - Altitude section: Remove if 11000 < 5000 feet
-
-VERSION: Template V7 - Template-Based Generator
-LAST UPDATED: 2024
--->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unbound Gravel 200 - COMPETE Advanced Training Plan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/gravel-landing-page-project/assets/css/guides.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unbound Gravel 200 – COMPETE · Advanced Training Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gg-bg: #ffffff;
+      --gg-fg: #111111;
+      --gg-border: #000000;
+      --gg-muted: #777777;
+      --gg-soft: #f5f5f5;
+    }
 
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 32px auto 64px auto;
+      padding: 0 20px;
+      max-width: 1120px;
+      background: var(--gg-bg);
+      color: var(--gg-fg);
+      font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 15px;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    header.guide-header {
+      border-bottom: 2px solid var(--gg-border);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+
+    .guide-header h1 {
+      font-size: 26px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--gg-border);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gg-muted);
+    }
+
+    .guide-meta span {
+      border: 1px solid var(--gg-border);
+      padding: 2px 6px;
+    }
+
+    .gg-guide-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    nav.gg-guide-toc {
+      position: sticky;
+      top: 16px;
+      border: 2px solid var(--gg-border);
+      padding: 12px 14px;
+      background: var(--gg-soft);
+      font-size: 13px;
+    }
+
+    nav.gg-guide-toc h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin: 0 0 0.4rem 0;
+      border-bottom: 1px solid var(--gg-border);
+      padding-bottom: 4px;
+    }
+
+    nav.gg-guide-toc ol {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    nav.gg-guide-toc li {
+      margin-bottom: 0.25rem;
+    }
+
+    nav.gg-guide-toc a {
+      text-decoration: none;
+      color: var(--gg-fg);
+    }
+
+    nav.gg-guide-toc a:hover {
+      text-decoration: underline;
+    }
+
+    .gg-guide-content {
+      max-width: 840px;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      margin: 1.6rem 0 0.6rem 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 26px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--gg-border);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    h2 {
+      font-size: 19px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--gg-border);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gg-muted);
+    }
+
+    h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    p { margin: 0 0 0.8rem 0; }
+
+    ul, ol {
+      margin: 0.3rem 0 1rem 1.4rem;
+      padding: 0;
+    }
+
+    li { margin: 0 0 0.35rem 0; }
+
+    .gg-module {
+      border: 1px solid var(--gg-border);
+      border-left-width: 6px;
+      padding: 12px 14px;
+      margin: 1.3rem 0;
+      background: var(--gg-soft);
+    }
+
+    .gg-alert { border-left-color: var(--gg-border); }
+    .gg-tactical { border-style: dashed; }
+    .gg-info { border-left-color: var(--gg-muted); }
+    .gg-decision-tree {
+      border-style: solid;
+      border-left-width: 8px;
+    }
+    .gg-blackpill {
+      background: #f0f0f0;
+      border-style: solid;
+      border-left-width: 8px;
+    }
+
+    .gg-label {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      border: 1px solid var(--gg-border);
+      padding: 2px 6px;
+      margin-bottom: 8px;
+    }
+
+    .gg-module table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.6rem 0 1.2rem 0;
+      font-size: 13px;
+    }
+
+    .gg-module th, .gg-module td {
+      border: 1px solid var(--gg-border);
+      padding: 4px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .gg-module th {
+      background: #f0f0f0;
+      font-weight: 600;
+    }
+
+    .gg-module tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--gg-border);
+      padding: 4px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f0f0f0;
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    footer.guide-footer {
+      border-top: 1px solid var(--gg-border);
+      margin-top: 32px;
+      padding-top: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gg-muted);
+    }
+
+    @media (max-width: 900px) {
+      body {
+        margin: 16px auto 32px auto;
+      }
+      .gg-guide-layout {
+        display: block;
+      }
+      nav.gg-guide-toc {
+        position: static;
+        margin-bottom: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-<main class="gg-guide-page">
+  <header class="guide-header">
+    <h1>Unbound Gravel 200 – COMPETE · Advanced Training Plan</h1>
+    <div class="guide-meta">
+      <span>Unbound Gravel 200</span>
+      <span>COMPETE · Advanced</span>
+      <span>12–18 hours/week</span>
+      <span>12-week plan</span>
+    </div>
+  </header>
+
   <div class="gg-guide-layout">
     <nav class="gg-guide-toc">
       <h2>Contents</h2>
-      <p class="gg-guide-toc-intro">Jump to any section:</p>
       <ol>
-        <li><a href="#section-1-training-plan-brief">1 · Training Plan Brief</a></li>
-        <li><a href="#section-2-before-you-start">2 · BEFORE YOU START</a></li>
-        <li><a href="#section-3-training-fundamentals">3 · TRAINING FUNDAMENTALS</a></li>
-        <li><a href="#section-4-your-12-week-arc">4 · YOUR 12-WEEK ARC</a></li>
-        <li><a href="#section-5-training-zones">5 · TRAINING ZONES</a></li>
-        <li><a href="#section-6-workout-execution">6 · WORKOUT EXECUTION</a></li>
-        <li><a href="#section-7-technical-skills">7 · Technical Skills for Unbound Gravel 200</a></li>
-        <li><a href="#section-8-fueling-hydration">8 · FUELING & HYDRATION</a></li>
-        <li><a href="#section-9-mental-training">9 · MENTAL TRAINING</a></li>
+        <li><a href="#section-1-training-plan-brief">01 · Training Plan Brief</a></li>
+        <li><a href="#section-2-before-you-start">02 · Before You Start</a></li>
+        <li><a href="#section-3-training-fundamentals">03 · Training Fundamentals</a></li>
+        <li><a href="#section-4-your-12-week-arc">04 · Your 12-Week Arc</a></li>
+        <li><a href="#section-5-training-zones">05 · Training Zones</a></li>
+        <li><a href="#section-6-workout-execution">06 · Workout Execution</a></li>
+        <li><a href="#section-7-technical-skills">07 · Technical Skills</a></li>
+        <li><a href="#section-8-fueling-hydration">08 · Fueling &amp; Hydration</a></li>
+        <li><a href="#section-9-mental-training">09 · Mental Training</a></li>
         <li><a href="#section-10-race-tactics">10 · Race Tactics</a></li>
-        <li><a href="#section-11-race-specific-preparation">11 · Race-Specific Preparation for Unbound Gravel 200</a></li>
-        <li><a href="#section-12-race-week-protocol">12 · RACE WEEK PROTOCOL</a></li>
-        <li><a href="#section-13-quick-reference">13 · QUICK REFERENCE</a></li>
-        <li><a href="#section-14-glossary">14 · GLOSSARY</a></li>
+        <li><a href="#section-11-race-specific-prep">11 · Race-Specific Preparation</a></li>
+        <li><a href="#section-12-race-week-protocol">12 · Race Week Protocol</a></li>
+        <li><a href="#section-13-quick-reference">13 · Quick Reference</a></li>
+        <li><a href="#section-14-glossary">14 · Glossary</a></li>
       </ol>
     </nav>
 
     <div class="gg-guide-content">
-      <header class="guide-header">
-        <h1>Unbound Gravel 200 – COMPETE · Advanced</h1>
-        <div class="guide-meta">
-          <span>200 miles</span>
-          <span>~11,000 ft</span>
-          <span>~10–15 hours</span>
-          <span>Gravel God Cycling</span>
-        </div>
-      </header><section id="section-1-training-plan-brief">
-<h2 id="section-1-training-plan-brief">1 · Training Plan Brief</h2>
+      <section id="section-1-training-plan-brief">
+        <h2 id="section-1-training-plan-brief">1 · Training Plan Brief</h2>
 
 <p>Welcome to <strong>Unbound Gravel 200</strong> Training</p>
 
@@ -221,7 +363,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-2-before-you-start">
-<h2 id="section-2-before-you-start">2 · BEFORE YOU START</h2>
+
+      </section>
+
+      <section id="section-2-before-you-start">
+        <h2 id="section-2-before-you-start">2 · BEFORE YOU START</h2>
 
 <h2>Health & Safety Check</h2>
 
@@ -438,7 +584,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-3-training-fundamentals">
-<h2 id="section-3-training-fundamentals">3 · TRAINING FUNDAMENTALS</h2>
+
+      </section>
+
+      <section id="section-3-training-fundamentals">
+        <h2 id="section-3-training-fundamentals">3 · TRAINING FUNDAMENTALS</h2>
 
 <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
 
@@ -568,7 +718,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-4-your-12-week-arc">
-<h2 id="section-4-your-12-week-arc">4 · YOUR 12-WEEK ARC</h2>
+
+      </section>
+
+      <section id="section-4-your-12-week-arc">
+        <h2 id="section-4-your-12-week-arc">4 · YOUR 12-WEEK ARC</h2>
 
 <p>Understanding the big picture helps you navigate the individual weeks.</p>
 
@@ -661,7 +815,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-5-training-zones">
-<h2 id="section-5-training-zones">5 · TRAINING ZONES</h2>
+
+      </section>
+
+      <section id="section-5-training-zones">
+        <h2 id="section-5-training-zones">5 · TRAINING ZONES</h2>
 
 <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
 
@@ -850,7 +1008,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-6-workout-execution">
-<h2 id="section-6-workout-execution">6 · WORKOUT EXECUTION</h2>
+
+      </section>
+
+      <section id="section-6-workout-execution">
+        <h2 id="section-6-workout-execution">6 · WORKOUT EXECUTION</h2>
 
 <p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
 
@@ -1692,7 +1854,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-7-technical-skills">
-<h2 id="section-7-technical-skills">7 · Technical Skills for Unbound Gravel 200</h2>
+
+      </section>
+
+      <section id="section-7-technical-skills">
+        <h2 id="section-7-technical-skills">7 · Technical Skills for Unbound Gravel 200</h2>
 
 <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
 
@@ -1806,7 +1972,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-8-fueling-hydration">
-<h2 id="section-8-fueling-hydration">8 · FUELING & HYDRATION</h2>
+
+      </section>
+
+      <section id="section-8-fueling-hydration">
+        <h2 id="section-8-fueling-hydration">8 · FUELING & HYDRATION</h2>
 
 <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel and hydrate properly, you won't finish well. Maybe you won't finish at all.</p>
 
@@ -1923,7 +2093,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-9-mental-training">
-<h2 id="section-9-mental-training">9 · MENTAL TRAINING</h2>
+
+      </section>
+
+      <section id="section-9-mental-training">
+        <h2 id="section-9-mental-training">9 · MENTAL TRAINING</h2>
 
 <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard.</p>
 
@@ -2069,7 +2243,11 @@ LAST UPDATED: 2024
 <section id="section-10-race-tactics">
 
 </section><section id="section-10-race-tactics">
-<h2 id="section-10-race-tactics">10 · Race Tactics</h2>
+
+      </section>
+
+      <section id="section-10-race-tactics">
+        <h2 id="section-10-race-tactics">10 · Race Tactics</h2>
 
 <p>Tactics at Unbound are simple on paper and brutal in practice. Your job isn't to "race smart" in the abstract. Your job is to make a small number of good decisions at the right time and avoid one or two catastrophic ones that end your day.</p>
 
@@ -2172,7 +2350,11 @@ LAST UPDATED: 2024
 <section id="section-11-race-specific-preparation">
 
 </section><section id="section-11-race-specific-preparation">
-<h2 id="section-11-race-specific-preparation">11 · Race-Specific Preparation for Unbound Gravel 200</h2>
+
+      </section>
+
+      <section id="section-11-race-specific-prep">
+        <h2 id="section-11-race-specific-prep">11 · Race-Specific Preparation for Unbound Gravel 200</h2>
 
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
@@ -2389,7 +2571,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-12-race-week-protocol">
-<h2 id="section-12-race-week-protocol">12 · RACE WEEK PROTOCOL</h2>
+
+      </section>
+
+      <section id="section-12-race-week-protocol">
+        <h2 id="section-12-race-week-protocol">12 · RACE WEEK PROTOCOL</h2>
 
 <p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
 
@@ -2840,7 +3026,11 @@ LAST UPDATED: 2024
 <p class="checklist-download" style="margin-top: 40px; padding-top: 20px; border-top: 3px solid var(--black);"><a href="#" onclick="downloadCompleteRaceWeekChecklistPDF()" class="download-link" style="font-size: 16px; padding: 15px 30px;">📥 Download Complete Race Week Checklist (All Sections) (PDF)</a></p>
 
 </section><section id="section-13-quick-reference">
-<h2 id="section-13-quick-reference">13 · QUICK REFERENCE</h2>
+
+      </section>
+
+      <section id="section-13-quick-reference">
+        <h2 id="section-13-quick-reference">13 · QUICK REFERENCE</h2>
 
 <h3>Key Workouts in This Plan</h3>
 
@@ -2919,7 +3109,11 @@ LAST UPDATED: 2024
 
 
 </section><section id="section-14-glossary">
-<h2 id="section-14-glossary">14 · GLOSSARY</h2>
+
+      </section>
+
+      <section id="section-14-glossary">
+        <h2 id="section-14-glossary">14 · GLOSSARY</h2>
 
 <h3>FTP (Functional Threshold Power)</h3>
 
@@ -2977,5 +3171,14 @@ LAST UPDATED: 2024
 
 <div class="page-break"></div>
 
+
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="guide-footer">
+    Gravel God Cycling · gravelgodcycling.com
+  </footer>
 </body>
 </html>
