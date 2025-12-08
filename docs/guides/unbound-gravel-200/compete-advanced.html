@@ -248,27 +248,6 @@
       color: var(--gg-muted);
     }
   </style>
-  <script>
-    // Collapsible TOC subsections
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggles = document.querySelectorAll('.toc-toggle');
-      
-      toggles.forEach(toggle => {
-        const subsections = toggle.nextElementSibling;
-        if (subsections && subsections.classList.contains('toc-subsections')) {
-          // Set initial state
-          subsections.setAttribute('aria-hidden', 'true');
-          
-          toggle.addEventListener('click', function() {
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            toggle.setAttribute('aria-expanded', !isExpanded);
-            subsections.setAttribute('aria-hidden', isExpanded);
-            toggle.textContent = isExpanded ? '+' : '−';
-          });
-        }
-      });
-    });
-  </script>
 </head>
 <body>
   <main class="gg-guide-page">
