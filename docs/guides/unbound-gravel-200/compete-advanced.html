@@ -176,6 +176,9 @@
 
     section.gg-section {
       margin-bottom: 2.4rem;
+    
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     /* Modules (from Section 10 aesthetic) */
@@ -253,7 +256,14 @@
       letter-spacing: 0.16em;
       color: var(--gg-muted);
     }
-  </style>
+  
+    .gg-section-content {
+      max-width: 100%;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    </style>
 </head>
 <body>
   <main class="gg-guide-page">
@@ -2181,8 +2191,9 @@
 <p>The bottom line on tactics: The race isn't won in the first hour, but it can be lost there. Survive phase one. Execute phase two. Capitalize in phase three.</p>
         </section>
 
-        <section id="section-11-race-specific-preparation" class="gg-section" style="clear: both; width: 100%;">
+        <section id="section-11-race-specific-preparation" class="gg-section" style="max-width: 100%; overflow-x: hidden; clear: both; width: 100%;">
           <h2 id="section-11-race-specific-preparation">11 · Race-Specific Preparation for Unbound Gravel 200</h2>
+  <div class="gg-section-content" style="max-width: 100%; overflow-x: hidden; word-wrap: break-word;">
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
 <p>This section covers the specific preparation requirements for <strong>Unbound Gravel 200</strong>, the weather considerations that matter, and the equipment you need to have dialed in.</p>
@@ -2346,7 +2357,8 @@
 <p class="checklist-download"><a href="#" onclick="downloadChecklistPDF()" class="download-link">📥 Download Printable Checklist (PDF)</a></p>
 </div>
 
-<p>The bottom line on preparation: The race will test everything you didn't practice and expose every shortcut you took. The time to discover your preparation was inadequate is during training, not during the race.</p>
+<p>The bottom line on preparation: The race will test everything you didn't practice and expose every shortcut you took. The time to discover your preparation was inadequate is during training, not du  </div>
+ring the race.</p>
         </section>
 
         <section id="section-12-race-week-protocol" class="gg-section" style="clear: both; width: 100%;">
