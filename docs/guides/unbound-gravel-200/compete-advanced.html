@@ -16,11 +16,9 @@
       --gg-border: #000000;
       --gg-muted: #777777;
       --gg-soft: #f5f5f5;
-    }
 
     * {
       box-sizing: border-box;
-    }
 
     body {
       margin: 32px auto 64px auto;
@@ -34,11 +32,9 @@
       letter-spacing: 0.01em;
     
       overflow-x: hidden;
-    }
 
     main.gg-guide-page {
       width: 100%;
-    }
 
     .gg-guide-layout {
       display: grid;
@@ -48,20 +44,16 @@
       min-width: 0;
 
       max-width: 100%;
-    }
 
     @media (max-width: 900px) {
       .gg-guide-layout {
         grid-template-columns: minmax(0, 1fr);
-      }
-    }
 
     header.guide-header {
       grid-column: 1 / -1;
       border-bottom: 2px solid var(--gg-border);
       padding-bottom: 12px;
       margin-bottom: 24px;
-    }
 
     .guide-meta {
       display: flex;
@@ -72,18 +64,15 @@
       letter-spacing: 0.12em;
       color: var(--gg-muted);
       margin-top: 8px;
-    }
 
     .guide-meta span {
       border: 1px solid var(--gg-border);
       padding: 2px 6px;
-    }
 
     h1, h2, h3, h4 {
       font-weight: 600;
       line-height: 1.2;
       margin: 1.6rem 0 0.6rem 0;
-    }
 
     h1 {
       font-size: 26px;
@@ -92,7 +81,6 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       margin-top: 0;
-    }
 
     h2 {
       font-size: 19px;
@@ -100,43 +88,35 @@
       border-bottom: 2px solid var(--gg-border);
       text-transform: uppercase;
       letter-spacing: 0.14em;
-    }
 
     h3 {
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--gg-muted);
-    }
 
     h4 {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-    }
 
     p {
       margin: 0 0 0.8rem 0;
-    }
 
     strong {
       font-weight: 600;
-    }
 
     ul, ol {
       margin: 0.3rem 0 1rem 1.4rem;
       padding: 0;
-    }
 
     li {
       margin: 0 0 0.35rem 0;
-    }
 
     hr {
       border: none;
       border-top: 1px solid var(--gg-border);
       margin: 2rem 0;
-    }
 
     /* TOC */
     nav.gg-guide-toc {
@@ -146,28 +126,23 @@
       border: 2px solid var(--gg-border);
       padding: 12px 14px;
       background: #fafafa;
-    }
 
     nav.gg-guide-toc h2 {
       margin-top: 0;
       margin-bottom: 8px;
       border-bottom: 1px solid var(--gg-border);
       font-size: 13px;
-    }
 
     nav.gg-guide-toc ol {
       margin-left: 1.2rem;
       font-size: 13px;
-    }
 
     nav.gg-guide-toc a {
       text-decoration: none;
       color: var(--gg-fg);
-    }
 
     nav.gg-guide-toc a:hover {
       text-decoration: underline;
-    }
 
     .gg-guide-content {
       max-width: 840px;
@@ -176,14 +151,12 @@
 
       word-break: break-word;
       overflow-wrap: break-word;
-    }
 
     section.gg-section {
       margin-bottom: 2.4rem;
     
       max-width: 100%;
       overflow-x: hidden;
-    }
 
     /* Modules (from Section 10 aesthetic) */
     .gg-module {
@@ -192,32 +165,26 @@
       padding: 12px 14px;
       margin: 1.3rem 0;
       background: var(--gg-soft);
-    }
 
     .gg-alert {
       border-left-color: var(--gg-border);
-    }
 
     .gg-tactical {
       border-style: dashed;
-    }
 
     .gg-info {
       border-left-color: var(--gg-muted);
-    }
 
     .gg-decision-tree {
       border-style: solid;
       border-left-width: 8px;
     
       padding-left: 20px;
-    }
 
     .gg-blackpill {
       background: #f0f0f0;
       border-style: solid;
       border-left-width: 8px;
-    }
 
     .gg-label {
       display: inline-block;
@@ -227,30 +194,25 @@
       border: 1px solid var(--gg-border);
       padding: 2px 6px;
       margin-bottom: 8px;
-    }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 0.6rem 0 1.2rem 0;
       font-size: 13px;
-    }
 
     th, td {
       border: 1px solid var(--gg-border);
       padding: 4px 6px;
       text-align: left;
       vertical-align: top;
-    }
 
     th {
       background: #f0f0f0;
       font-weight: 600;
-    }
 
     tbody tr:nth-child(even) {
       background: #fafafa;
-    }
 
     footer.guide-footer {
       grid-column: 1 / -1;
@@ -261,20 +223,17 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--gg-muted);
-    }
   
     .gg-section-content {
       max-width: 100%;
       overflow-x: hidden;
       word-wrap: break-word;
       overflow-wrap: break-word;
-    }
     
     .gg-decision-tree ol,
     .gg-decision-tree ul {
       margin-left: 1.5rem;
       padding-left: 0.5rem;
-    }
     </style>
 </head>
 <body>
@@ -292,8 +251,7 @@
       </header>
 
       <nav class="gg-guide-toc">
-        <h2>Contents</h2>
-        <ol>
+        <h2>Contents<ol>
           <li><a href="#section-1-training-plan-brief">Training Plan Brief</a></li>
           <li><a href="#section-2-before-you-start">Before You Start</a></li>
           <li><a href="#section-3-training-fundamentals">Training Fundamentals</a></li>
@@ -313,33 +271,19 @@
 
       <div class="gg-guide-content">
         <section id="section-1-training-plan-brief" class="gg-section">
-  <h2 id="section-1-training-plan-brief">1 · Training Plan Brief</h2>
+  <h2 id="section-1-training-plan-brief">1 · Training Plan Brief<p>Welcome to your <strong>Unbound Gravel 200</strong> training plan. Unbound is the Super Bowl of gravel—indisputably one of the most iconic and prestigious races in the world. It's where the sport's biggest names, the fiercest competitors, and thousands of ambitious amateurs converge every June in the Flint Hills of Kansas. This isn't just a race. It's <em>the</em> race. <strong>Overall Score: 93/100 (Tier 1 - Elite International Must-Do).</strong></p>
   
-  <p>Welcome to your <strong>Unbound Gravel 200</strong> training plan. Unbound is the Super Bowl of gravel—indisputably one of the most iconic and prestigious races in the world. It's where the sport's biggest names, the fiercest competitors, and thousands of ambitious amateurs converge every June in the Flint Hills of Kansas. This isn't just a race. It's <em>the</em> race. <strong>Overall Score: 93/100 (Tier 1 - Elite International Must-Do).</strong></p>
+  <h3>What the Course Is Like</h2></h3><p>The Unbound 200 covers 200 miles of relentless gravel through the Flint Hills—this is a true endurance test, not a long ride. You'll face 11,000 feet of cumulative elevation gain across endless rolling climbs that wear you down gradually. The handling demands are moderate but real: loose gravel, ruts, and occasional rocky sections require solid bike control. Climate is the silent killer—extreme heat and humidity in June regularly hits 90-100°F with oppressive moisture. Brutal. Starting elevation is around 1,100 feet, so altitude isn't a factor. The race is well-supported with aid stations, but long stretches of isolation require self-sufficiency. The adventure factor is high—remote Flint Hills terrain, minimal bail-out options, true gravel expedition feel.</p>
   
-  <h3>What the Course Is Like</h3>
-
-  <p>The Unbound 200 covers 200 miles of relentless gravel through the Flint Hills—this is a true endurance test, not a long ride. You'll face 11,000 feet of cumulative elevation gain across endless rolling climbs that wear you down gradually. The handling demands are moderate but real: loose gravel, ruts, and occasional rocky sections require solid bike control. Climate is the silent killer—extreme heat and humidity in June regularly hits 90-100°F with oppressive moisture. Brutal. Starting elevation is around 1,100 feet, so altitude isn't a factor. The race is well-supported with aid stations, but long stretches of isolation require self-sufficiency. The adventure factor is high—remote Flint Hills terrain, minimal bail-out options, true gravel expedition feel.</p>
+  <h3>Why This Race Matters</h3></h3><p>Unbound is the most iconic gravel race in the world—Unbound <em>is</em> gravel cycling. The organization is flawless, the course is legendary, and the event execution sets the industry standard. The energy, the field, the community—this is what gravel racing aspires to be. Thousands of riders create incredible camaraderie, and the volunteers make it unforgettable. The field depth is unmatched—the pros, the weekend warriors, and everyone in between. Entry fees are premium, but you get what you pay for. Travel and lodging in Emporia aren't cheap, but manageable with planning.</p>
   
-  <h3>Why This Race Matters</h3>
-
-  <p>Unbound is the most iconic gravel race in the world—Unbound <em>is</em> gravel cycling. The organization is flawless, the course is legendary, and the event execution sets the industry standard. The energy, the field, the community—this is what gravel racing aspires to be. Thousands of riders create incredible camaraderie, and the volunteers make it unforgettable. The field depth is unmatched—the pros, the weekend warriors, and everyone in between. Entry fees are premium, but you get what you pay for. Travel and lodging in Emporia aren't cheap, but manageable with planning.</p>
+  <h3>What It Takes to Finish</h3></h3><p>You'll be out there 10-15 hours. Base fitness alone won't cut it—you need specific preparation for sustained output over half a day. Heat acclimatization isn't optional. Pacing discipline is critical—the rollers tempt you to surge, but smooth power wins. Bike handling confidence at speed in loose gravel, especially in groups. Mental toughness for miles 120-180 when everything hurts. Fueling execution—10+ hours means getting nutrition right or bonking catastrophically. Equipment reliability—mechanical issues end races.</p>
   
-  <h3>What It Takes to Finish</h3>
-  
-  <p>You'll be out there 10-15 hours. Base fitness alone won't cut it—you need specific preparation for sustained output over half a day. Heat acclimatization isn't optional. Pacing discipline is critical—the rollers tempt you to surge, but smooth power wins. Bike handling confidence at speed in loose gravel, especially in groups. Mental toughness for miles 120-180 when everything hurts. Fueling execution—10+ hours means getting nutrition right or bonking catastrophically. Equipment reliability—mechanical issues end races.</p>
-  
-  <h3>This Plan Prepares You for All of It</h3>
-  
-  <p>Every workout, long ride, and recovery week is designed around Unbound's specific demands. Heat adaptation protocols. Endurance pacing for 200 miles. Technical handling for Flint Hills gravel. Mental training for mile 150 when it all falls apart.</p>
+  <h3>This Plan Prepares You for All of It</h3></h3><p>Every workout, long ride, and recovery week is designed around Unbound's specific demands. Heat adaptation protocols. Endurance pacing for 200 miles. Technical handling for Flint Hills gravel. Mental training for mile 150 when it all falls apart.</p>
   
   <p>By the time you roll to the start in Emporia, you'll know you're ready.</p>
 
-  <h2>What Makes This Plan Different</h2>
-
-  <h3>1. Training Methodology Matched to Your Reality</h3>
-  
-  <p>You're on the <strong>{{ATHLETE_LEVEL}}</strong> plan with <strong>~10–15</strong> hours per week in the <strong>{{PLAN_TIER}}</strong> tier. This specific combination determines your optimal training philosophy.</p>
+  <h2>What Makes This Plan Different<h3>1. Training Methodology Matched to Your Reality</h2></h2><p>You're on the <strong>{{ATHLETE_LEVEL}}</strong> plan with <strong>~10–15</strong> hours per week in the <strong>{{PLAN_TIER}}</strong> tier. This specific combination determines your optimal training philosophy.</p>
   
   <p>Most plans give everyone the same approach. That's lazy. Your volume + experience level = the training methodology that actually works for you:</p>
   
@@ -352,9 +296,7 @@
   
   <p>This isn't generic. This is <em>your</em> training reality, engineered into a methodology that fits.</p>
 
-  <h3>2. Race-Specific Preparation</h3>
-  
-  <p>Every session, long ride, and progression targets the key demands of <strong>{{RACE_NAME}}</strong>:</p>
+  <h3>2. Race-Specific Preparation</h3></h3><p>Every session, long ride, and progression targets the key demands of <strong>{{RACE_NAME}}</strong>:</p>
   
   <ul>
     <li><strong>{{RACE_CHALLENGES}}</strong></li>
@@ -362,9 +304,7 @@
   
   <p>The workouts aren't randomly selected intervals. They're designed for <em>this race's</em> specific demands. Heat adaptation protocols. Endurance pacing for {{RACE_DISTANCE}} miles. Technical handling for {{RACE_TERRAIN}}.</p>
 
-  <h3>3. Complete Training System</h3>
-  
-  <p>This isn't just a workout calendar. You get:</p>
+  <h3>3. Complete Training System</h3></h3><p>This isn't just a workout calendar. You get:</p>
   
   <ul>
     <li><strong>84 structured workout files</strong> compatible with Zwift, TrainerRoad, Wahoo, Garmin</li>
@@ -376,18 +316,11 @@
   
   <p>Everything you need to show up at {{RACE_NAME}} prepared. No guessing. No gaps.</p>
 
-  
-
-  
 </section>
 <section id="section-2-before-you-start" class="gg-section">
-          <h2 id="section-2-before-you-start">2 · Before You Start</h2>
+          <h2 id="section-2-before-you-start">2 · Before You Start<p>Before you start executing workouts, you need the right equipment and setup. This isn't about buying the most expensive gear—it's about having the tools that let you execute the plan accurately and safely.</p>
 
-          <p>Before you start executing workouts, you need the right equipment and setup. This isn't about buying the most expensive gear—it's about having the tools that let you execute the plan accurately and safely.</p>
-
-          <h3>Essential Equipment</h3>
-
-          <ul>
+          <h3>Essential Equipment<ul>
             <li><strong>Bike fit</strong> - Get a professional bike fit before starting. Poor fit leads to injury, inefficiency, and frustration. This is non-negotiable.</li>
             <li><strong>Reliable bike</strong> - Your bike doesn't need to be expensive, but it needs to work. Brakes, shifting, and drivetrain should be in good condition.</li>
             <li><strong>Power meter AND heart rate monitor</strong> - Both are requisite training tools. Power meter for accurate zone training. Heart rate monitor for backup zones and recovery monitoring. <strong>CRITICAL:</strong> Use a chest strap heart rate monitor, NOT an optical wrist-based sensor—optical sensors provide poor data quality for training purposes.</li>
@@ -395,30 +328,21 @@
             <li><strong>Training computer</strong> - Garmin, Wahoo, or similar to record workouts and sync to TrainingPeaks.</li>
           </ul>
 
-          <h3>Testing Requirements</h3>
-
-          <p>You need baseline numbers to train effectively:</p>
+          <h3>Testing Requirements</h3></h3><p>You need baseline numbers to train effectively:</p>
 
           <ul>
             <li><strong>FTP Test:</strong> Complete a 20-minute FTP test before starting. This sets your training zones. If you don't know your FTP, you're training blind.</li>
             <li><strong>Heart Rate Max Test:</strong> Complete a heart rate max test. This provides backup zones when power data is unreliable (heat, fatigue, equipment issues).</li>
           </ul>
 
-          <h3>TrainingPeaks Setup</h3>
+          <h3>TrainingPeaks Setup</h3></h3><p>This plan is designed to sync with TrainingPeaks. Set up your account, connect your devices, and ensure workouts sync automatically.</p>
 
-          <p>This plan is designed to sync with TrainingPeaks. Set up your account, connect your devices, and ensure workouts sync automatically.</p>
+          <h3>Time Commitment</h3></h3><p>This plan requires <strong>~10–15</strong> hours per week. Be honest about whether you can commit this time. Missing workouts consistently defeats the purpose of structured training.</p>
 
-          <h3>Time Commitment</h3>
-
-          <p>This plan requires <strong>~10–15</strong> hours per week. Be honest about whether you can commit this time. Missing workouts consistently defeats the purpose of structured training.</p>
-
-          <h3>Health Check</h3>
-
-          <p>If you have any health concerns, consult a doctor before starting. This plan is demanding. Your health comes first.</p>
+          <h3>Health Check</h3></h3><p>If you have any health concerns, consult a doctor before starting. This plan is demanding. Your health comes first.</p>
         </section>
 <section id="section-3-training-fundamentals" class="gg-section">
-          <h2 id="section-3-training-fundamentals">3 · Training Fundamentals</h2>
-<p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
+          <h2 id="section-3-training-fundamentals">3 · Training Fundamentals<p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
 
 <p>Not theory for theory's sake---practical understanding that changes how you approach every session, how you structure your week, and how you respond when your body doesn't cooperate.</p>
 
@@ -426,13 +350,9 @@
 
 <p>Start here. Everything else makes more sense after this.</p>
 
-<h2>The Foundational Model: How Adaptation Works</h2>
+<h2>The Foundational Model: How Adaptation Works</h2></h2><p>All training follows the same basic cycle. Understanding this cycle is the difference between training intelligently and just accumulating fatigue.</p>
 
-<p>All training follows the same basic cycle. Understanding this cycle is the difference between training intelligently and just accumulating fatigue.</p>
-
-<h3>Step 1: Stress</h3>
-
-<p>You apply training stress---a hard workout that exceeds your current capacity.</p>
+<h3>Step 1: Stress</h3></h3><p>You apply training stress---a hard workout that exceeds your current capacity.</p>
 
 <p>This creates disruption:</p>
 
@@ -450,17 +370,13 @@
 </ul>
 <p>Your body registers this as a problem that needs solving.</p>
 
-<h3>Step 2: Fatigue</h3>
-
-<p>Immediately after training, you're weaker than before you started.</p>
+<h3>Step 2: Fatigue</h3></h3><p>Immediately after training, you're weaker than before you started.</p>
 
 <p>Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. If you tested your FTP right after a hard interval session, it would be lower than your rested FTP.</p>
 
 <p>This is normal. Fatigue is the signal that triggers adaptation.</p>
 
-<h3>Step 3: Recovery</h3>
-
-<p>Given adequate rest, nutrition, and time, your body initiates repair:</p>
+<h3>Step 3: Recovery</h3></h3><p>Given adequate rest, nutrition, and time, your body initiates repair:</p>
 
 <ul>
 <li>Muscle fibers rebuild</li>
@@ -488,66 +404,41 @@
 <ul>
 <li>2-4 weeks: New baseline fitness, measurable performance gains</li>
 </ul>
-<h3>Step 4: Adaptation (Supercompensation)</h3>
-
-<p>If recovery is complete, your body doesn't just return to baseline---it overshoots.</p>
+<h3>Step 4: Adaptation (Supercompensation)</h3></h3><p>If recovery is complete, your body doesn't just return to baseline---it overshoots.</p>
 
 <p>This is called supercompensation: your body builds slightly more capacity than it had before to handle similar stress more easily next time.</p>
 
 <p>You're now stronger than you were before the workout.</p>
 
-<h3>Step 5: Apply New Stress</h3>
-
-<p>Once you've adapted, you apply a slightly larger stress. The cycle repeats.</p>
+<h3>Step 5: Apply New Stress</h3></h3><p>Once you've adapted, you apply a slightly larger stress. The cycle repeats.</p>
 
 <p>Over weeks and months, these small adaptations compound into meaningful fitness gains.</p>
 
-<h3>Where It Goes Wrong</h3>
-
-<h3>Insufficient Stress</h3>
-
-<p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered.</p>
+<h3>Where It Goes Wrong<h3>Insufficient Stress</h3></h3><p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered.</p>
 
 <p>You're just riding around.</p>
 
-<h3>Insufficient Recovery</h3>
-
-<p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation.</p>
+<h3>Insufficient Recovery</h3></h3><p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation.</p>
 
 <p>You're digging a hole, not building fitness.</p>
 
-<h3>Inconsistent Stress</h3>
-
-<p>If you train sporadically---heroic efforts followed by weeks off---you never compound adaptations.</p>
+<h3>Inconsistent Stress</h3></h3><p>If you train sporadically---heroic efforts followed by weeks off---you never compound adaptations.</p>
 
 <p>You're starting over every time.</p>
 
-<h3>The Practical Rules</h3>
+<h3>The Practical Rules<h3>1. Training stress must be adequate but not excessive</h3></h3><p>Hard enough to trigger adaptation. Not so hard you can't recover.</p>
 
-<h3>1. Training stress must be adequate but not excessive</h2>
+<h3>2. Recovery must be prioritized as much as training</h3></h3><p>Sleep, nutrition, stress management---these aren't optional. They're where adaptation happens.</p>
 
-<p>Hard enough to trigger adaptation. Not so hard you can't recover.</p>
+<h3>3. Consistency compounds</h3></h3><p>Ten weeks of steady training beats four weeks of heroics followed by injury or burnout.</p>
 
-<h3>2. Recovery must be prioritized as much as training</h2>
+<h3>4. Fitness is cumulative</h3></h3><p>Every completed workout adds to the total. Missed workouts don't just subtract---they prevent compounding.</p>
 
-<p>Sleep, nutrition, stress management---these aren't optional. They're where adaptation happens.</p>
-
-<h3>3. Consistency compounds</h3>
-
-<p>Ten weeks of steady training beats four weeks of heroics followed by injury or burnout.</p>
-
-<h3>4. Fitness is cumulative</h3>
-
-<p>Every completed workout adds to the total. Missed workouts don't just subtract---they prevent compounding.</p>
-
-<h3>5. Patience is required</h3>
-
-<p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
+<h3>5. Patience is required</h3></h3><p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
         </section>
 
         <section id="section-4-your-12-week-arc" class="gg-section">
-          <h2 id="section-4-your-12-week-arc">4 · Your 12-Week Arc</h2>
-<p>Understanding the big picture helps you navigate the individual weeks.</p>
+          <h2 id="section-4-your-12-week-arc">4 · Your 12-Week Arc<p>Understanding the big picture helps you navigate the individual weeks.</p>
 
 <p>Your 12-week plan isn't random workouts strung together---it's a carefully structured progression designed to build the specific fitness required for <strong>Unbound Gravel 200</strong>.</p>
 
@@ -590,9 +481,7 @@
   </tbody>
 </table></div>
 
-<h3>Week-by-Week Overview</h3>
-
-<p>The following table provides a high-level view of your 12-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
+<h3>Week-by-Week Overview</h3></h3><p>The following table provides a high-level view of your 12-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
 
 <div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="workout-summary-table">
   <thead>
@@ -635,12 +524,9 @@
         </section>
 
         <section id="section-5-training-zones" class="gg-section">
-          <h2 id="section-5-training-zones">5 · Training Zones</h2>
-<p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
+          <h2 id="section-5-training-zones">5 · Training Zones<p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
 
-<h3>The Point of Zones</h3>
-
-<p>Zones exist to quantify intensity and give you a common language for prescribing workouts.</p>
+<h3>The Point of Zones</h3></h3><p>Zones exist to quantify intensity and give you a common language for prescribing workouts.</p>
 
 <p>But here's the paradox: <strong>the end goal of measuring intensity is to help you develop a feeling for intensity.</strong></p>
 
@@ -653,25 +539,15 @@
 <p>You're a special snowflake.</p>
 <q class="special-quote">Learn your snowflake.</q>
 
-<h3>The Three Measurement Systems</h3>
+<h3>The Three Measurement Systems<h3>Power (% of FTP)</h3></h3><p>Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue (though your ability to produce power is). This is the gold standard.</p>
 
-<h3>Power (% of FTP)</h3>
+<h3>Heart Rate (% of HRmax)</h3></h3><p>Secondary system. Lags behind power by 1-3 minutes (time for HR to rise to match effort). Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful, especially for pacing long efforts where immediate feedback matters less.</p>
 
-<p>Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue (though your ability to produce power is). This is the gold standard.</p>
-
-<h3>Heart Rate (% of HRmax)</h3>
-
-<p>Secondary system. Lags behind power by 1-3 minutes (time for HR to rise to match effort). Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful, especially for pacing long efforts where immediate feedback matters less.</p>
-
-<h2>RPE (Rate of Perceived Exertion, 1-10 scale)</h2>
-
-<p>Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices.</p>
+<h2>RPE (Rate of Perceived Exertion, 1-10 scale)</h2></h2><p>Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices.</p>
 
 <p><strong>The ultimate arbiter:</strong> If the numbers say one thing but your body says another, trust your body.</p>
 
-<h3>How to Set Your Zones</h3>
-
-<p><strong>FTP:</strong> Use your 20-minute test result × 0.95, or use a ramp test.</p>
+<h3>How to Set Your Zones</h3></h3><p><strong>FTP:</strong> Use your 20-minute test result × 0.95, or use a ramp test.</p>
 
 <p><strong>HRmax:</strong> Use the highest HR you've hit in the past year (excluding brief spikes), or use the formula: 211 - (0.64 × age)</p>
 
@@ -679,17 +555,13 @@
 
 <p><strong>RPE:</strong> This is trained through practice. After a few weeks, you'll know what 7/10 feels like without thinking about it.</p>
 
-<h3>The Zone Philosophies</h3>
-
-<p>I'm not wedded to any particular zone scheme, but these zones work because they're practical, proven, widely understood, correspond to actual energy systems, precise enough to describe all efforts, and won't confuse you when you read other training resources.</p>
+<h3>The Zone Philosophies</h3></h3><p>I'm not wedded to any particular zone scheme, but these zones work because they're practical, proven, widely understood, correspond to actual energy systems, precise enough to describe all efforts, and won't confuse you when you read other training resources.</p>
 
 <p>I'm using Andrew Coggan's power zones (which everyone uses), Norway's Olympia Toppen heart rate zones (used by their Olympic endurance athletes), and the standard 1-10 RPE scale.</p>
 
 <p>Here's the complete chart:</p>
 
-<h2>THE 7-ZONE SYSTEM</h2>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
+<h2>THE 7-ZONE SYSTEM<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
 <tr>
 <th>Zone</th>
 <th>Name</th>
@@ -766,24 +638,17 @@
 
 <p><em>*Heart rate can't respond fast enough to track Z6-Z7 efforts. Use power and RPE.</em></p>
 
-<h3>Critical Notes on Using Zones</h3>
-<h4>1. Zones are descriptive, not prescriptive</h4>
-
-<p>Zones describe what you did, not a rigid target you must hit. You're targeting a range, not a precise number.</p>
+<h3>Critical Notes on Using Zones<h4>1. Zones are descriptive, not prescriptive</h2></h3><p>Zones describe what you did, not a rigid target you must hit. You're targeting a range, not a precise number.</p>
 
 <p>If the workout says "Z2," anywhere in 56-75% FTP counts. Don't obsess over hitting exactly 65%. Somewhere in the zone is the goal.</p>
 
-<h4>2. Easy means easy</h4>
-
-<p>Most people train too hard on easy days. Zone 2 should feel genuinely conversational. If you're breathing hard, you're in Z3.</p>
+<h4>2. Easy means easy</h4></h4><p>Most people train too hard on easy days. Zone 2 should feel genuinely conversational. If you're breathing hard, you're in Z3.</p>
 
 <p>Fix this. It's the most common training mistake.</p>
 
 <p>Most common mistake in endurance training: riding "moderately hard" all the time. You need polarization---easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.</p>
 
-<h4>3. RPE is the ultimate arbiter</h4>
-
-<p>Power meters can lie: bad calibration, stale FTP, wrong crank length setting. Heart rate can be misleading: heat, dehydration, caffeine, illness, accumulating fatigue.</p>
+<h4>3. RPE is the ultimate arbiter</h4></h4><p>Power meters can lie: bad calibration, stale FTP, wrong crank length setting. Heart rate can be misleading: heat, dehydration, caffeine, illness, accumulating fatigue.</p>
 
 <p>Your body doesn't lie.</p>
 
@@ -791,37 +656,27 @@
 
 <p>Cross-reference all three metrics. When they align, you're dialed in. When they conflict, trust RPE.</p>
 
-<h4>4. FTP changes slowly</h4>
-
-<p>Don't retest every week. Your FTP isn't changing that fast.</p>
+<h4>4. FTP changes slowly</h4></h4><p>Don't retest every week. Your FTP isn't changing that fast.</p>
 
 <p>Test Week 1. Optionally test Week 6-7 if you're curious. Test again before the race during your taper.</p>
 
 <p>Zones don't need constant adjustment. Let the training work over weeks, not days.</p>
 
-<h4>5. Heart rate lags power</h4>
-
-<p>It takes 1-3 minutes for your heart rate to rise to match your power output. This makes HR less useful for short intervals but highly reliable for longer steady efforts.</p>
+<h4>5. Heart rate lags power</h4></h4><p>It takes 1-3 minutes for your heart rate to rise to match your power output. This makes HR less useful for short intervals but highly reliable for longer steady efforts.</p>
 
 <p>Use power for short, hard efforts (Z5-Z7). Use heart rate for pacing long endurance rides (Z2-Z3).</p>
 
-<h4>6. Anaerobically gifted athletes are different</h4>
-
-<p>The percentages for Z5-Z7 assume average physiology. Some athletes---former track sprinters, BMX racers, football players---have exceptional anaerobic capacity.</p>
+<h4>6. Anaerobically gifted athletes are different</h4></h4><p>The percentages for Z5-Z7 assume average physiology. Some athletes---former track sprinters, BMX racers, football players---have exceptional anaerobic capacity.</p>
 
 <p>For them, 121% FTP might still feel aerobic. If this is you, your coach will adjust zones individually.</p>
 
 <p>For most gravel racers (endurance-foc
 
-<h3>FTP Testing</h3>
-
-<p>Functional Threshold Power (FTP) is the cornerstone of this training plan. It's the highest average power you can sustain for approximately one hour at maximum steady effort.</p>
+<h3>FTP Testing</h3></h3><p>Functional Threshold Power (FTP) is the cornerstone of this training plan. It's the highest average power you can sustain for approximately one hour at maximum steady effort.</p>
 
 <p>All your training zones are calculated as percentages of FTP. <strong>Wrong FTP = wrong zones = ineffective training.</strong></p>
 
-<h4>When to Test</h4>
-
-<ul>
+<h4>When to Test<ul>
   <li><strong>Week 1:</strong> Establish baseline FTP before training begins</li>
   <li><strong>Week 6-7 (optional):</strong> Check progress if curious, but not required</li>
   <li><strong>Week 11:</strong> Final test during taper to confirm fitness gains</li>
@@ -829,9 +684,7 @@
 
 <p>Don't test more often. FTP doesn't change weekly. Let the training work over multiple weeks before retesting.</p>
 
-<h4>How to Test</h4>
-
-<p><strong>Option 1: 20-Minute Test (Recommended)</strong></p>
+<h4>How to Test</h4></h4><p><strong>Option 1: 20-Minute Test (Recommended)</strong></p>
 
 <ol>
   <li>Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3</li>
@@ -851,645 +704,24 @@
 
 <p>Choose one method and stick with it. Don't mix methods—they yield slightly different numbers.</p>
 
-<h4>Execute the Test Correctly</h4>
-
-<p>Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard.</p>
+<h4>Execute the Test Correctly</h4></h4><p>Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard.</p>
 
 <p>The goal isn't heroics—it's an accurate number you can use for 6+ weeks of training.</p>
 
-<h3>Heart Rate Max Testing</h3>
+<h3>Heart Rate Max Testing</h3></h3><p>If using heart rate zones (either as primary or backup), you need an accurate HRmax.</p>
 
-<p>If using heart rate zones (either as primary or backup), you need an accurate HRmax.</p>
+<h4>Option 1: Use Your Highest Recorded Heart Rate</h4></h4><p>Check your training data from the past year. What's the highest heart rate you've hit during hard efforts? That's likely close to your actual max (excluding brief spikes from sudden efforts or errors).</p>
 
-<h4>Option 1: Use Your Highest Recorded Heart Rate</h4>
+<h4>Option 2: Field Test</h4></h4><p>After a thorough warm-up, do 3-4×3 minutes at maximum effort up a sustained climb with 3 minutes recovery between. Your HR in the final effort should approach max.</p>
 
-<p>Check your training data from the past year. What's the highest heart rate you've hit during hard efforts? That's likely close to your actual max (excluding brief spikes from sudden efforts or errors).</p>
-
-<h4>Option 2: Field Test</h4>
-
-<p>After a thorough warm-up, do 3-4×3 minutes at maximum effort up a sustained climb with 3 minutes recovery between. Your HR in the final effort should approach max.</p>
-
-<h4>Option 3: Formula (Least Accurate)</h4>
-
-<p><strong>HRmax = 211 - (0.64 × age)</strong></p>
+<h4>Option 3: Formula (Least Accurate)</h4></h4><p><strong>HRmax = 211 - (0.64 × age)</strong></p>
 
 <p>Example: 38 years old = 211 - 24.3 = 186 bpm</p>
 
 <p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
-</section>used, aerobically developed), the standard zones work fine.</p>
+</section>
 
-<h3>The Bottom Line on Zones</h3>
-
-<p>Zones are tools, not masters.</p>
-
-<p>Learn them. Use them. But develop your intuition so you can ride by feel when devices fail, conditions change, or your body sends signals the numbers don't capture.</p>
-
-<p>Power + Heart Rate + RPE = complete picture. When they align, you're executing correctly. When they conflict, trust your body.</p>
-        </section>
-<section id="section-3-training-fundamentals" class="gg-section">
-          <h2 id="section-3-training-fundamentals">3 · Training Fundamentals</h2>
-<p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
-
-<p>Not theory for theory's sake---practical understanding that changes how you approach every session, how you structure your week, and how you respond when your body doesn't cooperate.</p>
-
-<p>This chapter builds from first principles: the adaptation cycle that drives all fitness gains, the zones that define intensity, the variables you manipulate to create training stress, the phases that organize your 12 weeks, and the philosophical approaches that match different athlete types.</p>
-
-<p>Start here. Everything else makes more sense after this.</p>
-
-<h2>The Foundational Model: How Adaptation Works</h2>
-
-<p>All training follows the same basic cycle. Understanding this cycle is the difference between training intelligently and just accumulating fatigue.</p>
-
-<h3>Step 1: Stress</h3>
-
-<p>You apply training stress---a hard workout that exceeds your current capacity.</p>
-
-<p>This creates disruption:</p>
-
-<ul>
-<li>Muscle fibers develop microtears</li>
-</ul>
-<ul>
-<li>Glycogen stores deplete</li>
-</ul>
-<ul>
-<li>Metabolic waste accumulates</li>
-</ul>
-<ul>
-<li>Cellular damage occurs</li>
-</ul>
-<p>Your body registers this as a problem that needs solving.</p>
-
-<h3>Step 2: Fatigue</h3>
-
-<p>Immediately after training, you're weaker than before you started.</p>
-
-<p>Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. If you tested your FTP right after a hard interval session, it would be lower than your rested FTP.</p>
-
-<p>This is normal. Fatigue is the signal that triggers adaptation.</p>
-
-<h3>Step 3: Recovery</h3>
-
-<p>Given adequate rest, nutrition, and time, your body initiates repair:</p>
-
-<ul>
-<li>Muscle fibers rebuild</li>
-</ul>
-<ul>
-<li>Mitochondria multiply (more cellular power plants)</li>
-</ul>
-<ul>
-<li>Capillary density increases (better oxygen delivery)</li>
-</ul>
-<ul>
-<li>Glycogen storage expands</li>
-</ul>
-<ul>
-<li>Neurological efficiency improves</li>
-</ul>
-<p>This takes time. The timeline depends on the magnitude of stress:</p>
-
-<ul>
-<li>24-48 hours: Muscle repair, glycogen replenishment</li>
-</ul>
-<ul>
-<li>3-7 days: Mitochondrial adaptation, structural changes</li>
-</ul>
-<ul>
-<li>2-4 weeks: New baseline fitness, measurable performance gains</li>
-</ul>
-<h3>Step 4: Adaptation (Supercompensation)</h3>
-
-<p>If recovery is complete, your body doesn't just return to baseline---it overshoots.</p>
-
-<p>This is called supercompensation: your body builds slightly more capacity than it had before to handle similar stress more easily next time.</p>
-
-<p>You're now stronger than you were before the workout.</p>
-
-<h3>Step 5: Apply New Stress</h3>
-
-<p>Once you've adapted, you apply a slightly larger stress. The cycle repeats.</p>
-
-<p>Over weeks and months, these small adaptations compound into meaningful fitness gains.</p>
-
-<h3>Where It Goes Wrong</h3>
-
-<h3>Insufficient Stress</h3>
-
-<p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered.</p>
-
-<p>You're just riding around.</p>
-
-<h3>Insufficient Recovery</h3>
-
-<p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation.</p>
-
-<p>You're digging a hole, not building fitness.</p>
-
-<h3>Inconsistent Stress</h3>
-
-<p>If you train sporadically---heroic efforts followed by weeks off---you never compound adaptations.</p>
-
-<p>You're starting over every time.</p>
-
-<h3>The Practical Rules</h3>
-
-<h3>1. Training stress must be adequate but not excessive</h2>
-
-<p>Hard enough to trigger adaptation. Not so hard you can't recover.</p>
-
-<h3>2. Recovery must be prioritized as much as training</h2>
-
-<p>Sleep, nutrition, stress management---these aren't optional. They're where adaptation happens.</p>
-
-<h3>3. Consistency compounds</h3>
-
-<p>Ten weeks of steady training beats four weeks of heroics followed by injury or burnout.</p>
-
-<h3>4. Fitness is cumulative</h3>
-
-<p>Every completed workout adds to the total. Missed workouts don't just subtract---they prevent compounding.</p>
-
-<h3>5. Patience is required</h3>
-
-<p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
-        </section>
-<section id="section-2-before-you-start" class="gg-section">
-          <h2 id="section-2-before-you-start">2 · Before You Start</h2>
-
-
-  
-
-
-</h2>
-
-
-
-        <section id="section-3-training-fundamentals" class="gg-section">
-          <h2 id="section-3-training-fundamentals">3 · Training Fundamentals</h2>
-<p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
-
-<p>Not theory for theory's sake---practical understanding that changes how you approach every session, how you structure your week, and how you respond when your body doesn't cooperate.</p>
-
-<p>This chapter builds from first principles: the adaptation cycle that drives all fitness gains, the zones that define intensity, the variables you manipulate to create training stress, the phases that organize your 12 weeks, and the philosophical approaches that match different athlete types.</p>
-
-<p>Start here. Everything else makes more sense after this.</p>
-
-<h2>The Foundational Model: How Adaptation Works</h2>
-
-<p>All training follows the same basic cycle. Understanding this cycle is the difference between training intelligently and just accumulating fatigue.</p>
-
-<h3>Step 1: Stress</h3>
-
-<p>You apply training stress---a hard workout that exceeds your current capacity.</p>
-
-<p>This creates disruption:</p>
-
-<ul>
-<li>Muscle fibers develop microtears</li>
-</ul>
-<ul>
-<li>Glycogen stores deplete</li>
-</ul>
-<ul>
-<li>Metabolic waste accumulates</li>
-</ul>
-<ul>
-<li>Cellular damage occurs</li>
-</ul>
-<p>Your body registers this as a problem that needs solving.</p>
-
-<h3>Step 2: Fatigue</h3>
-
-<p>Immediately after training, you're weaker than before you started.</p>
-
-<p>Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. If you tested your FTP right after a hard interval session, it would be lower than your rested FTP.</p>
-
-<p>This is normal. Fatigue is the signal that triggers adaptation.</p>
-
-<h3>Step 3: Recovery</h3>
-
-<p>Given adequate rest, nutrition, and time, your body initiates repair:</p>
-
-<ul>
-<li>Muscle fibers rebuild</li>
-</ul>
-<ul>
-<li>Mitochondria multiply (more cellular power plants)</li>
-</ul>
-<ul>
-<li>Capillary density increases (better oxygen delivery)</li>
-</ul>
-<ul>
-<li>Glycogen storage expands</li>
-</ul>
-<ul>
-<li>Neurological efficiency improves</li>
-</ul>
-<p>This takes time. The timeline depends on the magnitude of stress:</p>
-
-<ul>
-<li>24-48 hours: Muscle repair, glycogen replenishment</li>
-</ul>
-<ul>
-<li>3-7 days: Mitochondrial adaptation, structural changes</li>
-</ul>
-<ul>
-<li>2-4 weeks: New baseline fitness, measurable performance gains</li>
-</ul>
-<h3>Step 4: Adaptation (Supercompensation)</h3>
-
-<p>If recovery is complete, your body doesn't just return to baseline---it overshoots.</p>
-
-<p>This is called supercompensation: your body builds slightly more capacity than it had before to handle similar stress more easily next time.</p>
-
-<p>You're now stronger than you were before the workout.</p>
-
-<h3>Step 5: Apply New Stress</h3>
-
-<p>Once you've adapted, you apply a slightly larger stress. The cycle repeats.</p>
-
-<p>Over weeks and months, these small adaptations compound into meaningful fitness gains.</p>
-
-<h3>Where It Goes Wrong</h3>
-
-<h3>Insufficient Stress</h3>
-
-<p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered.</p>
-
-<p>You're just riding around.</p>
-
-<h3>Insufficient Recovery</h3>
-
-<p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation.</p>
-
-<p>You're digging a hole, not building fitness.</p>
-
-<h3>Inconsistent Stress</h3>
-
-<p>If you train sporadically---heroic efforts followed by weeks off---you never compound adaptations.</p>
-
-<p>You're starting over every time.</p>
-
-<h3>The Practical Rules</h3>
-
-<h3>1. Training stress must be adequate but not excessive</h2>
-
-<p>Hard enough to trigger adaptation. Not so hard you can't recover.</p>
-
-<h3>2. Recovery must be prioritized as much as training</h2>
-
-<p>Sleep, nutrition, stress management---these aren't optional. They're where adaptation happens.</p>
-
-<h3>3. Consistency compounds</h3>
-
-<p>Ten weeks of steady training beats four weeks of heroics followed by injury or burnout.</p>
-
-<h3>4. Fitness is cumulative</h3>
-
-<p>Every completed workout adds to the total. Missed workouts don't just subtract---they prevent compounding.</p>
-
-<h3>5. Patience is required</h3>
-
-<p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
-        </section>
-
-        <section id="section-4-your-12-week-arc" class="gg-section">
-          <h2 id="section-4-your-12-week-arc">4 · Your 12-Week Arc</h2>
-<p>Understanding the big picture helps you navigate the individual weeks.</p>
-
-<p>Your 12-week plan isn't random workouts strung together---it's a carefully structured progression designed to build the specific fitness required for <strong>Unbound Gravel 200</strong>.</p>
-
-<p>Here's how it breaks down:</p>
-
-<h3><div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
-  <thead>
-    <tr>
-      <th>Phase</th>
-      <th>Weeks</th>
-      <th>Goal</th>
-      <th>What You're Doing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Foundation</strong></td>
-      <td>1-3</td>
-      <td>Build aerobic base</td>
-      <td>High volume Z2, establish baseline fitness</td>
-    </tr>
-    <tr>
-      <td><strong>Build</strong></td>
-      <td>4-7</td>
-      <td>Develop race-specific fitness</td>
-      <td>G Spot intervals, sustained efforts at 88-92% FTP</td>
-    </tr>
-    <tr>
-      <td><strong>Peak</strong></td>
-      <td>8-10</td>
-      <td>Maximum fitness</td>
-      <td>Longest rides, hardest intervals, race simulation</td>
-    </tr>
-    <tr>
-      <td><strong>Taper</strong></td>
-      <td>11-12</td>
-      <td>Maintain fitness, maximize freshness</td>
-      <td>Reduced volume, maintain intensity, recover fully</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h3>Week-by-Week Overview</h3>
-
-<p>The following table provides a high-level view of your 12-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="workout-summary-table">
-  <thead>
-    <tr>
-      <th>Week</th>
-      <th>Phase</th>
-      <th>Focus</th>
-      <th>Key Workouts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>1-3</strong></td>
-      <td>Base</td>
-      <td>Aerobic foundation</td>
-      <td>Z2 endurance, FTP test, tempo introduction</td>
-    </tr>
-    <tr>
-      <td><strong>4-7</strong></td>
-      <td>Build</td>
-      <td>G-Spot development</td>
-      <td>Sustained G-Spot efforts, threshold intervals, long rides</td>
-    </tr>
-    <tr>
-      <td><strong>8-10</strong></td>
-      <td>Peak</td>
-      <td>Race simulation</td>
-      <td>Long race-pace rides, VO2max maintenance, dress rehearsal</td>
-    </tr>
-    <tr>
-      <td><strong>11-12</strong></td>
-      <td>Taper</td>
-      <td>Freshness</td>
-      <td>Reduced volume, sharpening efforts, race openers</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<p><em>Note: Specific TSS and hour targets vary by tier (Ayahuasca, Finisher, Compete, Podium). See your TrainingPeaks calendar for exact weekly prescriptions.</em></p>
-        </section>
-
-        <section id="section-5-training-zones" class="gg-section">
-          <h2 id="section-5-training-zones">5 · Training Zones</h2>
-<p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
-
-<h3>The Point of Zones</h3>
-
-<p>Zones exist to quantify intensity and give you a common language for prescribing workouts.</p>
-
-<p>But here's the paradox: <strong>the end goal of measuring intensity is to help you develop a feeling for intensity.</strong></p>
-
-<p>That's right---you don't use power meters, heart rate monitors, and zone charts just to become enslaved to those devices. You use them to develop an intuitive sense of effort.</p>
-
-<p>Why?</p>
-
-<p>Because despite our best efforts, the human body remains too complex to neatly summarize with device-generated data. Your subjective feeling is infinitely more valuable than numbered outputs based on incomplete data collection, reductive models, and population-level assumptions.</p>
-
-<p>You're a special snowflake.</p>
-<q class="special-quote">Learn your snowflake.</q>
-
-<h3>The Three Measurement Systems</h3>
-
-<h3>Power (% of FTP)</h3>
-
-<p>Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue (though your ability to produce power is). This is the gold standard.</p>
-
-<h3>Heart Rate (% of HRmax)</h3>
-
-<p>Secondary system. Lags behind power by 1-3 minutes (time for HR to rise to match effort). Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful, especially for pacing long efforts where immediate feedback matters less.</p>
-
-<h2>RPE (Rate of Perceived Exertion, 1-10 scale)</h2>
-
-<p>Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices.</p>
-
-<p><strong>The ultimate arbiter:</strong> If the numbers say one thing but your body says another, trust your body.</p>
-
-<h3>How to Set Your Zones</h3>
-
-<p><strong>FTP:</strong> Use your 20-minute test result × 0.95, or use a ramp test.</p>
-
-<p><strong>HRmax:</strong> Use the highest HR you've hit in the past year (excluding brief spikes), or use the formula: 211 - (0.64 × age)</p>
-
-<p>Example: Age 38 = 211 - 24.3 = 186 bpm</p>
-
-<p><strong>RPE:</strong> This is trained through practice. After a few weeks, you'll know what 7/10 feels like without thinking about it.</p>
-
-<h3>The Zone Philosophies</h3>
-
-<p>I'm not wedded to any particular zone scheme, but these zones work because they're practical, proven, widely understood, correspond to actual energy systems, precise enough to describe all efforts, and won't confuse you when you read other training resources.</p>
-
-<p>I'm using Andrew Coggan's power zones (which everyone uses), Norway's Olympia Toppen heart rate zones (used by their Olympic endurance athletes), and the standard 1-10 RPE scale.</p>
-
-<p>Here's the complete chart:</p>
-
-<h2>THE 7-ZONE SYSTEM</h2>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
-<tr>
-<th>Zone</th>
-<th>Name</th>
-<th>% FTP</th>
-<th>% HRmax</th>
-<th>RPE</th>
-<th>Feel / Description</th>
-</tr>
-<tr>
-<td><strong>Z1</strong></td>
-<td><strong>Active Recovery</strong></td>
-<td>&lt;55%</td>
-<td>55-72%</td>
-<td>1-2</td>
-<td>Very easy, relaxed pace. Gentle spinning—feels like nothing. Full conversation possible. Doesn't feel like "training." Perfect for recovery spins or social rides.</td>
-</tr>
-<tr>
-<td><strong>Z2</strong></td>
-<td><strong>Endurance</strong></td>
-<td>56-75%</td>
-<td>72-82%</td>
-<td>3-4</td>
-<td>All-day pace—sustainable and steady. Can chat freely. Easy enough to go long but purposeful. Can speak in long sentences. <strong>This is where you should spend MOST of your training time.</strong></td>
-</tr>
-<tr>
-<td><strong>Z3</strong></td>
-<td><strong>Tempo</strong></td>
-<td>76-87%</td>
-<td>82-87%</td>
-<td>5-6</td>
-<td>Comfortably hard. Steady pace. Breathing deeper but rhythmic. Talking in short sentences or phrases. Feels sustainable for 1-2 hours. Great for tempo blocks and long sustained efforts.</td>
-</tr>
-<tr>
-<td><strong>G SPOT</strong></td>
-<td><strong>Gravel Race Pace</strong></td>
-<td>88-92%</td>
-<td>87-92%</td>
-<td>6-7</td>
-<td>Uncomfortably sustainable. Hard enough to hurt, easy enough to repeat. This is where you'll spend most of a gravel race. Breathing is controlled but deep. Can speak in short phrases but wouldn't want to. The bread and butter of gravel-specific training.</td>
-</tr>
-<tr>
-<td><strong>Z4</strong></td>
-<td><strong>Lactate Threshold</strong></td>
-<td>93-105%</td>
-<td>94-99%</td>
-<td>7-8</td>
-<td>Hard, controlled effort. Focused work. Can only say a few words at a time. Breathing is labored. Designed for 10-30 minute blocks. Builds your ability to produce and clear lactate.</td>
-</tr>
-<tr>
-<td><strong>Z5</strong></td>
-<td><strong>VO2max</strong></td>
-<td>106-120%</td>
-<td>92-100%</td>
-<td>9</td>
-<td>Very hard, heavy breathing. Near maximum. Only single words possible. Breathing is ragged; speech is nearly impossible. Efforts last 2-8 minutes. Targets max aerobic capacity.</td>
-</tr>
-<tr>
-<td><strong>Z6</strong></td>
-<td><strong>Anaerobic Capacity</strong></td>
-<td>121-150%</td>
-<td>N/A*</td>
-<td>10</td>
-<td>Sharp, explosive efforts—30 seconds to 3 minutes max. All-out. Legs burn, hard to breathe or talk. Builds anaerobic power and lactate tolerance.</td>
-</tr>
-<tr>
-<td><strong>Z7</strong></td>
-<td><strong>Neuromuscular Power</strong></td>
-<td>&gt;150%</td>
-<td>N/A*</td>
-<td>10</td>
-<td>All-out sprints or jumps. Pure explosive power. You're not breathing hard from your lungs—your nervous system and muscles scream. Lasts only seconds. Maximum speed and skill.</td>
-</tr>
-</table></div>
-
-<p><em>*Heart rate can't respond fast enough to track Z6-Z7 efforts. Use power and RPE.</em></p>
-
-<h3>Critical Notes on Using Zones</h3>
-<h4>1. Zones are descriptive, not prescriptive</h4>
-
-<p>Zones describe what you did, not a rigid target you must hit. You're targeting a range, not a precise number.</p>
-
-<p>If the workout says "Z2," anywhere in 56-75% FTP counts. Don't obsess over hitting exactly 65%. Somewhere in the zone is the goal.</p>
-
-<h4>2. Easy means easy</h4>
-
-<p>Most people train too hard on easy days. Zone 2 should feel genuinely conversational. If you're breathing hard, you're in Z3.</p>
-
-<p>Fix this. It's the most common training mistake.</p>
-
-<p>Most common mistake in endurance training: riding "moderately hard" all the time. You need polarization---easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.</p>
-
-<h4>3. RPE is the ultimate arbiter</h4>
-
-<p>Power meters can lie: bad calibration, stale FTP, wrong crank length setting. Heart rate can be misleading: heat, dehydration, caffeine, illness, accumulating fatigue.</p>
-
-<p>Your body doesn't lie.</p>
-
-<p>If 90% FTP feels like 9/10 today when it should feel like 7/10, something's wrong. Don't push through. Back off and investigate.</p>
-
-<p>Cross-reference all three metrics. When they align, you're dialed in. When they conflict, trust RPE.</p>
-
-<h4>4. FTP changes slowly</h4>
-
-<p>Don't retest every week. Your FTP isn't changing that fast.</p>
-
-<p>Test Week 1. Optionally test Week 6-7 if you're curious. Test again before the race during your taper.</p>
-
-<p>Zones don't need constant adjustment. Let the training work over weeks, not days.</p>
-
-<h4>5. Heart rate lags power</h4>
-
-<p>It takes 1-3 minutes for your heart rate to rise to match your power output. This makes HR less useful for short intervals but highly reliable for longer steady efforts.</p>
-
-<p>Use power for short, hard efforts (Z5-Z7). Use heart rate for pacing long endurance rides (Z2-Z3).</p>
-
-<h4>6. Anaerobically gifted athletes are different</h4>
-
-<p>The percentages for Z5-Z7 assume average physiology. Some athletes---former track sprinters, BMX racers, football players---have exceptional anaerobic capacity.</p>
-
-<p>For them, 121% FTP might still feel aerobic. If this is you, your coach will adjust zones individually.</p>
-
-<p>For most gravel racers (endurance-foc
-
-<h3>FTP Testing</h3>
-
-<p>Functional Threshold Power (FTP) is the cornerstone of this training plan. It's the highest average power you can sustain for approximately one hour at maximum steady effort.</p>
-
-<p>All your training zones are calculated as percentages of FTP. <strong>Wrong FTP = wrong zones = ineffective training.</strong></p>
-
-<h4>When to Test</h4>
-
-<ul>
-  <li><strong>Week 1:</strong> Establish baseline FTP before training begins</li>
-  <li><strong>Week 6-7 (optional):</strong> Check progress if curious, but not required</li>
-  <li><strong>Week 11:</strong> Final test during taper to confirm fitness gains</li>
-</ul>
-
-<p>Don't test more often. FTP doesn't change weekly. Let the training work over multiple weeks before retesting.</p>
-
-<h4>How to Test</h4>
-
-<p><strong>Option 1: 20-Minute Test (Recommended)</strong></p>
-
-<ol>
-  <li>Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3</li>
-  <li>Include 3×1 minute at Z4-Z5 to open the legs</li>
-  <li>5 minutes easy recovery spin</li>
-  <li>20 minutes all-out, best average power you can hold</li>
-  <li>Cool down 10-15 minutes easy</li>
-  <li><strong>FTP = 20-minute average power × 0.95</strong></li>
-</ol>
-
-<p><strong>Option 2: Ramp Test</strong></p>
-
-<p>Many smart trainers (TrainerRoad, Zwift, Wahoo) offer ramp tests: progressive increase in power every minute until failure. The app calculates FTP from your max power achieved.</p>
-
-<p><em>Pros:</em> Shorter, less painful<br>
-<em>Cons:</em> Slightly less accurate for some athletes</p>
-
-<p>Choose one method and stick with it. Don't mix methods—they yield slightly different numbers.</p>
-
-<h4>Execute the Test Correctly</h4>
-
-<p>Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard.</p>
-
-<p>The goal isn't heroics—it's an accurate number you can use for 6+ weeks of training.</p>
-
-<h3>Heart Rate Max Testing</h3>
-
-<p>If using heart rate zones (either as primary or backup), you need an accurate HRmax.</p>
-
-<h4>Option 1: Use Your Highest Recorded Heart Rate</h4>
-
-<p>Check your training data from the past year. What's the highest heart rate you've hit during hard efforts? That's likely close to your actual max (excluding brief spikes from sudden efforts or errors).</p>
-
-<h4>Option 2: Field Test</h4>
-
-<p>After a thorough warm-up, do 3-4×3 minutes at maximum effort up a sustained climb with 3 minutes recovery between. Your HR in the final effort should approach max.</p>
-
-<h4>Option 3: Formula (Least Accurate)</h4>
-
-<p><strong>HRmax = 211 - (0.64 × age)</strong></p>
-
-<p>Example: 38 years old = 211 - 24.3 = 186 bpm</p>
-
-<p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
-</section>used, aerobically developed), the standard zones work fine.</p>
-
-<h3>The Bottom Line on Zones</h3>
-
-<p>Zones are tools, not masters.</p>
+<h3>The Bottom Line on Zones</h3></h3><p>Zones are tools, not masters.</p>
 
 <p>Learn them. Use them. But develop your intuition so you can ride by feel when devices fail, conditions change, or your body sends signals the numbers don't capture.</p>
 
@@ -1497,8 +729,7 @@
         </section>
 
         <section id="section-6-workout-execution" class="gg-section">
-          <h2 id="section-6-workout-execution">6 · Workout Execution</h2>
-<p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
+          <h2 id="section-6-workout-execution">6 · Workout Execution<p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
 
 <p>None of that matters if you can't execute the workouts correctly.</p>
 
@@ -1506,15 +737,11 @@
 
 <p>This chapter covers execution: how to do different workout types, what to do when things go wrong, how to adjust on the fly, and the recovery protocols that make tomorrow's workout possible.</p>
 
-<h3>The Execution Gap</h3>
-
-<p>There's a massive gap between what's written on the plan and what actually happens.</p>
+<h3>The Execution Gap</h3></h3><p>There's a massive gap between what's written on the plan and what actually happens.</p>
 
 <p><strong>The plan says:</strong> "Tuesday: 3×15 min threshold @ 95-100% FTP, 8 min recovery between intervals"</p>
 
-<h3>What actually happens:</h3>
-
-<ul>
+<h3>What actually happens:<ul>
 <li>You skip the warmup because you're running late</li>
 </ul>
 <ul>
@@ -1533,13 +760,9 @@
 
 <p>This chapter teaches you how to close that gap.</p>
 
-<h3>Universal Execution Rules</h3>
+<h3>Universal Execution Rules</h3></h3><p>Before we get zone-specific, here are the rules that apply to every workout:</p>
 
-<p>Before we get zone-specific, here are the rules that apply to every workout:</p>
-
-<h3>1. Warm Up Properly</h3>
-
-<p>For endurance/tempo rides:</p>
+<h3>1. Warm Up Properly</h3></h3><p>For endurance/tempo rides:</p>
 
 <ul>
 <li>10-15 minutes Z1→Z2, progressive from very easy to comfortable</li>
@@ -1557,9 +780,7 @@
 </ul>
 <p>Why it matters: Cold muscles don't produce power efficiently. Skipping warmup compromises interval quality and increases injury risk.</p>
 
-<h3>2. Do the Actual Workout (Not More, Not Less)</h2>
-
-<p>The most common mistake: freelancing.</p>
+<h3>2. Do the Actual Workout (Not More, Not Less)</h3></h3><p>The most common mistake: freelancing.</p>
 
 <ul>
 <li>"I feel great, let me do one more interval"</li>
@@ -1577,15 +798,11 @@
 
 <p>Adding volume or intensity might feel productive, but it accumulates fatigue, compromises recovery, and ruins tomorrow's workout.</p>
 
-<h3>3. Chase Time-in-Zone, Not Hero Intervals</h2>
-
-<p>This applies to everything from G Spot up to VO2max.</p>
+<h3>3. Chase Time-in-Zone, Not Hero Intervals</h3></h3><p>This applies to everything from G Spot up to VO2max.</p>
 
 <p>The goal is highest average power across the entire set, not crushing the first interval then dying.</p>
 
-<h3>Bad execution:</h3>
-
-<ul>
+<h3>Bad execution:<ul>
 <li>Interval 1: 320W (way too hard)</li>
 </ul>
 <ul>
@@ -1600,9 +817,7 @@
 <ul>
 <li>Total work: 3 intervals, 293W average, incomplete</li>
 </ul>
-<h3>Good execution:</h3>
-
-<ul>
+<h3>Good execution:<ul>
 <li>Interval 1: 300W (controlled)</li>
 </ul>
 <ul>
@@ -1621,19 +836,13 @@
 
 <p>Start conservatively. Finish strong. Complete the set.</p>
 
-<h3>4. Stop If Power Drops >10%</h3>
-
-<p>Quality beats quantity.</p>
+<h3>4. Stop If Power Drops >10%</h3></h3><p>Quality beats quantity.</p>
 
 <p>If you can't hold target power on interval 3+, you're done. Don't accumulate junk volume.</p>
 
 <p>Four quality intervals at 300W beats six degraded intervals averaging 270W.</p>
 
-<h3>Zone-Specific Execution</h3>
-
-<h3>Z2 (Endurance) --- The Foundation</h3>
-
-<p>Target: 56-75% FTP, RPE 3-4, conversational</p>
+<h3>Zone-Specific Execution<h3>Z2 (Endurance) --- The Foundation</h3></h3><p>Target: 56-75% FTP, RPE 3-4, conversational</p>
 
 <p>How to execute:</p>
 
@@ -1662,9 +871,7 @@
 </ul>
 <p>The fix: Discipline. Easy means easy. This is 70-80% of your training volume. Protect it.</p>
 
-<h3>G Spot (87-92% FTP) --- Gravel Race Pace</h3>
-
-<p>Target: 88-92% FTP, RPE 6-7, "uncomfortably sustainable"</p>
+<h3>G Spot (87-92% FTP) --- Gravel Race Pace</h3></h3><p>Target: 88-92% FTP, RPE 6-7, "uncomfortably sustainable"</p>
 
 <p>How to execute:</p>
 
@@ -1695,9 +902,7 @@
 
 <p>Success looks like: Completing all prescribed intervals, power stable within ±5%, RPE 6-7 throughout, feeling like you could do one more if forced.</p>
 
-<h2>Threshold (93-105% FTP) --- FTP Development</h2>
-
-<p>Target: 95-100% FTP, RPE 7-8, very hard but controlled</p>
+<h2>Threshold (93-105% FTP) --- FTP Development</h2></h2><p>Target: 95-100% FTP, RPE 7-8, very hard but controlled</p>
 
 <p>How to execute:</p>
 
@@ -1731,9 +936,7 @@
 
 <p>Success looks like: All intervals completed at target, power consistent (±3%), RPE 7-8, interval 3 felt hardest but you finished strong.</p>
 
-<h2>VO2max (110-120% FTP) --- Raising the Ceiling</h2>
-
-<p>Target: 110-120% FTP, RPE 9, gasping, burning legs, maximal but repeatable</p>
+<h2>VO2max (110-120% FTP) --- Raising the Ceiling</h2></h2><p>Target: 110-120% FTP, RPE 9, gasping, burning legs, maximal but repeatable</p>
 
 <p>How to execute:</p>
 
@@ -1766,9 +969,7 @@
 
 <p>Success looks like: 4-5 quality intervals at target power, RPE 9 throughout, completed the set without falling apart.</p>
 
-<h3>Indoor vs Outdoor Workouts</h3>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
+<h3>Indoor vs Outdoor Workouts<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
   <thead>
     <tr>
       <th>Condition</th>
@@ -1819,11 +1020,7 @@
 
 <p><strong>**I'm not kidding</strong> - you will have to perform some long rides on the trainer, and yes, sometimes you will be bored. Boredom is not a war crime. You are NOT entitled to be maximally entertained at all times. If you can't get over that, then you should pick a form of bike racing that suits your attention span.</p>
 
-
-
-<h3>Gravel vs Road Training</h3>
-
-<p><strong>Here's the reality:</strong> Most of your training can happen on the road.</p>
+<h3>Gravel vs Road Training</h3></h3><p><strong>Here's the reality:</strong> Most of your training can happen on the road.</p>
 
 <p>Fitness doesn't know the difference between pavement and gravel. Your cardiovascular system, your muscles, your metabolic adaptations---they develop the same way regardless of surface.</p>
 
@@ -1831,17 +1028,13 @@
 
 <p><strong>But---</strong> and this is important---gravel-specific skills and adaptations do exist. You can't develop them entirely on smooth pavement.</p>
 
-<h3>When road training is better:</h3>
-
-<p><strong>Intervals (G Spot, threshold, VO2max)</strong> Road provides consistent surface, predictable grip, and fewer variables. You can hit precise power targets without worrying about washboard, loose corners, or sudden surface changes. For structured work where power targets matter, road is often superior.</p>
+<h3>When road training is better:</h3></h3><p><strong>Intervals (G Spot, threshold, VO2max)</strong> Road provides consistent surface, predictable grip, and fewer variables. You can hit precise power targets without worrying about washboard, loose corners, or sudden surface changes. For structured work where power targets matter, road is often superior.</p>
 
 <p><strong>Safety</strong> If your local gravel roads have heavy truck traffic, blind corners, or sketchy conditions, road might be safer. Dead athletes don't get faster.</p>
 
 <p><strong>Efficiency</strong> Road rides let you cover more distance in less time. If you're time-crunched and need to accumulate volume quickly, pavement is more efficient.</p>
 
-<h3>When gravel is necessary:</h3>
-
-<p><strong>Skills development</strong> Cornering on loose surfaces, descending on variable terrain, line choice through rough sections, handling washboard at speed---these require gravel. You can't learn them on pavement.</p>
+<h3>When gravel is necessary:</h3></h3><p><strong>Skills development</strong> Cornering on loose surfaces, descending on variable terrain, line choice through rough sections, handling washboard at speed---these require gravel. You can't learn them on pavement.</p>
 
 <p>Minimum gravel time: One ride per week during base/build, two rides per week during peak phase.</p>
 
@@ -1851,9 +1044,7 @@
 
 <p><strong>Race specificity (final 4 weeks)</strong> During peak phase, your longest rides should be on gravel if possible. Simulate race conditions: gravel surface, similar terrain, race-day fueling, race-day equipment. Prove to yourself and your equipment that everything works.</p>
 
-<h3><h4>The Practical Balance</h4>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
+<h3><h4>The Practical Balance<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
   <thead>
     <tr>
       <th>Phase</th>
@@ -1895,9 +1086,7 @@
   </tbody>
 </table></div>
 
-<h3>Build phase (Weeks 4-7):</h3>
-
-<ul>
+<h3>Build phase (Weeks 4-7):<ul>
 <li>Road: 60-70%</li>
 </ul>
 <ul>
@@ -1906,9 +1095,7 @@
 <ul>
 <li>Focus: adding intensity, increasing gravel exposure gradually</li>
 </ul>
-<h3>Peak phase (Weeks 8-10):</h3>
-
-<ul>
+<h3>Peak phase (Weeks 8-10):<ul>
 <li>Road: 40-50%</li>
 </ul>
 <ul>
@@ -1917,9 +1104,7 @@
 <ul>
 <li>Focus: race simulation, proving equipment and systems work</li>
 </ul>
-<h3>Taper (Weeks 11-12):</h3>
-
-<ul>
+<h3>Taper (Weeks 11-12):<ul>
 <li>Road: 50%</li>
 </ul>
 <ul>
@@ -1928,25 +1113,19 @@
 <ul>
 <li>Focus: staying sharp, final systems check</li>
 </ul>
-<h3>Surface-specific execution tips:</h3>
-
-<p><strong>On road:</strong> Execute intervals precisely. Use the smooth surface to nail power targets. Build fitness efficiently.</p>
+<h3>Surface-specific execution tips:</h3></h3><p><strong>On road:</strong> Execute intervals precisely. Use the smooth surface to nail power targets. Build fitness efficiently.</p>
 
 <p><strong>On gravel:</strong> Embrace variability. Power will fluctuate more (±10-15W is normal on rough gravel). Focus on average power and RPE rather than second-by-second precision. Practice fueling, practice skills, build confidence.</p>
 
 <p><strong>Equipment note:</strong> If doing structured intervals on gravel, use your race wheels and tires. Prove they work. If doing high-volume base miles on pavement, training wheels are fine---save your race equipment for when surface matters.</p>
 
-<h3>The bottom line:</h3>
-
-<p>Don't obsess over surface. Obsess over doing the work.</p>
+<h3>The bottom line:</h3></h3><p>Don't obsess over surface. Obsess over doing the work.</p>
 
 <p>If you have good gravel access, use it liberally. If you don't, do most training on road and seek out gravel for skills work and final race prep.</p>
 
 <p>The race won't care how you trained. It will only care if you're fit, skilled, and prepared.</p>
 
-<h3>When and How to Modify Workouts</h3>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
+<h3>When and How to Modify Workouts<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
   <thead>
     <tr>
       <th>Situation</th>
@@ -1977,9 +1156,7 @@
   </tbody>
 </table></div>
 
-<h4>How to Modify Intelligently</h4>
-
-<ul>
+<h4>How to Modify Intelligently<ul>
   <li><strong>Reduce volume, not intensity:</strong> Cut duration while maintaining intervals</li>
   <li><strong>Substitute, don't skip:</strong> Even 30 minutes easy beats nothing</li>
   <li><strong>One missed workout:</strong> No problem</li>
@@ -1987,9 +1164,7 @@
   <li><strong>Three consecutive missed:</strong> Something fundamental isn't working—fix it</li>
 </ul>
 
-<h3>When modification is appropriate:</h3>
-
-<ul>
+<h3>When modification is appropriate:<ul>
 <li>Illness: If you're sick above the neck (head cold), reduce</li>
 </ul>
 <p>> intensity by one zone. If you're sick below the neck (chest, > stomach), skip the workout entirely.</p>
@@ -2009,9 +1184,7 @@
 </ul>
 <p>> deprivation---these all compromise training. It's okay to reduce > volume or intensity for a week. Don't try to be a hero.</p>
 
-<h3>Recovery Protocol</h3>
-
-<p>Recovery isn't passive. It's active work that determines whether tomorrow's workout is productive or garbage.</p>
+<h3>Recovery Protocol</h3></h3><p>Recovery isn't passive. It's active work that determines whether tomorrow's workout is productive or garbage.</p>
 
 <div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
   <thead>
@@ -2064,15 +1237,11 @@
   </tbody>
 </table></div>
 
-<h2>HRV: What It Is, What It Isn't, and How to Use It</h2>
-
-<p>Heart Rate Variability (HRV) is one of the most misunderstood metrics in endurance training. Some athletes obsess over it. Others ignore it entirely. Both are wrong.</p>
+<h2>HRV: What It Is, What It Isn't, and How to Use It</h2></h2><p>Heart Rate Variability (HRV) is one of the most misunderstood metrics in endurance training. Some athletes obsess over it. Others ignore it entirely. Both are wrong.</p>
 
 <p>Here's what you actually need to know.</p>
 
-<h3>What HRV Actually Measures</h3>
-
-<p>HRV measures the variation in time between heartbeats. Not your heart rate---the inconsistency in the gaps between beats.</p>
+<h3>What HRV Actually Measures</h3></h3><p>HRV measures the variation in time between heartbeats. Not your heart rate---the inconsistency in the gaps between beats.</p>
 
 <p>A healthy, recovered nervous system produces variable gaps. Your heart doesn't beat like a metronome---it speeds up slightly when you inhale, slows down when you exhale, and constantly adjusts based on dozens of inputs.</p>
 
@@ -2080,65 +1249,43 @@
 
 <p>Lower HRV generally indicates your sympathetic nervous system (fight or flight) is dominant. Your body is still processing stress---from training, work, poor sleep, illness, or life.</p>
 
-<h3>What HRV Is Good For</h3>
-
-<h3>1. Trend tracking over weeks</h3>
-
-<p>A single HRV reading means almost nothing. But watching your 7-day rolling average tells you something useful: is your body absorbing the training load or accumulating fatigue?</p>
+<h3>What HRV Is Good For<h3>1. Trend tracking over weeks</h3></h3><p>A single HRV reading means almost nothing. But watching your 7-day rolling average tells you something useful: is your body absorbing the training load or accumulating fatigue?</p>
 
 <p>If your baseline is 65ms and you've been hovering at 55ms for two weeks, you're probably under-recovered. Time to back off.</p>
 
 <p>If your baseline is 65ms and you're consistently hitting 70ms, you're adapting well. Training is working.</p>
 
-<h3>2. Confirming what your body already knows</h3>
-
-<p>HRV is most useful as a tiebreaker. You wake up feeling "meh"---not terrible, not great. Should you do today's hard workout or swap it for easy spinning?</p>
+<h3>2. Confirming what your body already knows</h3></h3><p>HRV is most useful as a tiebreaker. You wake up feeling "meh"---not terrible, not great. Should you do today's hard workout or swap it for easy spinning?</p>
 
 <p>Check HRV. If it's suppressed (below your baseline), that's confirmation: your body is telling you the same thing your subjective feel is telling you. Take the easy day.</p>
 
 <p>If HRV is normal but you feel tired, it's probably just fatigue rather than systemic stress. You can probably push through with a proper warmup.</p>
 
-<h3>3. Catching illness early</h3>
-
-<p>HRV often drops 24-48 hours before you feel sick. If you see a sudden, unexplained drop of 10-15% from baseline, pay attention. You might be fighting something off.</p>
+<h3>3. Catching illness early</h3></h3><p>HRV often drops 24-48 hours before you feel sick. If you see a sudden, unexplained drop of 10-15% from baseline, pay attention. You might be fighting something off.</p>
 
 <p>This is actually HRV's superpower: early warning system for illness. Catching a cold early and resting can save you a week of lost training.</p>
 
-<h3>What HRV Is NOT Good For</h3>
-
-<h3>1. Predicting performance</h3>
-
-<p>High HRV this morning does not mean you'll crush your intervals today. Low HRV does not mean you'll fail.</p>
+<h3>What HRV Is NOT Good For<h3>1. Predicting performance</h3></h3><p>High HRV this morning does not mean you'll crush your intervals today. Low HRV does not mean you'll fail.</p>
 
 <p>HRV tells you about recovery status, not performance readiness. Some athletes perform great with suppressed HRV. Some have high HRV and feel flat.</p>
 
 <p>Use it as one input, not the answer.</p>
 
-<h3>2. Day-to-day decision making (in isolation)</h3>
-
-<p>One bad HRV reading means nothing. You could have slept in a weird position, been dehydrated, had a stressful dream, or measured incorrectly.</p>
+<h3>2. Day-to-day decision making (in isolation)</h3></h3><p>One bad HRV reading means nothing. You could have slept in a weird position, been dehydrated, had a stressful dream, or measured incorrectly.</p>
 
 <p>Never cancel a workout based on one HRV reading. Look at trends over 5-7 days minimum.</p>
 
-<h3>3. Comparing yourself to others</h3>
-
-<p>HRV is highly individual. An elite athlete might have a baseline of 80-100ms. A stressed, under-recovered amateur might baseline at 40-50ms. Higher is generally better---it indicates a more adaptive, resilient nervous system.</p>
+<h3>3. Comparing yourself to others</h3></h3><p>HRV is highly individual. An elite athlete might have a baseline of 80-100ms. A stressed, under-recovered amateur might baseline at 40-50ms. Higher is generally better---it indicates a more adaptive, resilient nervous system.</p>
 
 <p>But here's the thing: your HRV is only meaningful relative to YOUR baseline. An elite dropping from 90ms to 70ms is a red flag. An amateur rising from 45ms to 55ms over months of training is progress.</p>
 
 <p>Comparing your number to someone else's is useless. Track your own trend.</p>
 
-<h3>How to Actually Use HRV</h3>
-
-<h3>Step 1: Establish your baseline</h3>
-
-<p>Measure every morning for 2-3 weeks before drawing any conclusions. Same time, same conditions: immediately upon waking, before getting out of bed, before coffee, before phone.</p>
+<h3>How to Actually Use HRV<h3>Step 1: Establish your baseline</h3></h3><p>Measure every morning for 2-3 weeks before drawing any conclusions. Same time, same conditions: immediately upon waking, before getting out of bed, before coffee, before phone.</p>
 
 <p>Your baseline is your 7-day rolling average during normal training (not during recovery weeks or peak training).</p>
 
-<h3>Step 2: Watch the trend, not the number</h3>
-
-<p>Daily fluctuations of 5-10% are normal. Ignore them.</p>
+<h3>Step 2: Watch the trend, not the number</h3></h3><p>Daily fluctuations of 5-10% are normal. Ignore them.</p>
 
 <p>Pay attention to:</p>
 
@@ -2151,9 +1298,7 @@
 <ul>
 <li>Sudden single-day drop of 15%+ → possible illness or acute stress</li>
 </ul>
-<h3>Step 3: Use it as a tiebreaker</h3>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="hrv-decision-table">
+<h3>Step 3: Use it as a tiebreaker<div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="hrv-decision-table">
   <thead>
     <tr>
       <th>How You Feel</th>
@@ -2187,19 +1332,13 @@
 
 <p class="hrv-note"><strong>Note:</strong> <q>Feel bad</q> means genuinely fatigued, not just <q>don't feel like it.</q> Be honest with yourself.</p>
 
-<h3>Step 4: Don't overthink it</h3>
-
-<p>The best athletes I know check HRV every morning, glance at the trend once a week, and otherwise ignore it.</p>
+<h3>Step 4: Don't overthink it</h3></h3><p>The best athletes I know check HRV every morning, glance at the trend once a week, and otherwise ignore it.</p>
 
 <p>They don't cancel workouts based on HRV. They don't celebrate high readings. They use it as background information that occasionally confirms what their body is already telling them.</p>
 
 <p>That's the right relationship with this metric.</p>
 
-<h3>Practical Setup</h3>
-
-<h3>Apps that work:</h3>
-
-<ul>
+<h3>Practical Setup<h3>Apps that work:<ul>
 <li>HRV4Training (most research-backed, camera-based works fine)</li>
 </ul>
 <ul>
@@ -2214,9 +1353,7 @@
 <ul>
 <li>Garmin (if you have compatible watch)</li>
 </ul>
-<h3>Measurement protocol:</h3>
-
-<ul>
+<h3>Measurement protocol:<ul>
 <li>Same time every morning (within 30 minutes)</li>
 </ul>
 <ul>
@@ -2233,9 +1370,7 @@
 </ul>
 <p><strong>Consistency matters more than precision.</strong> A cheap app used consistently beats an expensive device used sporadically.</p>
 
-<h3>The Bottom Line on HRV</h3>
-
-<p>HRV is a useful tool for tracking recovery trends and catching illness early. It's not a crystal ball for performance or a daily decision-making oracle.</p>
+<h3>The Bottom Line on HRV</h3></h3><p>HRV is a useful tool for tracking recovery trends and catching illness early. It's not a crystal ball for performance or a daily decision-making oracle.</p>
 
 <p>Measure it consistently. Watch the 7-day trend. Use it to confirm what your body is telling you. Don't obsess over daily fluctuations.</p>
 
@@ -2243,15 +1378,11 @@
 
 <p>And remember: athletes trained effectively for decades before HRV apps existed. This is a helpful tool, not a requirement. If tracking HRV stresses you out more than it helps, stop tracking it and listen to your body instead.</p>
 
-<h2 style="font-size: 2em; margin-top: 3rem;">Strength Training: The Honest Take</h2>
-
-<p>Long neglected by endurance athletes, strength training has finally gotten the attention it deserves. The research is clear: stronger athletes perform better, get injured less, and extend their careers.</p>
+<h2 style="font-size: 2em; margin-top: 3rem;">Strength Training: The Honest Take<p>Long neglected by endurance athletes, strength training has finally gotten the attention it deserves. The research is clear: stronger athletes perform better, get injured less, and extend their careers.</p>
 
 <p>Here's what strength training actually does for you:</p>
 
-<h3>The Performance Benefits</h3>
-
-<p><strong>Improved movement economy.</strong> Stronger muscles require less effort to produce the same output. You become more efficient---same power, less metabolic cost.</p>
+<h3>The Performance Benefits</h3></h3><p><strong>Improved movement economy.</strong> Stronger muscles require less effort to produce the same output. You become more efficient---same power, less metabolic cost.</p>
 
 <p><strong>Better force production.</strong> Cycling is about applying force to pedals, repeatedly, for hours. Stronger muscles generate more force per contraction. This matters most when you're fatigued and your body is looking for any available resource.</p>
 
@@ -2261,29 +1392,19 @@
 
 <p><strong>Increased training capacity.</strong> A stronger body can absorb more training stress and recover faster. This compounds over months and years.</p>
 
-<h3>The Injury Prevention Benefits</h3>
-
-<p><strong>Joint stability.</strong> Stronger muscles stabilize joints through their full range of motion. This matters when you're bouncing over rough terrain for 8 hours.</p>
+<h3>The Injury Prevention Benefits</h3></h3><p><strong>Joint stability.</strong> Stronger muscles stabilize joints through their full range of motion. This matters when you're bouncing over rough terrain for 8 hours.</p>
 
 <p><strong>Muscle balance.</strong> Cycling creates imbalances---strong quads, weak glutes, tight hip flexors, dormant core. Strength training addresses these before they become injuries.</p>
 
 <p><strong>Resilience.</strong> A stronger body can handle the unexpected---a crash, a weird landing, an awkward dismount. The difference between "that was close" and "I'm out for 6 weeks."</p>
 
-<h3>The Health Benefits</h3>
+<h3>The Health Benefits</h3></h3><p>Beyond performance, strength training improves hormone regulation, insulin sensitivity, bone density, and body composition. These matter more as you age. If you're 40+, strength training isn't optional---it's mandatory for long-term athletic health.</p>
 
-<p>Beyond performance, strength training improves hormone regulation, insulin sensitivity, bone density, and body composition. These matter more as you age. If you're 40+, strength training isn't optional---it's mandatory for long-term athletic health.</p>
-
-<h4>Here's My Policy</h4>
-
-<h3>Mobility and Stability Work: Do It Year-Round</h3>
-
-<p>This is non-negotiable. 10-15 minutes of targeted mobility work, 2-3 times per week, all year. Hip flexor stretches, glute activation, core stability, thoracic mobility. This is "prehab"---preventing injuries before they happen.</p>
+<h4>Here's My Policy<h3>Mobility and Stability Work: Do It Year-Round</h4></h4><p>This is non-negotiable. 10-15 minutes of targeted mobility work, 2-3 times per week, all year. Hip flexor stretches, glute activation, core stability, thoracic mobility. This is "prehab"---preventing injuries before they happen.</p>
 
 <p>You don't need a gym. You don't need equipment. You need consistency.</p>
 
-<h3>Full Periodized Strength Training: This Is a Skill</h3>
-
-<p>Here's where I'll be honest with you.</p>
+<h3>Full Periodized Strength Training: This Is a Skill</h3></h3><p>Here's where I'll be honest with you.</p>
 
 <p>The strength periodization pyramid---Anatomical Adaptation → Muscular Endurance → Maximum Strength → Power → Maintenance---is legitimate. It works. The research supports it.</p>
 
@@ -2301,9 +1422,7 @@
 <ul>
 <li>Knowledge (proper form, appropriate loading, periodization timing)</li>
 </ul>
-<h2>You cannot start this from scratch during a 12-week race prep.</h2>
-
-<p>If you've never done structured strength training, trying to cram it into your race preparation is a recipe for:</p>
+<h2>You cannot start this from scratch during a 12-week race prep.</h2></h2><p>If you've never done structured strength training, trying to cram it into your race preparation is a recipe for:</p>
 
 <ul>
 <li>Excessive fatigue that compromises your cycling training</li>
@@ -2317,26 +1436,18 @@
 <ul>
 <li>Mental bandwidth overload</li>
 </ul>
-<h3>What To Actually Do</h3>
-
-<h2>If you already have a strength training habit:</h2>
-
-<p>Continue it. Shift toward maintenance phase as you enter peak training (weeks 8-12). Reduce volume, maintain intensity, prioritize recovery.</p>
+<h3>What To Actually Do<h2>If you already have a strength training habit:</h3></h3><p>Continue it. Shift toward maintenance phase as you enter peak training (weeks 8-12). Reduce volume, maintain intensity, prioritize recovery.</p>
 
 <p>Typical maintenance: 2 sessions/week, compound movements, moderate weight, 2-3 sets of 6-8 reps. Enough to preserve gains without creating fatigue.</p>
 
-<h2>If you don't have a strength training habit:</h2>
-
-<p>Don\'t start a full program now. Instead:</p>
+<h2>If you don't have a strength training habit:</h2></h2><p>Don\'t start a full program now. Instead:</p>
 
 <ol>
 <li><strong>Add mobility work immediately.</strong> 10-15 minutes, 3x/week. Hip flexors, glutes, thoracic spine, ankles. YouTube "cycling mobility routine" and pick one you'll actually do.</li>
 <li><strong>Add basic core stability.</strong> Planks, dead bugs, bird dogs. 10 minutes, 2-3x/week. A stable core transfers power more efficiently and protects your lower back during long rides.</li>
 <li><strong>Add bodyweight movements if you have bandwidth.</strong> Squats, lunges, glute bridges, push-ups. No gym required. 15-20 minutes, 2x/week. This builds the foundation for future strength work.</li>
 <li><strong>Plan a proper strength block for your off-season.</strong> After this race, commit to 12-16 weeks of structured strength training before your next build. Start with Anatomical Adaptation, progress through the phases, build the habit properly.</li>
-</ol><h3>The Bottom Line</h3>
-
-<p>Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.</p>
+</ol><h3>The Bottom Line</h3></h3><p>Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.</p>
 
 <p>During this 12-week block, prioritize:</p>
 
@@ -2357,8 +1468,7 @@
         </section>
 
         <section id="section-7-technical-skills" class="gg-section">
-          <h2 id="section-7-technical-skills">7 · Technical Skills for Unbound Gravel 200</h2>
-<p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
+          <h2 id="section-7-technical-skills">7 · Technical Skills for Unbound Gravel 200<p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
 
 <p>A technically skilled rider with moderate fitness will often outperform a fitness monster who can't corner, can't descend, or can't eat while riding. Technical competence is free speed---it requires no additional fitness, just practice.</p>
 
@@ -2366,17 +1476,11 @@
 
 <p>Here are the five skills that matter most for <strong>Unbound Gravel 200</strong>. Practice them during training so they're automatic on race day.</p>
 
-<h3>Skill 1: Loose Surface Cornering</h3>
-
-<h3>Why it matters:</h3>
-
-<p>Crashes end races. Beyond the obvious injury risk, even a minor crash costs you time, damages equipment, and rattles your confidence for the rest of the day. You'll ride tentatively for hours after a scare, losing speed on every turn.</p>
+<h3>Skill 1: Loose Surface Cornering<h3>Why it matters:</h3></h3><p>Crashes end races. Beyond the obvious injury risk, even a minor crash costs you time, damages equipment, and rattles your confidence for the rest of the day. You'll ride tentatively for hours after a scare, losing speed on every turn.</p>
 
 <p>Confident cornering also lets you maintain speed through technical sections while others slow to a crawl. Over the course of <strong>200 miles</strong> miles, those speed advantages compound significantly.</p>
 
-<h3>How to practice:</h3>
-
-<p>Find a gravel parking lot or quiet gravel road with some turns. Start at 50% of the speed that feels comfortable---seriously, slower than you think necessary.</p>
+<h3>How to practice:</h3></h3><p>Find a gravel parking lot or quiet gravel road with some turns. Start at 50% of the speed that feels comfortable---seriously, slower than you think necessary.</p>
 
 <p>Focus on three things: First, look through the turn. Your bike goes where your eyes go, so look at your exit point, not at the ground in front of your wheel. Second, weight your outside pedal. Push down hard through the outside pedal---this presses the tires into the surface for better grip. Third, point your inside knee toward the turn. This shifts your weight properly and helps the bike lean.</p>
 
@@ -2386,17 +1490,11 @@
 
 <p><strong>The cue to remember:</strong> "Eyes through, weight down, knee out"</p>
 
-<h3>Skill 2: Eating While Riding</h3>
-
-<h3>Why it matters:</h3>
-
-<p>In a race lasting 8+ hours, you'll consume thousands of calories. If you can't eat while riding, you have two options: stop frequently (losing time and rhythm) or under-fuel (bonking spectacularly around mile 120).</p>
+<h3>Skill 2: Eating While Riding<h3>Why it matters:</h3></h3><p>In a race lasting 8+ hours, you'll consume thousands of calories. If you can't eat while riding, you have two options: stop frequently (losing time and rhythm) or under-fuel (bonking spectacularly around mile 120).</p>
 
 <p>Race-day nutrition needs to be automatic---something you do without thinking, without slowing down, without fumbling. The time to learn this is not during the race.</p>
 
-<h3>How to practice:</h3>
-
-<p>On every training ride over 90 minutes, eat something while riding. Not during stops---while actually pedaling.</p>
+<h3>How to practice:</h3></h3><p>On every training ride over 90 minutes, eat something while riding. Not during stops---while actually pedaling.</p>
 
 <p>Start on flat, straight sections where the consequences of a mistake are minimal. Unwrap bars before you leave, or use products with easy-open packaging. Move food to easily accessible pockets. Fumbling in a jersey pocket while riding is a learned skill.</p>
 
@@ -2406,17 +1504,11 @@
 
 <p><strong>The cue to remember:</strong> "Flat road first, then rough. Both hands work"</p>
 
-<h3>Skill 3: Group Riding & Pace Line Dynamics</h3>
-
-<h3>Why it matters:</h3>
-
-<p>Drafting---riding in another rider's slipstream---saves roughly 25-30% of the energy required to maintain the same speed. Over a 200-mile race, that's an enormous advantage. The difference between finishing strong and barely finishing.</p>
+<h3>Skill 3: Group Riding & Pace Line Dynamics<h3>Why it matters:</h3></h3><p>Drafting---riding in another rider's slipstream---saves roughly 25-30% of the energy required to maintain the same speed. Over a 200-mile race, that's an enormous advantage. The difference between finishing strong and barely finishing.</p>
 
 <p>Knowing how to find, join, and contribute to a pace group is often the difference between a good race and a great one. But you need to be the kind of rider others want in their group.</p>
 
-<h3>How to practice:</h3>
-
-<p>Join group rides. Any group rides. The faster and more organized, the better, but any group riding teaches useful skills.</p>
+<h3>How to practice:</h3></h3><p>Join group rides. Any group rides. The faster and more organized, the better, but any group riding teaches useful skills.</p>
 
 <p>Focus on smooth, predictable movements. No sudden braking. No surging. No erratic line choices. When you take a pull at the front, maintain steady effort---don't accelerate. When you rotate off, do it smoothly and predictably, not with a sudden swerve.</p>
 
@@ -2428,17 +1520,11 @@
 
 <p><strong>The cue to remember:</strong> "Smooth pulls, steady pace, speak up"</p>
 
-<h3>Skill 4: Descending on Loose Gravel</h3>
-
-<h3>Why it matters:</h3>
-
-<p>Fear on descents means crawling. Crawling means getting dropped. Confidence on descents is free speed---it requires no extra fitness, just skill and experience with the bike moving underneath you.</p>
+<h3>Skill 4: Descending on Loose Gravel<h3>Why it matters:</h3></h3><p>Fear on descents means crawling. Crawling means getting dropped. Confidence on descents is free speed---it requires no extra fitness, just skill and experience with the bike moving underneath you.</p>
 
 <p>The psychological aspect matters too. If you're terrified on descents, you'll dread them for miles beforehand. That's mental energy wasted. Confidence on descents frees mental space for other race decisions.</p>
 
-<h3>How to practice:</h3>
-
-<p>Find a gravel descent you can repeat safely---ideally one that takes 2-3 minutes. You need somewhere you can do multiple runs without wasting time climbing back to the top.</p>
+<h3>How to practice:</h3></h3><p>Find a gravel descent you can repeat safely---ideally one that takes 2-3 minutes. You need somewhere you can do multiple runs without wasting time climbing back to the top.</p>
 
 <p>On your first passes, go slow and focus on body position: weight shifted back (get your butt behind the saddle on steep sections), elbows bent and loose, grip relaxed. Death-gripping the bars prevents the bike from moving naturally beneath you, which actually reduces control.</p>
 
@@ -2450,33 +1536,22 @@
 
 <p><strong>The cue to remember:</strong> "Weight back, light hands, eyes up"</p>
 
-<h3>Skill 5: Emergency Repairs</h3>
+<h3>Skill 5: Emergency Repairs<h3>Why it matters:</h3></h3><p>Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn't have to end your day---if you can fix it quickly. A dropped chain doesn't have to cost you 10 minutes---if you've practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can't control when mechanicals happen, but you can control how prepared you are to handle them.</p>
 
-<h3>Why it matters:</h3>
-<p>Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn't have to end your day---if you can fix it quickly. A dropped chain doesn't have to cost you 10 minutes---if you've practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can't control when mechanicals happen, but you can control how prepared you are to handle them.</p>
-
-<h3>How to practice:</h3>
-<p>Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn't perfection---it's competence under pressure.</p>
+<h3>How to practice:</h3></h3><p>Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn't perfection---it's competence under pressure.</p>
 
 <p><strong>The cue to remember:</strong> "<p>Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.</p>"</p>
 
-<h3>Race-Specific Skill Notes</h3>
-
-<h2>Practice descending, cornering, and rough terrain handling.</h2>
-
-<p>The bottom line on skills: You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11.</p>
+<h3>Race-Specific Skill Notes<h2>Practice descending, cornering, and rough terrain handling.</h3></h3><p>The bottom line on skills: You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11.</p>
 
 <p>By race day, these skills should be automatic. You shouldn't be thinking about how to corner or how to eat---you should just be doing it.</p>
         </section>
 
                   <section id="section-8-fueling-hydration" class="gg-section">
-          <h2 id="section-8-fueling-hydration">8 · Fueling & Hydration</h3>
-
-          <p>You can have perfect training, a dialed bike, and excellent pacing strategy. None of it matters if you run out of fuel halfway through your race.</p>
+          <h2 id="section-8-fueling-hydration">8 · Fueling & Hydration<p>You can have perfect training, a dialed bike, and excellent pacing strategy. None of it matters if you run out of fuel halfway through your race.</p>
           <p>Nutrition determines roughly 8% of your race result. That's the difference between finishing strong and crawling to the line.</p>
           <p>This chapter covers what to eat, when to eat it, and how to execute nutrition under race stress when your stomach is rebelling and your brain is too stupid to remember to eat.</p>
-          <h3>Quick Reference: Fueling &amp; Hydration Guidelines</h3>
-          <table>
+          <h3>Quick Reference: Fueling &amp; Hydration Guidelines<table>
           <thead>
           <tr>
           <th>Scenario</th>
@@ -2525,17 +1600,14 @@
           </tbody>
           </table>
           <hr />
-          <h3>The Nutrition Reality Check</h3>
-          <p>The cycling nutrition industry wants you to believe you need seventeen different products, each with proprietary blend ratios and specific timing windows measured in seconds.</p>
+          <h3>The Nutrition Reality Check</h3></h3><p>The cycling nutrition industry wants you to believe you need seventeen different products, each with proprietary blend ratios and specific timing windows measured in seconds.</p>
           <p>You don't.</p>
           <p>You need carbohydrates during exercise. You need protein and carbs after exercise. You need reasonable daily nutrition that supports training.</p>
           <p>That's 95% of it.</p>
           <p>Everything else is optimization you can worry about after you've nailed the basics.</p>
           <hr />
-          <h3>Daily Nutrition for Training</h3>
-          <p>Your body is either recovering from the last workout or preparing for the next one. Daily nutrition supports both.</p>
-          <h4>The Foundation</h4>
-          <p><strong>Protein: 1.6-2.2g per kg bodyweight</strong></p>
+          <h3>Daily Nutrition for Training</h3></h3><p>Your body is either recovering from the last workout or preparing for the next one. Daily nutrition supports both.</p>
+          <h4>The Foundation</h4></h4><p><strong>Protein: 1.6-2.2g per kg bodyweight</strong></p>
           <p>If you weigh 70kg (154 lbs), that's 112-154g protein per day.</p>
           <p><strong>Why it matters:</strong> Protein rebuilds muscle tissue damaged during training. Skimp on protein and you're just breaking yourself down without rebuilding.</p>
           <p><strong>Sources:</strong> Meat, fish, eggs, dairy, legumes, protein powder if you're lazy or vegan.</p>
@@ -2561,8 +1633,7 @@
           <p><strong>Sources:</strong> Olive oil, nuts, avocados, fatty fish, whole eggs, butter.</p>
           <p><strong>The rule:</strong> Don't fear fat. Don't gorge on fat. Keep it moderate and consistent.</p>
           <hr />
-          <h4>Timing That Actually Matters</h4>
-          <p><strong>Pre-workout (2-3 hours before)</strong></p>
+          <h4>Timing That Actually Matters</h4></h4><p><strong>Pre-workout (2-3 hours before)</strong></p>
           <p>If training hard (threshold, VO2max):<br />
           - 1-2g carbs per kg bodyweight<br />
           - Low fiber, low fat, moderate protein<br />
@@ -2585,10 +1656,8 @@
           - Recovery nutrition is optional</p>
           <p><strong>The rule:</strong> The more frequently you train hard, the more critical recovery nutrition becomes. If you're training once per day with easy sessions, skip the fancy recovery protocols and just eat dinner.</p>
           <hr />
-          <h3>What About Supplements?</h3>
-          <p>Most supplements are placebo at best, actively harmful at worst.</p>
-          <h4>Worth taking:</h4>
-          <p><strong>Vitamin D (if deficient, most people are): 2000-4000 IU daily</strong><br />
+          <h3>What About Supplements?</h3></h3><p>Most supplements are placebo at best, actively harmful at worst.</p>
+          <h4>Worth taking:</h4></h4><p><strong>Vitamin D (if deficient, most people are): 2000-4000 IU daily</strong><br />
           - Supports bone health, immune function, recovery<br />
           - Get your levels tested, supplement accordingly</p>
           <p><strong>Creatine monohydrate: 5g daily</strong><br />
@@ -2599,8 +1668,7 @@
           - Proven performance enhancer<br />
           - Coffee works, pills work, gels work<br />
           - Tolerance builds, cycle off occasionally</p>
-          <h4>Maybe worth taking:</h4>
-          <p><strong>Beta-alanine: 3-5g daily</strong><br />
+          <h4>Maybe worth taking:</h4></h4><p><strong>Beta-alanine: 3-5g daily</strong><br />
           - Buffers lactate, helps with threshold work<br />
           - Takes 4+ weeks to build up<br />
           - Makes your face tingle (harmless but weird)</p>
@@ -2608,17 +1676,14 @@
           - Improves oxygen efficiency<br />
           - Modest gains (2-3%)<br />
           - Tastes like dirt</p>
-          <h4>Not worth taking:</h4>
-          <p><strong>BCAAs (branch chain amino acids):</strong> Complete waste if you eat adequate protein<br />
+          <h4>Not worth taking:</h4></h4><p><strong>BCAAs (branch chain amino acids):</strong> Complete waste if you eat adequate protein<br />
           <strong>Testosterone boosters:</strong> Scams<br />
           <strong>Fat burners:</strong> Scams with side effects<br />
           <strong>Recovery drinks with proprietary blends:</strong> Overpriced protein+carbs</p>
           <p><strong>The rule:</strong> If you're deficient in something (Vitamin D, iron), fix it. If you're considering a supplement to "optimize," ask yourself if you've already nailed sleep, nutrition basics, and training consistency. If not, fix those first.</p>
           <hr />
-          <h3>Fueling During Workouts</h3>
-          <p>This is where races are won or lost.</p>
-          <h4>The 60-80g Carbs Per Hour Rule</h4>
-          <p>For any ride over 90 minutes at moderate-to-high intensity (Z3+), you need <strong>60-80g of carbohydrates per hour.</strong></p>
+          <h3>Fueling During Workouts</h3></h3><p>This is where races are won or lost.</p>
+          <h4>The 60-80g Carbs Per Hour Rule</h4></h4><p>For any ride over 90 minutes at moderate-to-high intensity (Z3+), you need <strong>60-80g of carbohydrates per hour.</strong></p>
           <p>Not 30g. Not 100g. 60-80g.</p>
           <p><strong>Why this number?</strong></p>
           <p>Your gut can absorb approximately 60g of glucose per hour through SGLT1 transporters. Add fructose (which uses different transporters) and you can push to 90g total. The sweet spot for most athletes is 70-75g per hour—enough to fuel hard efforts without GI distress.</p>
@@ -2631,8 +1696,7 @@
           </ul>
           <p><strong>The rule:</strong> Pick what your stomach tolerates. Train your gut to handle race-day fueling. Don't experiment on race day.</p>
           <hr />
-          <h4>Workout-Specific Fueling</h4>
-          <p><strong>Z2 Endurance Rides (2-4 hours)</strong></p>
+          <h4>Workout-Specific Fueling</h4></h4><p><strong>Z2 Endurance Rides (2-4 hours)</strong></p>
           <ul>
           <li><strong>Intensity:</strong> Low enough to burn primarily fat</li>
           <li><strong>Fueling:</strong> 40-60g carbs per hour</li>
@@ -2663,39 +1727,31 @@
           <p>This is where you dial in your race fueling. Test different products, timing, combinations. Figure out what your stomach tolerates at race pace.</p>
           <p><strong>The rule:</strong> The longer and harder the ride, the more critical fueling becomes. Easy rides are forgiving. Race-pace efforts are not.</p>
           <hr />
-          <h3>Hydration Protocols</h3>
-          <p>You lose 0.5-2 liters of fluid per hour depending on temperature, humidity, and effort.</p>
+          <h3>Hydration Protocols</h3></h3><p>You lose 0.5-2 liters of fluid per hour depending on temperature, humidity, and effort.</p>
           <p>Dehydration of 2-3% bodyweight impairs performance. For a 70kg rider, that's 1.4-2.1 liters—easily achievable in 2-3 hours of hard riding in heat.</p>
-          <h4>How much to drink:</h4>
-          <p><strong>Aim for: 500-750ml per hour (16-25 oz)</strong></p>
+          <h4>How much to drink:</h4></h4><p><strong>Aim for: 500-750ml per hour (16-25 oz)</strong></p>
           <p>More in heat, less in cold. More when sweating heavily, less when not.</p>
           <p><strong>The rule:</strong> Drink to thirst, but don't ignore thirst. By the time you're thirsty, you're already mildly dehydrated.</p>
-          <h4>What to drink:</h4>
-          <ul>
+          <h4>What to drink:<ul>
           <li><strong>Short rides (&lt;90 min):</strong> Water is fine</li>
           <li><strong>Long rides (2+ hours):</strong> Electrolyte drink with sodium</li>
           </ul>
           <p>Sodium matters on long rides. You lose 500-1000mg sodium per hour through sweat. Sports drinks provide 200-400mg per bottle. Add salt tabs if racing in heat or you're a heavy/salty sweater.</p>
           <p>Don't overthink potassium, magnesium, or trace minerals. Sodium is 90% of what matters for performance.</p>
-          <h4>How to verify your hydration strategy works:</h4>
-          <p>Weigh yourself before and after long training rides. Every pound lost represents roughly 16 ounces of fluid deficit. If you're losing more than 2-3% of body weight during rides, you need to drink more.</p>
+          <h4>How to verify your hydration strategy works:</h4></h4><p>Weigh yourself before and after long training rides. Every pound lost represents roughly 16 ounces of fluid deficit. If you're losing more than 2-3% of body weight during rides, you need to drink more.</p>
           <p><strong>Example:</strong> 150-lb athlete loses 5 lbs during a 4-hour ride. That's 3.3% body weight loss and 80 oz of fluid deficit. At 4 hours, that's only 20 oz/hour consumption—too low. Target should be 32+ oz/hour to stay within 2-3% loss.</p>
           <p>Do this calculation during training. Adjust your hydration strategy based on real data from your body. Don't guess.</p>
-          <h4>How to know if you're a salty sweater:</h4>
-          <p>After long training rides, do you see visible salt crystals on your kit or face? Do you crave salty foods immediately after rides? That's information. You need more sodium than average.</p>
+          <h4>How to know if you're a salty sweater:</h4></h4><p>After long training rides, do you see visible salt crystals on your kit or face? Do you crave salty foods immediately after rides? That's information. You need more sodium than average.</p>
           <hr />
-          <h3>Cramping</h3>
-          <p>Cramps are <strong>not</strong> caused by electrolyte deficiency (despite what the supplement industry tells you).</p>
+          <h3>Cramping</h3></h3><p>Cramps are <strong>not</strong> caused by electrolyte deficiency (despite what the supplement industry tells you).</p>
           <p>Cramps are caused by <strong>neuromuscular fatigue</strong>—your muscles are tired and misfiring.</p>
           <p>Salt tabs might help by changing neuromuscular excitability, but they're not addressing the root cause. The real fix is better pacing and better training.</p>
           <hr />
-          <h3>Training Your Gut</h3>
-          <p>Your gut is trainable just like your muscles.</p>
+          <h3>Training Your Gut</h3></h3><p>Your gut is trainable just like your muscles.</p>
           <p>If you never eat during training rides, your gut won't tolerate eating during races. You'll get nauseous, crampy, or shut down completely.</p>
           <p>The ability to absorb large amounts of carbohydrates while exercising improves with practice. If you've never consumed 80+ grams of carbs per hour during a ride, your first attempt will probably end in GI distress—bloating, cramping, or worse.</p>
           <p>Your gut needs practice absorbing carbs while blood flow is diverted to working muscles. This is a learned adaptation.</p>
-          <h4>How to build GI tolerance:</h4>
-          <p><strong>Weeks 1-4 (Base Phase):</strong><br />
+          <h4>How to build GI tolerance:</h4></h4><p><strong>Weeks 1-4 (Base Phase):</strong><br />
           - Practice eating real food on easy rides<br />
           - 40-50g carbs per hour, mostly solid<br />
           - Build tolerance gradually</p>
@@ -2712,14 +1768,11 @@
           - No new products<br />
           - Trust your gut (literally)</p>
           <p><strong>The rule:</strong> Your gut adapts to what you consistently ask it to do. If you train it to handle 70g carbs per hour, it will. If you never practice, race day will be miserable.</p>
-          <h4>One trick that helps: Mix glucose and fructose sources</h4>
-          <p>Research shows that combining glucose and fructose (ideally in a 2:1 ratio) allows your gut to absorb more total carbohydrates per hour than either source alone. Different transporters in the intestine handle each sugar, so using both increases total capacity.</p>
+          <h4>One trick that helps: Mix glucose and fructose sources</h4></h4><p>Research shows that combining glucose and fructose (ideally in a 2:1 ratio) allows your gut to absorb more total carbohydrates per hour than either source alone. Different transporters in the intestine handle each sugar, so using both increases total capacity.</p>
           <p>Many sports nutrition products are already formulated this way. Check the labels. If you're making your own drink mix, consider combining sources—like maltodextrin (glucose) with table sugar (glucose + fructose).</p>
           <hr />
-          <h3>Race-Day Nutrition Strategy</h3>
-          <p>Everything you practiced in training gets executed under stress.</p>
-          <h4>Pre-Race Meal (3-4 hours before start)</h4>
-          <p><strong>Goal:</strong> Top off glycogen, don't experiment</p>
+          <h3>Race-Day Nutrition Strategy</h3></h3><p>Everything you practiced in training gets executed under stress.</p>
+          <h4>Pre-Race Meal (3-4 hours before start)</h4></h4><p><strong>Goal:</strong> Top off glycogen, don't experiment</p>
           <p><strong>What to eat:</strong><br />
           - 2-3g carbs per kg bodyweight<br />
           - Moderate protein<br />
@@ -2735,12 +1788,10 @@
           - Drink coffee if you don't normally drink coffee<br />
           - Eat significantly more or less than you practiced</p>
           <hr />
-          <h4>Starting Line (30-60 minutes before start)</h4>
-          <p>Take one gel (24g carbs) with 200ml water.</p>
+          <h4>Starting Line (30-60 minutes before start)</h4></h4><p>Take one gel (24g carbs) with 200ml water.</p>
           <p>This tops off your tank right before the effort begins. You're not adding meaningful glycogen at this point—you're just making sure blood glucose is stable as the race starts.</p>
           <hr />
-          <h4>During the Race: The Fueling Timeline</h4>
-          <p><strong>The most common mistake:</strong> waiting until you're hungry to start eating.</p>
+          <h4>During the Race: The Fueling Timeline</h4></h4><p><strong>The most common mistake:</strong> waiting until you're hungry to start eating.</p>
           <p>By the time you feel hungry, your glycogen is already depleted and your brain is glucose-starved. You're in a hole you can't climb out of.</p>
           <p><strong>The execution framework:</strong></p>
           <p><strong>0-30 minutes:</strong><br />
@@ -2762,8 +1813,7 @@
           - Keep moving</p>
           <p>Don't stop for 5 minutes eating a ham sandwich. Grab and go. You're not on a picnic.</p>
           <hr />
-          <h3>When Your Stomach Rebels</h3>
-          <p>It will. At some point in a long race, your gut will protest.</p>
+          <h3>When Your Stomach Rebels</h3></h3><p>It will. At some point in a long race, your gut will protest.</p>
           <p><strong>Why it happens:</strong></p>
           <p>High-intensity exercise diverts blood from your GI system to working muscles. Your gut slows down. Food sits there, undigested, making you feel like shit.</p>
           <p><strong>What to do:</strong></p>
@@ -2785,18 +1835,15 @@
           <p>Hammer harder while nauseous. You'll either vomit or shut down completely.</p>
           <p><strong>The rule:</strong> Gut distress is your body telling you to back off intensity. Listen for 10 minutes, then resume pace once stomach settles.</p>
           <hr />
-          <h3>The Reality Check on Fueling</h3>
-          <p>Most athletes under-fuel during long events. Not because they don't know better—because it's hard.</p>
+          <h3>The Reality Check on Fueling</h3></h3><p>Most athletes under-fuel during long events. Not because they don't know better—because it's hard.</p>
           <p>At mile 100, eating another gel might make you gag. Your stomach might feel full. You might not feel hungry. None of that changes the math: you're burning calories faster than you're consuming them, and eventually the tank will hit empty.</p>
           <p><strong>The solution:</strong> Treat fueling as a non-negotiable task, not an optional one based on hunger.</p>
           <p>Set a timer on your bike computer. Every 20 minutes: consume calories. Every 15 minutes: drink. Make it automatic. Don't wait until you feel hungry or thirsty—by then, you're already behind.</p>
           <p>This is why practice matters. By race day, eating and drinking on schedule should feel like shifting gears—just something you do without thinking about it.</p>
           <hr />
-          <h3>Weight Management vs Performance</h3>
-          <p>You want to be lean for racing. Lighter climbs easier. Lower body fat improves power-to-weight ratio.</p>
+          <h3>Weight Management vs Performance</h3></h3><p>You want to be lean for racing. Lighter climbs easier. Lower body fat improves power-to-weight ratio.</p>
           <p>But chasing leanness during a training block is self-sabotage.</p>
-          <h4>The Training Block Rule</h4>
-          <p>During your 12-week build, your job is to train hard and recover well. Not cut weight.</p>
+          <h4>The Training Block Rule</h4></h4><p>During your 12-week build, your job is to train hard and recover well. Not cut weight.</p>
           <p><strong>Why?</strong></p>
           <p>Energy deficit impairs recovery. Under-fueled training produces inferior workouts. You're trying to build fitness, not starve yourself into a smaller body.</p>
           <p><strong>The hierarchy:</strong><br />
@@ -2804,18 +1851,15 @@
           2. Recover fully<br />
           3. Maintain current weight or gain slightly</p>
           <p>If you finish your 12 weeks 2kg heavier but significantly fitter, you did it right.</p>
-          <h4>When to Cut Weight</h4>
-          <p>After your race. During the off-season. When training volume is low and intensity is moderate.</p>
+          <h4>When to Cut Weight</h4></h4><p>After your race. During the off-season. When training volume is low and intensity is moderate.</p>
           <p>A 500-calorie daily deficit over 8-12 weeks can drop 4-6kg without destroying your fitness. Do this between racing seasons, not during them.</p>
           <p><strong>The rule:</strong> You can be lean or you can be fast. Pick one per season. Most of the time, pick fast.</p>
-          <h4>Body Composition Reality Check</h4>
-          <p>Optimal racing weight is highly individual. Some athletes race well at 8% body fat. Others race well at 14%.</p>
+          <h4>Body Composition Reality Check</h4></h4><p>Optimal racing weight is highly individual. Some athletes race well at 8% body fat. Others race well at 14%.</p>
           <p>There is no universal "race weight."</p>
           <p><strong>What matters:</strong> power-to-weight ratio. If your FTP is 300W at 75kg (4.0 W/kg) and you cut to 70kg but your FTP drops to 280W (also 4.0 W/kg), you gained nothing and probably lost durability.</p>
           <p><strong>The rule:</strong> Chase performance metrics, not scale numbers. If your FTP and climbing times improve, your weight is fine. If they're declining, eat more.</p>
           <hr />
-          <h3>The Bottom Line</h3>
-          <p>Nutrition determines 8% of your race result. That's significant but not worth obsessing over.</p>
+          <h3>The Bottom Line</h3></h3><p>Nutrition determines 8% of your race result. That's significant but not worth obsessing over.</p>
           <p><strong>Daily nutrition:</strong> Match carbs to training load. Get adequate protein. Don't fear fat. Eat real food.</p>
           <p><strong>Supplements:</strong> Vitamin D if deficient, creatine for high-intensity work, caffeine before hard sessions. Everything else is optional or snake oil.</p>
           <p><strong>During training:</strong> Practice eating 60-80g carbs per hour on long rides. Train your gut like you train your legs.</p>
@@ -2826,15 +1870,9 @@
         </section>
 
         <section id="section-9-mental-training" class="gg-guide-section">
-  <h2>9 · Mental Training</h2>
+  <h2>9 · Mental Training</h2></h2><p>Mental training isn't optional for endurance racing. It's the difference between finishing strong and imploding at mile 150.</p>
   
-  <p>Mental training isn't optional for endurance racing. It's the difference between finishing strong and imploding at mile 150.</p>
-  
-  <h3>Mental Training Framework</h3>
-  
-  <h3>1. Foundation: Breathing & Presence</h3>
-  
-  <p><strong>6-2-7 Technique:</strong> Inhale 6 counts, hold 2, exhale 7. Calms nervous system, brings focus to present moment.</p>
+  <h3>Mental Training Framework<h3>1. Foundation: Breathing & Presence</h3></h3><p><strong>6-2-7 Technique:</strong> Inhale 6 counts, hold 2, exhale 7. Calms nervous system, brings focus to present moment.</p>
   
   <p><strong>When to use:</strong></p>
   
@@ -2842,39 +1880,27 @@
   
   <p>After a bad section: After a crash, a mechanical, or a period of suffering where you lost time or position. 6-2-7 breathing helps you process it and move on instead of dwelling.</p>
   
-  <h4>How to Practice</h4>
-  
-  <p>Start with 5 minutes daily, sitting quietly. Just breathe. Count the rhythm. Feel the calming effect. Then practice during easy rides—prove to yourself you can do the breathing pattern while pedaling.</p>
+  <h4>How to Practice</h4></h4><p>Start with 5 minutes daily, sitting quietly. Just breathe. Count the rhythm. Feel the calming effect. Then practice during easy rides—prove to yourself you can do the breathing pattern while pedaling.</p>
   
   <p>Eventually, practice during hard efforts. You should be able to do 6-2-7 breathing even when working at threshold. It's harder, but possible, and that's when you need it most.</p>
   
   <p>By race day, the technique should be automatic. You shouldn't have to think about the mechanics—just trigger it when needed.</p>
   
-  <h3>2. Reframing: Change Your Story</h3>
-  
-  <p>Instead of: "This hurts" → Say: "This is my body adapting. I'm getting stronger."</p>
+  <h3>2. Reframing: Change Your Story</h3></h3><p>Instead of: "This hurts" → Say: "This is my body adapting. I'm getting stronger."</p>
   
   <p>Instead of: "I can't do this" → Say: "I'm doing it right now. One pedal stroke at a time."</p>
   
-  <h3>3. Anchoring: Physical Cues</h3>
-  
-  <p><strong>Power position:</strong> Hands in drops, core engaged, smooth pedal stroke. This is your "race mode" trigger.</p>
+  <h3>3. Anchoring: Physical Cues</h3></h3><p><strong>Power position:</strong> Hands in drops, core engaged, smooth pedal stroke. This is your "race mode" trigger.</p>
   
   <p><strong>Breathing rhythm:</strong> Match cadence to breath (e.g., 2 pedal strokes per breath). Creates flow state.</p>
   
-  <h3>4. Acceptance: The Suffering Contract</h3>
-  
-  <p>You signed up for this. Discomfort is part of the deal. Accept it. Don't fight it. Work with it.</p>
+  <h3>4. Acceptance: The Suffering Contract</h3></h3><p>You signed up for this. Discomfort is part of the deal. Accept it. Don't fight it. Work with it.</p>
   
   <p>Pain is temporary. Quitting lasts forever.</p>
   
-  <h3>5. Purpose: Remember Your Why</h3>
+  <h3>5. Purpose: Remember Your Why</h3></h3><p>Why are you here? Connect to your deeper motivation. This race matters because you chose it.</p>
   
-  <p>Why are you here? Connect to your deeper motivation. This race matters because you chose it.</p>
-  
-  <h3>Performance Statements</h3>
-  
-  <p>Your internal monologue affects your performance. When you catch yourself thinking "I can't do this" or "This is too hard," those thoughts become self-fulfilling prophecies. Your brain interprets them as permission to quit.</p>
+  <h3>Performance Statements</h3></h3><p>Your internal monologue affects your performance. When you catch yourself thinking "I can't do this" or "This is too hard," those thoughts become self-fulfilling prophecies. Your brain interprets them as permission to quit.</p>
   
   <p>Replace negative statements with performance statements:</p>
   
@@ -2889,16 +1915,13 @@
   
 </section>
 <section id="section-10-race-tactics" class="gg-section">
-          <h2 id="section-10-race-tactics">10 · Race Tactics</h2>
-<p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
+          <h2 id="section-10-race-tactics">10 · Race Tactics<p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
 
 <p>The specifics vary by race---some races front-load the climbing, some back-load it, some are flat. But the psychological and physiological patterns are consistent across all long events.</p>
 
 <p>Here's how it plays out, and what your job is in each phase.</p>
 
-<h3>The Three-Act Structure</h3>
-
-<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
+<h3>The Three-Act Structure<div style="max-width: 100%; overflow-x: auto; clear: both;"><table>
   <thead>
     <tr>
       <th>Phase</th>
@@ -2929,25 +1952,17 @@
   </tbody>
 </table></div>
 
-
-
-<h3>Phase 1: The Madness (Miles 0-25)</h3>
-
-<p>The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course. People who trained alone all winter suddenly realize they're uncomfortable in groups. People who didn't do the work try to hang with people who did.</p>
+<h3>Phase 1: The Madness (Miles 0-25)</h3></h3><p>The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course. People who trained alone all winter suddenly realize they're uncomfortable in groups. People who didn't do the work try to hang with people who did.</p>
 
 <p>Attacks fly. Groups form, then shatter, then reform. The pace is erratic. Someone surges on every climb. The whole field is making decisions based on adrenaline and ego rather than strategy and fitness.</p>
 
-<h2>Your job in this phase is simple: survive.</h2>
-
-<p>Don't try to win the race in the first hour. You can't. But you can definitely lose it. Chasing attacks you can't sustain. Riding too hard to stay with a group that's going to explode in another 20 minutes. Forgetting to eat and drink because you're focused on positioning.</p>
+<h2>Your job in this phase is simple: survive.</h2></h2><p>Don't try to win the race in the first hour. You can't. But you can definitely lose it. Chasing attacks you can't sustain. Riding too hard to stay with a group that's going to explode in another 20 minutes. Forgetting to eat and drink because you're focused on positioning.</p>
 
 <p>Find a group moving at a pace that feels sustainable to you---not exciting, not easy, sustainable. Settle in. Eat. Drink. Let others burn matches.</p>
 
 <p>The riders making huge efforts to get to the front in the first 30 minutes? Most of them will fade. Let them go. You'll see them again later, and they'll be hurting.</p>
 
-<h3>Phase 2: False Dawn (Miles 25-75)</h3>
-
-<p>After the initial chaos settles, order returns. Groups stabilize. Pace becomes more predictable. The race can start to feel manageable, even easy.</p>
+<h3>Phase 2: False Dawn (Miles 25-75)</h3></h3><p>After the initial chaos settles, order returns. Groups stabilize. Pace becomes more predictable. The race can start to feel manageable, even easy.</p>
 
 <p>Don't be fooled. This is the setup for phase three.</p>
 
@@ -2959,9 +1974,7 @@
 
 <p>You want to exit this phase feeling good but not great. Fresh but not antsy. If you're bored, that's perfect. Boredom in phase two means you're executing correctly.</p>
 
-<h3>Phase 3: The Piper (100 miles +)</h3>
-
-<p>This is when the bill comes due. This is the race.</p>
+<h3>Phase 3: The Piper (100 miles +)</h3></h3><p>This is when the bill comes due. This is the race.</p>
 
 <p>Under-fueled riders bonk. Their pace craters. They go from holding 18mph to struggling to hold 12mph. You'll pass them. Don't feel bad---they made that choice in phase two when they skipped nutrition.</p>
 
@@ -2989,20 +2002,10 @@
 
 <p>This phase is a war of attrition. The question isn't who's fastest---it's who did the best job of managing the first two phases. If that's you, this is where you collect the rewards.</p>
 
-<h3>Unbound Gravel 200-Specific Tactics</h3>
+<h3>Unbound Gravel 200-Specific Tactics<h2>Start conservatively. Fuel early and often. Be patient on climbs.<h3>Aid Station Strategy<h2>Use aid stations for quick refills. Don't linger.<div class="gg-decision-tree">
+  <h3>In-Race Decision Tree</h3></h3><p>When things go sideways (and at some point they will), follow protocol instead of panic.</p>
 
-<h2>Start conservatively. Fuel early and often. Be patient on climbs.</h2>
-
-<h3>Aid Station Strategy</h3>
-
-<h2>Use aid stations for quick refills. Don't linger.</h2>
-
-<div class="gg-decision-tree">
-  <h3>In-Race Decision Tree</h3>
-  <p>When things go sideways (and at some point they will), follow protocol instead of panic.</p>
-
-  <h4>Flat Tire</h4>
-  <ol>
+  <h4>Flat Tire<ol>
     <li>Stay calm - this is expected at Unbound, not a crisis</li>
 <li>Flip bike upside down or lean against hip</li>
 <li>Check if sealant is working (spin wheel, look for bubbles)</li>
@@ -3013,9 +2016,7 @@
 <li>Resume at Z2 for 2-3 minutes to settle back in</li>
   </ol>
 
-
-  <h4>Dropped from Group</h4>
-  <ol>
+  <h4>Dropped from Group<ol>
     <li>Don&#x27;t panic - emotional response costs more energy than you have</li>
 <li>Assess honestly: were you overextended or did they surge?</li>
 <li>Find YOUR sustainable pace (probably Z2-low Z3)</li>
@@ -3025,9 +2026,7 @@
 <li>Use solo time gaps to fuel and recover without group pressure</li>
   </ol>
 
-
-  <h4>Bonking</h4>
-    <ol>
+  <h4>Bonking<ol>
     <li>Consume 2-3 gels or 200-300 calories IMMEDIATELY</li>
     <li>Keep pedaling lightly - don't stop. Ignore negative thoughts - they're lying to you.</li>
     <li>In 5-10 minutes, you'll feel the sugar hit.</li>
@@ -3036,9 +2035,7 @@
     <li>Gradually ramp effort.</li>
   </ol>
 
-
-  <h4>Cramping</h4>
-  <ol>
+  <h4>Cramping<ol>
     <li>Consume sodium (salt tabs or pretzels/chips) + 16oz water immediately</li>
 <li>Stretch gently - don&#x27;t force it or you&#x27;ll tear muscle fibers</li>
 <li>Drop to Z1-Z2 for 10-15 minutes minimum</li>
@@ -3049,27 +2046,17 @@
 </div>
 
 <div class="gg-info">
-  <h2 style="font-size: 1.8em; margin-top: 2.5rem;">Mental Landmarks</h2>
-  <p>Long races have predictable psychological phases. Knowing when they tend to show up makes them easier to handle.</p>
+  <h2 style="font-size: 1.8em; margin-top: 2.5rem;">Mental Landmarks<p>Long races have predictable psychological phases. Knowing when they tend to show up makes them easier to handle.</p>
 
-  <h4>The Honeymoon (Miles 25-60)</h4>
-  <p>Everything feels easy. Legs are fresh. Groups rolling smooth. HUGE temptation to go hard and &#x27;get ahead.&#x27; DON&#x27;T. This is the setup for the dark patch at mile 130. Stay disciplined now, dominate later. Patience wins Unbound.</p>
+  <h4>The Honeymoon (Miles 25-60)</h4></h4><p>Everything feels easy. Legs are fresh. Groups rolling smooth. HUGE temptation to go hard and &#x27;get ahead.&#x27; DON&#x27;T. This is the setup for the dark patch at mile 130. Stay disciplined now, dominate later. Patience wins Unbound.</p>
 
+  <h4>Where the Field Shatters (Miles 80-110)</h4></h4><p>The rollers blow apart groups. You&#x27;ll see attacks fly. People will drop. Stay disciplined. DO NOT chase efforts you can&#x27;t sustain. The real race hasn&#x27;t started yet. Save your matches for when they matter - miles 150+.</p>
 
-  <h4>Where the Field Shatters (Miles 80-110)</h4>
-  <p>The rollers blow apart groups. You&#x27;ll see attacks fly. People will drop. Stay disciplined. DO NOT chase efforts you can&#x27;t sustain. The real race hasn&#x27;t started yet. Save your matches for when they matter - miles 150+.</p>
+  <h4>The Dark Patch (Miles 120-150)</h4></h4><p>Where motivation dies. You&#x27;ve been out here 7-9 hours. Everything hurts. The finish still feels impossibly far. This is EXPECTED - not a crisis, not unique to you. Use your performance statements. 6-2-7 breathing. Keep. Moving. Forward. One pedal stroke at a time.</p>
 
+  <h4>Second Wind (Miles 155-165)</h4></h4><p>Often happens after CP3 aid station. Body and mind reset briefly. Energy returns like magic. Capitalize on this window - it doesn&#x27;t last forever. This is your time to move up through the field.</p>
 
-  <h4>The Dark Patch (Miles 120-150)</h4>
-  <p>Where motivation dies. You&#x27;ve been out here 7-9 hours. Everything hurts. The finish still feels impossibly far. This is EXPECTED - not a crisis, not unique to you. Use your performance statements. 6-2-7 breathing. Keep. Moving. Forward. One pedal stroke at a time.</p>
-
-
-  <h4>Second Wind (Miles 155-165)</h4>
-  <p>Often happens after CP3 aid station. Body and mind reset briefly. Energy returns like magic. Capitalize on this window - it doesn&#x27;t last forever. This is your time to move up through the field.</p>
-
-
-  <h4>Late-Race Relief (Miles 170-180)</h4>
-  <p>Light at end of tunnel becomes real. Emporia is close enough to taste. Bodies hurt but minds lift. Use this energy surge wisely. This is where you collect rewards from earlier discipline. Push through - you&#x27;ve earned this.</p>
+  <h4>Late-Race Relief (Miles 170-180)</h4></h4><p>Light at end of tunnel becomes real. Emporia is close enough to taste. Bodies hurt but minds lift. Use this energy surge wisely. This is where you collect rewards from earlier discipline. Push through - you&#x27;ve earned this.</p>
   <p><strong>Your job:</strong> Recognize these moments as part of the script, not proof that you're failing. Stay on task, solve the next problem, and let the course come back to you.</p>
 </div>
 
@@ -3077,15 +2064,13 @@
         </section>
 
         <section id="section-11-race-specific-preparation" class="gg-section" style="max-width: 100%; overflow-x: hidden; clear: both; width: 100%;">
-          <h2 id="section-11-race-specific-preparation">11 · Race-Specific Preparation for Unbound Gravel 200</h2>
-  <div class="gg-section-content" style="max-width: 100%; overflow-x: hidden; word-wrap: break-word;">
+          <h2 id="section-11-race-specific-preparation">11 · Race-Specific Preparation for Unbound Gravel 200<div class="gg-section-content" style="max-width: 100%; overflow-x: hidden; word-wrap: break-word;">
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
 <p>This section covers the specific preparation requirements for <strong>Unbound Gravel 200</strong>, the weather considerations that matter, and the equipment you need to have dialed in.</p>
 
 <div class="gg-alert">
-  <h3>Flint Rock Hazard Protocol</h3>
-  <p>Kansas flint rock - sharp, angular, sidewall-eating. This is NOT your typical gravel.</p>
+  <h3>Flint Rock Hazard Protocol</h3></h3><p>Kansas flint rock - sharp, angular, sidewall-eating. This is NOT your typical gravel.</p>
 
   <div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="gg">
     <thead>
@@ -3103,8 +2088,7 @@
     </tbody>
   </table></div>
 
-  <h4>Protection Strategy:</h4>
-  <ul>
+  <h4>Protection Strategy:<ul>
     <li><strong>Line choice:</strong> Avoid the crown where sharp rock concentrates.</li>
     <li><strong>Body position:</strong> Stay relaxed to reduce pinch-flat risk.</li>
     <li><strong>Speed:</strong> Maintain momentum over sharp sections instead of panic braking.</li>
@@ -3112,8 +2096,7 @@
   </ul>
 </div>
 
-<h3>Non-Negotiables</h3>
-<p>These aren't suggestions. They're requirements discovered through painful experience---either yours during training, or others' during previous editions of this race.</p>
+<h3>Non-Negotiables</h4></h3></h3><p>These aren't suggestions. They're requirements discovered through painful experience---either yours during training, or others' during previous editions of this race.</p>
 <div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="non-negotiables-table">
   <thead>
     <tr>
@@ -3151,19 +2134,16 @@
   </tbody>
 </table></div>
 
-
 </div>
 
 <p>These aren't suggestions. They're requirements discovered through painful experience---either yours during training, or others' during previous editions of this race.</p>
 
 <p>Skip them at your own risk. The course won't care. It will simply expose the gap in your preparation.</p>
 
-<h3>Weather Strategy</h3>
-<p><strong>Typical Conditions:</strong> Hot and humid, 85-95°F. Heat management is critical. Start hydrated. Pre-cool if possible (cold water, ice). Wear light, breathable layers. Sun protection is mandatory (sunscreen, hat, sunglasses). Monitor forecast daily starting 5 days out. If extreme heat is forecast, adjust pacing strategy---start slower, fuel more aggressively. Check forecast again 24 hours before race and adjust gear accordingly. Wind can be a major factor---plan for crosswinds and headwinds. </p>
+<h3>Weather Strategy</h3></h3><p><strong>Typical Conditions:</strong> Hot and humid, 85-95°F. Heat management is critical. Start hydrated. Pre-cool if possible (cold water, ice). Wear light, breathable layers. Sun protection is mandatory (sunscreen, hat, sunglasses). Monitor forecast daily starting 5 days out. If extreme heat is forecast, adjust pacing strategy---start slower, fuel more aggressively. Check forecast again 24 hours before race and adjust gear accordingly. Wind can be a major factor---plan for crosswinds and headwinds. </p>
 
 <div class="gg-info">
-  <h3>Expected Time Drift</h3>
-  <p><strong>Unbound typically runs 1-2 hours longer than best-case estimates. Plan accordingly.</strong></p>
+  <h3>Expected Time Drift</h3></h3><p><strong>Unbound typically runs 1-2 hours longer than best-case estimates. Plan accordingly.</strong></p>
 
   <div style="max-width: 100%; overflow-x: auto; clear: both;"><table class="gg">
     <thead>
@@ -3191,8 +2171,7 @@
   <p><strong>Plan accordingly:</strong> Bring more food, fluids, and mental patience than your best-case scenario assumes. Most people underestimate how long they'll be out there.</p>
 </div>
 
-<h3>Equipment Checklist</h3>
-<div style="max-width: 100%; overflow-x: auto;"><div class="equipment-checklist">
+<h3>Equipment Checklist<div style="max-width: 100%; overflow-x: auto;"><div class="equipment-checklist">
 <div style="max-width: 100%; overflow-x: auto;">
   <ul class="checklist">
 <li><input type="checkbox"> Power meter (calibrated)</li>
@@ -3216,14 +2195,11 @@ ring the race.</p>
         </section>
 
         <section id="section-12-race-week-protocol" class="gg-section" style="clear: both; width: 100%;">
-          <h2 id="section-12-race-week-protocol">12 · Race Week Protocol</h2>
-<p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
+          <h2 id="section-12-race-week-protocol">12 · Race Week Protocol<p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
 
 <p>The goal now is simple: arrive at the start line fresh, healthy, rested, and ready. Everything you do this week serves that goal.</p>
 
-<h3>Race Morning Timeline</h3>
-
-<p><strong>3-4 hours before start:</strong> Wake up. Eat a familiar, high-carb, low-fiber breakfast. This is not the time for experimentation. Eat something you've eaten before many long rides. Target 1-2g carbs per kg body weight.</p>
+<h3>Race Morning Timeline</h3></h3><p><strong>3-4 hours before start:</strong> Wake up. Eat a familiar, high-carb, low-fiber breakfast. This is not the time for experimentation. Eat something you've eaten before many long rides. Target 1-2g carbs per kg body weight.</p>
 
 <p><strong>2 hours before start:</strong> Arrive at venue. Set up bike and gear. Use the bathroom (you'll probably go multiple times---normal). Begin sipping fluids.</p>
 
@@ -3237,11 +2213,9 @@ ring the race.</p>
 
 <p>The bottom line on race week: Less is more. You've done the work. Now let your body absorb it. Show up fresh, not fatigued from last-minute training.</p>
 
-<h3>Race Week Gear Checklist</h3>
-<p>This checklist covers everything you need for race day. Print it. Check boxes. Don't improvise at 5am on race morning.</p>
+<h3>Race Week Gear Checklist</h3></h3><p>This checklist covers everything you need for race day. Print it. Check boxes. Don't improvise at 5am on race morning.</p>
 
-<h4>BIKE & EQUIPMENT</h4>
-<ul class="checklist">
+<h4>BIKE & EQUIPMENT<ul class="checklist">
   <li><input type="checkbox"> Race bike (cleaned, lubed, mechanically sound)</li>
   <li><input type="checkbox"> Spare wheels (if you have them)</li>
   <li><input type="checkbox"> Tires mounted and tested (see tire selection guide below)</li>
@@ -3249,7 +2223,6 @@ ring the race.</p>
   <li><input type="checkbox"> CO2 cartridges (3-4 minimum) or hand pump</li>
   <li><input type="checkbox"> CO2 inflator head</li>
 </ul>
-
 
 <p class="checklist-download <li>Winter gloves (if temps <40°F)</li>
   <li>Cycling shoes</li>
@@ -3261,8 +2234,7 @@ ring the race.</p>
   <li>Gloves</li>
 </div>
 
-<h2>HYDRATION & FUELING</h2>
-<ul class="checklist">
+<h2>HYDRATION & FUELING<ul class="checklist">
   <li><input type="checkbox"> Water bottles (2 minimum, mounted on bike)</li>
   <li><input type="checkbox"> Hydration pack (USWE or similar, if using)</li>
   <li><input type="checkbox"> Electrolyte mix (pre-measured, ready to add)</li>
@@ -3278,9 +2250,7 @@ ring the race.</p>
   <li>Small pack of tissues (trust me)</li>
 </div>
 
-<h2>ELECTRONICS & TECH</h2>
-
-  <li>Bike computer (charged
+<h2>ELECTRONICS & TECH<li>Bike computer (charged
   
 Water bottles (2 minimum, mounted on bike)
   Hydration pack (USWE or similar, if using)
@@ -3297,7 +2267,6 @@ Water bottles (2 minimum, mounted on bike)
   Real food (whatever you can stomach)
   Extra water or electrolyte drink
 
-
 Cash ($40-60 for emergencies, aid station donations)</li>
   <li>Credit card</li>
   <li>Drop bag (if race allows)</li>
@@ -3307,11 +2276,7 @@ Cash ($40-60 for emergencies, aid station donations)</li>
   <li>Cooler with ice and drinks for after</li>
   <li>Chair or blanket (for post-race sitting)</li>
 
-
-<h2>VEHICLE/TRAVEL</h2>
-
-  
-  <ul class="checklist">
+<h2>VEHICLE/TRAVEL<ul class="checklist">
 <li><input type="checkbox"> Sunscreen (SPF 30+, sweat-resistant)</li>
   <li><input type="checkbox"> Chamois cream</li>
   <li><input type="checkbox"> Lip balm with SPF</li>
@@ -3324,8 +2289,7 @@ Cash ($40-60 for emergencies, aid station donations)</li>
 </ul>
 
 <p class="checklist-downloadp>
-<h2>THE NIGHT BEFORE</h2>
-<ul class="checklist">
+<h2>THE NIGHT BEFORE<ul class="checklist">
   <li><input type="checkbox"> Bike ready (in vehicle or by door)</li>
   <li><input type="checkbox"> All gear packed and checked twice</li>
   <li><input type="checkbox"> Race outfit laid out</li>
@@ -3334,17 +2298,11 @@ Cash ($40-60 for emergencies, aid station donations)</li>
 </ul>
 <p class="checklist-downloadain for approximately one hour at maximum effort. Useful when power data isn't available. Less precise than FTP but still valuable for pacing long efforts.</p>
 
-<h3>RPE (Rate of Perceived Exertion)</h3>
+<h3>RPE (Rate of Perceived Exertion)</h4></h3></h3><p>A subjective scale from 1-10 describing how hard an effort feels. Not precise, but always available, and sometimes more important than power or heart rate. If the numbers say one thing but your body says another, trust RPE.</p>
 
-<p>A subjective scale from 1-10 describing how hard an effort feels. Not precise, but always available, and sometimes more important than power or heart rate. If the numbers say one thing but your body says another, trust RPE.</p>
+<h3>TSS (Training Stress Score)</h3></h3><p>A measure of workout load based on duration and intensity. Higher TSS means more training stress, which requires more recovery. Useful for tracking cumulative training load over weeks.</p>
 
-<h3>TSS (Training Stress Score)</h3>
-
-<p>A measure of workout load based on duration and intensity. Higher TSS means more training stress, which requires more recovery. Useful for tracking cumulative training load over weeks.</p>
-
-<h3>G Spot (88-92% FTP)</h3>
-
-<p>Our term for the intensity zone optimized for long gravel racing. Hard enough to m
+<h3>G Spot (88-92% FTP)</h3></h3><p>Our term for the intensity zone optimized for long gravel racing. Hard enough to m
   <ul class="checklist">
 <li><input type="checkbox"> Race bib (pinned to jersey or race belt)</li>
   <li><input type="checkbox"> Timing chip (if separate from bib)</li>
@@ -3386,21 +2344,16 @@ Cash ($40-60 for emergencies, aid station donations)</li>
 <li><input type="checkbox"> Bike ready (in vehicle or by door)</li>
         </section>
         <section id="section-13-women-specific-considerations" class="gg-section">
-          <h2 id="section-13-women-specific-considerations">13 · Women-Specific Considerations</h2>
-          <p>If you're a woman training for gravel racing, your physiology is different from men's in ways that actually affect training and performance. This isn't patronizing "girl power" bullshit—it's honest acknowledgment of real differences that matter.</p>
+          <h2 id="section-13-women-specific-considerations">13 · Women-Specific Considerations<p>If you're a woman training for gravel racing, your physiology is different from men's in ways that actually affect training and performance. This isn't patronizing "girl power" bullshit—it's honest acknowledgment of real differences that matter.</p>
           <p>The good news: these differences are trainable and manageable. The bad news: if you ignore them, you're making things harder than they need to be.</p>
-          <h2>Menstrual Cycle & Training</h2>
-          <p>Your menstrual cycle affects training capacity. Not as an excuse to skip workouts, but as a variable to monitor and work with.</p>
-          <h4>Follicular Phase (Days 1-14, from start of period to ovulation)</h4>
-          <p><strong>What's happening:</strong> Estrogen rises, body temperature is lower, insulin sensitivity is higher.</p>
+          <h2>Menstrual Cycle & Training</h2></h2><p>Your menstrual cycle affects training capacity. Not as an excuse to skip workouts, but as a variable to monitor and work with.</p>
+          <h4>Follicular Phase (Days 1-14, from start of period to ovulation)</h4></h4><p><strong>What's happening:</strong> Estrogen rises, body temperature is lower, insulin sensitivity is higher.</p>
           <p><strong>Training impact:</strong> This is typically your power window. You'll recover faster, handle intensity better, and feel stronger. Days 5-14 are often your best training days of the month.</p>
           <p><strong>How to use it:</strong> Schedule your hardest interval sessions, longest rides, and FTP tests during this phase when possible. Your body is primed for high-quality work.</p>
-          <h4>Luteal Phase (Days 15-28, from ovulation to next period)</h4>
-          <p><strong>What's happening:</strong> Progesterone dominates, body temperature rises (~0.5°F), metabolism shifts toward fat burning, inflammation increases.</p>
+          <h4>Luteal Phase (Days 15-28, from ovulation to next period)</h4></h4><p><strong>What's happening:</strong> Progesterone dominates, body temperature rises (~0.5°F), metabolism shifts toward fat burning, inflammation increases.</p>
           <p><strong>Training impact:</strong> Recovery takes longer. Interval quality might decline. You might feel flat even when doing everything right. Heart rate runs 5-10 bpm higher at same effort. Carb cravings increase (because your body actually needs more carbs—progesterone reduces glycogen storage efficiency).</p>
           <p><strong>How to use it:</strong> This is not the time to test FTP or push for breakthrough sessions. Focus on base miles, maintenance intervals, and recovery. Listen to your body more carefully. If Week 8 falls during late luteal phase and you feel like garbage despite perfect execution, that's normal—it's hormones, not fitness loss.</p>
-          <h4>Iron Considerations</h4>
-          <p><strong>Monthly blood loss means monthly iron loss.</strong> Women who menstruate need roughly 18mg of iron daily (vs. 8mg for men). Athletes need even more due to foot-strike hemolysis, GI losses, and increased red blood cell turnover.</p>
+          <h4>Iron Considerations</h4></h4><p><strong>Monthly blood loss means monthly iron loss.</strong> Women who menstruate need roughly 18mg of iron daily (vs. 8mg for men). Athletes need even more due to foot-strike hemolysis, GI losses, and increased red blood cell turnover.</p>
           <p><strong>Low iron = compromised training:</strong> Fatigue, inability to hit power targets, poor recovery, elevated heart rate, shortness of breath during efforts you should handle easily.</p>
           <p><strong>The fix:</strong></p>
           <ul>
@@ -3411,10 +2364,8 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li>Take iron with vitamin C (aids absorption), avoid taking with calcium (blocks absorption)</li>
           </ul>
           <p><strong>Your period is not an excuse to skip workouts, but it IS a variable to monitor.</strong> Track your cycle. Notice patterns. Adjust expectations during luteal phase. Capitalize on follicular phase. This is performance optimization, not weakness.</p>
-          <h2>Fueling Differences</h2>
-          <p>Women's bodies process fuel differently than men's, especially during exercise.</p>
-          <h4>Carbohydrate Needs</h4>
-          <p><strong>Women need MORE carbs relative to body weight than men.</strong> Despite often being told to eat less, female athletes actually need aggressive carbohydrate intake to support training and maintain hormonal health.</p>
+          <h2>Fueling Differences</h2></h2><p>Women's bodies process fuel differently than men's, especially during exercise.</p>
+          <h4>Carbohydrate Needs</h4></h4><p><strong>Women need MORE carbs relative to body weight than men.</strong> Despite often being told to eat less, female athletes actually need aggressive carbohydrate intake to support training and maintain hormonal health.</p>
           <p><strong>Why:</strong> Women's bodies preferentially spare carbohydrate and burn more fat at rest. Sounds great, except during high-intensity efforts (which is most of gravel racing), you NEED carbs. If you're chronically under-fueling carbs, your body will:</p>
           <ul>
             <li>Downregulate thyroid function (slower metabolism, more fatigue)</li>
@@ -3424,12 +2375,10 @@ Cash ($40-60 for emergencies, aid station donations)</li>
           </ul>
           <p><strong>The target for training:</strong> 5-7g carbs per kg body weight on training days. More on long ride days (7-10g/kg).</p>
           <p><strong>The target for racing:</strong> 60-90g carbs per hour minimum. Don't under-fuel trying to "stay lean"—that strategy kills performance AND health.</p>
-          <h4>Fat Oxidation Reality</h4>
-          <p>Women burn more fat than men at the same relative intensity. This is often presented as an advantage. It's not.</p>
+          <h4>Fat Oxidation Reality</h4></h4><p>Women burn more fat than men at the same relative intensity. This is often presented as an advantage. It's not.</p>
           <p><strong>The problem:</strong> Fat oxidation rates are too slow to fuel high-intensity efforts. During threshold work, VO2max intervals, or surges in a gravel race, you're burning mostly carbs. If you've under-fueled carbs chronically, you don't have the glycogen stores to support these efforts.</p>
           <p><strong>The fix:</strong> Don't confuse "burns more fat at rest" with "can rely on fat during racing." Fuel your training with adequate carbs. Train your gut to absorb 80-90g carbs/hour. On race day, hit those targets aggressively.</p>
-          <h4>The "Lean" Trap</h4>
-          <p>There's enormous pressure on women to be lean. Social pressure, cultural pressure, sometimes even from coaches who should know better.</p>
+          <h4>The "Lean" Trap</h4></h4><p>There's enormous pressure on women to be lean. Social pressure, cultural pressure, sometimes even from coaches who should know better.</p>
           <p>Here's reality: <strong>chronic under-fueling destroys performance and health.</strong> Low energy availability (RED-S: Relative Energy Deficiency in Sport) causes:</p>
           <ul>
             <li>Hormonal disruption (irregular or absent periods)</li>
@@ -3439,10 +2388,8 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li>Performance decline (can't hit power targets, poor recovery)</li>
           </ul>
           <p><strong>The rule:</strong> If you're training hard AND restricting calories to lose weight, you're playing a dangerous game. Weight loss should happen in the off-season, not during race prep. Fuel your training properly or accept compromised results—and potentially serious health consequences.</p>
-          <h2>Heat & Hydration</h2>
-          <p>Women thermoregulate differently than men. This matters significantly for events like Unbound where heat is a major factor.</p>
-          <h4>Core Temperature Management</h4>
-          <p><strong>Women sweat less than men</strong> at the same relative intensity and environmental conditions. Sounds like an advantage (less fluid loss), but it's not—it means core temperature rises faster because evaporative cooling is less efficient.</p>
+          <h2>Heat & Hydration</h2></h2><p>Women thermoregulate differently than men. This matters significantly for events like Unbound where heat is a major factor.</p>
+          <h4>Core Temperature Management</h4></h4><p><strong>Women sweat less than men</strong> at the same relative intensity and environmental conditions. Sounds like an advantage (less fluid loss), but it's not—it means core temperature rises faster because evaporative cooling is less efficient.</p>
           <p><strong>The result:</strong> Women reach critical core temperature thresholds earlier in hot conditions, leading to:</p>
           <ul>
             <li>Earlier performance decline</li>
@@ -3457,8 +2404,7 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li><strong>Heat acclimation training is non-negotiable:</strong> Weeks 6-10 should include heat exposure (see Section 11)</li>
             <li><strong>Monitor core temp signals:</strong> Goosebumps, chills, confusion, nausea = pull back immediately</li>
           </ul>
-          <h4>Hydration Considerations</h4>
-          <p><strong>Sodium needs vary significantly among women.</strong> Some are salty sweaters (visible salt crystals on skin/kit), some aren't. You can't assume.</p>
+          <h4>Hydration Considerations</h4></h4><p><strong>Sodium needs vary significantly among women.</strong> Some are salty sweaters (visible salt crystals on skin/kit), some aren't. You can't assume.</p>
           <p><strong>Test your sweat rate</strong> (weigh before/after long training rides in different conditions). Adjust sodium intake based on YOUR data, not population averages.</p>
           <p><strong>Hormonal phase matters:</strong> During luteal phase (Days 15-28), progesterone causes fluid retention, which can affect hydration status and make you feel "puffy" even when properly hydrated. Don't panic—it's hormones, not overhydration.</p>
           <p><strong>General targets:</strong></p>
@@ -3466,8 +2412,7 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li>Fluid: 500-750ml/hour (adjust up in heat)</li>
             <li>Sodium: 300-700mg/hour (adjust based on sweat test and conditions)</li>
           </ul>
-          <h2>Recovery Needs</h2>
-          <p>This is the part where many women resist because it sounds like "you're weaker." It's not. It's "you're different."</p>
+          <h2>Recovery Needs</h2></h2><p>This is the part where many women resist because it sounds like "you're weaker." It's not. It's "you're different."</p>
           <p><strong>Women often need MORE recovery than men at the same relative training intensity.</strong> This isn't weakness—it's physiology.</p>
           <p><strong>Why:</strong></p>
           <ul>
@@ -3490,8 +2435,7 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li>Don't skip rest weeks (see Section 4 on periodization)</li>
           </ul>
           <p><strong>This is not permission to be lazy.</strong> You still need to train hard. But you might need to structure your hard days differently, take recovery more seriously, and accept that your training might look different from a man's even at similar fitness levels.</p>
-          <h2>Pregnancy & Postpartum</h2>
-          <p>This plan is NOT designed for pregnant or postpartum athletes.</p>
+          <h2>Pregnancy & Postpartum</h2></h2><p>This plan is NOT designed for pregnant or postpartum athletes.</p>
           <p><strong>If you're pregnant:</strong></p>
           <ul>
             <li>Stop this plan immediately</li>
@@ -3507,12 +2451,10 @@ Cash ($40-60 for emergencies, aid station donations)</li>
             <li>Watch for red flags: pelvic floor dysfunction, diastasis recti, return of bleeding</li>
           </ul>
           <p><strong>Resources:</strong> Dr. Stacy Sims' work on pregnancy/postpartum training is the gold standard. Read *Roar* or follow her research.</p>
-          <h2>Equipment Considerations</h2>
-          <p><strong>Sports bra:</strong> Non-negotiable. Test on long rides, not just in the store. If it's uncomfortable for 30 minutes, it'll be unbearable at mile 100. High-impact support is essential—you're bouncing on gravel for hours.</p>
+          <h2>Equipment Considerations</h2></h2><p><strong>Sports bra:</strong> Non-negotiable. Test on long rides, not just in the store. If it's uncomfortable for 30 minutes, it'll be unbearable at mile 100. High-impact support is essential—you're bouncing on gravel for hours.</p>
           <p><strong>Chamois:</strong> Women's anatomy requires women-specific design. This is not marketing—the padding placement and shape are different. A men's chamois will cause problems. Test multiple brands if needed. Numbness, chafing, or pain means wrong fit.</p>
           <p><strong>Saddle:</strong> Proper bike fit and saddle selection are critical. Women's sit bone width is often (but not always) wider than men's. Get a professional fit if you're experiencing numbness, pain, or discomfort. These issues don't resolve with more miles—they require equipment changes.</p>
-          <h2>The Bottom Line</h2>
-          <p>Your body is different. Not worse, not weaker—different. Train accordingly.</p>
+          <h2>The Bottom Line</h2></h2><p>Your body is different. Not worse, not weaker—different. Train accordingly.</p>
           <ul>
             <li>Track your cycle. Work with it, not against it.</li>
             <li>Fuel aggressively. Don't under-eat trying to stay lean.</li>
@@ -3524,48 +2466,33 @@ Cash ($40-60 for emergencies, aid station donations)</li>
           <p>Do the work. Respect your body's signals. Show up prepared.</p>
         </section>
         <section id="section-14-faq" class="gg-section">
-          <h2 id="section-14-faq">14 · Frequently Asked Questions</h2>
-          <h3>Q: What if I miss a week of training?</h3>
-          <p><strong>A:</strong> One week won't kill you. Jump back in where the plan currently is—don't try to "make up" missed work. Forward progress only. If you missed two+ weeks due to illness or injury, reassess whether your race timeline is realistic.</p>
+          <h2 id="section-14-faq">14 · Frequently Asked Questions<h3>Q: What if I miss a week of training?</h3></h3><p><strong>A:</strong> One week won't kill you. Jump back in where the plan currently is—don't try to "make up" missed work. Forward progress only. If you missed two+ weeks due to illness or injury, reassess whether your race timeline is realistic.</p>
           <hr>
-          <h3>Q: Can I do this plan entirely on Zwift/TrainerRoad/indoors?</h3>
-          <p><strong>A:</strong> Technically yes, but you're missing critical skills development. Indoor training builds fitness, but outdoor riding builds handling, pacing, and mental resilience. Do at least 30-40% of your volume outside, especially long rides.</p>
+          <h3>Q: Can I do this plan entirely on Zwift/TrainerRoad/indoors?</h3></h3><p><strong>A:</strong> Technically yes, but you're missing critical skills development. Indoor training builds fitness, but outdoor riding builds handling, pacing, and mental resilience. Do at least 30-40% of your volume outside, especially long rides.</p>
           <hr>
-          <h3>Q: What if my FTP changes mid-plan?</h3>
-          <p><strong>A:</strong> Test again at Week 6-7 if you're curious, but only adjust zones if FTP changed by 5+ watts. Small fluctuations are noise. Major changes (10+ watts) mean you need to recalculate zones and adjust your workout targets accordingly.</p>
+          <h3>Q: What if my FTP changes mid-plan?</h3></h3><p><strong>A:</strong> Test again at Week 6-7 if you're curious, but only adjust zones if FTP changed by 5+ watts. Small fluctuations are noise. Major changes (10+ watts) mean you need to recalculate zones and adjust your workout targets accordingly.</p>
           <hr>
-          <h3>Q: How do I know if I'm overtraining?</h3>
-          <p><strong>A:</strong> Elevated resting heart rate, persistent fatigue, declining performance, irritability, poor sleep, loss of motivation. If you're hitting 3+ of these symptoms, take 2-3 days completely off, then return at reduced volume. Recovery makes you fast.</p>
+          <h3>Q: How do I know if I'm overtraining?</h3></h3><p><strong>A:</strong> Elevated resting heart rate, persistent fatigue, declining performance, irritability, poor sleep, loss of motivation. If you're hitting 3+ of these symptoms, take 2-3 days completely off, then return at reduced volume. Recovery makes you fast.</p>
           <hr>
-          <h3>Q: What if I can't hit the prescribed watts?</h3>
-          <p><strong>A:</strong> Either your FTP is set too high, or you're under-recovered. Take an extra rest day, retest FTP if needed. Don't grind through workouts at the wrong intensity—that's junk miles that compromise adaptation.</p>
+          <h3>Q: What if I can't hit the prescribed watts?</h3></h3><p><strong>A:</strong> Either your FTP is set too high, or you're under-recovered. Take an extra rest day, retest FTP if needed. Don't grind through workouts at the wrong intensity—that's junk miles that compromise adaptation.</p>
           <hr>
-          <h3>Q: Should I follow the plan exactly or can I move workouts around?</h3>
-          <p><strong>A:</strong> Follow the plan as written. The order isn't random—it assumes a typical M-F work schedule with weekends for long rides. Hard days are spaced for optimal recovery. If you work nights or have a non-standard schedule, shift the entire week forward/backward as needed, but don't rearrange individual workouts.</p>
+          <h3>Q: Should I follow the plan exactly or can I move workouts around?</h3></h3><p><strong>A:</strong> Follow the plan as written. The order isn't random—it assumes a typical M-F work schedule with weekends for long rides. Hard days are spaced for optimal recovery. If you work nights or have a non-standard schedule, shift the entire week forward/backward as needed, but don't rearrange individual workouts.</p>
           <hr>
-          <h3>Q: How much weight will I lose during this plan?</h3>
-          <p><strong>A:</strong> Your mileage may vary. Know this: losing weight and fueling performance are often in conflict. Any meaningful, long-lasting attempt to lose weight should be undertaken in the off-season, NOT during build-up to an eating contest on a bike (which is what a gravel race is). Fuel your training properly or accept compromised results.</p>
+          <h3>Q: How much weight will I lose during this plan?</h3></h3><p><strong>A:</strong> Your mileage may vary. Know this: losing weight and fueling performance are often in conflict. Any meaningful, long-lasting attempt to lose weight should be undertaken in the off-season, NOT during build-up to an eating contest on a bike (which is what a gravel race is). Fuel your training properly or accept compromised results.</p>
           <hr>
-          <h3>Q: Can I do other sports while following this plan?</h3>
-          <p><strong>A:</strong> Light activity (yoga, walking, easy swimming) is fine. Running, CrossFit, or other high-intensity sports will compromise your cycling training. Pick one goal. You can't serve two masters and expect peak performance from either.</p>
+          <h3>Q: Can I do other sports while following this plan?</h3></h3><p><strong>A:</strong> Light activity (yoga, walking, easy swimming) is fine. Running, CrossFit, or other high-intensity sports will compromise your cycling training. Pick one goal. You can't serve two masters and expect peak performance from either.</p>
           <hr>
-          <h3>Q: What if I get sick during training?</h3>
-          <p><strong>A:</strong> Above the neck (head cold): reduce intensity by one zone, monitor closely. Below the neck (chest, stomach): skip the workout entirely. Don't be a hero—training while sick extends recovery time and risks turning a minor illness into something serious.</p>
+          <h3>Q: What if I get sick during training?</h3></h3><p><strong>A:</strong> Above the neck (head cold): reduce intensity by one zone, monitor closely. Below the neck (chest, stomach): skip the workout entirely. Don't be a hero—training while sick extends recovery time and risks turning a minor illness into something serious.</p>
           <hr>
-          <h3>Q: How do I taper if my race date changes?</h3>
-          <p><strong>A:</strong> If race moves earlier: condense taper to 1 week, keep intensity but cut volume by 40%. If race moves later: add 1-2 weeks of maintenance (same intensity, 60-70% volume), then taper normally. Don't panic and overtrain.</p>
+          <h3>Q: How do I taper if my race date changes?</h3></h3><p><strong>A:</strong> If race moves earlier: condense taper to 1 week, keep intensity but cut volume by 40%. If race moves later: add 1-2 weeks of maintenance (same intensity, 60-70% volume), then taper normally. Don't panic and overtrain.</p>
           <hr>
-          <h3>Q: Is this plan suitable for [other race] instead of Unbound?</h3>
-          <p><strong>A:</strong> Maybe. If the race is similar duration (8-15 hours) and demands (sustained gravel endurance), yes. If it's significantly different (shorter, hillier, more technical), you'll need modifications. The fitness transfers, but race-specific skills don't.</p>
+          <h3>Q: Is this plan suitable for [other race] instead of Unbound?</h3></h3><p><strong>A:</strong> Maybe. If the race is similar duration (8-15 hours) and demands (sustained gravel endurance), yes. If it's significantly different (shorter, hillier, more technical), you'll need modifications. The fitness transfers, but race-specific skills don't.</p>
           <hr>
-          <h3>Q: What if I don't have access to gravel roads for training?</h3>
-          <p><strong>A:</strong> Use what you have. Road riding builds fitness. Fitness translates to gravel. You'll need at least a few gravel rides (weeks 6-10) to dial in handling and equipment, but the bulk of fitness work can be done on pavement. Don't use lack of gravel as an excuse to skip training.</p>
+          <h3>Q: What if I don't have access to gravel roads for training?</h3></h3><p><strong>A:</strong> Use what you have. Road riding builds fitness. Fitness translates to gravel. You'll need at least a few gravel rides (weeks 6-10) to dial in handling and equipment, but the bulk of fitness work can be done on pavement. Don't use lack of gravel as an excuse to skip training.</p>
           <hr>
-          <h3>Q: Should I train with a group or solo?</h3>
-          <p><strong>A:</strong> Both. Solo for structured intervals (better execution, no distractions). Group for long rides (mental training, pacing practice, working with others). Mix it up based on the workout goal. Don't let your training partners dictate your training stress.</p>
+          <h3>Q: Should I train with a group or solo?</h3></h3><p><strong>A:</strong> Both. Solo for structured intervals (better execution, no distractions). Group for long rides (mental training, pacing practice, working with others). Mix it up based on the workout goal. Don't let your training partners dictate your training stress.</p>
           <hr>
-          <h3>Q: What's the minimum equipment I need to start this plan today?</h3>
-          <p><strong>A:</strong> A bike that fits and works. Power meter (required for this plan). Heart rate chest strap (required for backup). That's it. Everything else—fancy computers, carbon wheels, aero bars—can be figured out over 12 weeks. Stop shopping and start training.</p>
+          <h3>Q: What's the minimum equipment I need to start this plan today?</h3></h3><p><strong>A:</strong> A bike that fits and works. Power meter (required for this plan). Heart rate chest strap (required for backup). That's it. Everything else—fancy computers, carbon wheels, aero bars—can be figured out over 12 weeks. Stop shopping and start training.</p>
         </section>
       </div>
     </div>
