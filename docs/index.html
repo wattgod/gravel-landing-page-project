@@ -59,17 +59,26 @@
             letter-spacing: 0.14em;
         }
 
+        h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--gg-muted);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
         p {
             margin: 0 0 0.8rem 0;
         }
 
         .intro {
             color: var(--gg-muted);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .race-section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .race-title {
@@ -79,14 +88,18 @@
             text-transform: uppercase;
             letter-spacing: 0.14em;
             margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-section {
+            margin-bottom: 2.4rem;
         }
 
         .plan-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 12px;
-            margin-top: 16px;
+            margin-top: 12px;
         }
 
         .plan-link {
@@ -128,22 +141,44 @@
     
     <div class="race-section">
         <h2 class="race-title">Unbound Gravel 200</h2>
-        <div class="plan-grid">
-            <a href="guides/unbound-gravel-200/ayahuasca-beginner.html" class="plan-link">Ayahuasca Beginner</a>
-            <a href="guides/unbound-gravel-200/ayahuasca-intermediate.html" class="plan-link">Ayahuasca Intermediate</a>
-            <a href="guides/unbound-gravel-200/ayahuasca-masters.html" class="plan-link">Ayahuasca Masters</a>
-            <a href="guides/unbound-gravel-200/ayahuasca-save-my-race.html" class="plan-link">Ayahuasca Save My Race</a>
-            <a href="guides/unbound-gravel-200/finisher-beginner.html" class="plan-link">Finisher Beginner</a>
-            <a href="guides/unbound-gravel-200/finisher-intermediate.html" class="plan-link">Finisher Intermediate</a>
-            <a href="guides/unbound-gravel-200/finisher-advanced.html" class="plan-link">Finisher Advanced</a>
-            <a href="guides/unbound-gravel-200/finisher-masters.html" class="plan-link">Finisher Masters</a>
-            <a href="guides/unbound-gravel-200/finisher-save-my-race.html" class="plan-link">Finisher Save My Race</a>
-            <a href="guides/unbound-gravel-200/compete-intermediate.html" class="plan-link">Compete Intermediate</a>
-            <a href="guides/unbound-gravel-200/compete-advanced.html" class="plan-link">Compete Advanced</a>
-            <a href="guides/unbound-gravel-200/compete-masters.html" class="plan-link">Compete Masters</a>
-            <a href="guides/unbound-gravel-200/compete-save-my-race.html" class="plan-link">Compete Save My Race</a>
-            <a href="guides/unbound-gravel-200/podium-advanced.html" class="plan-link">Podium Advanced</a>
-            <a href="guides/unbound-gravel-200/podium-advanced-goat.html" class="plan-link">Podium Advanced GOAT</a>
+        
+        <div class="tier-section">
+            <h3>Ayahuasca</h3>
+            <div class="plan-grid">
+                <a href="guides/unbound-gravel-200/ayahuasca-beginner.html" class="plan-link">Beginner</a>
+                <a href="guides/unbound-gravel-200/ayahuasca-intermediate.html" class="plan-link">Intermediate</a>
+                <a href="guides/unbound-gravel-200/ayahuasca-masters.html" class="plan-link">Masters</a>
+                <a href="guides/unbound-gravel-200/ayahuasca-save-my-race.html" class="plan-link">Save My Race</a>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <h3>Finisher</h3>
+            <div class="plan-grid">
+                <a href="guides/unbound-gravel-200/finisher-beginner.html" class="plan-link">Beginner</a>
+                <a href="guides/unbound-gravel-200/finisher-intermediate.html" class="plan-link">Intermediate</a>
+                <a href="guides/unbound-gravel-200/finisher-advanced.html" class="plan-link">Advanced</a>
+                <a href="guides/unbound-gravel-200/finisher-masters.html" class="plan-link">Masters</a>
+                <a href="guides/unbound-gravel-200/finisher-save-my-race.html" class="plan-link">Save My Race</a>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <h3>Compete</h3>
+            <div class="plan-grid">
+                <a href="guides/unbound-gravel-200/compete-intermediate.html" class="plan-link">Intermediate</a>
+                <a href="guides/unbound-gravel-200/compete-advanced.html" class="plan-link">Advanced</a>
+                <a href="guides/unbound-gravel-200/compete-masters.html" class="plan-link">Masters</a>
+                <a href="guides/unbound-gravel-200/compete-save-my-race.html" class="plan-link">Save My Race</a>
+            </div>
+        </div>
+
+        <div class="tier-section">
+            <h3>Podium</h3>
+            <div class="plan-grid">
+                <a href="guides/unbound-gravel-200/podium-advanced.html" class="plan-link">Advanced</a>
+                <a href="guides/unbound-gravel-200/podium-advanced-goat.html" class="plan-link">Advanced GOAT</a>
+            </div>
         </div>
     </div>
 
