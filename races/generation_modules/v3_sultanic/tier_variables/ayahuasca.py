@@ -9,11 +9,11 @@ CHOICE_FEATURE_3 = "Finish certainty when time is your constraint"
 CHOICE_FEATURE_4 = "HIIT that works — not base-building that breaks you"
 
 # Expectation guide topics (race-specific moments for Unbound)
-EXPECTATION_GUIDE_1 = "Heat: Week 6 protocol so 95° feels manageable by race day"
-EXPECTATION_GUIDE_2 = "Fueling: What to eat at mile 60 when nothing sounds good"
-EXPECTATION_GUIDE_3 = "Pacing: First 30 when everyone's redlining — you stay composed"
-EXPECTATION_GUIDE_4 = "Mental: Mile 100 when brain says \"stop\" — script included"
-EXPECTATION_GUIDE_5 = "Time Efficiency: Why 3 quality hours beats 8 junk hours"
+EXPECTATION_GUIDE_1 = "Fueling: Gut training so you can eat at mile 60 when nothing sounds good"
+EXPECTATION_GUIDE_2 = "Technical Skills: Flint Hills cornering and descending"
+EXPECTATION_GUIDE_3 = "Race Tactics: Three-act structure — what to do when everyone's redlining"
+EXPECTATION_GUIDE_4 = "Mental: 6-2-7 breathing when brain says \"stop\""
+EXPECTATION_GUIDE_5 = ""  # Removed to save ~70 chars
 
 # Pattern matching - FOR
 PATTERN_FOR_1 = "You have real life constraints"
@@ -22,5 +22,5 @@ PATTERN_FOR_3 = "You value finishing over ego"
 PATTERN_FOR_4 = "You want certainty, not optimism"
 
 # Pattern matching - NOT FOR
-PATTERN_NOT_FOR = "Riders who need to prove something or chase group rides. If finishing isn't enough, see Finisher tier."
+PATTERN_NOT_FOR = "Riders who need to prove something or chase group rides. If finishing isn't enough, see Finisher tier"
 
