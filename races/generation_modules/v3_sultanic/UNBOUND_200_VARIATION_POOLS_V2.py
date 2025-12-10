@@ -8,6 +8,10 @@ Based on CLAIMS_REFERENCE.md validation
 # CORE VARIATIONS (20 variations each)
 # ==============================================================================
 
+# ==============================================================================
+# COMPARISON HOOKS - GENERAL (used for most plans)
+# ==============================================================================
+
 COMPARISON_HOOKS = [
     "Two versions of Unbound 200: chaos at mile 100 — or executing a plan you've run 50 times",
     "Racing on vibes and ego — or FTP zones and fueling math you trust",
@@ -29,6 +33,114 @@ COMPARISON_HOOKS = [
     "Fueling confusion — or following fueling protocols you've practiced",
     "Heat exhaustion — or managing it with acclimatization from weeks 6-10",
     "Tactical mistakes — or executing three-act race structure you've practiced",
+]
+
+# ==============================================================================
+# COMPARISON HOOKS - MASTERS SPECIFIC
+# ==============================================================================
+
+COMPARISON_HOOKS_MASTERS = [
+    "You're not 20 anymore — stop training like it",
+    "Training like you're 25 when you're 50+ — or training for who you actually are",
+    "Ignoring recovery because you used to bounce back — or respecting what your body needs now",
+    "Pushing through fatigue like you're 30 — or training smart for 50+",
+    "Training volume that worked at 25 — or volume that works at 50+",
+    "Recovery windows you don't have anymore — or recovery protocols for 50+",
+    "Training like age doesn't matter — or training that acknowledges it does",
+    "Pushing harder because you used to handle it — or training smarter because you're wiser",
+    "Ignoring HRV because you never needed it — or using it because you do now",
+    "Training intensity that breaks you at 50+ — or intensity that builds you",
+    "Recovery timelines from your 30s — or recovery timelines for your 50s",
+    "Training load that worked before — or load that works now",
+    "Pushing through because you're tough — or recovering because you're smart",
+    "Training like recovery is optional — or training where recovery is mandatory",
+    "Volume that worked at 35 — or volume that works at 55",
+    "Ignoring what your body tells you — or listening because you know better now",
+    "Training like age is just a number — or training like age is data",
+    "Recovery protocols for 30-year-olds — or recovery protocols for 50+ athletes",
+    "Training intensity that your body can't handle — or intensity your body can adapt to",
+    "Pushing limits like you're 25 — or respecting limits because you're 50+",
+]
+
+# ==============================================================================
+# COMPARISON HOOKS - BEGINNER SPECIFIC
+# ==============================================================================
+
+COMPARISON_HOOKS_BEGINNER = [
+    "First gravel race: winging it — or following a plan built for first-timers",
+    "Never done 200 miles: hoping you're ready — or knowing you're ready",
+    "First ultra-distance: guessing what to do — or following a plan that teaches you",
+    "Never trained systematically: improvising — or learning how to train",
+    "First gravel race: no idea what you're doing — or a plan that shows you",
+    "Never done endurance: hoping fitness is enough — or training that builds it",
+    "First 200-miler: winging it — or a plan built for first-timers",
+    "Never trained with structure: guessing — or learning systematic training",
+    "First ultra: no idea how to prepare — or a plan that teaches preparation",
+    "Never done gravel: hoping you figure it out — or training that shows you how",
+    "First race: improvising everything — or following a plan that works",
+    "Never trained for distance: hoping you can — or training that proves you can",
+    "First 200 miles: no plan — or a plan built for first-timers",
+    "Never done endurance: guessing — or learning how to build endurance",
+    "First gravel race: hoping you're ready — or knowing you're ready",
+    "Never trained systematically: improvising — or learning systematic training",
+    "First ultra-distance: no idea — or a plan that teaches you",
+    "Never done 200 miles: hoping — or training that prepares you",
+    "First race: winging it — or following a plan built for beginners",
+    "Never trained for distance: guessing — or learning how to train",
+]
+
+# ==============================================================================
+# COMPARISON HOOKS - AYAHUASCA (TIME-CRUNCHED)
+# ==============================================================================
+
+COMPARISON_HOOKS_AYAHUASCA = [
+    "5 hours a week: wasting them — or maximizing every minute",
+    "Time-crunched: training inefficiently — or training that works with your schedule",
+    "Limited hours: hoping it's enough — or training that makes it enough",
+    "5 hours a week: spreading it thin — or concentrating it right",
+    "Time-constrained: training like you have 15 hours — or training for 5 hours",
+    "Limited time: wasting minutes — or maximizing every one",
+    "5 hours a week: hoping it works — or training that makes it work",
+    "Time-crunched: training inefficiently — or training efficiently",
+    "Limited hours: spreading yourself thin — or focusing on what matters",
+    "5 hours a week: not enough time — or enough time if you use it right",
+    "Time-constrained: training wrong — or training right for your constraints",
+    "Limited time: hoping — or training that works with your reality",
+    "5 hours a week: can't train properly — or training properly in 5 hours",
+    "Time-crunched: inefficient training — or efficient training",
+    "Limited hours: not enough — or enough if you train right",
+    "5 hours a week: spreading it wrong — or concentrating it right",
+    "Time-constrained: training like you have time — or training for no time",
+    "Limited time: wasting it — or maximizing it",
+    "5 hours a week: hoping — or training that works",
+    "Time-crunched: inefficient — or efficient",
+]
+
+# ==============================================================================
+# COMPARISON HOOKS - PODIUM (ELITE)
+# ==============================================================================
+
+COMPARISON_HOOKS_PODIUM = [
+    "Elite volume: training wrong — or training right",
+    "20+ hours a week: wasting them — or maximizing every one",
+    "Elite commitment: training inefficiently — or training with precision",
+    "Professional volume: hoping it works — or training that makes it work",
+    "20+ hours: training like an amateur — or training like a pro",
+    "Elite level: training wrong — or training right",
+    "Professional volume: inefficient — or efficient",
+    "20+ hours a week: spreading it wrong — or concentrating it right",
+    "Elite commitment: training like everyone else — or training like an elite",
+    "Professional volume: hoping — or training with precision",
+    "20+ hours: wasting them — or maximizing them",
+    "Elite level: training inefficiently — or training efficiently",
+    "Professional volume: wrong approach — or right approach",
+    "20+ hours a week: hoping it works — or training that works",
+    "Elite commitment: training like an amateur — or training like a pro",
+    "Professional volume: inefficient training — or efficient training",
+    "20+ hours: spreading it wrong — or concentrating it right",
+    "Elite level: training wrong — or training right",
+    "Professional volume: hoping — or training with precision",
+    "20+ hours a week: wasting — or maximizing",
 ]
 
 SOLUTION_STATE_LANGUAGE = [
@@ -208,41 +320,41 @@ HEAT_AGENCY = [
     "Heat protocols — progressive adaptation weeks 6-10",
     "Heat acclimatization: Indoor trainer, hot water immersion, or sauna options",
     "Thermal adaptation weeks 6-10 — 5-8% performance improvement",
-    "Heat protocols: Progressive adaptation ",
+    "Heat protocols: Progressive adaptation from Section 11",
     "Heat acclimatization: 10-14 day protocols from weeks 6-10",
     "Thermal adaptation: Indoor trainer, hot water, sauna — all options",
     "Heat protocols: Progressive adaptation weeks 6-10, 5-8% gain",
-    "Heat acclimatization from weeks 6-10, 5-8% improvement",
+    "Heat acclimatization from Section 11 — weeks 6-10, 5-8% improvement",
     "Thermal adaptation: Indoor trainer, hot water immersion, sauna",
     "Heat protocols: Progressive adaptation, 5-8% performance gain",
     "Heat acclimatization weeks 6-10: Indoor trainer, hot water, sauna",
-    "Thermal adaptation: Protocols , weeks 6-10",
+    "Thermal adaptation: Protocols from Section 11, weeks 6-10",
     "Heat protocols: Progressive adaptation, 5-8% gain in hot conditions",
     "Heat acclimatization: Indoor trainer, hot water, sauna — all options",
     "Thermal adaptation weeks 6-10: 5-8% performance improvement",
-    "Heat protocols : Progressive adaptation, 5-8% gain",
+    "Heat protocols from Section 11: Progressive adaptation, 5-8% gain",
     "Heat acclimatization: Weeks 6-10, 5-8% improvement, multiple options",
 ]
 
 RACE_TACTICS_AGENCY = [
-    "Three-act race structure from survive, execute, finish",
+    "Three-act race structure from Section 10 — survive, execute, finish",
     "Race tactics: Three-act structure — what to do when everyone's redlining",
-    "Tactical framework from mile-specific strategies",
+    "Tactical framework from Section 10 — mile-specific strategies",
     "Race tactics: When to push, when to sit, when to survive",
     "Three-act structure: Phase 1 (miles 0-50), Phase 2 (50-150), Phase 3 (150-finish)",
-    "Race tactics from tactical decision trees, mental landmarks",
+    "Race tactics from Section 10 — tactical decision trees, mental landmarks",
     "Tactical framework: Three-act structure, mile-specific strategies",
-    "Race tactics: Tactical decision trees ",
+    "Race tactics: Tactical decision trees from Section 10",
     "Three-act structure: Survive early, execute middle, finish strong",
-    "Race tactics: Mile-specific strategies ",
+    "Race tactics: Mile-specific strategies from Section 10",
     "Tactical framework: Three-act structure, mental landmarks",
     "Race tactics: Decision trees, mile markers, mental landmarks",
-    "Three-act structure: Tactical framework ",
+    "Three-act structure: Tactical framework from Section 10",
     "Race tactics: When to push, when to sit, when to survive — all mapped",
     "Tactical framework: Three-act structure, mile-specific strategies",
     "Race tactics: Decision trees, mental landmarks, mile markers",
     "Three-act structure: Survive, execute, finish — all mapped",
-    "Race tactics: Tactical framework ",
+    "Race tactics: Tactical framework from Section 10",
     "Tactical decision trees: Three-act structure, mile-specific strategies",
     "Race tactics: Three-act structure, mental landmarks, decision trees",
 ]
@@ -277,17 +389,17 @@ MASTERS_AGENCY = [
 
 FUELING_GUIDE_VARIATIONS = [
     "Fueling: 60-80g carbs per hour protocol — gut training progressions weeks 1-12",
-    "Fueling: Gut training from 40g to 80g carbs/hour protocols",
+    "Fueling: Gut training from 40g to 80g carbs/hour — Section 8 protocols",
     "Fueling: Every 20 minutes automatic nutrition — timer-based, not hunger-based",
     "Fueling: Gut training protocols tested under load, trusted on race day",
     "Fueling: 60-80g carbs/hour practiced in long rides",
     "Fueling: Gut training progression: 40g→60g→80g over 12 weeks",
     "Fueling: Nutrition automaticity built from consistent practice",
-    "Fueling: Race nutrition tested in training protocols",
+    "Fueling: Race nutrition tested in training — Section 8 protocols",
     "Fueling: Gut training building tolerance, testing products",
-    "Fueling: 60-80g carbs/hour on schedule protocols",
+    "Fueling: 60-80g carbs/hour on schedule — Section 8 protocols",
     "Fueling: Gut training: Build tolerance, test products, practice timing",
-    "Fueling: Nutrition protocols from practiced, trusted",
+    "Fueling: Nutrition protocols from Section 8 — practiced, trusted",
     "Fueling: Gut training progression: 40g→80g carbs/hour over 12 weeks",
     "Fueling: Race nutrition automaticity: Timer-based, not hunger-based",
     "Fueling: Gut training protocols: Test products, timing, combinations",
@@ -295,25 +407,25 @@ FUELING_GUIDE_VARIATIONS = [
     "Fueling: Gut training: Build tolerance, test under load",
     "Fueling: Nutrition automaticity: Built through consistent practice",
     "Fueling: Race nutrition: Test products, timing, combinations",
-    "Fueling: Gut training protocols from systematic progression",
+    "Fueling: Gut training protocols from Section 8 — systematic progression",
 ]
 
 TECHNICAL_GUIDE_VARIATIONS = [
     "Technical Skills: Flint Hills cornering and descending practice",
     "Technical: Cornering, descending, eating while riding",
     "Technical: Bike handling protocols for Flint Hills descents",
-    "Technical: Cornering, descending, eating, emergency repairs",
+    "Technical: Cornering, descending, eating, emergency repairs — Section 7",
     "Technical: Skills practice built into training rides",
     "Technical: Cornering confidence, descending speed, eating automaticity",
-    "Technical: Bike handling protocols from practiced",
+    "Technical: Bike handling protocols from Section 7 — practiced",
     "Technical: Cornering, descending, eating while riding all dialed",
-    "Technical: Skills from cornering, descending, eating",
+    "Technical: Skills from Section 7 — cornering, descending, eating",
     "Technical: Bike handling: Cornering, descending, eating all practiced",
-    "Technical: Cornering, descending, eating protocols",
+    "Technical: Cornering, descending, eating protocols — Section 7",
     "Technical: Skills practice: Cornering, descending, eating built in",
     "Technical: Bike handling protocols: Cornering, descending, eating",
     "Technical: Cornering, descending, eating while riding — all practiced",
-    "Technical: Skills from cornering, descending, eating",
+    "Technical: Skills from Section 7 — cornering, descending, eating",
     "Technical: Bike handling: Cornering, descending, eating all dialed",
     "Technical: Cornering, descending, eating protocols — all practiced",
     "Technical: Skills practice: Cornering, descending, eating automatic",
@@ -323,48 +435,48 @@ TECHNICAL_GUIDE_VARIATIONS = [
 
 RACE_TACTICS_GUIDE_VARIATIONS = [
     "Race Tactics: Three-act structure — what to do when everyone's redlining",
-    "Tactics: Three-act structure from survive, execute, finish",
+    "Tactics: Three-act structure from Section 10 — survive, execute, finish",
     "Tactics: Tactical decision trees, mile-specific strategies",
     "Tactics: Three-act structure, mental landmarks, decision trees",
-    "Tactics: When to push, when to sit, when to survive",
+    "Tactics: When to push, when to sit, when to survive — Section 10",
     "Tactics: Three-act structure: Phase 1 (0-50), Phase 2 (50-150), Phase 3 (150-finish)",
-    "Tactics: Tactical framework from mile-specific strategies",
+    "Tactics: Tactical framework from Section 10 — mile-specific strategies",
     "Tactics: Three-act structure, mental landmarks, tactical decisions",
-    "Tactics: Decision trees, mile markers, mental landmarks",
+    "Tactics: Decision trees, mile markers, mental landmarks — Section 10",
     "Tactics: Three-act structure: Survive early, execute middle, finish strong",
     "Tactics: Tactical framework: Three-act structure, mile-specific strategies",
-    "Tactics: Three-act structure from tactical decision trees",
+    "Tactics: Three-act structure from Section 10 — tactical decision trees",
     "Tactics: Mile-specific strategies, mental landmarks, decision trees",
-    "Tactics: Three-act structure: Tactical framework ",
-    "Tactics: Decision trees, mental landmarks, mile markers",
+    "Tactics: Three-act structure: Tactical framework from Section 10",
+    "Tactics: Decision trees, mental landmarks, mile markers — Section 10",
     "Tactics: Three-act structure: Survive, execute, finish — all mapped",
     "Tactics: Tactical framework: Three-act structure, mental landmarks",
     "Tactics: Three-act structure, decision trees, mile-specific strategies",
     "Tactics: Tactical decision trees: Three-act structure, mile markers",
-    "Tactics: Three-act structure: Survive, execute, finish",
+    "Tactics: Three-act structure: Survive, execute, finish — Section 10",
 ]
 
 MENTAL_GUIDE_VARIATIONS = [
     "Mental: 6-2-7 breathing when brain says 'stop' at mile 100",
     "Mental: 6-2-7 breathing technique — 6 seconds in, 2 hold, 7 out",
-    "Mental: Breathing, reframing, suffering management",
+    "Mental: Breathing, reframing, suffering management — Section 9",
     "Mental: 6-2-7 breathing practiced under load, automatic when needed",
     "Mental: Reframing techniques turning 'I can't' into 'this is temporary'",
-    "Mental: 6-2-7 breathing, reframing, performance statements",
+    "Mental: 6-2-7 breathing, reframing, performance statements — Section 9",
     "Mental: Breathing techniques, reframing, suffering management",
     "Mental: 6-2-7 breathing: Practiced in training, automatic on race day",
-    "Mental: Tools from breathing, reframing, suffering",
+    "Mental: Tools from Section 9 — breathing, reframing, suffering",
     "Mental: 6-2-7 breathing when panic sets in — practiced, trusted",
-    "Mental: Breathing, reframing, suffering management ",
+    "Mental: Breathing, reframing, suffering management from Section 9",
     "Mental: 6-2-7 breathing: Practiced under load, trusted when needed",
     "Mental: Tools: Breathing, reframing, performance statements",
-    "Mental: 6-2-7 breathing, reframing, suffering management",
+    "Mental: 6-2-7 breathing, reframing, suffering management — Section 9",
     "Mental: Breathing techniques: 6-2-7 practiced, automatic",
     "Mental: 6-2-7 breathing: Practiced in training, automatic on race day",
-    "Mental: Tools from breathing, reframing, suffering",
+    "Mental: Tools from Section 9 — breathing, reframing, suffering",
     "Mental: 6-2-7 breathing when brain says 'stop' — practiced, trusted",
     "Mental: Breathing, reframing, suffering management all dialed",
-    "Mental: 6-2-7 breathing, reframing, performance statements",
+    "Mental: 6-2-7 breathing, reframing, performance statements — Section 9",
 ]
 
 PACING_GUIDE_VARIATIONS = [
@@ -372,22 +484,22 @@ PACING_GUIDE_VARIATIONS = [
     "Pacing: Power zone discipline practiced in 84 workouts — not improvised",
     "Pacing: FTP zones, RPE guidance, breathing cues all aligned",
     "Pacing: Zone discipline when group surges and ego screams 'go faster'",
-    "Pacing: FTP-tested zones from calibrated to your fitness",
+    "Pacing: FTP-tested zones from Section 3 — calibrated to your fitness",
     "Pacing: Power zone training: FTP-tested, RPE-validated, practiced",
     "Pacing: Zone discipline: Hold zones when others redline",
     "Pacing: FTP zones: Tested, calibrated, trusted in every workout",
-    "Pacing: Power-based training with RPE guidance",
+    "Pacing: Power-based training with RPE guidance — Section 3",
     "Pacing: Zone discipline: Hold your zones when others surge",
     "Pacing: FTP-tested training: Every workout calibrated to your fitness",
     "Pacing: Power zone training: FTP-tested, RPE-validated",
     "Pacing: Zone discipline: Zones, RPE, breathing all tell same story",
-    "Pacing: FTP zones from calibrated, trusted, practiced",
+    "Pacing: FTP zones from Section 3 — calibrated, trusted, practiced",
     "Pacing: Power zone training: FTP-tested, RPE-validated, systematic",
     "Pacing: Zone discipline: Hold zones when group surges",
     "Pacing: FTP-tested zones: Every workout uses your actual fitness",
     "Pacing: Power zone training: FTP-tested, RPE-validated, practiced",
     "Pacing: Zone discipline: Zones, RPE, breathing all aligned",
-    "Pacing: FTP zones: Tested, calibrated, trusted",
+    "Pacing: FTP zones: Tested, calibrated, trusted — Section 3",
 ]
 
 WOMEN_SPECIFIC_GUIDE_VARIATIONS = [

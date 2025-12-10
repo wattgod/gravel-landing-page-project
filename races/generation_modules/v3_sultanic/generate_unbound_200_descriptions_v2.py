@@ -19,6 +19,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 # Import variation pools
 from UNBOUND_200_VARIATION_POOLS_V2 import (
     COMPARISON_HOOKS,
+    COMPARISON_HOOKS_MASTERS,
+    COMPARISON_HOOKS_BEGINNER,
+    COMPARISON_HOOKS_AYAHUASCA,
+    COMPARISON_HOOKS_PODIUM,
     SOLUTION_STATE_LANGUAGE,
     STORY_JUSTIFICATIONS,
     FUNCTIONALLY_FREE_12WK,
@@ -526,10 +530,23 @@ def generate_description(plan_config):
     random.seed(seed)
     
     # 1. Select core variations (always needed)
-    # Use different seed offsets for each selection to ensure uniqueness
+    # Select comparison hook based on plan level/tier
     hook_seed = int(hashlib.md5(f"{plan_id}_hook".encode()).hexdigest(), 16)
     random.seed(hook_seed)
-    comparison_hook = random.choice(COMPARISON_HOOKS)
+    
+    # Choose hook pool based on plan characteristics
+    if plan_config.get('level') == 'masters':
+        hook_pool = COMPARISON_HOOKS_MASTERS
+    elif plan_config.get('level') == 'beginner':
+        hook_pool = COMPARISON_HOOKS_BEGINNER
+    elif plan_config.get('tier') == 'ayahuasca':
+        hook_pool = COMPARISON_HOOKS_AYAHUASCA
+    elif plan_config.get('tier') == 'podium':
+        hook_pool = COMPARISON_HOOKS_PODIUM
+    else:
+        hook_pool = COMPARISON_HOOKS
+    
+    comparison_hook = random.choice(hook_pool)
     
     solution_seed = int(hashlib.md5(f"{plan_id}_solution".encode()).hexdigest(), 16)
     random.seed(solution_seed)
