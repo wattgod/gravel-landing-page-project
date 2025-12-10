@@ -391,16 +391,16 @@ PACING_GUIDE_VARIATIONS = [
 ]
 
 WOMEN_SPECIFIC_GUIDE_VARIATIONS = [
-    "Women: Section 13 — menstrual cycle training, iron, fueling differences",
-    "Women: Section 13 — 'Women aren't small men' — cycle-aware training",
-    "Women: Section 13 — menstrual cycle, iron, heat/hydration differences",
-    "Women: Section 13 — cycle-aware training, iron management, fueling protocols",
-    "Women: Section 13 — menstrual cycle training, iron, recovery differences",
-    "Women: Section 13 — 'Women aren't small men' — cycle, iron, fueling",
-    "Women: Section 13 — menstrual cycle awareness, iron, fueling protocols",
-    "Women: Section 13 — cycle-aware training, iron management, heat differences",
-    "Women: Section 13 — 'Women aren't small men' — comprehensive women's section",
-    "Women: Section 13 — menstrual cycle, iron, fueling, heat/hydration differences",
+    "Women: 'Women aren't small men' — menstrual cycle training, iron, fueling differences",
+    "Women: 'Women aren't small men' — cycle-aware training, iron management",
+    "Women: 'Women aren't small men' — menstrual cycle, iron, heat/hydration differences",
+    "Women: 'Women aren't small men' — cycle-aware training, iron, fueling protocols",
+    "Women: 'Women aren't small men' — menstrual cycle training, iron, recovery differences",
+    "Women: 'Women aren't small men' — cycle, iron, fueling differences",
+    "Women: 'Women aren't small men' — menstrual cycle awareness, iron, fueling protocols",
+    "Women: 'Women aren't small men' — cycle-aware training, iron, heat differences",
+    "Women: 'Women aren't small men' — comprehensive women-specific considerations",
+    "Women: 'Women aren't small men' — menstrual cycle, iron, fueling, heat/hydration",
 ]
 
 # ==============================================================================
