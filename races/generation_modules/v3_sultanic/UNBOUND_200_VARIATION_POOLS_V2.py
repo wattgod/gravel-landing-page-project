@@ -1,0 +1,673 @@
+"""
+UNBOUND 200 VARIATION POOLS V2 - REALITY GROUNDED
+All variations claim systems/frameworks actually delivered, not guaranteed outcomes
+Based on CLAIMS_REFERENCE.md validation
+"""
+
+# ==============================================================================
+# CORE VARIATIONS (20 variations each)
+# ==============================================================================
+
+COMPARISON_HOOKS = [
+    "Two versions of Unbound 200: chaos at mile 100 — or executing a plan you've run 50 times",
+    "Racing on vibes and ego — or FTP zones and fueling math you trust",
+    "200 miles of guessing — or 12 weeks of systematic preparation",
+    "Winging it at mile 120 — or knowing exactly what to do because you practiced",
+    "Discovering your fueling fails at mile 80 — or having tested it 20 times",
+    "Redlining because everyone else did — or holding your zones because you know them",
+    "Bonking spectacularly at mile 100 — or fueling on schedule because it's automatic",
+    "Surviving Unbound — or executing Unbound because you prepared",
+    "Hoping you're ready — or knowing you're ready because you did the work",
+    "Improvising when heat hits — or following protocols you've practiced",
+    "Panicking when dropped — or using mental tools you've trained",
+    "Crashing on descents — or cornering with confidence from practice",
+    "Mechanicals ending your day — or fixing them quickly because you practiced",
+    "Nutrition disaster at mile 60 — or eating on schedule because it's automatic",
+    "Pacing collapse at mile 150 — or holding steady because you know your zones",
+    "Mental breakdown at mile 100 — or using breathing techniques you've mastered",
+    "Equipment failure — or having everything dialed from race week checklist",
+    "Fueling confusion — or following fueling protocols you've practiced",
+    "Heat exhaustion — or managing it with acclimatization from weeks 6-10",
+    "Tactical mistakes — or executing three-act race structure you've practiced",
+]
+
+SOLUTION_STATE_LANGUAGE = [
+    "You had fitness but not fueling. Went too hard because everyone did. By mile 80, nothing sounded good but you needed 200 calories",
+    "You trained hard but never practiced eating while riding. Race day nutrition disaster",
+    "You had power but no pacing discipline. Redlined in first 50 miles, paid for it at mile 120",
+    "You prepared for distance but not heat. 95°F broke you at mile 100",
+    "You had endurance but no technical skills. Crashed on descent, race over",
+    "You trained consistently but never tested race nutrition. Stomach rebelled at mile 60",
+    "You had fitness but no mental tools. Mile 150 broke you mentally",
+    "You prepared solo but never practiced group dynamics. Got dropped, rode alone",
+    "You trained indoors but never practiced cornering. Lost time on every turn",
+    "You had power but no fueling schedule. Bonked at mile 100, crawled to finish",
+    "You prepared for best case but not reality. Heat, wind, mud destroyed your plan",
+    "You trained hard but never practiced eating under load. GI distress at mile 80",
+    "You had endurance but no pacing framework. Went too hard early, paid later",
+    "You prepared for distance but not duration. 10+ hours broke you mentally",
+    "You trained consistently but never tested equipment. Mechanical at mile 120",
+    "You had fitness but no heat adaptation. 95°F conditions destroyed performance",
+    "You prepared for race but not race conditions. Heat, humidity, wind broke you",
+    "You trained hard but never practiced fueling progression. Couldn't handle 80g carbs/hour",
+    "You had power but no technical confidence. Descended tentatively, lost time",
+    "You prepared solo but never practiced mental techniques. Mile 100 mental breakdown",
+]
+
+STORY_JUSTIFICATIONS = [
+    "Training for 200 miles without a plan is like an exam without studying. Wing it. Or know you're ready",
+    "200 miles doesn't care about your intentions. It cares about your preparation",
+    "Unbound rewards preparation, punishes improvisation. You choose which one",
+    "Race day isn't the time to discover your fueling fails. That's what training is for",
+    "200 miles of guessing vs 12 weeks of systematic preparation. Pick one",
+    "Heat doesn't negotiate. You adapt or you suffer. Weeks 6-10 decide",
+    "Technical skills don't appear on race day. They're built in training",
+    "Mental tools don't work if you haven't practiced them. Mental training teaches them",
+    "Pacing discipline isn't learned at mile 100. It's built in 84 workouts",
+    "Fueling automaticity isn't discovered on race day. It's practiced every long ride",
+]
+
+FUNCTIONALLY_FREE_12WK = [
+    "12 weeks. $150 entry. $500 travel. You're spending that with or without a plan. Ready or guessing?",
+    "12 weeks of training. $650+ in costs. Plan costs less than one tire. Worth it?",
+    "$150 entry. $500 travel. 12 weeks of your time. Plan or wing it?",
+    "You're investing 12 weeks and $650+ either way. Plan or hope?",
+]
+
+FUNCTIONALLY_FREE_6WK = [
+    "6 weeks. $150 entry. $500 travel. You're spending that with or without a plan. Ready or guessing?",
+    "6 weeks of training. $650+ in costs. Plan costs less than one tire. Worth it?",
+    "$150 entry. $500 travel. 6 weeks of your time. Plan or wing it?",
+    "You're investing 6 weeks and $650+ either way. Plan or hope?",
+]
+
+# ==============================================================================
+# CHOICE FEATURES - AGENCY POOLS (20 variations each)
+# Based on what plans actually deliver
+# ==============================================================================
+
+LONG_RIDE_AGENCY = [
+    "Progressive long rides building endurance for ultra-distance demands — not guesswork",
+    "Dress rehearsal testing nutrition, pacing, mental prep under race conditions",
+    "Long rides building to 3-4 hours — prepares for 200 miles",
+    "Race simulation rides: Practice fueling, pacing, and mental strategies",
+    "Ultra-distance endurance built through progressive long rides — not hope",
+    "Long ride protocols testing everything you'll need on race day",
+    "Endurance certainty when hour 4 hits and others crack",
+    "Long ride practice: Fueling, pacing, mental prep all tested",
+    "Progressive volume building to race distance — systematic, not improvised",
+    "Long ride discipline: Hold zones when tired, fuel on schedule, stay mentally sharp",
+    "Endurance built through consistent long rides — not last-minute cramming",
+    "Race simulation rides testing nutrition, equipment, and mental preparation",
+    "Long ride protocols — fueling, hydration, pacing all practiced",
+    "Ultra-distance preparation through progressive volume — not winging it",
+    "Long ride certainty: You've done this before, you know what to do",
+    "Endurance training building to race distance — systematic progression",
+    "Long ride practice: Everything tested before race day",
+    "Progressive long rides: Build endurance, test fueling, practice pacing",
+    "Ultra-distance preparation: Long rides testing all race-day systems",
+    "Long ride protocols: Fueling, pacing, mental prep all dialed",
+]
+
+FUELING_AGENCY = [
+    "Fueling protocols practiced in long rides — 60-80g carbs per hour on schedule",
+    "Gut training progression from 40g to 80g carbs per hour over 12 weeks",
+    "Nutrition automaticity built from eating every 20 minutes in training",
+    "Carb intake protocols tested under load, trusted on race day",
+    "Fueling schedules: Every 20 minutes automatic nutrition (timer-based)",
+    "Race nutrition practice: Every long ride tests fueling strategy",
+    "Gut training protocols — build tolerance, test products",
+    "Fueling discipline: Eat on schedule, not when hungry",
+    "Nutrition protocols practiced in training — automatic on race day",
+    "Gut training building from 40g to 80g carbs/hour — systematic progression",
+    "Fueling automaticity: Timer-based nutrition, not hunger-based",
+    "Race nutrition tested in long rides — trusted on race day",
+    "Gut training protocols: Build tolerance, test products, practice timing",
+    "Fueling schedules — every 20 minutes, automatic",
+    "Nutrition practice: Test products, timing, combinations in training",
+    "Gut training progression: 40g→60g→80g carbs/hour over 12 weeks",
+    "Fueling protocols: 60-80g carbs/hour practiced in every long ride",
+    "Race nutrition automaticity: Built through consistent practice",
+    "Gut training — build tolerance, test under load",
+    "Fueling discipline: Timer-based, not hunger-based",
+]
+
+PACING_AGENCY = [
+    "FTP-tested training zones — every workout calibrated to your fitness",
+    "Power zone discipline practiced in 84 workouts — not improvised",
+    "Pacing framework from FTP testing and zone-based training",
+    "Zone discipline when group surges and ego screams 'go faster'",
+    "Power-based training with RPE guidance — conversational pace cues",
+    "FTP zones matched to your fitness — every workout calibrated",
+    "Pacing certainty from zone-based training — not guessing",
+    "Power zone discipline: Hold zones when others surge",
+    "FTP-tested zones: Every workout uses your actual fitness",
+    "Pacing framework: Zones, RPE, breathing cues all aligned",
+    "Power zone training: FTP-tested, RPE-validated, practiced",
+    "Pacing discipline: Zones when group surges, ego screams",
+    "FTP zones: Tested, calibrated, trusted in every workout",
+    "Pacing certainty: Zones, RPE, breathing all tell same story",
+    "Power-based training: FTP zones, RPE guidance, practiced discipline",
+    "Zone discipline: Hold your zones when others redline",
+    "FTP-tested training: Every workout calibrated to your fitness",
+    "Pacing framework: Zones, RPE, breathing cues all aligned",
+    "Power zone training: FTP-tested, RPE-validated, systematically practiced",
+    "Pacing certainty: Zones, RPE, breathing all aligned — no guessing",
+]
+
+TECHNICAL_AGENCY = [
+    "Technical skills — cornering, descending, eating while riding",
+    "Bike handling practice for Flint Hills descents and tight corners",
+    "Technical protocols for emergency repairs — practiced, not improvised",
+    "Cornering confidence built through deliberate practice — not hope",
+    "Technical skills: Cornering, descending, eating while riding, group dynamics",
+    "Bike handling protocols — practiced, not improvised",
+    "Technical confidence: Cornering, descending, eating all automatic",
+    "Skills practice: Cornering, descending, eating while riding built into training",
+    "Technical protocols: Emergency repairs, cornering, descending all practiced",
+    "Bike handling skills — cornering, descending, eating",
+    "Technical confidence: Skills practiced in training, automatic on race day",
+    "Cornering, descending, eating protocols — all practiced, not improvised",
+    "Technical skills built into training rides — not just explained",
+    "Bike handling practice: Cornering, descending, eating all dialed",
+    "Technical protocols — practiced, trusted, automatic",
+    "Skills confidence: Cornering, descending, eating all automatic",
+    "Technical practice: Cornering, descending, eating built into every ride",
+    "Bike handling skills: Cornering, descending, eating all practiced",
+    "Technical protocols: Emergency repairs, cornering, descending all dialed",
+    "Skills automaticity: Cornering, descending, eating all practiced",
+]
+
+MENTAL_AGENCY = [
+    "6-2-7 breathing technique for when brain says 'stop' at mile 100",
+    "Mental protocols — reframing, breathing, suffering management",
+    "6-2-7 breathing: 6 seconds in, 2 hold, 7 out — practiced under load",
+    "Reframing techniques turning 'I can't' into 'this is temporary'",
+    "Mental training: Breathing techniques, reframing, performance statements",
+    "6-2-7 breathing when panic sets in — practiced, automatic, trusted",
+    "Mental tools  — breathing, reframing, suffering management",
+    "Mental protocols: 6-2-7 breathing, reframing, performance statements",
+    "Mental training building tools for mile 100 when brain says 'stop'",
+    "6-2-7 breathing practiced under load — automatic when needed",
+    "Mental tools: Breathing, reframing, suffering management all practiced",
+    "Mental protocols: 6-2-7 breathing, reframing, performance statements",
+    "Mental training: Tools practiced in training, automatic on race day",
+    "6-2-7 breathing: Practiced under load, trusted when needed",
+    "Mental tools  — breathing, reframing, suffering management",
+    "Mental protocols: Breathing, reframing, performance statements all practiced",
+    "Mental training building automaticity: Tools practiced, trusted",
+    "6-2-7 breathing: Practiced in training, automatic on race day",
+    "Mental tools: Breathing, reframing, suffering management all dialed",
+    "Mental protocols: 6-2-7 breathing, reframing, performance statements",
+]
+
+HEAT_AGENCY = [
+    "Heat acclimatization weeks 6-10 — 5-8% performance gain in 95° conditions",
+    "Thermal adaptation protocols: indoor trainer overdressed, no fans, 10-14 days",
+    "Post-exercise hot water immersion (40°C, 30-40 min) or sauna protocols",
+    "Heat protocols  — progressive adaptation weeks 6-10",
+    "Heat acclimatization: Indoor trainer, hot water immersion, or sauna options",
+    "Thermal adaptation weeks 6-10 — 5-8% performance improvement",
+    "Heat protocols: Progressive adaptation ",
+    "Heat acclimatization: 10-14 day protocols from weeks 6-10",
+    "Thermal adaptation: Indoor trainer, hot water, sauna — all options",
+    "Heat protocols: Progressive adaptation weeks 6-10, 5-8% gain",
+    "Heat acclimatization  — weeks 6-10, 5-8% improvement",
+    "Thermal adaptation: Indoor trainer, hot water immersion, sauna",
+    "Heat protocols: Progressive adaptation, 5-8% performance gain",
+    "Heat acclimatization weeks 6-10: Indoor trainer, hot water, sauna",
+    "Thermal adaptation: Protocols , weeks 6-10",
+    "Heat protocols: Progressive adaptation, 5-8% gain in hot conditions",
+    "Heat acclimatization: Indoor trainer, hot water, sauna — all options",
+    "Thermal adaptation weeks 6-10: 5-8% performance improvement",
+    "Heat protocols : Progressive adaptation, 5-8% gain",
+    "Heat acclimatization: Weeks 6-10, 5-8% improvement, multiple options",
+]
+
+RACE_TACTICS_AGENCY = [
+    "Three-act race structure  — survive, execute, finish",
+    "Race tactics: Three-act structure — what to do when everyone's redlining",
+    "Tactical framework  — mile-specific strategies",
+    "Race tactics: When to push, when to sit, when to survive",
+    "Three-act structure: Phase 1 (miles 0-50), Phase 2 (50-150), Phase 3 (150-finish)",
+    "Race tactics  — tactical decision trees, mental landmarks",
+    "Tactical framework: Three-act structure, mile-specific strategies",
+    "Race tactics: Tactical decision trees ",
+    "Three-act structure: Survive early, execute middle, finish strong",
+    "Race tactics: Mile-specific strategies ",
+    "Tactical framework: Three-act structure, mental landmarks",
+    "Race tactics: Decision trees, mile markers, mental landmarks",
+    "Three-act structure: Tactical framework ",
+    "Race tactics: When to push, when to sit, when to survive — all mapped",
+    "Tactical framework: Three-act structure, mile-specific strategies",
+    "Race tactics: Decision trees, mental landmarks, mile markers",
+    "Three-act structure: Survive, execute, finish — all mapped",
+    "Race tactics: Tactical framework ",
+    "Tactical decision trees: Three-act structure, mile-specific strategies",
+    "Race tactics: Three-act structure, mental landmarks, decision trees",
+]
+
+MASTERS_AGENCY = [
+    "Recovery protocols for 50+ athletes — longer recovery windows, HRV monitoring",
+    "Age-appropriate training load — moderate volume that respects recovery needs",
+    "HRV-based autoregulation — adjust training based on recovery status",
+    "Recovery-first approach — longer rest between hard sessions for 50+ athletes",
+    "Training adapted for slower recovery — acknowledges age-related recovery changes",
+    "Moderate volume with emphasis on recovery — built for 50+ athletes",
+    "HRV monitoring for autoregulation — adjust intensity based on recovery",
+    "Recovery protocols acknowledging longer adaptation windows — 50+ specific",
+    "Training load matched to recovery capacity — age-appropriate volume",
+    "Autoregulation through HRV — adjust training when recovery is incomplete",
+    "Recovery emphasis for 50+ athletes — longer rest, careful load management",
+    "Moderate volume respecting recovery needs — built for older athletes",
+    "HRV-guided training adjustments — autoregulation for 50+ athletes",
+    "Recovery-first training philosophy — acknowledges age-related changes",
+    "Training adapted for 50+ recovery timelines — moderate volume, longer rest",
+    "HRV monitoring for load management — adjust training based on recovery status",
+    "Age-appropriate training protocols — recovery emphasis for 50+ athletes",
+    "Moderate volume with HRV autoregulation — built for older athletes",
+    "Recovery protocols for slower adaptation — 50+ specific considerations",
+    "Training load matched to recovery capacity — age-appropriate for 50+",
+]
+
+# ==============================================================================
+# GUIDE TOPIC VARIATIONS (20 variations each)
+# Based on actual guide sections
+# ==============================================================================
+
+FUELING_GUIDE_VARIATIONS = [
+    "Fueling: 60-80g carbs per hour protocol — gut training progressions weeks 1-12",
+    "Fueling: Gut training from 40g to 80g carbs/hour — ",
+    "Fueling: Every 20 minutes automatic nutrition — timer-based, not hunger-based",
+    "Fueling: Gut training protocols tested under load, trusted on race day",
+    "Fueling: 60-80g carbs/hour practiced in long rides — Section 8",
+    "Fueling: Gut training progression: 40g→60g→80g over 12 weeks",
+    "Fueling: Nutrition automaticity built from consistent practice",
+    "Fueling: Race nutrition tested in training — ",
+    "Fueling: Gut training building tolerance, testing products",
+    "Fueling: 60-80g carbs/hour on schedule — ",
+    "Fueling: Gut training: Build tolerance, test products, practice timing",
+    "Fueling: Nutrition protocols  — practiced, trusted",
+    "Fueling: Gut training progression: 40g→80g carbs/hour over 12 weeks",
+    "Fueling: Race nutrition automaticity: Timer-based, not hunger-based",
+    "Fueling: Gut training protocols: Test products, timing, combinations",
+    "Fueling: 60-80g carbs/hour practiced in every long ride",
+    "Fueling: Gut training: Build tolerance, test under load",
+    "Fueling: Nutrition automaticity: Built through consistent practice",
+    "Fueling: Race nutrition: Test products, timing, combinations",
+    "Fueling: Gut training protocols  — systematic progression",
+]
+
+TECHNICAL_GUIDE_VARIATIONS = [
+    "Technical Skills: Flint Hills cornering and descending practice",
+    "Technical: Cornering, descending, eating while riding — Section 7",
+    "Technical: Bike handling protocols for Flint Hills descents",
+    "Technical: Cornering, descending, eating, emergency repairs — Section 7",
+    "Technical: Skills practice built into training rides",
+    "Technical: Cornering confidence, descending speed, eating automaticity",
+    "Technical: Bike handling protocols  — practiced",
+    "Technical: Cornering, descending, eating while riding all dialed",
+    "Technical: Skills  — cornering, descending, eating",
+    "Technical: Bike handling: Cornering, descending, eating all practiced",
+    "Technical: Cornering, descending, eating protocols — Section 7",
+    "Technical: Skills practice: Cornering, descending, eating built in",
+    "Technical: Bike handling protocols: Cornering, descending, eating",
+    "Technical: Cornering, descending, eating while riding — all practiced",
+    "Technical: Skills  — cornering, descending, eating",
+    "Technical: Bike handling: Cornering, descending, eating all dialed",
+    "Technical: Cornering, descending, eating protocols — all practiced",
+    "Technical: Skills practice: Cornering, descending, eating automatic",
+    "Technical: Bike handling protocols: Cornering, descending, eating",
+    "Technical: Cornering, descending, eating while riding — Section 7",
+]
+
+RACE_TACTICS_GUIDE_VARIATIONS = [
+    "Race Tactics: Three-act structure — what to do when everyone's redlining",
+    "Tactics: Three-act structure  — survive, execute, finish",
+    "Tactics: Tactical decision trees, mile-specific strategies",
+    "Tactics: Three-act structure, mental landmarks, decision trees",
+    "Tactics: When to push, when to sit, when to survive — Section 10",
+    "Tactics: Three-act structure: Phase 1 (0-50), Phase 2 (50-150), Phase 3 (150-finish)",
+    "Tactics: Tactical framework  — mile-specific strategies",
+    "Tactics: Three-act structure, mental landmarks, tactical decisions",
+    "Tactics: Decision trees, mile markers, mental landmarks — Section 10",
+    "Tactics: Three-act structure: Survive early, execute middle, finish strong",
+    "Tactics: Tactical framework: Three-act structure, mile-specific strategies",
+    "Tactics: Three-act structure  — tactical decision trees",
+    "Tactics: Mile-specific strategies, mental landmarks, decision trees",
+    "Tactics: Three-act structure: Tactical framework ",
+    "Tactics: Decision trees, mental landmarks, mile markers — Section 10",
+    "Tactics: Three-act structure: Survive, execute, finish — all mapped",
+    "Tactics: Tactical framework: Three-act structure, mental landmarks",
+    "Tactics: Three-act structure, decision trees, mile-specific strategies",
+    "Tactics: Tactical decision trees: Three-act structure, mile markers",
+    "Tactics: Three-act structure: Survive, execute, finish — Section 10",
+]
+
+MENTAL_GUIDE_VARIATIONS = [
+    "Mental: 6-2-7 breathing when brain says 'stop' at mile 100",
+    "Mental: 6-2-7 breathing technique — 6 seconds in, 2 hold, 7 out",
+    "Mental: Breathing, reframing, suffering management — Section 9",
+    "Mental: 6-2-7 breathing practiced under load, automatic when needed",
+    "Mental: Reframing techniques turning 'I can't' into 'this is temporary'",
+    "Mental: 6-2-7 breathing, reframing, performance statements — Section 9",
+    "Mental: Breathing techniques, reframing, suffering management",
+    "Mental: 6-2-7 breathing: Practiced in training, automatic on race day",
+    "Mental: Tools  — breathing, reframing, suffering",
+    "Mental: 6-2-7 breathing when panic sets in — practiced, trusted",
+    "Mental: Breathing, reframing, suffering management ",
+    "Mental: 6-2-7 breathing: Practiced under load, trusted when needed",
+    "Mental: Tools: Breathing, reframing, performance statements",
+    "Mental: 6-2-7 breathing, reframing, suffering management — Section 9",
+    "Mental: Breathing techniques: 6-2-7 practiced, automatic",
+    "Mental: 6-2-7 breathing: Practiced in training, automatic on race day",
+    "Mental: Tools  — breathing, reframing, suffering",
+    "Mental: 6-2-7 breathing when brain says 'stop' — practiced, trusted",
+    "Mental: Breathing, reframing, suffering management all dialed",
+    "Mental: 6-2-7 breathing, reframing, performance statements — Section 9",
+]
+
+PACING_GUIDE_VARIATIONS = [
+    "Pacing: FTP-tested training zones — every workout calibrated to your fitness",
+    "Pacing: Power zone discipline practiced in 84 workouts — not improvised",
+    "Pacing: FTP zones, RPE guidance, breathing cues all aligned",
+    "Pacing: Zone discipline when group surges and ego screams 'go faster'",
+    "Pacing: FTP-tested zones  — calibrated to your fitness",
+    "Pacing: Power zone training: FTP-tested, RPE-validated, practiced",
+    "Pacing: Zone discipline: Hold zones when others redline",
+    "Pacing: FTP zones: Tested, calibrated, trusted in every workout",
+    "Pacing: Power-based training with RPE guidance ",
+    "Pacing: Zone discipline: Hold your zones when others surge",
+    "Pacing: FTP-tested training: Every workout calibrated to your fitness",
+    "Pacing: Power zone training: FTP-tested, RPE-validated",
+    "Pacing: Zone discipline: Zones, RPE, breathing all tell same story",
+    "Pacing: FTP zones  — calibrated, trusted, practiced",
+    "Pacing: Power zone training: FTP-tested, RPE-validated, systematic",
+    "Pacing: Zone discipline: Hold zones when group surges",
+    "Pacing: FTP-tested zones: Every workout uses your actual fitness",
+    "Pacing: Power zone training: FTP-tested, RPE-validated, practiced",
+    "Pacing: Zone discipline: Zones, RPE, breathing all aligned",
+    "Pacing: FTP zones: Tested, calibrated, trusted ",
+]
+
+WOMEN_SPECIFIC_GUIDE_VARIATIONS = [
+    "Women: menstrual cycle training, iron, fueling differences",
+    "Women: 'Women aren't small men' — cycle-aware training",
+    "Women: menstrual cycle, iron, heat/hydration differences",
+    "Women: cycle-aware training, iron management, fueling protocols",
+    "Women: menstrual cycle training, iron, recovery differences",
+    "Women: 'Women aren't small men' — cycle, iron, fueling",
+    "Women: menstrual cycle awareness, iron, fueling protocols",
+    "Women: cycle-aware training, iron management, heat differences",
+    "Women: 'Women aren't small men' — comprehensive women's section",
+    "Women: menstrual cycle, iron, fueling, heat/hydration differences",
+]
+
+# ==============================================================================
+# RACE-SPECIFIC FEATURES (20 variations each)
+# ==============================================================================
+
+RACE_SPECIFIC_LONG_RIDES = [
+    "7-hour dress rehearsal week 9 — tests nutrition, pacing, mental prep",
+    "Dress rehearsal testing everything you'll need on race day",
+    "Race simulation rides: Practice fueling, pacing, mental strategies",
+    "Long rides building to 3-4 hours — prepares for 200 miles",
+    "Dress rehearsal: Test nutrition, pacing, mental prep under race conditions",
+    "Race simulation: Long rides testing all race-day systems",
+    "Dress rehearsal week 9: Test everything before race day",
+    "Long rides: Progressive volume building to race distance",
+    "Dress rehearsal: Nutrition, pacing, mental prep all tested",
+    "Race simulation: Long rides testing fueling, equipment, mental prep",
+    "Dress rehearsal week 9: Test nutrition, pacing, mental strategies",
+    "Long rides: Build endurance, test fueling, practice pacing",
+    "Dress rehearsal: Everything tested before race day",
+    "Race simulation: Long rides testing all systems",
+    "Dress rehearsal week 9: Test nutrition, pacing, mental prep",
+    "Long rides: Progressive volume, test fueling, practice pacing",
+    "Dress rehearsal: Test everything you'll need on race day",
+    "Race simulation: Long rides testing fueling, pacing, mental",
+    "Dress rehearsal week 9: Test nutrition, pacing, mental strategies",
+    "Long rides: Build endurance, test systems, practice protocols",
+]
+
+RACE_SPECIFIC_TECHNICAL = [
+    "Flint Hills technical skills — cornering, descending, eating while riding",
+    "Technical skills: Flint Hills cornering and descending practice",
+    "Bike handling for Flint Hills descents and tight corners",
+    "Technical protocols: Cornering, descending, eating while riding",
+    "Flint Hills skills: Cornering, descending, eating all practiced",
+    "Technical: Cornering, descending, eating protocols for Flint Hills",
+    "Bike handling: Flint Hills cornering, descending, eating",
+    "Technical skills: Cornering, descending, eating for Flint Hills",
+    "Flint Hills protocols: Cornering, descending, eating all dialed",
+    "Technical: Cornering, descending, eating while riding — Flint Hills",
+    "Bike handling: Flint Hills cornering, descending, eating practiced",
+    "Technical skills: Cornering, descending, eating for Flint Hills",
+    "Flint Hills: Cornering, descending, eating protocols all practiced",
+    "Technical: Cornering, descending, eating while riding — Flint Hills",
+    "Bike handling: Flint Hills cornering, descending, eating dialed",
+    "Technical skills: Cornering, descending, eating — Flint Hills",
+    "Flint Hills protocols: Cornering, descending, eating all practiced",
+    "Technical: Cornering, descending, eating for Flint Hills",
+    "Bike handling: Flint Hills cornering, descending, eating",
+    "Technical skills: Cornering, descending, eating — Flint Hills",
+]
+
+RACE_SPECIFIC_PACING = [
+    "Power pacing for 200-mile endurance",
+    "FTP-tested zones for 200-mile pacing discipline",
+    "Pacing framework: Zones, RPE, breathing for 200 miles",
+    "Power zone discipline for ultra-distance pacing",
+    "FTP zones: Calibrated for 200-mile endurance",
+    "Pacing certainty: Zones, RPE, breathing for 200 miles",
+    "Power zone training: FTP-tested for 200-mile pacing",
+    "Pacing framework: Zones, RPE, breathing for ultra-distance",
+    "FTP zones: Tested, calibrated for 200-mile endurance",
+    "Pacing discipline: Zones, RPE, breathing for 200 miles",
+    "Power zone training: FTP-tested for ultra-distance pacing",
+    "Pacing certainty: Zones, RPE, breathing for 200 miles",
+    "FTP zones: Calibrated for 200-mile pacing discipline",
+    "Pacing framework: Zones, RPE, breathing for ultra-distance",
+    "Power zone training: FTP-tested for 200-mile endurance",
+    "Pacing discipline: Zones, RPE, breathing for 200 miles",
+    "FTP zones: Tested, calibrated for ultra-distance pacing",
+    "Pacing certainty: Zones, RPE, breathing for 200 miles",
+    "Power zone training: FTP-tested for 200-mile pacing",
+    "Pacing framework: Zones, RPE, breathing for 200 miles",
+]
+
+# ==============================================================================
+# PATTERN MATCHING SETS (20 sets, each with 4 FOR + 1 NOT FOR)
+# ==============================================================================
+
+PATTERN_MATCHING_SETS = [
+    {
+        'for': [
+            "You have 8-12 hrs/week and want to use them right",
+            "You'd rather know truth now than discover it at mile 120",
+            "You want a plan, not a life coach",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time but need structure to use it effectively",
+            "You want preparation, not hope",
+            "You'd rather test limits in training than discover them at mile 100",
+            "You value systematic preparation over winging it",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want maximum return",
+            "You want to finish strong, not just finish",
+            "You'd rather know your limits now than discover them at mile 120",
+            "You value preparation over improvisation",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time and want to use it systematically",
+            "You want a plan, not inspiration",
+            "You'd rather test fueling in training than discover it fails at mile 60",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want structure",
+            "You want preparation, not hope",
+            "You'd rather know your pacing now than discover it at mile 100",
+            "You value systematic training over guessing",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    # Add 15 more sets with similar structure...
+    # (Keeping first 5 for brevity, full file would have 20)
+]
+
+# Pad PATTERN_MATCHING_SETS to 20 with variations
+additional_patterns = [
+    {
+        'for': [
+            "You have time constraints but want maximum return",
+            "You want structure, not inspiration",
+            "You'd rather test limits in training than at mile 100",
+            "You value preparation over hope",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want systematic training",
+            "You want to finish strong, not just finish",
+            "You'd rather know your fueling works now than at mile 60",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time and want to use it effectively",
+            "You want a plan, not a life coach",
+            "You'd rather test pacing in training than discover it at mile 100",
+            "You value systematic preparation over winging it",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want structure",
+            "You want preparation, not hope",
+            "You'd rather know truth now than discover it at mile 120",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time but need structure",
+            "You want to finish strong, not just finish",
+            "You'd rather test everything in training than on race day",
+            "You value preparation over improvisation",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want maximum return",
+            "You want a plan, not inspiration",
+            "You'd rather know your limits now than discover them at mile 100",
+            "You value systematic training over guessing",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time constraints but want structure",
+            "You want preparation, not hope",
+            "You'd rather test fueling in training than discover it fails",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want systematic training",
+            "You want to finish strong, not just finish",
+            "You'd rather know your pacing works now than at mile 100",
+            "You value preparation over winging it",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time and want to use it right",
+            "You want a plan, not a life coach",
+            "You'd rather test limits in training than at mile 120",
+            "You value systematic preparation over hope",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want structure",
+            "You want preparation, not inspiration",
+            "You'd rather know truth now than discover it at mile 100",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time constraints but want maximum return",
+            "You want to finish strong, not just finish",
+            "You'd rather test everything in training than on race day",
+            "You value preparation over improvisation",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want systematic training",
+            "You want a plan, not hope",
+            "You'd rather know your fueling works now than at mile 60",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time and want to use it effectively",
+            "You want preparation, not inspiration",
+            "You'd rather test pacing in training than discover it at mile 100",
+            "You value systematic preparation over winging it",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have 8-12 hrs/week and want structure",
+            "You want to finish strong, not just finish",
+            "You'd rather know truth now than discover it at mile 120",
+            "You value reality over comfort",
+        ],
+        'not_for': "Riders who want motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+    {
+        'for': [
+            "You have time constraints but want maximum return",
+            "You want a plan, not a life coach",
+            "You'd rather test limits in training than at mile 100",
+            "You value preparation over hope",
+        ],
+        'not_for': "Riders needing motivation. For 0-5 hrs/week, see Ayahuasca",
+    },
+]
+
+PATTERN_MATCHING_SETS.extend(additional_patterns)
+
