@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Wed - Final Openers</name>
+  <description>• STRUCTURE: 15 min easy → 3x5 min @ 95-100% FTP (3 min easy) → 3x2 min @ 110% FTP (2 min easy) → 4x30sec @ 115% FTP (90sec easy) → 10 min easy • Final sharpness check. Should feel powerful, snappy, explosive. If legs feel dead, add another rest day. This is your sharpness check—power should come easily. • CADENCE WORK: High cadence on all efforts (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="300" OnPower="0.98" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="120" OnPower="1.10" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="30" OnPower="1.15" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

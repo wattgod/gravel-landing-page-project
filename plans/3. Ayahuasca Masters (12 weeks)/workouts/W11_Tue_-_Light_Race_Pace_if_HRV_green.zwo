@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Tue - Light Race Pace (if HRV green)</name>
+  <description>• STRUCTURE: 15 min easy → 3x6 min @ 85-90% FTP (3 min easy between) → 10 min easy • Readiness Check: Green? Do workout. Yellow? 3x4 min @ 85%. Red? Skip, ride 30 min easy. Reduced volume, maintained intensity. Should feel controlled and strong. • CADENCE WORK: High cadence on all efforts (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="900" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="360" OnPower="0.875" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

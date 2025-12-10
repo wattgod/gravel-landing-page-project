@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Tue - Threshold + G-Spot (if HRV green)</name>
+  <description>• STRUCTURE: 15 min warmup → 2x10 min @ 90-95% FTP (5 min easy between) → 10 min easy → 1x10 min @ 85-90% FTP → 10 min cooldown • Readiness Check: Green? Full workout. Yellow? Skip G-Spot, do 2x8 min threshold only. Red? 30 min easy ride. Biggest quality session yet. Threshold first while fresh, G-Spot when fatigued. This is race-specific work for Masters. • RHYTHM INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 4, continuous. This simulates race variability. • CADENCE WORK: Mix cadences or use rhythm pattern.
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION (Weeks 6-10):
+Complete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:
+
+POST-EXERCISE OPTION:
+• 30-40 min hot bath at 40°C (104°F) OR
+• 25-30 min sauna at 80-100°C
+
+EFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.
+
+NOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="600" OnPower="0.93" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="600" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="1" OnDuration="600" OnPower="0.875" Cadence="100" OffDuration="0" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

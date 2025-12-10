@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• Week 2 increases intensity duration slightly. You're building as much threshold power as possible with the time you have. G-Spot is king in emergency mode—87-92% FTP builds power without excessive fatigue. Every minute on the bike needs to count. No junk miles. • WEEK PREVIEW: Building G-Spot foundation. Tuesday has extended G-Spot intervals (3x12 min). Thursday introduces threshold work (2x10 min). Saturday is biggest session of week (90-105 min with mixed intensity). This week builds threshold power efficiently. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

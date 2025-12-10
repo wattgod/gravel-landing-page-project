@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Fri - Pre-Race Shake-Out (if racing Sunday)</name>
+  <description>• STRUCTURE: 10 min easy → 2x2 min @ race pace (2 min easy between) → 2x30sec @ 95% FTP (90sec easy between) → 5 min easy • Notes: Final ride before race. Legs should feel fresh and powerful. Check bike one last time. Visualize race execution—conservative start, steady middle, whatever's left at the end. You trained for this. • CADENCE WORK: High cadence on all efforts (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.70"/>
+    <SteadyState Duration="600" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="2" OnDuration="120" OnPower="0.875" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="30" OnPower="0.95" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="300" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

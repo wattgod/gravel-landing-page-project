@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Sat - Moderate Ride with Openers</name>
+  <description>• STRUCTURE: 30 min easy → 2x8 min @ 85-90% FTP (4 min easy between) → Final 20-30 min easy • Readiness Check: Shorter ride but maintains race-intensity touch. Should feel strong and fresh. Final "reminder" workout before race week. Check bike, confirm tire pressure choice. • CADENCE WORK: Mix cadences on threshold blocks.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="2" OnDuration="480" OnPower="0.875" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <SteadyState Duration="1500" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

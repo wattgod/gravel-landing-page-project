@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Tue - Quick FTP Test</name>
+  <description>• STRUCTURE: 15 min warmup → 20 min sustained effort (hard but not all-out) → 10 min cooldown • No time for fancy testing. 20-minute sustained effort at "this really hurts but I can hold it." Average power × 0.95 = FTP. This is your training anchor. Write it down. If you can't complete 20 minutes, go as long as possible and use that. We work with what we have. • CADENCE: Self-selected for test effort.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="1200" Power="1.05"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

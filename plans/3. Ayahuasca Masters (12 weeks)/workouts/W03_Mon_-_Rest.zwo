@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• Week 3 is your biggest so far. By Saturday you might feel accumulated fatigue—that's normal IF you're recovering well (sleeping 7-8+ hours, eating enough protein, managing stress). If you're feeling crushed by Wednesday, you're pushing too hard. Back off immediately. Masters athletes must be vigilant against overtraining. It sneaks up fast at 50+. • WEEK PREVIEW: Progressive loading week. Tuesday introduces threshold intervals (if HRV green). Thursday is easy endurance (if recovered). Saturday is longer endurance with tempo touches (if feeling strong). This week increases volume/intensity based on individual response. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

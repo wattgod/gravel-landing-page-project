@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Thu - Easy Endurance</name>
+  <description>• STRUCTURE: 45-60 min @ Z2 (65-75% FTP) • Pure easy riding. Recovery focus. • CADENCE WORK: Comfortable cadence.
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION PROTOCOL (Weeks 6-10):
+This endurance ride is ideal for heat training. Choose ONE option:
+
+OPTION 1 - INDOOR TRAINER (Cool Climate):
+• Turn OFF all fans
+• Close windows/doors
+• Wear: thermal base + rain jacket + leg warmers + gloves + beanie
+• Target core temp: 38.5-39.0°C for 45-60 min
+• If temp &gt;39.5°C: reduce power 10% or stop
+
+OPTION 2 - POST-EXERCISE HOT WATER IMMERSION:
+• Complete ride in normal conditions
+• Immediately after: 30-40 min hot bath at 40°C (104°F)
+• Submerged to shoulders, head exposed
+• Relief breaks: sit up 2 min every 10 min if needed
+
+OPTION 3 - SAUNA (Maintenance):
+• Complete ride in normal conditions
+• Post-ride: 25-30 min sauna at 80-100°C
+• 3-4 sessions per week for adaptation
+
+EFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.
+
+SAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• POSITION ALTERNATION:
+While racing you get as aero as possible (drops), but in training people often try to produce maximum power (hoods, out of saddle). These aren't the same thing. Alternate position every 30 minutes: 30 min in the drops (aero, race position) → 30 min in the hoods (power production, comfort). This builds both aero efficiency and power production. For 65-minute rides, aim for 1 position change.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="2700" Power="0.70" Cadence="90"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

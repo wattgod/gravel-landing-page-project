@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Sun - Long Easy Simulation</name>
+  <description>• STRUCTURE: Z2 with 3x20 min @ 90-95% FTP scattered through hours 2-4 (8 min easy between) • Final race rehearsal. Eat 80-90g carbs/hour. • CADENCE WORK: Mix cadences on efforts.
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION (Weeks 6-10):
+Complete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:
+
+POST-EXERCISE OPTION:
+• 30-40 min hot bath at 40°C (104°F) OR
+• 25-30 min sauna at 80-100°C
+
+EFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.
+
+NOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.
+
+• POSITION ALTERNATION:
+While racing you get as aero as possible (drops), but in training people often try to produce maximum power (hoods, out of saddle). These aren't the same thing. Alternate position every 30 minutes: 30 min in the drops (aero, race position) → 30 min in the hoods (power production, comfort). This builds both aero efficiency and power production. For 248-minute rides, aim for 4 position changes.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="6000" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="1200" OnPower="0.93" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <SteadyState Duration="6000" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

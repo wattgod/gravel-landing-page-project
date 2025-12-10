@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Fri - Pre-Race Shake-Out (if racing Sunday)</name>
+  <description>• STRUCTURE: 15 min easy → 2x3 min @ race pace (2 min easy between) → 2x90sec @ 105% FTP (2 min easy between) → 2x30sec @ 110% FTP (90sec easy between) → 10 min easy • Final ride before race. Legs should feel fresh and powerful. Check bike one last time. Visualize race execution—conservative start, steady middle, finish strong. • CADENCE WORK: High cadence on all efforts (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION (Weeks 6-10):
+Complete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:
+
+POST-EXERCISE OPTION:
+• 30-40 min hot bath at 40°C (104°F) OR
+• 25-30 min sauna at 80-100°C
+
+EFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.
+
+NOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="2" OnDuration="180" OnPower="0.98" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="90" OnPower="1.05" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="30" OnPower="1.10" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Wed - Final Openers</name>
+  <description>• STRUCTURE: 15 min easy → 3x4 min @ 95-100% FTP (3 min easy between) → 5 min easy → 3x90sec @ 105-110% FTP (2 min easy between) → 3x30sec @ 115% FTP (90sec easy between) → 10 min easy • Final sharpness check. Should feel powerful and snappy. If legs feel dead, skip the 30-second efforts and just do 4-min + 90-sec efforts. • CADENCE WORK: High cadence on all efforts (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION (Weeks 6-10):
+Complete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:
+
+POST-EXERCISE OPTION:
+• 30-40 min hot bath at 40°C (104°F) OR
+• 25-30 min sauna at 80-100°C
+
+EFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.
+
+NOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="240" OnPower="0.98" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <SteadyState Duration="300" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="90" OnPower="1.08" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="30" OnPower="1.15" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

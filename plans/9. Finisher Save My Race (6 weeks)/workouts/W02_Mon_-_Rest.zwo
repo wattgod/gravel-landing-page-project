@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• Weeks 2-4 are your concentrated sharpening block. THREE weeks of focused G-Spot and Threshold work. This is where race fitness comes from in compressed timeline. You'll do 2-3 quality sessions per week. By end of Week 4 you should feel threshold-specific fatigue (race pace feels harder). That's adaptation. Week 5 recovery allows conversion to performance. • WEEK PREVIEW: Balanced track selected (moderate Week 1 performance). Tuesday has G-Spot intervals (3x15 min). Thursday has threshold intervals (2x15 min). Saturday has long G-Spot ride (3x18 min). This is balanced loading—moderate volume, sustainable progression. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

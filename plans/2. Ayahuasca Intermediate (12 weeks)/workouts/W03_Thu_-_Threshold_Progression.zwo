@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Thu - Threshold Progression</name>
+  <description>• STRUCTURE: 15 min warmup → 3x10 min @ 95-100% FTP (5 min easy between) → 10 min cooldown • Extended threshold intervals. 10 minutes at threshold is challenging—this is race-pace work. Find your rhythm early, don't start too hard. Should finish thinking "that was hard but I did it." • CADENCE WORK: High cadence (95-100 rpm) on all intervals.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="0.98" Cadence="95" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

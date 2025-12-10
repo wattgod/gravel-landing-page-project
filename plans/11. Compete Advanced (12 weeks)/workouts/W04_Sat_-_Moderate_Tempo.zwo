@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Sat - Moderate Tempo</name>
+  <description>• STRUCTURE: 30 min easy → 4x10 min @ 80-85% FTP (4 min easy between) → 45 min easy • Light tempo maintains fitness without adding fatigue. Should feel easy. • CADENCE WORK: Self-selected cadence.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&gt;90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.68" Cadence="85"/>
+    <IntervalsT Repeat="4" OnDuration="600" OnPower="0.825" Cadence="90" OffDuration="240" OffPower="0.55"/>
+    <SteadyState Duration="2700" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

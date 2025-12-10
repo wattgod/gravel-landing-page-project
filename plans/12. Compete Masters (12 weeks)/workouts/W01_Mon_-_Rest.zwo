@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• Welcome to Compete Masters. You're 40+ with 12-18 hours per week and want to race competitively. This plan uses HRV-Guided Polarized training—80% easy, 20% hard, with recovery driving the schedule. Masters athletes adapt differently: we need more recovery between hard sessions, but we can still build exceptional race fitness. • WEEK PREVIEW: Tuesday has FTP + assessment testing. Wednesday is easy. Thursday has polarized intensity introduction. Saturday is long aerobic base. • HRV GUIDANCE: If using HRV, check morning reading before intensity days. Green = proceed. Yellow = reduce intensity 10%. Red = swap for easy day. No HRV? Use perceived fatigue—if legs feel heavy and motivation is low, that's your body saying rest. • REST DAY NOTE: Complete rest recommended for Masters. Light movement (walk, yoga) is fine.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

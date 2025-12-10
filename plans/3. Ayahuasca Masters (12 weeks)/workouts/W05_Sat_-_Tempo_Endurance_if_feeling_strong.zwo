@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Sat - Tempo Endurance (if feeling strong)</name>
+  <description>• STRUCTURE: 20 min easy → 3x12 min @ 75-80% FTP (4 min easy between) → 15 min easy • Readiness Check: Green? Full workout. Yellow? 3x8 min tempo. Red? 45 min easy, no tempo. Tempo is "comfortably hard." This builds your aerobic ceiling. Stay relaxed, controlled breathing. • CADENCE WORK: Mix cadences on tempo blocks.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1200" Power="0.68" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="720" OnPower="0.78" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

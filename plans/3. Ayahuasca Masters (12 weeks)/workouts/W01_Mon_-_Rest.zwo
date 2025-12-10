@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• Welcome to Masters training. You're 50+, which means recovery matters MORE than the workout. This plan uses autoregulation—training adapts to YOUR daily readiness. If you track HRV (heart rate variability), check it each morning. High/normal HRV = green light for quality. Low HRV = easy day or rest. No HRV tracker? Use perceived recovery: good sleep + feeling fresh = quality okay. Poor sleep + heavy legs = back off. Your body is the best coach. Listen to it. • WEEK PREVIEW: Foundation week. Tuesday has FTP test (if feeling good) or easy ride. Thursday is easy endurance (if recovered). Saturday is longer easy ride (if feeling strong). This week establishes your baseline and HRV monitoring routine. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

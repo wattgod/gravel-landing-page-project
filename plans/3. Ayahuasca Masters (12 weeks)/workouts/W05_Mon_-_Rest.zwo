@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• Build phase begins. Weeks 5-8 progressively increase intensity based on YOUR recovery. This is where autoregulation shines—if HRV is down or you feel tired, we back off. If you're recovered and strong, we push. Masters training is about working WITH your body, not against it. Quality over quantity always. • WEEK PREVIEW: Build phase begins. Tuesday has G-Spot intervals (if HRV green). Thursday is easy endurance (if recovered). Saturday has tempo endurance (if feeling strong). This week returns to quality work with HRV guidance. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>
