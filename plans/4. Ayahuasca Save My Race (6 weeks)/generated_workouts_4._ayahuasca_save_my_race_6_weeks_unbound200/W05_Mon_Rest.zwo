@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Two weeks to race.
+  • Training becomes race-specific now.
+  • You're practicing race pace, race duration (as much as possible), race fueling.
+  • Accept that your longest training ride is 2 hours but race might be 4-8+ hours.
+  • This means pacing and fueling are CRITICAL.
+  • You can't train your way out of this gap—you have to race smart.
+  • Race preparation week.
+  • Tuesday has race pace intervals (3x10 min @ 90-95% FTP).
+  • Thursday has G-Spot + openers (sharpening session).
+  • Saturday is final long race prep (105-120 min).
+  • This week practices race-specific efforts.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

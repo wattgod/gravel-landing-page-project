@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Thu - Easy Endurance or Rest</name>
+  <description>• Optional: 30-45 min Z2
+• REST DAY NOTE:
+  • If race is Sunday, easy spin. If race is Saturday, rest completely.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

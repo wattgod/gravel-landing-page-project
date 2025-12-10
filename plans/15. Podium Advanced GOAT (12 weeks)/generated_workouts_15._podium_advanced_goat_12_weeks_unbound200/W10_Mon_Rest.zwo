@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper week 1.
+  • Volume drops significantly.
+  • Intensity stays sharp.
+  • Two weeks to race.
+  • Tuesday has taper quality.
+  • Wednesday is moderate.
+  • Thursday has easy + openers.
+  • Friday is easy.
+  • Saturday is final tune-up.
+  • Sunday is easy or rest.
+  • ||REST_DAY_NOTE_START|| Complete rest.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

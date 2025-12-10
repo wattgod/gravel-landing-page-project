@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• Two weeks to race.
+  • You've targeted your limiter, recovered, and now we sharpen everything for competitive performance.
+  • Mixed intensity this week—VO2max, threshold, and sustained efforts.
+  • This is race-specific training.
+  • Quality stays high, volume controlled to maintain freshness toward race week.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

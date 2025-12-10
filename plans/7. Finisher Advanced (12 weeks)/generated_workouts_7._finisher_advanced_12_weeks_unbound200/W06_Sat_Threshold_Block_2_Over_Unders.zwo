@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sat - Threshold Block #2 + Over-Unders</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 2x20 min @ 95-100% FTP + 3x8 min (4 min @ 95%, 4 min @ 105%) [7 min easy between all]
+  • 10 min cooldown
+
+• CADENCE:
+  • For over-unders, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 2, continuous. This simulates race variability.  WORK: Mix cadences on threshold blocks. Over-unders use rhythm pattern or mix cadences.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="0.98" Cadence="100" OffDuration="420" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="480" OnPower="0.98" Cadence="100" OffDuration="420" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

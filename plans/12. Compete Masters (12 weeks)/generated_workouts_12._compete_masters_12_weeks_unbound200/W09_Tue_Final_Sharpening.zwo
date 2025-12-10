@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Tue - Final Sharpening</name>
+  <description>• STRUCTURE:
+  • 25 min warmup
+  • 3x5 min @ 105-108% FTP (5 min easy between)
+  • 2x10 min @ 95-100% FTP (5 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • High cadence (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="300" OnPower="1.06" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="600" OnPower="0.98" Cadence="95" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

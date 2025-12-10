@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Wed - HARD Session #1: Long Threshold (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x20 min @ 100-105% FTP (8 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • Green? Full 2x20. Yellow? 2x15 min. Red? 60 min easy. Classic threshold work for Masters. 40 cumulative minutes at race pace. Break 20-min blocks into 5-min segments mentally. Stay smooth, controlled breathing.  WORK: First interval at high cadence (100+ rpm), second at low cadence (40-60 rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="1.02" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

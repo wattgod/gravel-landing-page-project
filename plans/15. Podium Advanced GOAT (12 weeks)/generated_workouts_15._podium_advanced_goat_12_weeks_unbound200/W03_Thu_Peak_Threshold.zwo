@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Thu - Peak Threshold</name>
+  <description>• STRUCTURE:
+  • 25 min warmup
+  • 2x20 min @ 95-100% FTP (10 min easy between)
+  • 3x3 min @ 110% FTP (3 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • Threshold mix, VO2 high.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.78"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="0.98" Cadence="95" OffDuration="600" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="180" OnPower="1.10" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

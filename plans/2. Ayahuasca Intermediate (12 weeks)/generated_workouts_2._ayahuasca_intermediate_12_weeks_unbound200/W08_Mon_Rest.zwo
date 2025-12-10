@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week.
+  • You just completed peak training.
+  • Your body needs this time to absorb the work and get stronger.
+  • By Sunday you should feel fresh, powerful, ready for race sharpening.
+  • If still tired, address recovery factors.
+  • Tuesday has light G-Spot touch.
+  • Thursday is easy only.
+  • Saturday has moderate mixed intensity (70-80 min).
+  • Low stress, high recovery.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

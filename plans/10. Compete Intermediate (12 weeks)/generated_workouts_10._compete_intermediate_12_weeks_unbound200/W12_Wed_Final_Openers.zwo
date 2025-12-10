@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Wed - Final Openers</name>
+  <description>• STRUCTURE:
+  • 15 min easy
+  • 3x5 min @ 95-100% FTP (3 min easy)
+  • 3x2 min @ 110% FTP (2 min easy)
+  • 4x30sec @ 115% FTP (90sec easy)
+  • 10 min easy
+
+• CADENCE:
+  • High cadence on all efforts (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="300" OnPower="0.98" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="120" OnPower="1.10" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="30" OnPower="1.15" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

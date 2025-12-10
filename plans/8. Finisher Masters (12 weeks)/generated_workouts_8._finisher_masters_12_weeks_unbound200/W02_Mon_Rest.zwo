@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 2 builds polarized structure: ONE hard session, EVERYTHING else easy.
+  • This is 80/20—most time spent easy (building aerobic base), small amount hard (building top-end fitness).
+  • HRV determines IF you do hard session.
+  • This dual approach (polarized + autoregulated) is perfect for Masters: easy days stay easy for recovery, hard days can be truly hard because you're recovered.
+  • Polarized structure week.
+  • Wednesday introduces first hard session (VO2max intervals—if HRV green).
+  • Saturday is longest ride yet (2.5-3 hours).
+  • Remember: easy days easy, hard days hard.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week.
+  • Your body adapts during rest, not during work.
+  • By Friday you should feel fresh and strong.
+  • Polarized training makes recovery weeks especially effective—you haven't been grinding in Z3 all month, so fatigue is more specific and easier to recover from.
+  • Recovery week.
+  • Wednesday has light quality touch (just maintaining fitness).
+  • Rest of week is easy endurance.
+  • This is when adaptation happens.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

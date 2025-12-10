@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Biggest base week.
+  • By Saturday you should feel accumulated fatigue—that's the point.
+  • Week 4 we shift to a limiter block based on your testing and how this week feels.
+  • If you're crushing G-Spot but dying on long endurance, we'll target durability.
+  • If endurance feels easy but VO2max crushes you, we'll target that.
+  • GOAT Method adapts to YOUR limiters.
+  • Biggest base week.
+  • Tuesday has classic 2x20 threshold (top of pyramid).
+  • Thursday has VO2max assessment (identifies limiters).
+  • Saturday is longest ride (4.5-5 hours) with G-Spot efforts when tired—durability test.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

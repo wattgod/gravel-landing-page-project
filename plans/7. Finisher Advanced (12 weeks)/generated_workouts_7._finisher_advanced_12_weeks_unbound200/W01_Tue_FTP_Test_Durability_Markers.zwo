@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Tue - FTP Test + Durability Markers</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 5 min all-out
+  • 10 min recovery
+  • 20 min max effort
+  • 10 min easy
+  • 10 min @ 85% of 20-min power (check HR drift)
+  • 10 min cooldown
+
+  • FTP test first—pace it right, sustained 20 minutes.
+  • Then durability check: hold 85% of your 20-min power for 10 minutes and watch HR drift.
+  • If HR rises &gt;5-8 bpm, you have durability limitations.
+  • Write everything down.
+  • FTP = 20-min avg × 0.95.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="300" Power="1.20"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.05"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="600" Power="0.85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

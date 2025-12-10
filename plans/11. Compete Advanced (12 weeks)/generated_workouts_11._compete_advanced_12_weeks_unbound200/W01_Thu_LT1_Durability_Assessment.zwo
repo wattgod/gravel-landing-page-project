@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Thu - LT1 + Durability Assessment</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 30 min @ 70-75% FTP (monitor HR—LT1 zone)
+  • 15 min easy
+  • 3x20 min @ 85-90% FTP (8 min easy between, monitor power/HR stability)
+  • 30 min cooldown
+
+• CADENCE:
+  • can you hold 85-90% for sustained efforts? Power decay &gt;5% or HR drift &gt;8 bpm = durability needs work.  WORK: Mix cadences on durability blocks.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="1800" Power="0.73"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="1200" OnPower="0.875" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="1800" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

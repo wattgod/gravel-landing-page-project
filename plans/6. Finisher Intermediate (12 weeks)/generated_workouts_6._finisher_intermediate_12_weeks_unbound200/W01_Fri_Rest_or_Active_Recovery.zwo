@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Fri - Rest or Active Recovery</name>
+  <description>• Optional: 30-45 min Z1 spin (50-60% FTP)
+• REST DAY NOTE:
+  • Day after hard session. If legs are trashed, take it completely off. If you feel okay, very easy spin only.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

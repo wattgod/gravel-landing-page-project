@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Tue - G-Spot Intervals</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 3x18 min @ 87-92% FTP (6 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • Mix cadences—interval 1 high, interval 2 low, interval 3 self-selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.65"/>
+    <IntervalsT Repeat="3" OnDuration="1080" OnPower="0.90" Cadence="100" OffDuration="360" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Build phase begins.
+  • Intensity increases while maintaining strong volume base.
+  • Race-specific work dominates.
+  • Tuesday has extended VO2 + threshold.
+  • Wednesday is volume + race-pace tempo.
+  • Thursday has race simulation intensity.
+  • Friday is easy.
+  • Saturday is long race simulation.
+  • ||REST_DAY_NOTE_START|| Complete rest.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

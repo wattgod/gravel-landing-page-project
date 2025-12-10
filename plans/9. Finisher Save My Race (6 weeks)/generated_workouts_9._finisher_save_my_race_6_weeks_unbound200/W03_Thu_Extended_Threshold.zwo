@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Thu - Extended Threshold</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x18 min @ 100-105% FTP (8 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • First interval at high cadence (100+ rpm), second at low cadence (40-60 rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="1080" OnPower="1.02" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

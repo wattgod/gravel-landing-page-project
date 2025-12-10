@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Mon - Rest</name>
+  <description>• Recovery week.
+  • You just did 2 weeks of concentrated loading on one capacity.
+  • Your body needs this to adapt and convert that work into performance.
+  • By Friday you should feel fresh.
+  • If you're still crushed by Sunday, you overcooked Weeks 2-3.
+  • This is when the magic happens—concentrated loading transmutes into competitive fitness.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

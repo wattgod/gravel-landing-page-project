@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Biggest week of base phase.
+  • By Sunday you should feel accumulated fatigue (tired but not destroyed).
+  • Easy days still EASY, hard days still HARD—that's polarization discipline.
+  • Week 4 is recovery, so push through this week while maintaining zone discipline.
+  • Peak base week.
+  • Wednesday has mixed VO2max/threshold (big quality day).
+  • Saturday has threshold progression (2x20 min).
+  • Sunday is longest ride yet (4-5 hours).
+  • Two hard sessions, everything else easy.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

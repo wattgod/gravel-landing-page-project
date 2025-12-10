@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to emergency mode with compressed timeline.
+  • You have 6 weeks and 10-12 hours weekly.
+  • Unlike true beginners, you already have base fitness—you've been riding consistently but need race-specific sharpening.
+  • G-Spot (87-92% FTP) and Threshold (95-105% FTP) are your weapons—they deliver maximum race readiness in minimum time.
+  • This isn't about building base—that takes months.
+  • This is about sharpening what you have.
+  • Week 1: assessment.
+  • Weeks 2-4: concentrated G-Spot/Threshold loading (balanced approach).
+  • Week 5: light recovery/sharpening.
+  • Week 6: taper/race.
+  • Assessment week.
+  • Tuesday has FTP test + G-Spot sustainability check.
+  • Thursday has threshold assessment (race pace check).
+  • This week establishes your baseline.
+  • Weeks 2-4 use a balanced approach that hits all systems adequately—no track selection needed.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

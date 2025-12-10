@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Intensity increases this week.
+  • Two HIIT sessions + one longer ride with sustained efforts.
+  • This is as hard as the plan gets before final recovery week.
+  • Peak intensity week.
+  • Tuesday has peak HIIT volume (10x30sec HARD).
+  • Thursday has long HIIT bursts (6x1 min HARD).
+  • Saturday is peak long ride (90-105 min with 3x10 min efforts).
+  • This week is maximum stimulus.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

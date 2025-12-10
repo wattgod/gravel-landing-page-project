@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Sat - Moderate Easy Ride</name>
+  <description>• Duration: 45-60 min
+  • Zones: Z2 (65-75% FTP)
+• CADENCE:
+  • No intensity. Just aerobic time. Conversational pace. Check bike fit. Adjust anything that's causing discomfort. Masters athletes need perfect positioning to avoid injury. : Self-selected (85-95 rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="2700" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

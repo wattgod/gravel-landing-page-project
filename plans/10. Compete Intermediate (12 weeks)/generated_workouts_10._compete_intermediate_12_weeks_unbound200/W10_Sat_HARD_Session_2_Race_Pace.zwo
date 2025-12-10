@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Sat - HARD Session #2: Race Pace</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 3x20 min @ 100-105% FTP (8 min easy)
+  • 20 min cooldown
+
+  • Three 20-minute threshold blocks.
+  • This is your race pace for extended periods.
+  • You should feel strong and controlled here—weeks of training paying off.
+  • Execute cleanly.
+• CADENCE:
+  • For one interval, try loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 19 min Z3 (self-selected cadence). This simulates race starts.  WORK: Mix cadences or use loaded/rhythm patterns.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="1200" OnPower="1.02" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

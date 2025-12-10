@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Wed - Easy Aerobic</name>
+  <description>• Duration: 1.5-2 hours @ Z1-Z2 (60-72% FTP)
+  • Recovery from intensity.
+  • Truly easy—nasal breathing.
+  • MASTERS NOTE: Two easy days between hard sessions is often optimal for Masters.
+  • Don't feel guilty about easy days—they're building fitness.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.62"/>
+    <SteadyState Duration="5400" Power="0.66" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.66" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

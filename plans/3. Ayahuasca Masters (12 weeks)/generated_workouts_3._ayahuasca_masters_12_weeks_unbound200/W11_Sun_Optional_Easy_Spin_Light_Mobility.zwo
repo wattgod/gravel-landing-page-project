@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Sun - Optional Easy Spin + Light Mobility</name>
+  <description>• Duration: 30 min ride (optional) + 15-20 min mobility
+  • Notes: Skip ride if tired.
+  • Light mobility work—stretching, foam rolling, joint circles.
+  • Maintaining movement quality without stress.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

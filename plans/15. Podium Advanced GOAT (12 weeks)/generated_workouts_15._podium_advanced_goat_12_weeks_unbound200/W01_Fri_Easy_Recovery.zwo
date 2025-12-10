@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Fri - Easy Recovery</name>
+  <description>• Duration: 1.5-2 hours @ Z1-Z2 (60-70% FTP)
+  • True recovery.
+  • Tomorrow is a big day.
+  • Don't sabotage it with junk miles today.
+  • RECOVERY NOTE: At elite volume, recovery quality determines training quality.
+  • Prioritize sleep, nutrition, stress management.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.62"/>
+    <SteadyState Duration="5400" Power="0.65" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

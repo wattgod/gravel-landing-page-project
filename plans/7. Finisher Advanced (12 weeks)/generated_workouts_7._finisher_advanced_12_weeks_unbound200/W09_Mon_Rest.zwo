@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Transmutation phase.
+  • You've built threshold endurance.
+  • Now we sharpen it with polarized distribution—lots of easy, targeted hard work at VO2max and race pace.
+  • This converts raw fitness into race performance.
+  • Check HRV if tracking—if significantly down, adjust intensity accordingly.
+  • Transmutation begins.
+  • Wednesday has VO2max intervals (sharpens top end).
+  • Saturday has race-pace threshold (should feel easier after recovery).
+  • Training becomes polarized—80% easy, 20% hard.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

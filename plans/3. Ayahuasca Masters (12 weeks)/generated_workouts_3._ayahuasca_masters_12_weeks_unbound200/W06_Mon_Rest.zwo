@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Intensity increases this week IF your body is ready.
+  • HRV/readiness checks are critical now.
+  • If you're consistently tired, we'll back off.
+  • If you're recovering well, we push forward.
+  • Masters principle: one great workout beats three mediocre ones.
+  • Quality always wins.
+  • Threshold development week.
+  • Tuesday has progressive threshold intervals (if HRV green).
+  • Thursday is easy endurance (if recovered).
+  • Saturday has longer ride with mixed intensity (if strong).
+  • This week builds race pace with recovery awareness.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

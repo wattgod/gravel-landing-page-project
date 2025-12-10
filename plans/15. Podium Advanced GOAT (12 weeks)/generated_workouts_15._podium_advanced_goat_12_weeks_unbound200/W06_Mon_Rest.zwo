@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Peak Build week.
+  • Maximum quality and volume.
+  • This is the work that produces results.
+  • Tuesday has peak VO2 + threshold.
+  • Wednesday is peak volume + race-pace tempo.
+  • Thursday has peak race simulation intensity.
+  • Friday is easy.
+  • Saturday is peak long race simulation (7+ hours).
+  • ||REST_DAY_NOTE_START|| Complete rest.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

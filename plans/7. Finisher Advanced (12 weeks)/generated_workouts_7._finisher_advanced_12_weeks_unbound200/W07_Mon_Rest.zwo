@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final week of threshold block.
+  • Biggest threshold volume of the plan.
+  • By Sunday you should feel threshold-specific fatigue.
+  • That's good—you're overloading the system.
+  • Week 8 we shift to transmutation (polarized work to convert threshold gains to race performance).
+  • Push through this week knowing rest and variety are coming.
+  • Peak threshold week.
+  • Wednesday has 3x20 threshold (most threshold volume in single session).
+  • Saturday has race-pace threshold endurance (70 minutes total at/near threshold).
+  • This is peak training stress.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

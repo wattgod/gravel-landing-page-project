@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sat - Race Day or Rest</name>
+  <description>• If racing Saturday: EXECUTE ELITE PLAN
+  • If racing Sunday: Complete rest or 60-90 min easy Z2 with 3x30sec openers
+  • Notes: If racing today—position with leaders from start, don't waste energy mid-pack, fuel aggressively (80-100g carbs/hour), execute decisively when opportunities arise.
+  • HVLI prepared you for extreme durability.
+  • Use it.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

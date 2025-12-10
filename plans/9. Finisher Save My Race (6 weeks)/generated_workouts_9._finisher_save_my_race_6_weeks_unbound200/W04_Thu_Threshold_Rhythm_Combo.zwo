@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Thu - Threshold + Rhythm Combo</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x15 min @ 100-105% FTP (6 min easy)
+  • 15 min easy
+  • 2x(2 min Z3 + 1 min Z4) x 3 (3 min easy between sets)
+  • 15 min cooldown
+
+• CADENCE:
+  • 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 3, continuous. This simulates race pace variations.  WORK: Threshold at mix cadences, rhythm intervals at high cadence on Z4 portions.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="900" OnPower="1.02" Cadence="95" OffDuration="360" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.65" Cadence="85"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="180" Power="0.55"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.82" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

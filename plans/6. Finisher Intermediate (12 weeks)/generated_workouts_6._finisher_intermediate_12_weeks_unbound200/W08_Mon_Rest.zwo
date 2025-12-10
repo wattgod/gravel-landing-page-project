@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week after your biggest block.
+  • You should feel tired Monday and fresh by Sunday.
+  • This is when adaptation happens.
+  • If you don't recover this week, you can't execute the final peak phase properly.
+  • One light quality session to maintain sharpness, everything else easy.
+  • Recovery week—lighter volume, easier intensity.
+  • Wednesday has light threshold work (just maintaining fitness).
+  • Rest of week is easy endurance.
+  • This is when adaptation happens.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

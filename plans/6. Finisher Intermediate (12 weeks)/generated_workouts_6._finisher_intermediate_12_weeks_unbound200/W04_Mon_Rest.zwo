@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week.
+  • Your body adapts during rest, not during work.
+  • You should feel tired at the start of this week and fresh by the end.
+  • One quality session this week to maintain sharpness, everything else easy.
+  • If you're not recovered by Sunday, you pushed too hard in Week 3 or you're not sleeping/eating enough.
+  • Recovery week—lighter volume, easier intensity.
+  • Wednesday has light threshold work (just maintaining fitness).
+  • Rest of week is easy endurance.
+  • This is when adaptation happens.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

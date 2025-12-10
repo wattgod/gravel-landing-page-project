@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sat - Race Day or Rest</name>
+  <description>• If racing Saturday: RACE DAY—EXECUTE YOUR PLAN
+  • If racing Sunday: Complete rest or 45-60 min with brief openers
+  • Race Day Notes: 12 weeks of GOAT-level preparation.
+  • 20-25 hours per week.
+  • Integrated pyramidal development.
+  • All systems trained.
+  • You've built race-day resilience through massive volume with embedded quality.
+  • START STRATEGY: Controlled first 30 minutes.
+  • Find your group.
+  • Settle into race pace.
+  • NUTRITION: 90-100g carbs/hour minimum.
+  • You've practiced this.
+  • EXECUTION: Race pace is 87-92% FTP (G-Spot).
+  • Push surges when you see opportunity.
+  • FINISH: Second half is where you dominate.
+  • Your durability is exceptional.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

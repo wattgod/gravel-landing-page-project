@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Tue - Activation</name>
+  <description>• STRUCTURE:
+  • 30 min easy
+  • 3x5 min @ 90-95% FTP (4 min easy)
+  • 4x1 min @ 110% FTP (2 min easy)
+  • 20 min easy
+
+• CADENCE:
+  • High (100+ rpm) on efforts.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="300" OnPower="0.93" Cadence="90" OffDuration="240" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="60" OnPower="1.10" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <SteadyState Duration="1200" Power="0.65" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

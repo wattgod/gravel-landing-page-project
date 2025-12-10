@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Sun - Easy Aerobic</name>
+  <description>• Duration: 1-1.5 hours @ Z1-Z2
+  • Easy.
+  • transitions to power phase.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.60"/>
+    <SteadyState Duration="3600" Power="0.65" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

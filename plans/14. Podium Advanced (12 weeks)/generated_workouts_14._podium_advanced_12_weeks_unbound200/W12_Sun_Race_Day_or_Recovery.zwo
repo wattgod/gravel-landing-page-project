@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: EXECUTE ELITE PLAN
+  • If raced Saturday: Easy 90 min Z2 recovery spin, celebrate, refuel
+  • Notes: Race day.
+  • Elite execution: tactical positioning, conservative early pacing with durability to finish strong, aggressive fueling, decisive attacks.
+  • When it hurts, everyone hurts—elite athletes hurt better.
+  • That's you.
+  • You trained with professional-level volume specifically for this.
+  • Dominate.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

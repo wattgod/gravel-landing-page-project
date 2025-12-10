@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Wed - Light Quality (if HRV good)</name>
+  <description>• STRUCTURE:
+  • 10 min warmup
+  • 3x8 min @ 98-102% FTP (4 min easy)
+  • 10 min cooldown
+
+• CADENCE:
+  • HRV good? Do light intervals. Still tired? Skip, ride easy instead. Maintaining fitness without adding fatigue.  WORK: Mix cadences—one high, one low, one self-selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="480" OnPower="1.00" Cadence="90" OffDuration="240" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

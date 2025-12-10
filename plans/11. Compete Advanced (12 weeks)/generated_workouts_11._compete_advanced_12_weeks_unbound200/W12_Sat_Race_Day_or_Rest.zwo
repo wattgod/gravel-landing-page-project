@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sat - Race Day or Rest</name>
+  <description>• If racing Saturday: RACE DAY—EXECUTE YOUR PLAN
+  • If racing Sunday: Complete rest or 45-60 min easy with 3x30sec openers
+  • Race Day Notes: Start controlled, find your group, fuel aggressively (70-80g carbs/hour), push when it matters.
+  • You trained for this.
+  • Trust your threshold power—it's race-ready.
+  • When it hurts, remember—this is why you trained.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper begins.
+  • Volume drops, intensity stays present.
+  • Should feel increasingly fresh each day.
+  • Taper begins.
+  • Tuesday has light HIIT (6x30sec HARD).
+  • Thursday is easy ride.
+  • Saturday has moderate ride with touches (60-75 min).
+  • Volume drops, intensity stays present.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Sat - Final Long Race Prep</name>
+  <description>• STRUCTURE:
+  • First 2 hours Z2
+  • 4x20 min @ 95-105% FTP (varied intensity, 8 min easy between)
+  • Final 90 min Z2
+
+  • Final long race simulation.
+  • Variable efforts when tired.
+  • Eat 70-90g carbs/hour.
+  • Test FINAL race nutrition.
+  • This is dress rehearsal—everything you do today, you can do on race day.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="6600" Power="0.68" Cadence="85"/>
+    <SteadyState Duration="1200" Power="0.95" Cadence="88"/>
+    <SteadyState Duration="480" Power="0.55"/>
+    <SteadyState Duration="1200" Power="0.98" Cadence="90"/>
+    <SteadyState Duration="480" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.00" Cadence="90"/>
+    <SteadyState Duration="480" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.03" Cadence="90"/>
+    <SteadyState Duration="5400" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

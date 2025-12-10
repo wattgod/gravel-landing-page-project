@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Volume and intensity both increase.
+  • By Saturday you should feel accumulated fatigue.
+  • Polarized discipline is critical—if easy days creep into Z3, you won't recover for hard sessions.
+  • Stay disciplined.
+  • Volume + intensity progression.
+  • Wednesday has long threshold blocks (2x25 min).
+  • Saturday combines VO2max + threshold (big workout).
+  • Sunday is longest ride yet (4.5-5 hours).
+  • This week builds race-specific fitness.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

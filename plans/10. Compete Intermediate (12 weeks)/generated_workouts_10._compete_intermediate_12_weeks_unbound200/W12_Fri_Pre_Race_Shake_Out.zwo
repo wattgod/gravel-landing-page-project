@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Fri - Pre-Race Shake-Out</name>
+  <description>• STRUCTURE:
+  • 15 min easy
+  • 3x3 min @ race pace (2 min easy)
+  • 3x90sec @ 110% FTP (2 min easy)
+  • 3x30sec @ 115% FTP (90sec easy)
+  • 10 min easy
+
+• CADENCE:
+  • High cadence on all efforts (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="180" OnPower="0.98" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="90" OnPower="1.10" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="30" OnPower="1.15" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

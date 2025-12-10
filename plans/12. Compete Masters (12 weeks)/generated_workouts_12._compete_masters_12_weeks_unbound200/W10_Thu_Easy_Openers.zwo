@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Thu - Easy + Openers</name>
+  <description>• STRUCTURE:
+  • 30 min easy
+  • 4x2 min @ 100-105% FTP (3 min easy between)
+  • 25 min easy
+
+• CADENCE:
+  • High cadence (100+ rpm) on openers.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="4" OnDuration="120" OnPower="1.02" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <SteadyState Duration="1500" Power="0.65" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

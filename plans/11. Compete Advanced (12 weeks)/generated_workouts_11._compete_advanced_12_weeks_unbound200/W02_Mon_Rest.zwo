@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Threshold Block begins.
+  • Weeks 2-5 concentrate on threshold development—this is your race-pace power.
+  • You'll do 3-4 threshold sessions per week, supported by easy volume and occasional VO2 work.
+  • This concentrated approach produces faster gains than spreading intensity around.
+  • Tuesday has threshold foundation (3x15 min).
+  • Wednesday is easy.
+  • Thursday has threshold + VO2 combo.
+  • Saturday is long threshold ride.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

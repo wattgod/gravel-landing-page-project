@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Tue - FTP + Power Profile Testing</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 5 min all-out
+  • 10 min recovery
+  • 20 min max effort
+  • 15 min easy
+  • 3 min all-out
+  • 10 min easy
+  • 1 min all-out
+  • 15 min cooldown
+
+• CADENCE:
+  • Self-selected for test efforts.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="300" Power="1.20"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.05"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <SteadyState Duration="180" Power="1.25"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.50"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

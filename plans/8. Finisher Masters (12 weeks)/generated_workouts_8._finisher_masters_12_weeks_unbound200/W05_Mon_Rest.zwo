@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Build phase begins.
+  • Weeks 5-8 increase both volume and intensity based on YOUR recovery.
+  • Two quality sessions per week, everything else easy—that's polarization.
+  • Autoregulation determines execution.
+  • HRV/readiness green = push.
+  • Yellow = modify.
+  • Red = back off.
+  • Masters athletes work WITH bodies, not against them.
+  • Build phase begins.
+  • Wednesday has extended threshold (3x12 min).
+  • Saturday has VO2max development (5x4 min).
+  • Intensity increases, but easy days stay easy.
+  • shifts to explosive work.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

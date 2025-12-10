@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest or Easy Spin</name>
+  <description>• Optional: 60-90 min Z1
+• WEEK PREVIEW:
+  • Rest or very easy.
+  • Biggest week of plan ahead.
+  • Recovery matters more than ever.
+  • Peak training load week.
+  • Wednesday has peak mixed intervals (VO2max + threshold—biggest quality session, embedded in 4+ hour volume).
+  • Saturday has peak threshold (3x25 min—embedded in 5+ hour volume).
+  • This is your "A" week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final four weeks before race.
+  • Training becomes race-specific—practicing race pace, race duration, race fueling.
+  • But autoregulation continues.
+  • If HRV drops or you feel tired, we adjust.
+  • Masters athletes can't force fitness in final weeks.
+  • We sharpen what we built.
+  • Race prep begins.
+  • Tuesday has race pace intervals (if HRV green).
+  • Thursday is easy endurance (if recovered).
+  • Saturday is race duration simulation (if strong).
+  • This week practices race-specific efforts.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

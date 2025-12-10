@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final quality week.
+  • Last hard work before taper.
+  • Three weeks to race.
+  • Tuesday has final sharpening.
+  • Thursday has race openers.
+  • Saturday is final race simulation.
+  • Sunday easy.
+
+• REST DAY NOTE:
+  • HRV GUIDANCE: Maintain green zone. Any yellow = reduce intensity.  Complete rest recommended for Masters. Light movement (walk, yoga) is fine.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

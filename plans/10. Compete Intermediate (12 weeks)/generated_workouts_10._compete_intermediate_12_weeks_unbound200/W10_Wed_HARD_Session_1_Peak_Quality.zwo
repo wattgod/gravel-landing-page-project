@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Wed - HARD Session #1: Peak Quality</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 5x5 min @ 110-115% FTP (5 min easy)
+  • 15 min easy
+  • 2x20 min @ 100-105% FTP (8 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • For threshold blocks, use rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 6, continuous.  WORK: VO2 intervals—alternate high and low cadence. Threshold blocks—use rhythm pattern.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="5" OnDuration="300" OnPower="1.12" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="2" OnDuration="1200" OnPower="1.02" Cadence="100" OffDuration="480" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.65" Cadence="85"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

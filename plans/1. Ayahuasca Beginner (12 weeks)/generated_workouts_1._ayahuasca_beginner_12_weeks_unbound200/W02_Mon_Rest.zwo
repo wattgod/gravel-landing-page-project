@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 2 adds slightly more work IF you have the time.
+  • Two HIIT sessions per week is ideal.
+  • One HIIT session per week is minimum.
+  • Zero sessions = you're not training and should seriously reconsider doing this race.
+  • Be honest with yourself.
+  • Building HIIT tolerance.
+  • Tuesday has extended HIIT (8x30sec HARD).
+  • Thursday has second HIIT session (10x20sec HARD).
+  • Saturday is longer endurance if time allows.
+  • This week increases HIIT duration and introduces second session.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: RACE DAY—EXECUTE YOUR PLAN
+  • If raced Saturday: Easy 45-60 min recovery spin, celebrate
+  • Race Day Notes: You've built race-pace power through concentrated threshold work.
+  • Your FTP is sharp.
+  • Your race fitness is ready.
+  • Execute: controlled start, aggressive nutrition, push the second half, finish strong.
+  • Dominate.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

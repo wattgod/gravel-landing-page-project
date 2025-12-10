@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sun - Race Day or Recovery</name>
+  <description>• Race day.
+  • Tactical competitive execution.
+  • Position early.
+  • Fuel constantly.
+  • When it gets hard, you have the fitness—5 weeks of block periodization built that.
+  • Attack decisively.
+  • Compete.
+  • If raced Saturday: 60-90 min easy recovery, celebrate</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

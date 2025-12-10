@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Thu - Easy Endurance or Rest</name>
+  <description>• If race is Sunday, easy spin.
+  • If race is Saturday, consider rest.
+  • Freshness matters.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="5400" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Sat - HARD Session #2: Race-Pace Threshold (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x25 min @ 100-105% FTP (10 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • Green? Full workout. Yellow? 2x20 min. Red? 60 min easy. Threshold work should feel easier after recovery week. This is your race pace—sustainable, controlled, strong. Practice drinking while holding power. ||RHYTHM_START|| INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 8, continuous. This simulates race variability.  WORK: Mix cadences or use rhythm pattern.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="1500" OnPower="1.02" Cadence="100" OffDuration="600" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

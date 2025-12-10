@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Thu - Loaded Rhythm Intervals</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 3x15 min loaded rhythm (1 min @ 115%
+  • 2 min @ 80% + 1 min @ 100% × 4, continuous) (6 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • Start each block with hard surge (simulates attack/climb), then settle into rhythm. This is race simulation—hard starts, sustained efforts.  WORK: Loaded start high cadence (100+ rpm), rhythm as previous.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="60" Power="1.15" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="360" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.15" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="360" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.15" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="1.00" Cadence="100"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

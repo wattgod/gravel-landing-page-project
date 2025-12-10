@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Sat - Moderate Tempo + VO2 Touch</name>
+  <description>• STRUCTURE:
+  • 30 min easy
+  • 3x12 min @ 80-85% FTP (4 min easy)
+  • 3x2 min @ 110-115% FTP (3 min easy)
+  • 30 min easy
+
+• CADENCE:
+  • Mix cadences.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.68" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="720" OnPower="0.825" Cadence="90" OffDuration="240" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="120" OnPower="1.12" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <SteadyState Duration="1800" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

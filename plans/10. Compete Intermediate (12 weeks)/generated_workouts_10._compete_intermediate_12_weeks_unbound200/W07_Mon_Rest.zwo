@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Biggest week of plan.
+  • By Sunday you should feel significant accumulated fatigue—that's expected.
+  • Week 8 is recovery.
+  • Push through IF you're maintaining polarization discipline.
+  • If easy days have crept into Z3, you're breaking polarization and accumulating too much fatigue.
+  • Peak training load week.
+  • Wednesday has peak threshold (3x20 min—60 minutes cumulative).
+  • Saturday combines VO2max + threshold (big workout).
+  • Sunday is longest ride (5-5.5 hours).
+  • This is your "A" week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

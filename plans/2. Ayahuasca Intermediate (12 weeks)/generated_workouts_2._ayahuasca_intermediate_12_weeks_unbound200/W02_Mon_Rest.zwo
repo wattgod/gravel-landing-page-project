@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 2 builds on your FTP baseline with more G-Spot work.
+  • This zone is your bread and butter for time-crunched training—maximum adaptation per minute invested.
+  • You'll do 3 quality sessions this week.
+  • Tuesday extends G-Spot intervals (3x12 min).
+  • Thursday introduces threshold touch (3x8 min @ 95-100%).
+  • Saturday has longer tempo endurance (90 min total).
+  • Quality over quantity.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

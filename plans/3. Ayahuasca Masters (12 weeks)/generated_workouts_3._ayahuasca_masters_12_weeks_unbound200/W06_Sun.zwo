@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sun</name>
+  <description>• Going slightly heavier (85-88% estimated max) but perfect form.
+  • Rest 3-4 min between heavy sets.
+  • This builds power for race day.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

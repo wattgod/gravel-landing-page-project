@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week after peak training.
+  • Masters athletes especially need this.
+  • You should feel tired Monday and fresh by Friday.
+  • If you're not recovered by Sunday, you pushed too hard in Week 7 or have external stressors (work, family, poor sleep).
+  • This is when your body actually gets stronger.
+  • Trust the process.
+  • Recovery week.
+  • Tuesday-Sunday are all easy endurance days (30-60 min each).
+  • Sunday includes This is deep recovery before final race prep.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

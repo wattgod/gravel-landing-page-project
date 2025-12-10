@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sun - Long HVLI Ride</name>
+  <description>• STRUCTURE:
+  • Z2 (65-75% FTP), add 4x10 min @ 75-80% FTP in hours 4-6 (3 min easy between)
+
+  • Massive ride day after quality.
+  • This is extreme durability training.
+  • Keep it conversational except for tempo touches.
+  • Eat 80-90g carbs/hour.
+  • Test all race gear.
+  • Explosive maintains power production capacity.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="10800" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="4" OnDuration="600" OnPower="0.78" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <SteadyState Duration="10800" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

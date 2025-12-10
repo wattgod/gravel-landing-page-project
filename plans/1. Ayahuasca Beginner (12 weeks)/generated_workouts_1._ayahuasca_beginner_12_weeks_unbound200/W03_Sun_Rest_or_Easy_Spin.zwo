@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Sun - Rest or Easy Spin</name>
+  <description>• Optional: 30 min easy
+• REST DAY NOTE:
+  • Notes: Default is rest. You should feel tired this week—that's appropriate.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+  • REALITY CHECK: You're at ~5-12 total training hours with 9 weeks to race.
+  • Your longest ride is maybe 90 minutes.
+  • Race is probably 4-8+ hours.
+  • This gap is HUGE.
+  • Accept it now: race day will hurt.
+  • Final hours will be survival mode.
+  • That's OK—mental toughness gets you through.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

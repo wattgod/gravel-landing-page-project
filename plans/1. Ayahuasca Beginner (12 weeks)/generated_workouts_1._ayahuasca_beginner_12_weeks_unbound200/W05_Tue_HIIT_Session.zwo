@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Tue - HIIT Session</name>
+  <description>• STRUCTURE:
+  • 10 min warmup
+  • 8x30sec HARD / 2 min easy
+  • 10 min cooldown
+
+• CADENCE:
+  • Mix cadences on intervals—some high cadence (100+ rpm seated), some low cadence (40-60 rpm seated, big gear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="8" OnDuration="30" OnPower="1.50" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

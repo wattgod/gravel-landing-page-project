@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Sat - HARD Session #2: VO2max + Threshold (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 5x3 min @ 110-115% FTP (3 min easy)
+  • 15 min easy
+  • 2x12 min @ 100-105% FTP (6 min easy)
+  • 10 min cooldown
+
+  • Readiness Check: Green + slept well?
+  • Full workout.
+  • Yellow?
+  • 4x3 min VO2 + 2x10 min threshold.
+  • Red?
+  • 60 min easy.
+  • Big quality day.
+  • VO2 efforts then threshold.
+  • Break down mentally—one interval at a time.
+• CADENCE:
+  • For threshold blocks, try loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 11 min Z3 (self-selected cadence). This simulates race starts.  WORK: VO2 intervals—alternate high and low cadence. Threshold blocks—use loaded pattern or rhythm pattern.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="5" OnDuration="180" OnPower="1.12" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="2" OnDuration="720" OnPower="1.02" Cadence="100" OffDuration="360" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Sun - Rest</name>
+  <description>• REST DAY NOTE:
+  • Full rest. Race sharpening starts tomorrow.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

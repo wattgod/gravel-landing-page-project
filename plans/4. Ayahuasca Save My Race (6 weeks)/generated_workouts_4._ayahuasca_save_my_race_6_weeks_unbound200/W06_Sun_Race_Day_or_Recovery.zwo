@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: EXECUTE SURVIVAL PLAN
+  • If raced Saturday: Easy 20-30 min recovery spin if legs allow, celebrate survival
+  • Notes: Race day.
+  • Conservative start is MANDATORY—you don't have endurance to recover from going out hard.
+  • Fuel aggressively—your tank is smaller than others due to limited training volume.
+  • Final hours will hurt—everyone's do, but yours will hurt more because you're underprepared.
+  • That's okay.
+  • Mental toughness gets you home.
+  • You can do this.
+  • Just keep moving forward.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

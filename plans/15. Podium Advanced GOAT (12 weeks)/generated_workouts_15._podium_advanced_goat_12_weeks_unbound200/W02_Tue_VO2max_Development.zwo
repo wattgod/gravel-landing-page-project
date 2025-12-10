@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Tue - VO2max Development</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 5x4 min @ 110-115% FTP (4 min easy between)
+  • 20 min cooldown
+
+  • VO2max work.
+  • These should be very hard—can't talk, gasping.
+  • 20 minutes total at VO2 zone.
+  • This builds the ceiling your threshold sits under.
+• CADENCE:
+  • At your volume, VO2 work isn't about survival—it's about development. Push hard, recover well. : High (100+ rpm) on all intervals.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.78"/>
+    <IntervalsT Repeat="5" OnDuration="240" OnPower="1.12" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

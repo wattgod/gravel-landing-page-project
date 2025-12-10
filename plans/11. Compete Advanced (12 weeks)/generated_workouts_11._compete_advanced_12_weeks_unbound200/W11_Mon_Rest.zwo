@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper week 2.
+  • Volume drops significantly.
+  • You should feel fresh, powerful, eager to race.
+  • One week to race day.
+  • Tuesday has taper intensity.
+  • Wednesday is very easy.
+  • Thursday has easy + sharp openers.
+  • Friday is easy.
+  • Saturday is final tune-up.
+  • Sunday is easy or rest.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

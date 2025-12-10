@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Thu - Durability + LT1 Assessment</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 30 min @ 72-75% FTP (LT1 zone—stable HR, nasal breathing)
+  • 15 min easy
+  • 4x20 min @ 85-90% FTP (8 min easy between, monitor power/HR stability)
+  • 30 min cooldown
+
+  • LT1 assessment + durability check.
+  • Can you hold 85-90% for 80 minutes with stable output?
+  • Power decay &gt;5% or HR drift &gt;10 bpm = durability limiter identified.
+• CADENCE:
+  • Gravel races are 4-12 hours. Your ability to maintain power at hour 8 matters more than hour 1. This is your durability baseline. : Mix—high/low/self-selected across blocks.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="1800" Power="0.73"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="1200" OnPower="0.875" Cadence="90" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="1800" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

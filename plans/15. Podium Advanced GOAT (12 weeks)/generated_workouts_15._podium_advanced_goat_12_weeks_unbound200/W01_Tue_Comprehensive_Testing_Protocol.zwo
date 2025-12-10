@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Tue - Comprehensive Testing Protocol</name>
+  <description>• STRUCTURE:
+  • 40 min warmup (progressive)
+  • 5 min all-out
+  • 10 min recovery
+  • 20 min max effort
+  • 15 min easy
+  • 3 min all-out
+  • 10 min easy
+  • 1 min all-out
+  • 20 min cooldown
+
+  • Full power profile: 20-min FTP, 5-min VO2max, 3-min anaerobic, 1-min neuromuscular.
+  • At elite level, every system matters.
+  • Record everything—these numbers guide your training.
+• CADENCE:
+  • Don't compare to others. Your numbers, your progression. Elite is about extracting your maximum, not matching someone else's. : Self-selected for all tests.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="2400" PowerLow="0.50" PowerHigh="0.78"/>
+    <SteadyState Duration="300" Power="1.20"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="1200" Power="1.05"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <SteadyState Duration="180" Power="1.25"/>
+    <SteadyState Duration="600" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.50"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

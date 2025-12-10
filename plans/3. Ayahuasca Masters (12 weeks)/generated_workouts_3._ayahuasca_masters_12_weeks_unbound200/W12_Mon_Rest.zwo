@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Race week.
+  • Volume drops dramatically.
+  • Check HRV—should be at or above baseline.
+  • You should feel fresh, energetic, ready.
+  • Nervous energy is normal—channel it into final prep.
+  • Check bike.
+  • Pack bags.
+  • Review race plan.
+  • You trained smart with autoregulation.
+  • Your body is ready.
+  • Trust it.
+  • Race week!
+  • Tuesday is easy spin (20-30 min).
+  • Wednesday has race openers (if HRV green).
+  • Thursday is rest or easy spin.
+  • Friday is pre-race shake-out (if racing Sunday).
+  • Saturday/Sunday: RACE DAY!
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

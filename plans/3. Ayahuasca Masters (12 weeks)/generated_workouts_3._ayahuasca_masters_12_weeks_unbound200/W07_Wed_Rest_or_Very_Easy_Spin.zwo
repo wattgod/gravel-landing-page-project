@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Wed - Rest or Very Easy Spin</name>
+  <description>• Optional: 20-30 min Z1
+• REST DAY NOTE:
+  • Likely need rest after big session. Easy spin only if feeling surprisingly good. When in doubt, rest.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

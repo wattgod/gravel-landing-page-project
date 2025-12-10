@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Tue - Race-Pace Intervals</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 4x10 min @ 90-95% FTP (5 min easy between)
+  • 10 min cooldown
+
+• CADENCE:
+  • Race cadence (self-selected, whatever you'll use race day).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="4" OnDuration="600" OnPower="0.93" Cadence="90" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

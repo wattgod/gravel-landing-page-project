@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Thu - Race Openers</name>
+  <description>• STRUCTURE:
+  • 25 min warmup
+  • 4x4 min @ 100-105% FTP (4 min easy between)
+  • 4x1 min @ 115% FTP (3 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • High cadence (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="4" OnDuration="240" OnPower="1.02" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="60" OnPower="1.15" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

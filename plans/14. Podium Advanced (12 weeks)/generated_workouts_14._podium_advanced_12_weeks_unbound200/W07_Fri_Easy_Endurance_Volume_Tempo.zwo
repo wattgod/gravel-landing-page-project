@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Fri - Easy Endurance Volume + Tempo</name>
+  <description>• STRUCTURE:
+  • First 2 hours Z2
+  • 3x20 min @ 75-80% FTP (7 min easy between)
+  • Final 90-120 min Z2
+
+• CADENCE:
+  • Mix cadences on tempo blocks. ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

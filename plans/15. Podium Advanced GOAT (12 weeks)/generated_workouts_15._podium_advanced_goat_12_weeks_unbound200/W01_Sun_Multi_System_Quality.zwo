@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Sun - Multi-System Quality</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 4x4 min @ 110-115% FTP (VO2, 4 min easy)
+  • 20 min easy
+  • 2x15 min @ 95-100% FTP (threshold, 8 min easy)
+  • 60 min Z2 +
+
+  • Multi-system development: VO2 + threshold in one session.
+  • At elite volume, you can handle this.
+  • Should be hard but achievable.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="4" OnDuration="240" OnPower="1.12" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <SteadyState Duration="1200" Power="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="900" OnPower="0.98" Cadence="90" OffDuration="480" OffPower="0.55"/>
+    <SteadyState Duration="3600" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

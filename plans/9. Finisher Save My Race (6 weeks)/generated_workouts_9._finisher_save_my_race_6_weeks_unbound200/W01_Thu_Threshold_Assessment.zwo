@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Thu - Threshold Assessment</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 2x15 min @ 100-105% FTP (7 min easy between)
+  • 15 min cooldown
+
+• CADENCE:
+  • First interval at high cadence (100+ rpm seated), second at low cadence (40-60 rpm seated, big gear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="900" OnPower="1.02" Cadence="100" OffDuration="420" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Sat - Long Race Simulation</name>
+  <description>• STRUCTURE:
+  • 2 hours Z2
+  • 4x20 min @ 95-105% FTP (varied, 8 min easy between)
+  • Final 90 min Z2
+
+  • Peak volume ride.
+  • Sustained threshold efforts deep into long ride.
+  • Building durability and race-pace sustainability.
+  • Eat 70-80g carbs/hour.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="6600" Power="0.68" Cadence="85"/>
+    <IntervalsT Repeat="4" OnDuration="1200" OnPower="1.00" Cadence="90" OffDuration="480" OffPower="0.55"/>
+    <SteadyState Duration="5400" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

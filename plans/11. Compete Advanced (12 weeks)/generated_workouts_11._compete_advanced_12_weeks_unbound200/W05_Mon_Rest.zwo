@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Threshold Block 2 begins.
+  • You're recovered and ready for the next concentration block.
+  • This time we add race-specific elements—rhythm intervals, varied pacing, fatigue resistance.
+  • Building race-ready power.
+  • Tuesday has threshold + rhythm combo.
+  • Thursday has extended threshold (2x20 min).
+  • Saturday is long race simulation (5+ hours).
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

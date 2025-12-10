@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• Welcome to competitive emergency mode.
+  • You have 6 weeks and 15-18 hours weekly.
+  • Unlike the other emergency plans, you're already race-fit—you just need final sharpening for competitive performance.
+  • We're using compressed Block Periodization: Week 1 assessment → Weeks 2-3 concentrated loading on biggest limiter → Week 4 recovery → Week 5 sharpening → Week 6 taper/race.
+  • This is advanced training—requires discipline and self-awareness.
+  • You need to push hard but recognize overtraining signals.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

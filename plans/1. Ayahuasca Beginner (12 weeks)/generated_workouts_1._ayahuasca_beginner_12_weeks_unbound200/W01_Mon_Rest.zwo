@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to survival mode training.
+  • Let's be brutally honest: 0-5 hours per week is NOT enough to train properly for a gravel race.
+  • But life happens—work, family, responsibilities limit your time.
+  • This plan accepts that reality.
+  • You won't be competitive.
+  • You won't feel amazing.
+  • But you WILL finish if you: (1) Execute this plan consistently, (2) Start the race VERY conservatively, (3) Fuel aggressively from mile 1.
+  • HIIT (High-Intensity Interval Training) gives maximum fitness in minimum time.
+  • Short, hard bursts build both aerobic and anaerobic capacity faster than long slow rides.
+  • Every minute counts.
+  • Foundation week.
+  • Tuesday has HIIT introduction (6x30sec HARD).
+  • Thursday is optional easy ride.
+  • Saturday is longer ride if possible.
+  • This week establishes baseline and introduces HIIT efficiency.
+  • Reality check: if you only do Tuesday's HIIT (30-40 min), that's OK—that's minimum effective dose.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

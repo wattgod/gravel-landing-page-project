@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Build phase begins.
+  • Weeks 5-8 progressively increase intensity based on YOUR recovery.
+  • This is where autoregulation shines—if HRV is down or you feel tired, we back off.
+  • If you're recovered and strong, we push.
+  • Masters training is about working WITH your body, not against it.
+  • Quality over quantity always.
+  • Build phase begins.
+  • Tuesday has G-Spot intervals (if HRV green).
+  • Thursday is easy endurance (if recovered).
+  • Saturday has tempo endurance (if feeling strong).
+  • This week returns to quality work with HRV guidance.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

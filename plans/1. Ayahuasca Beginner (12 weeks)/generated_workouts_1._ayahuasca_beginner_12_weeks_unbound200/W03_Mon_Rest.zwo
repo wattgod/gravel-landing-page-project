@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 3 is your biggest volume of this phase.
+  • Two HIIT sessions + one longer ride if possible.
+  • By Saturday you should feel accumulated fatigue.
+  • That's overload working.
+  • Week 4 backs off so your body adapts.
+  • Peak HIIT volume week.
+  • Tuesday has maximum HIIT volume (10x30sec HARD).
+  • Thursday has mixed HIIT durations (5x45sec HARD).
+  • Saturday is longest ride of base phase (75-90 min with 3x5 min efforts).
+  • This is your "A" week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

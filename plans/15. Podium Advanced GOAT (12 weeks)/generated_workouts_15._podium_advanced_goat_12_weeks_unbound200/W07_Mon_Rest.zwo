@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week.
+  • Peak training block complete.
+  • Your body needs this to absorb the work.
+  • By Sunday you should feel fresh, powerful, eager.
+  • Light intensity Tuesday.
+  • Easy Wednesday-Thursday.
+  • Friday rest.
+  • Moderate Saturday.
+  • Easy Sunday + ||REST_DAY_NOTE_START|| Complete rest.
+  • Extra sleep.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

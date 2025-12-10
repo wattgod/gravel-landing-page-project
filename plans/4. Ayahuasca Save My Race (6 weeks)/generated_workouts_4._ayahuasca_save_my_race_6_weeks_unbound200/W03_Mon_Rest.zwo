@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 3 is your biggest training week.
+  • You'll do as much G-Spot and Threshold as your body can handle in 3-5 hours.
+  • By Saturday you should feel accumulated fatigue—that's the point.
+  • Week 4 backs off before final sharpening.
+  • This is your fitness-building week.
+  • Make it count.
+  • Peak G-Spot volume week.
+  • Tuesday has maximum G-Spot volume (4x10 min).
+  • Thursday has extended threshold (2x12 min).
+  • Saturday is biggest session of plan (105-120 min with mixed intensity).
+  • This is your "A" week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Tue - Threshold Intervals (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x12 min @ 90-95% FTP (6 min easy between)
+  • 10 min cooldown
+
+• CADENCE:
+  • Green? Full workout. Yellow? 2x8 min @ 88-90%. Red? 30 min easy, skip intervals. Longer threshold than Week 3. This is race pace for Masters. Breathing hard but controlled. Should finish thinking "I could maybe do one more." ||RHYTHM_START|| INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 3, continuous. This simulates race variability.  WORK: Mix cadences or use rhythm pattern.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="720" OnPower="0.93" Cadence="100" OffDuration="360" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

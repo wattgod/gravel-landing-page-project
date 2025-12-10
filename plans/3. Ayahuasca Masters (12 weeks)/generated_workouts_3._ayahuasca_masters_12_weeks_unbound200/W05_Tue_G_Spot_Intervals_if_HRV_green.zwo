@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Tue - G-Spot Intervals (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 3x10 min @ 85-90% FTP (4 min easy between)
+  • 10 min cooldown
+
+• CADENCE:
+  • Green? Full workout. Yellow? 3x7 min @ 85%. Red? Easy 30 min ride, skip intervals. Longer G-Spot than Week 2. Should feel sustainable discomfort. Control breathing, stay seated.  WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="0.875" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

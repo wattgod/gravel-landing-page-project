@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 2 builds volume foundation.
+  • Intensity stays present but aerobic development dominates.
+  • You're building the engine that powers everything else.
+  • Tuesday has VO2 development.
+  • Wednesday is volume + tempo.
+  • Thursday has threshold work.
+  • Friday is easy.
+  • Saturday is peak long (6+ hours).
+  • ||REST_DAY_NOTE_START|| Complete rest.
+  • You're recovering from Week 1 testing and preparing for serious volume.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

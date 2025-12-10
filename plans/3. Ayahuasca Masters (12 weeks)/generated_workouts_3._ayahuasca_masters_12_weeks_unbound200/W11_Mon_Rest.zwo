@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper begins.
+  • Volume drops 30% but intensity stays present.
+  • You should feel increasingly fresh each day while maintaining sharpness.
+  • Masters athletes respond well to taper—your recovery capacity means freshness comes back quickly.
+  • Trust the process.
+  • Check HRV—should be trending up.
+  • Taper begins.
+  • Tuesday has light race pace (if HRV green).
+  • Thursday is easy endurance (if feeling good).
+  • Saturday has moderate ride with openers.
+  • Volume drops, intensity stays sharp.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

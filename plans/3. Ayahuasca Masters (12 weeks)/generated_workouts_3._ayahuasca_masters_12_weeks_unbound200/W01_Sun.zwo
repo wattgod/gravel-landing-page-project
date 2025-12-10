@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Sun</name>
+  <description>• Prevents sarcopenia (muscle loss), maintains bone density, improves power-to-weight.
+  • Focus on FORM, not weight.
+  • Rest 2-3 min between sets.
+  • This is injury prevention and performance enhancement combined.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

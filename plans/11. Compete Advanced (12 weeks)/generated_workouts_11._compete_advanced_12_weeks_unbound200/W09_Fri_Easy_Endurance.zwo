@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Fri - Easy Endurance</name>
+  <description>• Duration: 1.5-2 hours @ Z2
+• REST DAY NOTE:
+  • Light day.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="5400" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

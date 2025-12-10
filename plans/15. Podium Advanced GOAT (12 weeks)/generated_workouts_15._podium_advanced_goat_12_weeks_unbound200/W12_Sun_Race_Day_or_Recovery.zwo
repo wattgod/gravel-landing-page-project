@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: RACE DAY—EXECUTE YOUR PLAN
+  • If raced Saturday: 45-60 min easy spin, celebrate, recover
+  • Race Day Notes: You've done GOAT-level work.
+  • 20-25 hours per week.
+  • Massive aerobic base with integrated intensity.
+  • Your VO2max is sharp.
+  • Your threshold is race-ready.
+  • Your durability is exceptional.
+  • You've practiced everything—nutrition, pacing, gear.
+  • GOAT EXECUTION: Start smart.
+  • Fuel constantly.
+  • Push the second half.
+  • When it hurts at hour 5, remember—you've trained longer and harder than this.
+  • Your preparation is exceptional.
+  • Now dominate.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

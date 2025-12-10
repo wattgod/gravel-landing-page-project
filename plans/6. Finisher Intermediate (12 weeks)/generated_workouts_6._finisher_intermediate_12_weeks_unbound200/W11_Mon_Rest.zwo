@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper begins.
+  • Volume drops 30% but intensity stays high.
+  • This keeps you sharp while allowing freshness to return.
+  • You should start feeling "race ready" by week's end.
+  • Legs feel snappy, power comes easy.
+  • That's fitness + freshness working together.
+  • Taper begins.
+  • Wednesday has race openers (reduced volume, maintained intensity).
+  • Saturday has moderate endurance with openers (final reminder workout).
+  • Volume drops, intensity stays sharp.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Sun</name>
+  <description>• 2-5% increase maximum if previous week felt manageable.
+  • Perfect form always trumps weight.
+  • Rest 3 min between heavy sets.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 3 is your biggest so far.
+  • By Saturday you might feel accumulated fatigue—that's normal IF you're recovering well (sleeping 7-8+ hours, eating enough protein, managing stress).
+  • If you're feeling crushed by Wednesday, you're pushing too hard.
+  • Back off immediately.
+  • Masters athletes must be vigilant against overtraining.
+  • It sneaks up fast at 50+.
+  • Progressive loading week.
+  • Tuesday introduces threshold intervals (if HRV green).
+  • Thursday is easy endurance (if recovered).
+  • Saturday is longer endurance with tempo touches (if feeling strong).
+  • This week increases volume/intensity based on individual response.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

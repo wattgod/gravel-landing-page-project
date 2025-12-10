@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week.
+  • Peak training block complete.
+  • Your body needs this to absorb the work.
+  • By Sunday you should feel fresh, powerful, race-ready.
+  • If still tired, address recovery factors.
+  • Tuesday has light threshold touch.
+  • Wednesday-Friday easy.
+  • Saturday moderate tempo + VO2 touch.
+  • Low stress, high recovery.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

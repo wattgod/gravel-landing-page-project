@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Thu - G-Spot + Openers</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x12 min @ 87-92% FTP (5 min easy between)
+  • 5 min easy
+  • 3x1 min @ 100% FTP (2 min easy between)
+  • 5 min cooldown
+
+• CADENCE:
+  • Mix cadences on G-Spot blocks. High cadence (100+ rpm) on openers.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="720" OnPower="0.895" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="300" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="60" OnPower="1.00" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <Cooldown Duration="300" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

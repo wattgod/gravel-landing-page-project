@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Thu - Threshold Sharpness</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 3x15 min @ 100-105% FTP (7 min easy between)
+  • 15 min easy
+  • 5x1 min @ 110% FTP (2 min easy between)
+  • 15 min cooldown.
+
+  • Threshold maintains race pace.
+  • Openers keep top-end sharp.
+  • Should feel powerful and controlled.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="900" OnPower="1.02" Cadence="90" OffDuration="420" OffPower="0.55"/>
+    <SteadyState Duration="900" Power="0.55"/>
+    <IntervalsT Repeat="5" OnDuration="60" OnPower="1.10" OffDuration="120" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

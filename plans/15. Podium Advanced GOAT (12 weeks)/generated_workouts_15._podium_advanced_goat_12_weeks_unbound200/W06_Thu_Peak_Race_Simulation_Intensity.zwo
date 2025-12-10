@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Thu - Peak Race Simulation Intensity</name>
+  <description>• STRUCTURE:
+  • 25 min warmup
+  • 3x18 min @ 95-100% FTP (8 min easy)
+  • 6x3 min @ 110-115% FTP (3 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • Threshold self-selected, surges high (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.78"/>
+    <IntervalsT Repeat="3" OnDuration="1080" OnPower="0.98" Cadence="90" OffDuration="480" OffPower="0.55"/>
+    <IntervalsT Repeat="6" OnDuration="180" OnPower="1.12" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

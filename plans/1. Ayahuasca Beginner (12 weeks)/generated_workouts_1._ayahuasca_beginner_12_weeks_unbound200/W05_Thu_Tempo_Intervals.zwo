@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Thu - Tempo Intervals</name>
+  <description>• STRUCTURE:
+  • 10 min warmup
+  • 3x8 min @ "moderately hard" / 4 min easy between
+  • 10 min cooldown
+
+• CADENCE:
+  • For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 3, continuous. This simulates race variability.  WORK: Mix cadences on intervals—some high cadence (100+ rpm), some low cadence (40-60 rpm), or use rhythm pattern.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="480" OnPower="0.85" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

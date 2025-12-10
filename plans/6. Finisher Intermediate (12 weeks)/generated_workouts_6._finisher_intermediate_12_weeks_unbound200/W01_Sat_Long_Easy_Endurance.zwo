@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Sat - Long Easy Endurance</name>
+  <description>• Foundation of polarized training—long, steady, easy.
+  • Conversational entire time.
+  • This builds mitochondrial density, fat oxidation, and aerobic capacity.
+  • Eat 50-60g carbs per hour.
+  • Practice race nutrition here.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="10800" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

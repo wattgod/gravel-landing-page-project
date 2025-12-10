@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • This is your biggest week of the plan.
+  • By Sunday you should feel significant accumulated fatigue—that's expected and desired.
+  • Week 8 is recovery.
+  • Push through this week knowing rest is coming.
+  • Two big quality sessions.
+  • Everything else easy.
+  • Sleep 8+ hours.
+  • Eat enough protein.
+  • Hydrate constantly.
+  • Peak build week—biggest volume and intensity.
+  • Wednesday has 3x20 threshold (hardest threshold session).
+  • Saturday combines VO2max + threshold (big workout).
+  • Sunday is your longest ride (5-5.5 hours).
+  • This is your "A" week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

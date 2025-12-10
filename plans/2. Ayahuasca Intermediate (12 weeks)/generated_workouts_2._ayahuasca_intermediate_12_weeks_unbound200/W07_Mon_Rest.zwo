@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 7 is peak training load.
+  • Biggest week of the plan.
+  • After this, you've done the hard work.
+  • Recovery week follows, then race sharpening.
+  • Tuesday has combined G-Spot + threshold.
+  • Thursday has rhythm intervals with loaded starts.
+  • Saturday is peak volume (120+ min).
+  • Make these sessions count.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

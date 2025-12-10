@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to Masters training.
+  • You're 50+, which means recovery matters MORE than the workout.
+  • This plan uses autoregulation—training adapts to YOUR daily readiness.
+  • If you track HRV (heart rate variability), check it each morning.
+  • High/normal HRV = green light for quality.
+  • Low HRV = easy day or rest.
+  • No HRV tracker?
+  • Use perceived recovery: good sleep + feeling fresh = quality okay.
+  • Poor sleep + heavy legs = back off.
+  • Your body is the best coach.
+  • Listen to it.
+  • Foundation week.
+  • Tuesday has FTP test (if feeling good) or easy ride.
+  • Thursday is easy endurance (if recovered).
+  • Saturday is longer easy ride (if feeling strong).
+  • This week establishes your baseline and HRV monitoring routine.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

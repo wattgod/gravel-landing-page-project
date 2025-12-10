@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Race sharpening phase.
+  • Volume stays moderate, intensity becomes highly specific.
+  • You're not building fitness anymore—you're sharpening it.
+  • Quality is paramount.
+  • Every session should leave you feeling sharp, not tired.
+  • Tuesday has race-pace intervals.
+  • Thursday has sharpening threshold work.
+  • Saturday is race simulation with dress rehearsal elements.
+  • Three weeks to race day.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

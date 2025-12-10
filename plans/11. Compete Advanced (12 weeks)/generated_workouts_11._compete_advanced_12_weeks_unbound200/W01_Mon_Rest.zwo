@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to Compete Advanced.
+  • You have 15-18 hours per week and want to race at the front.
+  • This plan uses Threshold-Focused Block Periodization—concentrated threshold work builds race-pace power, supported by VO2max (for surges) and durability (for finishing strong).
+  • Gravel racing is primarily a threshold sport.
+  • Master threshold, master gravel.
+  • Comprehensive assessment.
+  • Tuesday has FTP + power profile testing.
+  • Thursday has LT1 + durability assessment.
+  • Saturday is long pyramidal ride (4-5 hours).
+  • This week establishes your baseline.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

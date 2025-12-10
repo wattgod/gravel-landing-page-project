@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Sun - Rest</name>
+  <description>• Complete rest.
+  • Race week begins tomorrow.
+  • ELITE CONTEXT: Total rest.
+  • Your body is primed.
+  • Race week is for sharpening, not building.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Thu - Threshold Touch</name>
+  <description>• STRUCTURE:
+  • 25 min warmup
+  • 2x12 min @ 95-100% FTP (6 min easy between)
+  • 20 min cooldown
+
+  • Brief threshold work.
+  • In polarized training, threshold is used sparingly—it's the 'gray zone' that can accumulate fatigue without clear benefit.
+  • This session introduces race-pace feel.
+• CADENCE:
+  • Threshold work is recovery-expensive. Use it strategically, not constantly. : Self-selected race cadence.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="720" OnPower="0.98" Cadence="90" OffDuration="360" OffPower="0.55"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

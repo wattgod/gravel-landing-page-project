@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final quality week.
+  • After this, you taper.
+  • Make these sessions count—they're your last hard work before race day.
+  • Quality over everything.
+  • Tuesday has final threshold work.
+  • Thursday has race openers.
+  • Saturday is final race simulation.
+  • Two weeks to race day.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

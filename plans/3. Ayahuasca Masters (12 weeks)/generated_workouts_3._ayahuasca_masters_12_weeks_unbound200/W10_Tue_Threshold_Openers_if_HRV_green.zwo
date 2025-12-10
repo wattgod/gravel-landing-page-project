@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Tue - Threshold + Openers (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x10 min @ 87-92% FTP (5 min easy between)
+  • 10 min easy
+  • 3x1 min @ 95-100% FTP (2 min easy between)
+  • 5 min cooldown
+
+• CADENCE:
+  • Green? Full workout. Yellow? 2x8 min threshold, skip openers. Red? 30 min easy. Threshold builds race pace, openers keep top-end sharp. Should feel strong—fitness manifesting. ||RHYTHM_START|| INTERVALS: For one interval, try rhythm pattern: 2 min Z3 (self-selected cadence) + 1 min Z4 (high cadence 100+ rpm) x 4, continuous. This simulates race variability.  WORK: Mix cadences or use rhythm pattern. High cadence (100+ rpm) on openers.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="600" OnPower="0.905" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="600" Power="0.65" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="60" OnPower="0.98" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <Cooldown Duration="300" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

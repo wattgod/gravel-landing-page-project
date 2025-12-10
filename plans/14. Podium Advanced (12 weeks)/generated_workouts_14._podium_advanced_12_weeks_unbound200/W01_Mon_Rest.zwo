@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to elite-level training.
+  • HVLI = High Volume, Low Intensity.
+  • This is how professional endurance athletes train—massive aerobic volume (mostly Z1-Z2) builds extreme durability, fat oxidation, and resilience.
+  • Weeks 1-4: pure base building.
+  • Weeks 5-8: maintain volume, add quality.
+  • Weeks 9-12: sharpen while preserving durability.
+  • Testing week—FTP Tuesday, durability assessment Saturday.
+  • You need 20-25 hours weekly.
+  • If you don't have that time, this isn't your plan.
+  • Foundation assessment week.
+  • Tuesday has FTP test + aerobic efficiency (45 min @ 65-70% FTP).
+  • Wednesday- This week establishes your baseline and introduces HVLI rhythm.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

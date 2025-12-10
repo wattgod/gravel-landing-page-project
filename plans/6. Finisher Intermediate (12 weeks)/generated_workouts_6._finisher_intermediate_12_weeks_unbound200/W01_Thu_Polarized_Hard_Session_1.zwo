@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Thu - Polarized Hard Session #1</name>
+  <description>• STRUCTURE:
+  • 20 min warmup with 3x30sec openers
+  • 5x4 min @ 110-115% FTP (4 min easy between)
+  • 10 min cooldown
+
+• CADENCE:
+  • Alternate high cadence (100+ rpm) and low cadence (40-60 rpm) on intervals. High cadence = seated. Low cadence = seated, big gear, torque work. This teaches your body to produce power in different ways.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="30" Power="1.10"/>
+    <SteadyState Duration="30" Power="0.55"/>
+    <SteadyState Duration="30" Power="1.10"/>
+    <SteadyState Duration="30" Power="0.55"/>
+    <SteadyState Duration="30" Power="1.10"/>
+    <SteadyState Duration="30" Power="0.55"/>
+    <IntervalsT Repeat="5" OnDuration="240" OnPower="1.12" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

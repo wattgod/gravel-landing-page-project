@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to time-crunched training.
+  • You have 3-5 hours per week and want performance, not just completion.
+  • This plan uses G-Spot (87-92% FTP) and Threshold (95-105% FTP) because they deliver maximum fitness gains in minimum time.
+  • Every minute counts.
+  • No junk miles.
+  • You'll do 2-3 quality sessions per week with everything else as rest or very light recovery.
+  • This is about FTP gains and race pace power—the most important metrics for gravel racing success.
+  • Foundation week.
+  • Tuesday has FTP test (20 min max sustained effort).
+  • Thursday introduces G-Spot intervals (3x10 min).
+  • Saturday is tempo endurance (75-90 min).
+  • This week establishes your baseline and introduces time-efficient intensity.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

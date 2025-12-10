@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Volume and intensity both increase this week.
+  • By Saturday you should feel accumulated fatigue but not destroyed.
+  • If you're consistently exhausted, you're pushing too hard on easy days.
+  • The whole point of 80/20 is keeping easy truly easy so hard can be truly hard.
+  • Intensity progression week.
+  • Wednesday has long threshold blocks (2x25 min).
+  • Saturday combines VO2max + threshold (big workout).
+  • Sunday is your longest ride (4.5-5 hours).
+  • This week builds race-specific fitness.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

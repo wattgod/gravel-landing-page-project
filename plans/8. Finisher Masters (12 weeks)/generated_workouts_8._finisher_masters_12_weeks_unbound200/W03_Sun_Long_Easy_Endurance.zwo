@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Sun - Long Easy Endurance</name>
+  <description>• Readiness Check: Long ride only if feeling recovered.
+  • Otherwise 2 hours.
+  • Day after VO2max = tired legs possible.
+  • Keep it EASY—conversational pace.
+  • Eat 60-70g carbs/hour.
+  • Heavy maintains max force production.
+  • Progressive overload continues—add weight if last week felt good.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="10800" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Sun - Rest or Easy Spin</name>
+  <description>• Optional: 20-30 min easy
+• REST DAY NOTE:
+  • Notes: Default is rest. Do what your schedule allows.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+  • MINIMUM THIS WEEK: If you only did Tuesday's HIIT (35-45 min), you did the minimum.
+  • Not ideal, but acceptable for survival training.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

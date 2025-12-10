@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Peak phase begins.
+  • Final four weeks before race day.
+  • Training becomes race-specific now—long sustained efforts, race-pace blocks, gravel simulation.
+  • You've built the engine.
+  • Now we tune it for race day performance.
+  • Maintain strict polarization and autoregulation.
+  • Two quality sessions per week, everything else easy.
+  • Peak phase begins.
+  • Wednesday has VO2max intervals (sharpens top end).
+  • Saturday has race-pace threshold (2x25 min).
+  • Sunday is long easy ride.
+  • Practice race nutrition aggressively (70-80g carbs/hour on long rides).
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

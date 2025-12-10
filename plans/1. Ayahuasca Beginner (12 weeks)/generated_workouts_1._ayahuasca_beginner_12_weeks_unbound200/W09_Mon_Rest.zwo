@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final four weeks.
+  • Training becomes race-specific.
+  • You're practicing race pace, race-type efforts.
+  • Accept reality: your longest training ride is ~2 hours, race is 4-8+ hours.
+  • Gap is massive.
+  • This means conservative pacing and aggressive fueling are MANDATORY for survival.
+  • Race prep begins.
+  • Tuesday has race simulation HIIT (8x1 min HARD).
+  • Thursday has race pace intervals (3x10 min @ moderately hard).
+  • Saturday is long race simulation (90-105 min).
+  • This week practices race-specific efforts.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

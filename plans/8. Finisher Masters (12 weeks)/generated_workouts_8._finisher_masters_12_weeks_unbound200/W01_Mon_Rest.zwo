@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to Masters Performance training with DUAL safeguards.
+  • You're 50+ pursuing strong finishes (not just completion).
+  • You have 8-12 hours weekly—enough for performance IF trained intelligently.
+  • This plan combines TWO proven approaches: (1) Autoregulation via HRV monitoring, and (2) Polarized distribution (80% easy, 20% hard).
+  • Check HRV daily if possible.
+  • High/normal = green light for quality.
+  • Low = easy day or rest.
+  • No HRV tracker?
+  • Use perceived recovery: good sleep + fresh legs = go.
+  • Poor sleep + heavy legs = back off.
+  • Polarized = easy days TRULY easy (Z1-Z2), hard days TRULY hard (Z4-Z5+), almost nothing in middle.
+  • Masters principle: recovery IS training at 50+.
+  • Foundation week.
+  • Tuesday has FTP test (if HRV green).
+  • Saturday is first long easy ride (2-2.5 hours).
+  • Track HRV daily to establish baseline.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

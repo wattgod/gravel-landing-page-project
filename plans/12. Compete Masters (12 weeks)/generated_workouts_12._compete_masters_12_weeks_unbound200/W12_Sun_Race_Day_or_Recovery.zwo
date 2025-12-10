@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: RACE DAY—EXECUTE YOUR PLAN
+  • If raced Saturday: 30-45 min easy spin, celebrate
+  • Race Day Notes: 12 weeks of HRV-guided polarized training has built sustainable race fitness.
+  • Your aerobic base is strong, your top-end is sharp, and your body is fresh.
+  • Start smart, fuel consistently, and finish strong.
+  • MASTERS NOTE: Age brings wisdom.
+  • Race the event, not the ego.
+  • You've prepared intelligently—now execute intelligently.
+  • Dominate your category.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Based on your Week 1 testing, we're starting with pyramidal base building.
+  • Lots of Z2, some tempo, occasional G-Spot.
+  • This week follows traditional base principles—build the aerobic engine first.
+  • Check your HRV if you're tracking.
+  • If HRV is significantly down from baseline, take an extra rest day or make today's ride easier.
+  • Pyramidal base week.
+  • Tuesday has tempo intervals (comfortably hard).
+  • Thursday progresses G-Spot (longer intervals).
+  • Saturday is long aerobic base with tempo work in final 90 minutes.
+  • Building the pyramid foundation.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Sun - Rest or Easy Recovery</name>
+  <description>• Rest day or optional easy recovery ride.
+  • Focus on recovery and preparation for the week ahead.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

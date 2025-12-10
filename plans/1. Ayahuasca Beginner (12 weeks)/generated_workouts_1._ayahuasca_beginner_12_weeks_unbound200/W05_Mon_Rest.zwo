@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Build phase begins.
+  • Weeks 5-7 progressively add both HIIT and longer moderate efforts.
+  • You're building minimal race-ready fitness.
+  • Not ideal fitness—survival fitness.
+  • Build phase begins.
+  • Tuesday has HIIT session (8x30sec HARD).
+  • Thursday has tempo intervals (3x8 min @ moderately hard).
+  • Saturday is long ride with moderate efforts (75-90 min).
+  • This week introduces sustained efforts alongside HIIT.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

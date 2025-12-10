@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sat - Race Day or Rest</name>
+  <description>• If racing Saturday: EXECUTE YOUR PLAN
+  • If racing Sunday: Complete rest or 20-30 min easy spin with 3x30sec openers
+  • Notes: If racing today—start conservatively (50+ bodies warm up slower), fuel from the start (50-60g carbs/hour MINIMUM), pace smart (you can accelerate in final third if feeling good), strong finish (durability training pays off late).
+  • Autoregulation + Polarization prepared you for this.
+  • Trust it.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

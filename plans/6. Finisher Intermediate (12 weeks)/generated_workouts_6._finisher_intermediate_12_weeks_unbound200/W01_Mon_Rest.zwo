@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to polarized training.
+  • Most of your riding will be truly easy (Z1-Z2), and a small amount will be truly hard (Z4-Z5).
+  • Almost nothing in the middle.
+  • This is how elite endurance athletes train—massive easy volume builds your engine, targeted hard work sharpens it.
+  • Don't skip the FTP test Tuesday.
+  • Keep everything else genuinely easy this week.
+  • This week establishes your baseline.
+  • Tuesday's FTP test sets your training zones for the entire plan.
+  • Thursday introduces your first hard session (VO2max intervals).
+  • Saturday is your first long easy ride (3-3.5 hours)—practice fueling here.
+  • Remember: 80% easy, 20% hard.
+  • Most athletes screw this up by making easy days too hard.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

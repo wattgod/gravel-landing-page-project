@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Taper week 2.
+  • Minimal volume.
+  • Sharp intensity.
+  • One week to race.
+  • Tuesday has taper intensity.
+  • Thursday has easy + sharp openers.
+  • Saturday is final tune-up.
+  • Sunday rest.
+
+• REST DAY NOTE:
+  • HRV GUIDANCE: Peak freshness. You should feel powerful, eager, ready.  Complete rest recommended for Masters. Light movement (walk, yoga) is fine.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

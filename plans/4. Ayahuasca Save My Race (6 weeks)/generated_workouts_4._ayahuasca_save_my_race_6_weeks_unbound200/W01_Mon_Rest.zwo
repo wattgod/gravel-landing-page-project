@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Welcome to emergency mode.
+  • You have 6 weeks to get ready for a gravel race with only 3-5 hours per week.
+  • This isn't ideal—but it's reality.
+  • We're using G-Spot and Threshold work because they give maximum bang-for-buck in minimal time.
+  • Accept this: you won't have perfect endurance.
+  • You won't have elite power.
+  • But you WILL be able to finish if you execute this plan and pace the race conservatively.
+  • Let's be honest about what we're working with.
+  • Rapid assessment week.
+  • Tuesday has quick FTP test (20 min sustained effort).
+  • Thursday introduces G-Spot intervals (3x10 min).
+  • Saturday is longest ride of week (75-90 min with G-Spot blocks).
+  • This week establishes your baseline and introduces time-efficient intensity.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

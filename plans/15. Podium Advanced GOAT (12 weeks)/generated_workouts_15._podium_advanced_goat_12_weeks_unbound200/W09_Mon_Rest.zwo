@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Final quality week.
+  • Last hard work before taper.
+  • Three weeks to race.
+  • Tuesday has final sharpening combo.
+  • Wednesday is moderate volume.
+  • Thursday has race openers.
+  • Friday is easy.
+  • Saturday is final race simulation.
+  • Sunday is easy.
+  • ||REST_DAY_NOTE_START|| Complete rest.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

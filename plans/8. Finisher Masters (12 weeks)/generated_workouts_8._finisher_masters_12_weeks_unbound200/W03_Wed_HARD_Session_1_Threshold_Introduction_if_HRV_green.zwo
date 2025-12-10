@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Wed - HARD Session #1: Threshold Introduction (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 3x10 min @ 100-105% FTP (5 min easy recovery between)
+  • 15 min cooldown
+
+• CADENCE:
+  • Green? Full workout. Yellow? 3x8 min @ 98-100%. Red? 60 min easy, skip intervals. Just above FTP. Hard but controllable. Breathing labored but rhythmic. This is race pace for Masters. Should finish thinking "maybe one more." Long warmup/cooldown maintains polarization—only intervals are hard.  WORK: Mix cadences—interval 1 high cadence (100+ rpm), interval 2 low cadence (40-60 rpm), interval 3 self-selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="1.02" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

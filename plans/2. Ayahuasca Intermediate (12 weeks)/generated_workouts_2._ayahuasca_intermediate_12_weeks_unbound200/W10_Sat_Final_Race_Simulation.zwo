@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Sat - Final Race Simulation</name>
+  <description>• STRUCTURE:
+  • 20 min easy
+  • 3x15 min @ 90-95% FTP (6 min easy)
+  • 2x3 min @ 105-110% FTP (4 min easy)
+  • 20 min easy
+
+• CADENCE:
+  • Race cadence throughout.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1200" Power="0.68" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="900" OnPower="0.93" Cadence="90" OffDuration="360" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="180" OnPower="1.08" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <SteadyState Duration="1200" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

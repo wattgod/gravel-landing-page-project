@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Peak loading week.
+  • Biggest volume and intensity.
+  • By Sunday you should feel accumulated fatigue—that's expected.
+  • Week 4 sustains this load, then Week 5 recovery.
+  • Peak loading week.
+  • Tuesday has extended G-Spot (4x15 min—60 minutes cumulative).
+  • Thursday has extended threshold (2x18 min).
+  • Saturday has long race simulation (3x20 min varied intensity).
+  • This is your biggest week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

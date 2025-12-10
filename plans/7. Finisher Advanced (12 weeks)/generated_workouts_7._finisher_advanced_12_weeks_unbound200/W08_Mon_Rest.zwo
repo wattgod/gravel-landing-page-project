@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Recovery week after threshold block.
+  • You should feel tired Monday, fresh by Sunday.
+  • This is when adaptation happens—your threshold power is increasing during rest.
+  • Next week begins transmutation phase: polarized training to convert threshold gains into race performance.
+  • Variety returns.
+  • Recovery week.
+  • Wednesday has light threshold touch (just maintaining fitness).
+  • Rest of week is easy endurance.
+  • shifts to stability work.
+  • This is when adaptation happens.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • RACE WEEK.
+  • Minimal riding.
+  • Maximum freshness.
+  • You should feel powerful, eager, ready.
+  • Trust the work.
+  • Tuesday has activation.
+  • Wednesday rest or very easy.
+  • Thursday has openers.
+  • Friday is pre-race.
+  • Saturday/Sunday is race.
+
+• REST DAY NOTE:
+  • HRV GUIDANCE: Peak readings. Nervous energy is normal—channel it.  Complete rest recommended for Masters. Light movement (walk, yoga) is fine.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

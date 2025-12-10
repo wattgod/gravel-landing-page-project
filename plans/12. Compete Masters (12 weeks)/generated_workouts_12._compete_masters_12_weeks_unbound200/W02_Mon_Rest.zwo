@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 2 establishes polarized rhythm: 2 hard days, rest easy.
+  • Quality over quantity on intensity days.
+  • Tuesday has VO2max intervals.
+  • Wednesday-Thursday easy.
+  • Friday rest.
+  • Saturday long aerobic.
+
+• REST DAY NOTE:
+  • HRV GUIDANCE: Establish your baseline this week. Note patterns—what affects your HRV? Sleep, alcohol, stress all show up.  Complete rest recommended for Masters. Light movement (walk, yoga) is fine.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

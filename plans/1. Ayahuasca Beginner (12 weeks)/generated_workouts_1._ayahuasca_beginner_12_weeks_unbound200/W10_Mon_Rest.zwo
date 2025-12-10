@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Three weeks to race.
+  • Focus on execution, recovery, race logistics.
+  • Order nutrition.
+  • Check bike.
+  • Confirm travel.
+  • Mental prep begins.
+  • Final race-specific sharpening.
+  • Tuesday has HIIT sharpness (6x1 min + 4x30sec).
+  • Thursday has race pace + openers (2x12 min + 4x30sec).
+  • Saturday is final long session (100-120 min).
+  • This week is final race-specific work.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Tue - Threshold Session #1</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 3x15 min @ 100-105% FTP (7 min easy between)
+  • 30 min cooldown.
+
+• CADENCE:
+  • threshold (race pace). Building race-pace endurance. This is what gravel racing feels like—sustained near-max effort.  WORK: Mix cadences—interval 1 high (100+ rpm), interval 2 low (40-60 rpm), interval 3 self-selected.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="900" OnPower="1.02" Cadence="100" OffDuration="420" OffPower="0.55"/>
+    <Cooldown Duration="1800" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

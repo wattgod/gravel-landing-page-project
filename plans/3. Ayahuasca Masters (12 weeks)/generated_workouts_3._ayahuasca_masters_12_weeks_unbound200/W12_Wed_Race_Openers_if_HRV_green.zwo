@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Wed - Race Openers (if HRV green)</name>
+  <description>• STRUCTURE:
+  • 15 min easy
+  • 3x3 min @ 85-90% FTP (2 min easy between)
+  • 3x30sec @ 95% FTP (90sec easy between)
+  • 5 min easy
+
+• CADENCE:
+  • Green? Do openers. Yellow/Red? Skip openers, just ride 30 min easy. Final intensity check. Should feel snappy and strong. If legs feel dead, you need more rest—trust your body.  WORK: High cadence on all efforts (100+ rpm).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.70"/>
+    <SteadyState Duration="900" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="180" OnPower="0.875" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="30" OnPower="0.95" Cadence="100" OffDuration="90" OffPower="0.55"/>
+    <Cooldown Duration="300" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

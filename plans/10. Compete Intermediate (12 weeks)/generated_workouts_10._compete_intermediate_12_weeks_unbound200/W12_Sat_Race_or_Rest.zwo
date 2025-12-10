@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sat - Race or Rest</name>
+  <description>• If racing Saturday: EXECUTE YOUR PLAN
+  • If racing Sunday: Rest or 30-45 min easy Z2 with 2x30sec openers
+  • Notes: If racing today—trust your training, pace yourself early, fuel aggressively, stay mentally engaged.
+  • You've done the work.
+  • Now execute.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

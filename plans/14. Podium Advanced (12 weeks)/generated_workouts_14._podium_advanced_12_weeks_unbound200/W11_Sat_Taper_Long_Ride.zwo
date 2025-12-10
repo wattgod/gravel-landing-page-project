@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Sat - Taper Long Ride</name>
+  <description>• STRUCTURE:
+  • First 2.5 hours Z2
+  • 3x10 min @ 95-100% FTP (5 min easy between)
+  • Final 2 hours Z2
+
+• CADENCE:
+  • Mix cadences on threshold blocks.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="8100" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="0.98" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="7200" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

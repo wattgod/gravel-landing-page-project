@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Biggest week of plan.
+  • By Saturday you should feel accumulated fatigue—tired but not destroyed.
+  • If you feel crushed by Wednesday, STOP and take extra rest.
+  • Masters athletes must respect fatigue.
+  • Week 8 is recovery, so push through IF you're recovering adequately (good sleep, good energy, no injury signs).
+  • But be ready to adjust.
+  • Peak training stress week.
+  • Tuesday has combined intensity (threshold + G-Spot—if HRV green).
+  • Thursday is easy endurance (if recovered).
+  • Saturday is longest ride of plan (if feeling strong).
+  • This is maximum sustainable load for 50+ athlete.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

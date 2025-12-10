@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • RACE WEEK.
+  • Minimal riding.
+  • Maximum freshness.
+  • You should feel powerful, eager, ready.
+  • Nervous energy is fuel.
+  • Trust the work.
+  • Tuesday has activation.
+  • Wednesday is rest or very easy.
+  • Thursday has openers.
+  • Friday is pre-race.
+  • Saturday/Sunday is race.
+
+• REST DAY NOTE:
+  • ELITE CONTEXT: 12 weeks of 20-25 hours per week. You've built something exceptional. Now execute.  Complete rest.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

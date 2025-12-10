@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• If racing Sunday: EXECUTE SURVIVAL PLAN
+  • If raced Saturday: Easy 15-20 min spin if you can move, celebrate survival
+  • Notes: Race day.
+  • CONSERVATIVE START IS MANDATORY.
+  • Fuel constantly.
+  • Final hours will be pure survival—everyone's hurt, you just keep moving forward.
+  • Mental toughness.
+  • You.
+  • Can.
+  • Finish.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

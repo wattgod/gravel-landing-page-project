@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Sun - Maintenance</name>
+  <description>• Focus on movement quality, mobility, and maintaining adaptations without adding stress.
+  • This is active recovery for muscles.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

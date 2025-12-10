@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Tue - Mixed Race Simulation #1</name>
+  <description>• STRUCTURE:
+  • 30 min warmup
+  • 5x5 min @ 110-115% FTP (5 min easy between)
+  • 20 min easy
+  • 2x15 min @ 100-105% FTP (8 min easy between)
+  • 20 min cooldown.
+
+  • VO2max + threshold.
+  • This is what competitive racing feels like—surges and sustained efforts.
+  • Practice fueling during intervals.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1800" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="5" OnDuration="300" OnPower="1.12" OffDuration="300" OffPower="0.50"/>
+    <SteadyState Duration="1200" Power="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="900" OnPower="1.02" Cadence="90" OffDuration="480" OffPower="0.55"/>
+    <Cooldown Duration="1200" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

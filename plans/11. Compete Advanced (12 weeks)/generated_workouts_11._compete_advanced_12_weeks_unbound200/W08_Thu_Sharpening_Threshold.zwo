@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Thu - Sharpening Threshold</name>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 3x10 min @ 100-105% FTP (6 min easy between)
+  • 4x1 min @ 115-120% FTP (2 min easy)
+  • 15 min cooldown
+
+• CADENCE:
+  • High cadence (100+ rpm) on all efforts.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="1.02" Cadence="100" OffDuration="360" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="60" OnPower="1.18" Cadence="100" OffDuration="120" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

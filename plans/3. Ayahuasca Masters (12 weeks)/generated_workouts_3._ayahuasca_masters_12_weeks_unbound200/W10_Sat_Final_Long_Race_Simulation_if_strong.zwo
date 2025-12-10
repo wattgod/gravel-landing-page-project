@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Sat - Final Long Race Simulation (if strong)</name>
+  <description>• STRUCTURE:
+  • 30-45 min easy
+  • 3x10 min @ 82-90% FTP (varied, 5 min easy between)
+  • Final 30-45 min easy
+
+  • Readiness Check: Green + slept well?
+  • Full ride.
+  • Yellow?
+  • 2x8 min efforts only.
+  • Red?
+  • 75 min easy, no efforts.
+  • Final big ride before taper.
+  • Race pace when tired.
+  • Eat 50-60g carbs/hour.
+  • Test EVERYTHING—clothes, shoes, nutrition, hydration.
+• CADENCE:
+  • For one interval, try loaded pattern: 1 min Z5/Z6 (high cadence, seated) → settle into 9 min Z3 (self-selected cadence). This simulates race starts and surges.  WORK: Mix cadences or use loaded/rhythm patterns.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.70" Cadence="85"/>
+    <IntervalsT Repeat="3" OnDuration="600" OnPower="0.86" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <SteadyState Duration="2400" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

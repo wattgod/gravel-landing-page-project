@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 6 emphasizes race-pace power.
+  • Longer threshold intervals, extended G-Spot work, and your longest quality session of the plan.
+  • This is where race fitness develops.
+  • Tuesday has peak threshold (2x15 min).
+  • Thursday introduces rhythm intervals.
+  • Saturday is peak volume with mixed intensity (110-120 min).
+  • Big week.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

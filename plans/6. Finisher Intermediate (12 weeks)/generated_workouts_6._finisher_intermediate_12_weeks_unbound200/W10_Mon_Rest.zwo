@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W10 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Second-to-last build week.
+  • You should feel fit and strong now.
+  • Two more weeks of quality, then taper.
+  • Focus on execution, recovery, and race logistics.
+  • Check your bike.
+  • Order last nutrition products.
+  • Book travel if needed.
+  • Final quality block.
+  • Wednesday has 3x20 threshold (biggest threshold session).
+  • Saturday has final big quality (VO2max + threshold).
+  • Sunday is your last long ride before taper.
+  • Make these workouts count.
+  • ||REST_DAY_NOTE_START|| Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

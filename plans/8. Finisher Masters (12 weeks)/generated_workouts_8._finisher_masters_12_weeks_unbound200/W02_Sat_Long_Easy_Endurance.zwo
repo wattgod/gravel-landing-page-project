@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Sat - Long Easy Endurance</name>
+  <description>• Readiness Check: Green light + good sleep?
+  • Do 2.5-3 hours.
+  • Yellow?
+  • Do 2 hours.
+  • Red?
+  • 90 min easy.
+  • Longest ride yet.
+  • Day after hard session = tired legs possible, but keep power LOW.
+  • Conversational pace.
+  • Pure aerobic volume.
+  • Eat 60g carbs/hour.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="9000" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

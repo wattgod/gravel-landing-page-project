@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• WEEK PREVIEW:
+  • Week 3 is peak Base volume.
+  • Maximum aerobic loading before recovery week.
+  • This is the biggest week—embrace it.
+  • Tuesday has extended VO2.
+  • Wednesday is volume + extended tempo.
+  • Thursday has peak threshold.
+  • Friday is easy.
+  • Saturday is peak long (6.5+ hours).
+  • ||REST_DAY_NOTE_START|| Complete rest.
+  • You need it.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

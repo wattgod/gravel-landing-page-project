@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Thu - Loaded Rhythm Intervals</name>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 3x12 min loaded rhythm (1 min @ 110%
+  • 2 min @ 80% + 1 min @ 95% × 3, continuous) (6 min easy between)
+  • 10 min cooldown
+
+• CADENCE:
+  • Start each block with 1-min surge @ 110% FTP (simulates race attacks), then settle into rhythm pattern. This is race simulation—hard start, sustained effort.  WORK: Loaded start at high cadence (100+ rpm), rhythm as previous.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="60" Power="1.10" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="360" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.10" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="360" Power="0.55"/>
+    <SteadyState Duration="60" Power="1.10" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <SteadyState Duration="120" Power="0.80" Cadence="90"/>
+    <SteadyState Duration="60" Power="0.95" Cadence="100"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>
