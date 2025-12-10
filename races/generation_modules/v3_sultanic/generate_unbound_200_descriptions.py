@@ -91,7 +91,11 @@ def generate_description(plan_name, tier_module, level_key, weeks):
     html = html.replace('{{EXPECTATION_GUIDE_2}}', tier_module.EXPECTATION_GUIDE_2)
     html = html.replace('{{EXPECTATION_GUIDE_3}}', tier_module.EXPECTATION_GUIDE_3)
     html = html.replace('{{EXPECTATION_GUIDE_4}}', tier_module.EXPECTATION_GUIDE_4)
-    html = html.replace('{{EXPECTATION_GUIDE_5}}', tier_module.EXPECTATION_GUIDE_5)
+    # Only include 5th guide if it exists (saves ~70 chars if removed)
+    if tier_module.EXPECTATION_GUIDE_5:
+        html = html.replace('{{EXPECTATION_GUIDE_5_HTML}}', f'<li>{tier_module.EXPECTATION_GUIDE_5}</li>')
+    else:
+        html = html.replace('{{EXPECTATION_GUIDE_5_HTML}}', '')
     html = html.replace('{{PATTERN_FOR_1}}', tier_module.PATTERN_FOR_1)
     html = html.replace('{{PATTERN_FOR_2}}', tier_module.PATTERN_FOR_2)
     html = html.replace('{{PATTERN_FOR_3}}', tier_module.PATTERN_FOR_3)
@@ -105,20 +109,19 @@ def generate_description(plan_name, tier_module, level_key, weeks):
     return html
 
 def validate_character_count(html, max_chars=4000):
-    """Validate character count (text only, no HTML tags)"""
-    text_only = re.sub(r'<[^>]+>', '', html)
-    char_count = len(text_only)
+    """Validate character count - TrainingPeaks counts ALL characters including HTML"""
+    total_chars = len(html)  # TrainingPeaks counts everything
     
-    if char_count <= 3950:
+    if total_chars <= 3950:
         status = "✓ SAFE"
-    elif char_count <= 4000:
+    elif total_chars <= 4000:
         status = "⚠ TIGHT"
     else:
         status = "✗ OVER"
     
     return {
-        'count': char_count,
-        'remaining': 4000 - char_count,
+        'count': total_chars,
+        'remaining': 4000 - total_chars,
         'status': status
     }
 
