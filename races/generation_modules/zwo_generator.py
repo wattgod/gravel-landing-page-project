@@ -51,8 +51,11 @@ def add_heat_training_note(week_num, race_data, heat_tier, is_endurance):
     race_name = race_data["race_metadata"]["name"]
     race_name_upper = race_name.upper()
     
-    # Weeks 6-10: Heat acclimatization protocol period
-    if week_num >= 6 and week_num <= 10:
+    # Get heat training weeks from race data (6-10 for 12-week plans, 3-5 for 6-week plans)
+    heat_weeks = race_data.get("workout_modifications", {}).get("heat_training", {}).get("tier_3_weeks", [6, 7, 8, 9, 10])
+    
+    # Heat acclimatization protocol period
+    if week_num in heat_weeks:
         if is_endurance:
             # Endurance rides: Use for active heat training
             return f"\n\n• {race_name_upper} - HEAT ACCLIMATIZATION PROTOCOL (Weeks 6-10):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
@@ -179,10 +182,13 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     duration_minutes = estimate_workout_duration(workout.get("blocks", ""))
     
     # Add race-specific notes
-    # Heat training applies to weeks 6-10 for endurance rides (active) or any ride (post-exercise)
+    # Heat training applies to weeks 6-10 for 12-week plans, weeks 3-5 for 6-week plans
     heat_tier = get_heat_protocol_tier(week_num, race_data)
-    if (week_num >= 6 and week_num <= 10) and "REST" not in workout_name.upper():
-        # Use tier3 for weeks 6-10 if heat training is enabled, otherwise use week-based logic
+    heat_weeks = race_data.get("workout_modifications", {}).get("heat_training", {}).get("tier_3_weeks", [])
+    is_heat_week = week_num in heat_weeks
+    
+    if is_heat_week and "REST" not in workout_name.upper():
+        # Use tier3 for heat training weeks if heat training is enabled
         if heat_tier:
             description += add_heat_training_note(week_num, race_data, heat_tier, is_endurance)
         elif race_data.get("workout_modifications", {}).get("heat_training", {}).get("enabled", True):
