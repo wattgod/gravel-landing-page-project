@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W04 Sat - Moderate Endurance</name>
+  <description>• No intensity today. Just time in the saddle at comfortable pace. Practice race nutrition even though effort is low. Work on bike handling—corners, descents, riding no-hands for 5 seconds to stretch.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="7200" Power="0.68" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.55"/>
+  </workout>
+</workout_file>
