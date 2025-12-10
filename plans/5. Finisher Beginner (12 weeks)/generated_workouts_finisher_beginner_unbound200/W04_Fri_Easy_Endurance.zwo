@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W04 Fri - Easy Endurance</name>
-  <description>• Yes, another easy day. Trust the process. Recovery weeks work by giving your body time to adapt.</description>
+  <description>• Yes, another easy day.
+  • Trust the process.
+  • Recovery weeks work by giving your body time to adapt.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

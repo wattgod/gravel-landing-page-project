@@ -2,7 +2,11 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W01 Sat - Long Endurance Foundation</name>
-  <description>• Your bread and butter. Conversational pace the entire time. Eat 40-60g carbs every hour. Drink 500-750ml per hour. Practice race nutrition here—this is a dress rehearsal for race day fueling.</description>
+  <description>• Your bread and butter.
+  • Conversational pace the entire time.
+  • Eat 40-60g carbs every hour.
+  • Drink 500-750ml per hour.
+  • Practice race nutrition here—this is a dress rehearsal for race day fueling.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

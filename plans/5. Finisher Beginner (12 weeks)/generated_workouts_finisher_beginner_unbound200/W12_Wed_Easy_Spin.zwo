@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W12 Wed - Easy Spin</name>
-  <description>• Just moving legs. No intensity whatsoever. Spin out any lingering fatigue.</description>
+  <description>• Just moving legs.
+  • No intensity whatsoever.
+  • Spin out any lingering fatigue.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

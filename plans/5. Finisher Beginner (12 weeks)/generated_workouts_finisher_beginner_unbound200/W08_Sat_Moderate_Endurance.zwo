@@ -2,7 +2,11 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W08 Sat - Moderate Endurance</name>
-  <description>• No intensity. Just aerobic time. Practice skills—cornering, descending, standing to stretch. Dial in bike fit. Check all equipment.</description>
+  <description>• No intensity.
+  • Just aerobic time.
+  • Practice skills—cornering, descending, standing to stretch.
+  • Dial in bike fit.
+  • Check all equipment.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

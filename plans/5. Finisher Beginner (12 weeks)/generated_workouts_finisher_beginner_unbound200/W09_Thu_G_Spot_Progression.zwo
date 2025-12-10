@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W09 Thu - G-Spot Progression</name>
-  <description>• STRUCTURE: 20 min warmup → 3x20 min @ 87-92% FTP (5 min easy between) → 10 min cooldown • Long G-Spot intervals. This is just below threshold—sustainable discomfort. Builds your ability to hold strong power for extended periods. Perfect for long gravel race efforts.</description>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 3x20 min @ 87-92% FTP (5 min easy between)
+  • 10 min cooldown • Long G-Spot intervals. This is just below threshold—sustainable discomfort. Builds your ability to hold strong power for extended periods. Perfect for long gravel race efforts.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.65"/>

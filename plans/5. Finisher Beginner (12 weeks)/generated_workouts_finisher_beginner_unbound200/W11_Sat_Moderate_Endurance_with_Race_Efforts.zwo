@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W11 Sat - Moderate Endurance with Race Efforts</name>
-  <description>• STRUCTURE: First hour Z2 → 3x10 min @ 88-95% FTP (5 min easy between) in hour 2 → Final 30-60 min Z2 • Shorter than recent weeks but still race-intensity efforts. You should feel strong. This is your final "reminder" workout before race week. Dial in final nutrition and equipment choices.</description>
+  <description>• STRUCTURE:
+  • First hour Z2
+  • 3x10 min @ 88-95% FTP (5 min easy between) in hour 2
+  • Final 30-60 min Z2 • Shorter than recent weeks but still race-intensity efforts. You should feel strong. This is your final "reminder" workout before race week. Dial in final nutrition and equipment choices.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

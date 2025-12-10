@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W06 Tue - VO2max Intervals</name>
-  <description>• STRUCTURE: 20 min warmup with openers → 6x4 min @ 110-115% FTP (4 min easy between) → 10 min cooldown • Six intervals is a step up from last block. These hurt. Embrace the suck. Your breathing should be labored but controlled. If you can't complete an interval, stop and take extra rest. Quality &gt; quantity.</description>
+  <description>• STRUCTURE:
+  • 20 min warmup with openers
+  • 6x4 min @ 110-115% FTP (4 min easy between)
+  • 10 min cooldown • Six intervals is a step up from last block. These hurt. Embrace the suck. Your breathing should be labored but controlled. If you can't complete an interval, stop and take extra rest. Quality &gt; quantity.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>

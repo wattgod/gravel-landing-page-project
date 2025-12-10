@@ -2,7 +2,21 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W01 Mon - Rest</name>
-  <description>• Welcome to your first week. This week is about establishing your baseline fitness and learning the rhythm of structured training. Don't skip the FTP test on Tuesday—everything in this plan is built around that number. Keep all other rides conversational easy. Your body needs to learn consistency before we add intensity. You're building an aerobic engine first, then we'll sharpen it later. • WEEK PREVIEW: This week focuses on establishing your baseline. Tuesday's FTP test sets your training zones for the entire plan. Thursday introduces your first G-Spot intervals—uncomfortably sustainable. Saturday is your first long ride (2.5-3 hours)—practice fueling here. Sunday includes • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  <description>• Welcome to your first week.
+  • This week is about establishing your baseline fitness and learning the rhythm of structured training.
+  • Don't skip the FTP test on Tuesday—everything in this plan is built around that number.
+  • Keep all other rides conversational easy.
+  • Your body needs to learn consistency before we add intensity.
+  • You're building an aerobic engine first, then we'll sharpen it later.
+• WEEK PREVIEW:
+  • This week focuses on establishing your baseline.
+  • Tuesday's FTP test sets your training zones for the entire plan.
+  • Thursday introduces your first G-Spot intervals—uncomfortably sustainable.
+  • Saturday is your first long ride (2.5-3 hours)—practice fueling here.
+  • Sunday includes
+
+• REST DAY NOTE:
+  • Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
   <sportType>bike</sportType>
       <workout>
     <FreeRide Duration="60"/>

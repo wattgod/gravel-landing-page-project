@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W05 Wed - Endurance</name>
-  <description>• Keep it easy. Your job today is recovery, not fitness. Active recovery helps clear fatigue better than sitting on the couch.</description>
+  <description>• Keep it easy.
+  • Your job today is recovery, not fitness.
+  • Active recovery helps clear fatigue better than sitting on the couch.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

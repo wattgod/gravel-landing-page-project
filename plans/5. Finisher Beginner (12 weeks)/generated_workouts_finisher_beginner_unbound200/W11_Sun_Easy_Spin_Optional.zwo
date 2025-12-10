@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W11 Sun - Easy Spin + Optional</name>
-  <description>• Easy recovery spin. Skip if tired. You're one week out from race week now.</description>
+  <description>• Easy recovery spin.
+  • Skip if tired.
+  • You're one week out from race week now.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

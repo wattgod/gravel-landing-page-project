@@ -2,7 +2,12 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W01 Tue - FTP Test + Easy Spin</name>
-  <description>• STRUCTURE: 15 min warmup → 5 min all-out → 10 min recovery → 20 min max effort → 15 min cooldown • This sets your training zones for the entire plan. Go hard but not stupid—you need to sustain 20 minutes, not win it in the first 5. Write down your average power for the 20 minutes, multiply by 0.95. That's your FTP.</description>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 5 min all-out
+  • 10 min recovery
+  • 20 min max effort
+  • 15 min cooldown • This sets your training zones for the entire plan. Go hard but not stupid—you need to sustain 20 minutes, not win it in the first 5. Write down your average power for the 20 minutes, multiply by 0.95. That's your FTP.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>

@@ -2,7 +2,8 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W02 Sun - Easy Endurance</name>
-  <description>• Another recovery ride. Do your Progress your weights slightly from last week if movements felt easy.</description>
+  <description>• Another recovery ride.
+  • Do your Progress your weights slightly from last week if movements felt easy.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

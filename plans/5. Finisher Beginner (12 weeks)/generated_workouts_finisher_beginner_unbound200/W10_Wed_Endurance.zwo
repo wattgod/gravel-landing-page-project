@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W10 Wed - Endurance</name>
-  <description>• Recovery between hard days. Keep it conversational. Your fitness is built—now you're maintaining and sharpening.</description>
+  <description>• Recovery between hard days.
+  • Keep it conversational.
+  • Your fitness is built—now you're maintaining and sharpening.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

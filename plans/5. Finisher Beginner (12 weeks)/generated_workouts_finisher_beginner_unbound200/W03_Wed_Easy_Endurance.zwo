@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W03 Wed - Easy Endurance</name>
-  <description>• Truly easy today. Resist all temptation to push. This is active recovery between hard sessions. Spin easy, clear your legs, save energy for tomorrow.</description>
+  <description>• Truly easy today.
+  • Resist all temptation to push.
+  • This is active recovery between hard sessions.
+  • Spin easy, clear your legs, save energy for tomorrow.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

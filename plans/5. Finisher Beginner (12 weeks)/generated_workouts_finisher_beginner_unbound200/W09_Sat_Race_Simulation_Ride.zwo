@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W09 Sat - Race Simulation Ride</name>
-  <description>• STRUCTURE: First hour Z2 → 3x30 min @ 85-92% FTP (10 min easy between) in hours 2-4 → Final 30 min Z2 • BIG workout. Simulates race-day pacing—long sustained efforts with short recoveries. This is exactly what gravel racing feels like. Fuel like race day: 70-80g carbs/hour. Test all race-day gear and nutrition.</description>
+  <description>• STRUCTURE:
+  • First hour Z2
+  • 3x30 min @ 85-92% FTP (10 min easy between) in hours 2-4
+  • Final 30 min Z2 • BIG workout. Simulates race-day pacing—long sustained efforts with short recoveries. This is exactly what gravel racing feels like. Fuel like race day: 70-80g carbs/hour. Test all race-day gear and nutrition.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

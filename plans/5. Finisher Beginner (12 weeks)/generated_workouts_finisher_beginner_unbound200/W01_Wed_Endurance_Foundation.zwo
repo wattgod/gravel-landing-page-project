@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W01 Wed - Endurance Foundation</name>
-  <description>• Conversational pace. If you can't talk in full sentences, slow down. This is active recovery from yesterday's test. Your legs should feel looser by the end, not trashed.</description>
+  <description>• Conversational pace.
+  • If you can't talk in full sentences, slow down.
+  • This is active recovery from yesterday's test.
+  • Your legs should feel looser by the end, not trashed.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

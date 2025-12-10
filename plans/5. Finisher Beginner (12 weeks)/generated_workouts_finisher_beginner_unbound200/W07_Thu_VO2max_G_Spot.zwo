@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W07 Thu - VO2max + G-Spot</name>
-  <description>• STRUCTURE: 20 min warmup → 5x4 min @ 110-115% FTP + 2x12 min @ 87-92% FTP (4-5 min easy between) → 10 min cooldown • Big workout. VO2max first while fresh, then G-Spot when tired. This is hard but hugely effective. Break it into chunks mentally—5 VO2 efforts, then 2 G-Spot blocks. One at a time.</description>
+  <description>• STRUCTURE:
+  • 20 min warmup
+  • 5x4 min @ 110-115% FTP + 2x12 min @ 87-92% FTP (4-5 min easy between)
+  • 10 min cooldown • Big workout. VO2max first while fresh, then G-Spot when tired. This is hard but hugely effective. Break it into chunks mentally—5 VO2 efforts, then 2 G-Spot blocks. One at a time.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>

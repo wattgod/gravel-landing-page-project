@@ -2,7 +2,11 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W07 Sun - Easy Endurance</name>
-  <description>• Long easy ride. You should feel very tired today. That's good—it means you've done the work. Do anyway. Active recovery helps more than couch sitting.</description>
+  <description>• Long easy ride.
+  • You should feel very tired today.
+  • That's good—it means you've done the work.
+  • Do anyway.
+  • Active recovery helps more than couch sitting.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

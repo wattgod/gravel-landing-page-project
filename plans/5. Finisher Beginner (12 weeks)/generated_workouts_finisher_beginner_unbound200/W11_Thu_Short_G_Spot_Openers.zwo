@@ -2,7 +2,10 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W11 Thu - Short G-Spot + Openers</name>
-  <description>• STRUCTURE: 15 min warmup → 2x15 min @ 87-92% FTP + 3x1 min @ 105% FTP (5 min easy between all) → 10 min cooldown • Reduced volume, maintained intensity. The 1-min openers keep your top-end sharp. Should feel snappy and strong.</description>
+  <description>• STRUCTURE:
+  • 15 min warmup
+  • 2x15 min @ 87-92% FTP + 3x1 min @ 105% FTP (5 min easy between all)
+  • 10 min cooldown • Reduced volume, maintained intensity. The 1-min openers keep your top-end sharp. Should feel snappy and strong.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>

@@ -2,7 +2,8 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W04 Sun - Optional Easy Spin</name>
-  <description>• If you're still tired, skip the ride completely. Do a lighter routine focusing on movement quality and mobility.</description>
+  <description>• If you're still tired, skip the ride completely.
+  • Do a lighter routine focusing on movement quality and mobility.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

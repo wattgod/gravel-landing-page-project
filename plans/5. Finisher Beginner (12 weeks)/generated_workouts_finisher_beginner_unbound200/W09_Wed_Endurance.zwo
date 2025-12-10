@@ -2,7 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W09 Wed - Endurance</name>
-  <description>• Recovery day. Keep it easy. Save energy for tomorrow's workout.</description>
+  <description>• Recovery day.
+  • Keep it easy.
+  • Save energy for tomorrow's workout.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
