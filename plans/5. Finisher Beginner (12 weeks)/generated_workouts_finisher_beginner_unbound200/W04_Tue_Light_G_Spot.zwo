@@ -5,7 +5,12 @@
   <description>• STRUCTURE:
   • 10 min warmup
   • 2x15 min @ 85-88% FTP (5 min easy between)
-  • 10 min cooldown • Easier than recent weeks. Keep power controlled, no heroics. This maintains fitness without adding fatigue. Think of it as "reminding" your body what hard feels like without crushing it.</description>
+  • 10 min cooldown
+
+  • Easier than recent weeks.
+  • Keep power controlled, no heroics.
+  • This maintains fitness without adding fatigue.
+  • Think of it as "reminding" your body what hard feels like without crushing it.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

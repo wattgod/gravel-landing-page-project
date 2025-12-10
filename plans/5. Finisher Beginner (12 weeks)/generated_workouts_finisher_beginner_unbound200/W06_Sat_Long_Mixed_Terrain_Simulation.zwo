@@ -5,7 +5,13 @@
   <description>• STRUCTURE:
   • First hour Z2
   • 6x5 min @ 85-95% FTP (varied, 3 min easy between) scattered through hours 2-3
-  • Final hour Z2 • Simulates gravel race variability. Some efforts at tempo, some at threshold. Mimics surges on climbs or into wind. Fuel aggressively: 70-80g carbs/hour. Test race-day gear today.</description>
+  • Final hour Z2
+
+  • Simulates gravel race variability.
+  • Some efforts at tempo, some at threshold.
+  • Mimics surges on climbs or into wind.
+  • Fuel aggressively: 70-80g carbs/hour.
+  • Test race-day gear today.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

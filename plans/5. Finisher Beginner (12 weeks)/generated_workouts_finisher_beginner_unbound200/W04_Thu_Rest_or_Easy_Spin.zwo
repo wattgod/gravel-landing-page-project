@@ -2,11 +2,9 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W04 Thu - Rest or Easy Spin</name>
-  <description>• Optional: 30-45 min Z1 • If you feel good, spin easy.
-  • If you're still tired, take the day completely off.
-  • Listen to your body.
+  <description>• Optional: 30-45 min Z1
 • REST DAY NOTE:
-  • Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+  • If you feel good, spin easy. If you're still tired, take the day completely off. Listen to your body.  Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
   <sportType>bike</sportType>
       <workout>
     <FreeRide Duration="60"/>

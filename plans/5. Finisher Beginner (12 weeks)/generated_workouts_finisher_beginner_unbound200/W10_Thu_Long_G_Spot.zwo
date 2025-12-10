@@ -5,7 +5,12 @@
   <description>• STRUCTURE:
   • 20 min warmup
   • 2x25 min @ 87-92% FTP (7 min easy between)
-  • 10 min cooldown • Long sustained efforts just below threshold. This is bread-and-butter gravel racing power. Hold it steady, stay relaxed, control your breathing. You should feel strong here.</description>
+  • 10 min cooldown
+
+  • Long sustained efforts just below threshold.
+  • This is bread-and-butter gravel racing power.
+  • Hold it steady, stay relaxed, control your breathing.
+  • You should feel strong here.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.65"/>

@@ -3,7 +3,12 @@
   <author>Gravel God Training</author>
   <name>W02 Sat - Long Endurance Build</name>
   <description>• STRUCTURE:
-  • Z2 first 2 hours, then 3x8 min @ 75-80% FTP in final hour (3 min easy between) • Simulates what happens when you need to push on tired legs. Start easy, finish with some gas left in the tank. Eat 50-60g carbs per hour. Practice drinking on the bike without looking down.</description>
+  • Z2 first 2 hours, then 3x8 min @ 75-80% FTP in final hour (3 min easy between)
+
+  • Simulates what happens when you need to push on tired legs.
+  • Start easy, finish with some gas left in the tank.
+  • Eat 50-60g carbs per hour.
+  • Practice drinking on the bike without looking down.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

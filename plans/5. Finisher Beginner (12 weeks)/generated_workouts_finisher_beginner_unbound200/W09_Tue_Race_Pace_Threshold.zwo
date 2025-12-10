@@ -5,7 +5,12 @@
   <description>• STRUCTURE:
   • 20 min warmup
   • 2x20 min @ 95-100% FTP (8 min easy between)
-  • 10 min cooldown • Classic 2x20 at threshold. This is your race pace. You should be able to hold this power for extended periods on race day. Practice staying relaxed in your upper body even as legs burn.</description>
+  • 10 min cooldown
+
+  • Classic 2x20 at threshold.
+  • This is your race pace.
+  • You should be able to hold this power for extended periods on race day.
+  • Practice staying relaxed in your upper body even as legs burn.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>

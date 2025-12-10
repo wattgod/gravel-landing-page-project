@@ -5,7 +5,12 @@
   <description>• STRUCTURE:
   • 20 min warmup
   • 2x15 min @ 95-100% FTP + 4x3 min @ 110% FTP (5-7 min easy between)
-  • 10 min cooldown • Combined stimulus. Threshold work builds race pace, VO2max keeps your top-end sharp. Quality execution on both. Don't blow up early.</description>
+  • 10 min cooldown
+
+  • Combined stimulus.
+  • Threshold work builds race pace, VO2max keeps your top-end sharp.
+  • Quality execution on both.
+  • Don't blow up early.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>

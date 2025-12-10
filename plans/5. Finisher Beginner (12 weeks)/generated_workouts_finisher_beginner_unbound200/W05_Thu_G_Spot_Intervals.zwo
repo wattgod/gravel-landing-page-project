@@ -5,7 +5,11 @@
   <description>• STRUCTURE:
   • 15 min warmup
   • 4x12 min @ 87-92% FTP (4 min easy between)
-  • 10 min cooldown • More total time at G-Spot than previous weeks. Stay controlled—don't spike watts at the start. Settle into each interval and hold steady power.</description>
+  • 10 min cooldown
+
+  • More total time at G-Spot than previous weeks.
+  • Stay controlled—don't spike watts at the start.
+  • Settle into each interval and hold steady power.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.65"/>

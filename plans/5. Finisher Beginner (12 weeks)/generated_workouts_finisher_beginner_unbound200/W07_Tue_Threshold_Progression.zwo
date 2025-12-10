@@ -5,7 +5,13 @@
   <description>• STRUCTURE:
   • 20 min warmup
   • 3x15 min @ 95-100% FTP (7 min easy between)
-  • 10 min cooldown • Three threshold blocks. Hardest threshold session yet. Pace yourself—if you blow up on interval 1, you won't finish the workout. Controlled start, hold steady, finish strong. This is race pace training.</description>
+  • 10 min cooldown
+
+  • Three threshold blocks.
+  • Hardest threshold session yet.
+  • Pace yourself—if you blow up on interval 1, you won't finish the workout.
+  • Controlled start, hold steady, finish strong.
+  • This is race pace training.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="1200" PowerLow="0.50" PowerHigh="0.75"/>

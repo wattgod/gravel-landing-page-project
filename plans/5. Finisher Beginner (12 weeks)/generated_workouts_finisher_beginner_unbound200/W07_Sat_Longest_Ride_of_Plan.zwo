@@ -5,7 +5,13 @@
   <description>• STRUCTURE:
   • First 90 min Z2
   • 4x15 min @ 87-95% FTP (5 min easy between) in hours 2-3
-  • Final 90 min Z2 • This is your "A" workout of the week. Simulates race day: long duration + intensity when tired. Fuel like race day: 70-90g carbs/hour. Practice everything—bottle hand-ups, eating while riding hard, pacing. Mental toughness matters here.</description>
+  • Final 90 min Z2
+
+  • This is your "A" workout of the week.
+  • Simulates race day: long duration + intensity when tired.
+  • Fuel like race day: 70-90g carbs/hour.
+  • Practice everything—bottle hand-ups, eating while riding hard, pacing.
+  • Mental toughness matters here.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>

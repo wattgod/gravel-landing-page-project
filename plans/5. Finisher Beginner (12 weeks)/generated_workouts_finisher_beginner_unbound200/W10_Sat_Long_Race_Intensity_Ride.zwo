@@ -5,7 +5,14 @@
   <description>• STRUCTURE:
   • First hour Z2
   • 2x45 min @ 85-90% FTP (15 min easy between) in hours 2-3
-  • Final hour Z2 with 4x5 min @ 90-95% FTP (3 min easy between) • Last big training day before taper. Race-like intensity. Long sustained blocks early, then surges when tired late. THIS is gravel racing. Eat 70-90g carbs/hour. Test EVERYTHING—clothes, shoes, nutrition, hydration system.</description>
+  • Final hour Z2 with 4x5 min @ 90-95% FTP (3 min easy between)
+
+  • Last big training day before taper.
+  • Race-like intensity.
+  • Long sustained blocks early, then surges when tired late.
+  • THIS is gravel racing.
+  • Eat 70-90g carbs/hour.
+  • Test EVERYTHING—clothes, shoes, nutrition, hydration system.</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
