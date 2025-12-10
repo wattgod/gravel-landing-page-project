@@ -9,8 +9,8 @@ CHOICE_FEATURE_3 = "Finish certainty when time is your constraint"
 CHOICE_FEATURE_4 = "HIIT that works — not base-building that breaks you"
 
 # Expectation guide topics (race-specific moments for Unbound)
-EXPECTATION_GUIDE_1 = "Fueling: Gut training so you can eat at mile 60 when nothing sounds good"
-EXPECTATION_GUIDE_2 = "Technical Skills: Flint Hills cornering and descending"
+EXPECTATION_GUIDE_1 = "Heat: 10-14 day acclimatization weeks 6-10"
+EXPECTATION_GUIDE_2 = "Fueling: Gut training so you can eat at mile 60 when nothing sounds good"
 EXPECTATION_GUIDE_3 = "Race Tactics: Three-act structure — what to do when everyone's redlining"
 EXPECTATION_GUIDE_4 = "Mental: 6-2-7 breathing when brain says \"stop\""
 EXPECTATION_GUIDE_5 = ""  # Removed to save ~70 chars
