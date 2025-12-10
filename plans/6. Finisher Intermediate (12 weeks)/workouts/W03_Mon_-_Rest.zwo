@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W03 Mon - Rest</name>
+  <description>• Biggest week of Base phase. By the end of this week you should feel accumulated fatigue—that's the point. Week 4 is recovery, so push through knowing rest is coming. Two quality sessions this week, the rest is easy volume. Trust the polarized distribution. • WEEK PREVIEW: Biggest base week. Wednesday has mixed VO2max/threshold (big workout). Saturday has classic 2x20 threshold. Sunday is your longest ride (4-5 hours). This week builds massive aerobic capacity. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

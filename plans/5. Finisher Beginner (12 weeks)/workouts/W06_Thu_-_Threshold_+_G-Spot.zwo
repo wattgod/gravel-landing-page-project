@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W06 Thu - Threshold + G-Spot</name>
+  <description>• STRUCTURE: 15 min warmup → 2x12 min @ 95-100% FTP + 2x10 min @ 87-92% FTP (5 min easy between all intervals) → 10 min cooldown • Combined stimulus—threshold first while fresh, then G-Spot when fatigued. This teaches your body to sustain power when tired. Stay mentally engaged through all intervals.
+
+• UNBOUND GRAVEL 200 - HEAT ACCLIMATIZATION (Weeks 6-10):
+Complete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:
+
+POST-EXERCISE OPTION:
+• 30-40 min hot bath at 40°C (104°F) OR
+• 25-30 min sauna at 80-100°C
+
+EFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.
+
+NOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <IntervalsT Repeat="2" OnDuration="720" OnPower="0.98" Cadence="90" OffDuration="300" OffPower="0.55"/>
+    <IntervalsT Repeat="2" OnDuration="600" OnPower="0.90" Cadence="88" OffDuration="300" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

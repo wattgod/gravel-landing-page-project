@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W01 Mon - Rest</name>
+  <description>• Welcome to polarized training. Most of your riding will be truly easy (Z1-Z2), and a small amount will be truly hard (Z4-Z5). Almost nothing in the middle. This is how elite endurance athletes train—massive easy volume builds your engine, targeted hard work sharpens it. Don't skip the FTP test Tuesday. Keep everything else genuinely easy this week. • WEEK PREVIEW: This week establishes your baseline. Tuesday's FTP test sets your training zones for the entire plan. Thursday introduces your first hard session (VO2max intervals). Saturday is your first long easy ride (3-3.5 hours)—practice fueling here. Remember: 80% easy, 20% hard. Most athletes screw this up by making easy days too hard. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

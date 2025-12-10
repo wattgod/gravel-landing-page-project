@@ -43,20 +43,25 @@ def get_heat_protocol_tier(week_num, race_data):
         return "tier3"
     return None
 
-def add_heat_training_note(week_num, race_data, heat_tier):
-    """Add heat training note based on tier"""
+def add_heat_training_note(week_num, race_data, heat_tier, is_endurance):
+    """Add heat training note based on tier and workout type"""
     if not heat_tier:
         return ""
     
-    heat_notes = {
-        "tier1": "\n\n• {race_name_upper} - HEAT TRAINING (Better Than Nothing):\nProtocol: Finish any normal ride, then shower hot (as hot as tolerated) for 10-12 minutes. Keep HR elevated minimally. Hydrate lightly after (don't chug immediately; small sips).\n\nEffect: Maintains heat adaptations, mild plasma-volume expansion, minimal additional stress.\n\nUse When: Fatigued, limited time, or already did the hard workout of the week.",
-        "tier2": "\n\n• {race_name_upper} - HEAT TRAINING (Good):\nProtocol: Option 1: 20-40 min Z2 ride inside with reduced airflow. Option 2: 10-15 min sauna/hot bath immediately after training. Keep core temp elevated but manageable. Drink ~500-750 ml + 500-1000 mg sodium during exposure. Finish with only light cooling (no cold shower).\n\nEffect: Start of measurable heat adaptation, raises plasma volume. Training stress increases slightly but manageable.\n\nUse When: Medium weeks, early build phase, you want adaptation without deep fatigue.",
-        "tier3": "\n\n• {race_name_upper} - HEAT TRAINING (Ideal - High Impact):\nProtocol: 1) Ride Outside or Indoors With Minimal Cooling: 45-75 min Z2 OR Intervals with fan on low. 2) Post-ride heat exposure: 15-25 min sauna or hot bath. 3) Hydration Target: 1-1.5 L/hr loss is OK. Replace 75% of losses within 2 hours. Sodium 1000-1500 mg/hr. 4) Avoid cooling for 20-30 min after.\n\nEffect: Maximal heat adaptation, big plasma volume gains, noticeable RPE reductions in hot races.\n\nUse When: Preparing for hot events ({race_name}), you're healthy and recovered, you can afford temporary fatigue."
-    }
-    
     race_name = race_data["race_metadata"]["name"]
     race_name_upper = race_name.upper()
-    return heat_notes.get(heat_tier, "").format(race_name=race_name, race_name_upper=race_name_upper)
+    
+    # Weeks 6-10: Heat acclimatization protocol period
+    if week_num >= 6 and week_num <= 10:
+        if is_endurance:
+            # Endurance rides: Use for active heat training
+            return f"\n\n• {race_name_upper} - HEAT ACCLIMATIZATION PROTOCOL (Weeks 6-10):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
+        else:
+            # Quality sessions: Complete in cool conditions, add post-exercise heat
+            return f"\n\n• {race_name_upper} - HEAT ACCLIMATIZATION (Weeks 6-10):\nComplete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:\n\nPOST-EXERCISE OPTION:\n• 30-40 min hot bath at 40°C (104°F) OR\n• 25-30 min sauna at 80-100°C\n\nEFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.\n\nNOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides."
+    
+    # Outside weeks 6-10: Maintenance protocol
+    return f"\n\n• {race_name_upper} - HEAT MAINTENANCE:\nAdaptations decay 2.5% per day without exposure. Maintenance: One 60-90 min heat session every 3-5 days OR 30 min sauna 3x/week OR 30-40 min hot bath every 3 days."
 
 def add_hydration_note(duration_minutes, is_quality_session, race_data):
     """Add hydration note based on duration and intensity"""
@@ -174,9 +179,15 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     duration_minutes = estimate_workout_duration(workout.get("blocks", ""))
     
     # Add race-specific notes
+    # Heat training applies to weeks 6-10 for endurance rides (active) or any ride (post-exercise)
     heat_tier = get_heat_protocol_tier(week_num, race_data)
-    if heat_tier and is_quality_session and "REST" not in workout_name.upper():
-        description += add_heat_training_note(week_num, race_data, heat_tier)
+    if (week_num >= 6 and week_num <= 10) and "REST" not in workout_name.upper():
+        # Use tier3 for weeks 6-10 if heat training is enabled, otherwise use week-based logic
+        if heat_tier:
+            description += add_heat_training_note(week_num, race_data, heat_tier, is_endurance)
+        elif race_data.get("workout_modifications", {}).get("heat_training", {}).get("enabled", True):
+            # Default: assume heat training is enabled for hot races
+            description += add_heat_training_note(week_num, race_data, "tier3", is_endurance)
     
     if duration_minutes > 0:
         description += add_hydration_note(duration_minutes, is_quality_session, race_data)

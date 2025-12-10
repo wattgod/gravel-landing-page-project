@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W02 Mon - Rest</name>
+  <description>• Week 2 adds volume to easy days, keeps hard days hard. You should be noticing the rhythm now—lots of easy riding punctuated by two quality sessions per week. Your ego will want to push on easy days. Resist. The magic happens when you truly polarize the training. • WEEK PREVIEW: Volume increases this week. Wednesday introduces threshold intervals (sustainable hard). Saturday has more VO2max intervals (6x4 min). Sunday is your longest ride so far (3.5-4 hours). Remember: easy days easy, hard days hard. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
+
+• UNBOUND GRAVEL 200 - AGGRESSIVE FUELING:
+Target 60-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for Unbound Gravel 200's long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1.</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

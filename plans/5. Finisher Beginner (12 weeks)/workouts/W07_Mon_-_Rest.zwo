@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W07 Mon - Rest</name>
+  <description>• This is your biggest week of the plan. By Saturday you should feel significant accumulated fatigue—that's intentional. Week 8 is recovery, so push through knowing rest is coming. Every workout this week counts. Prioritize sleep. Eat enough protein. Hydrate constantly. • WEEK PREVIEW: Peak build week—biggest volume and intensity. Tuesday has 3x15 threshold (hardest threshold session). Thursday combines VO2max + G-Spot (big workout). Saturday is your longest ride with race simulation—this is your "A" workout. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>

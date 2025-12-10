@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W11 Wed - Taper Quality Session</name>
+  <description>• STRUCTURE: 15 min warmup → 3x12 min @ 100-105% FTP + 3x90sec @ 110% FTP (5 min easy between all) → 10 min cooldown • Reduced volume, maintained intensity. Threshold work reminds your body of race pace. VO2 openers keep top-end sharp. Should feel powerful and controlled. • CADENCE WORK: Mix cadences on threshold blocks. VO2 openers at high cadence (100+ rpm).
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>
+    <IntervalsT Repeat="3" OnDuration="720" OnPower="1.02" Cadence="100" OffDuration="300" OffPower="0.55"/>
+    <IntervalsT Repeat="3" OnDuration="90" OnPower="1.10" Cadence="100" OffDuration="210" OffPower="0.55"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

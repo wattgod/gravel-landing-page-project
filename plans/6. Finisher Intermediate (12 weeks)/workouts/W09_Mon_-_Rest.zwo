@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 Mon - Rest</name>
+  <description>• Welcome to Peak phase. Final four weeks before race day. Training becomes race-specific now—longer sustained efforts, race-pace blocks, gravel simulation. You've built the engine. Now we tune it for race day performance. • WEEK PREVIEW: Peak phase begins. Wednesday has race-pace threshold (2x25 min). Saturday has mixed race simulation (VO2max + threshold). Sunday is a long easy ride. Training becomes more race-specific now. • REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.
+
+• UNBOUND GRAVEL 200 - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• UNBOUND GRAVEL 200 - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="60"/>
+  </workout>
+</workout_file>
