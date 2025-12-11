@@ -1,0 +1,108 @@
+# TIER-SPECIFIC ALTERNATIVE HOOKS - BEHAVIORAL MIRROR
+# Purpose: Reflect their exact stuck patterns back at them
+# Format: "Or you could [exact behavior that keeps them stuck]"
+# 20+ variations per tier
+
+ALTERNATIVE_HOOKS = {
+    "ayahuasca": [
+        "Or you could keep trying to wing it with 4 hours a week. Skip sessions when work explodes. Train randomly. Show up undertrained and hope adrenaline carries you.",
+        "Or you could keep piecing together random workouts. Miss weeks when life happens. Show up underprepared. Cross your fingers.",
+        "Or you could keep doing whatever fits the schedule. Skip structure. Train inconsistently. Hope for the best on race day.",
+        "Or you could keep cramming sessions when you have time. No progression. No taper. Just showing up and surviving.",
+        "Or you could keep training sporadically. Miss the plan when busy. Show up hoping determination covers fitness gaps.",
+        "Or you could keep doing random rides when work allows. No structure. No periodization. Just survival mode.",
+        "Or you could keep winging it with limited hours. Train inconsistently. Skip recovery. Show up and hope.",
+        "Or you could keep piecing together whatever fits. No progression strategy. Just random fitness and race-day hope.",
+        "Or you could keep training when convenient. Skip weeks regularly. Show up undertrained. Depend on grit alone.",
+        "Or you could keep doing sporadic hard efforts. No recovery plan. No taper. Just race day damage control.",
+        "Or you could keep cramming whatever training fits life. No systematic progression. Show up and survive.",
+        "Or you could keep doing inconsistent volume. Skip structure entirely. Hope race-day adrenaline fills the gaps.",
+        "Or you could keep training randomly around work. Miss sessions frequently. Show up hoping mental toughness is enough.",
+        "Or you could keep piecing together whatever you can. No plan. No progression. Race day is a question mark.",
+        "Or you could keep doing sporadic training. Skip recovery weeks. Show up undertrained. Hope for miracles.",
+        "Or you could keep winging it with limited time. Train inconsistently. No taper. Just survival strategy.",
+        "Or you could keep cramming sessions randomly. No systematic build. Show up hoping determination carries you.",
+        "Or you could keep training when life allows. Skip the structure. Race day becomes damage control.",
+        "Or you could keep doing whatever fits the calendar. No progression. No recovery. Just showing up.",
+        "Or you could keep piecing together random efforts. Skip systematic training. Hope adrenaline does the work.",
+        "Or you could keep training sporadically with no plan. Miss weeks consistently. Show up and pray.",
+    ],
+    
+    "finisher": [
+        "Or you could keep training randomly: hard when you feel good, easy when you don't. Finish trained but never race-ready. Keep wondering why your fitness doesn't show up.",
+        "Or you could keep doing the same long rides. No intensity work. No power development. Finish but never compete.",
+        "Or you could keep training without structure. Do whatever feels right. Cross the line but never race.",
+        "Or you could keep riding long and slow. Skip intervals. Avoid discomfort. Finish events without racing them.",
+        "Or you could keep doing volume without purpose. No structured intensity. Race day becomes survival mode, not competition.",
+        "Or you could keep training inconsistently. Hard when motivated, easy when tired. Never develop race fitness.",
+        "Or you could keep riding endurance pace exclusively. Avoid threshold work. Show up able to finish, never able to race.",
+        "Or you could keep doing unstructured training. Random hard days. No progression. Fitness that doesn't translate.",
+        "Or you could keep training by feel alone. Skip systematic progression. Wonder why others pull away at race pace.",
+        "Or you could keep doing long slow distance. No power work. No race intensity. Just finishing, never competing.",
+        "Or you could keep training without intensity targets. Random efforts. No structured build. Results stay random.",
+        "Or you could keep doing whatever ride sounds fun. No systematic training. Race day fitness becomes a lottery.",
+        "Or you could keep riding long without structure. Skip power development. Finish trained, never race-ready.",
+        "Or you could keep training inconsistently hard. No progressive overload. Fitness arrives accidentally, not predictably.",
+        "Or you could keep doing volume-only training. Avoid discomfort. Never develop the pace to actually race.",
+        "Or you could keep riding endurance exclusively. No threshold work. Cross the line but never compete for position.",
+        "Or you could keep training without targets. Random intensity. No structured progression. Results don't improve.",
+        "Or you could keep doing whatever feels good. Skip systematic training. Wonder why fitness never shows up when needed.",
+        "Or you could keep riding long and steady. Avoid race-pace work. Finish events without ever racing them.",
+        "Or you could keep training by feel. No structure. No progression. Fitness that doesn't translate to results.",
+        "Or you could keep doing unstructured volume. Random hard efforts. Race day becomes survival, not execution.",
+    ],
+    
+    "compete": [
+        "Or you could keep adding volume without structure. Train hard without training smart. Keep guessing why results don't match effort. Stay frustrated.",
+        "Or you could keep doing more hours hoping something clicks. No systematic approach. Volume without precision. Results plateau.",
+        "Or you could keep training harder, not smarter. Pile on volume. Skip recovery. Wonder why fitness won't translate.",
+        "Or you could keep self-coaching with no external structure. Train by feel at high volume. Miss the details that matter.",
+        "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed.",
+        "Or you could keep adding hours thinking that's the answer. No systematic progression. Just more tired, not faster.",
+        "Or you could keep training without clear targets. High volume, unclear purpose. Results stay inconsistent.",
+        "Or you could keep doing volume for volume's sake. Skip intelligent progression. Wonder why results don't improve.",
+        "Or you could keep piling on hours without structure. Train hard constantly. Never fresh, never peaking.",
+        "Or you could keep self-coaching at high volume. Miss blind spots. Wonder what separates you from podium.",
+        "Or you could keep doing big training weeks randomly. No periodization. No targeted adaptations. Just tired.",
+        "Or you could keep adding volume hoping fitness improves. Skip systematic progression. Results stay flat.",
+        "Or you could keep training hard all the time. No structure. No recovery strategy. Fitness doesn't translate.",
+        "Or you could keep doing high volume without precision. Train by feeling, not targets. Results remain unpredictable.",
+        "Or you could keep piling on hours thinking more is better. Skip intelligent planning. Stay frustrated.",
+        "Or you could keep self-coaching with big volume. No external perspective. Miss what's holding you back.",
+        "Or you could keep training harder, never smarter. Volume without purpose. Results don't match effort.",
+        "Or you could keep doing random high-volume weeks. No clear progression. Fitness arrives inconsistently.",
+        "Or you could keep adding hours without strategy. Train hard constantly. Never peak properly.",
+        "Or you could keep self-coaching at volume. Miss details. Wonder why podium stays out of reach.",
+        "Or you could keep training without systematic targets. Big hours, unclear outcomes. Effort doesn't translate.",
+    ],
+    
+    "podium": [
+        "Or you could keep self-coaching. Miss the blind spots. Wonder what details separate good from elite. Stay disciplined but plateau.",
+        "Or you could keep training yourself at 18+ hours. Hit the volume but miss the details. Wonder what's missing.",
+        "Or you could keep self-coaching with no external perspective. Train hard, miss what's holding you back from podium.",
+        "Or you could keep doing high volume without external accountability. Miss blind spots. Results plateau.",
+        "Or you could keep training yourself. Disciplined but missing crucial details. Stay close to podium, never on it.",
+        "Or you could keep self-coaching at elite volume. No outside eyes. Wonder what separates you from top positions.",
+        "Or you could keep training hard alone. Miss recovery optimization. Leave performance on the table.",
+        "Or you could keep self-coaching with big hours. Hit volume targets, miss execution details. Results plateau.",
+        "Or you could keep training yourself at 18+ hours. Disciplined but blind to what's preventing podium.",
+        "Or you could keep self-coaching. No external structure. Miss the details that separate good from great.",
+        "Or you could keep training without outside perspective. High volume, missing crucial execution elements.",
+        "Or you could keep self-coaching at elite level. Disciplined but plateau. Wonder what details you're missing.",
+        "Or you could keep training yourself with big volume. Miss blind spots. Stay competitive, never elite.",
+        "Or you could keep self-coaching. High hours, missing optimization. Close to podium, never quite there.",
+        "Or you could keep training alone at 18+ hours. No external accountability. Results stay frustratingly close.",
+        "Or you could keep self-coaching with discipline. Miss what outside eyes would catch. Plateau at high level.",
+        "Or you could keep training yourself. Big volume, missing details. Wonder what separates you from podium.",
+        "Or you could keep self-coaching at elite volume. No external structure. Miss crucial performance elements.",
+        "Or you could keep training hard alone. Disciplined but blind to what's holding you back.",
+        "Or you could keep self-coaching. Hit big hours, miss execution details. Results plateau below potential.",
+        "Or you could keep training yourself at volume. No outside perspective. Wonder what's preventing breakthrough.",
+    ]
+}
+
+# Each variation reflects exact stuck behavior patterns back at the athlete
+# Ayahuasca: Inconsistency, winging it, hoping
+# Finisher: Random training, long slow distance, no intensity structure
+# Compete: Volume without precision, training hard not smart
+# Podium: Self-coaching blind spots, missing details at volume
