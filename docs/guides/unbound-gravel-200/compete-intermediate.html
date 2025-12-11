@@ -134,15 +134,47 @@ LAST UPDATED: 2024
       overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
+    main.gg-guide-page {
+            width: 100%;
     }
 
-    .plan-title-header {
+    .gg-guide-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      min-width: 0;
+                max-width: 100%;
+      grid-template-rows: auto 1fr;
+    }
+
+    @media (max-width: 900px) {
+      .gg-guide-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    header.guide-header {
+      grid-column: 1 / -1;
       border-bottom: 2px solid var(--gg-border);
       padding-bottom: 12px;
       margin-bottom: 24px;
+    }
+
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+            text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gg-muted);
+      margin-top: 8px;
+    }
+
+    .guide-meta span {
+      border: 1px solid var(--gg-border);
+      padding: 2px 6px;
     }
 
     .plan-title {
@@ -230,58 +262,56 @@ LAST UPDATED: 2024
       margin: 2rem 0;
     }
 
-    .toc-box {
+    nav.gg-guide-toc {
+      position: sticky;
+      top: 16px;
       border: 2px solid var(--gg-border);
       padding: 12px 14px;
       background: #fafafa;
-      margin: 1.3rem 0;
+      max-width: 260px;
+      overflow-x: hidden;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+      grid-row: 2;
     }
 
-    .toc-header h2 {
+    nav.gg-guide-toc h2 {
       margin-top: 0;
       margin-bottom: 8px;
       border-bottom: 1px solid var(--gg-border);
       font-size: 13px;
     }
 
-    .toc-subtitle {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gg-muted);
-      margin: 0 0 12px 0;
-    }
-
-    .toc-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    nav.gg-guide-toc ol {
+      margin-left: 1.2rem;
       font-size: 13px;
+      list-style: decimal;
+      padding-left: 0;
     }
 
-    .toc-list li {
-      margin: 0.2rem 0;
-    }
-
-    .toc-list a {
+    nav.gg-guide-toc a {
       text-decoration: none;
       color: var(--gg-fg);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .toc-list a:hover {
+    nav.gg-guide-toc a:hover {
       text-decoration: underline;
     }
 
-    .toc-number {
-      font-weight: 600;
-      min-width: 30px;
+    .gg-guide-content {
+      word-break: break-word;
+      max-width: 100%;
+      overflow-x: hidden;
+      min-width: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      grid-row: 2;
     }
 
-    .toc-title {
-      flex: 1;
+    section.gg-section {
+      margin-bottom: 2.4rem;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     table {
@@ -403,7 +433,9 @@ LAST UPDATED: 2024
     <h1 class="plan-title">Unbound Gravel 200</h1>
     <p class="plan-subtitle">COMPETE • Intermediate Training Plan</p>
     <p class="plan-meta">12-18 hours/week • 12 weeks</p>
-</div>
+        </section>
+
+      </div>
 
 <!-- ==================== PLAN TITLE ==================== -->
 
@@ -475,10 +507,13 @@ LAST UPDATED: 2024
             <span class="toc-number">15</span>
             <span class="toc-title">Frequently Asked Questions</span>
         </a></li>
-    </ul>
-</div>
+        </ol>
+      </nav>
 
-<h1 id="section-1">1: Training Plan Brief</h1>
+      <div class="gg-guide-content">
+
+        <section id="section-1" class="gg-section">
+          <h2 id="section-1">1: Training Plan Brief</h2>
 
 <p>Welcome to **<strong>Unbound Gravel 200</strong>** Training</p>
 
@@ -552,7 +587,14 @@ LAST UPDATED: 2024
 
 <p>Be honest with yourself about compliance.</p>
 
-<h1 id="section-2">2: BEFORE YOU START</h1>
+
+
+
+
+
+
+<section id="section-2" class="gg-section">
+          <h2 id="section-2">2: BEFORE YOU START</h2>
 
 <h2>Health & Safety Check</h2>
 
@@ -766,7 +808,8 @@ LAST UPDATED: 2024
 
 <p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
 
-<h1 id="section-3">3: TRAINING FUNDAMENTALS</h1>
+<section id="section-3" class="gg-section">
+          <h2 id="section-3">3: TRAINING FUNDAMENTALS</h2>
 
 <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
 
@@ -895,7 +938,8 @@ LAST UPDATED: 2024
 <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
 
 <!-- START 12-WEEK ARC SECTION -->
-<h1 id="section-4">4: YOUR 12-WEEK ARC</h1>
+<section id="section-4" class="gg-section">
+          <h2 id="section-4">4: YOUR 12-WEEK ARC</h2>
 
 <p>Understanding the big picture helps you navigate the individual weeks.</p>
 
@@ -988,7 +1032,8 @@ LAST UPDATED: 2024
 <!-- END 12-WEEK ARC SECTION -->
 
 <!-- START 6-WEEK ARC SECTION -->
-<h1 id="section-4">4: YOUR 6-WEEK ARC</h1>
+<section id="section-4" class="gg-section">
+          <h2 id="section-4">4: YOUR 6-WEEK ARC</h2>
 
 <p>Understanding the big picture helps you navigate the individual weeks.</p>
 
@@ -1082,7 +1127,8 @@ LAST UPDATED: 2024
 <p><em>Note: This is emergency race prep. The intensity is high from the start. If you're starting from zero fitness, this plan may be too aggressive. Be honest about your current fitness level.</em></p>
 <!-- END 6-WEEK ARC SECTION -->
 
-<h1 id="section-5">5: TRAINING ZONES</h1>
+<section id="section-5" class="gg-section">
+          <h2 id="section-5">5: TRAINING ZONES</h2>
 
 <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
 
@@ -1269,7 +1315,8 @@ LAST UPDATED: 2024
 
 <p>Power + Heart Rate + RPE = complete picture. When they align, you're executing correctly. When they conflict, trust your body.</p>
 
-<h1 id="section-6">6: WORKOUT EXECUTION</h1>
+<section id="section-6" class="gg-section">
+          <h2 id="section-6">6: WORKOUT EXECUTION</h2>
 
 <p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
 
@@ -2109,7 +2156,8 @@ LAST UPDATED: 2024
 
 <p>After <strong>Unbound Gravel 200</strong>, invest in a proper off-season strength block. Your future self---the one who's still racing at 50, 60, 70---will thank you</p>
 
-<h1 id="section-7">7: Technical Skills for Unbound Gravel 200</h1>
+<section id="section-7" class="gg-section">
+          <h2 id="section-7">7: Technical Skills for Unbound Gravel 200</h2>
 
 <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
 
@@ -2221,7 +2269,8 @@ LAST UPDATED: 2024
 
 <p>By race day, these skills should be automatic. You shouldn't be thinking about how to corner or how to eat---you should just be doing it.</p>
 
-<h1 id="section-8">8: FUELING & HYDRATION</h1>
+<section id="section-8" class="gg-section">
+          <h2 id="section-8">8: FUELING & HYDRATION</h2>
 
 <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel and hydrate properly, you won't finish well. Maybe you won't finish at all.</p>
 
@@ -2336,7 +2385,8 @@ LAST UPDATED: 2024
 
 <p>This is why practice matters. By race day, eating and drinking on schedule should feel like shifting gears---just something you do without thinking about it.</p>
 
-<h1 id="section-9">9: MENTAL TRAINING</h1>
+<section id="section-9" class="gg-section">
+          <h2 id="section-9">9: MENTAL TRAINING</h2>
 
 <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard.</p>
 
@@ -2478,7 +2528,8 @@ LAST UPDATED: 2024
 
 <p>The bottom line on mental training: These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time. Practice during training so they're automatic during racing.</p>
 
-<h1 id="section-10">10: Race Tactics for Unbound Gravel 200</h1>
+<section id="section-10" class="gg-section">
+          <h2 id="section-10">10: Race Tactics for Unbound Gravel 200</h2>
 
 <p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
 
@@ -2667,7 +2718,8 @@ LAST UPDATED: 2024
 
 <p>The bottom line on tactics: The race isn't won in the first hour, but it can be lost there. Survive phase one. Execute phase two. Capitalize in phase three.</p>
 
-<h1 id="section-11">11: Race-Specific Preparation for Unbound Gravel 200</h1>
+<section id="section-11" class="gg-section">
+          <h2 id="section-11">11: Race-Specific Preparation for Unbound Gravel 200</h2>
 
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
@@ -2882,7 +2934,8 @@ LAST UPDATED: 2024
 
 
 
-<h1 id="section-12">12: RACE WEEK PROTOCOL</h1>
+<section id="section-12" class="gg-section">
+          <h2 id="section-12">12: RACE WEEK PROTOCOL</h2>
 
 <p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
 
@@ -3332,7 +3385,8 @@ LAST UPDATED: 2024
 
 <p class="checklist-download" style="margin-top: 40px; padding-top: 20px; border-top: 3px solid var(--black);"><a href="#" onclick="downloadCompleteRaceWeekChecklistPDF()" class="download-link" style="font-size: 16px; padding: 15px 30px;">📥 Download Complete Race Week Checklist (All Sections) (PDF)</a></p>
 
-<h1 id="section-13">13: QUICK REFERENCE</h1>
+<section id="section-14" class="gg-section">
+          <h2 id="section-13">13: QUICK REFERENCE</h2>
 
 <h3>Key Workouts in This Plan</h3>
 
@@ -3409,7 +3463,8 @@ LAST UPDATED: 2024
 
 <p><strong>For questions about this training plan:</strong> gravelgodcoaching@gmail.com</p>
 
-<h1 id="section-14">14: GLOSSARY</h1>
+        <section id="section-15" class="gg-section">
+          <h2 id="section-14">14: GLOSSARY</h2>
 
 <h3>FTP (Functional Threshold Power)</h3>
 
