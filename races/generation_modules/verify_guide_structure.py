@@ -4,8 +4,13 @@ Verification script for training guide structure.
 Checks:
 1. TOC links match section IDs
 2. All required sections are present
-3. Section numbering is correct
-4. No duplicate section IDs
+3. No duplicate section IDs
+4. Women-Specific section has actual content
+5. No unreplaced placeholder variables
+6. No old content (QUICK REFERENCE, glossary, etc.)
+7. Section numbering is sequential
+8. CSS is embedded (not external link)
+9. File size is reasonable
 """
 
 import re
@@ -162,6 +167,112 @@ def check_women_specific_content(html: str) -> Tuple[bool, List[str]]:
     return len(issues) == 0, issues
 
 
+def check_placeholders(html: str) -> Tuple[bool, List[str]]:
+    """Check for unreplaced placeholder variables"""
+    pattern = r'\{\{[A-Z_]+(?:\s+\|\s+[^}]+)?\}\}'
+    placeholders = re.findall(pattern, html)
+    
+    # Filter out known safe placeholders that might be in comments or examples
+    unsafe_placeholders = []
+    for placeholder in placeholders:
+        # Skip if it's in a comment
+        if '<!--' in html[:html.find(placeholder)]:
+            continue
+        unsafe_placeholders.append(placeholder)
+    
+    return len(unsafe_placeholders) == 0, unsafe_placeholders
+
+
+def check_old_content(html: str) -> Tuple[bool, List[str]]:
+    """Check for content that should be removed"""
+    forbidden_patterns = [
+        (r'QUICK REFERENCE', "QUICK REFERENCE section (old content)"),
+        (r'14: QUICK REFERENCE|13: QUICK REFERENCE', "QUICK REFERENCE section (old content)"),
+        (r'GLOSSARY', "GLOSSARY section (should be FAQ)"),
+        (r'FTP \(Functional Threshold Power\)', "Glossary term (old content)"),
+        (r'LTHR \(Lactate Threshold Heart Rate\)', "Glossary term (old content)"),
+        (r'INFOGRAPHIC_RATING_HEX', "Unreplaced placeholder"),
+        (r'INFOGRAPHIC_DIFFICULTY_TABLE', "Unreplaced placeholder"),
+    ]
+    
+    issues = []
+    for pattern, description in forbidden_patterns:
+        if re.search(pattern, html, re.IGNORECASE):
+            issues.append(description)
+    
+    return len(issues) == 0, issues
+
+
+def check_section_sequence(html: str, is_masters: bool) -> Tuple[bool, List[str]]:
+    """Check section numbers are sequential without gaps"""
+    # Extract section numbers from IDs
+    section_pattern = r'id="section-(\d+)'
+    matches = re.findall(section_pattern, html)
+    
+    if not matches:
+        return False, ["No section IDs found"]
+    
+    # Convert to integers and get unique values
+    section_numbers = sorted(set(int(m) for m in matches))
+    
+    # Expected sequence depends on plan type
+    if is_masters:
+        expected = list(range(1, 16))  # 1-15 for Masters
+    else:
+        expected = list(range(1, 15))  # 1-14 for non-Masters
+    
+    issues = []
+    
+    # Check for missing sections
+    missing = [n for n in expected if n not in section_numbers]
+    if missing:
+        issues.append(f"Missing section numbers: {missing}")
+    
+    # Check for unexpected sections
+    unexpected = [n for n in section_numbers if n not in expected]
+    if unexpected:
+        issues.append(f"Unexpected section numbers: {unexpected}")
+    
+    # Check for gaps in sequence
+    if section_numbers:
+        gaps = []
+        for i in range(len(section_numbers) - 1):
+            if section_numbers[i+1] - section_numbers[i] > 1:
+                gaps.append(f"{section_numbers[i]}-{section_numbers[i+1]}")
+        if gaps:
+            issues.append(f"Gaps in section sequence: {', '.join(gaps)}")
+    
+    return len(issues) == 0, issues
+
+
+def check_css_embedding(html: str) -> Tuple[bool, List[str]]:
+    """Check CSS is embedded, not external link"""
+    issues = []
+    
+    # Check for external CSS links (should not exist)
+    if re.search(r'<link[^>]*rel=["\']stylesheet["\']', html, re.IGNORECASE):
+        issues.append("External CSS link found (should be embedded)")
+    
+    # Check for embedded CSS (should exist)
+    if '<style>' not in html:
+        issues.append("No embedded CSS found (should have <style> tags)")
+    
+    return len(issues) == 0, issues
+
+
+def check_file_size(file_path: Path) -> Tuple[bool, List[str]]:
+    """Check file size is reasonable"""
+    size_kb = file_path.stat().st_size / 1024
+    
+    issues = []
+    if size_kb < 50:
+        issues.append(f"File too small: {size_kb:.1f}KB (possible incomplete generation, expected >50KB)")
+    elif size_kb > 500:
+        issues.append(f"File too large: {size_kb:.1f}KB (possible corruption, expected <500KB)")
+    
+    return len(issues) == 0, issues
+
+
 def verify_guide(guide_path: Path) -> Dict:
     """Verify a single guide file"""
     with open(guide_path, 'r', encoding='utf-8') as f:
@@ -177,6 +288,11 @@ def verify_guide(guide_path: Path) -> Dict:
         'required_sections': check_required_sections(html, is_masters),
         'duplicate_ids': check_duplicate_ids(html),
         'women_content': check_women_specific_content(html),
+        'placeholders': check_placeholders(html),
+        'old_content': check_old_content(html),
+        'section_sequence': check_section_sequence(html, is_masters),
+        'css_embedding': check_css_embedding(html),
+        'file_size': check_file_size(guide_path),
     }
     
     return results
@@ -219,8 +335,15 @@ def main():
         sections_ok, section_issues = result['required_sections']
         dup_ok, dup_issues = result['duplicate_ids']
         women_ok, women_issues = result['women_content']
+        placeholders_ok, placeholder_issues = result['placeholders']
+        old_content_ok, old_content_issues = result['old_content']
+        sequence_ok, sequence_issues = result['section_sequence']
+        css_ok, css_issues = result['css_embedding']
+        size_ok, size_issues = result['file_size']
         
-        file_passed = toc_ok and sections_ok and dup_ok and women_ok
+        file_passed = (toc_ok and sections_ok and dup_ok and women_ok and 
+                      placeholders_ok and old_content_ok and sequence_ok and 
+                      css_ok and size_ok)
         
         if not file_passed:
             all_passed = False
@@ -240,6 +363,28 @@ def main():
             if not women_ok:
                 print(f"   Women-Specific Issues:")
                 for issue in women_issues:
+                    print(f"     - {issue}")
+            if not placeholders_ok:
+                print(f"   Placeholder Variables:")
+                for issue in placeholder_issues[:5]:  # Limit to first 5
+                    print(f"     - {issue}")
+                if len(placeholder_issues) > 5:
+                    print(f"     ... and {len(placeholder_issues) - 5} more")
+            if not old_content_ok:
+                print(f"   Old Content Found:")
+                for issue in old_content_issues:
+                    print(f"     - {issue}")
+            if not sequence_ok:
+                print(f"   Section Sequence Issues:")
+                for issue in sequence_issues:
+                    print(f"     - {issue}")
+            if not css_ok:
+                print(f"   CSS Embedding Issues:")
+                for issue in css_issues:
+                    print(f"     - {issue}")
+            if not size_ok:
+                print(f"   File Size Issues:")
+                for issue in size_issues:
                     print(f"     - {issue}")
         else:
             print(f"✓ {guide_file.name} ({'Masters' if result['is_masters'] else 'Standard'})")
