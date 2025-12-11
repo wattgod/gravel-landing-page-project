@@ -145,6 +145,102 @@ HTML_TEMPLATE = """<div style="font-family:'Courier New',monospace;color:#111;ma
 </div>"""
 
 # ============================================================================
+# MASTERS-AWARE SELECTION
+# ============================================================================
+
+def is_masters_content(item):
+    """
+    Check if a variation contains Masters-specific content.
+    
+    Masters content typically includes:
+    - Age references: 45+, 50+, age, older, veteran
+    - Age-specific training: recovery protocols, adaptation timelines
+    - Age-related language: "at your age", "as you age"
+    
+    Args:
+        item: Can be a string (for most variations) or dict (for value prop boxes)
+    """
+    if not item:
+        return False
+    
+    # Handle dict (value prop boxes)
+    if isinstance(item, dict):
+        # Check both philosophy and props
+        text = item.get('philosophy', '') + ' ' + ' '.join(item.get('props', []))
+    else:
+        # Handle string
+        text = item
+    
+    if not text:
+        return False
+    
+    text_lower = text.lower()
+    
+    # Direct age references
+    age_keywords = ['45+', '50+', 'age', 'older', 'veteran', 'masters']
+    if any(keyword in text_lower for keyword in age_keywords):
+        return True
+    
+    # Age-specific training language
+    age_training_patterns = [
+        'recovery protocols for',
+        'adaptation timeline',
+        'adaptation windows',
+        'longer recovery',
+        'age-appropriate',
+        'at your age',
+        'as you age',
+        'recovery isn\'t optional',
+        'recovery becomes the primary',
+        'recovery architecture',
+        'recovery-first',
+        'injury prevention',
+        'hrv monitoring',
+        'hrv-based'
+    ]
+    if any(pattern in text_lower for pattern in age_training_patterns):
+        return True
+    
+    return False
+
+def select_masters_aware(pool, is_masters_plan, k=1):
+    """
+    Select from variation pool with Masters-aware filtering.
+    
+    Args:
+        pool: List of variations to select from
+        is_masters_plan: True if this is a Masters plan, False otherwise
+        k: Number of items to select (for random.sample)
+    
+    Returns:
+        Selected item(s) - single item if k=1, list if k>1
+    """
+    if not pool:
+        return None if k == 1 else []
+    
+    # Filter pool based on Masters status
+    if is_masters_plan:
+        # Masters plans: ONLY select from Masters variations
+        filtered_pool = [item for item in pool if is_masters_content(item)]
+        # If no Masters variations found, fall back to all (shouldn't happen)
+        if not filtered_pool:
+            filtered_pool = pool
+    else:
+        # Non-Masters plans: EXCLUDE Masters variations
+        filtered_pool = [item for item in pool if not is_masters_content(item)]
+        # If filtering removes everything, fall back to all (shouldn't happen)
+        if not filtered_pool:
+            filtered_pool = pool
+    
+    # Select from filtered pool
+    if k == 1:
+        return random.choice(filtered_pool) if filtered_pool else None
+    else:
+        # For sample, ensure we don't request more than available
+        sample_size = min(k, len(filtered_pool))
+        return random.sample(filtered_pool, sample_size) if filtered_pool else []
+
+# ============================================================================
 # GENERATION LOGIC
 # ============================================================================
 
@@ -169,15 +265,18 @@ def generate_html_description(tier, race_name, plan_seed, variation=""):
     # Set seed for reproducible randomization
     random.seed(plan_seed)
     
-    # Select components from variation pools (REDUCED for character limit)
-    solution_state = random.choice(SOLUTION_STATE_OPENINGS[tier])
-    choice_features_list = random.sample(CHOICE_FEATURES[tier], k=3)  # Down from 5
-    guide_topics_list = random.sample(GUIDE_TOPICS[tier], k=3)  # Down from 5
-    guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
-    alternative_hook = random.choice(ALTERNATIVE_HOOKS[tier])
-    story_justification = random.choice(STORY_JUSTIFICATIONS[tier])
-    closing_statement = random.choice(CLOSING_STATEMENTS[tier])
-    value_prop_box = random.choice(VALUE_PROP_BOXES[tier])
+    # Determine if this is a Masters plan
+    is_masters_plan = "masters" in variation.lower()
+    
+    # Select components from variation pools with Masters-aware filtering
+    solution_state = select_masters_aware(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, k=1)
+    choice_features_list = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=3)
+    guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
+    guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
+    alternative_hook = select_masters_aware(ALTERNATIVE_HOOKS[tier], is_masters_plan, k=1)
+    story_justification = select_masters_aware(STORY_JUSTIFICATIONS[tier], is_masters_plan, k=1)
+    closing_statement = random.choice(CLOSING_STATEMENTS[tier])  # No Masters variations in closings
+    value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
     
     # Get tier specs
     specs = TIER_SPECS[tier]

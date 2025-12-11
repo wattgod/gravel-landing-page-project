@@ -95,6 +95,7 @@ def validate_file(filepath):
     
     # 4. MASTERS-SPECIFIC VALIDATION
     if is_masters:
+        # Masters plans MUST have Masters content
         masters_content_found = any(
             keyword in content.lower() 
             for keyword in MASTERS_KEYWORDS
@@ -109,6 +110,17 @@ def validate_file(filepath):
             errors.append(
                 f"Masters plan missing Masters-specific content. "
                 f"Need keywords like: {', '.join(MASTERS_KEYWORDS[:5])}"
+            )
+    else:
+        # NON-Masters plans MUST NOT have Masters content
+        masters_mentions = sum(
+            content.lower().count(keyword) 
+            for keyword in ['45+', '50+', 'age', 'masters', 'older', 'veteran']
+        )
+        if masters_mentions > 2:  # Allow 1-2 incidental mentions
+            errors.append(
+                f"Non-Masters plan contains Masters-specific content "
+                f"({masters_mentions} age-related mentions found)"
             )
     
     # 5. CLOSING REPETITION CHECK
