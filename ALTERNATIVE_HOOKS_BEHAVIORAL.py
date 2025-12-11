@@ -26,6 +26,8 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep doing whatever fits the calendar. No progression. No recovery. Just showing up.",
         "Or you could keep piecing together random efforts. Skip systematic training. Hope adrenaline does the work.",
         "Or you could keep training sporadically with no plan. Miss weeks consistently. Show up and pray.",
+        "Or you could keep training like you're 30 when you're 50+. Ignore recovery needs. Push through fatigue. Break down instead of building up.",
+        "Or you could keep ignoring that recovery takes longer at 45+. Train like age doesn't matter. Wonder why you're always tired or injured.",
     ],
     
     "finisher": [
@@ -50,6 +52,9 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep riding long and steady. Avoid race-pace work. Finish events without ever racing them.",
         "Or you could keep training by feel. No structure. No progression. Fitness that doesn't translate to results.",
         "Or you could keep doing unstructured volume. Random hard efforts. Race day becomes survival, not execution.",
+        "Or you could keep training like you're 30 when you're 50+. Ignore recovery needs. Push through fatigue. Break down instead of building up.",
+        "Or you could keep ignoring that recovery takes longer at 45+. Train like age doesn't matter. Wonder why you're always tired or injured.",
+        "Or you could keep using recovery protocols from your 30s. Push through because you're tough. Break down because you're not 30 anymore.",
     ],
     
     "compete": [
@@ -74,6 +79,9 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep adding hours without strategy. Train hard constantly. Never peak properly.",
         "Or you could keep self-coaching at volume. Miss details. Wonder why podium stays out of reach.",
         "Or you could keep training without systematic targets. Big hours, unclear outcomes. Effort doesn't translate.",
+        "Or you could keep training like you're 30 when you're 50+. Ignore longer recovery needs. Push through fatigue. Break down instead of competing.",
+        "Or you could keep using recovery timelines from your 30s. Train hard constantly. Wonder why adaptation won't happen or injuries keep coming.",
+        "Or you could keep ignoring that age changes recovery. Train at volume without respecting adaptation time. Plateau or break down.",
     ],
     
     "podium": [

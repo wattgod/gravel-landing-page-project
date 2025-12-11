@@ -28,6 +28,16 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Efficiency over volume. Every workout optimized for limited weekly hours.",
             "props": ["Race day checklists", "No-BS fueling protocols", "Pacing strategies for finishing", "Technical skills that keep you moving"]
+        },
+        # Variation 6: Masters-specific
+        {
+            "philosophy": "At 50+, recovery isn't optional. The plan respects longer adaptation timelines without sacrificing efficiency.",
+            "props": ["Recovery protocols for 50+ athletes", "Age-appropriate training load", "Injury prevention through strategic rest", "Training matched to adaptation capacity"]
+        },
+        # Variation 7: Masters-specific
+        {
+            "philosophy": "Age changes recovery needs. Moderate volume with emphasis on recovery prevents breakdown while maintaining performance.",
+            "props": ["Longer recovery windows between hard sessions", "Age-appropriate protocols", "Recovery-first training architecture", "Training load matched to adaptation capacity"]
         }
     ],
     
@@ -56,6 +66,16 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Every week has priorities. Every session has intent. Structure turns fitness into results.",
             "props": ["Pacing strategies for 10+ hours", "Power distribution protocols", "Race day checklists", "Technical skills that keep you upright"]
+        },
+        # Variation 6: Masters-specific
+        {
+            "philosophy": "Recovery isn't optional at 45+. The plan respects longer adaptation timelines without sacrificing performance.",
+            "props": ["Recovery protocols for 50+ athletes", "Age-appropriate training load", "Injury prevention strategies", "HRV-based autoregulation"]
+        },
+        # Variation 7: Masters-specific
+        {
+            "philosophy": "Age changes recovery needs. Training load matched to adaptation capacity, not chronological age.",
+            "props": ["Longer recovery windows between hard sessions", "Compressed periodization (2-3 week cycles)", "Recovery-first training architecture", "Age-appropriate volume that prevents breakdown"]
         }
     ],
     
@@ -84,6 +104,16 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Systematic progression eliminates guesswork. Training becomes results.",
             "props": ["Power distribution for 10+ hours", "Race execution protocols", "Fueling and hydration at intensity", "Technical skills under fatigue"]
+        },
+        # Variation 6: Masters-specific
+        {
+            "philosophy": "At 45+, recovery architecture determines results. Training load matched to adaptation capacity.",
+            "props": ["Recovery protocols acknowledging longer adaptation windows", "Age-appropriate training volume", "Injury prevention through strategic rest", "HRV-based autoregulation for 50+ athletes"]
+        },
+        # Variation 7: Masters-specific
+        {
+            "philosophy": "Age changes recovery needs. Moderate volume with emphasis on recovery prevents breakdown while maintaining performance.",
+            "props": ["Compressed periodization (2-3 week cycles)", "Recovery-first training philosophy", "Training adapted for slower adaptation", "Age-appropriate protocols that prevent injury"]
         }
     ],
     

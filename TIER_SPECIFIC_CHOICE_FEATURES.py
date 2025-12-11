@@ -12,7 +12,10 @@ CHOICE_FEATURES = {
         "**Outdoor options** for every workout—no trainer required, just structured execution",
         "**Strategic recovery** that doesn't assume you have 12+ hours to absorb training stress",
         "**Taper protocol** designed for athletes who can't afford to lose fitness in rest weeks",
-        "**Dress rehearsal rides** at manageable duration (5 hours max) that still validate your race-day systems"
+        "**Dress rehearsal rides** at manageable duration (5 hours max) that still validate your race-day systems",
+        "**Recovery protocols for 50+ athletes**—longer recovery windows, strategic rest that prevents breakdown",
+        "**Age-appropriate training load**—moderate volume respecting longer adaptation timelines at 45+",
+        "**Injury prevention through recovery**—training matched to adaptation capacity, not chronological age"
     ],
     
     "finisher": [
@@ -23,7 +26,10 @@ CHOICE_FEATURES = {
         "**Structured taper** in final 2 weeks—proven protocol that peaks fitness without losing form",
         "**Heat adaptation weeks** (6-10) that improve performance 5-8% through controlled exposure (Section 11)",
         "**Dress rehearsal ride** at 7 hours validating fueling, pacing, and equipment choices",
-        "**Pacing strategy guide** for 10-14 hour efforts—how to start conservatively and finish strong (Section 10)"
+        "**Pacing strategy guide** for 10-14 hour efforts—how to start conservatively and finish strong (Section 10)",
+        "**Recovery protocols for 50+ athletes**—longer recovery windows, HRV monitoring, age-appropriate adaptation timelines",
+        "**Injury prevention through strategic recovery**—training load matched to recovery capacity, not chronological age",
+        "**Age-appropriate training volume**—moderate hours that respect longer adaptation timelines without sacrificing performance"
     ],
     
     "compete": [
@@ -34,7 +40,10 @@ CHOICE_FEATURES = {
         "**Precision taper protocol** with deload timing proven for competitive athletes (Section 12)",
         "**Mental training system** for suffering management and tactical decision-making (Section 9)",
         "**Race execution playbook** covering pacing, fueling under fatigue, and group dynamics (Section 10)",
-        "**9-hour dress rehearsal** validating everything from nutrition to power distribution at race intensity"
+        "**9-hour dress rehearsal** validating everything from nutrition to power distribution at race intensity",
+        "**Recovery-first training architecture**—longer rest between hard sessions, HRV-based autoregulation for 45+ athletes",
+        "**Age-appropriate periodization**—compressed recovery cycles (2-3 weeks) that respect slower adaptation at 50+",
+        "**Injury prevention protocols**—training load matched to recovery capacity, strategic rest that prevents breakdown"
     ],
     
     "podium": [

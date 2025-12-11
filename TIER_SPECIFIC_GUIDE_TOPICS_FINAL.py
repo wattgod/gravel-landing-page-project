@@ -30,7 +30,10 @@ GUIDE_TOPICS = {
         "**Fueling & Hydration (Section 8)** — 60-80g carbs/hour protocol tested on limited training volume",
         "**Mental Training (Section 9)** — Suffering management for 10+ hour efforts when your body isn't fully trained",
         "**Race Week Protocol (Section 12)** — Final prep that doesn't assume you have time for elaborate tapers",
-        "**FAQ (Section 14)** — Answers to 'can I really finish with 4 hours/week?' and other honest questions"
+        "**FAQ (Section 14)** — Answers to 'can I really finish with 4 hours/week?' and other honest questions",
+        "**Masters-Specific Considerations (Section 13)** — Recovery protocols for 50+ athletes, age-appropriate training load",
+        "**Recovery Architecture** — Longer adaptation timelines, strategic rest that prevents breakdown at 45+",
+        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity"
     ],
     
     "finisher": [
@@ -41,7 +44,10 @@ GUIDE_TOPICS = {
         "**Technical Skills (Section 7)** — Bike handling that keeps you upright and moving when others crash",
         "**Race Tactics (Section 10)** — Pacing strategy for 10-14 hours—how to start conservatively and finish strong",
         "**Race-Specific Preparation (Section 11)** — Heat adaptation weeks (6-10) delivering 5-8% performance gains",
-        "**Race Week Protocol (Section 12)** — Proven taper sequence that peaks fitness without losing form"
+        "**Race Week Protocol (Section 12)** — Proven taper sequence that peaks fitness without losing form",
+        "**Masters-Specific Considerations (Section 13)** — Recovery protocols for 50+ athletes, age-appropriate training load, injury prevention strategies",
+        "**Recovery Architecture** — Longer adaptation timelines, HRV monitoring, strategic rest that prevents breakdown at 45+",
+        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity"
     ],
     
     "compete": [
@@ -52,7 +58,10 @@ GUIDE_TOPICS = {
         "**Fueling & Hydration (Section 8)** — Race-pace fueling protocols that work under fatigue",
         "**Mental Training (Section 9)** — Tactical decision-making and suffering management systems",
         "**Race Tactics (Section 10)** — Execution playbook covering pacing, group dynamics, and attack timing",
-        "**Race-Specific Preparation (Section 11)** — Heat protocols, altitude adaptation (if needed), equipment choices"
+        "**Race-Specific Preparation (Section 11)** — Heat protocols, altitude adaptation (if needed), equipment choices",
+        "**Masters-Specific Considerations (Section 13)** — Recovery protocols acknowledging longer adaptation windows, age-appropriate training load",
+        "**Recovery Management** — HRV-based autoregulation, compressed periodization (2-3 week cycles), injury prevention at 45+",
+        "**Age-Appropriate Periodization** — Training adapted for slower recovery, moderate volume respecting adaptation timelines"
     ],
     
     "podium": [

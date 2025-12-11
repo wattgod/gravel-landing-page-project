@@ -18,7 +18,13 @@ STORY_JUSTIFICATIONS = {
         """Here's why this plan works with limited hours: it's built on intensity distribution that actually creates adaptation, not volume accumulation that creates fatigue. The pros aren't faster because they train 25 hours—they train 25 hours because they're pros. You need a different engine. This plan builds it. High-quality intervals, strategic recovery, race-specific skills. Everything else is optional.""",
         
         # Variation 5: The reality check
-        """I didn't build this plan to get you on a podium. I built it to get you across the line feeling like you raced, not survived. That requires a specific training approach: sessions short enough to recover from, intense enough to create change, and focused enough to build the skills Unbound actually demands. Most plans ignore this because they're template workouts scaled down. This one was built from scratch for your constraints."""
+        """I didn't build this plan to get you on a podium. I built it to get you across the line feeling like you raced, not survived. That requires a specific training approach: sessions short enough to recover from, intense enough to create change, and focused enough to build the skills Unbound actually demands. Most plans ignore this because they're template workouts scaled down. This one was built from scratch for your constraints.""",
+        
+        # Variation 6: Masters-specific
+        """I built this for people 50+ with limited hours. Recovery isn't optional anymore. Your body needs longer adaptation windows. This plan maximizes efficiency while respecting that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between finishing and breaking at your age isn't more volume—it's smarter recovery. Every session counts because recovery takes longer.""",
+        
+        # Variation 7: Masters-specific
+        """I built this because you're 45+ making this work around a life. Your body needs longer recovery windows. This plan respects that. Every session is essential. Every rest day is strategic. Age isn't a limitation—it's data that informs better training decisions. The plan builds you up without breaking you down. Recovery becomes the primary training variable, not an afterthought."""
     ],
     
     "finisher": [
@@ -35,7 +41,13 @@ STORY_JUSTIFICATIONS = {
         """Here's what separates this from generic century plans: it's designed for gravel racing, not road endurance. That means technical skills (Section 7), fueling protocols that work on rough terrain (Section 8), and power distribution strategies for variable-pace events (Section 10). You're not just getting fitter—you're getting faster at the specific thing Unbound demands.""",
         
         # Variation 5: The consistency angle
-        """I built this plan for people who've tried coaching themselves and know it's hard to maintain consistency. The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance."""
+        """I built this plan for people who've tried coaching themselves and know it's hard to maintain consistency. The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance.""",
+        
+        # Variation 6: Masters-specific
+        """I built this for people 45+ who know recovery isn't optional anymore. Your body needs longer adaptation windows. Your training needs to respect that. This plan uses moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between thriving and breaking at your age isn't training less—it's training more deliberately. Recovery becomes the primary training variable, not an afterthought.""",
+        
+        # Variation 7: Masters-specific
+        """I built this because you're 50+ and your recovery needs are different. Training at 8-12 hours requires different protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. Every session counts because recovery takes longer. Age isn't a limitation—it's data that informs better training. The plan builds you up without breaking you down."""
     ],
     
     "compete": [
@@ -52,7 +64,13 @@ STORY_JUSTIFICATIONS = {
         """Here's what this plan does differently: it teaches you to execute races, not just finish trained. Pacing strategy (Section 10), fueling under fatigue (Section 8), mental protocols when it hurts (Section 9). Most competitors at Unbound have similar fitness. The winners know how to deploy it. This plan builds both the engine and the driver.""",
         
         # Variation 5: The methodology defense
-        """I built this using polarized training principles because they work for time-crunched competitive athletes. You get enough volume to build durability (12-18 hours), enough intensity to sharpen performance (Zone 4-5 sessions), and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target on a specific date."""
+        """I built this using polarized training principles because they work for time-crunched competitive athletes. You get enough volume to build durability (12-18 hours), enough intensity to sharpen performance (Zone 4-5 sessions), and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target on a specific date.""",
+        
+        # Variation 6: Masters-specific
+        """I built this for people 45+ who are still competitive but know their bodies need different recovery protocols. Training at 12-18 hours requires age-appropriate recovery architecture. This plan respects that. Recovery windows are longer. Adaptation timelines are compressed (2-3 week cycles instead of 4). The difference between competing and breaking at your age isn't training less—it's training with smarter recovery. Every session has purpose because recovery takes longer.""",
+        
+        # Variation 7: Masters-specific
+        """I built this because you're 50+ and your adaptation timeline is different. Your body adapts slower. Your recovery needs are longer. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The plan uses compressed periodization (2-3 week builds) and recovery-first architecture. You'll train hard, but recovery becomes the primary variable."""
     ],
     
     "podium": [

@@ -18,7 +18,13 @@ SOLUTION_STATE_OPENINGS = {
         "You're making this work around a life, not building a life around this. The training here respects that reality. Every workout is essential. Every rest day is strategic. No filler. No fluff. No cramming 12-hour plans into 4-hour weeks and hoping it works.",
         
         # Variation 5: The wink
-        "Everyone says 'train smarter, not harder' when they mean 'just ride more.' This plan actually delivers: intensity that creates adaptation, skills that prevent disasters, recovery that lets you absorb the work. It's built for limited hours and unlimited determination."
+        "Everyone says 'train smarter, not harder' when they mean 'just ride more.' This plan actually delivers: intensity that creates adaptation, skills that prevent disasters, recovery that lets you absorb the work. It's built for limited hours and unlimited determination.",
+        
+        # Variation 6: Masters-specific
+        "You're 50+ with limited hours. Recovery isn't optional anymore. This plan maximizes efficiency while respecting longer adaptation timelines. The difference between finishing and breaking at your age isn't more volume—it's smarter recovery. Every session counts because recovery takes longer.",
+        
+        # Variation 7: Masters-specific
+        "You're 45+ making this work around a life. Your body needs longer recovery windows. This plan respects that. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs better training decisions."
     ],
     
     "finisher": [
@@ -35,7 +41,13 @@ SOLUTION_STATE_OPENINGS = {
         "The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance.",
         
         # Variation 5: The specificity defense
-        "This isn't a generic century plan with 'gravel' stuck on top. It's designed for variable-pace racing on rough terrain. Technical skills. Fueling protocols that work when you're getting rattled. Power distribution strategies for 10+ hour efforts. Everything here is calibrated for what Unbound actually demands."
+        "This isn't a generic century plan with 'gravel' stuck on top. It's designed for variable-pace racing on rough terrain. Technical skills. Fueling protocols that work when you're getting rattled. Power distribution strategies for 10+ hour efforts. Everything here is calibrated for what Unbound actually demands.",
+        
+        # Variation 6: Masters-specific
+        "You're 45. Recovery isn't optional anymore. This plan builds you up without breaking you down. The difference between finishing and competing at your age isn't more volume—it's smarter recovery. Every session respects your adaptation timeline. Every rest day is strategic. Age isn't a limitation—it's data that informs better training.",
+        
+        # Variation 7: Masters-specific
+        "You're 50+. Your body needs longer recovery windows. Your training needs to respect that. This plan uses moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between thriving and breaking at your age isn't training less—it's training more deliberately. Recovery becomes the primary training variable."
     ],
     
     "compete": [
@@ -52,7 +64,13 @@ SOLUTION_STATE_OPENINGS = {
         "Most competitors at Unbound have similar fitness. The winners know how to deploy it. Pacing strategy. Fueling under fatigue. Mental protocols when it hurts. This plan builds both the engine and the driver.",
         
         # Variation 5: The methodology defense
-        "Polarized training principles work for time-crunched competitive athletes. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target."
+        "Polarized training principles work for time-crunched competitive athletes. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target.",
+        
+        # Variation 6: Masters-specific
+        "You're 45+. Training at 12-18 hours requires different recovery protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. The difference between competing and breaking at your age isn't training less—it's training with age-appropriate recovery. Every session counts because recovery takes longer.",
+        
+        # Variation 7: Masters-specific
+        "You're 50+. Your body adapts slower. Your recovery needs are different. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The difference between thriving and breaking isn't less work—it's better recovery architecture."
     ],
     
     "podium": [

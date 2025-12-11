@@ -99,8 +99,13 @@ def validate_file(filepath):
             keyword in content.lower() 
             for keyword in MASTERS_KEYWORDS
         )
-        # Exclude just the plan name mention - need actual content
-        if not masters_content_found or content.lower().count('masters') <= 1:
+        # Check for multiple Masters keywords (not just one mention)
+        masters_keyword_count = sum(
+            content.lower().count(keyword) 
+            for keyword in MASTERS_KEYWORDS
+        )
+        # Need at least 2 instances of Masters keywords (beyond just plan name)
+        if not masters_content_found or masters_keyword_count < 2:
             errors.append(
                 f"Masters plan missing Masters-specific content. "
                 f"Need keywords like: {', '.join(MASTERS_KEYWORDS[:5])}"
