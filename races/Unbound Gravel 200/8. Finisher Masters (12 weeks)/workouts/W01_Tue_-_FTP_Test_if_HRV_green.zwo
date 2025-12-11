@@ -2,10 +2,7 @@
 <workout_file>
   <author>Gravel God Training</author>
   <name>W01 Tue - FTP Test (if HRV green)</name>
-  <description>• STRUCTURE:
-15 min warmup → 3 min moderate → 5 min easy → 20 min sustained effort (not all-out, controlled max) → 10 min cooldown
-
-• HRV Check: Green? Do test. Yellow? Ride 45 min easy, try tomorrow. Red? Skip, test next week. Masters FTP testing: sustained 20-min at "hard but controlled" pace. Multiply avg power × 0.93 (conservative for 50+). This sets zones for polarized training: Z1-Z2 = 55-75% FTP (easy), Z4-Z5+ = 95%+ FTP (hard). Write everything down.
+  <description>• STRUCTURE: 15 min warmup → 3 min moderate → 5 min easy → 20 min sustained effort (not all-out, controlled max) → 10 min cooldown • HRV Check: Green? Do test. Yellow? Ride 45 min easy, try tomorrow. Red? Skip, test next week. Masters FTP testing: sustained 20-min at "hard but controlled" pace. Multiply avg power × 0.93 (conservative for 50+). This sets zones for polarized training: Z1-Z2 = 55-75% FTP (easy), Z4-Z5+ = 95%+ FTP (hard). Write everything down.
 
 • UNBOUND GRAVEL 200 - HYDRATION:
 &lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
