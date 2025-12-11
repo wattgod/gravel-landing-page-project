@@ -241,8 +241,8 @@ def validate_cross_plan_duplicates(results):
                     # Found duplicate
                     original_file, original_tier = content_tracker[content_type][variation_content]
                     errors.append(
-                        f"DUPLICATE {content_type}: {os.path.basename(filepath)} ({tier}) "
-                        f"and {os.path.basename(original_file)} ({original_tier}) have identical content"
+                        f"DUPLICATE {content_type}: {os.path.basename(filepath)} "
+                        f"and {os.path.basename(original_file)} have identical content"
                     )
                 else:
                     content_tracker[content_type][variation_content] = (filepath, tier)
