@@ -211,28 +211,43 @@ def main():
         result = generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, race_data_file)
         results.append(result)
     
-    # Verify generated guides
+    # Verify generated guides (MANDATORY)
     print(f"\n{'='*60}")
-    print(f"🔍 Verifying generated guides...")
+    print(f"🔍 Verifying generated guides (MANDATORY)...")
     print(f"{'='*60}")
+    verify_script = Path(__file__).parent / "generation_modules" / "verify_guide_structure.py"
+    guides_dir = race_folder / "guides"
+    
+    if not guides_dir.exists():
+        print("❌ ERROR: Guides directory not found!")
+        sys.exit(1)
+    
+    if not verify_script.exists():
+        print("❌ ERROR: Verification script not found!")
+        sys.exit(1)
+    
     try:
-        verify_script = Path(__file__).parent / "generation_modules" / "verify_guide_structure.py"
-        guides_dir = race_folder / "guides"
-        if guides_dir.exists():
-            import subprocess
-            result = subprocess.run(
-                [sys.executable, str(verify_script), str(guides_dir), "--skip-index"],
-                capture_output=True,
-                text=True
-            )
-            print(result.stdout)
-            if result.returncode != 0:
-                print("⚠️  Warning: Some guides failed verification. Review the output above.")
+        import subprocess
+        result = subprocess.run(
+            [sys.executable, str(verify_script), str(guides_dir), "--skip-index"],
+            capture_output=True,
+            text=True
+        )
+        print(result.stdout)
+        if result.returncode != 0:
+            print("\n" + "="*60)
+            print("❌ VERIFICATION FAILED - Generation aborted")
+            print("="*60)
+            print("Fix the issues above before proceeding.")
+            print("Guides were generated but contain errors.")
+            if result.stderr:
+                print("\nErrors:")
                 print(result.stderr)
-        else:
-            print("⚠️  Warning: Guides directory not found, skipping verification")
+            sys.exit(1)
+        print("\n✅ All guides passed verification")
     except Exception as e:
-        print(f"⚠️  Warning: Could not run verification script: {e}")
+        print(f"❌ ERROR: Could not run verification script: {e}")
+        sys.exit(1)
     
     # Summary
     print(f"\n{'='*60}")
