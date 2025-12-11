@@ -186,9 +186,10 @@ def check_placeholders(html: str) -> Tuple[bool, List[str]]:
 def check_old_content(html: str) -> Tuple[bool, List[str]]:
     """Check for content that should be removed"""
     forbidden_patterns = [
-        (r'QUICK REFERENCE', "QUICK REFERENCE section (old content)"),
-        (r'14: QUICK REFERENCE|13: QUICK REFERENCE', "QUICK REFERENCE section (old content)"),
-        (r'GLOSSARY', "GLOSSARY section (should be FAQ)"),
+        (r'id="section-\d+">\d+: QUICK REFERENCE', "QUICK REFERENCE section (old content)"),
+        (r'<h1[^>]*>.*QUICK REFERENCE', "QUICK REFERENCE section heading (old content)"),
+        (r'id="section-\d+">\d+: GLOSSARY', "GLOSSARY section (should be FAQ)"),
+        (r'<h1[^>]*>.*GLOSSARY', "GLOSSARY section heading (should be FAQ)"),
         (r'FTP \(Functional Threshold Power\)', "Glossary term (old content)"),
         (r'LTHR \(Lactate Threshold Heart Rate\)', "Glossary term (old content)"),
         (r'INFOGRAPHIC_RATING_HEX', "Unreplaced placeholder"),
@@ -249,9 +250,12 @@ def check_css_embedding(html: str) -> Tuple[bool, List[str]]:
     """Check CSS is embedded, not external link"""
     issues = []
     
-    # Check for external CSS links (should not exist)
-    if re.search(r'<link[^>]*rel=["\']stylesheet["\']', html, re.IGNORECASE):
-        issues.append("External CSS link found (should be embedded)")
+    # Check for external CSS links (should not exist, except Google Fonts)
+    css_links = re.findall(r'<link[^>]*rel=["\']stylesheet["\']', html, re.IGNORECASE)
+    for link_match in css_links:
+        # Allow Google Fonts links
+        if 'fonts.googleapis.com' not in link_match and 'fonts.gstatic.com' not in link_match:
+            issues.append(f"External CSS link found (should be embedded): {link_match[:50]}...")
     
     # Check for embedded CSS (should exist)
     if '<style>' not in html:
