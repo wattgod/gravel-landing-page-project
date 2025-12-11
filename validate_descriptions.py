@@ -155,6 +155,7 @@ def validate_file(filepath):
         warnings.append("Found hyphens (-) where em dashes (—) expected")
     
     return {
+        'filepath': filepath,
         'filename': filename,
         'char_count': char_count,
         'errors': errors,
@@ -175,11 +176,104 @@ def validate_directory(output_dir):
     
     return results
 
+def extract_opening(content):
+    """Extract opening paragraph from HTML."""
+    match = re.search(r'<p style="margin:0;font-size:24px;font-weight:700;line-height:1.3">([^<]+)</p>', content)
+    return match.group(1) if match else ""
+
+def extract_story(content):
+    """Extract story justification paragraph from HTML."""
+    # First paragraph after opening (before "What the" header)
+    match = re.search(r'<div style="margin-bottom:14px">\s*<p style="margin:0;font-size:16px">([^<]+)</p>', content)
+    return match.group(1) if match else ""
+
+def extract_closing(content):
+    """Extract closing statement from HTML."""
+    match = re.search(r'<p style="margin:0;font-size:16px">(This is |Built for |Designed for |Unbound)[^<]+</p>', content)
+    return match.group(1) if match else ""
+
+def extract_alternative(content):
+    """Extract alternative hook paragraph from HTML."""
+    match = re.search(r'<h3[^>]*>Alternative\?</h3>\s*<p style="margin:0;font-size:16px">([^<]+)</p>', content)
+    return match.group(1) if match else ""
+
+def get_tier_from_filename(filename):
+    """Extract tier from filename (e.g., 'finisher_advanced.html' -> 'finisher')."""
+    parts = filename.split('_')
+    if parts:
+        return parts[0]
+    return "unknown"
+
+def validate_cross_plan_duplicates(results):
+    """Check that no content is duplicated across different tiers."""
+    from collections import defaultdict
+    
+    # Track content by variation type and tier
+    content_tracker = defaultdict(lambda: defaultdict(list))
+    
+    for result in results:
+        filepath = result['filepath']
+        filename = result['filename']
+        tier = get_tier_from_filename(filename)
+        
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Extract each variation type
+        opening = extract_opening(content)
+        story = extract_story(content)
+        closing = extract_closing(content)
+        alternative = extract_alternative(content)
+        
+        # Track which plans use which content, grouped by tier
+        # Note: Excluding closings from duplicate check - they can legitimately be similar across tiers
+        content_tracker['opening'][tier].append((filepath, opening))
+        content_tracker['story'][tier].append((filepath, story))
+        # content_tracker['closing'][tier].append((filepath, closing))  # Excluded - closings can be similar
+        content_tracker['alternative'][tier].append((filepath, alternative))
+    
+    # Find duplicates across different tiers (not within same tier)
+    errors = []
+    for content_type, tier_dict in content_tracker.items():
+        # Build a map of content -> list of (tier, filepath)
+        content_map = defaultdict(list)
+        for tier, items in tier_dict.items():
+            for filepath, content in items:
+                if content:
+                    content_map[content].append((tier, filepath))
+        
+        # Check for content that appears in multiple tiers
+        for content, locations in content_map.items():
+            tiers = set(tier for tier, _ in locations)
+            if len(tiers) > 1:  # Same content in different tiers
+                for tier, filepath in locations:
+                    other_locations = [loc for loc in locations if loc[0] != tier]
+                    if other_locations:
+                        other_tier, other_filepath = other_locations[0]
+                        errors.append(
+                            f"DUPLICATE {content_type}: {os.path.basename(filepath)} ({tier}) "
+                            f"and {os.path.basename(other_filepath)} ({other_tier}) have identical content"
+                        )
+    
+    return errors
+
 def print_results(results):
     """Print validation results in readable format."""
     total = len(results)
     passed = sum(1 for r in results if r['passed'])
     failed = total - passed
+    
+    # Check for cross-plan duplicates
+    duplicate_errors = validate_cross_plan_duplicates(results)
+    if duplicate_errors:
+        # Add duplicate errors to all results that have them
+        for error in duplicate_errors:
+            # Find which files are involved
+            for result in results:
+                if any(os.path.basename(result['filepath']) in error for _ in [1]):
+                    result['errors'].append(error)
+                    result['passed'] = False
+        failed += len(duplicate_errors)
     
     print("\n" + "="*80)
     print("MARKETPLACE DESCRIPTION VALIDATION REPORT")
