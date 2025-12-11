@@ -62,365 +62,93 @@ LAST UPDATED: 2024
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-      --gg-bg: #ffffff;
-      --gg-fg: #111111;
-      --gg-border: #000000;
-      --gg-muted: #777777;
-      --gg-soft: #f5f5f5;
-    }
-
-    * {
-            box-sizing: border-box;
-        }
-        
-        body {
-      margin: 32px auto 64px auto;
-      padding: 0 20px;
-      max-width: 1120px;
-      background: var(--gg-bg);
-      color: var(--gg-fg);
-      font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 15px;
-            line-height: 1.7;
-      letter-spacing: 0.01em;
-      overflow-x: hidden;
-    }
-
-    main.gg-guide-page {
-            width: 100%;
-    }
-
-    .gg-guide-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-      gap: 24px;
-      align-items: start;
-      min-width: 0;
-                max-width: 100%;
-      grid-template-rows: auto 1fr;
-    }
-
-    @media (max-width: 900px) {
-      .gg-guide-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    header.guide-header {
-      grid-column: 1 / -1;
-      border-bottom: 2px solid var(--gg-border);
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-    }
-
-    .guide-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
-            text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gg-muted);
-      margin-top: 8px;
-    }
-
-    .guide-meta span {
-      border: 1px solid var(--gg-border);
-      padding: 2px 6px;
-    }
-
-    .plan-title {
-      font-size: 26px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin: 0 0 8px 0;
-      padding-bottom: 6px;
-      border-bottom: 3px solid var(--gg-border);
-    }
-
-    .plan-subtitle {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gg-muted);
-      margin: 0 0 4px 0;
-    }
-
-    .plan-meta {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gg-muted);
-      margin: 0;
-    }
-
-    h1, h2, h3, h4 {
-      font-weight: 600;
-      line-height: 1.2;
-      margin: 1.6rem 0 0.6rem 0;
-    }
-
-    h1 {
-      font-size: 26px;
-      padding-bottom: 6px;
-      border-bottom: 3px solid var(--gg-border);
-            text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-top: 0;
-    }
-
-    h2 {
-      font-size: 19px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid var(--gg-border);
-            text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    h3 {
-      font-size: 13px;
-            text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gg-muted);
-    }
-
-    h4 {
-      font-size: 12px;
-            text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    p {
-      margin: 0 0 0.8rem 0;
-    }
-
-    strong {
-            font-weight: 600;
-    }
-
-    ul, ol {
-      margin: 0.3rem 0 1rem 1.4rem;
-            padding: 0;
-    }
-
-    li {
-      margin: 0 0 0.35rem 0;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--gg-border);
-      margin: 2rem 0;
-    }
-
-    nav.gg-guide-toc {
-      position: sticky;
-      top: 16px;
-      border: 2px solid var(--gg-border);
-      padding: 12px 14px;
-      background: #fafafa;
-      max-width: 260px;
-      overflow-x: hidden;
-      max-height: calc(100vh - 32px);
-      overflow-y: auto;
-      grid-row: 2;
-    }
-
-    nav.gg-guide-toc h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      border-bottom: 1px solid var(--gg-border);
-      font-size: 13px;
-    }
-
-    nav.gg-guide-toc ol {
-      margin-left: 1.2rem;
-      font-size: 13px;
-      list-style: decimal;
-      padding-left: 0;
-    }
-
-    nav.gg-guide-toc a {
-      text-decoration: none;
-      color: var(--gg-fg);
-    }
-
-    nav.gg-guide-toc a:hover {
-      text-decoration: underline;
-    }
-
-    .gg-guide-content {
-      word-break: break-word;
-      max-width: 100%;
-      overflow-x: hidden;
-      min-width: 0;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      grid-row: 2;
-    }
-
-    section.gg-section {
-      margin-bottom: 2.4rem;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    table {
-            width: 100%;
-            border-collapse: collapse;
-      margin: 0.6rem 0 1.2rem 0;
-      font-size: 13px;
-    }
-
-    th, td {
-      border: 1px solid var(--gg-border);
-      padding: 4px 6px;
-            text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f0f0f0;
-            font-weight: 600;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #fafafa;
-    }
-
-    .gg-module,
-    .gg-alert,
-    .gg-info,
-    .gg-tactical,
-    .gg-decision-tree,
-    .gg-blackpill {
-      border: 1px solid var(--gg-border);
-      border-left-width: 6px;
-      padding: 12px 14px;
-      margin: 1.3rem 0;
-      background: var(--gg-soft);
-    }
-
-    .gg-alert {
-      border-left-color: var(--gg-border);
-    }
-
-    .gg-tactical {
-      border-style: dashed;
-    }
-
-    .gg-info {
-      border-left-color: var(--gg-muted);
-    }
-
-    .gg-decision-tree {
-      border-style: solid;
-      border-left-width: 8px;
-      padding-left: 20px;
-    }
-
-    .gg-blackpill {
-      background: #f0f0f0;
-      border-style: solid;
-      border-left-width: 8px;
-    }
-
-    .equipment-checklist-items {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      line-height: 1.6;
-      cursor: pointer;
-    }
-
-    .checklist-item input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      margin-right: 12px;
-      cursor: pointer;
-    }
-
-    .checklist-download {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .download-link {
-      display: inline-block;
-      background: #f0f0f0;
-      border: 1px solid var(--gg-border);
-      padding: 10px 20px;
-      text-decoration: none;
-      color: var(--gg-text);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .download-link:hover {
-      background: #e0e0e0;
-    }
-
-    .infographic-placeholder {
-      border: 1px solid var(--gg-border);
-      padding: 20px;
-      background: var(--gg-soft);
-      margin: 1.3rem 0;
-      text-align: center;
-      font-size: 13px;
-    }
-        </style>
+    <link rel="stylesheet" href="/gravel-landing-page-project/assets/css/guides.css">
 
 </head>
 <body>
-  <main class="gg-guide-page">
-    <div class="gg-guide-layout">
+    <div class="container">
 
-      <header class="guide-header">
-        <h1>{{RACE_NAME}}</h1>
-        <div class="guide-meta">
-          <span>{{TIER_NAME}} • {{ABILITY_LEVEL}}</span>
-          <span>{{WEEKLY_HOURS}} hours/week</span>
-          <span>{{plan_weeks}} weeks</span>
-        </div>
-      </header>
+<div class="plan-title-header">
+    <h1 class="plan-title">{{RACE_NAME}}</h1>
+    <p class="plan-subtitle">{{TIER_NAME}} • {{ABILITY_LEVEL}} Training Plan</p>
+    <p class="plan-meta">{{WEEKLY_HOURS}} hours/week • {{plan_weeks}} weeks</p>
+</div>
 
-      <nav class="gg-guide-toc">
+
+<!-- ==================== PLAN TITLE ==================== -->
+
+<div class="toc-box">
+    <div class="toc-header">
         <h2>Contents</h2>
-        <ol>
-          <li><a href="#section-1-training-plan-brief">Training Plan Brief</a></li>
-          <li><a href="#section-2-before-you-start">Before You Start</a></li>
-          <li><a href="#section-3-training-fundamentals">Training Fundamentals</a></li>
-          <li><a href="#section-4-your-12-week-arc">Your 12-Week Arc</a></li>
-          <li><a href="#section-5-training-zones">Training Zones</a></li>
-          <li><a href="#section-6-workout-execution">Workout Execution</a></li>
-          <li><a href="#section-7-technical-skills">Technical Skills for {{RACE_NAME}}</a></li>
-          <li><a href="#section-8-fueling-hydration">Fueling &amp; Hydration</a></li>
-          <li><a href="#section-9-mental-training">Mental Training</a></li>
-          <li><a href="#section-10-race-tactics">Race Tactics</a></li>
-          <li><a href="#section-11-race-specific-preparation">Race-Specific Preparation for {{RACE_NAME}}</a></li>
-          <li><a href="#section-12-race-week-protocol">Race Week Protocol</a></li>
-          <!-- START MASTERS SECTION TOC -->
-          <li><a href="#section-13-masters-specific-considerations">Masters-Specific Considerations</a></li>
-          <!-- END MASTERS SECTION TOC -->
-          <li><a href="#section-14-women-specific-considerations">Women-Specific Considerations</a></li>
-          <li><a href="#section-15-faq">Frequently Asked Questions</a></li>
-        </ol>
-      </nav>
+        <p class="toc-subtitle">Navigate your training guide</p>
+    </div>
 
-      <div class="gg-guide-content">
 
-        <section id="section-1-training-plan-brief" class="gg-section">
-          <h2 id="section-1-training-plan-brief">1 · Training Plan Brief</h2>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+
+    <ul class="toc-list">
+        <li><a href="#section-1">
+            <span class="toc-number">01</span>
+            <span class="toc-title">Training Plan Brief</span>
+        </a></li>
+        <li><a href="#section-2">
+            <span class="toc-number">02</span>
+            <span class="toc-title">BEFORE YOU START</span>
+        </a></li>
+        <li><a href="#section-3">
+            <span class="toc-number">03</span>
+            <span class="toc-title">TRAINING FUNDAMENTALS</span>
+        </a></li>
+        <li><a href="#section-4">
+            <span class="toc-number">04</span>
+            <span class="toc-title">YOUR 12-WEEK ARC</span>
+        </a></li>
+        <li><a href="#section-5">
+            <span class="toc-number">05</span>
+            <span class="toc-title">TRAINING ZONES</span>
+        </a></li>
+        <li><a href="#section-6">
+            <span class="toc-number">06</span>
+            <span class="toc-title">WORKOUT EXECUTION</span>
+        </a></li>
+        <li><a href="#section-7">
+            <span class="toc-number">07</span>
+            <span class="toc-title">Technical Skills for {{RACE_NAME}}</span>
+        </a></li>
+        <li><a href="#section-8">
+            <span class="toc-number">08</span>
+            <span class="toc-title">FUELING & HYDRATION</span>
+        </a></li>
+        <li><a href="#section-9">
+            <span class="toc-number">09</span>
+            <span class="toc-title">MENTAL TRAINING</span>
+        </a></li>
+        <li><a href="#section-10">
+            <span class="toc-number">10</span>
+            <span class="toc-title">Race Tactics for {{RACE_NAME}}</span>
+        </a></li>
+        <li><a href="#section-11">
+            <span class="toc-number">11</span>
+            <span class="toc-title">Race-Specific Preparation for {{RACE_NAME}}</span>
+        </a></li>
+        <li><a href="#section-12">
+            <span class="toc-number">12</span>
+            <span class="toc-title">RACE WEEK PROTOCOL</span>
+        </a></li>
+        <li><a href="#section-13">
+            <span class="toc-number">13</span>
+            <span class="toc-title">QUICK REFERENCE</span>
+        </a></li>
+        <li><a href="#section-14">
+            <span class="toc-number">14</span>
+            <span class="toc-title">GLOSSARY</span>
+        </a></li>
+    </ul>
+</div>
+
+
+<h1 id="section-1">1: Training Plan Brief</h1>
 
 <p>Welcome to **<strong>{{RACE_NAME}}</strong>** Training</p>
 
@@ -500,8 +228,7 @@ LAST UPDATED: 2024
 
 
 
-        <section id="section-2-before-you-start" class="gg-section">
-          <h2 id="section-2-before-you-start">2 · Before You Start</h2>
+<h1 id="section-2">2: BEFORE YOU START</h1>
 
 <h2>Health & Safety Check</h2>
 
@@ -565,14 +292,88 @@ LAST UPDATED: 2024
 
 <p>Go to the <a href="https://www.trainingpeaks.com/upload/" target="_blank">TrainingPeaks Upload/Sync page</a> and follow the instructions for your specific device (Garmin, Wahoo, etc.). This will automatically push your structured workouts to your bike computer or trainer.</p>
 
+<p><strong>Set your zones:</strong> In TrainingPeaks settings, enter your FTP (power) and HRmax (heart rate). This ensures workout targets calculate correctly for your fitness level.</p>
+
 <p><strong>Verify it's working:</strong> After connecting, check your bike computer or trainer app. You should see upcoming workouts appear in your device's workout library. Test it with a simple workout to confirm power/HR targets display correctly.</p>
 
 <p>That's it. Once synced, your workouts appear automatically before each training session.</p>
 
-        </section>
+<h2>FTP Testing</h2>
 
-        <section id="section-3-training-fundamentals" class="gg-section">
-          <h2 id="section-3-training-fundamentals">3 · Training Fundamentals</h2>
+<p>Functional Threshold Power (FTP) is the cornerstone of this training plan. It's the highest average power you can sustain for approximately one hour at maximum steady effort.</p>
+
+<p>All your training zones are calculated as percentages of FTP. Wrong FTP = wrong zones = ineffective training.</p>
+
+<h3>When to test:</h3>
+
+<ul>
+<li><strong>Week 1:</strong> Establish baseline FTP before training begins</li>
+</ul>
+<ul>
+<li><strong>Week 6-7 (optional):</strong> Check progress if curious, but not required</li>
+</ul>
+<ul>
+<li><strong>Week 11:</strong> Final test during taper to confirm fitness gains</li>
+</ul>
+<p>Don't test more often. FTP doesn't change weekly. Let the training work over multiple weeks before retesting.</p>
+
+<h3>How to test:</h3>
+
+<h3>Option 1: 20-Minute Test (Recommended)</h3>
+
+<ol>
+<li> Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3</li>
+</ol>
+<ol>
+<li> Include 3×1 minute at Z4-Z5 to open the legs</li>
+</ol>
+<ol>
+<li> 5 minutes easy recovery spin</li>
+</ol>
+<ol>
+<li> 20 minutes all-out, best average power you can hold</li>
+</ol>
+<ol>
+<li> Cool down 10-15 minutes easy</li>
+</ol>
+<ol>
+<li> FTP = 20-minute average power × 0.95</li>
+</ol>
+<h3>Option 2: Ramp Test</h3>
+
+<p>Many smart trainers (TrainerRoad, Zwift, Wahoo) offer ramp tests: progressive increase in power every minute until failure. The app calculates FTP from your max power achieved.</p>
+
+<p>Pros: Shorter, less painful Cons: Slightly less accurate for some athletes</p>
+
+<p>Choose one method and stick with it. Don't mix methods---they yield slightly different numbers.</p>
+
+<h3>Execute the test correctly:</h3>
+
+<p>Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard.</p>
+
+<p>The goal isn't heroics---it's an accurate number you can use for 6+ weeks of training.</p>
+
+<h3>Heart Rate Max Testing</h3>
+
+<p>If using heart rate zones (either as primary or backup), you need an accurate HRmax.</p>
+
+<h2>Option 1: Use your highest recorded heart rate</h2>
+
+<p>Check your training data from the past year. What's the highest heart rate you've hit during hard efforts? That's likely close to your actual max (excluding brief spikes from sudden efforts or errors).</p>
+
+<h3>Option 2: Field test</h3>
+
+<p>After a thorough warm-up, do 3-4×3 minutes at maximum effort up a sustained climb with 3 minutes recovery between. Your HR in the final effort should approach max.</p>
+
+<h3>Option 3: Formula (least accurate)</h3>
+
+<p>HRmax = 211 - (0.64 × age)</p>
+
+<p>Example: 38 years old = 211 - 24.3 = 186 bpm</p>
+
+<p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
+
+<h1 id="section-3">3: TRAINING FUNDAMENTALS</h1>
 
 <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
 
@@ -700,11 +501,7 @@ LAST UPDATED: 2024
 
 <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
 
-<!-- START 12-WEEK ARC SECTION -->
-        </section>
-
-        <section id="section-4-your-12-week-arc" class="gg-section">
-          <h2 id="section-4-your-12-week-arc">4 · Your 12-Week Arc</h2>
+<h1 id="section-4">4: YOUR 12-WEEK ARC</h1>
 
 <p>Understanding the big picture helps you navigate the individual weeks.</p>
 
@@ -794,110 +591,8 @@ LAST UPDATED: 2024
 </table>
 
 <p><em>Note: Specific TSS and hour targets vary by tier (Ayahuasca, Finisher, Compete, Podium). See your TrainingPeaks calendar for exact weekly prescriptions.</em></p>
-<!-- END 12-WEEK ARC SECTION -->
 
-<!-- START 6-WEEK ARC SECTION -->
-        </section>
-
-        <section id="section-4-your-6-week-arc" class="gg-section">
-          <h2 id="section-4-your-6-week-arc">4 · Your 6-Week Arc</h2>
-
-<p>Understanding the big picture helps you navigate the individual weeks.</p>
-
-<p>Your 6-week plan isn't random workouts strung together---it's a carefully structured, compressed progression designed to maximize fitness gains in minimal time for **<strong>{{RACE_NAME}}</strong>**.</p>
-
-<p>This is emergency race prep. There's no time for a traditional base phase. Every week must count.</p>
-
-<p>Here's how it breaks down:</p>
-
-<h3>Week 1: Assessment & Foundation</h3>
-
-<p><strong>Goal:</strong> Establish baseline fitness and identify limiters</p>
-
-<p><strong>What you're doing:</strong> FTP test, power profile assessment, durability test ride. Some Z2 endurance to maintain aerobic capacity. Light intensity work to assess current fitness.</p>
-
-<p><strong>Why:</strong> You need to know where you are before you can build. These tests reveal your strengths and weaknesses so the remaining 5 weeks can target what matters most.</p>
-
-<p><strong>How it feels:</strong> Challenging but not crushing. You're testing limits, not pushing them yet.</p>
-
-<h3>Weeks 2-4: Compressed Build & Peak</h3>
-
-<p><strong>Goal:</strong> Maximum fitness gains in minimal time</p>
-
-<p><strong>What you're doing:</strong> High-intensity threshold and VO2max work. Race-pace intervals. Long rides with embedded race simulation. This is where you build race-specific fitness fast.</p>
-
-<p><strong>Why:</strong> With only 6 weeks, there's no time for gradual progression. You're hitting race intensity immediately and building the ability to sustain it. Every workout targets race demands.</p>
-
-<p><strong>How it feels:</strong> Hard. Purposeful. You're accumulating fatigue but also building fitness rapidly. Week 4 includes a light recovery day---use it.</p>
-
-<h3>Week 5: Final Prep & Sharpening</h3>
-
-<p><strong>Goal:</strong> Peak fitness and race readiness</p>
-
-<p><strong>What you're doing:</strong> Final long ride with race simulation. Sharpening intervals at race pace. Reduced volume but maintained intensity. Final tune-up efforts.</p>
-
-<p><strong>Why:</strong> This is your last chance to build fitness and prove you can handle race demands. You're sharpening the edge, not grinding it down.</p>
-
-<p><strong>How it feels:</strong> Tired but strong. You're feeling the cumulative load, but workouts should still feel doable. If you're completely cooked, back off slightly.</p>
-
-<h3>Week 6: Taper & Race</h3>
-
-<p><strong>Goal:</strong> Arrive fresh and ready</p>
-
-<p><strong>What you're doing:</strong> Volume drops 40-60%. Light intensity to maintain sharpness. Race openers. Final prep.</p>
-
-<p><strong>Why:</strong> You can't add fitness in the final week, but you can ruin it by overtraining. The goal is to arrive at the start line fresh, not fatigued.</p>
-
-<p><strong>How it feels:</strong> Restless. Anxious. Like you should be doing more. Resist. Trust the process. You've done the work.</p>
-
-<h3>Week-by-Week Overview</h3>
-
-<p>The following table provides a high-level view of your 6-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
-
-<table class="workout-summary-table">
-  <thead>
-    <tr>
-      <th>Week</th>
-      <th>Phase</th>
-      <th>Focus</th>
-      <th>Key Workouts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>1</strong></td>
-      <td>Assessment</td>
-      <td>Baseline & limiters</td>
-      <td>FTP test, power profile, durability test, light intensity</td>
-    </tr>
-    <tr>
-      <td><strong>2-4</strong></td>
-      <td>Build & Peak</td>
-      <td>Race-specific fitness</td>
-      <td>Threshold/VO2max intervals, race-pace blocks, long race simulation</td>
-    </tr>
-    <tr>
-      <td><strong>5</strong></td>
-      <td>Sharpening</td>
-      <td>Final prep</td>
-      <td>Final long ride, race-pace intervals, reduced volume</td>
-    </tr>
-    <tr>
-      <td><strong>6</strong></td>
-      <td>Taper</td>
-      <td>Freshness</td>
-      <td>Reduced volume, race openers, final prep</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Note: This is emergency race prep. The intensity is high from the start. If you're starting from zero fitness, this plan may be too aggressive. Be honest about your current fitness level.</em></p>
-<!-- END 6-WEEK ARC SECTION -->
-
-        </section>
-
-        <section id="section-5-training-zones" class="gg-section">
-          <h2 id="section-5-training-zones">5 · Training Zones</h2>
+<h1 id="section-5">5: TRAINING ZONES</h1>
 
 <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
 
@@ -1084,10 +779,7 @@ LAST UPDATED: 2024
 
 <p>Power + Heart Rate + RPE = complete picture. When they align, you're executing correctly. When they conflict, trust your body.</p>
 
-        </section>
-
-        <section id="section-6-workout-execution" class="gg-section">
-          <h2 id="section-6-workout-execution">6 · Workout Execution</h2>
+<h1 id="section-6">6: WORKOUT EXECUTION</h1>
 
 <p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
 
@@ -1882,10 +1574,7 @@ LAST UPDATED: 2024
 
 <p>After <strong>{{RACE_NAME}}</strong>, invest in a proper off-season strength block. Your future self---the one who's still racing at 50, 60, 70---will thank you</p>
 
-        </section>
-
-        <section id="section-7-technical-skills" class="gg-section">
-          <h2 id="section-7-technical-skills">7 · Technical Skills for {{RACE_NAME}}</h2>
+<h1 id="section-7">7: Technical Skills for {{RACE_NAME}}</h1>
 
 <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
 
@@ -1997,10 +1686,7 @@ LAST UPDATED: 2024
 
 <p>By race day, these skills should be automatic. You shouldn't be thinking about how to corner or how to eat---you should just be doing it.</p>
 
-        </section>
-
-        <section id="section-8-fueling-hydration" class="gg-section">
-          <h2 id="section-8-fueling-hydration">8 · Fueling &amp; Hydration</h2>
+<h1 id="section-8">8: FUELING & HYDRATION</h1>
 
 <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel and hydrate properly, you won't finish well. Maybe you won't finish at all.</p>
 
@@ -2068,10 +1754,7 @@ LAST UPDATED: 2024
 
 <p>This is why practice matters. By race day, eating and drinking on schedule should feel like shifting gears---just something you do without thinking about it.</p>
 
-        </section>
-
-        <section id="section-9-mental-training" class="gg-section">
-          <h2 id="section-9-mental-training">9 · Mental Training</h2>
+<h1 id="section-9">9: MENTAL TRAINING</h1>
 
 <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard.</p>
 
@@ -2184,10 +1867,7 @@ LAST UPDATED: 2024
 
 <p>The bottom line on mental training: These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time. Practice during training so they're automatic during racing.</p>
 
-        </section>
-
-        <section id="section-10-race-tactics" class="gg-section">
-          <h2 id="section-10-race-tactics">10 · Race Tactics</h2>
+<h1 id="section-10">10: Race Tactics for {{RACE_NAME}}</h1>
 
 <p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
 
@@ -2273,10 +1953,7 @@ LAST UPDATED: 2024
 
 <p>The bottom line on tactics: The race isn't won in the first hour, but it can be lost there. Survive phase one. Execute phase two. Capitalize in phase three.</p>
 
-        </section>
-
-        <section id="section-11-race-specific-preparation" class="gg-section">
-          <h2 id="section-11-race-specific-preparation">11 · Race-Specific Preparation for {{RACE_NAME}}</h2>
+<h1 id="section-11">11: Race-Specific Preparation for {{RACE_NAME}}</h1>
 
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
@@ -2829,10 +2506,7 @@ LAST UPDATED: 2024
 
 <!-- END ALTITUDE SECTION -->
 
-        </section>
-
-        <section id="section-12-race-week-protocol" class="gg-section">
-          <h2 id="section-12-race-week-protocol">12 · Race Week Protocol</h2>
+<h1 id="section-12">12: RACE WEEK PROTOCOL</h1>
 
 <p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
 
@@ -3281,85 +2955,7 @@ LAST UPDATED: 2024
 <p class="checklist-download"><a href="#" onclick="downloadTHE_NIGHT_BEFOREPDF()" class="download-link">📥 Download THE NIGHT BEFORE Checklist (PDF)</a></p>
 
 <p class="checklist-download" style="margin-top: 40px; padding-top: 20px; border-top: 3px solid var(--black);"><a href="#" onclick="downloadCompleteRaceWeekChecklistPDF()" class="download-link" style="font-size: 16px; padding: 15px 30px;">📥 Download Complete Race Week Checklist (All Sections) (PDF)</a></p>
-<!-- START MASTERS SECTION -->
-        </section>
-
-        <section id="section-13-masters-specific-considerations" class="gg-section">
-          <h2 id="section-13-masters-specific-considerations">13 · Masters-Specific Considerations</h2>
-<p>If you're 40-50+ training for gravel racing, your physiology has changed in ways that demand training modifications—but these changes don't mandate decline. <strong>VO2max drops approximately 5% per decade in trained athletes versus 10% in sedentary individuals</strong>, and this difference is almost entirely explained by training choices. The evidence is clear: masters athletes who maintain high-intensity training, prioritize recovery, and incorporate strength work can preserve 50% more aerobic capacity than their peers who train "safer."</p>
-
-<h2>The Physiology Is Real, But Trainable</h2>
-<p>The decline curve looks daunting on paper but reveals opportunities on closer inspection. Maximum heart rate drops roughly <strong>1 beat per minute per year</strong>—this is unavoidable and affects everyone equally regardless of fitness. However, stroke volume, mitochondrial density, and lactate threshold remain highly trainable into your 60s and beyond. Research shows that <strong>54% of VO2max variance in aging athletes</strong> correlates with changes in training volume, not chronological age.</p>
-
-<p>Three mechanisms drive longer recovery times in masters athletes. First, "inflammaging"—persistent low-grade inflammation marked by elevated CRP and IL-6—impairs muscle repair. Second, declining anabolic hormones (testosterone falls roughly 1.6% annually after 30) reduce protein synthesis efficiency. Third, older muscles require <strong>40% more protein</strong> to achieve the same muscle-building response as younger tissue. This isn't weakness; it's biology requiring a tactical response.</p>
-
-<p>Type II fast-twitch fibers decline disproportionately with age, and these fibers are exactly what produce power for sprints, climbs, and race surges. Endurance-trained masters athletes show roughly <strong>39% Type II fiber composition</strong> compared to 51% in young controls—unless they strength train. Life-long strength-trained athletes maintain fiber distributions nearly identical to young individuals at approximately 52%.</p>
-
-<h2>The Polarized Model Wins for Masters Athletes</h2>
-<p>Stephen Seiler's research on masters cyclists training approximately 6 hours weekly found that <strong>4×8-minute intervals at 90% HRmax</strong> produced significantly greater gains in threshold power, VO2max power, and aerobic capacity than either shorter (4×4 min) or longer (4×16 min) intervals. This sweet spot accumulates meaningful time at high intensity while allowing complete recovery between efforts.</p>
-
-<p>The optimal intensity distribution for masters follows the 80/20 polarized model: <strong>75-80% of training at low intensity</strong> (below 2 mmol/L blood lactate, conversational pace), <strong>15-20% at high intensity</strong> (above 90% max heart rate), and less than 5% in the "black hole" of moderate intensity. Seiler observed that "threshold trainers" in his studies showed lactate profiles indicating chronic fatigue—they were "already at 2.5 mmol lactate just clipping into the pedals." Polarized masters athletes displayed profiles similar to elites at much higher absolute workloads.</p>
-
-<p>This distribution works because it respects the fundamental asymmetry of stress and adaptation. Easy sessions should be genuinely easy—Zone 1, able to hold a conversation indefinitely—allowing the body to absorb prior training stress. Hard sessions should be genuinely hard, creating the stimulus for adaptation. The middle ground creates fatigue without commensurate benefit, which Seiler describes as "too much pain for too little gain."</p>
-
-<h2>Recovery Becomes the Primary Training Variable</h2>
-<p>Recovery for masters athletes isn't passive time between workouts; it's an active training component requiring equal strategic attention. <strong>Muscle recovery can take up to 72 hours longer in athletes over 50</strong> compared to younger counterparts. This extended timeline means the workout-recovery-adaptation cycle that younger athletes can complete in 48 hours may require 72-96 hours for masters.</p>
-
-<h3>Sleep</h3>
-<p>Sleep emerges as the highest-leverage recovery intervention. Research shows elite athletes need <strong>8.3 hours to feel rested but typically achieve only 6.7 hours</strong>, with performance decrements appearing below 7 hours. Growth hormone and testosterone—critical for tissue repair—are released primarily during deep sleep, making sleep quality as important as duration. Practical strategies include maintaining consistent sleep-wake times, avoiding high-intensity training within 4 hours of bedtime, and keeping the bedroom at 65-68°F.</p>
-
-<h3>Protein Requirements</h3>
-<p>Protein requirements increase substantially for masters athletes. Target <strong>1.6-1.8 g/kg body weight daily</strong> for maintenance, rising to 2.0-2.4 g/kg during high training loads or when building muscle. A 75kg cyclist needs approximately 135g protein daily, distributed across 4-5 meals with 30-40g per feeding. Post-exercise protein becomes time-sensitive due to reduced absorption efficiency—consume protein within the first hour after training.</p>
-
-<h3>HRV Monitoring</h3>
-<p>HRV monitoring provides objective recovery data that subjective feel can miss. Measure first thing in the morning using a validated device (Oura, Whoop, Garmin, or chest-strap apps like HRV4Training), committing to daily measurements for at least two months to establish your personal baseline. High HRV with normal resting heart rate indicates readiness for intensity. Low HRV with elevated resting heart rate signals accumulating fatigue requiring reduced load. Trends over 7-14 days matter more than single readings, and HRV should complement—not replace—subjective feel.</p>
-
-<h2>Periodization Must Compress and Adapt</h2>
-<p>Traditional 4-week mesocycles with 3 weeks of building followed by 1 recovery week suit athletes in their 30s but typically overtax masters athletes. Research and coaching experience suggest <strong>2-2.5 week builds followed by 5-7 days recovery</strong> for athletes over 50. Joe Friel advocates a "9-day week" for older athletes, with training days extended to accommodate 2 days of recovery after hard sessions.</p>
-
-<p>The year-round structure also shifts. Contrary to traditional periodization with complete base phases, masters athletes benefit from <strong>maintaining some high-intensity training year-round</strong> to combat age-related VO2max and power losses. Don't abandon Zone 3 work entirely even during foundation periods—a single weekly intensity session preserves neuromuscular adaptations that are expensive to rebuild.</p>
-
-<p>Weekly structure for masters training 8-12 hours follows a predictable pattern: two high-intensity sessions separated by 48-72 hours, strength training scheduled immediately after key aerobic workouts (not on separate days), and the remaining volume at genuine Zone 1 effort. If training time drops to 4 days, collapse to 3 days and extend one session rather than compressing all sessions into short, intense efforts.</p>
-
-<p>Progressive overload must emphasize accumulation over escalation. Rather than pushing harder each workout, add intervals while maintaining intensity. Seiler notes that "top endurance athletes aren't hitting every interval workout aiming for higher power—they progress by doing more intervals, accumulating more time at high workloads." A threshold progression might advance from 6×5 minutes in week one, to 3×8 minutes in week two, to 3×10 minutes in week three, with identical power targets throughout.</p>
-
-<h2>Strength Training Is Mandatory, Not Optional</h2>
-<p>The research is unambiguous: <strong>strength training reduces overuse injury risk by 33%</strong> while improving cycling economy, preserving bone density (critical since cycling is non-weight-bearing), and countering sarcopenia. Cycling alone cannot prevent muscle loss—the movement pattern lacks sufficient loading to maintain Type II fibers. One study showed adding strength training produced <strong>9-13% improvements in Wingate peak power</strong> in masters cyclists.</p>
-
-<p>Focus on heavy compound movements: squats (goblet or back), deadlifts, lunges, and step-ups for lower body; rows and pressing for upper body. Train at approximately <strong>80% of 1-rep maximum for 4-5 reps</strong>, accumulating 16-30 total reps across lower-body exercises per session. Training to failure adds fatigue without additional benefit for endurance athletes—stop 1-2 reps short.</p>
-
-<p>Schedule strength training immediately following key aerobic workouts rather than on separate days. This consolidates stress into fewer recovery periods. During the racing season, maintain one strength session weekly; during the off-season, complete 2-3 sessions. The goal isn't bodybuilding—it's preserving the neuromuscular qualities that endurance training alone cannot maintain.</p>
-
-<h2>When to Skip Workouts Versus Push Through</h2>
-<p>The decision framework requires combining objective and subjective data. <strong>Skip or significantly modify the workout</strong> when resting heart rate is elevated more than 10% above normal, HRV shows multi-day suppression, sleep has been poor for 2+ consecutive nights, muscle soreness persists beyond 48 hours, or motivation has been absent for several consecutive days. These signs indicate incomplete recovery where additional stress delays—rather than drives—adaptation.</p>
-
-<p><strong>Push through (modified intensity)</strong> when general fatigue is present but objective metrics remain normal, when feeling physically recovered but not mentally eager, or when slight tiredness improves during warm-up. In these cases, begin the session at reduced intensity and reassess 15 minutes in. If performance normalizes, complete the planned session. If it doesn't, transition to easy endurance work.</p>
-
-<p>Warning signs of overtraining syndrome require immediate attention: performance decline lasting more than 4 weeks, elevated perceived exertion at normal workloads, disturbed sleep despite fatigue, increased illness frequency, hoarse voice after workouts, and mood disturbances. Recovery from true overtraining syndrome can require months to years—catching functional overreaching early prevents this cascade.</p>
-
-<h2>Race-Day Execution Differs from Younger Athletes</h2>
-<p>Warm-ups become more critical and should be longer. Target <strong>20-40 minutes</strong> for short events (criteriums, cyclocross, time trials under an hour), beginning with 5-10 minutes of off-bike dynamic mobility (leg swings, hip circles, arm rotations), followed by progressive on-bike effort culminating in 2-3 short high-intensity "opener" efforts 5-10 minutes before the start. This activates the aerobic energy system, increases hemoglobin oxygen-release efficiency, and triggers post-activation potentiation for improved muscle force production.</p>
-
-<p>Pacing strategy should favor negative splits more strongly than for younger athletes. Starting conservatively prevents early glycogen depletion that becomes increasingly difficult to recover from as the race progresses. For events lasting 3+ hours, target 60-65% of FTP and accept that heart rate will drift downward throughout—this is normal fatigue response. Use power meters rather than heart rate or perceived exertion for pacing precision.</p>
-
-<p>Heat tolerance declines with age through reduced sweat output per gland, delayed sweating onset, and decreased skin blood flow. However, research shows that <strong>fitness is protective</strong>: sweating rate correlates more strongly with VO2max than chronological age. Maintain aggressive hydration (16-20+ oz per hour), add electrolytes when exceeding 20 oz hourly, start races early to avoid peak heat, and use pre-cooling strategies (cold drinks, ice vests) before hot events.</p>
-
-<h2>The Mindset Shift That Matters Most</h2>
-<p>Joe Friel's central thesis in "Fast After 50" challenges the conventional wisdom that older athletes should "take it easy." The research supports the opposite: <strong>high-intensity training may slow age-related VO2max decline by up to 50%</strong>, triggers essential hormonal responses, and maintains the fast-twitch fibers that aging otherwise preferentially degrades. Solely engaging in long slow distance neither improves oxygen consumption capacity nor postpones lactate accumulation.</p>
-
-<p>The correct mindset isn't training harder—it's training with greater precision. Recovery windows expand, so each training stimulus must count. The cost of missed workouts increases because rebuild rates slow, so consistency matters more than occasional heroic efforts. Injury consequences multiply because healing takes longer, so prevention through strength work and adequate recovery becomes non-negotiable.</p>
-
-<p>Seiler frames this as competitive advantage: "Your age isn't merely a number—it's a competitive advantage. You have the wisdom to train intelligently and the experience to execute with precision." Masters athletes have decades of training adaptation that younger athletes haven't accumulated. The peripheral muscle capacity—the ability of trained muscles to extract and utilize oxygen—holds steady with maintained training even as central cardiac capacity declines.</p>
-
-<h2>The Bottom Line</h2>
-<p>Masters cycling performance depends less on fighting biology and more on optimizing around it. The <strong>5% per decade VO2max decline</strong> in trained athletes—half the sedentary rate—demonstrates that training choices drive outcomes more than birthdays. Polarized intensity distribution (80/20), compressed recovery cycles (2-3 weeks), mandatory strength training (2x weekly), and precision recovery monitoring (HRV, sleep, protein) form an integrated system rather than isolated tactics.</p>
-
-<p>The central insight from both Seiler's research and Friel's coaching philosophy is that masters athletes can maintain high performance not by training less, but by training more deliberately. Hard days must be genuinely hard to trigger adaptation; easy days must be genuinely easy to enable recovery; and the middle ground must be avoided as metabolically expensive without commensurate benefit. This framework respects physiological reality while refusing age-related defeatism—exactly the balance that produces results in the 40-50+ athlete.</p>
-<!-- END MASTERS SECTION -->
-        </section>
-
-        <section id="section-14-women-specific-considerations" class="gg-section">
-          <h2 id="section-14-women-specific-considerations">14 · Women-Specific Considerations</h2>
+<h1 id="section-13">13: QUICK REFERENCE</h1>
 
 <h3>Key Workouts in This Plan</h3>
 
@@ -3375,8 +2971,7 @@ LAST UPDATED: 2024
 
 <p><strong>For questions about this training plan:</strong> gravelgodcoaching@gmail.com</p>
 
-        <section id="section-15-faq" class="gg-section">
-          <h2 id="section-15-faq">15 · Frequently Asked Questions</h2>
+<h1 id="section-14">14: GLOSSARY</h1>
 
 <h3>FTP (Functional Threshold Power)</h3>
 
@@ -3475,10 +3070,11 @@ LAST UPDATED: 2024
         }
         </script>
 
-        </section>
 
-      </div>
-    </div>
-  </main>
-</body>
+    
+        </div>
+        
+        
+        
+    </body>
 </html>
