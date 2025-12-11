@@ -253,12 +253,19 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         # Remove Masters section content
         masters_section_pattern = r'<!-- START MASTERS SECTION -->.*?<!-- END MASTERS SECTION -->'
         output = re.sub(masters_section_pattern, '', output, flags=re.DOTALL)
-        # Renumber QUICK REFERENCE back to section 13
-        output = output.replace('id="section-14">14: QUICK REFERENCE', 'id="section-13">13: QUICK REFERENCE')
-        output = output.replace('id="section-15">15: GLOSSARY', 'id="section-14">14: GLOSSARY')
+        # Renumber Women-Specific from section 14 to section 13
+        output = output.replace('id="section-14-women-specific-considerations"', 'id="section-13-women-specific-considerations"')
+        output = output.replace('14 · Women-Specific Considerations', '13 · Women-Specific Considerations')
+        output = output.replace('href="#section-14-women-specific-considerations"', 'href="#section-13-women-specific-considerations"')
+        # Renumber FAQ from section 15 to section 14
+        output = output.replace('id="section-15-faq"', 'id="section-14-faq"')
+        output = output.replace('15 · Frequently Asked Questions', '14 · Frequently Asked Questions')
+        output = output.replace('href="#section-15-faq"', 'href="#section-14-faq"')
         print(f"  → Removed Masters section (not a Masters plan)")
+        print(f"  → Renumbered Women-Specific to section 13, FAQ to section 14")
     else:
         print(f"  → Included Masters section (Masters plan)")
+        print(f"  → Women-Specific is section 14, FAQ is section 15")
     
     # Wire in race-specific modules
     race_specific = race_data.get("race_specific") or {}
