@@ -1127,7 +1127,7 @@ def build_decision_tree_module(race_specific):
     if not tree:
         return ""
 
-        def _render_steps(label, key):
+    def _render_steps(label, key):
         steps = tree.get(key) or []
         if not steps:
             return ""
