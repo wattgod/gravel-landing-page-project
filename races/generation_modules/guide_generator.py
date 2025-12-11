@@ -235,6 +235,22 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
     
+    # Conditionally remove Masters section if not a Masters plan
+    import re
+    if ability_level != 'Masters':
+        # Remove Masters section from TOC
+        masters_toc_pattern = r'<!-- START MASTERS SECTION TOC -->.*?<!-- END MASTERS SECTION TOC -->'
+        output = re.sub(masters_toc_pattern, '', output, flags=re.DOTALL)
+        # Remove Masters section content
+        masters_section_pattern = r'<!-- START MASTERS SECTION -->.*?<!-- END MASTERS SECTION -->'
+        output = re.sub(masters_section_pattern, '', output, flags=re.DOTALL)
+        # Renumber QUICK REFERENCE back to section 13
+        output = output.replace('id="section-14">14: QUICK REFERENCE', 'id="section-13">13: QUICK REFERENCE')
+        output = output.replace('id="section-15">15: GLOSSARY', 'id="section-14">14: GLOSSARY')
+        print(f"  → Removed Masters section (not a Masters plan)")
+    else:
+        print(f"  → Included Masters section (Masters plan)")
+    
     # Wire in race-specific modules
     race_specific = race_data.get("race_specific") or {}
     output = output.replace("{{FLINT_MODULE}}", build_flint_module(race_specific))
