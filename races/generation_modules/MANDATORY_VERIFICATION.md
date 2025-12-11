@@ -144,3 +144,45 @@ The verification will block commits/deployments if:
 
 This prevents the exact issues we've encountered in the past.
 
+
+## Installation
+
+### For New Clones / Team Members
+
+Run the installation script:
+
+```bash
+./scripts/install_pre_commit_hook.sh
+```
+
+This will:
+- Create the pre-commit hook
+- Make it executable
+- Back up any existing hook
+
+### Manual Installation
+
+If the script doesn't work, manually copy the template:
+
+```bash
+cp scripts/pre-commit-hook-template.sh .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
+## Testing the Hook
+
+To test that the hook works:
+
+```bash
+# Make a small change to a guide
+echo "<!-- test -->" >> docs/guides/unbound-gravel-200/ayahuasca-beginner.html
+
+# Stage it
+git add docs/guides/unbound-gravel-200/ayahuasca-beginner.html
+
+# Try to commit (should run verification)
+git commit -m "Test verification hook"
+
+# If verification passes, commit succeeds
+# If verification fails, commit is blocked
+```
