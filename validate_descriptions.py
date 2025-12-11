@@ -205,11 +205,13 @@ def get_tier_from_filename(filename):
     return "unknown"
 
 def validate_cross_plan_duplicates(results):
-    """Check that no content is duplicated across different tiers."""
+    """Check that no content is duplicated across any plans (within or across tiers)."""
     from collections import defaultdict
     
-    # Track content by variation type and tier
-    content_tracker = defaultdict(lambda: defaultdict(list))
+    # Track content by variation type across ALL plans
+    content_tracker = defaultdict(dict)  # content -> (filepath, tier)
+    
+    errors = []
     
     for result in results:
         filepath = result['filepath']
@@ -225,35 +227,25 @@ def validate_cross_plan_duplicates(results):
         closing = extract_closing(content)
         alternative = extract_alternative(content)
         
-        # Track which plans use which content, grouped by tier
-        # Note: Excluding closings from duplicate check - they can legitimately be similar across tiers
-        content_tracker['opening'][tier].append((filepath, opening))
-        content_tracker['story'][tier].append((filepath, story))
-        # content_tracker['closing'][tier].append((filepath, closing))  # Excluded - closings can be similar
-        content_tracker['alternative'][tier].append((filepath, alternative))
-    
-    # Find duplicates across different tiers (not within same tier)
-    errors = []
-    for content_type, tier_dict in content_tracker.items():
-        # Build a map of content -> list of (tier, filepath)
-        content_map = defaultdict(list)
-        for tier, items in tier_dict.items():
-            for filepath, content in items:
-                if content:
-                    content_map[content].append((tier, filepath))
+        # Check for duplicates (within or across tiers)
+        variations = [
+            ('opening', opening),
+            ('story', story),
+            ('closing', closing),
+            ('alternative', alternative)
+        ]
         
-        # Check for content that appears in multiple tiers
-        for content, locations in content_map.items():
-            tiers = set(tier for tier, _ in locations)
-            if len(tiers) > 1:  # Same content in different tiers
-                for tier, filepath in locations:
-                    other_locations = [loc for loc in locations if loc[0] != tier]
-                    if other_locations:
-                        other_tier, other_filepath = other_locations[0]
-                        errors.append(
-                            f"DUPLICATE {content_type}: {os.path.basename(filepath)} ({tier}) "
-                            f"and {os.path.basename(other_filepath)} ({other_tier}) have identical content"
-                        )
+        for content_type, variation_content in variations:
+            if variation_content:  # Only check non-empty content
+                if variation_content in content_tracker[content_type]:
+                    # Found duplicate
+                    original_file, original_tier = content_tracker[content_type][variation_content]
+                    errors.append(
+                        f"DUPLICATE {content_type}: {os.path.basename(filepath)} ({tier}) "
+                        f"and {os.path.basename(original_file)} ({original_tier}) have identical content"
+                    )
+                else:
+                    content_tracker[content_type][variation_content] = (filepath, tier)
     
     return errors
 
