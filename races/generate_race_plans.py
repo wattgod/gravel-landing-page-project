@@ -211,6 +211,29 @@ def main():
         result = generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, race_data_file)
         results.append(result)
     
+    # Verify generated guides
+    print(f"\n{'='*60}")
+    print(f"🔍 Verifying generated guides...")
+    print(f"{'='*60}")
+    try:
+        verify_script = Path(__file__).parent / "generation_modules" / "verify_guide_structure.py"
+        guides_dir = race_folder / "guides"
+        if guides_dir.exists():
+            import subprocess
+            result = subprocess.run(
+                [sys.executable, str(verify_script), str(guides_dir), "--skip-index"],
+                capture_output=True,
+                text=True
+            )
+            print(result.stdout)
+            if result.returncode != 0:
+                print("⚠️  Warning: Some guides failed verification. Review the output above.")
+                print(result.stderr)
+        else:
+            print("⚠️  Warning: Guides directory not found, skipping verification")
+    except Exception as e:
+        print(f"⚠️  Warning: Could not run verification script: {e}")
+    
     # Summary
     print(f"\n{'='*60}")
     print(f"✅ GENERATION COMPLETE: {race_name}")
@@ -223,8 +246,9 @@ def main():
     print(f"   • 15 marketplace descriptions")
     print(f"\n📝 Next steps:")
     print(f"   1. Review outputs in: {race_folder}")
-    print(f"   2. Upload ZWO files to TrainingPeaks")
-    print(f"   3. Upload guides and descriptions to marketplace")
+    print(f"   2. Run verification: python3 races/generation_modules/verify_guide_structure.py {race_folder / 'guides'}")
+    print(f"   3. Upload ZWO files to TrainingPeaks")
+    print(f"   4. Upload guides and descriptions to marketplace")
 
 if __name__ == "__main__":
     main()
