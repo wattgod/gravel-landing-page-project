@@ -108,7 +108,293 @@ LAST UPDATED: 2024
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/gravel-landing-page-project/assets/css/guides.css">
+    <style>
+        :root {
+      --gg-bg: #ffffff;
+      --gg-fg: #111111;
+      --gg-border: #000000;
+      --gg-muted: #777777;
+      --gg-soft: #f5f5f5;
+    }
+
+    * {
+            box-sizing: border-box;
+        }
+        
+        body {
+      margin: 32px auto 64px auto;
+      padding: 0 20px;
+      max-width: 1120px;
+      background: var(--gg-bg);
+      color: var(--gg-fg);
+      font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 15px;
+            line-height: 1.7;
+      letter-spacing: 0.01em;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .plan-title-header {
+      border-bottom: 2px solid var(--gg-border);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+
+    .plan-title {
+      font-size: 26px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin: 0 0 8px 0;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--gg-border);
+    }
+
+    .plan-subtitle {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gg-muted);
+      margin: 0 0 4px 0;
+    }
+
+    .plan-meta {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gg-muted);
+      margin: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 1.6rem 0 0.6rem 0;
+    }
+
+    h1 {
+      font-size: 26px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--gg-border);
+            text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 19px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--gg-border);
+            text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    h3 {
+      font-size: 13px;
+            text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gg-muted);
+    }
+
+    h4 {
+      font-size: 12px;
+            text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    p {
+      margin: 0 0 0.8rem 0;
+    }
+
+    strong {
+            font-weight: 600;
+    }
+
+    ul, ol {
+      margin: 0.3rem 0 1rem 1.4rem;
+            padding: 0;
+    }
+
+    li {
+      margin: 0 0 0.35rem 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gg-border);
+      margin: 2rem 0;
+    }
+
+    .toc-box {
+      border: 2px solid var(--gg-border);
+      padding: 12px 14px;
+      background: #fafafa;
+      margin: 1.3rem 0;
+    }
+
+    .toc-header h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--gg-border);
+      font-size: 13px;
+    }
+
+    .toc-subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gg-muted);
+      margin: 0 0 12px 0;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .toc-list li {
+      margin: 0.2rem 0;
+    }
+
+    .toc-list a {
+      text-decoration: none;
+      color: var(--gg-fg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-list a:hover {
+      text-decoration: underline;
+    }
+
+    .toc-number {
+      font-weight: 600;
+      min-width: 30px;
+    }
+
+    .toc-title {
+      flex: 1;
+    }
+
+    table {
+            width: 100%;
+            border-collapse: collapse;
+      margin: 0.6rem 0 1.2rem 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--gg-border);
+      padding: 4px 6px;
+            text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f0f0f0;
+            font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .gg-module,
+    .gg-alert,
+    .gg-info,
+    .gg-tactical,
+    .gg-decision-tree,
+    .gg-blackpill {
+      border: 1px solid var(--gg-border);
+      border-left-width: 6px;
+      padding: 12px 14px;
+      margin: 1.3rem 0;
+      background: var(--gg-soft);
+    }
+
+    .gg-alert {
+      border-left-color: var(--gg-border);
+    }
+
+    .gg-tactical {
+      border-style: dashed;
+    }
+
+    .gg-info {
+      border-left-color: var(--gg-muted);
+    }
+
+    .gg-decision-tree {
+      border-style: solid;
+      border-left-width: 8px;
+      padding-left: 20px;
+    }
+
+    .gg-blackpill {
+      background: #f0f0f0;
+      border-style: solid;
+      border-left-width: 8px;
+    }
+
+    .equipment-checklist-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+
+    .checklist-download {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .download-link {
+      display: inline-block;
+      background: #f0f0f0;
+      border: 1px solid var(--gg-border);
+      padding: 10px 20px;
+      text-decoration: none;
+      color: var(--gg-text);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .download-link:hover {
+      background: #e0e0e0;
+    }
+
+    .infographic-placeholder {
+      border: 1px solid var(--gg-border);
+      padding: 20px;
+      background: var(--gg-soft);
+      margin: 1.3rem 0;
+      text-align: center;
+      font-size: 13px;
+    }
+        </style>
 
 </head>
 <body><pre><code>&lt;div class="container"&gt;
@@ -608,6 +894,7 @@ LAST UPDATED: 2024
 
 <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
 
+<!-- START 12-WEEK ARC SECTION -->
 <h1 id="section-4">4: YOUR 12-WEEK ARC</h1>
 
 <p>Understanding the big picture helps you navigate the individual weeks.</p>
@@ -698,6 +985,102 @@ LAST UPDATED: 2024
 </table>
 
 <p><em>Note: Specific TSS and hour targets vary by tier (Ayahuasca, Finisher, Compete, Podium). See your TrainingPeaks calendar for exact weekly prescriptions.</em></p>
+<!-- END 12-WEEK ARC SECTION -->
+
+<!-- START 6-WEEK ARC SECTION -->
+<h1 id="section-4">4: YOUR 6-WEEK ARC</h1>
+
+<p>Understanding the big picture helps you navigate the individual weeks.</p>
+
+<p>Your 6-week plan isn't random workouts strung together---it's a carefully structured, compressed progression designed to maximize fitness gains in minimal time for **<strong>Unbound Gravel 200</strong>**.</p>
+
+<p>This is emergency race prep. There's no time for a traditional base phase. Every week must count.</p>
+
+<p>Here's how it breaks down:</p>
+
+<h3>Week 1: Assessment & Foundation</h3>
+
+<p><strong>Goal:</strong> Establish baseline fitness and identify limiters</p>
+
+<p><strong>What you're doing:</strong> FTP test, power profile assessment, durability test ride. Some Z2 endurance to maintain aerobic capacity. Light intensity work to assess current fitness.</p>
+
+<p><strong>Why:</strong> You need to know where you are before you can build. These tests reveal your strengths and weaknesses so the remaining 5 weeks can target what matters most.</p>
+
+<p><strong>How it feels:</strong> Challenging but not crushing. You're testing limits, not pushing them yet.</p>
+
+<h3>Weeks 2-4: Compressed Build & Peak</h3>
+
+<p><strong>Goal:</strong> Maximum fitness gains in minimal time</p>
+
+<p><strong>What you're doing:</strong> High-intensity threshold and VO2max work. Race-pace intervals. Long rides with embedded race simulation. This is where you build race-specific fitness fast.</p>
+
+<p><strong>Why:</strong> With only 6 weeks, there's no time for gradual progression. You're hitting race intensity immediately and building the ability to sustain it. Every workout targets race demands.</p>
+
+<p><strong>How it feels:</strong> Hard. Purposeful. You're accumulating fatigue but also building fitness rapidly. Week 4 includes a light recovery day---use it.</p>
+
+<h3>Week 5: Final Prep & Sharpening</h3>
+
+<p><strong>Goal:</strong> Peak fitness and race readiness</p>
+
+<p><strong>What you're doing:</strong> Final long ride with race simulation. Sharpening intervals at race pace. Reduced volume but maintained intensity. Final tune-up efforts.</p>
+
+<p><strong>Why:</strong> This is your last chance to build fitness and prove you can handle race demands. You're sharpening the edge, not grinding it down.</p>
+
+<p><strong>How it feels:</strong> Tired but strong. You're feeling the cumulative load, but workouts should still feel doable. If you're completely cooked, back off slightly.</p>
+
+<h3>Week 6: Taper & Race</h3>
+
+<p><strong>Goal:</strong> Arrive fresh and ready</p>
+
+<p><strong>What you're doing:</strong> Volume drops 40-60%. Light intensity to maintain sharpness. Race openers. Final prep.</p>
+
+<p><strong>Why:</strong> You can't add fitness in the final week, but you can ruin it by overtraining. The goal is to arrive at the start line fresh, not fatigued.</p>
+
+<p><strong>How it feels:</strong> Restless. Anxious. Like you should be doing more. Resist. Trust the process. You've done the work.</p>
+
+<h3>Week-by-Week Overview</h3>
+
+<p>The following table provides a high-level view of your 6-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
+
+<table class="workout-summary-table">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Phase</th>
+      <th>Focus</th>
+      <th>Key Workouts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td>Assessment</td>
+      <td>Baseline & limiters</td>
+      <td>FTP test, power profile, durability test, light intensity</td>
+    </tr>
+    <tr>
+      <td><strong>2-4</strong></td>
+      <td>Build & Peak</td>
+      <td>Race-specific fitness</td>
+      <td>Threshold/VO2max intervals, race-pace blocks, long race simulation</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td>Sharpening</td>
+      <td>Final prep</td>
+      <td>Final long ride, race-pace intervals, reduced volume</td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td>Taper</td>
+      <td>Freshness</td>
+      <td>Reduced volume, race openers, final prep</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note: This is emergency race prep. The intensity is high from the start. If you're starting from zero fitness, this plan may be too aggressive. Be honest about your current fitness level.</em></p>
+<!-- END 6-WEEK ARC SECTION -->
 
 <h1 id="section-5">5: TRAINING ZONES</h1>
 
