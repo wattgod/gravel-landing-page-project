@@ -5,6 +5,8 @@ Uses tier-specific variation pools with proper HTML formatting
 """
 
 import random
+import hashlib
+import re
 from TIER_SPECIFIC_SOLUTION_STATE_V3 import SOLUTION_STATE_OPENINGS
 from TIER_SPECIFIC_CHOICE_FEATURES import CHOICE_FEATURES
 from TIER_SPECIFIC_GUIDE_TOPICS_FINAL import GUIDE_TOPICS
@@ -12,6 +14,27 @@ from ALTERNATIVE_HOOKS_BEHAVIORAL import ALTERNATIVE_HOOKS
 from TIER_SPECIFIC_STORY_JUSTIFICATIONS import STORY_JUSTIFICATIONS
 from TIER_SPECIFIC_VALUE_PROP_BOXES import VALUE_PROP_BOXES
 from GUIDE_INTRIGUE_LINES import GUIDE_INTRIGUE_LINES
+
+# Helper functions to extract content from HTML (same as validate_descriptions.py)
+def extract_opening_from_html(html):
+    """Extract opening paragraph from HTML."""
+    match = re.search(r'<p style="margin:0;font-size:24px;font-weight:700;line-height:1.3">([^<]+)</p>', html)
+    return match.group(1) if match else ""
+
+def extract_story_from_html(html):
+    """Extract story justification paragraph from HTML."""
+    match = re.search(r'<div style="margin-bottom:14px">\s*<p style="margin:0;font-size:16px">([^<]+)</p>', html)
+    return match.group(1) if match else ""
+
+def extract_closing_from_html(html):
+    """Extract closing statement from HTML."""
+    match = re.search(r'<p style="margin:0;font-size:16px">(This is |Built for |Designed for |Unbound)[^<]+</p>', html)
+    return match.group(1) if match else ""
+
+def extract_alternative_from_html(html):
+    """Extract alternative hook paragraph from HTML."""
+    match = re.search(r'<h3[^>]*>Alternative\?</h3>\s*<p style="margin:0;font-size:16px">([^<]+)</p>', html)
+    return match.group(1) if match else ""
 
 # ============================================================================
 # TIER CONFIGURATION
@@ -244,7 +267,7 @@ def select_masters_aware(pool, is_masters_plan, k=1):
 # GENERATION LOGIC
 # ============================================================================
 
-def generate_html_description(tier, race_name, plan_seed, variation=""):
+def generate_html_description(tier, race_name, plan_seed, variation="", forced_closing=None):
     """
     Generate HTML marketplace description with tier-specific variations
     
@@ -253,6 +276,7 @@ def generate_html_description(tier, race_name, plan_seed, variation=""):
         race_name: e.g., "Unbound Gravel 200"
         plan_seed: Unique seed for reproducible randomization
         variation: Optional plan variation (e.g., "intermediate", "beginner_masters")
+        forced_closing: Optional closing statement template to force (for uniqueness)
     
     Returns:
         Complete HTML description string
@@ -275,7 +299,11 @@ def generate_html_description(tier, race_name, plan_seed, variation=""):
     guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
     alternative_hook = select_masters_aware(ALTERNATIVE_HOOKS[tier], is_masters_plan, k=1)
     story_justification = select_masters_aware(STORY_JUSTIFICATIONS[tier], is_masters_plan, k=1)
-    closing_statement = random.choice(CLOSING_STATEMENTS[tier])  # No Masters variations in closings
+    # Use forced closing if provided, otherwise random
+    if forced_closing:
+        closing_statement = forced_closing
+    else:
+        closing_statement = random.choice(CLOSING_STATEMENTS[tier])  # No Masters variations in closings
     value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
     
     # Get tier specs
@@ -373,9 +401,10 @@ def format_as_prose(items):
 # ============================================================================
 
 def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="output/html_descriptions"):
-    """Generate HTML descriptions for all 15 plans"""
+    """Generate HTML descriptions for all 15 plans with deduplication"""
     
     import os
+    import hashlib
     os.makedirs(output_dir, exist_ok=True)
     
     # Plan variations (matches your 15 TrainingPeaks plans)
@@ -386,15 +415,99 @@ def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="o
         "podium": ["advanced", "elite"]
     }
     
+    # Track used content to prevent duplicates
+    used_content = {
+        'opening': set(),
+        'story': set(),
+        'closing': set(),
+        'alternative': set()
+    }
+    
+    # Track used closings globally (after formatting) to ensure uniqueness across all tiers
+    used_closings_global = set()  # Track formatted closings across all tiers
+    
     generated = []
+    max_attempts = 200  # Maximum regeneration attempts per plan (increased for better uniqueness)
+    plan_index = 0  # Global plan counter for deterministic selection
     
     for tier, variations in plan_mapping.items():
         tier_dir = os.path.join(output_dir, tier)
         os.makedirs(tier_dir, exist_ok=True)
         
         for variation in variations:
-            seed = f"{race_name.lower().replace(' ', '_')}_{tier}_{variation}"
-            html = generate_html_description(tier, race_name, seed, variation)
+            plan_index += 1
+            # Create unique seed using hash for better distribution
+            plan_id = f"{race_name.lower().replace(' ', '_')}_{tier}_{variation}"
+            seed_hash = hashlib.md5(plan_id.encode()).hexdigest()
+            seed = f"{plan_id}_{seed_hash[:8]}"
+            
+            # Pre-select a unique closing for this plan
+            # Try each closing template until we find one that's unique after formatting
+            selected_closing_template = None
+            for closing_template in CLOSING_STATEMENTS[tier]:
+                formatted_closing = closing_template.format(race_name=race_name)
+                if formatted_closing not in used_closings_global:
+                    selected_closing_template = closing_template
+                    used_closings_global.add(formatted_closing)
+                    break
+            
+            # If all closings for this tier are duplicates, use the first one anyway
+            # (This shouldn't happen with diverse closing pools, but provides fallback)
+            if not selected_closing_template:
+                selected_closing_template = CLOSING_STATEMENTS[tier][0]
+                formatted_closing = selected_closing_template.format(race_name=race_name)
+                used_closings_global.add(formatted_closing)
+            
+            # Generate with forced closing and track used content to ensure uniqueness
+            html = None
+            for attempt in range(max_attempts):
+                attempt_seed = f"{seed}_{attempt}"
+                random.seed(attempt_seed)
+                # Generate description with forced closing
+                html = generate_html_description(tier, race_name, attempt_seed, variation, forced_closing=selected_closing_template)
+                
+                # Extract content to check for duplicates (after formatting)
+                opening = extract_opening_from_html(html)
+                story = extract_story_from_html(html)
+                closing = extract_closing_from_html(html)
+                alternative = extract_alternative_from_html(html)
+                
+                # Check if any content is duplicate
+                is_duplicate = (
+                    (opening and opening in used_content['opening']) or
+                    (story and story in used_content['story']) or
+                    (closing and closing in used_content['closing']) or
+                    (alternative and alternative in used_content['alternative'])
+                )
+                
+                if not is_duplicate:
+                    # Unique content found - use it and track
+                    if opening:
+                        used_content['opening'].add(opening)
+                    if story:
+                        used_content['story'].add(story)
+                    if closing:
+                        used_content['closing'].add(closing)
+                    if alternative:
+                        used_content['alternative'].add(alternative)
+                    break
+            
+            # If we couldn't find unique content after max attempts, use the last generated
+            # This can happen if pools are too small, but we'll track it anyway
+            if html:
+                opening = extract_opening_from_html(html)
+                story = extract_story_from_html(html)
+                closing = extract_closing_from_html(html)
+                alternative = extract_alternative_from_html(html)
+                # Add to used_content even if duplicate (to prevent future duplicates)
+                if opening and opening not in used_content['opening']:
+                    used_content['opening'].add(opening)
+                if story and story not in used_content['story']:
+                    used_content['story'].add(story)
+                if closing and closing not in used_content['closing']:
+                    used_content['closing'].add(closing)
+                if alternative and alternative not in used_content['alternative']:
+                    used_content['alternative'].add(alternative)
             
             filename = f"{tier}_{variation}.html"
             filepath = os.path.join(tier_dir, filename)
