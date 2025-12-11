@@ -404,7 +404,7 @@ def select_guide_topics(plan_config):
     anchors = plan_config['reality_anchors']
     available_pools = []
     
-    # Always include women-specific section (Section 13)
+    # Always include women-specific guide topic
     available_pools.append(('women', WOMEN_SPECIFIC_GUIDE_VARIATIONS))
     
     if anchors.get('has_fueling_practice', False):
