@@ -185,6 +185,15 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
         '{{RACE_KEY_CHALLENGES}}': ', '.join(guide_vars.get('race_challenges', [])) if isinstance(guide_vars.get('race_challenges'), list) else guide_vars.get('race_challenges', 'technical terrain, elevation, and endurance'),
         '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
+        '{{RACE_INTRO_PARAGRAPH}}': generate_race_intro_paragraph(race_data),
+        '{{COURSE_DESCRIPTION_PARAGRAPH}}': generate_course_description_paragraph(race_data),
+        '{{RACE_SIGNIFICANCE_PARAGRAPH}}': generate_race_significance_paragraph(race_data),
+        '{{WHAT_IT_TAKES_TO_FINISH}}': generate_what_it_takes_to_finish(race_data),
+        '{{PLAN_PREPARATION_SUMMARY}}': generate_plan_preparation_summary(race_data),
+        '{{PLAN_TITLE}}': get_plan_title(tier_name, ability_level),
+        '{{ABILITY_LEVEL_EXPLANATION}}': get_ability_level_explanation(ability_level, tier_name),
+        '{{TIER_VOLUME_EXPLANATION}}': get_tier_volume_explanation(tier_name),
+        '{{PERFORMANCE_EXPECTATIONS}}': get_performance_expectations(tier_name),
         '{{RACE_ELEVATION}}': str(elevation_gain) if elevation_gain and isinstance(elevation_gain, (int, float)) else 'XXX',
         '{{RACE_SPECIFIC_SKILL_NOTES}}': convert_markdown_to_html(guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.')),
         '{{RACE_SPECIFIC_TACTICS}}': convert_markdown_to_html(guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.')),
@@ -234,6 +243,22 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     output = template
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
+    
+    # Conditionally remove Masters section if not a Masters plan
+    import re
+    if ability_level != 'Masters':
+        # Remove Masters section from TOC
+        masters_toc_pattern = r'<!-- START MASTERS SECTION TOC -->.*?<!-- END MASTERS SECTION TOC -->'
+        output = re.sub(masters_toc_pattern, '', output, flags=re.DOTALL)
+        # Remove Masters section content
+        masters_section_pattern = r'<!-- START MASTERS SECTION -->.*?<!-- END MASTERS SECTION -->'
+        output = re.sub(masters_section_pattern, '', output, flags=re.DOTALL)
+        # Renumber QUICK REFERENCE back to section 13
+        output = output.replace('id="section-14">14: QUICK REFERENCE', 'id="section-13">13: QUICK REFERENCE')
+        output = output.replace('id="section-15">15: GLOSSARY', 'id="section-14">14: GLOSSARY')
+        print(f"  → Removed Masters section (not a Masters plan)")
+    else:
+        print(f"  → Included Masters section (Masters plan)")
     
     # Wire in race-specific modules
     race_specific = race_data.get("race_specific") or {}
@@ -1111,7 +1136,7 @@ def build_decision_tree_module(race_specific):
     if not tree:
         return ""
 
-        def _render_steps(label, key):
+    def _render_steps(label, key):
         steps = tree.get(key) or []
         if not steps:
             return ""
@@ -1259,6 +1284,257 @@ def main():
     )
     
     print(f"✓ Generated: {output_path}")
+
+
+def generate_race_intro_paragraph(race_data):
+    """Generate the introductory paragraph for Section 1"""
+    metadata = race_data.get('race_metadata', {})
+    race_name = metadata.get('name', 'Race Name')
+    distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
+    elevation_gain = metadata.get('elevation_feet', 0) or race_data.get('elevation_gain_feet', 0) or race_data.get('elevation_feet', 0)
+    location = metadata.get('location', '')
+    
+    try:
+        distance = int(distance) if distance else 0
+        elevation_gain = int(elevation_gain) if elevation_gain else 0
+    except (ValueError, TypeError):
+        distance = 0
+        elevation_gain = 0
+    
+    # Build intro based on race characteristics
+    intro = f"Welcome to your <strong>{race_name}</strong> training plan."
+    
+    if distance:
+        intro += f" {distance} miles"
+    if elevation_gain:
+        intro += f" with {elevation_gain:,} feet of climbing"
+    if location:
+        intro += f" through {location}"
+    
+    # Add race-specific hook
+    hooks = race_data.get('race_hooks', {})
+    hook_text = hooks.get('hook', '')
+    if hook_text:
+        intro += f". {hook_text}"
+    else:
+        intro += ". This isn't a race you survive by accident. It's a race you prepare for—or it prepares you for a very long day."
+    
+    return intro
+
+
+def generate_course_description_paragraph(race_data):
+    """Generate detailed course description from 7 variables"""
+    metadata = race_data.get('race_metadata', {})
+    characteristics = race_data.get('race_characteristics', {})
+    guide_vars = race_data.get('guide_variables', {})
+    
+    distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
+    elevation_gain = metadata.get('elevation_feet', 0) or race_data.get('elevation_gain_feet', 0) or race_data.get('elevation_feet', 0)
+    terrain_desc = characteristics.get('terrain_description', '') or guide_vars.get('terrain_description', 'varied terrain')
+    climate = characteristics.get('climate', '') or guide_vars.get('climate', '')
+    starting_elevation = metadata.get('avg_elevation_feet', 0) or characteristics.get('altitude_feet', 0) or 0
+    support_level = characteristics.get('support_level', 'well-supported')
+    adventure_factor = characteristics.get('adventure_factor', 'moderate')
+    
+    try:
+        distance = int(distance) if distance else 0
+        elevation_gain = int(elevation_gain) if elevation_gain else 0
+        starting_elevation = int(starting_elevation) if starting_elevation else 0
+    except (ValueError, TypeError):
+        distance = 0
+        elevation_gain = 0
+        starting_elevation = 0
+    
+    desc = f"The {metadata.get('name', 'Race')} covers"
+    if distance:
+        desc += f" {distance} miles"
+    if elevation_gain:
+        desc += f" with {elevation_gain:,} feet of cumulative elevation gain"
+    if terrain_desc:
+        desc += f" through {terrain_desc}"
+    
+    # Handling demands
+    if 'flint' in terrain_desc.lower() or 'rock' in terrain_desc.lower():
+        desc += "—this is a moderate handling challenge"
+    else:
+        desc += "—this is a moderate handling challenge"
+    
+    # Climate
+    if climate:
+        desc += f". Climate is the silent killer—{climate}"
+    elif 'hot' in str(guide_vars.get('weather_strategy', '')).lower():
+        desc += ". Climate is the silent killer—Hot and humid, 85-95°F"
+    else:
+        desc += ". Climate varies"
+    
+    # Altitude
+    if starting_elevation >= 5000:
+        desc += f". Starting elevation is around {starting_elevation:,} feet, so altitude is a factor"
+    else:
+        desc += f". Starting elevation is around {starting_elevation:,} feet, so altitude isn't a factor"
+    
+    # Support
+    if support_level:
+        if 'well' in support_level.lower():
+            desc += ". The race is well-supported with aid stations"
+        else:
+            desc += f". The race is {support_level}"
+    
+    # Adventure
+    if adventure_factor:
+        desc += f". The adventure factor is {adventure_factor}"
+    
+    return desc
+
+
+def generate_race_significance_paragraph(race_data):
+    """Generate paragraph on why the race matters"""
+    metadata = race_data.get('race_metadata', {})
+    hooks = race_data.get('race_hooks', {})
+    race_name = metadata.get('name', 'Race Name')
+    
+    # Build from hooks and metadata
+    significance = f"{race_name} is"
+    
+    # Check for iconic status
+    if 'iconic' in str(hooks.get('detail', '')).lower() or 'iconic' in str(metadata.get('description', '')).lower():
+        significance += " the most iconic gravel race in the world"
+    else:
+        significance += " a significant gravel race"
+    
+    significance += f"—{race_name} is gravel cycling. "
+    
+    # Organization
+    significance += "The organization is flawless, the course is legendary, and the event execution sets the industry standard. "
+    
+    # Energy and community
+    significance += "The energy, the field, the community—this is what gravel racing aspires to be. "
+    
+    # Field depth
+    significance += "Thousands of riders create incredible camaraderie, and the volunteers make it unforgettable. The field depth is unmatched—the pros, the weekend warriors, and everyone in between. "
+    
+    # Cost
+    location = metadata.get('location', '')
+    if location:
+        significance += f"Entry fees are premium, but you get what you pay for. Travel and lodging in {location} aren't cheap, but manageable with planning."
+    else:
+        significance += "Entry fees are premium, but you get what you pay for."
+    
+    return significance
+
+
+def generate_what_it_takes_to_finish(race_data):
+    """Generate content for 'What It Takes to Finish'"""
+    metadata = race_data.get('race_metadata', {})
+    distance = metadata.get('distance_miles', 0) or race_data.get('distance_miles', 0)
+    
+    try:
+        distance = int(distance) if distance else 0
+    except (ValueError, TypeError):
+        distance = 0
+    
+    # Estimate duration
+    if distance >= 200:
+        duration = "10-15 hours"
+    elif distance >= 100:
+        duration = "5-8 hours"
+    elif distance >= 50:
+        duration = "2-4 hours"
+    else:
+        duration = "1-2 hours"
+    
+    requirements = f"You'll be out there {duration}. "
+    requirements += "Base fitness alone won't cut it—you need specific preparation for sustained output. "
+    requirements += "Heat acclimatization isn't optional. "
+    requirements += "Endurance pacing is critical—smooth power wins over surges. "
+    requirements += "Bike handling confidence at speed, especially in groups. "
+    requirements += "Equipment reliability—mechanical issues end races."
+    
+    return requirements
+
+
+def generate_plan_preparation_summary(race_data):
+    """Generate content for 'This Plan Prepares You for All of It'"""
+    metadata = race_data.get('race_metadata', {})
+    race_name = metadata.get('name', 'Race Name')
+    characteristics = race_data.get('race_characteristics', {})
+    terrain_desc = characteristics.get('terrain_description', '') or 'varied terrain'
+    
+    summary = f"Every workout, long ride, and recovery week is designed around {race_name}'s specific demands. "
+    summary += "Heat adaptation protocols. "
+    summary += "Endurance pacing for race distance. "
+    summary += f"Technical handling for {terrain_desc}. "
+    summary += "Mental training for when it all falls apart."
+    
+    return summary
+
+
+def get_plan_title(tier_name, ability_level):
+    """Return descriptive title for each plan combination"""
+    titles = {
+        ('AYAHUASCA', 'Beginner'): 'Survival Plan',
+        ('AYAHUASCA', 'Intermediate'): 'Time Crunched Plan',
+        ('AYAHUASCA', 'Masters'): '50+ Plan',
+        ('AYAHUASCA', 'Save My Race'): 'Emergency Plan',
+        ('FINISHER', 'Beginner'): 'First Timer Plan',
+        ('FINISHER', 'Intermediate'): 'Solid Finisher Plan',
+        ('FINISHER', 'Advanced'): 'Strong Finish Plan',
+        ('COMPETE', 'Intermediate'): 'Competitive Plan',
+        ('COMPETE', 'Advanced'): 'Podium Contender Plan',
+        ('COMPETE', 'Masters'): '50+ Performance Plan',
+        ('COMPETE', 'Save My Race'): 'Emergency Plan',
+        ('PODIUM', 'Advanced'): 'Elite Preparation',
+        ('PODIUM', 'Advanced GOAT'): 'The G.O.A.T. Plan',
+    }
+    return titles.get((tier_name, ability_level), f'{ability_level} Plan')
+
+
+def get_ability_level_explanation(ability_level, tier_name):
+    """Provide detailed explanation for ability level"""
+    weekly_hours = get_weekly_hours(tier_name)
+    
+    if ability_level == 'Beginner':
+        return f'<strong>Your ability level (Beginner)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re a beginner if you\'ve never trained systematically for endurance sports, you\'re currently out of shape or returning after significant time off (2+ years), you don\'t know your FTP, and long rides for you are 1-2 hours. Beginner plans build base fitness first. They assume you need to develop aerobic capacity, muscular endurance, and durability before you can handle intensity.'
+    elif ability_level == 'Intermediate':
+        return f'<strong>Your ability level (Intermediate)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re intermediate if you\'ve got endurance sports background—cycling, running, triathlon, or other aerobic training, you\'re currently fit enough to ride 3-4 hours without falling apart, you understand pacing, you\'ve practiced fueling on long rides, and you know what "sustainable discomfort" feels like. Intermediate plans assume you can handle two quality sessions per week plus endurance volume. They use polarized training (80% easy, 20% hard) because your body can absorb that stress without breaking.'
+    elif ability_level == 'Advanced' or ability_level == 'Advanced GOAT':
+        return f'<strong>Your ability level (Advanced)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re advanced if you\'re already fast, you\'ve raced seriously (road, gravel, MTB, triathlon—doesn\'t matter), you know your FTP, you understand interval structure, and you\'ve trained with power or heart rate zones for years. Advanced plans use block periodization or the GOAT Method—concentrated periods of specific intensity (threshold blocks, VO2 blocks) followed by recovery. They assume you know your body well enough to execute hard sessions without burying yourself.'
+    elif ability_level == 'Masters':
+        return f'<strong>Your ability level (Masters)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re 50+ (or 40+ with significant recovery needs) with intermediate experience. Masters plans use moderate volume, emphasize recovery, and integrate HRV monitoring for autoregulation. They acknowledge that recovery takes longer as you age.'
+    else:
+        return f'<strong>Your ability level ({ability_level})</strong> reflects your training experience and current fitness—not one or the other, but both.'
+
+
+def get_tier_volume_explanation(tier_name):
+    """Provide detailed explanation for volume category"""
+    weekly_hours = get_weekly_hours(tier_name)
+    
+    if tier_name == 'AYAHUASCA':
+        return f'<strong>Your volume category (AYAHUASCA)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the AYAHUASCA category. Ayahuasca plans use high-intensity interval training (HIIT) to maximize fitness from minimal time. Two to three hard sessions per week, short endurance rides, and minimal long rides (capped at 2-3 hours). Critical caveat: These plans assume you already have fitness and experience. HIIT doesn\'t build base fitness—it sharpens existing fitness.'
+    elif tier_name == 'FINISHER':
+        return f'<strong>Your volume category (FINISHER)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the FINISHER category. This is the sweet spot for most gravel racers. You\'ve got enough time to build a real aerobic base, practice race-specific intensity, and complete long rides that prepare you for race distance. Finisher plans include two quality sessions per week (threshold, tempo, climbing work), several endurance rides, and one long ride that builds to 4-5 hours by peak weeks.'
+    elif tier_name == 'COMPETE':
+        return f'<strong>Your volume category (COMPETE)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the COMPETE category. You\'re training to race properly. Not just participate—compete. Compete plans include three to four quality sessions per week, multiple endurance rides, and long rides that hit 5-6 hours with race-specific intensity. You\'re building threshold power, repeatability (surge and recover repeatedly), and the ability to hold race pace for hours.'
+    elif tier_name == 'PODIUM':
+        return f'<strong>Your volume category (PODIUM)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the PODIUM category. Professional-level commitment. At this volume, you need coaching, not a pre-made plan. You\'re managing recovery protocols, tracking performance metrics closely, and adjusting week-to-week based on how your body responds.'
+    else:
+        return f'<strong>Your volume category ({tier_name})</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block.'
+
+
+def get_performance_expectations(tier_name):
+    """Provide performance expectations based on tier"""
+    weekly_hours = get_weekly_hours(tier_name)
+    
+    if tier_name == 'AYAHUASCA':
+        return f"With {weekly_hours} hours per week, you're building minimal viable fitness. This is survival mode training. Realistic expectations: You'll finish the race, but it will be hard. You won't be competitive, but you'll complete the distance. If you're a true beginner on an Ayahuasca plan, adjust expectations further—you're showing up underprepared and should prioritize finishing over performance."
+    elif tier_name == 'FINISHER':
+        return f"With {weekly_hours} hours per week, you're building solid aerobic base fitness. Realistic expectations: You'll finish strong at most gravel races. You won't be competing for podiums at Tier 1 events, but you'll complete the distance at a moderate pace without heroics."
+    elif tier_name == 'COMPETE':
+        return f"With {weekly_hours} hours per week, you're building race fitness. Realistic expectations: This volume typically places riders in the top third of the field at most gravel races. You're training to compete, not just participate."
+    elif tier_name == 'PODIUM':
+        return f"With {weekly_hours} hours per week, you're training at professional-level volume. Realistic expectations: At this volume, you should be competing for top positions. However, if you're training 20+ hours per week, consider getting coaching rather than following a pre-made plan."
+    else:
+        return "Performance expectations vary based on your training consistency, natural ability, and race-day execution."
 
 
 if __name__ == '__main__':
