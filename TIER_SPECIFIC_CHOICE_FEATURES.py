@@ -43,7 +43,10 @@ CHOICE_FEATURES = {
         "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
-        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
+        "**Heat adaptation for Unbound Gravel 200: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for Unbound Gravel 200: 60-80g carbs/hour protocol tested for 200-mile efforts**",
+        "**Dress rehearsal ride validates everything before Unbound Gravel 200: nutrition, pacing, equipment, mental protocols tested**"
     ],
     
     "compete": [
@@ -65,7 +68,10 @@ CHOICE_FEATURES = {
         "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
-        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
+        "**Heat adaptation for Unbound Gravel 200: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for Unbound Gravel 200: 60-80g carbs/hour protocol tested for 200-mile efforts**",
+        "**Dress rehearsal ride validates everything before Unbound Gravel 200: nutrition, pacing, equipment, mental protocols tested**"
     ],
     
     "podium": [
@@ -84,7 +90,10 @@ CHOICE_FEATURES = {
         "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
-        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
+        "**Heat adaptation for Unbound Gravel 200: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for Unbound Gravel 200: 60-80g carbs/hour protocol tested for 200-mile efforts**",
+        "**Dress rehearsal ride validates everything before Unbound Gravel 200: nutrition, pacing, equipment, mental protocols tested**"
     ]
 }
 

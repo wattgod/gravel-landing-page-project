@@ -337,6 +337,18 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Generate clean plan name
     plan_name = generate_plan_name(tier, variation)
     
+    # Format story justification with plan_name and race_name (if placeholders exist)
+    # This allows variations to include full plan designation and race name
+    if '{plan_name}' in story_justification:
+        story_justification = story_justification.format(plan_name=plan_name)
+    if '{race_name}' in story_justification:
+        story_justification = story_justification.format(race_name=race_name)
+    # Also format alternative_hook if it has placeholders
+    if '{plan_name}' in alternative_hook:
+        alternative_hook = alternative_hook.format(plan_name=plan_name)
+    if '{race_name}' in alternative_hook:
+        alternative_hook = alternative_hook.format(race_name=race_name)
+    
     # Format features and topics as flowing prose (not bullets)
     choice_features = format_as_prose(choice_features_list)
     guide_topics = format_as_prose(guide_topics_list)

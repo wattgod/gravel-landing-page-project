@@ -9,7 +9,7 @@ STORY_JUSTIFICATIONS = {
         """You have 4 hours and a dream. The math doesn't work—you know that. But you're showing up anyway. So instead of pretending those 4 hours can magically become 12, this plan makes every single one of them count. Quality over quantity isn't a compromise here. It's the only strategy that works.""",
         
         # Variation 2: The efficiency angle
-        """Most plans for Unbound are written for people with 12+ hours a week. This one isn't. Cramming high-volume training into a low-volume week doesn't make you faster—it makes you tired. The workouts here are designed for maximum adaptation with minimum time. Every session has a purpose. None of them assume you have hours to waste.""",
+        """Most plans for {race_name} are written for people with 12+ hours a week. The {plan_name} isn't. Cramming high-volume training into a low-volume week doesn't make you faster—it makes you tired. The workouts here are designed for maximum adaptation with minimum time. Every session has a purpose. None of them assume you have hours to waste.""",
         
         # Variation 3: The recognition angle
         """This plan is for people making this work around a life, not building a life around this. You've got 4-5 hours. Maybe 6 on a good week. That doesn't make you less serious—it makes your training decisions more important. This plan respects that. Every workout is essential. Every rest day is strategic. No filler, no fluff, no pretending you're someone you're not.""",
@@ -24,7 +24,13 @@ STORY_JUSTIFICATIONS = {
         """This plan is for people 50+ with limited hours. Recovery isn't optional anymore. Your body needs longer adaptation windows. This plan maximizes efficiency while respecting that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between finishing and breaking at your age isn't more volume—it's smarter recovery. Every session counts because recovery takes longer.""",
         
         # Variation 7: Masters-specific
-        """You're 45+ making this work around a life. Your body needs longer recovery windows. This plan respects that. Every session is essential. Every rest day is strategic. Age isn't a limitation—it's data that informs better training decisions. The plan builds you up without breaking you down. Recovery becomes the primary training variable, not an afterthought."""
+        """You're 45+ making this work around a life. Your body needs longer recovery windows. This plan respects that. Every session is essential. Every rest day is strategic. Age isn't a limitation—it's data that informs better training decisions. The plan builds you up without breaking you down. Recovery becomes the primary training variable, not an afterthought.""",
+        
+        # Variation 8: Full plan designation + race name
+        """The {plan_name} works with 0-5 hours per week, not against it. Limited hours, unlimited determination—efficient training for time-constrained athletes. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
+        
+        # Variation 9: Race-specific protocols
+        """Most plans treat all gravel races the same. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols the {plan_name} provides. Heat adaptation weeks 6-10. Distance fueling tested. Mental preparation practiced. Everything validated before {race_name}."""
     ],
     
     "finisher": [
@@ -35,10 +41,10 @@ STORY_JUSTIFICATIONS = {
         """Most recreational riders train randomly: hard when they feel good, easy when they don't. This plan breaks that pattern. It's for people who want their fitness to show up predictably, not accidentally. The training zones are scientific but simple. The workout progression is systematic but flexible. The result is performance that arrives when you need it—not when luck decides.""",
         
         # Variation 3: The capacity building angle
-        """Finishing Unbound and racing Unbound require different engines. Finishing takes endurance. Racing takes power you can repeat for 10+ hours. This plan builds both—but in the right order and the right proportions. Base isn't just riding. Intensity isn't just suffering. Everything here is calibrated to create race-day capacity, not training-day heroics.""",
+        """Finishing {race_name} and racing {race_name} require different engines. Finishing takes endurance. Racing takes power you can repeat for 10+ hours. The {plan_name} builds both—but in the right order and the right proportions. Base isn't just riding. Intensity isn't just suffering. Everything here is calibrated to create race-day capacity, not training-day heroics.""",
         
         # Variation 4: The specificity defense
-        """Here's what separates this from generic century plans: it's designed for gravel racing, not road endurance. That means technical skills, fueling protocols that work on rough terrain, and power distribution strategies for variable-pace events. You're not just getting fitter—you're getting faster at the specific thing Unbound demands.""",
+        """Here's what separates the {plan_name} from generic century plans: it's designed for {race_name}, not road endurance. That means technical skills, fueling protocols that work on rough terrain, and power distribution strategies for variable-pace events. You're not just getting fitter—you're getting faster at the specific thing {race_name} demands.""",
         
         # Variation 5: The consistency angle
         """You've tried coaching yourself. You know it's hard to maintain consistency. The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance.""",
