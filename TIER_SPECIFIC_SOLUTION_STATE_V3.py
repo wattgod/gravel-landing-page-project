@@ -41,7 +41,7 @@ SOLUTION_STATE_OPENINGS = {
         "The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance.",
         
         # Variation 5: The specificity defense
-        "This isn't a generic century plan with 'gravel' stuck on top. It's designed for variable-pace racing on rough terrain. Technical skills. Fueling protocols that work when you're getting rattled. Power distribution strategies for 10+ hour efforts. Everything here is calibrated for what Unbound actually demands.",
+        "This isn't a generic century plan with 'gravel' stuck on top. It's designed for variable-pace racing on rough terrain. Technical skills. Fueling protocols that work when you're getting rattled. Power distribution strategies for 10+ hour efforts. This plan is built for what Unbound actually demands.",
         
         # Variation 6: Masters-specific
         "You're 45. Recovery isn't optional anymore. This plan builds you up without breaking you down. The difference between finishing and competing at your age isn't more volume—it's smarter recovery. Every session respects your adaptation timeline. Every rest day is strategic. Age isn't a limitation—it's data that informs better training.",

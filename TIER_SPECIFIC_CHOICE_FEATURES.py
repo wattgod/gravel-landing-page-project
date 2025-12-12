@@ -46,10 +46,7 @@ CHOICE_FEATURES = {
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
         "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
         "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**",
-        "**Compressed 6-week prep for {race_name}: salvage fitness in final weeks before race day with focused protocols**",
-        "**Emergency preparation for {race_name}: focus on race-critical skills and mental readiness in limited time**",
-        "**Last-minute {race_name} timeline: maximize limited training time with focused protocols and race-specific preparation**"
+        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
     ],
     
     "compete": [
