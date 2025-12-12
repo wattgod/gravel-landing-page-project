@@ -8,10 +8,11 @@ Usage:
     python run_all_qc.py [output_dir]
     
 This runs:
-    1. Variation pool validation
-    2. Generated description validation
-    3. Masters-specific checks
-    4. Character count summary
+    1. Regression tests (prevents previously-fixed bugs)
+    2. Variation pool validation
+    3. Generated description validation
+    4. Masters-specific checks
+    5. Character count summary
 """
 
 import sys
@@ -43,12 +44,18 @@ def main():
     
     all_passed = True
     
-    # 1. Validate variation pools
+    # 1. Run regression tests (prevents previously-fixed bugs from returning)
+    if not run_command("python3 test_regression.py", "Regression Test Suite"):
+        all_passed = False
+        print("\n⚠️  REGRESSION DETECTED: Previously-fixed bugs have returned!")
+        print("   Review errors above and fix before proceeding.")
+    
+    # 2. Validate variation pools
     if not run_command("python3 validate_variation_pools.py", "Variation Pool Validation"):
         all_passed = False
         print("\n⚠️  FIX VARIATION POOLS BEFORE GENERATING")
     
-    # 2. Validate generated descriptions
+    # 3. Validate generated descriptions
     if os.path.exists(output_dir):
         if not run_command(f"python3 validate_descriptions.py {output_dir}", "Description Validation"):
             all_passed = False
@@ -63,7 +70,8 @@ def main():
     if all_passed:
         print("✅ ALL QC CHECKS PASSED")
         print("="*80)
-        print("\n✓ Variation pools validated")
+        print("\n✓ Regression tests passed")
+        print("✓ Variation pools validated")
         print("✓ Generated descriptions validated")
         print("✓ Ready to show Matti\n")
         return 0
