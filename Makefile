@@ -2,7 +2,7 @@
 # ======================================
 # Quality control commands for Cursor
 
-.PHONY: help qc validate-pools validate-output generate clean
+.PHONY: help qc test-regression validate-pools validate-output generate clean
 
 help:
 	@echo ""
@@ -10,15 +10,21 @@ help:
 	@echo "======================"
 	@echo ""
 	@echo "  make qc              - Run ALL validations (use before showing Matti)"
+	@echo "  make test-regression - Run regression tests (prevents previously-fixed bugs)"
 	@echo "  make validate-pools  - Validate variation pools only"
 	@echo "  make validate-output - Validate generated HTML only"
 	@echo "  make generate        - Generate all descriptions + run QC"
 	@echo "  make clean           - Remove generated files"
 	@echo ""
 
-# Run all QC checks
-qc:
-	@python3 run_all_qc.py
+# Run all QC checks (regression tests first)
+qc: test-regression validate-pools validate-output
+	@echo ""
+	@echo "✅ QC Complete"
+
+# Run regression tests
+test-regression:
+	@python3 test_regression.py
 
 # Validate variation pools
 validate-pools:
