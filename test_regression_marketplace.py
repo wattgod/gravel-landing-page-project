@@ -273,6 +273,39 @@ def test_no_duplicate_alternative_hooks():
     if errors:
         raise RegressionTestFailure("Duplicate alternatives regression:\n" + "\n".join(errors))
 
+def test_no_repeated_phrases():
+    """
+    TEST: No identical phrases repeated within same description
+    
+    WHY: Sounds lazy/robotic, breaks flow
+    EXAMPLE: "Everything here is calibrated..." twice = bad
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    # Common phrases to check for repetition
+    phrases_to_check = [
+        'everything here is calibrated',
+        'this plan delivers',
+        'built for',
+        'designed for',
+        'race-day capacity'
+    ]
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        for phrase in phrases_to_check:
+            count = content.count(phrase)
+            if count > 1:
+                errors.append(
+                    f"{plan_name}: Phrase '{phrase}' repeated {count} times "
+                    f"(should appear once maximum)"
+                )
+    
+    return errors
+
 def test_within_tier_duplicates():
     """REGRESSION: No duplicate content within same tier (critical for positioning, fixed 2024-12-11)"""
     output_dir = Path("output/html_descriptions")
