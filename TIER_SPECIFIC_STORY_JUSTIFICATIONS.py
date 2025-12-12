@@ -38,7 +38,7 @@ STORY_JUSTIFICATIONS = {
         """Finishing Unbound and racing Unbound require different engines. Finishing takes endurance. Racing takes power you can repeat for 10+ hours. This plan builds both—but in the right order and the right proportions. Base isn't just riding. Intensity isn't just suffering. Everything here is calibrated to create race-day capacity, not training-day heroics.""",
         
         # Variation 4: The specificity defense
-        """Here's what separates this from generic century plans: it's designed for gravel racing, not road endurance. That means technical skills (Section 7), fueling protocols that work on rough terrain (Section 8), and power distribution strategies for variable-pace events (Section 10). You're not just getting fitter—you're getting faster at the specific thing Unbound demands.""",
+        """Here's what separates this from generic century plans: it's designed for gravel racing, not road endurance. That means technical skills, fueling protocols that work on rough terrain, and power distribution strategies for variable-pace events. You're not just getting fitter—you're getting faster at the specific thing Unbound demands.""",
         
         # Variation 5: The consistency angle
         """You've tried coaching yourself. You know it's hard to maintain consistency. The 8-12 hour range gives you flexibility without chaos. Every week has clear priorities. Every session has obvious intent. The structure does the thinking so you can do the training. That's what turns occasional fitness into race-ready performance.""",

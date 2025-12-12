@@ -267,7 +267,7 @@ def select_masters_aware(pool, is_masters_plan, k=1):
 # GENERATION LOGIC
 # ============================================================================
 
-def generate_html_description(tier, race_name, plan_seed, variation="", forced_closing=None):
+def generate_html_description(tier, race_name, plan_seed, variation="", forced_closing=None, used_content=None):
     """
     Generate HTML marketplace description with tier-specific variations
     
@@ -277,6 +277,7 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         plan_seed: Unique seed for reproducible randomization
         variation: Optional plan variation (e.g., "intermediate", "beginner_masters")
         forced_closing: Optional closing statement template to force (for uniqueness)
+        used_content: Optional dict of used content sets to exclude from selection
     
     Returns:
         Complete HTML description string
@@ -292,13 +293,37 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Determine if this is a Masters plan
     is_masters_plan = "masters" in variation.lower()
     
-    # Select components from variation pools with Masters-aware filtering
-    solution_state = select_masters_aware(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, k=1)
+    # Helper to select from pool excluding used content
+    def select_excluding_used(pool, is_masters, used_set, k=1):
+        """Select from pool excluding items in used_set"""
+        # First filter by Masters
+        filtered = select_masters_aware(pool, is_masters, k=len(pool))
+        if isinstance(filtered, list):
+            available = [item for item in filtered if item not in used_set]
+        else:
+            available = [filtered] if filtered and filtered not in used_set else []
+        
+        if not available:
+            # Fallback: use all filtered if nothing available
+            available = filtered if isinstance(filtered, list) else [filtered]
+        
+        if k == 1:
+            return random.choice(available) if available else None
+        else:
+            return random.sample(available, min(k, len(available))) if available else []
+    
+    # Get used content sets (default to empty if not provided)
+    used_opening = used_content.get('opening', set()) if used_content else set()
+    used_story = used_content.get('story', set()) if used_content else set()
+    used_alternative = used_content.get('alternative', set()) if used_content else set()
+    
+    # Select components from variation pools, excluding used content
+    solution_state = select_excluding_used(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, used_opening, k=1)
     choice_features_list = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=3)
     guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
     guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
-    alternative_hook = select_masters_aware(ALTERNATIVE_HOOKS[tier], is_masters_plan, k=1)
-    story_justification = select_masters_aware(STORY_JUSTIFICATIONS[tier], is_masters_plan, k=1)
+    alternative_hook = select_excluding_used(ALTERNATIVE_HOOKS[tier], is_masters_plan, used_alternative, k=1)
+    story_justification = select_excluding_used(STORY_JUSTIFICATIONS[tier], is_masters_plan, used_story, k=1)
     # Use forced closing if provided, otherwise random
     if forced_closing:
         closing_statement = forced_closing
@@ -458,56 +483,27 @@ def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="o
                 formatted_closing = selected_closing_template.format(race_name=race_name)
                 used_closings_global.add(formatted_closing)
             
-            # Generate with forced closing and track used content to ensure uniqueness
-            html = None
-            for attempt in range(max_attempts):
-                attempt_seed = f"{seed}_{attempt}"
-                random.seed(attempt_seed)
-                # Generate description with forced closing
-                html = generate_html_description(tier, race_name, attempt_seed, variation, forced_closing=selected_closing_template)
-                
-                # Extract content to check for duplicates (after formatting)
-                opening = extract_opening_from_html(html)
-                story = extract_story_from_html(html)
-                closing = extract_closing_from_html(html)
-                alternative = extract_alternative_from_html(html)
-                
-                # Check if any content is duplicate
-                is_duplicate = (
-                    (opening and opening in used_content['opening']) or
-                    (story and story in used_content['story']) or
-                    (closing and closing in used_content['closing']) or
-                    (alternative and alternative in used_content['alternative'])
-                )
-                
-                if not is_duplicate:
-                    # Unique content found - use it and track
-                    if opening:
-                        used_content['opening'].add(opening)
-                    if story:
-                        used_content['story'].add(story)
-                    if closing:
-                        used_content['closing'].add(closing)
-                    if alternative:
-                        used_content['alternative'].add(alternative)
-                    break
+            # Generate with forced closing and active deduplication
+            # Pass used_content to generator so it can exclude used items BEFORE selection
+            attempt_seed = seed
+            random.seed(attempt_seed)
+            html = generate_html_description(tier, race_name, attempt_seed, variation, forced_closing=selected_closing_template, used_content=used_content)
             
-            # If we couldn't find unique content after max attempts, use the last generated
-            # This can happen if pools are too small, but we'll track it anyway
-            if html:
-                opening = extract_opening_from_html(html)
-                story = extract_story_from_html(html)
-                closing = extract_closing_from_html(html)
-                alternative = extract_alternative_from_html(html)
-                # Add to used_content even if duplicate (to prevent future duplicates)
-                if opening and opening not in used_content['opening']:
-                    used_content['opening'].add(opening)
-                if story and story not in used_content['story']:
-                    used_content['story'].add(story)
-                if closing and closing not in used_content['closing']:
-                    used_content['closing'].add(closing)
-                if alternative and alternative not in used_content['alternative']:
-                    used_content['alternative'].add(alternative)
+            # Extract and track content (generator already excluded used items, so these should be unique)
+            opening = extract_opening_from_html(html)
+            story = extract_story_from_html(html)
+            closing = extract_closing_from_html(html)
+            alternative = extract_alternative_from_html(html)
+            
+            # Track used content (generator should have already excluded these, but verify)
+            if opening:
+                used_content['opening'].add(opening)
+            if story:
+                used_content['story'].add(story)
+            if closing:
+                used_content['closing'].add(closing)
+            if alternative:
+                used_content['alternative'].add(alternative)
             
             filename = f"{tier}_{variation}.html"
             filepath = os.path.join(tier_dir, filename)
