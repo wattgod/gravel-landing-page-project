@@ -415,8 +415,21 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         alternative_hook = alternative_hook.format(plan_name=plan_name, race_name=race_name)
     
     # Format features and topics as flowing prose (not bullets)
-    choice_features = format_as_prose(choice_features_list)
-    guide_topics = format_as_prose(guide_topics_list)
+    # CRITICAL: Format placeholders in features BEFORE formatting as prose
+    formatted_features = []
+    for feature in choice_features_list:
+        if '{race_name}' in feature or '{plan_name}' in feature:
+            feature = feature.format(race_name=race_name, plan_name=plan_name)
+        formatted_features.append(feature)
+    choice_features = format_as_prose(formatted_features)
+    
+    # Format placeholders in guide topics BEFORE formatting as prose
+    formatted_topics = []
+    for topic in guide_topics_list:
+        if '{race_name}' in topic or '{plan_name}' in topic:
+            topic = topic.format(race_name=race_name, plan_name=plan_name)
+        formatted_topics.append(topic)
+    guide_topics = format_as_prose(formatted_topics)
     
     # Format closing statement with race name
     closing_statement = closing_statement.format(race_name=race_name)
