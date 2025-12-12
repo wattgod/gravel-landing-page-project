@@ -44,8 +44,8 @@ def main():
     
     all_passed = True
     
-    # 1. Run regression tests (prevents previously-fixed bugs from returning)
-    if not run_command("python3 test_regression.py", "Regression Test Suite"):
+    # 1. Run marketplace regression tests (prevents previously-fixed bugs from returning)
+    if not run_command("python3 test_regression_marketplace.py", "Marketplace Regression Test Suite"):
         all_passed = False
         print("\n⚠️  REGRESSION DETECTED: Previously-fixed bugs have returned!")
         print("   Review errors above and fix before proceeding.")
@@ -70,7 +70,7 @@ def main():
     if all_passed:
         print("✅ ALL QC CHECKS PASSED")
         print("="*80)
-        print("\n✓ Regression tests passed")
+        print("\n✓ Marketplace regression tests passed")
         print("✓ Variation pools validated")
         print("✓ Generated descriptions validated")
         print("✓ Ready to show Matti\n")

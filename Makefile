@@ -2,29 +2,46 @@
 # ======================================
 # Quality control commands for Cursor
 
-.PHONY: help qc test-regression validate-pools validate-output generate clean
+.PHONY: help qc qc-guide qc-all test-regression-marketplace test-regression-guide validate-pools validate-output generate clean
 
 help:
 	@echo ""
 	@echo "GRAVEL GOD QC COMMANDS"
 	@echo "======================"
 	@echo ""
-	@echo "  make qc              - Run ALL validations (use before showing Matti)"
-	@echo "  make test-regression - Run regression tests (prevents previously-fixed bugs)"
-	@echo "  make validate-pools  - Validate variation pools only"
-	@echo "  make validate-output - Validate generated HTML only"
-	@echo "  make generate        - Generate all descriptions + run QC"
-	@echo "  make clean           - Remove generated files"
+	@echo "  make qc                    - Marketplace QC (regression + validation)"
+	@echo "  make qc-guide              - Guide QC (guide regression tests)"
+	@echo "  make qc-all                - Full QC (all tests + validation)"
+	@echo "  make test-regression-marketplace - Run marketplace regression tests only"
+	@echo "  make test-regression-guide - Run guide regression tests only"
+	@echo "  make validate-pools        - Validate variation pools only"
+	@echo "  make validate-output       - Validate generated HTML only"
+	@echo "  make generate              - Generate all descriptions + run QC"
+	@echo "  make clean                 - Remove generated files"
 	@echo ""
 
-# Run all QC checks (regression tests first)
-qc: test-regression validate-pools validate-output
+# Marketplace QC (for marketplace work)
+qc: test-regression-marketplace validate-pools validate-output
 	@echo ""
-	@echo "✅ QC Complete"
+	@echo "✅ Marketplace QC Complete"
 
-# Run regression tests
-test-regression:
-	@python3 test_regression.py
+# Guide QC (for guide work)
+qc-guide: test-regression-guide
+	@echo ""
+	@echo "✅ Guide QC Complete"
+
+# Full QC (before major commits)
+qc-all: test-regression-guide test-regression-marketplace validate-pools validate-output
+	@echo ""
+	@echo "✅ Full QC Complete"
+
+# Run marketplace regression tests
+test-regression-marketplace:
+	@python3 test_regression_marketplace.py
+
+# Run guide regression tests
+test-regression-guide:
+	@python3 test_regression_guide.py
 
 # Validate variation pools
 validate-pools:
