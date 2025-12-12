@@ -37,6 +37,10 @@ def test_guide_toc_positioning():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
@@ -59,6 +63,10 @@ def test_guide_css_embedding():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
@@ -81,6 +89,10 @@ def test_guide_no_ftp_hr_settings():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
@@ -106,19 +118,31 @@ def test_guide_section_numbering():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Extract all section IDs
-        section_ids = re.findall(r'id="(section-\d+)', content)
-        section_numbers = [int(s.split('-')[1]) for s in section_ids if s.split('-')[1].isdigit()]
-        section_numbers.sort()
+        # Extract unique section IDs (sections can have both <section> and <h2> with same ID)
+        section_ids = set(re.findall(r'id="(section-\d+)', content))
+        section_numbers = sorted([int(s.split('-')[1]) for s in section_ids if s.split('-')[1].isdigit()])
         
-        # Check for gaps in numbering
+        # Check for gaps in numbering (should be sequential: 1, 2, 3, ...)
         if section_numbers:
-            expected = list(range(1, len(section_numbers) + 1))
-            if section_numbers != expected:
-                errors.append(f"{guide_file.name}: Non-sequential section numbering: {section_numbers}")
+            # Get unique numbers and check they're sequential
+            unique_numbers = sorted(set(section_numbers))
+            expected = list(range(1, max(unique_numbers) + 1))
+            
+            # Check for gaps (missing numbers in sequence)
+            gaps = [n for n in expected if n not in unique_numbers]
+            if gaps:
+                errors.append(f"{guide_file.name}: Missing section numbers: {gaps}")
+            
+            # Check for duplicates (shouldn't have multiple sections with same number)
+            # Actually, duplicates are OK if they're the same section with multiple IDs
+            # The real issue is gaps in the sequence
     
     if errors:
         raise RegressionTestFailure("Section numbering regression:\n" + "\n".join(errors))
@@ -221,6 +245,10 @@ def test_guide_women_specific_content():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
@@ -244,6 +272,10 @@ def test_guide_faq_format():
     
     errors = []
     for guide_file in guides_dir.glob("*.html"):
+        # Skip index.html (directory listing)
+        if guide_file.name == "index.html":
+            continue
+            
         with open(guide_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
