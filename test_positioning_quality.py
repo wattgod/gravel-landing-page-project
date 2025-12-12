@@ -22,36 +22,37 @@ def find_descriptions():
 
 def extract_tier_level_from_filename(plan_name):
     """Extract tier and level from plan filename"""
-    # Examples: ayahuasca_beginner, finisher_intermediate_masters, compete_advanced
+    # Examples: "1. Ayahuasca Beginner (12 weeks)", "5. Finisher Beginner (12 weeks)"
+    plan_lower = plan_name.lower()
     
     # Tier
-    if 'ayahuasca' in plan_name:
+    if 'ayahuasca' in plan_lower:
         tier = 'ayahuasca'
-    elif 'finisher' in plan_name:
+    elif 'finisher' in plan_lower:
         tier = 'finisher'
-    elif 'compete' in plan_name:
+    elif 'compete' in plan_lower:
         tier = 'compete'
-    elif 'podium' in plan_name:
+    elif 'podium' in plan_lower:
         tier = 'podium'
     else:
         tier = 'unknown'
     
     # Level
-    if 'beginner' in plan_name:
+    if 'beginner' in plan_lower:
         level = 'beginner'
-    elif 'intermediate' in plan_name:
+    elif 'intermediate' in plan_lower:
         level = 'intermediate'
-    elif 'advanced' in plan_name:
+    elif 'advanced' in plan_lower:
         level = 'advanced'
-    elif 'elite' in plan_name:
+    elif 'elite' in plan_lower or 'goat' in plan_lower:
         level = 'elite'
-    elif 'save_my_race' in plan_name:
+    elif 'save my race' in plan_lower or 'save_my_race' in plan_lower:
         level = 'save my race'
     else:
         level = None
     
     # Masters flag
-    is_masters = 'masters' in plan_name
+    is_masters = 'masters' in plan_lower
     
     return tier, level, is_masters
 

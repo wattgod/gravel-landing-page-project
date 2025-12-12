@@ -2,7 +2,7 @@
 # ======================================
 # Quality control commands for Cursor
 
-.PHONY: help qc qc-guide qc-all test-regression-marketplace test-regression-guide validate-pools validate-output generate clean
+.PHONY: help qc qc-guide qc-all test-regression-marketplace test-regression-guide test-positioning validate-pools validate-output generate clean
 
 help:
 	@echo ""
@@ -35,6 +35,11 @@ qc-all: test-regression-guide test-regression-marketplace validate-pools validat
 	@echo ""
 	@echo "✅ Full QC Complete"
 
+# Full QC including positioning (technical + positioning)
+qc-full: test-regression-marketplace test-positioning validate-pools validate-output
+	@echo ""
+	@echo "✅ Full QC (including positioning) Complete"
+
 # Run marketplace regression tests
 test-regression-marketplace:
 	@python3 test_regression_marketplace.py
@@ -42,6 +47,10 @@ test-regression-marketplace:
 # Run guide regression tests
 test-regression-guide:
 	@python3 test_regression_guide.py
+
+# Run positioning quality tests
+test-positioning:
+	@python3 test_positioning_quality.py
 
 # Validate variation pools
 validate-pools:
