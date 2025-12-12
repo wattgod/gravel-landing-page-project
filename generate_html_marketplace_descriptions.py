@@ -312,6 +312,33 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         else:
             return random.sample(available, min(k, len(available))) if available else []
     
+    # Helper to select variation with required placeholder (guaranteed positioning)
+    def select_variation_with_placeholder(pool, is_masters, required_placeholder, used_set):
+        """
+        Select variation containing required placeholder.
+        Guarantees critical positioning elements appear.
+        Falls back to any available variation if none contain placeholder.
+        """
+        # First filter by Masters
+        filtered = select_masters_aware(pool, is_masters, k=len(pool))
+        if isinstance(filtered, list):
+            available = [item for item in filtered if item not in used_set]
+        else:
+            available = [filtered] if filtered and filtered not in used_set else []
+        
+        if not available:
+            # Fallback: use all filtered if nothing available
+            available = filtered if isinstance(filtered, list) else [filtered]
+        
+        # Prioritize variations with required placeholder
+        with_placeholder = [item for item in available if required_placeholder in item]
+        
+        if with_placeholder:
+            return random.choice(with_placeholder)
+        else:
+            # Fallback: select any available variation
+            return random.choice(available) if available else None
+    
     # Get used content sets (default to empty if not provided)
     used_opening = used_content.get('opening', set()) if used_content else set()
     used_story = used_content.get('story', set()) if used_content else set()
