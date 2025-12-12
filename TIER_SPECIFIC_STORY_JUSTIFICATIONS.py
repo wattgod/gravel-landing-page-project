@@ -65,7 +65,13 @@ STORY_JUSTIFICATIONS = {
         """Most plans ignore nutrition specifics. This plan teaches 60-80g carbs/hour protocol with practice sessions until it's automatic. The Three-Act pacing framework gives you specific tactics for each race phase—not vague advice to 'start conservatively.' Heat adaptation is built into weeks 6-10. The dress rehearsal ride validates everything before race day. No surprises.""",
         
         # Variation 11: Practice protocols
-        """Generic plans skip practice protocols. This plan drills technical skills weekly—cornering, descending, rough terrain handling. Mental training happens during hard sessions, not just reading about it. Hydration strategy (32+ oz/hour, 500-1000mg sodium) is tested and validated in training. Race-day execution is automatic because you've practiced it."""
+        """Generic plans skip practice protocols. This plan drills technical skills weekly—cornering, descending, rough terrain handling. Mental training happens during hard sessions, not just reading about it. Hydration strategy (32+ oz/hour, 500-1000mg sodium) is tested and validated in training. Race-day execution is automatic because you've practiced it.""",
+        
+        # Variation 12: Full plan designation
+        """The {plan_name} builds predictable fitness across 8-12 hours per week. Progressive structure removes guesswork—your fitness shows up consistently, not randomly. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
+        
+        # Variation 13: Full plan designation intermediate
+        """The {plan_name} refines consistency with advanced protocols. At 8-12 hours weekly, this delivers race-ready fitness through systematic progression. {race_name}'s specific demands—85-95°F heat, 200-mile distance—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}."""
     ],
     
     "compete": [
