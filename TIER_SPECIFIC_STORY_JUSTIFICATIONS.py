@@ -47,7 +47,7 @@ STORY_JUSTIFICATIONS = {
         """Most recreational riders train randomly: hard when they feel good, easy when they don't. This plan breaks that pattern. It's for people who want their fitness to show up predictably, not accidentally. The training zones are scientific but simple. The workout progression is systematic but flexible. The result is performance that arrives when you need it—not when luck decides.""",
         
         # Variation 3: The capacity building angle
-        """Finishing {race_name} and racing {race_name} require different engines. Finishing takes endurance. Racing takes power you can repeat for 10+ hours. The {plan_name} builds both—but in the right order and the right proportions. Base isn't just riding. Intensity isn't just suffering. Everything here is calibrated to create race-day capacity, not training-day heroics.""",
+        """Finishing and racing {race_name} require different engines. Finishing takes endurance. Racing takes power you can repeat for 10+ hours. The {plan_name} builds both—but in the right order and the right proportions. Base isn't just riding. Intensity isn't just suffering. It's built to create race-day capacity, not training-day heroics.""",
         
         # Variation 4: The specificity defense
         """Here's what separates the {plan_name} from generic century plans: it's designed for {race_name}, not road endurance. That means technical skills, fueling protocols that work on rough terrain, and power distribution strategies for variable-pace events. You're not just getting fitter—you're getting faster at the specific thing {race_name} demands.""",
