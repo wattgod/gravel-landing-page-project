@@ -33,7 +33,11 @@ GUIDE_TOPICS = {
         "**FAQ (Section 14)** — Answers to 'can I really finish with 4 hours/week?' and other honest questions",
         "**Masters-Specific Considerations (Section 13)** — Recovery protocols for 50+ athletes, age-appropriate training load",
         "**Recovery Architecture** — Longer adaptation timelines, strategic rest that prevents breakdown at 45+",
-        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity"
+        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity",
+        "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
+        "**Mental Skills: 6-2-7 Breathing** — Practiced breathing technique for suffering management—automatic response under race stress",
+        "**G Spot Training (88-92% FTP)** — Gravel-specific race pace training—sustainable for hours, not generic Sweet Spot protocols",
+        "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ],
     
     "finisher": [
@@ -47,7 +51,11 @@ GUIDE_TOPICS = {
         "**Race Week Protocol (Section 12)** — Proven taper sequence that peaks fitness without losing form",
         "**Masters-Specific Considerations (Section 13)** — Recovery protocols for 50+ athletes, age-appropriate training load, injury prevention strategies",
         "**Recovery Architecture** — Longer adaptation timelines, HRV monitoring, strategic rest that prevents breakdown at 45+",
-        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity"
+        "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity",
+        "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
+        "**Mental Skills: 6-2-7 Breathing** — Practiced breathing technique for suffering management—automatic response under race stress",
+        "**G Spot Training (88-92% FTP)** — Gravel-specific race pace training—sustainable for hours, not generic Sweet Spot protocols",
+        "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ],
     
     "compete": [
@@ -61,7 +69,11 @@ GUIDE_TOPICS = {
         "**Race-Specific Preparation (Section 11)** — Heat protocols, altitude adaptation (if needed), equipment choices",
         "**Masters-Specific Considerations (Section 13)** — Recovery protocols acknowledging longer adaptation windows, age-appropriate training load",
         "**Recovery Management** — HRV-based autoregulation, compressed periodization (2-3 week cycles), injury prevention at 45+",
-        "**Age-Appropriate Periodization** — Training adapted for slower recovery, moderate volume respecting adaptation timelines"
+        "**Age-Appropriate Periodization** — Training adapted for slower recovery, moderate volume respecting adaptation timelines",
+        "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
+        "**Mental Skills: 6-2-7 Breathing** — Practiced breathing technique for suffering management—automatic response under race stress",
+        "**G Spot Training (88-92% FTP)** — Gravel-specific race pace training—sustainable for hours, not generic Sweet Spot protocols",
+        "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ],
     
     "podium": [
@@ -72,7 +84,11 @@ GUIDE_TOPICS = {
         "**Fueling & Hydration (Section 8)** — 60-80g/hour protocols tested at race intensity, not training pace",
         "**Mental Training (Section 9)** — Tactical systems for high-pressure racing and suffering management",
         "**Race Tactics (Section 10)** — Execution strategies for podium-level competition—when to attack, when to wait",
-        "**Race Week Protocol (Section 12)** — Taper discipline that delivers peak performance, not panic training"
+        "**Race Week Protocol (Section 12)** — Taper discipline that delivers peak performance, not panic training",
+        "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
+        "**Mental Skills: 6-2-7 Breathing** — Practiced breathing technique for suffering management—automatic response under race stress",
+        "**G Spot Training (88-92% FTP)** — Gravel-specific race pace training—sustainable for hours, not generic Sweet Spot protocols",
+        "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ]
 }
 

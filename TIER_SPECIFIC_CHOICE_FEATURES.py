@@ -15,7 +15,13 @@ CHOICE_FEATURES = {
         "**Dress rehearsal rides** at manageable duration (5 hours max) that still validate your race-day systems",
         "**Recovery protocols for 50+ athletes**—longer recovery windows, strategic rest that prevents breakdown",
         "**Age-appropriate training load**—moderate volume respecting longer adaptation timelines at 45+",
-        "**Injury prevention through recovery**—training matched to adaptation capacity, not chronological age"
+        "**Injury prevention through recovery**—training matched to adaptation capacity, not chronological age",
+        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
+        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
+        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
+        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
+        "**Dress rehearsal ride: 7-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
+        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
     ],
     
     "finisher": [
@@ -29,7 +35,13 @@ CHOICE_FEATURES = {
         "**Pacing strategy guide** for 10-14 hour efforts—how to start conservatively and finish strong (Section 10)",
         "**Recovery protocols for 50+ athletes**—longer recovery windows, HRV monitoring, age-appropriate adaptation timelines",
         "**Injury prevention through strategic recovery**—training load matched to recovery capacity, not chronological age",
-        "**Age-appropriate training volume**—moderate hours that respect longer adaptation timelines without sacrificing performance"
+        "**Age-appropriate training volume**—moderate hours that respect longer adaptation timelines without sacrificing performance",
+        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
+        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
+        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
+        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
+        "**Dress rehearsal ride: 7-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
+        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
     ],
     
     "compete": [
@@ -43,7 +55,13 @@ CHOICE_FEATURES = {
         "**9-hour dress rehearsal** validating everything from nutrition to power distribution at race intensity",
         "**Recovery-first training architecture**—longer rest between hard sessions, HRV-based autoregulation for 45+ athletes",
         "**Age-appropriate periodization**—compressed recovery cycles (2-3 weeks) that respect slower adaptation at 50+",
-        "**Injury prevention protocols**—training load matched to recovery capacity, strategic rest that prevents breakdown"
+        "**Injury prevention protocols**—training load matched to recovery capacity, strategic rest that prevents breakdown",
+        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
+        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
+        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
+        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
+        "**Dress rehearsal ride: 9-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
+        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
     ],
     
     "podium": [
@@ -54,7 +72,13 @@ CHOICE_FEATURES = {
         "**Recovery metrics** that prevent overtraining—when to push, when to back off (Section 6)",
         "**Altitude protocols** for high-elevation races—if Unbound location demands it (conditional section)",
         "**10-hour dress rehearsal** at race intensity—full validation of systems, fueling, pacing, equipment",
-        "**Taper discipline** that prevents panic-training and delivers peak performance on race day"
+        "**Taper discipline** that prevents panic-training and delivers peak performance on race day",
+        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
+        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
+        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
+        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
+        "**Dress rehearsal ride: 10-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
+        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
     ]
 }
 

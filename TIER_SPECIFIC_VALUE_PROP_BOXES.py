@@ -76,6 +76,26 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Age changes recovery needs. Training load matched to adaptation capacity, not chronological age.",
             "props": ["Longer recovery windows between hard sessions", "Compressed periodization (2-3 week cycles)", "Recovery-first training architecture", "Age-appropriate volume that prevents breakdown"]
+        },
+        # Variation 8: GOAT Method
+        {
+            "philosophy": "GOAT Method training (Gravel Optimized Adaptive Training): G Spot development, polarized base, technical integration. Built for gravel's variable-pace demands.",
+            "props": [
+                "Three-Act race structure: tactical pacing framework for 10+ hour efforts",
+                "6-2-7 breathing technique: practiced under stress until automatic",
+                "G Spot intervals (88-92% FTP): sustainable race pace for hours",
+                "Dress rehearsal protocol: 7-hour race simulation before race day"
+            ]
+        },
+        # Variation 9: Systems approach
+        {
+            "philosophy": "Gravel racing rewards systems, not heroics. G Spot training, Three-Act pacing, practiced mental skills—everything tested.",
+            "props": [
+                "HRV-guided recovery: objective data replacing guesswork",
+                "Technical skills drills: weekly cornering, descending, rough terrain practice",
+                "Mental toolkit: 6-2-7 breathing, reframing, suffering management",
+                "Race simulation: validates every system before race day"
+            ]
         }
     ],
     
@@ -114,6 +134,16 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Age changes recovery needs. Moderate volume with emphasis on recovery prevents breakdown while maintaining performance.",
             "props": ["Compressed periodization (2-3 week cycles)", "Recovery-first training philosophy", "Training adapted for slower adaptation", "Age-appropriate protocols that prevent injury"]
+        },
+        # Variation 8: GOAT Method at volume
+        {
+            "philosophy": "GOAT Method at volume: G Spot development, HRV-guided recovery, technical mastery. Training that matches gravel's demands.",
+            "props": [
+                "Three-Act tactical framework: decision points mapped to race timeline",
+                "HRV protocols: training adjustments based on objective recovery data",
+                "G Spot progression: building sustainable race pace at 88-92% FTP",
+                "Mental skills under load: breathing, reframing practiced at intensity"
+            ]
         }
     ],
     
@@ -142,6 +172,16 @@ VALUE_PROP_BOXES = {
         {
             "philosophy": "Precision over more work. Every session optimized for competitive performance.",
             "props": ["Recovery protocols at elite volume", "Power distribution for podium racing", "Race day execution checklists", "Technical skills under fatigue"]
+        },
+        # Variation 6: GOAT Method elite
+        {
+            "philosophy": "Elite gravel racing requires proprietary methods. GOAT training system: G Spot mastery, Three-Act execution, HRV-guided precision.",
+            "props": [
+                "G Spot intervals at race pace: 88-92% FTP sustainable for hours",
+                "Three-Act pacing execution: tactical decision framework practiced",
+                "HRV-driven training loads: recovery data guides progression",
+                "Technical precision: descending, cornering drills weekly"
+            ]
         }
     ]
 }

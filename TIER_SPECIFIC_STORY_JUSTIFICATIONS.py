@@ -47,7 +47,13 @@ STORY_JUSTIFICATIONS = {
         """This plan is for people 45+ who know recovery isn't optional anymore. Your body needs longer adaptation windows. Your training needs to respect that. This plan uses moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between thriving and breaking at your age isn't training less—it's training more deliberately. Recovery becomes the primary training variable, not an afterthought.""",
         
         # Variation 7: Masters-specific
-        """You're 50+ and your recovery needs are different. Training at 8-12 hours requires different protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. Every session counts because recovery takes longer. Age isn't a limitation—it's data that informs better training. The plan builds you up without breaking you down."""
+        """You're 50+ and your recovery needs are different. Training at 8-12 hours requires different protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. Every session counts because recovery takes longer. Age isn't a limitation—it's data that informs better training. The plan builds you up without breaking you down.""",
+        
+        # Variation 8: G Spot and Three-Act
+        """Most training plans use generic Sweet Spot protocols. This plan uses G Spot training (88-92% FTP)—gravel-specific race pace that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills like 6-2-7 breathing are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
+        
+        # Variation 9: Systems integration
+        """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice 6-2-7 breathing under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises."""
     ],
     
     "compete": [
@@ -76,7 +82,10 @@ STORY_JUSTIFICATIONS = {
         """This plan eliminates the guesswork that plagues high-volume training. Every week has a specific purpose. Every session targets a measurable adaptation. Base builds durability. Build adds power. Peak sharpens performance. The progression is systematic, not accidental. You'll know exactly why you're doing each workout and how it contributes to race-day performance. That clarity creates confidence.""",
         
         # Variation 9: The execution focus
-        """Most training plans build fitness. This one builds race execution. The workouts create the engine. The protocols teach you to drive it. Pacing strategies for variable terrain. Fueling under fatigue. Mental protocols when it hurts. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just show up fit. That's what separates competitors from finishers."""
+        """Most training plans build fitness. This one builds race execution. The workouts create the engine. The protocols teach you to drive it. Pacing strategies for variable terrain. Fueling under fatigue. Mental protocols when it hurts. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just show up fit. That's what separates competitors from finishers.""",
+        
+        # Variation 10: GOAT Method systems
+        """High-volume training without systems breaks athletes. This plan uses GOAT Method training: G Spot progression, HRV-guided recovery, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline."""
     ],
     
     "podium": [
@@ -93,7 +102,10 @@ STORY_JUSTIFICATIONS = {
         """Here's why this plan works at elite volume: it balances polarized intensity with race-specific demands. You need sustainable power (Zone 2 base), repeatable efforts (threshold work), and explosive capacity (VO2max sessions). Most high-volume plans just pile on endurance. This one builds a complete athlete. That's what Unbound rewards—not just who can suffer longest, but who can attack when it matters.""",
         
         # Variation 5: The reality check
-        """This plan isn't for people hoping to podium. It's for people expecting to. That requires a different standard: no missed sessions, no half-effort intervals, no "close enough" on fueling protocols. The plan is structured, but execution is on you. At this level, coaching provides the roadmap. You still have to drive. But if you're serious about results, this gets you there."""
+        """This plan isn't for people hoping to podium. It's for people expecting to. That requires a different standard: no missed sessions, no half-effort intervals, no "close enough" on fueling protocols. The plan is structured, but execution is on you. At this level, coaching provides the roadmap. You still have to drive. But if you're serious about results, this gets you there.""",
+        
+        # Variation 6: GOAT Method elite
+        """Elite gravel racing rewards proprietary systems. GOAT Method training: G Spot mastery at 88-92% FTP, Three-Act execution practiced until automatic, HRV-guided progression for optimal recovery timing. You'll practice descending and cornering at race pace. Mental protocols like 6-2-7 breathing become reflexive under suffering. The difference between podium and pack is often details—this plan delivers them."""
     ]
 }
 
