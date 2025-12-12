@@ -53,7 +53,10 @@ STORY_JUSTIFICATIONS = {
         """Most training plans use generic Sweet Spot protocols. This plan uses G Spot training (88-92% FTP)—gravel-specific race pace that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills like 6-2-7 breathing are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
         
         # Variation 9: Systems integration
-        """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice 6-2-7 breathing under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises."""
+        """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice 6-2-7 breathing under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises.""",
+        
+        # Variation 10: G Spot specificity
+        """This plan uses G Spot training (88-92% FTP) instead of generic Sweet Spot. That's gravel-specific race pace—sustainable for 10+ hours, not just 2-3 hour road efforts. Combined with Three-Act pacing structure and practiced mental skills, you're building systems that work for Unbound's variable-pace demands. Everything is tested before race day."""
     ],
     
     "compete": [

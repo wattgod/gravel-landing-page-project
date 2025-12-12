@@ -109,6 +109,8 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep training hard alone. Disciplined but blind to what's holding you back.",
         "Or you could keep self-coaching. Hit big hours, miss execution details. Results plateau below potential.",
         "Or you could keep training yourself at volume. No outside perspective. Wonder what's preventing breakthrough.",
+        "Or you could keep training without GOAT Method systems. Miss G Spot development, skip HRV monitoring, ignore Three-Act pacing. Wonder why results don't match effort.",
+        "Or you could keep using generic training protocols. Skip G Spot intervals, ignore HRV data, train without tactical framework. Stay competitive but never elite."
     ]
 }
 
