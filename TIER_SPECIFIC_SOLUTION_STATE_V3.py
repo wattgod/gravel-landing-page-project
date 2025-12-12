@@ -53,7 +53,10 @@ SOLUTION_STATE_OPENINGS = {
         "You've been training consistently but results aren't improving. The problem isn't effort—it's progression. This plan shows you exactly how to build fitness systematically. Base phase creates durability. Build phase adds power. Peak phase sharpens performance. Each phase has clear goals and measurable outcomes. No more wondering if you're doing it right.",
         
         # Variation 9: The race-readiness angle
-        "Finishing events is one thing. Racing them is another. This plan builds race-readiness, not just fitness. Structured taper that peaks performance. Fueling protocols tested in training. Pacing strategies for variable terrain. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just survive it."
+        "Finishing events is one thing. Racing them is another. This plan builds race-readiness, not just fitness. Structured taper that peaks performance. Fueling protocols tested in training. Pacing strategies for variable terrain. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just survive it.",
+        
+        # Variation 10: The systematic build
+        "You've been training consistently but results aren't improving. The problem isn't effort—it's progression. This plan shows you exactly how to build fitness systematically. Base phase creates durability. Build phase adds power. Peak phase sharpens performance. Each phase has clear goals and measurable outcomes. No more wondering if you're doing it right."
     ],
     
     "compete": [
