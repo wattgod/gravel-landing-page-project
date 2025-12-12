@@ -11,7 +11,7 @@ CHOICE_FEATURES = {
         "**Race-pace power targets** calibrated for your available training time, not fantasy watts",
         "**Outdoor options** for every workout—no trainer required, just structured execution",
         "**Strategic recovery** that doesn't assume you have 12+ hours to absorb training stress",
-        "**Taper protocol** designed for athletes who can't afford to lose fitness in rest weeks",
+        "**Taper protocol** created for athletes who can't afford to lose fitness in rest weeks",
         "**Dress rehearsal rides** at manageable duration (5 hours max) that still validate your race-day systems",
         "**Recovery protocols for 50+ athletes**—longer recovery windows, strategic rest that prevents breakdown",
         "**Age-appropriate training load**—moderate volume respecting longer adaptation timelines at 45+",
@@ -44,16 +44,16 @@ CHOICE_FEATURES = {
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
-        "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
-        "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
+        "**Heat adaptation for Unbound: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for the 200: 60-80g carbs/hour protocol tested for extended efforts**",
+        "**Dress rehearsal ride validates everything before race day: nutrition, pacing, equipment, mental protocols tested**",
     ],
     
     "compete": [
         "**Periodized intensity** with dedicated base, build, and peak phases—no more year-round threshold hammering",
         "**VO2max intervals** that actually improve race performance—not just training-day suffering",
         "**G Spot work** (88-92% FTP)—gravel-specific race-pace training superior to generic Sweet Spot",
-        "**Recovery architecture** designed for 12-18 hour weeks—enough stress to adapt, enough rest to absorb",
+        "**Recovery architecture** optimized for 12-18 hour weeks—enough stress to adapt, enough rest to absorb",
         "**Precision taper protocol** with deload timing proven for competitive athletes",
         "**Mental training system** for suffering management and tactical decision-making",
         "**Race execution playbook** covering pacing, fueling under fatigue, and group dynamics",
@@ -69,9 +69,9 @@ CHOICE_FEATURES = {
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
-        "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
-        "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
+        "**Heat adaptation for Unbound: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for the 200: 60-80g carbs/hour protocol tested for extended efforts**",
+        "**Dress rehearsal ride validates everything before race day: nutrition, pacing, equipment, mental protocols tested**",
     ],
     
     "podium": [
@@ -91,6 +91,9 @@ CHOICE_FEATURES = {
         "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
         "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
+        "**Heat adaptation for Unbound: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
+        "**Distance-specific fueling for the 200: 60-80g carbs/hour protocol tested for extended efforts**",
+        "**Dress rehearsal ride validates everything before race day: nutrition, pacing, equipment, mental protocols tested**",
         "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
         "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
         "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"

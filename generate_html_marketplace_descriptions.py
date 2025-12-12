@@ -78,33 +78,33 @@ TIER_SPECS = {
 CLOSING_STATEMENTS = {
     "ayahuasca": [
         "This is {race_name}. For people with 4 hours a week who are doing it anyway.",
-        "Built for {race_name} demands. Designed for people making this work around a life, not building a life around this.",
-        "{race_name}. For people who know the math doesn't work but show up regardless.",
+        "Built for the race demands. Designed for people making this work around a life, not building a life around this.",
+        "Unbound. For people who know the math doesn't work but show up regardless.",
         "This is for {race_name}. And for people with limited hours and unlimited determination.",
-        "Designed for {race_name}. Built for people who need every single hour to count."
+        "Designed for the race. Built for people who need every single hour to count."
     ],
     
     "finisher": [
         "This is {race_name}. For people ready to stop surviving and start racing.",
-        "Built for {race_name}. Designed for people who know there's another gear they're not finding.",
-        "{race_name}. For people who want their fitness to show up predictably, not accidentally.",
-        "This is for {race_name} demands. And for people ready to stop just finishing.",
+        "Built for the race. Designed for people who know there's another gear they're not finding.",
+        "Unbound. For people who want their fitness to show up predictably, not accidentally.",
+        "This is for race demands. And for people ready to stop just finishing.",
         "Designed for {race_name}. Built for people who can commit 8-12 hours to structured progression."
     ],
     
     "compete": [
         "This is {race_name}. For people whose fitness needs to show up in results.",
-        "Built for {race_name} demands. Designed for people training 12-18 hours who want precision, not just volume.",
-        "{race_name}. For people done guessing why the next level won't arrive.",
-        "This is for {race_name}. And for people ready to execute races, not just finish trained.",
+        "Built for the race demands. Designed for people training 12-18 hours who want precision, not just volume.",
+        "Unbound. For people done guessing why the next level won't arrive.",
+        "This is for the race. And for people ready to execute races, not just finish trained.",
         "Designed for {race_name}. Built for people who know the difference between training hard and training smart."
     ],
     
     "podium": [
         "This is {race_name}. For people who've been their own coach long enough.",
-        "Built for {race_name}. Designed for people expecting to podium, not hoping to.",
-        "{race_name}. For people who need structure to stay disciplined at 18+ hours per week.",
-        "This is for {race_name} demands. And for people who know details separate podium from pack.",
+        "Built for the race. Designed for people expecting to podium, not hoping to.",
+        "Unbound. For people who need structure to stay disciplined at 18+ hours per week.",
+        "This is for race demands. And for people who know details separate podium from pack.",
         "Designed for {race_name}. Built for people training at elite volume who want precision, not just more work."
     ]
 }
@@ -431,8 +431,10 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         formatted_topics.append(topic)
     guide_topics = format_as_prose(formatted_topics)
     
-    # Format closing statement with race name
-    closing_statement = closing_statement.format(race_name=race_name)
+    # Format closing statement with race name (handle shorthand variations)
+    if '{race_name}' in closing_statement:
+        closing_statement = closing_statement.format(race_name=race_name)
+    # Shorthand variations use "the race", "Unbound", "race demands" - no formatting needed
     
     # Format value prop box
     value_prop_philosophy = value_prop_box['philosophy']
