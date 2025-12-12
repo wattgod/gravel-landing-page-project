@@ -168,17 +168,27 @@ Compare to generic competitor (e.g., TrainerRoad gravel plan).
 
 **Includes slight wink/droll observation:** YES / NO
 
-### ✓ Check 3: Tier Mentioned in Body Copy
+### ✓ Check 3: Full Plan Designation in Body Copy
 
-**Requirement:** Tier AND/OR level must appear at least ONCE in body
+**Requirement:** Tier AND level must appear TOGETHER at least ONCE in body
 
-**Examples to look for:**
-- "The Finisher Beginner plan..."
-- "At 8-12 hours per week..."
-- "Compete-level athletes need..."
-- "Ayahuasca tier works with constraints..."
+**NOT sufficient (too generic):**
+- ❌ "At 8-12 hours per week..." (just hours)
+- ❌ "Finisher tier athletes..." (no level)
+- ❌ "This plan works for beginners..." (no tier)
 
-**Tier/level mentioned in body:** YES / NO / WHERE: _____________________
+**Required (full designation):**
+- ✅ "The **Finisher Beginner** plan..."
+- ✅ "As a **Compete Advanced** athlete..."
+- ✅ "This **Ayahuasca Beginner** program..."
+- ✅ "Built for **Finisher Intermediate Masters**..."
+
+**Why this matters:**
+- Self-identification: Reader sees THEIR SPECIFIC PLAN
+- Not just "a finisher plan" but "THE beginner one"
+- Creates precise targeting and positioning
+
+**Full plan designation found in body:** YES / NO / WHERE: _____________________
 
 ### ✓ Check 4: Features Support Tier's Core Concern
 

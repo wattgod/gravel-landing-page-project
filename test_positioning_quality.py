@@ -22,56 +22,54 @@ def find_descriptions():
 
 def extract_tier_level_from_filename(plan_name):
     """Extract tier and level from plan filename"""
-    # Examples: "1. Ayahuasca Beginner (12 weeks)", "5. Finisher Beginner (12 weeks)"
-    plan_lower = plan_name.lower()
+    # Examples: ayahuasca_beginner, finisher_intermediate_masters, compete_advanced
     
     # Tier
-    if 'ayahuasca' in plan_lower:
+    if 'ayahuasca' in plan_name:
         tier = 'ayahuasca'
-    elif 'finisher' in plan_lower:
+    elif 'finisher' in plan_name:
         tier = 'finisher'
-    elif 'compete' in plan_lower:
+    elif 'compete' in plan_name:
         tier = 'compete'
-    elif 'podium' in plan_lower:
+    elif 'podium' in plan_name:
         tier = 'podium'
     else:
         tier = 'unknown'
     
     # Level
-    if 'beginner' in plan_lower:
+    if 'beginner' in plan_name:
         level = 'beginner'
-    elif 'intermediate' in plan_lower:
+    elif 'intermediate' in plan_name:
         level = 'intermediate'
-    elif 'advanced' in plan_lower:
+    elif 'advanced' in plan_name:
         level = 'advanced'
-    elif 'elite' in plan_lower or 'goat' in plan_lower:
+    elif 'elite' in plan_name:
         level = 'elite'
-    elif 'save my race' in plan_lower or 'save_my_race' in plan_lower:
+    elif 'save_my_race' in plan_name:
         level = 'save my race'
     else:
         level = None
     
     # Masters flag
-    is_masters = 'masters' in plan_lower
+    is_masters = 'masters' in plan_name
     
     return tier, level, is_masters
 
-def test_tier_mentioned_in_body():
+def test_full_plan_designation_in_body():
     """
-    TEST: Tier name must appear at least once in body copy (not just header)
+    TEST: Full plan designation (tier + level) must appear in body copy
     
-    WHY: Ensures copy maintains tier-specific positioning throughout
-    EXAMPLE: "The Finisher Beginner plan..." or "At 8-12 hours per week..."
+    WHY: Ensures reader identifies with THEIR SPECIFIC PLAN, not just tier
+    EXAMPLE: "The Finisher Beginner plan..." not just "finisher tier"
+    
+    CRITICAL: This is about self-identification. Reader should see:
+    - "Finisher Beginner" (if that's their plan)
+    - "Compete Advanced Masters" (if that's their plan)
+    - Not just "finisher" or "8-12 hours" generically
     """
     descriptions = find_descriptions()
     errors = []
-    
-    tier_keywords = {
-        'ayahuasca': ['ayahuasca', '0-5 hours', '4 hours'],
-        'finisher': ['finisher', '8-12 hours'],
-        'compete': ['compete', '12-18 hours'],
-        'podium': ['podium', '18+ hours', '18 hours']
-    }
+    warnings = []
     
     for plan_name, filepath in descriptions:
         tier, level, is_masters = extract_tier_level_from_filename(plan_name)
@@ -82,16 +80,49 @@ def test_tier_mentioned_in_body():
         # Remove header/title (first 500 chars) to check body only
         body_content = content[500:].lower()
         
-        # Check if tier is mentioned
-        tier_found = any(keyword in body_content for keyword in tier_keywords.get(tier, []))
-        
-        if not tier_found:
-            errors.append(
-                f"{plan_name}: Tier '{tier}' not mentioned in body copy "
-                f"(should mention 'finisher', '8-12 hours', etc.)"
-            )
+        # Build expected plan designation
+        if level:
+            # Full designation with level
+            expected_designation = f"{tier} {level}"
+            if is_masters:
+                expected_designation_with_masters = f"{tier} {level} masters"
+                
+                # Check for either "tier level" or "tier level masters"
+                if expected_designation in body_content or expected_designation_with_masters in body_content:
+                    continue  # Found it
+                else:
+                    errors.append(
+                        f"{plan_name}: Full plan designation not found in body. "
+                        f"Should mention '{expected_designation.title()}' or '{expected_designation_with_masters.title()}'"
+                    )
+            else:
+                # Check for "tier level"
+                if expected_designation in body_content:
+                    continue  # Found it
+                else:
+                    # Check if at least tier is mentioned (downgraded to warning)
+                    if tier in body_content:
+                        warnings.append(
+                            f"{plan_name}: Tier mentioned but not full designation. "
+                            f"Should mention '{expected_designation.title()}' (tier + level together)"
+                        )
+                    else:
+                        errors.append(
+                            f"{plan_name}: Full plan designation not found. "
+                            f"Should mention '{expected_designation.title()}'"
+                        )
+        else:
+            # No level (shouldn't happen but handle gracefully)
+            if tier in body_content:
+                warnings.append(
+                    f"{plan_name}: Only tier mentioned (no level in filename)"
+                )
+            else:
+                errors.append(
+                    f"{plan_name}: Tier '{tier}' not mentioned in body"
+                )
     
-    return errors
+    return errors, warnings
 
 def test_race_name_frequency():
     """
@@ -221,16 +252,21 @@ def run_positioning_tests():
     all_errors = []
     all_warnings = []
     
-    # Test 1: Tier Mentions
-    print("\nTest 1: Tier Mentioned in Body Copy")
-    errors = test_tier_mentioned_in_body()
+    # Test 1: Full Plan Designation
+    print("\nTest 1: Full Plan Designation in Body Copy")
+    errors, warnings = test_full_plan_designation_in_body()
     if errors:
         print("  ❌ FAILED")
         for error in errors:
             print(f"    {error}")
         all_errors.extend(errors)
+    elif warnings:
+        print("  ⚠️  WARNINGS")
+        for warning in warnings:
+            print(f"    {warning}")
+        all_warnings.extend(warnings)
     else:
-        print("  ✅ PASSED - All plans mention tier in body copy")
+        print("  ✅ PASSED - All plans mention full designation (tier + level)")
     
     # Test 2: Race Name Frequency
     print("\nTest 2: Race Name Frequency")

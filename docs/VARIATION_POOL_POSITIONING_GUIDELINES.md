@@ -93,16 +93,31 @@
 ### 4. TIER/LEVEL MENTIONS IN BODY COPY
 
 **Requirement:**
-- Tier and level must appear at least ONCE more in body copy
-- Not just in plan name or header
+- Full plan designation (tier + level) must appear at least ONCE in body copy
+- Not just tier alone or hours alone
+- Reader should see THEIR SPECIFIC PLAN named
 
 **Examples:**
-✅ "The Finisher Beginner plan builds consistency..."
-✅ "At the Compete level with 12-18 hours, precision matters..."
-✅ "Ayahuasca tier athletes work with 4 hours, not against them..."
+✅ "The **Finisher Beginner** plan builds consistency..."
+✅ "As a **Compete Advanced** athlete, precision matters..."
+✅ "This **Ayahuasca Beginner** program works with constraints..."
+✅ "Built for **Finisher Intermediate Masters** athletes 45+..."
 
-❌ Missing: Plan never mentions tier/level after header
-❌ Generic: "This plan works for recreational riders" (no tier specificity)
+**NOT sufficient (too generic):**
+❌ "At 8-12 hours per week..." (just tier hours)
+❌ "Finisher tier athletes..." (no level specified)
+❌ "This plan works for beginners..." (no tier specified)
+
+**Why this matters:**
+- Self-identification: "This is MY plan"
+- Specificity: Not just any finisher plan, but THE beginner one
+- Positioning: Tier + level creates exact targeting
+
+**Where to include:**
+- Opening paragraph (ideal)
+- Story/justification section
+- Value prop boxes
+- Anywhere discussing the plan's approach
 
 ### 5. BEAT/CONTRAST PSYCHOLOGY (SULTANIC)
 
