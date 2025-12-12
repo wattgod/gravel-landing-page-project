@@ -77,24 +77,24 @@ VALUE_PROP_BOXES = {
             "philosophy": "Age changes recovery needs. Training load matched to adaptation capacity, not chronological age.",
             "props": ["Longer recovery windows between hard sessions", "Compressed periodization (2-3 week cycles)", "Recovery-first training architecture", "Age-appropriate volume that prevents breakdown"]
         },
-        # Variation 8: GOAT Method
+        # Variation 8: Preparation-focused
         {
-            "philosophy": "GOAT Method training (Gravel Optimized Adaptive Training): G Spot development, polarized base, technical integration. Built for gravel's variable-pace demands.",
+            "philosophy": "Gravel racing rewards preparation, not heroics. High-carb fueling, heat adaptation, practice drills—everything validated before race day.",
             "props": [
-                "Three-Act race structure: tactical pacing framework for 10+ hour efforts",
-                "6-2-7 breathing technique: practiced under stress until automatic",
-                "G Spot intervals (88-92% FTP): sustainable race pace for hours",
-                "Dress rehearsal protocol: 7-hour race simulation before race day"
+                "60-80g carbs/hour protocol: automatic fueling under stress",
+                "Three-Act pacing structure: conservative start, strategic finish",
+                "Dress rehearsal ride: validates nutrition, equipment, mental preparation",
+                "Technical drills: cornering, descending practiced weekly"
             ]
         },
-        # Variation 9: Systems approach
+        # Variation 9: Consistency-focused
         {
-            "philosophy": "Gravel racing rewards systems, not heroics. G Spot training, Three-Act pacing, practiced mental skills—everything tested.",
+            "philosophy": "Consistency builds race-ready fitness. Progressive overload. Heat adaptation. Practice protocols that translate.",
             "props": [
-                "HRV-guided recovery: objective data replacing guesswork",
-                "Technical skills drills: weekly cornering, descending, rough terrain practice",
-                "Mental toolkit: 6-2-7 breathing, reframing, suffering management",
-                "Race simulation: validates every system before race day"
+                "Electrolyte strategy: 500-1000mg sodium/hour prevents bonking",
+                "Hydration targets: 32+ oz/hour validated in training",
+                "Mental training: suffering management practiced under load",
+                "Race simulation: full-distance dress rehearsal validates everything"
             ]
         }
     ],
@@ -135,14 +135,14 @@ VALUE_PROP_BOXES = {
             "philosophy": "Age changes recovery needs. Moderate volume with emphasis on recovery prevents breakdown while maintaining performance.",
             "props": ["Compressed periodization (2-3 week cycles)", "Recovery-first training philosophy", "Training adapted for slower adaptation", "Age-appropriate protocols that prevent injury"]
         },
-        # Variation 8: GOAT Method at volume
+        # Variation 8: Systems at volume
         {
-            "philosophy": "GOAT Method at volume: G Spot development, HRV-guided recovery, technical mastery. Training that matches gravel's demands.",
+            "philosophy": "Volume without systems breaks athletes. High-carb fueling, heat protocols, technical mastery—training that matches gravel demands.",
             "props": [
-                "Three-Act tactical framework: decision points mapped to race timeline",
-                "HRV protocols: training adjustments based on objective recovery data",
-                "G Spot progression: building sustainable race pace at 88-92% FTP",
-                "Mental skills under load: breathing, reframing practiced at intensity"
+                "Three-Act tactical framework: phase-specific execution practiced",
+                "60-80g carbs/hour: high-carb protocol tested at intensity",
+                "Heat adaptation: weeks 6-10 prepares for 85-95°F racing",
+                "Mental protocols: reframing and suffering management under load"
             ]
         }
     ],
@@ -173,14 +173,62 @@ VALUE_PROP_BOXES = {
             "philosophy": "Precision over more work. Every session optimized for competitive performance.",
             "props": ["Recovery protocols at elite volume", "Power distribution for podium racing", "Race day execution checklists", "Technical skills under fatigue"]
         },
-        # Variation 6: GOAT Method elite
+        # Variation 6: Execution precision
         {
-            "philosophy": "Elite gravel racing requires proprietary methods. GOAT training system: G Spot mastery, Three-Act execution, HRV-guided precision.",
+            "philosophy": "Elite gravel racing demands execution precision. Every protocol practiced. Every system validated. Nothing left to chance.",
             "props": [
-                "G Spot intervals at race pace: 88-92% FTP sustainable for hours",
-                "Three-Act pacing execution: tactical decision framework practiced",
-                "HRV-driven training loads: recovery data guides progression",
-                "Technical precision: descending, cornering drills weekly"
+                "Fueling precision: 60-80g carbs + 500-1000mg sodium tested",
+                "Three-Act execution: race-specific tactics for each phase",
+                "Technical mastery: descending, cornering at race pace",
+                "Full rehearsal: validates nutrition, pacing, equipment, mental prep"
+            ]
+        }
+    ],
+    
+    "ayahuasca": [
+        # Variation 1
+        {
+            "philosophy": "Every hour counts. The plan maximizes efficiency—no junk miles, no wasted sessions.",
+            "props": ["Race day checklists", "Fueling protocols that prevent bonking", "Pacing strategies for actually finishing", "Technical skills that keep you upright"]
+        },
+        # Variation 2
+        {
+            "philosophy": "Limited hours means zero room for error. Every session has clear purpose.",
+            "props": ["No-BS fueling and hydration protocols", "Race day execution checklists", "Pacing strategies for survival", "Technical skills basics"]
+        },
+        # Variation 3
+        {
+            "philosophy": "Four hours a week. The structure extracts maximum adaptation from minimum time.",
+            "props": ["Race day checklists", "Fueling protocols tested under stress", "Pacing strategies for 10+ hour efforts", "Technical skills that matter"]
+        },
+        # Variation 4
+        {
+            "philosophy": "The math doesn't work—unless every hour delivers. This does.",
+            "props": ["Fueling and hydration protocols", "Race day execution checklists", "Pacing strategies that work", "Technical skills for rough terrain"]
+        },
+        # Variation 5
+        {
+            "philosophy": "Efficiency over volume. Every workout optimized for limited weekly hours.",
+            "props": ["Race day checklists", "No-BS fueling protocols", "Pacing strategies for finishing", "Technical skills that keep you moving"]
+        },
+        # Variation 6: Masters-specific
+        {
+            "philosophy": "At 50+, recovery isn't optional. The plan respects longer adaptation timelines without sacrificing efficiency.",
+            "props": ["Recovery protocols for 50+ athletes", "Age-appropriate training load", "Injury prevention through strategic rest", "Training matched to adaptation capacity"]
+        },
+        # Variation 7: Masters-specific
+        {
+            "philosophy": "Age changes recovery needs. Moderate volume with emphasis on recovery prevents breakdown while maintaining performance.",
+            "props": ["Longer recovery windows between hard sessions", "Age-appropriate protocols", "Recovery-first training architecture", "Training load matched to adaptation capacity"]
+        },
+        # Variation 8: Efficient preparation
+        {
+            "philosophy": "Limited hours means every session counts. High-carb fueling, tactical pacing, mental preparation—efficient preparation for race reality.",
+            "props": [
+                "60-80g carbs/hour protocol: fueling strategy that works",
+                "Three-Act framework: conservative start, strategic execution",
+                "Heat protocols: arrive adapted to 85-95°F conditions",
+                "Mental training: suffering management when it matters"
             ]
         }
     ]

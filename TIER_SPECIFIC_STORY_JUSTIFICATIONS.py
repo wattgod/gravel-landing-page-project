@@ -55,8 +55,11 @@ STORY_JUSTIFICATIONS = {
         # Variation 9: Systems integration
         """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice 6-2-7 breathing under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises.""",
         
-        # Variation 10: G Spot specificity
-        """This plan uses G Spot training (88-92% FTP) instead of generic Sweet Spot. That's gravel-specific race pace—sustainable for 10+ hours, not just 2-3 hour road efforts. Combined with Three-Act pacing structure and practiced mental skills, you're building systems that work for Unbound's variable-pace demands. Everything is tested before race day."""
+        # Variation 10: Nutrition and practice focus
+        """Most plans ignore nutrition specifics. This plan teaches 60-80g carbs/hour protocol with practice sessions until it's automatic. The Three-Act pacing framework gives you specific tactics for each race phase—not vague advice to 'start conservatively.' Heat adaptation is built into weeks 6-10. The dress rehearsal ride validates everything before race day. No surprises.""",
+        
+        # Variation 11: Practice protocols
+        """Generic plans skip practice protocols. This plan drills technical skills weekly—cornering, descending, rough terrain handling. Mental training happens during hard sessions, not just reading about it. Hydration strategy (32+ oz/hour, 500-1000mg sodium) is tested and validated in training. Race-day execution is automatic because you've practiced it."""
     ],
     
     "compete": [
@@ -107,8 +110,8 @@ STORY_JUSTIFICATIONS = {
         # Variation 5: The reality check
         """This plan isn't for people hoping to podium. It's for people expecting to. That requires a different standard: no missed sessions, no half-effort intervals, no "close enough" on fueling protocols. The plan is structured, but execution is on you. At this level, coaching provides the roadmap. You still have to drive. But if you're serious about results, this gets you there.""",
         
-        # Variation 6: GOAT Method elite
-        """Elite gravel racing rewards proprietary systems. GOAT Method training: G Spot mastery at 88-92% FTP, Three-Act execution practiced until automatic, HRV-guided progression for optimal recovery timing. You'll practice descending and cornering at race pace. Mental protocols like 6-2-7 breathing become reflexive under suffering. The difference between podium and pack is often details—this plan delivers them."""
+        # Variation 6: Execution precision
+        """Elite gravel racing demands execution precision. This plan delivers 60-80g carbs + 500-1000mg sodium protocols tested at race pace. Three-Act tactical framework practiced until automatic. Technical skills drilled weekly—descending, cornering at speed. Mental training under maximum load. Dress rehearsal validates every system. Details separate podium from pack."""
     ]
 }
 

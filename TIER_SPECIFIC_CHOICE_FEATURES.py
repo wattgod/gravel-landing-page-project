@@ -36,12 +36,14 @@ CHOICE_FEATURES = {
         "**Recovery protocols for 50+ athletes**—longer recovery windows, HRV monitoring, age-appropriate adaptation timelines",
         "**Injury prevention through strategic recovery**—training load matched to recovery capacity, not chronological age",
         "**Age-appropriate training volume**—moderate hours that respect longer adaptation timelines without sacrificing performance",
-        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
-        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
-        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
-        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
-        "**Dress rehearsal ride: 7-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
-        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
+        "**High-carb fueling protocol: 60-80g carbs/hour with automatic execution—practiced until you can fuel without thinking**",
+        "**Electrolyte strategy: 500-1000mg sodium/hour with heat-specific adjustments—prevents bonking in 85-95°F conditions**",
+        "**Three-Act pacing framework: specific tactics for each race phase—when to push, when to sit, when to survive**",
+        "**Hydration targets: 32+ oz/hour fluid intake with individual validation—test and dial in during training**",
+        "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
+        "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
+        "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
     ],
     
     "compete": [
@@ -56,12 +58,14 @@ CHOICE_FEATURES = {
         "**Recovery-first training architecture**—longer rest between hard sessions, HRV-based autoregulation for 45+ athletes",
         "**Age-appropriate periodization**—compressed recovery cycles (2-3 weeks) that respect slower adaptation at 50+",
         "**Injury prevention protocols**—training load matched to recovery capacity, strategic rest that prevents breakdown",
-        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
-        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
-        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
-        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
-        "**Dress rehearsal ride: 9-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
-        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
+        "**High-carb fueling protocol: 60-80g carbs/hour with automatic execution—practiced until you can fuel without thinking**",
+        "**Electrolyte strategy: 500-1000mg sodium/hour with heat-specific adjustments—prevents bonking in 85-95°F conditions**",
+        "**Three-Act pacing framework: specific tactics for each race phase—when to push, when to sit, when to survive**",
+        "**Hydration targets: 32+ oz/hour fluid intake with individual validation—test and dial in during training**",
+        "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
+        "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
+        "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
     ],
     
     "podium": [
@@ -73,12 +77,14 @@ CHOICE_FEATURES = {
         "**Altitude protocols** for high-elevation races—if Unbound location demands it (conditional section)",
         "**10-hour dress rehearsal** at race intensity—full validation of systems, fueling, pacing, equipment",
         "**Taper discipline** that prevents panic-training and delivers peak performance on race day",
-        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
-        "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
-        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
-        "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
-        "**Dress rehearsal ride: 10-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
-        "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
+        "**High-carb fueling protocol: 60-80g carbs/hour with automatic execution—practiced until you can fuel without thinking**",
+        "**Electrolyte strategy: 500-1000mg sodium/hour with heat-specific adjustments—prevents bonking in 85-95°F conditions**",
+        "**Three-Act pacing framework: specific tactics for each race phase—when to push, when to sit, when to survive**",
+        "**Hydration targets: 32+ oz/hour fluid intake with individual validation—test and dial in during training**",
+        "**Dress rehearsal ride: full race-distance simulation validating nutrition, equipment, pacing, mental protocols**",
+        "**Technical skills drills: cornering, descending, rough terrain practice—progressive protocols building confidence on gravel**",
+        "**Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to 85-95°F conditions**",
+        "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**"
     ]
 }
 
