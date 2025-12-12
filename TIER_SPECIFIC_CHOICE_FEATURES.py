@@ -13,6 +13,9 @@ CHOICE_FEATURES = {
         "**Strategic recovery** that doesn't assume you have 12+ hours to absorb training stress",
         "**Taper protocol** designed for athletes who can't afford to lose fitness in rest weeks",
         "**Dress rehearsal rides** at manageable duration (5 hours max) that still validate your race-day systems",
+        "**Compressed 6-week prep for {race_name}: salvage fitness in final weeks before race day with focused protocols**",
+        "**Emergency preparation for {race_name}: focus on race-critical skills and mental readiness in limited time**",
+        "**Last-minute {race_name} timeline: maximize limited training time with focused protocols and race-specific preparation**",
         "**Recovery protocols for 50+ athletes**—longer recovery windows, strategic rest that prevents breakdown",
         "**Age-appropriate training load**—moderate volume respecting longer adaptation timelines at 45+",
         "**Injury prevention through recovery**—training matched to adaptation capacity, not chronological age",
@@ -46,7 +49,10 @@ CHOICE_FEATURES = {
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
         "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
         "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
+        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**",
+        "**Compressed 6-week prep for {race_name}: salvage fitness in final weeks before race day with focused protocols**",
+        "**Emergency preparation for {race_name}: focus on race-critical skills and mental readiness in limited time**",
+        "**Last-minute {race_name} timeline: maximize limited training time with focused protocols and race-specific preparation**"
     ],
     
     "compete": [
@@ -71,7 +77,10 @@ CHOICE_FEATURES = {
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
         "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
         "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
+        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**",
+        "**Compressed 6-week prep for {race_name}: salvage fitness in final weeks before race day with focused protocols**",
+        "**Emergency preparation for {race_name}: focus on race-critical skills and mental readiness in limited time**",
+        "**Last-minute {race_name} timeline: maximize limited training time with focused protocols and race-specific preparation**"
     ],
     
     "podium": [
@@ -93,7 +102,10 @@ CHOICE_FEATURES = {
         "**Mental training practiced: reframing and suffering management during hard sessions—tools that work when it hurts**",
         "**Heat adaptation for {race_name}: weeks 6-10 controlled exposure prepares for 85-95°F Kansas racing conditions**",
         "**Distance-specific fueling for {race_name}: 60-80g carbs/hour protocol tested for 200-mile efforts**",
-        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**"
+        "**Dress rehearsal ride validates everything before {race_name}: nutrition, pacing, equipment, mental protocols tested**",
+        "**Compressed 6-week prep for {race_name}: salvage fitness in final weeks before race day with focused protocols**",
+        "**Emergency preparation for {race_name}: focus on race-critical skills and mental readiness in limited time**",
+        "**Last-minute {race_name} timeline: maximize limited training time with focused protocols and race-specific preparation**"
     ]
 }
 

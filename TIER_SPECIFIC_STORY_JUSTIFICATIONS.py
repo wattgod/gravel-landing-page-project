@@ -30,7 +30,13 @@ STORY_JUSTIFICATIONS = {
         """The {plan_name} works with 0-5 hours per week, not against it. Limited hours, unlimited determination—efficient training for time-constrained athletes. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
         
         # Variation 9: Race-specific protocols
-        """Most plans treat all gravel races the same. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols the {plan_name} provides. Heat adaptation weeks 6-10. Distance fueling tested. Mental preparation practiced. Everything validated before {race_name}."""
+        """Most plans treat all gravel races the same. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols the {plan_name} provides. Heat adaptation weeks 6-10. Distance fueling tested. Mental preparation practiced. Everything validated before {race_name}.""",
+        
+        # Variation 10: Save My Race - 6 weeks
+        """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
+        
+        # Variation 11: Save My Race - triage
+        """{race_name} in 6 weeks requires triage: what matters most, what you can skip, what requires daily focus. The {plan_name} makes those decisions for you. Race-critical skills, mental readiness, and focused protocols—not perfect preparation, but sufficient preparation."""
     ],
     
     "finisher": [
@@ -71,7 +77,13 @@ STORY_JUSTIFICATIONS = {
         """The {plan_name} builds predictable fitness across 8-12 hours per week. Progressive structure removes guesswork—your fitness shows up consistently, not randomly. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
         
         # Variation 13: Full plan designation intermediate
-        """The {plan_name} refines consistency with advanced protocols. At 8-12 hours weekly, this delivers race-ready fitness through systematic progression. {race_name}'s specific demands—85-95°F heat, 200-mile distance—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}."""
+        """The {plan_name} refines consistency with advanced protocols. At 8-12 hours weekly, this delivers race-ready fitness through systematic progression. {race_name}'s specific demands—85-95°F heat, 200-mile distance—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}.""",
+        
+        # Variation 14: Save My Race - 6 weeks
+        """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
+        
+        # Variation 15: Save My Race - triage
+        """{race_name} in 6 weeks requires triage: what matters most, what you can skip, what requires daily focus. The {plan_name} makes those decisions for you. Race-critical skills, mental readiness, and focused protocols—not perfect preparation, but sufficient preparation."""
     ],
     
     "compete": [
@@ -112,7 +124,13 @@ STORY_JUSTIFICATIONS = {
         """The {plan_name} delivers precision at 12-18 hours per week. Volume alone doesn't unlock the next level—systematic progression with practiced protocols does. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
         
         # Variation 13: Full plan designation intermediate
-        """The {plan_name} breaks through plateaus with 12-18 hours of structured training. Progressive overload and race-specific preparation translate hours into performance. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}."""
+        """The {plan_name} breaks through plateaus with 12-18 hours of structured training. Progressive overload and race-specific preparation translate hours into performance. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}.""",
+        
+        # Variation 14: Save My Race - 6 weeks
+        """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
+        
+        # Variation 15: Save My Race - triage
+        """{race_name} in 6 weeks requires triage: what matters most, what you can skip, what requires daily focus. The {plan_name} makes those decisions for you. Race-critical skills, mental readiness, and focused protocols—not perfect preparation, but sufficient preparation."""
     ],
     
     "podium": [
@@ -132,7 +150,13 @@ STORY_JUSTIFICATIONS = {
         """This plan isn't for people hoping to podium. It's for people expecting to. That requires a different standard: no missed sessions, no half-effort intervals, no "close enough" on fueling protocols. The plan is structured, but execution is on you. At this level, coaching provides the roadmap. You still have to drive. But if you're serious about results, this gets you there.""",
         
         # Variation 6: Execution precision
-        """Elite gravel racing demands execution precision. This plan delivers 60-80g carbs + 500-1000mg sodium protocols tested at race pace. Three-Act tactical framework practiced until automatic. Technical skills drilled weekly—descending, cornering at speed. Mental training under maximum load. Dress rehearsal validates every system. Details separate podium from pack."""
+        """Elite gravel racing demands execution precision. This plan delivers 60-80g carbs + 500-1000mg sodium protocols tested at race pace. Three-Act tactical framework practiced until automatic. Technical skills drilled weekly—descending, cornering at speed. Mental training under maximum load. Dress rehearsal validates every system. Details separate podium from pack.""",
+        
+        # Variation 7: Save My Race - 6 weeks
+        """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
+        
+        # Variation 8: Save My Race - triage
+        """{race_name} in 6 weeks requires triage: what matters most, what you can skip, what requires daily focus. The {plan_name} makes those decisions for you. Race-critical skills, mental readiness, and focused protocols—not perfect preparation, but sufficient preparation."""
     ]
 }
 
