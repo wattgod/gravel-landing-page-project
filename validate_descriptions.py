@@ -124,12 +124,32 @@ def validate_file(filepath):
             )
     
     # 5. CLOSING REPETITION CHECK
-    closing_matches = re.findall(
-        r'<p style="margin:0;font-size:16px">(This is |Built for |Designed for |Unbound)[^<]+</p>',
-        content
-    )
-    if len(closing_matches) > 1:
-        errors.append(f"Multiple closing-style paragraphs found: {len(closing_matches)}")
+    # Only check the last paragraph before the footer (actual closing)
+    # Other paragraphs may contain "Unbound" but aren't the closing
+    footer_match = re.search(r'<div style="border-top:2px', content)
+    if footer_match:
+        before_footer = content[:footer_match.start()]
+        # Find all paragraphs before footer
+        all_paragraphs = list(re.finditer(
+            r'<p style="margin:0;font-size:16px">([^<]+)</p>',
+            before_footer
+        ))
+        # Check only the last paragraph (the actual closing)
+        if all_paragraphs:
+            last_paragraph_text = all_paragraphs[-1].group(1)
+            # Check if it matches closing pattern
+            closing_pattern = r'^(This is |Built for |Designed for |Unbound)'
+            if not re.search(closing_pattern, last_paragraph_text, re.IGNORECASE):
+                # Last paragraph doesn't match closing pattern - might be missing
+                errors.append("Last paragraph before footer doesn't match closing pattern")
+    else:
+        # No footer found - check for any closing-style paragraphs (fallback)
+        closing_matches = re.findall(
+            r'<p style="margin:0;font-size:16px">([^<]*(?:This is |Built for |Designed for |Unbound)[^<]+)</p>',
+            content
+        )
+        if len(closing_matches) > 1:
+            errors.append(f"Multiple closing-style paragraphs found: {len(closing_matches)}")
     
     # 6. GUIDE INTRIGUE LINE FORMAT
     intrigue_matches = re.findall(
