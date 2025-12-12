@@ -345,49 +345,52 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     used_alternative = used_content.get('alternative', set()) if used_content else set()
     used_features = used_content.get('features', set()) if used_content else set()
     
-    # Track positioning requirements
-    positioning_satisfied = {
-        'full_designation': False,
-        'race_name': False
-    }
+    # ========================================================================
+    # PHASE 1: GUARANTEE CRITICAL POSITIONING (use FULL pools, no Masters filtering)
+    # ========================================================================
+    # Positioning requirements trump content filtering.
+    # Tier-specific positioning > Masters content specificity
     
     # GUARANTEED POSITIONING: Story must contain {plan_name} for full designation
+    # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
     story_justification = select_variation_with_placeholder(
-        STORY_JUSTIFICATIONS[tier], 
-        is_masters_plan, 
+        STORY_JUSTIFICATIONS[tier],  # Full pool, no Masters filtering
+        False,  # Don't filter for Masters - we need positioning first
         '{plan_name}', 
         used_story
     )
-    if '{plan_name}' in story_justification:
-        positioning_satisfied['full_designation'] = True
+    used_story.add(story_justification)
     
-    # Select other components
+    # GUARANTEED POSITIONING: First feature must contain {race_name} for race-specificity
+    # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
+    first_feature = select_variation_with_placeholder(
+        CHOICE_FEATURES[tier],  # Full pool, no Masters filtering
+        False,  # Don't filter for Masters - we need positioning first
+        '{race_name}',
+        used_features
+    )
+    used_features.add(first_feature)
+    choice_features_list = [first_feature]
+    
+    # ========================================================================
+    # PHASE 2: REMAINING VARIATIONS (Masters-filtered for content appropriateness)
+    # ========================================================================
+    # Now that positioning is guaranteed, filter remaining selections for Masters content
+    
+    # Select other components with Masters filtering
     solution_state = select_excluding_used(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, used_opening, k=1)
     guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
     guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
     alternative_hook = select_excluding_used(ALTERNATIVE_HOOKS[tier], is_masters_plan, used_alternative, k=1)
     
-    # GUARANTEED POSITIONING: First feature must contain {race_name} for race-specificity
-    choice_features_list = []
-    for i in range(3):
-        if i == 0 and not positioning_satisfied['race_name']:
-            # First feature: guarantee race name mention
-            feature = select_variation_with_placeholder(
-                CHOICE_FEATURES[tier],
-                is_masters_plan,
-                '{race_name}',
-                used_features
-            )
-            if '{race_name}' in feature:
-                positioning_satisfied['race_name'] = True
+    # Remaining features: Masters-filtered random selection
+    for i in range(2):  # Need 2 more features (already have first one)
+        available_features = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=len(CHOICE_FEATURES[tier]))
+        if isinstance(available_features, list):
+            available = [f for f in available_features if f not in used_features]
+            feature = random.choice(available) if available else random.choice(available_features)
         else:
-            # Remaining features: random selection
-            available_features = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=len(CHOICE_FEATURES[tier]))
-            if isinstance(available_features, list):
-                available = [f for f in available_features if f not in used_features]
-                feature = random.choice(available) if available else random.choice(available_features)
-            else:
-                feature = available_features
+            feature = available_features
         choice_features_list.append(feature)
         used_features.add(feature)
     # Use forced closing if provided, otherwise random
