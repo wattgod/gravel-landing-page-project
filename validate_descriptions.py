@@ -179,23 +179,33 @@ def validate_directory(output_dir):
 def extract_opening(content):
     """Extract opening paragraph from HTML."""
     match = re.search(r'<p style="margin:0;font-size:24px;font-weight:700;line-height:1.3">([^<]+)</p>', content)
-    return match.group(1) if match else ""
+    return match.group(1).strip() if match else ""
 
 def extract_story(content):
     """Extract story justification paragraph from HTML."""
     # First paragraph after opening (before "What the" header)
     match = re.search(r'<div style="margin-bottom:14px">\s*<p style="margin:0;font-size:16px">([^<]+)</p>', content)
-    return match.group(1) if match else ""
+    return match.group(1).strip() if match else ""
 
 def extract_closing(content):
     """Extract closing statement from HTML."""
-    match = re.search(r'<p style="margin:0;font-size:16px">(This is |Built for |Designed for |Unbound)[^<]+</p>', content)
-    return match.group(1) if match else ""
+    # Find the last paragraph before the footer (which has border-top:2px)
+    # This is the closing statement
+    footer_match = re.search(r'<div style="border-top:2px', content)
+    if footer_match:
+        before_footer = content[:footer_match.start()]
+        # Find the last <p> tag with the closing style before the footer
+        matches = list(re.finditer(r'<p style="margin:0;font-size:16px">([^<]+)</p>', before_footer))
+        if matches:
+            return matches[-1].group(1).strip()
+    # Fallback: look for closing patterns
+    match = re.search(r'<p style="margin:0;font-size:16px">([^<]*(?:This is |Built for |Designed for |Unbound)[^<]+)</p>', content)
+    return match.group(1).strip() if match else ""
 
 def extract_alternative(content):
     """Extract alternative hook paragraph from HTML."""
     match = re.search(r'<h3[^>]*>Alternative\?</h3>\s*<p style="margin:0;font-size:16px">([^<]+)</p>', content)
-    return match.group(1) if match else ""
+    return match.group(1).strip() if match else ""
 
 def get_tier_from_filename(filename):
     """Extract tier from filename (e.g., 'finisher_advanced.html' -> 'finisher')."""
