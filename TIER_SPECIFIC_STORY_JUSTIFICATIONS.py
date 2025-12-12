@@ -103,7 +103,16 @@ STORY_JUSTIFICATIONS = {
         """Most training plans build fitness. This one builds race execution. The workouts create the engine. The protocols teach you to drive it. Pacing strategies for variable terrain. Fueling under fatigue. Mental protocols when it hurts. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just show up fit. That's what separates competitors from finishers.""",
         
         # Variation 10: GOAT Method systems
-        """High-volume training without systems breaks athletes. This plan uses GOAT Method training: G Spot progression, HRV-guided recovery, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline."""
+        """High-volume training without systems breaks athletes. This plan uses GOAT Method training: G Spot progression, HRV-guided recovery, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline.""",
+        
+        # Variation 11: Fueling and systems at volume
+        """High-volume training without fueling precision breaks athletes. The {plan_name} emphasizes 60-80g carbs/hour protocol tested at intensity. Heat adaptation in weeks 6-10 prepares you for 85-95°F {race_name} racing. Three-Act pacing framework maps tactics to {race_name} timeline. Technical skills and mental protocols are practiced under load. Training at 12-18 hours requires systems, not just discipline.""",
+        
+        # Variation 12: Full plan designation advanced
+        """The {plan_name} delivers precision at 12-18 hours per week. Volume alone doesn't unlock the next level—systematic progression with practiced protocols does. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. This plan delivers systematic preparation, not guesswork.""",
+        
+        # Variation 13: Full plan designation intermediate
+        """The {plan_name} breaks through plateaus with 12-18 hours of structured training. Progressive overload and race-specific preparation translate hours into performance. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before {race_name}."""
     ],
     
     "podium": [
