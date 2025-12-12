@@ -70,7 +70,7 @@ STORY_JUSTIFICATIONS = {
         """You've been stuck. Same training, same results, can't figure out why the next level won't arrive. The answer is usually simple: your training stopped challenging your current fitness. This plan uses progressive overload correctly—not just adding volume, but strategically increasing demands where they create adaptation. You'll work harder than before, but smarter than ever.""",
         
         # Variation 4: The race execution angle
-        """Here's what this plan does differently: it teaches you to execute races, not just finish trained. Pacing strategy (Section 10), fueling under fatigue (Section 8), mental protocols when it hurts (Section 9). Most competitors at Unbound have similar fitness. The winners know how to deploy it. This plan builds both the engine and the driver.""",
+        """Here's what this plan does differently: it teaches you to execute races, not just finish trained. Pacing strategy, fueling under fatigue, mental protocols when it hurts. Most competitors at Unbound have similar fitness. The winners know how to deploy it. This plan builds both the engine and the driver.""",
         
         # Variation 5: The methodology defense
         """This plan uses polarized training principles because they work for time-crunched competitive athletes. You get enough volume to build durability (12-18 hours), enough intensity to sharpen performance (Zone 4-5 sessions), and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target on a specific date.""",
