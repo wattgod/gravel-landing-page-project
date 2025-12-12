@@ -47,7 +47,13 @@ SOLUTION_STATE_OPENINGS = {
         "You're 45. Recovery isn't optional anymore. This plan builds you up without breaking you down. The difference between finishing and competing at your age isn't more volume—it's smarter recovery. Every session respects your adaptation timeline. Every rest day is strategic. Age isn't a limitation—it's data that informs better training.",
         
         # Variation 7: Masters-specific
-        "You're 50+. Your body needs longer recovery windows. Your training needs to respect that. This plan uses moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between thriving and breaking at your age isn't training less—it's training more deliberately. Recovery becomes the primary training variable."
+        "You're 50+. Your body needs longer recovery windows. Your training needs to respect that. This plan uses moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. The difference between thriving and breaking at your age isn't training less—it's training more deliberately. Recovery becomes the primary training variable.",
+        
+        # Variation 8: The progression clarity
+        "You've been training consistently but results aren't improving. The problem isn't effort—it's progression. This plan shows you exactly how to build fitness systematically. Base phase creates durability. Build phase adds power. Peak phase sharpens performance. Each phase has clear goals and measurable outcomes. No more wondering if you're doing it right.",
+        
+        # Variation 9: The race-readiness angle
+        "Finishing events is one thing. Racing them is another. This plan builds race-readiness, not just fitness. Structured taper that peaks performance. Fueling protocols tested in training. Pacing strategies for variable terrain. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just survive it."
     ],
     
     "compete": [
@@ -70,7 +76,13 @@ SOLUTION_STATE_OPENINGS = {
         "You're 45+. Training at 12-18 hours requires different recovery protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. The difference between competing and breaking at your age isn't training less—it's training with age-appropriate recovery. Every session counts because recovery takes longer.",
         
         # Variation 7: Masters-specific
-        "You're 50+. Your body adapts slower. Your recovery needs are different. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The difference between thriving and breaking isn't less work—it's better recovery architecture."
+        "You're 50+. Your body adapts slower. Your recovery needs are different. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The difference between thriving and breaking isn't less work—it's better recovery architecture.",
+        
+        # Variation 8: The execution gap
+        "You've got the fitness. You've done the training. But race day execution keeps falling apart. Pacing mistakes. Fueling failures. Mental breakdowns when it gets hard. This plan addresses the gap between training fitness and racing fitness. The workouts build the engine. The protocols teach you to drive it.",
+        
+        # Variation 9: The systematic approach
+        "Random training at 12-18 hours creates random results. This plan eliminates the guesswork. Every week has a purpose. Every session targets a specific adaptation. The progression is systematic, not accidental. You'll know why you're doing each workout and how it builds toward race day. That clarity creates confidence."
     ],
     
     "podium": [

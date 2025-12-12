@@ -28,6 +28,8 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep training sporadically with no plan. Miss weeks consistently. Show up and pray.",
         "Or you could keep training like you're 30 when you're 50+. Ignore recovery needs. Push through fatigue. Break down instead of building up.",
         "Or you could keep ignoring that recovery takes longer at 45+. Train like age doesn't matter. Wonder why you're always tired or injured.",
+        "Or you could keep using recovery protocols from your 30s. Push through because you're tough. Break down because you're not 30 anymore.",
+        "Or you could keep pretending age doesn't change adaptation timelines. Train hard constantly. Wonder why injuries keep coming or performance plateaus.",
     ],
     
     "finisher": [
@@ -55,6 +57,7 @@ ALTERNATIVE_HOOKS = {
         "Or you could keep training like you're 30 when you're 50+. Ignore recovery needs. Push through fatigue. Break down instead of building up.",
         "Or you could keep ignoring that recovery takes longer at 45+. Train like age doesn't matter. Wonder why you're always tired or injured.",
         "Or you could keep using recovery protocols from your 30s. Push through because you're tough. Break down because you're not 30 anymore.",
+        "Or you could keep pretending age doesn't change adaptation timelines. Train hard constantly. Wonder why injuries keep coming or performance plateaus.",
     ],
     
     "compete": [

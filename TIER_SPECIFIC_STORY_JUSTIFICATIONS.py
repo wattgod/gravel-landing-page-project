@@ -70,7 +70,13 @@ STORY_JUSTIFICATIONS = {
         """This plan is for people 45+ who are still competitive but know their bodies need different recovery protocols. Training at 12-18 hours requires age-appropriate recovery architecture. This plan respects that. Recovery windows are longer. Adaptation timelines are compressed (2-3 week cycles instead of 4). The difference between competing and breaking at your age isn't training less—it's training with smarter recovery. Every session has purpose because recovery takes longer.""",
         
         # Variation 7: Masters-specific
-        """You're 50+ and your adaptation timeline is different. Your body adapts slower. Your recovery needs are longer. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The plan uses compressed periodization (2-3 week builds) and recovery-first architecture. You'll train hard, but recovery becomes the primary variable."""
+        """You're 50+ and your adaptation timeline is different. Your body adapts slower. Your recovery needs are longer. This plan respects that reality. Moderate volume with strategic intensity—enough to create adaptation, enough rest to absorb it. Age isn't a limitation—it's data that informs smarter training. The plan uses compressed periodization (2-3 week builds) and recovery-first architecture. You'll train hard, but recovery becomes the primary variable.""",
+        
+        # Variation 8: The systematic progression
+        """This plan eliminates the guesswork that plagues high-volume training. Every week has a specific purpose. Every session targets a measurable adaptation. Base builds durability. Build adds power. Peak sharpens performance. The progression is systematic, not accidental. You'll know exactly why you're doing each workout and how it contributes to race-day performance. That clarity creates confidence.""",
+        
+        # Variation 9: The execution focus
+        """Most training plans build fitness. This one builds race execution. The workouts create the engine. The protocols teach you to drive it. Pacing strategies for variable terrain. Fueling under fatigue. Mental protocols when it hurts. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just show up fit. That's what separates competitors from finishers."""
     ],
     
     "podium": [
