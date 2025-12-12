@@ -126,7 +126,7 @@ STORY_JUSTIFICATIONS = {
         """Unbound podiums are decided by details: who nailed their heat adaptation (Weeks 6-10), who got their fueling dialed (60-80g/hour), who stayed disciplined through taper instead of panicking. You've got the engine. This plan gives you the execution protocols that separate top-10 from top-3. Everyone at the front is fit. Not everyone is ready.""",
         
         # Variation 4: The methodology defense
-        """Here's why this plan works at elite volume: it balances polarized intensity with race-specific demands. You need sustainable power (Zone 2 base), repeatable efforts (threshold work), and explosive capacity (VO2max sessions). Most high-volume plans just pile on endurance. This one builds a complete athlete. That's what Unbound rewards—not just who can suffer longest, but who can attack when it matters.""",
+        """Here's why the {plan_name} works at elite volume: it balances polarized intensity with race-specific demands. You need sustainable power (Zone 2 base), repeatable efforts (threshold work), and explosive capacity (VO2max sessions). Most high-volume plans just pile on endurance. This one builds a complete athlete. That's what {race_name} rewards—not just who can suffer longest, but who can attack when it matters.""",
         
         # Variation 5: The reality check
         """This plan isn't for people hoping to podium. It's for people expecting to. That requires a different standard: no missed sessions, no half-effort intervals, no "close enough" on fueling protocols. The plan is structured, but execution is on you. At this level, coaching provides the roadmap. You still have to drive. But if you're serious about results, this gets you there.""",
