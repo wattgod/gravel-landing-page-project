@@ -90,6 +90,33 @@
 - Specific challenges called out (heat, mud, climbing, etc.)
 - Race-specific protocols (heat adaptation for Unbound, mud handling for Mid South)
 
+**RACE NAME REFERENCE RULES (Natural Language, Not Keyword Stuffing):**
+
+**First Mention:**
+- Use full formal name: "Unbound Gravel 200"
+- Establishes context and specificity
+
+**Subsequent Mentions:**
+- Use natural shorthand: "Unbound", "the race", "this race"
+- Avoid repeating full formal name 3+ times (sounds like keyword stuffing)
+- Mix formal and informal references naturally
+
+**Examples:**
+
+✅ **GOOD (Natural flow):**
+- "Most plans treat Unbound Gravel 200 like any other race. This one doesn't. Built for Unbound's heat, distance, and Kansas terrain—the race demands precision."
+- "Unbound Gravel 200 requires different preparation. This plan delivers it. Race day won't surprise you."
+
+❌ **BAD (Keyword stuffing):**
+- "Unbound Gravel 200 is challenging. This plan prepares you for Unbound Gravel 200. Unbound Gravel 200 demands heat adaptation. Unbound Gravel 200 requires..."
+- (Full name repeated 4+ times = robotic, keyword-stuffed)
+
+**Why this matters:**
+- Natural language reads better
+- Keyword stuffing breaks flow and sounds robotic
+- First mention establishes context, shorthand maintains readability
+- Still achieves race-specific positioning without repetition
+
 ### 4. TIER/LEVEL MENTIONS IN BODY COPY
 
 **Requirement:**

@@ -211,6 +211,106 @@ def test_generic_coach_speak():
     
     return errors
 
+def test_no_repeated_phrases():
+    """
+    TEST: No identical phrases repeated within same description
+    
+    WHY: Sounds lazy/robotic, breaks flow
+    EXAMPLE: "Everything here is calibrated..." twice = bad
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    # Common phrases to check for repetition
+    phrases_to_check = [
+        'everything here is calibrated',
+        'this plan delivers',
+        'built for',
+        'designed for',
+        'race-day capacity'
+    ]
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        for phrase in phrases_to_check:
+            count = content.count(phrase)
+            if count > 1:
+                errors.append(
+                    f"{plan_name}: Phrase '{phrase}' repeated {count} times "
+                    f"(should appear once maximum)"
+                )
+    
+    return errors
+
+def test_save_my_race_variations_isolated():
+    """
+    TEST: Emergency/limited time language only in Save My Race plans
+    
+    WHY: Confuses positioning, contradicts 12-week timeline
+    FORBIDDEN in non-SMR: "emergency", "limited time", "6 weeks", "salvage"
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    emergency_indicators = [
+        'emergency preparation',
+        'limited time',
+        'salvage fitness',
+        '6 weeks',
+        '6-week',
+        'last-minute'
+    ]
+    
+    for plan_name, filepath in descriptions:
+        is_save_my_race = 'save_my_race' in plan_name.lower() or 'save my race' in plan_name.lower()
+        
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        if not is_save_my_race:
+            # Non-SMR plan shouldn't have emergency language
+            for indicator in emergency_indicators:
+                if indicator in content:
+                    errors.append(
+                        f"{plan_name}: Contains '{indicator}' but is NOT "
+                        f"Save My Race plan (emergency language only for SMR)"
+                    )
+    
+    return errors
+
+def test_race_name_natural_references():
+    """
+    TEST: Race name uses natural language (not keyword stuffing)
+    
+    RULE: 
+    - First mention: Full formal name
+    - Subsequent: Shorthand ("Unbound", "the race", etc.)
+    
+    FAIL: 3+ mentions of full formal name (keyword stuffing)
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    race_name = "Unbound Gravel 200"
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Count formal name mentions
+        formal_mentions = content.count(race_name)
+        
+        if formal_mentions > 2:
+            errors.append(
+                f"{plan_name}: Full race name '{race_name}' appears "
+                f"{formal_mentions} times (sounds like keyword stuffing). "
+                f"Use shorthand after first mention ('Unbound', 'the race')."
+            )
+    
+    return errors
+
 def test_full_plan_designation_in_body():
     """
     TEST: Full plan designation (tier + level OR tier + masters) must appear in body copy
@@ -363,6 +463,39 @@ def run_positioning_tests():
         all_errors.extend(errors)
     else:
         print("  ✅ PASSED - No forbidden generic phrases found")
+    
+    # Test 5: No Repeated Phrases
+    print("\nTest 5: No Repeated Phrases")
+    errors = test_no_repeated_phrases()
+    if errors:
+        print("  ❌ FAILED")
+        for error in errors:
+            print(f"    {error}")
+        all_errors.extend(errors)
+    else:
+        print("  ✅ PASSED - No repeated phrases found")
+    
+    # Test 6: Save My Race Variations Isolated
+    print("\nTest 6: Save My Race Variations Isolated")
+    errors = test_save_my_race_variations_isolated()
+    if errors:
+        print("  ❌ FAILED")
+        for error in errors:
+            print(f"    {error}")
+        all_errors.extend(errors)
+    else:
+        print("  ✅ PASSED - Emergency language only in SMR plans")
+    
+    # Test 7: Race Name Natural References
+    print("\nTest 7: Race Name Natural References")
+    errors = test_race_name_natural_references()
+    if errors:
+        print("  ❌ FAILED")
+        for error in errors:
+            print(f"    {error}")
+        all_errors.extend(errors)
+    else:
+        print("  ✅ PASSED - Race name used naturally (not keyword stuffing)")
     
     # Summary
     print("\n" + "="*80)
