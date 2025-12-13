@@ -284,9 +284,13 @@ def test_save_my_race_variations_isolated():
     regular_indicators = [
         '12-week',
         '12 week',
+        'twelve week',
         'progressive overload',
         'unlock another gear',
         'your fitness will show up predictably',
+        'shows up predictably',  # Regular plan confidence
+        'structured progression',  # Regular plan language (long-term development)
+        'systematic development',  # Regular plan language
         'performance arrives',
         'full race-distance simulation',  # No time for this in 6 weeks
         'weekly practice building competence',  # Implies many weeks

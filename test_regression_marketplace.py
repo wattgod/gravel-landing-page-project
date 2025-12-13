@@ -136,12 +136,43 @@ def test_marketplace_closing_validation():
             raise RegressionTestFailure("Closing validation regression: Should use 'before_footer' logic, not global findall")
 
 def test_masters_content_isolation():
-    """REGRESSION: Masters-specific content must ONLY appear in Masters plans"""
+    """
+    REGRESSION: Masters-specific content must ONLY appear in Masters plans
+    
+    CHECKS ALL SECTIONS:
+    - Opening
+    - Story
+    - Features
+    - Guide topics
+    - Alternative section (CRITICAL - was missing)
+    - Value prop box
+    - Closing
+    """
     output_dir = Path("output/html_descriptions")
     if not output_dir.exists():
         return
     
-    masters_keywords = ['age 45+', 'age 50+', 'recovery protocols for 50+', 'masters-specific']
+    masters_keywords = [
+        'age 45+', 
+        'age 50+', 
+        'recovery protocols for 50+', 
+        'masters-specific',
+        'recovery timelines from your 30s',
+        'age-related',
+        'younger athletes',
+        "train like you're 25",
+        'at 50+',
+        'at your age',
+        'as you age',
+        'age-appropriate',
+        'recovery isn\'t optional',
+        'recovery becomes the primary',
+        'recovery architecture',
+        'recovery-first',
+        'longer recovery',
+        'adaptation timeline',
+        'adaptation windows'
+    ]
     errors = []
     
     for html_file in output_dir.rglob("*.html"):
@@ -150,14 +181,29 @@ def test_masters_content_isolation():
             continue
         
         with open(html_file, 'r', encoding='utf-8') as f:
-            content = f.read()
+            content = f.read().lower()
         
-        # Count Masters keyword mentions
-        masters_mentions = sum(1 for keyword in masters_keywords if keyword.lower() in content.lower())
+        # Extract alternative section specifically (was missing before)
+        alternative_match = re.search(r'<h3[^>]*>Alternative\?</h3>\s*<p[^>]*>([^<]+)</p>', content, re.IGNORECASE)
+        alternative_text = alternative_match.group(1) if alternative_match else ""
+        
+        # Check alternative section for Masters language
+        for keyword in masters_keywords:
+            if keyword in alternative_text:
+                errors.append(
+                    f"{html_file.name}: Alternative section contains Masters language '{keyword}' "
+                    f"in non-Masters plan (Masters content only for Masters plans)"
+                )
+        
+        # Count Masters keyword mentions in full content
+        masters_mentions = sum(1 for keyword in masters_keywords if keyword in content)
         
         # Allow 1-2 mentions (might be in general context), but flag 3+
         if masters_mentions >= 3:
-            errors.append(f"{html_file.name}: {masters_mentions} Masters-specific mentions in non-Masters plan")
+            errors.append(
+                f"{html_file.name}: {masters_mentions} Masters-specific mentions in non-Masters plan "
+                f"(Masters content only for Masters plans)"
+            )
     
     if errors:
         raise RegressionTestFailure("Masters content isolation regression:\n" + "\n".join(errors))
