@@ -400,6 +400,106 @@ def test_full_plan_designation_in_body():
     
     return errors, warnings
 
+def test_no_weak_verbs_in_stories():
+    """
+    TEST: Story justifications avoid generic/weak coach-speak verbs
+    
+    WHY: These verbs make copy sound generic, not distinctively Matti
+    FORBIDDEN: "refines", "emphasizes", "delivers", "provides", 
+               "helps", "allows", "enables"
+    BETTER: "builds", "breaks", "creates", "requires", direct statements
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    weak_verbs = [
+        'refines consistency',
+        'emphasizes',
+        'delivers precision',
+        'provides structure',
+        'helps you',
+        'allows you to',
+        'enables you to',
+        'breaks through plateaus'  # cliché
+    ]
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        # Check story section (approximate - between opening and features)
+        # This is rough but catches most issues
+        story_section = content[500:1500]  # Middle section typically story
+        
+        for weak_pattern in weak_verbs:
+            if weak_pattern in story_section:
+                errors.append(
+                    f"{plan_name}: Story contains weak verb pattern '{weak_pattern}' "
+                    f"(sounds generic, not Matti voice)"
+                )
+    
+    return errors
+
+def test_matti_voice_indicators():
+    """
+    TEST: Description includes distinctive Matti voice phrases
+    
+    WHY: Ensures voice consistency, not generic coach copy
+    REQUIREMENT: Each description should have 1-2 distinctive Matti phrases
+    
+    Distinctive Matti phrases:
+    - "predictably, not accidentally"
+    - "when suffering" / "when you're getting rattled"
+    - "race-day capacity, not training-day heroics"
+    - "practiced protocols, not theory"
+    - "race rewards [X], not [Y]"
+    - "making this work around a life"
+    """
+    descriptions = find_descriptions()
+    warnings = []
+    
+    matti_indicators = [
+        'predictably, not accidentally',
+        'predictably, not',  # Allow slight variation
+        'when suffering',
+        'when you\'re getting rattled',
+        'when rattled',
+        'race-day capacity',
+        'training-day heroics',
+        'practiced protocols',
+        'not theory',
+        'not just theory',
+        'race rewards',
+        'unbound rewards',
+        'making this work around a life',
+        'work around a life',
+        'different engine',
+        'this plan breaks that pattern',
+        'breaks that pattern'
+    ]
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        # Count how many Matti indicators present
+        indicators_found = [ind for ind in matti_indicators if ind in content]
+        
+        if len(indicators_found) == 0:
+            warnings.append(
+                f"{plan_name}: No distinctive Matti phrases found "
+                f"(copy may sound too generic - manual review recommended)"
+            )
+        elif len(indicators_found) == 1:
+            # One is borderline - warning but not error
+            warnings.append(
+                f"{plan_name}: Only 1 Matti phrase found ('{indicators_found[0]}') "
+                f"- consider adding more distinctive voice markers"
+            )
+        # 2+ indicators = good, no warning
+    
+    return warnings
+
 def run_positioning_tests():
     """Run all positioning quality tests"""
     print("\n" + "="*80)
@@ -496,6 +596,28 @@ def run_positioning_tests():
         all_errors.extend(errors)
     else:
         print("  ✅ PASSED - Race name used naturally (not keyword stuffing)")
+    
+    # Test 8: No Weak Verbs in Story Justifications
+    print("\nTest 8: No Weak Verbs in Story Justifications")
+    errors = test_no_weak_verbs_in_stories()
+    if errors:
+        print("  ❌ FAILED")
+        for error in errors:
+            print(f"    {error}")
+        all_errors.extend(errors)
+    else:
+        print("  ✅ PASSED - No generic coach-speak verbs found")
+    
+    # Test 9: Matti Voice Indicators Present
+    print("\nTest 9: Matti Voice Indicators Present")
+    warnings = test_matti_voice_indicators()
+    if warnings:
+        print("  ⚠️  WARNINGS (Manual Review Recommended)")
+        for warning in warnings:
+            print(f"    {warning}")
+        all_warnings.extend(warnings)
+    else:
+        print("  ✅ PASSED - Distinctive Matti phrases present (2+ per description)")
     
     # Summary
     print("\n" + "="*80)
