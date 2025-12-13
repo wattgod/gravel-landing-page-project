@@ -35,8 +35,6 @@ GUIDE_TOPICS = {
         "**Recovery Architecture** — Longer adaptation timelines, strategic rest that prevents breakdown at 45+",
         "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity",
         "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
-        "**Mental Skills: 6-2-7 Breathing** — Practiced breathing technique for suffering management—automatic response under race stress",
-        "**G Spot Training (88-92% FTP)** — Gravel-specific race pace training—sustainable for hours, not generic Sweet Spot protocols",
         "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ],
     
@@ -62,7 +60,7 @@ GUIDE_TOPICS = {
     "compete": [
         "**Training Fundamentals (Section 3)** — Periodization principles that create predictable performance",
         "**Your 12-Week Arc (Section 4)** — Progressive overload system with clear intensity targets",
-        "**Workout Execution (Section 6)** — How to nail VO2max, threshold, and G Spot (88-92% FTP) sessions",
+        "**Workout Execution (Section 6)** — How to nail VO2max, threshold, and race-pace sessions",
         "**Technical Skills (Section 7)** — Advanced bike handling for aggressive racing on rough terrain",
         "**Fueling & Hydration (Section 8)** — Race-pace fueling protocols that work under fatigue",
         "**Mental Training (Section 9)** — Tactical decision-making and suffering management systems",

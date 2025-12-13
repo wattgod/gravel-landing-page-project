@@ -12,7 +12,7 @@ SOLUTION_STATE_OPENINGS = {
         "Most training plans assume 10+ hours per week. You've got 4-5. Maybe 6 if the planets align. That doesn't make you less serious—it makes your training decisions more important. This plan is built for people who know the odds but show up regardless.",
         
         # Variation 3: The efficiency angle
-        "The pros don't finish Unbound because they train 25 hours a week. They train 25 hours because they're pros. You need a different engine. Four hours of structured training beats eight hours of riding around. This plan builds race-ready fitness without pretending you're someone you're not.",
+        "The pros don't finish Unbound because they train 25 hours a week. They train 25 hours because they're pros. You need a different approach. Four hours of structured training beats eight hours of riding around. This plan builds race-ready fitness without pretending you're someone you're not.",
         
         # Variation 4: The recognition
         "You're making this work around a life, not building a life around this. The training here respects that reality. Every workout is essential. Every rest day is strategic. No filler. No fluff. No cramming 12-hour plans into 4-hour weeks and hoping it works.",

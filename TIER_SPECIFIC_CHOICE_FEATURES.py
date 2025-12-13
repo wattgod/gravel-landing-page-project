@@ -16,9 +16,7 @@ CHOICE_FEATURES = {
         "**Recovery protocols for 50+ athletes**—longer recovery windows, strategic rest that prevents breakdown",
         "**Age-appropriate training load**—moderate volume respecting longer adaptation timelines at 45+",
         "**Injury prevention through recovery**—training matched to adaptation capacity, not chronological age",
-        "**G Spot training zone (88-92% FTP): gravel-specific race pace sustainable for 10+ hours—not generic Sweet Spot**",
         "**Three-Act pacing structure: tactical framework mapping when to push, sit, or survive across race duration**",
-        "**6-2-7 breathing technique: practiced weekly under stress until automatic—mental tool that works when suffering**",
         "**HRV monitoring protocols: objective recovery data guiding training adjustments instead of guesswork**",
         "**Dress rehearsal ride: 7-hour race simulation validating nutrition, pacing, equipment, mental protocols before race day**",
         "**Technical skills practice drills: cornering, descending, rough terrain—progressive protocols with weekly practice, not just theory**"
@@ -52,7 +50,6 @@ CHOICE_FEATURES = {
     "compete": [
         "**Periodized intensity** with dedicated base, build, and peak phases—no more year-round threshold hammering",
         "**VO2max intervals** that actually improve race performance—not just training-day suffering",
-        "**G Spot work** (88-92% FTP)—gravel-specific race-pace training superior to generic Sweet Spot",
         "**Recovery architecture** optimized for 12-18 hour weeks—enough stress to adapt, enough rest to absorb",
         "**Precision taper protocol** with deload timing proven for competitive athletes",
         "**Mental training system** for suffering management and tactical decision-making",

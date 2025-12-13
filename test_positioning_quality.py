@@ -500,6 +500,52 @@ def test_matti_voice_indicators():
     
     return warnings
 
+def test_no_forbidden_jargon():
+    """
+    TEST: Descriptions don't contain jargon explicitly removed by user
+    
+    BUG FIXED: 2024-12-12
+    ISSUE: G Spot, 6-2-7 breathing, GOAT Method appearing despite removal
+    USER INSTRUCTION: "Don't mention G Spot - no one knows what that is"
+    
+    WHY FORBIDDEN:
+    - G Spot zone (88-92% FTP): Requires explanation, confuses buyers
+    - 6-2-7 breathing: Too specific/nerdy, not compelling
+    - GOAT Method: Proprietary but needs explanation
+    - HRV protocols: Too technical for marketplace copy
+    
+    These were replaced with:
+    - 60-80g carbs/hour (trending, understandable)
+    - Three-Act pacing (clear framework)
+    - Heat adaptation (proven strategy)
+    - Dress rehearsal ride (obvious benefit)
+    """
+    descriptions = find_descriptions()
+    errors = []
+    
+    # Jargon explicitly forbidden by user (2024-12-12)
+    forbidden_jargon = [
+        ('G Spot', 'Use "race pace" or "sustainable power" instead'),
+        ('88-92% FTP', 'Mention this only if explaining race pace, not as feature'),
+        ('6-2-7 breathing', 'Too nerdy - use "breathing technique" or "mental training"'),
+        ('GOAT Method', 'Requires explanation - use specific protocols instead'),
+        ('HRV protocol', 'Too technical - use "recovery monitoring" or "readiness data"'),
+        ('HRV-guided', 'Too technical - use "recovery-based" or "data-guided"'),
+    ]
+    
+    for plan_name, filepath in descriptions:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        for jargon, suggestion in forbidden_jargon:
+            if jargon in content:
+                errors.append(
+                    f"{plan_name}: Contains forbidden jargon '{jargon}'. "
+                    f"{suggestion}"
+                )
+    
+    return errors
+
 def run_positioning_tests():
     """Run all positioning quality tests"""
     print("\n" + "="*80)
@@ -618,6 +664,17 @@ def run_positioning_tests():
         all_warnings.extend(warnings)
     else:
         print("  ✅ PASSED - Distinctive Matti phrases present (2+ per description)")
+    
+    # Test 10: No Forbidden Jargon
+    print("\nTest 10: No Forbidden Jargon")
+    errors = test_no_forbidden_jargon()
+    if errors:
+        print("  ❌ FAILED")
+        for error in errors:
+            print(f"    {error}")
+        all_errors.extend(errors)
+    else:
+        print("  ✅ PASSED - No forbidden jargon found (G Spot, 6-2-7, GOAT Method, HRV)")
     
     # Summary
     print("\n" + "="*80)

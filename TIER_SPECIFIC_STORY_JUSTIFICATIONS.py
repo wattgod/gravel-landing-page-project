@@ -15,7 +15,7 @@ STORY_JUSTIFICATIONS = {
         """This plan is for people making this work around a life, not building a life around this. You've got 4-5 hours. Maybe 6 on a good week. That doesn't make you less serious—it makes your training decisions more important. This plan respects that. Every workout is essential. Every rest day is strategic. No filler, no fluff, no pretending you're someone you're not.""",
         
         # Variation 4: The methodology defense
-        """Here's why this plan works with limited hours: it's built on intensity distribution that actually creates adaptation, not volume accumulation that creates fatigue. The pros aren't faster because they train 25 hours—they train 25 hours because they're pros. You need a different engine. This plan builds it. High-quality intervals, strategic recovery, race-specific skills. Everything else is optional.""",
+        """Here's why this plan works with limited hours: it's built on intensity distribution that actually creates adaptation, not volume accumulation that creates fatigue. The pros aren't faster because they train 25 hours—they train 25 hours because they're pros. You need a different approach. This plan builds it. High-quality intervals, strategic recovery, race-specific skills. Everything else is optional.""",
         
         # Variation 5: The reality check
         """This plan isn't designed to get you on a podium. It's designed to get you across the line feeling like you raced, not survived. That requires a specific training approach: sessions short enough to recover from, intense enough to create change, and focused enough to build the skills Unbound actually demands. Most plans ignore this because they're template workouts scaled down. This one was built from scratch for your constraints.""",
@@ -61,11 +61,11 @@ STORY_JUSTIFICATIONS = {
         # Variation 7: Masters-specific
         """You're 50+ and your recovery needs are different. Training at 8-12 hours requires different protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. Every session counts because recovery takes longer. Age isn't a limitation—it's data that informs better training. The plan builds you up without breaking you down.""",
         
-        # Variation 8: G Spot and Three-Act
-        """Most training plans use generic Sweet Spot protocols. This plan uses G Spot training (88-92% FTP)—gravel-specific race pace that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills like 6-2-7 breathing are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
+        # Variation 8: Race-pace training and Three-Act
+        """Most training plans use generic Sweet Spot protocols. This plan uses race-pace training (88-92% FTP)—gravel-specific intensity that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
         
         # Variation 9: Systems integration
-        """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice 6-2-7 breathing under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises.""",
+        """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice mental protocols under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises.""",
         
         # Variation 10: Nutrition and practice focus
         """Most plans ignore nutrition specifics. This plan teaches 60-80g carbs/hour protocol with practice sessions until it's automatic. The Three-Act pacing framework gives you specific tactics for each race phase—not vague advice to 'start conservatively.' Heat adaptation is built into weeks 6-10. The dress rehearsal ride validates everything before race day. No surprises.""",
@@ -114,8 +114,8 @@ STORY_JUSTIFICATIONS = {
         # Variation 9: The execution focus
         """Most training plans build fitness. This one builds race execution. The workouts create the engine. The protocols teach you to drive it. Pacing strategies for variable terrain. Fueling under fatigue. Mental protocols when it hurts. Technical skills for rough conditions. Everything here prepares you to execute on race day, not just show up fit. That's what separates competitors from finishers.""",
         
-        # Variation 10: GOAT Method systems
-        """High-volume training without systems breaks athletes. This plan uses GOAT Method training: G Spot progression, HRV-guided recovery, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline.""",
+        # Variation 10: Systems-based training
+        """High-volume training without systems breaks athletes. This plan uses systematic progression: race-pace training, recovery monitoring, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline.""",
         
         # Variation 11: Fueling and systems at volume
         """High-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_name} builds systems that work under load. Heat adaptation in weeks 6-10 prepares you for 85-95°F racing. Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at 12-18 hours requires systems, not just discipline.""",
