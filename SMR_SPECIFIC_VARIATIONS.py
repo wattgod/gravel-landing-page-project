@@ -28,25 +28,28 @@ SMR_OPENINGS = [
     "Six weeks before {race_name}. You haven't been training. Life got in the way. But you're showing up anyway. This plan is for people who refuse to defer. Cram the training. Make it happen. You'd be surprised what six weeks of focused work can do.",
 ]
 
-SMR_STORIES = [
-    # Variation 1: Triage approach (NO "life got in the way" - already in opening)
-    """This isn't about unlocking peak performance. It's about building minimum viable fitness to finish. The {plan_name} triages: race-critical skills first, mental preparation second, base fitness third. Not perfect preparation. Sufficient preparation.""",
-    
-    # Variation 2: What matters most (NO "life got in the way")
-    """Six weeks isn't enough for perfect preparation. But it's enough for sufficient preparation. The {plan_name} focuses on what matters most: fueling that works, pacing that prevents bonking, mental protocols for when it gets hard. Everything else is optional.""",
-    
-    # Variation 3: Emergency protocols (NO "life got in the way" - rephrased)
-    """Training fell apart. Work got busy. Kids got sick. But you're not deferring. The {plan_name} is built for this exact situation: compressed timeline, race-critical focus, emergency protocols. You won't build peak fitness in six weeks. But you'll build enough to finish.""",
-    
-    # Variation 4: Minimum viable (NO "life got in the way")
-    """This isn't about building optimal fitness. It's about building enough fitness to finish. The {plan_name} uses a triage approach: what you must have (fueling, pacing, mental toughness), what you can skip (volume, perfect progression). Six weeks. Focused work. Make it happen.""",
-    
-    # Variation 5: Haven't been training (NO "life got in the way")
-    """You haven't been training. But you're not deferring. The {plan_name} is built for this exact situation: compressed timeline, race-critical focus, emergency protocols. Six weeks isn't much time. But the plan makes it work.""",
-    
-    # Variation 6: Six weeks focus (NO "life got in the way")
-    """Six weeks isn't much time. But the plan makes it work: compressed timeline, race-critical focus, emergency protocols. You won't build peak fitness in six weeks. But you'll build enough to finish.""",
-]
+SMR_STORY_JUSTIFICATIONS = {
+    'finisher': [
+        "Training fell apart. Work got busy. Kids got sick. But you're not deferring. The Finisher Save My Race plan is built for this exact situation—6 weeks to cram the essentials and make it happen.",
+        "You haven't been training consistently. Maybe at all. But Unbound Gravel 200 is still happening. Six weeks isn't enough for perfect preparation, but it's enough to finish if you focus on what matters.",
+        "Life happened. Training didn't. You've got six weeks. The Finisher Save My Race plan strips away everything except race-critical preparation: fueling protocols, mental strategies, enough volume to survive 200 miles."
+    ],
+    'compete': [
+        "Six weeks before a competitive effort isn't ideal. But it's salvageable. Emergency protocols focus on maintaining existing fitness while adding race-critical sharpness.",
+        "You haven't been training. But you still want to compete, not just finish. Six weeks of compressed preparation—intensity over volume, race-specific sharpness over base building.",
+        "Training didn't happen. Racing still will. Six weeks to salvage competitive fitness: threshold sharpness, fueling precision, mental protocols that work under pressure."
+    ],
+    'ayahuasca': [
+        "Six weeks. 0-5 hours per week. Still planning to race Unbound Gravel 200. The Ayahuasca Save My Race plan is brutally honest: you won't be fast, but you can finish if you nail the controllables.",
+        "Life left you with almost no training time and six weeks before Unbound. Don't defer. The Ayahuasca Save My Race plan focuses entirely on what gets you across the line: mental preparation, fueling strategy, equipment choices.",
+        "You've got minimal time and six weeks until Unbound Gravel 200. The plan prioritizes survival essentials: practiced fueling protocols, mental strategies for low points, equipment that won't fail you."
+    ],
+    'podium': [
+        "Six weeks before a podium attempt is a crisis. But competitive fitness doesn't disappear instantly. Emergency protocols maintain sharpness while adding race-critical elements you can't skip.",
+        "Training fell apart with six weeks to go. Podium goals haven't changed. The Save My Race plan salvages competitive capacity: threshold precision, race-specific intensity, mental preparation for performing under pressure.",
+        "You haven't been training. You still want to podium. Six weeks of compressed race-specific preparation—no base building, just sharpness and race execution under competitive demands."
+    ]
+}
 
 SMR_FEATURES = [
     "**6-week compressed timeline: race-critical focus only, everything else optional**",
@@ -78,34 +81,53 @@ SMR_ALTERNATIVES = [
     "Or show up completely unprepared. Hope grit alone gets you through 200 miles. It won't.",
 ]
 
-SMR_CLOSINGS = [
-    "Built for {race_name}. For people who haven't been training but refuse to defer. Six weeks. Cram the training and make it happen.",
-    "For people with six weeks before {race_name}. Life got in the way. Training didn't happen. But you're not deferring—you're cramming and making it work.",
-    "Six weeks before race day. Behind on training. Not deferring. This is the plan for making it happen anyway.",
-    "Built for {race_name}. For people who haven't been training but refuse to postpone. Six weeks. Cram the work. Make it happen.",
-    "This is {race_name}. For people who refuse to wait another year. Six weeks. Behind on training. Not deferring. Make it happen.",
-]
+SMR_CLOSINGS = {
+    'finisher': [
+        "Built for Unbound Gravel 200. For people who haven't been training but refuse to defer. Six weeks. Cram the training and make it happen.",
+        "For people with six weeks before Unbound. Life got in the way. Training didn't happen. But you're not deferring—you're cramming and making it work.",
+        "Six weeks before Unbound Gravel 200. You haven't been training. Don't defer. Focus on race-critical preparation and finish the race."
+    ],
+    'compete': [
+        "Built for Unbound Gravel 200. For competitive athletes whose training fell apart with six weeks to go. Salvage fitness. Execute anyway.",
+        "Six weeks before Unbound. Training didn't happen. Competitive goals haven't changed. Emergency protocols to salvage race-day sharpness.",
+        "For people who still want to compete at Unbound despite imperfect preparation. Six weeks. Compressed timeline. Race-critical focus."
+    ],
+    'ayahuasca': [
+        "Built for Unbound Gravel 200. For people with minimal time and six weeks to prepare. You won't be fast. But you can finish.",
+        "Six weeks. 0-5 hours per week. Still racing Unbound. Survival preparation: mental protocols, fueling strategy, realistic expectations.",
+        "For people with almost no training time before Unbound. Emergency preparation focusing on what you can control: mind, nutrition, equipment."
+    ],
+    'podium': [
+        "Built for Unbound Gravel 200. For competitive athletes with six weeks to salvage podium fitness. Emergency timeline. Execute anyway.",
+        "Six weeks before Unbound. Training fell apart. Podium goals haven't. Compressed race-specific preparation for competitive performance despite imperfect prep.",
+        "For athletes who still want to podium at Unbound despite training gaps. Six weeks of race-critical sharpness and competitive execution protocols."
+    ]
+}
 
-# SMR-SPECIFIC VALUE PROP BOXES
+# SMR-SPECIFIC VALUE PROP BOXES (tier-specific)
 # Purpose: Urgency/salvage positioning, NOT performance/progression
 # Must emphasize: minimum viable, sufficient not perfect, triage approach
 
-SMR_VALUE_PROP_BOXES = [
-    {
-        "philosophy": "Six weeks isn't enough for perfect preparation. But it's enough to finish. Emergency protocols for mental preparation. Triage focus on race-critical skills.",
-        "props": ["Emergency mental preparation protocols", "Triage system: what matters most", "Minimum viable fitness approach", "Six-week compressed timeline"]
-    },
-    {
-        "philosophy": "Salvage mission, not optimization. Focus on what gets you across the line: fueling, mental prep, pacing. Everything else is optional.",
-        "props": ["Race-critical skills only", "Emergency protocols for when it gets hard", "Triage approach: what you can skip", "Sufficient preparation, not perfect"]
-    },
-    {
-        "philosophy": "Minimum viable fitness—not optimal, sufficient. You won't build peak fitness in six weeks. But you'll build enough.",
-        "props": ["Compressed timeline: six weeks", "Race-critical focus only", "Emergency mental preparation", "Triage system: what matters most"]
-    },
-    {
-        "philosophy": "Life got in the way. Training didn't happen. This plan is built for that exact situation: salvage what you can, focus on what matters.",
-        "props": ["Six-week emergency protocols", "Triage approach to training", "Minimum viable fitness", "Race-critical skills first"]
-    },
-]
+SMR_VALUE_PROP_BOXES = {
+    'finisher': [
+        "Six weeks isn't enough for perfect preparation. But it's enough to finish. Emergency protocols for mental preparation when things get hard. Triage focus on race-critical skills: fueling, pacing, survival strategies.",
+        "Salvage mission, not optimization. Focus on what gets you across the line: fueling protocols practiced under load, mental strategies for low points, enough volume to survive 200 miles. Everything else is optional.",
+        "Compressed timeline requires brutal prioritization. Fueling precision over fitness gains. Mental protocols over volume accumulation. Race-critical preparation over systematic development."
+    ],
+    'compete': [
+        "Six weeks to salvage competitive fitness. Threshold sharpness over base volume. Race execution protocols over systematic progression. Mental preparation for performing when training wasn't ideal.",
+        "Emergency timeline demands focus. Maintain existing fitness. Add race-critical sharpness. Practice protocols that work under competitive pressure. Accept limitations, execute anyway.",
+        "Compressed preparation for competitive goals. Intensity over volume. Sharpness over endurance. Practiced race execution when preparation time ran out."
+    ],
+    'ayahuasca': [
+        "Six weeks with minimal training time. Focus entirely on controllables: fueling strategy, mental preparation, equipment choices. Fitness won't be high, but you can still finish.",
+        "Survival preparation, not performance preparation. Mental protocols for when it gets hard. Practiced fueling at low intensity. Equipment that won't fail. Realistic expectations about pace.",
+        "Minimal time requires brutal honesty. You won't be fast. But you can finish if you nail the essentials: fueling every hour, mental strategies for suffering, pacing that prevents blowups."
+    ],
+    'podium': [
+        "Emergency protocols for maintaining competitive capacity. Threshold precision over volume accumulation. Race-specific sharpness over systematic development. Mental preparation for performing despite imperfect preparation.",
+        "Six weeks to salvage podium fitness. High-intensity sharpness. Race execution under pressure. Fueling precision at competitive watts. Accept the timeline, execute the plan.",
+        "Compressed timeline for competitive goals. Maintain existing threshold capacity. Add race-critical intensity. Practice protocols that work when training fell short."
+    ]
+}
 

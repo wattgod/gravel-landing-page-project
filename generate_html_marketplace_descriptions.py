@@ -15,7 +15,7 @@ from TIER_SPECIFIC_STORY_JUSTIFICATIONS import STORY_JUSTIFICATIONS
 from TIER_SPECIFIC_VALUE_PROP_BOXES import VALUE_PROP_BOXES
 from GUIDE_INTRIGUE_LINES import GUIDE_INTRIGUE_LINES
 from SMR_SPECIFIC_VARIATIONS import (
-    SMR_OPENINGS, SMR_STORIES, SMR_FEATURES, 
+    SMR_OPENINGS, SMR_STORY_JUSTIFICATIONS, SMR_FEATURES, 
     SMR_GUIDE_TOPICS, SMR_ALTERNATIVES, SMR_CLOSINGS, SMR_VALUE_PROP_BOXES
 )
 
@@ -364,9 +364,10 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         solution_state = random.choice(available_openings) if available_openings else random.choice(SMR_OPENINGS)
         used_opening.add(solution_state)
         
-        # Select SMR story (triage, minimum viable, sufficient not perfect)
-        available_stories = [s for s in SMR_STORIES if s not in used_story]
-        story_justification = random.choice(available_stories) if available_stories else random.choice(SMR_STORIES)
+        # Select SMR story (tier-specific, triage, minimum viable, sufficient not perfect)
+        smr_stories = SMR_STORY_JUSTIFICATIONS.get(tier, [])
+        available_stories = [s for s in smr_stories if s not in used_story]
+        story_justification = random.choice(available_stories) if available_stories else random.choice(smr_stories) if smr_stories else "The {plan_name} is built for this exact situation: compressed timeline, race-critical focus, emergency protocols."
         used_story.add(story_justification)
         
         # Format SMR placeholders immediately (before plan_name is generated)
@@ -393,10 +394,23 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
             available_closings = [c for c in SMR_CLOSINGS if c not in used_content.get('closing', set())]
             closing_statement = random.choice(available_closings) if available_closings else random.choice(SMR_CLOSINGS)
         
-    guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
+        guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
         
-        # SMR value prop box (use SMR-specific, NOT regular tier variations)
-        value_prop_box = random.choice(SMR_VALUE_PROP_BOXES)
+        # SMR value prop box (tier-specific, use SMR-specific, NOT regular tier variations)
+        smr_value_props = SMR_VALUE_PROP_BOXES.get(tier, [])
+        if smr_value_props:
+            # Convert string to dict format for consistency
+            value_prop_philosophy = random.choice(smr_value_props)
+            value_prop_box = {
+                "philosophy": value_prop_philosophy,
+                "props": ["Emergency mental preparation protocols", "Triage system: what matters most", "Minimum viable fitness approach", "Six-week compressed timeline"]
+            }
+        else:
+            # Fallback
+            value_prop_box = {
+                "philosophy": "Six weeks isn't enough for perfect preparation. But it's enough to finish.",
+                "props": ["Emergency protocols", "Triage approach", "Minimum viable fitness", "Six-week timeline"]
+            }
     
     # ========================================================================
     # REGULAR PLANS: Standard tier-specific positioning
@@ -638,8 +652,11 @@ def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="o
             is_save_my_race = "save_my_race" in variation.lower()
             
             if is_save_my_race:
-                # SMR plans: use SMR-specific closings
-                closing_pool = SMR_CLOSINGS
+                # SMR plans: use tier-specific SMR closings
+                closing_pool = SMR_CLOSINGS.get(tier, [])
+                if not closing_pool:
+                    # Fallback to first tier available
+                    closing_pool = list(SMR_CLOSINGS.values())[0] if SMR_CLOSINGS else []
             else:
                 # Regular plans: use tier-specific closings
                 closing_pool = CLOSING_STATEMENTS[tier]
