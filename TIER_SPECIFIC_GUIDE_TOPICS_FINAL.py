@@ -35,7 +35,7 @@ GUIDE_TOPICS = {
         "**Recovery Architecture** — Longer adaptation timelines, strategic rest that prevents breakdown at 45+",
         "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity",
         "**Race Tactics: Three-Act Structure** — When to push, when to sit, when to survive—mapped across race timeline with specific decision points",
-        "**HRV-Guided Recovery** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
+        "**Recovery Monitoring** — Objective readiness scores guide training adjustments—data replaces guesswork on recovery status"
     ],
     
     "finisher": [
@@ -48,7 +48,7 @@ GUIDE_TOPICS = {
         "**Race-Specific Preparation** — Heat adaptation weeks (6-10) delivering 5-8% performance gains",
         "**Race Week Protocol** — Proven taper sequence that peaks fitness without losing form",
         "**Masters-Specific Considerations (Section 13)** — Recovery protocols for 50+ athletes, age-appropriate training load, injury prevention strategies",
-        "**Recovery Architecture** — Longer adaptation timelines, HRV monitoring, strategic rest that prevents breakdown at 45+",
+        "**Recovery Architecture** — Longer adaptation timelines, recovery monitoring, strategic rest that prevents breakdown at 45+",
         "**Age-Appropriate Training** — Moderate volume with emphasis on recovery, training load matched to adaptation capacity",
         "**Race Tactics: Three-Act Structure** — Conservative start, strategic middle, survival finish mapped to race timeline",
         "**Fueling Protocols: 60-80g Carbs/Hour** — High-carb fueling strategy with practice protocols—automatic execution under stress",
@@ -67,7 +67,7 @@ GUIDE_TOPICS = {
         "**Race Tactics (Section 10)** — Execution playbook covering pacing, group dynamics, and attack timing",
         "**Race-Specific Preparation (Section 11)** — Heat protocols, altitude adaptation (if needed), equipment choices",
         "**Masters-Specific Considerations (Section 13)** — Recovery protocols acknowledging longer adaptation windows, age-appropriate training load",
-        "**Recovery Management** — HRV-based autoregulation, compressed periodization (2-3 week cycles), injury prevention at 45+",
+        "**Recovery Management** — Data-guided autoregulation, compressed periodization (2-3 week cycles), injury prevention at 45+",
         "**Age-Appropriate Periodization** — Training adapted for slower recovery, moderate volume respecting adaptation timelines",
         "**Race Tactics: Three-Act Structure** — Conservative start, strategic middle, survival finish mapped to race timeline",
         "**Fueling Protocols: 60-80g Carbs/Hour** — High-carb fueling strategy with practice protocols—automatic execution under stress",

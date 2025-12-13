@@ -62,7 +62,7 @@ STORY_JUSTIFICATIONS = {
         """You're 50+ and your recovery needs are different. Training at 8-12 hours requires different protocols than it did at 30. This plan acknowledges that. Recovery windows are longer. Adaptation timelines are respected. Every session counts because recovery takes longer. Age isn't a limitation—it's data that informs better training. The plan builds you up without breaking you down.""",
         
         # Variation 8: Race-pace training and Three-Act
-        """Most training plans use generic Sweet Spot protocols. This plan uses race-pace training (88-92% FTP)—gravel-specific intensity that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
+        """Most training plans use generic Sweet Spot protocols. This plan uses race-pace training—gravel-specific intensity that's sustainable for 10+ hours. The Three-Act pacing structure gives you a tactical framework, not vague advice to 'start conservatively.' Mental skills are practiced weekly until automatic. Everything is built for gravel's variable-pace demands, not road racing.""",
         
         # Variation 9: Systems integration
         """Generic plans ignore mental training and technical skills. This plan integrates both systematically. You'll practice mental protocols under stress, rehearse Three-Act pacing decisions, and drill cornering and descending weekly. The dress rehearsal ride validates everything—nutrition, pacing, equipment, mental protocols—before race day. No surprises.""",

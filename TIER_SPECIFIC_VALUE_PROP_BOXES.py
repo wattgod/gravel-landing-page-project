@@ -70,7 +70,7 @@ VALUE_PROP_BOXES = {
         # Variation 6: Masters-specific
         {
             "philosophy": "Recovery isn't optional at 45+. The plan respects longer adaptation timelines without sacrificing performance.",
-            "props": ["Recovery protocols for 50+ athletes", "Age-appropriate training load", "Injury prevention strategies", "HRV-based autoregulation"]
+            "props": ["Recovery protocols for 50+ athletes", "Age-appropriate training load", "Injury prevention strategies", "Data-guided recovery monitoring"]
         },
         # Variation 7: Masters-specific
         {
@@ -128,7 +128,7 @@ VALUE_PROP_BOXES = {
         # Variation 6: Masters-specific
         {
             "philosophy": "At 45+, recovery architecture determines results. Training load matched to adaptation capacity.",
-            "props": ["Recovery protocols acknowledging longer adaptation windows", "Age-appropriate training volume", "Injury prevention through strategic rest", "HRV-based autoregulation for 50+ athletes"]
+            "props": ["Recovery protocols acknowledging longer adaptation windows", "Age-appropriate training volume", "Injury prevention through strategic rest", "Data-guided recovery monitoring for 50+ athletes"]
         },
         # Variation 7: Masters-specific
         {
