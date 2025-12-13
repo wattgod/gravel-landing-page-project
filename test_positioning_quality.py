@@ -502,23 +502,33 @@ def test_matti_voice_indicators():
 
 def test_no_forbidden_jargon():
     """
-    TEST: Descriptions don't contain jargon explicitly removed by user
+    TEST: Descriptions don't contain jargon or false claims explicitly removed by user
     
     BUG FIXED: 2024-12-12
     ISSUE: G Spot, 6-2-7 breathing, GOAT Method appearing despite removal
     USER INSTRUCTION: "Don't mention G Spot - no one knows what that is"
     
+    FALSE CLAIM FIXED: 2024-12-12
+    ISSUE: "Four hours beats eight hours" - unrealistic claim
+    USER INSTRUCTION: "I don't want to promise that training for 4 hours a week 
+    makes you better than 8 hours a week that's not realistic"
+    
     WHY FORBIDDEN:
+    JARGON:
     - G Spot zone (88-92% FTP): Requires explanation, confuses buyers
     - 6-2-7 breathing: Too specific/nerdy, not compelling
     - GOAT Method: Proprietary but needs explanation
     - HRV protocols: Too technical for marketplace copy
+    
+    FALSE CLAIMS:
+    - "4 hours beats 8 hours": Unrealistic - 4 structured hours don't beat 8 hours total
     
     These were replaced with:
     - 60-80g carbs/hour (trending, understandable)
     - Three-Act pacing (clear framework)
     - Heat adaptation (proven strategy)
     - Dress rehearsal ride (obvious benefit)
+    - Reality-grounded alternatives: "You won't build the fitness of someone training 15 hours. But you'll build enough—if every workout counts."
     """
     descriptions = find_descriptions()
     errors = []
@@ -682,8 +692,8 @@ def run_positioning_tests():
     else:
         print("  ✅ PASSED - Distinctive Matti phrases present (2+ per description)")
     
-    # Test 10: No Forbidden Jargon
-    print("\nTest 10: No Forbidden Jargon")
+    # Test 10: No Forbidden Jargon/Claims
+    print("\nTest 10: No Forbidden Jargon/Claims")
     errors = test_no_forbidden_jargon()
     if errors:
         print("  ❌ FAILED")
@@ -691,7 +701,7 @@ def run_positioning_tests():
             print(f"    {error}")
         all_errors.extend(errors)
     else:
-        print("  ✅ PASSED - No forbidden jargon found (G Spot, 6-2-7, GOAT Method, HRV)")
+        print("  ✅ PASSED - No forbidden jargon or false claims found")
     
     # Summary
     print("\n" + "="*80)
