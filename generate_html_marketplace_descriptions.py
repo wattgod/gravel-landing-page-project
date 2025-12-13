@@ -465,11 +465,26 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Generate clean plan name
     plan_name = generate_plan_name(tier, variation)
     
+    # Format placeholders in SMR content (must happen after plan_name is generated)
+    if is_save_my_race:
+        # Format SMR opening
+        if '{race_name}' in solution_state:
+            solution_state = solution_state.format(race_name=race_name)
+        # Format SMR story
+        if '{plan_name}' in story_justification or '{race_name}' in story_justification:
+            story_justification = story_justification.format(plan_name=plan_name, race_name=race_name)
+        # Format SMR closing
+        if '{race_name}' in closing_statement:
+            closing_statement = closing_statement.format(race_name=race_name)
+    
     # Format story justification with plan_name and race_name (if placeholders exist)
     # This allows variations to include full plan designation and race name
-    if '{plan_name}' in story_justification or '{race_name}' in story_justification:
-        story_justification = story_justification.format(plan_name=plan_name, race_name=race_name)
-    # Also format alternative_hook if it has placeholders
+    # Works for regular plans (SMR already formatted above)
+    if not is_save_my_race:
+        if '{plan_name}' in story_justification or '{race_name}' in story_justification:
+            story_justification = story_justification.format(plan_name=plan_name, race_name=race_name)
+    
+    # Also format alternative_hook if it has placeholders (for both SMR and regular)
     if '{plan_name}' in alternative_hook or '{race_name}' in alternative_hook:
         alternative_hook = alternative_hook.format(plan_name=plan_name, race_name=race_name)
     
