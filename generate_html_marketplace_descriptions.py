@@ -16,7 +16,7 @@ from TIER_SPECIFIC_VALUE_PROP_BOXES import VALUE_PROP_BOXES
 from GUIDE_INTRIGUE_LINES import GUIDE_INTRIGUE_LINES
 from SMR_SPECIFIC_VARIATIONS import (
     SMR_OPENINGS, SMR_STORIES, SMR_FEATURES, 
-    SMR_GUIDE_TOPICS, SMR_ALTERNATIVES, SMR_CLOSINGS
+    SMR_GUIDE_TOPICS, SMR_ALTERNATIVES, SMR_CLOSINGS, SMR_VALUE_PROP_BOXES
 )
 
 # Helper functions to extract content from HTML (same as validate_descriptions.py)
@@ -395,8 +395,8 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         
         guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
         
-        # SMR value prop box (use tier-specific but will be filtered by content)
-        value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
+        # SMR value prop box (use SMR-specific, NOT regular tier variations)
+        value_prop_box = random.choice(SMR_VALUE_PROP_BOXES)
     
     # ========================================================================
     # REGULAR PLANS: Standard tier-specific positioning

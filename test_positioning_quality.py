@@ -217,6 +217,7 @@ def test_no_repeated_phrases():
     
     WHY: Sounds lazy/robotic, breaks flow
     EXAMPLE: "Everything here is calibrated..." twice = bad
+    CRITICAL: "Life got in the way" appearing twice (opening + story) = bad
     """
     descriptions = find_descriptions()
     errors = []
@@ -227,7 +228,8 @@ def test_no_repeated_phrases():
         'this plan delivers',
         'built for',
         'designed for',
-        'race-day capacity'
+        'race-day capacity',
+        'life got in the way',  # Critical for SMR plans - should not repeat
     ]
     
     for plan_name, filepath in descriptions:
