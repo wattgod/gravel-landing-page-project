@@ -246,21 +246,44 @@ def test_no_repeated_phrases():
 
 def test_save_my_race_variations_isolated():
     """
-    TEST: Emergency/limited time language only in Save My Race plans
+    TEST: Bidirectional isolation - SMR and regular plans use correct variations
     
-    WHY: Confuses positioning, contradicts 12-week timeline
-    FORBIDDEN in non-SMR: "emergency", "limited time", "6 weeks", "salvage"
+    WHY: SMR is different product with different positioning (salvage/urgency vs performance)
+    
+    BIDIRECTIONAL CHECK:
+    1. SMR plans MUST have SMR language (6 weeks, salvage, triage, don't defer)
+    2. SMR plans MUST NOT have regular language (12-week, progressive overload, unlock gear)
+    3. Regular plans MUST NOT have SMR language (emergency, 6 weeks, salvage)
     """
     descriptions = find_descriptions()
     errors = []
     
-    emergency_indicators = [
-        'emergency preparation',
-        'limited time',
-        'salvage fitness',
+    # SMR-specific language (REQUIRED in SMR, FORBIDDEN in regular)
+    smr_indicators = [
         '6 weeks',
         '6-week',
-        'last-minute'
+        'six weeks',
+        'life got in the way',
+        "don't defer",
+        'salvage',
+        'triage',
+        'minimum viable',
+        'sufficient preparation',
+        'emergency',
+        'cram',
+        'haven\'t been training'
+    ]
+    
+    # Regular plan language (FORBIDDEN in SMR, OK in regular)
+    regular_indicators = [
+        '12-week',
+        '12 week',
+        'progressive overload',
+        'unlock another gear',
+        'your fitness will show up predictably',
+        'performance arrives',
+        'full race-distance simulation',  # No time for this in 6 weeks
+        'weekly practice building competence',  # Implies many weeks
     ]
     
     for plan_name, filepath in descriptions:
@@ -269,13 +292,31 @@ def test_save_my_race_variations_isolated():
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read().lower()
         
-        if not is_save_my_race:
-            # Non-SMR plan shouldn't have emergency language
-            for indicator in emergency_indicators:
+        if is_save_my_race:
+            # SMR plan: MUST have SMR language, MUST NOT have regular language
+            
+            # Check for missing SMR language (6 weeks should be prominent)
+            smr_found = any(indicator in content for indicator in smr_indicators)
+            if not smr_found:
+                errors.append(
+                    f"{plan_name}: Save My Race plan missing SMR-specific language "
+                    f"(should mention 6 weeks, salvage, triage, don't defer)"
+                )
+            
+            # Check for forbidden regular language
+            for indicator in regular_indicators:
                 if indicator in content:
                     errors.append(
-                        f"{plan_name}: Contains '{indicator}' but is NOT "
-                        f"Save My Race plan (emergency language only for SMR)"
+                        f"{plan_name}: Save My Race plan contains regular plan language '{indicator}'. "
+                        f"SMR plans should use salvage/urgency positioning, not performance/progression."
+                    )
+        else:
+            # Regular plan: MUST NOT have SMR language
+            for indicator in smr_indicators:
+                if indicator in content:
+                    errors.append(
+                        f"{plan_name}: Contains SMR language '{indicator}' but is NOT "
+                        f"Save My Race plan (SMR language only for 6-week emergency plans)"
                     )
     
     return errors

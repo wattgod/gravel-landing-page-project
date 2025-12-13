@@ -14,6 +14,10 @@ from ALTERNATIVE_HOOKS_BEHAVIORAL import ALTERNATIVE_HOOKS
 from TIER_SPECIFIC_STORY_JUSTIFICATIONS import STORY_JUSTIFICATIONS
 from TIER_SPECIFIC_VALUE_PROP_BOXES import VALUE_PROP_BOXES
 from GUIDE_INTRIGUE_LINES import GUIDE_INTRIGUE_LINES
+from SMR_SPECIFIC_VARIATIONS import (
+    SMR_OPENINGS, SMR_STORIES, SMR_FEATURES, 
+    SMR_GUIDE_TOPICS, SMR_ALTERNATIVES, SMR_CLOSINGS
+)
 
 # Helper functions to extract content from HTML (same as validate_descriptions.py)
 def extract_opening_from_html(html):
@@ -290,6 +294,9 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Set seed for reproducible randomization
     random.seed(plan_seed)
     
+    # Determine if this is a Save My Race plan (CRITICAL: Different product, different positioning)
+    is_save_my_race = "save_my_race" in variation.lower()
+    
     # Determine if this is a Masters plan
     is_masters_plan = "masters" in variation.lower()
     
@@ -346,59 +353,108 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     used_features = used_content.get('features', set()) if used_content else set()
     
     # ========================================================================
-    # PHASE 1: GUARANTEE CRITICAL POSITIONING (use FULL pools, no Masters filtering)
+    # SAVE MY RACE: COMPLETELY DIFFERENT POSITIONING (salvage/urgency, not performance)
     # ========================================================================
-    # Positioning requirements trump content filtering.
-    # Tier-specific positioning > Masters content specificity
-    
-    # GUARANTEED POSITIONING: Story must contain {plan_name} for full designation
-    # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
-    story_justification = select_variation_with_placeholder(
-        STORY_JUSTIFICATIONS[tier],  # Full pool, no Masters filtering
-        False,  # Don't filter for Masters - we need positioning first
-        '{plan_name}', 
-        used_story
-    )
-    used_story.add(story_justification)
-    
-    # GUARANTEED POSITIONING: First feature must contain {race_name} for race-specificity
-    # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
-    first_feature = select_variation_with_placeholder(
-        CHOICE_FEATURES[tier],  # Full pool, no Masters filtering
-        False,  # Don't filter for Masters - we need positioning first
-        '{race_name}',
-        used_features
-    )
-    used_features.add(first_feature)
-    choice_features_list = [first_feature]
-    
-    # ========================================================================
-    # PHASE 2: REMAINING VARIATIONS (Masters-filtered for content appropriateness)
-    # ========================================================================
-    # Now that positioning is guaranteed, filter remaining selections for Masters content
-    
-    # Select other components with Masters filtering
-    solution_state = select_excluding_used(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, used_opening, k=1)
-    guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
-    guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
-    alternative_hook = select_excluding_used(ALTERNATIVE_HOOKS[tier], is_masters_plan, used_alternative, k=1)
-    
-    # Remaining features: Masters-filtered random selection
-    for i in range(2):  # Need 2 more features (already have first one)
-        available_features = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=len(CHOICE_FEATURES[tier]))
-        if isinstance(available_features, list):
-            available = [f for f in available_features if f not in used_features]
-            feature = random.choice(available) if available else random.choice(available_features)
+    if is_save_my_race:
+        # SMR plans use ONLY SMR-specific variations
+        # NOT regular tier variations (different product, different positioning)
+        
+        # Select SMR opening (salvage/urgency, 6 weeks)
+        available_openings = [op for op in SMR_OPENINGS if op not in used_opening]
+        solution_state = random.choice(available_openings) if available_openings else random.choice(SMR_OPENINGS)
+        used_opening.add(solution_state)
+        
+        # Select SMR story (triage, minimum viable, sufficient not perfect)
+        available_stories = [s for s in SMR_STORIES if s not in used_story]
+        story_justification = random.choice(available_stories) if available_stories else random.choice(SMR_STORIES)
+        used_story.add(story_justification)
+        
+        # Select SMR features (6-week timeline, race-critical focus, emergency protocols)
+        available_features = [f for f in SMR_FEATURES if f not in used_features]
+        choice_features_list = random.sample(available_features, min(3, len(available_features))) if len(available_features) >= 3 else available_features
+        for f in choice_features_list:
+            used_features.add(f)
+        
+        # Select SMR guide topics (6-week arc, triage, emergency)
+        guide_topics_list = random.sample(SMR_GUIDE_TOPICS, min(3, len(SMR_GUIDE_TOPICS)))
+        
+        # Select SMR alternative (defer or cram)
+        available_alternatives = [a for a in SMR_ALTERNATIVES if a not in used_alternative]
+        alternative_hook = random.choice(available_alternatives) if available_alternatives else random.choice(SMR_ALTERNATIVES)
+        used_alternative.add(alternative_hook)
+        
+        # Select SMR closing (haven't been training, don't defer, 6 weeks)
+        if forced_closing:
+            closing_statement = forced_closing
         else:
-            feature = available_features
-        choice_features_list.append(feature)
-        used_features.add(feature)
-    # Use forced closing if provided, otherwise random
-    if forced_closing:
-        closing_statement = forced_closing
+            available_closings = [c for c in SMR_CLOSINGS if c not in used_content.get('closing', set())]
+            closing_statement = random.choice(available_closings) if available_closings else random.choice(SMR_CLOSINGS)
+        
+        guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
+        
+        # SMR value prop box (use tier-specific but will be filtered by content)
+        value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
+    
+    # ========================================================================
+    # REGULAR PLANS: Standard tier-specific positioning
+    # ========================================================================
     else:
-        closing_statement = random.choice(CLOSING_STATEMENTS[tier])  # No Masters variations in closings
-    value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
+        # ========================================================================
+        # PHASE 1: GUARANTEE CRITICAL POSITIONING (use FULL pools, no Masters filtering)
+        # ========================================================================
+        # Positioning requirements trump content filtering.
+        # Tier-specific positioning > Masters content specificity
+        
+        # GUARANTEED POSITIONING: Story must contain {plan_name} for full designation
+        # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
+        story_justification = select_variation_with_placeholder(
+            STORY_JUSTIFICATIONS[tier],  # Full pool, no Masters filtering
+            False,  # Don't filter for Masters - we need positioning first
+            '{plan_name}', 
+            used_story
+        )
+        used_story.add(story_justification)
+        
+        # GUARANTEED POSITIONING: First feature must contain {race_name} for race-specificity
+        # Use FULL pool (not Masters-filtered) to ensure placeholder variations exist
+        first_feature = select_variation_with_placeholder(
+            CHOICE_FEATURES[tier],  # Full pool, no Masters filtering
+            False,  # Don't filter for Masters - we need positioning first
+            '{race_name}',
+            used_features
+        )
+        used_features.add(first_feature)
+        choice_features_list = [first_feature]
+        
+        # ========================================================================
+        # PHASE 2: REMAINING VARIATIONS (Masters-filtered for content appropriateness)
+        # ========================================================================
+        # Now that positioning is guaranteed, filter remaining selections for Masters content
+        
+        # Select other components with Masters filtering
+        solution_state = select_excluding_used(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, used_opening, k=1)
+        guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
+        guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
+        alternative_hook = select_excluding_used(ALTERNATIVE_HOOKS[tier], is_masters_plan, used_alternative, k=1)
+        
+        # Remaining features: Masters-filtered random selection
+        for i in range(2):  # Need 2 more features (already have first one)
+            available_features = select_masters_aware(CHOICE_FEATURES[tier], is_masters_plan, k=len(CHOICE_FEATURES[tier]))
+            if isinstance(available_features, list):
+                available = [f for f in available_features if f not in used_features]
+                feature = random.choice(available) if available else random.choice(available_features)
+            else:
+                feature = available_features
+            choice_features_list.append(feature)
+            used_features.add(feature)
+        
+        # Use forced closing if provided, otherwise random
+        if forced_closing:
+            closing_statement = forced_closing
+        else:
+            closing_statement = random.choice(CLOSING_STATEMENTS[tier])  # No Masters variations in closings
+        
+        value_prop_box = select_masters_aware(VALUE_PROP_BOXES[tier], is_masters_plan, k=1)
     
     # Get tier specs
     specs = TIER_SPECS[tier]
@@ -432,6 +488,7 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     guide_topics = format_as_prose(formatted_topics)
     
     # Format closing statement with race name (handle shorthand variations)
+    # Works for both SMR and regular plans
     if '{race_name}' in closing_statement:
         closing_statement = closing_statement.format(race_name=race_name)
     # Shorthand variations use "the race", "Unbound", "race demands" - no formatting needed
