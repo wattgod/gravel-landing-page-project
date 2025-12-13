@@ -14,6 +14,7 @@ Tests critical fixes:
 7. No duplicate closings (fixed 2024-12-11)
 8. No duplicate alternatives (fixed 2024-12-11)
 9. No within-tier duplicates (fixed 2024-12-11)
+10. SMR positioning isolation (fixed 2024-12-XX - SMR plans must use salvage/urgency, not performance/progression)
 
 Exit codes:
     0 = All regression tests passed
@@ -383,6 +384,7 @@ def run_marketplace_regression_tests():
         ("No Duplicate Closings", test_no_duplicate_closings),
         ("No Duplicate Alternative Hooks", test_no_duplicate_alternative_hooks),
         ("No Within-Tier Duplicates", test_within_tier_duplicates),
+        ("SMR Positioning Isolation", test_smr_positioning_isolation),
     ]
     
     passed = 0
