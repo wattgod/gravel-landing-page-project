@@ -393,7 +393,7 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
             available_closings = [c for c in SMR_CLOSINGS if c not in used_content.get('closing', set())]
             closing_statement = random.choice(available_closings) if available_closings else random.choice(SMR_CLOSINGS)
         
-        guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
+    guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific
         
         # SMR value prop box (use SMR-specific, NOT regular tier variations)
         value_prop_box = random.choice(SMR_VALUE_PROP_BOXES)
@@ -508,7 +508,7 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Format closing statement with race name (handle shorthand variations)
     # Works for both SMR and regular plans
     if '{race_name}' in closing_statement:
-        closing_statement = closing_statement.format(race_name=race_name)
+    closing_statement = closing_statement.format(race_name=race_name)
     # Shorthand variations use "the race", "Unbound", "race demands" - no formatting needed
     
     # Format value prop box
@@ -634,9 +634,18 @@ def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="o
             seed = f"{plan_id}_{seed_hash[:8]}"
             
             # Pre-select a unique closing for this plan
-            # Try each closing template until we find one that's unique after formatting
+            # SMR plans use SMR_CLOSINGS, regular plans use CLOSING_STATEMENTS[tier]
+            is_save_my_race = "save_my_race" in variation.lower()
+            
+            if is_save_my_race:
+                # SMR plans: use SMR-specific closings
+                closing_pool = SMR_CLOSINGS
+            else:
+                # Regular plans: use tier-specific closings
+                closing_pool = CLOSING_STATEMENTS[tier]
+            
             selected_closing_template = None
-            for closing_template in CLOSING_STATEMENTS[tier]:
+            for closing_template in closing_pool:
                 formatted_closing = closing_template.format(race_name=race_name)
                 if formatted_closing not in used_closings_global:
                     selected_closing_template = closing_template
@@ -646,7 +655,7 @@ def generate_all_html_descriptions(race_name="Unbound Gravel 200", output_dir="o
             # If all closings for this tier are duplicates, use the first one anyway
             # (This shouldn't happen with diverse closing pools, but provides fallback)
             if not selected_closing_template:
-                selected_closing_template = CLOSING_STATEMENTS[tier][0]
+                selected_closing_template = closing_pool[0]
                 formatted_closing = selected_closing_template.format(race_name=race_name)
                 used_closings_global.add(formatted_closing)
             
