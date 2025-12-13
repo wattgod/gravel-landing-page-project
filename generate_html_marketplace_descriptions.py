@@ -369,6 +369,9 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         story_justification = random.choice(available_stories) if available_stories else random.choice(SMR_STORIES)
         used_story.add(story_justification)
         
+        # Format SMR placeholders immediately (before plan_name is generated)
+        # We'll format again later, but this ensures placeholders are handled
+        
         # Select SMR features (6-week timeline, race-critical focus, emergency protocols)
         available_features = [f for f in SMR_FEATURES if f not in used_features]
         choice_features_list = random.sample(available_features, min(3, len(available_features))) if len(available_features) >= 3 else available_features

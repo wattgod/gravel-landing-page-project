@@ -259,6 +259,8 @@ def test_save_my_race_variations_isolated():
     errors = []
     
     # SMR-specific language (REQUIRED in SMR, FORBIDDEN in regular)
+    # Note: "cramming" in regular plans (e.g., "cramming high-volume training") is different
+    # from SMR "cram the training" - test checks for SMR-specific phrases
     smr_indicators = [
         '6 weeks',
         '6-week',
@@ -270,7 +272,9 @@ def test_save_my_race_variations_isolated():
         'minimum viable',
         'sufficient preparation',
         'emergency',
-        'cram',
+        'cram the training',  # SMR-specific, not "cramming high-volume"
+        'cram some training',  # SMR-specific
+        'cram the work',  # SMR-specific
         'haven\'t been training'
     ]
     
