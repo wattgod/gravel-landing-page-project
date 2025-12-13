@@ -452,7 +452,42 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
         solution_state = select_excluding_used(SOLUTION_STATE_OPENINGS[tier], is_masters_plan, used_opening, k=1)
         guide_topics_list = select_masters_aware(GUIDE_TOPICS[tier], is_masters_plan, k=3)
         guide_intrigue = random.choice(GUIDE_INTRIGUE_LINES)  # Not tier-specific, no Masters filtering needed
-        alternative_hook = select_excluding_used(ALTERNATIVE_HOOKS[tier], is_masters_plan, used_alternative, k=1)
+        
+        # Select alternative from correct pool (Masters vs non-Masters)
+        # Build key: tier_level for non-Masters, tier_masters for Masters
+        if is_masters_plan:
+            alt_key = f"{tier}_masters"
+            alt_pool = MASTERS_ALTERNATIVES.get(alt_key, [])
+        else:
+            # Non-Masters: use tier + level from variation
+            # Handle special cases: elite -> advanced, save_my_race uses SMR_ALTERNATIVES (handled separately)
+            if variation == "elite":
+                alt_key = f"{tier}_advanced"  # Elite uses advanced pool
+            elif variation in ["beginner", "intermediate", "advanced"]:
+                alt_key = f"{tier}_{variation}"
+            else:
+                # Fallback based on tier defaults
+                if tier == "ayahuasca":
+                    alt_key = "ayahuasca_beginner"
+                elif tier == "finisher":
+                    alt_key = "finisher_intermediate"
+                elif tier == "compete":
+                    alt_key = "compete_intermediate"
+                else:  # podium
+                    alt_key = "podium_advanced"
+            alt_pool = ALTERNATIVES.get(alt_key, [])
+        
+        # Select from pool excluding used
+        if alt_pool:
+            available_alternatives = [a for a in alt_pool if a not in used_alternative]
+            alternative_hook = random.choice(available_alternatives) if available_alternatives else random.choice(alt_pool)
+        else:
+            # Fallback if key not found
+            fallback_key = f"{tier}_intermediate" if tier != "podium" else "podium_advanced"
+            fallback_pool = ALTERNATIVES.get(fallback_key, [])
+            available_alternatives = [a for a in fallback_pool if a not in used_alternative]
+            alternative_hook = random.choice(available_alternatives) if available_alternatives else (random.choice(fallback_pool) if fallback_pool else "Or you could keep training without structure.")
+        used_alternative.add(alternative_hook)
         
         # Remaining features: Masters-filtered random selection
         for i in range(2):  # Need 2 more features (already have first one)
@@ -522,7 +557,7 @@ def generate_html_description(tier, race_name, plan_seed, variation="", forced_c
     # Format closing statement with race name (handle shorthand variations)
     # Works for both SMR and regular plans
     if '{race_name}' in closing_statement:
-    closing_statement = closing_statement.format(race_name=race_name)
+        closing_statement = closing_statement.format(race_name=race_name)
     # Shorthand variations use "the race", "Unbound", "race demands" - no formatting needed
     
     # Format value prop box
