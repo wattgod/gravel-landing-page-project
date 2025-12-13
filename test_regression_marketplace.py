@@ -368,6 +368,81 @@ def test_within_tier_duplicates():
     if errors:
         raise RegressionTestFailure("Within-tier duplicates regression:\n" + "\n".join(errors))
 
+def test_smr_positioning_isolation():
+    """
+    REGRESSION: Save My Race plans must use SMR-specific positioning (salvage/urgency/6-weeks)
+    NOT regular plan positioning (performance/progression/12-weeks)
+    
+    CRITICAL: SMR is different product with different positioning. This test prevents
+    the generator from accidentally using regular variations for SMR plans.
+    
+    Fixed: 2024-12-XX (SMR positioning completely wrong - using regular plan variations)
+    """
+    output_dir = Path("output/html_descriptions")
+    if not output_dir.exists():
+        return
+    
+    errors = []
+    
+    # SMR-specific language (REQUIRED in SMR plans)
+    smr_required = [
+        '6 weeks',
+        '6-week',
+        'six weeks',
+        'life got in the way',
+        "don't defer",
+        'salvage',
+        'triage',
+        'minimum viable',
+        'sufficient preparation',
+        'emergency',
+        'cram the training',
+        'cram some training',
+        'cram the work',
+        'haven\'t been training'
+    ]
+    
+    # Regular plan language (FORBIDDEN in SMR plans)
+    regular_forbidden = [
+        '12-week',
+        '12 week',
+        'progressive overload',
+        'unlock another gear',
+        'your fitness will show up predictably',
+        'performance arrives',
+        'full race-distance simulation',
+        'weekly practice building competence',
+        'your 12-week arc'
+    ]
+    
+    for html_file in output_dir.rglob("*.html"):
+        is_save_my_race = 'save_my_race' in html_file.name.lower() or 'save my race' in html_file.name.lower()
+        
+        if not is_save_my_race:
+            continue  # Only check SMR plans
+        
+        with open(html_file, 'r', encoding='utf-8') as f:
+            content = f.read().lower()
+        
+        # SMR plans MUST have SMR language (6 weeks should be prominent)
+        smr_found = any(indicator in content for indicator in smr_required)
+        if not smr_found:
+            errors.append(
+                f"{html_file.name}: Save My Race plan missing SMR-specific language "
+                f"(should mention 6 weeks, salvage, triage, don't defer)"
+            )
+        
+        # SMR plans MUST NOT have regular language
+        for indicator in regular_forbidden:
+            if indicator in content:
+                errors.append(
+                    f"{html_file.name}: Save My Race plan contains regular plan language '{indicator}'. "
+                    f"SMR plans should use salvage/urgency positioning, not performance/progression."
+                )
+    
+    if errors:
+        raise RegressionTestFailure("SMR positioning isolation regression:\n" + "\n".join(errors))
+
 # ============================================================================
 # TEST RUNNER
 # ============================================================================
