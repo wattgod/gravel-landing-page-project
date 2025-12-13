@@ -30,7 +30,7 @@ STORY_JUSTIFICATIONS = {
         """The {plan_name} works with 0-5 hours per week, not against it. Limited hours, unlimited determination—efficient training for time-constrained athletes. {race_name} rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. You get systematic preparation, not guesswork.""",
         
         # Variation 9: Race-specific protocols
-        """Most plans treat all gravel races the same. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols the {plan_name} provides. Heat adaptation weeks 6-10. Distance fueling tested. Mental preparation practiced. Everything validated before race day.""",
+        """Most plans treat all gravel races the same. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols. The {plan_name} builds them. Heat adaptation weeks 6-10. Distance fueling tested. Mental preparation practiced. Everything validated before race day.""",
         
         # Variation 10: Save My Race - 6 weeks
         """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
@@ -77,7 +77,7 @@ STORY_JUSTIFICATIONS = {
         """The {plan_name} builds predictable fitness across 8-12 hours per week. Progressive structure removes guesswork—your fitness shows up consistently, not randomly. The race rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. You get systematic preparation, not guesswork.""",
         
         # Variation 13: Full plan designation intermediate
-        """The {plan_name} refines consistency with advanced protocols. At 8-12 hours weekly, this provides race-ready fitness through systematic progression. Unbound's specific demands—85-95°F heat, 200-mile distance—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before race day.""",
+        """You've built base fitness. Now you need race-ready power. The {plan_name} builds both—but in the right order and right proportions. At 8-12 hours weekly, systematic progression turns hours into performance. Unbound's specific demands—85-95°F heat, 200-mile distance—require race-specific protocols. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before race day.""",
         
         # Variation 14: Save My Race - 6 weeks
         """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
@@ -118,13 +118,13 @@ STORY_JUSTIFICATIONS = {
         """High-volume training without systems breaks athletes. This plan uses GOAT Method training: G Spot progression, HRV-guided recovery, Three-Act tactical framework. You're not just accumulating hours—you're building specific capacities. Mental skills are practiced under load. Technical skills are drilled weekly. Recovery is monitored objectively. Training at 12-18 hours requires precision, not just discipline.""",
         
         # Variation 11: Fueling and systems at volume
-        """High-volume training without fueling precision breaks athletes. The {plan_name} emphasizes 60-80g carbs/hour protocol tested at intensity. Heat adaptation in weeks 6-10 prepares you for 85-95°F racing. Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at 12-18 hours requires systems, not just discipline.""",
+        """High-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_name} builds systems that work under load. Heat adaptation in weeks 6-10 prepares you for 85-95°F racing. Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at 12-18 hours requires systems, not just discipline.""",
         
         # Variation 12: Full plan designation advanced
-        """The {plan_name} provides precision at 12-18 hours per week. Volume alone doesn't unlock the next level—systematic progression with practiced protocols does. The race rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. You get systematic preparation, not guesswork.""",
+        """Most serious riders plateau because volume alone doesn't unlock the next level. Systematic progression with practiced protocols does. The {plan_name} creates precision at 12-18 hours per week. The race rewards preparation: heat adaptation for Kansas conditions, fueling for 200-mile distance, mental training for 10-15 hour days. You get systematic preparation, not guesswork.""",
         
         # Variation 13: Full plan designation intermediate
-        """The {plan_name} breaks through plateaus with 12-18 hours of structured training. Progressive overload and race-specific preparation translate hours into performance. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols this plan provides. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before race day.""",
+        """You've been stuck. Same training, same results. Most riders at 12-18 hours plateau because volume alone doesn't unlock the next level. The {plan_name} fixes that—progressive overload and race-specific preparation translate hours into performance. {race_name}'s specific demands—85-95°F heat, 200-mile distance, prevailing headwinds—require race-specific protocols. Heat adaptation weeks 6-10. Distance fueling tested. Everything validated before race day.""",
         
         # Variation 14: Save My Race - 6 weeks
         """Six weeks before {race_name} isn't ideal preparation time, but it's salvageable. The {plan_name} focuses on race-critical fitness and mental preparation—not perfect preparation, but sufficient preparation. Triage what matters most, what you can skip, what requires daily focus. This plan makes those decisions for you.""",
