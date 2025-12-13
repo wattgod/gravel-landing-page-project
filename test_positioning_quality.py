@@ -533,15 +533,32 @@ def test_no_forbidden_jargon():
         ('HRV-guided', 'Too technical - use "recovery-based" or "data-guided"'),
     ]
     
+    # False claims explicitly forbidden by user (2024-12-12)
+    forbidden_claims = [
+        ('four hours.*beats.*eight', 'Unrealistic - 4 structured hours don\'t beat 8 hours total'),
+        ('4 hours.*beats.*8 hours', 'Unrealistic - 4 structured hours don\'t beat 8 hours total'),
+        ('beats eight hours', 'Unrealistic claim - remove'),
+        ('beats 8 hours', 'Unrealistic claim - remove'),
+    ]
+    
     for plan_name, filepath in descriptions:
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
         
+        # Check for forbidden jargon
         for jargon, suggestion in forbidden_jargon:
             if jargon in content:
                 errors.append(
                     f"{plan_name}: Contains forbidden jargon '{jargon}'. "
                     f"{suggestion}"
+                )
+        
+        # Check for false claims (using regex for pattern matching)
+        import re
+        for pattern, suggestion in forbidden_claims:
+            if re.search(pattern, content, re.IGNORECASE):
+                errors.append(
+                    f"{plan_name}: Contains '{pattern}'. {suggestion}"
                 )
     
     return errors

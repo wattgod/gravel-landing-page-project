@@ -14,8 +14,8 @@ STORY_JUSTIFICATIONS = {
         # Variation 3: The recognition angle
         """This plan is for people making this work around a life, not building a life around this. You've got 4-5 hours. Maybe 6 on a good week. That doesn't make you less serious—it makes your training decisions more important. This plan respects that. Every workout is essential. Every rest day is strategic. No filler, no fluff, no pretending you're someone you're not.""",
         
-        # Variation 4: The methodology defense
-        """Here's why this plan works with limited hours: it's built on intensity distribution that actually creates adaptation, not volume accumulation that creates fatigue. The pros aren't faster because they train 25 hours—they train 25 hours because they're pros. You need a different approach. This plan builds it. High-quality intervals, strategic recovery, race-specific skills. Everything else is optional.""",
+        # Variation 4: The methodology defense (reality-grounded, no repetition)
+        """Here's why this plan works with limited hours: it's built on intensity distribution that actually creates adaptation, not volume accumulation that creates fatigue. You won't match someone training 15 hours weekly. But you'll build enough to finish—if every session targets what matters most. High-quality intervals, strategic recovery, race-specific skills. Everything else is optional.""",
         
         # Variation 5: The reality check
         """This plan isn't designed to get you on a podium. It's designed to get you across the line feeling like you raced, not survived. That requires a specific training approach: sessions short enough to recover from, intense enough to create change, and focused enough to build the skills Unbound actually demands. Most plans ignore this because they're template workouts scaled down. This one was built from scratch for your constraints.""",
