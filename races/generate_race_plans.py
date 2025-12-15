@@ -22,10 +22,21 @@ import subprocess
 try:
     from zwo_generator import generate_all_zwo_files
     from marketplace_generator import generate_marketplace_html
+    from strength_generator import generate_all_strength_workouts
 except ImportError as e:
     print(f"ERROR: Could not import generation modules: {e}")
-    print("Make sure generation_modules/ folder exists with zwo_generator.py, marketplace_generator.py, and guide_generator.py")
+    print("Make sure generation_modules/ folder exists with zwo_generator.py, marketplace_generator.py, guide_generator.py, and strength_generator.py")
     sys.exit(1)
+
+# Import unified generator
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    from unified_plan_generator import generate_unified_plan
+    UNIFIED_GENERATOR_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️  Unified generator not available: {e}")
+    print("   Falling back to separate cycling + strength generation")
+    UNIFIED_GENERATOR_AVAILABLE = False
 
 # Plan mapping: folder name -> tier, level, weeks
 PLAN_MAPPING = {
@@ -80,6 +91,85 @@ def generate_zwo_files(plan_template, race_data, plan_info, output_dir):
     total_workouts = generate_all_zwo_files(plan_template, race_data, plan_info, output_dir)
     print(f"     ✓ Generated {total_workouts} ZWO files")
     return total_workouts
+
+def generate_strength_files(plan_info, output_dir, templates_file_path):
+    """Generate strength workout ZWO files based on plan duration"""
+    from strength_generator import generate_strength_files as generate_strength_files_impl
+    return generate_strength_files_impl(plan_info, output_dir, templates_file_path)
+
+def generate_unified_plan_files(race_data, plan_info, plan_template, output_dir):
+    """
+    Generate unified cycling + strength plan using the unified generator.
+    
+    Returns tuple: (cycling_count, strength_count, calendar_path)
+    """
+    if not UNIFIED_GENERATOR_AVAILABLE:
+        return None, None, None
+    
+    # Extract race ID from race data
+    race_name = race_data["race_metadata"]["name"]
+    race_id_map = {
+        "Unbound Gravel 200": "unbound_gravel_200",
+        "Unbound Gravel 100": "unbound_gravel_100",
+        "Leadville Trail 100": "leadville_100",
+        "Belgian Waffle Ride": "belgian_waffle_ride",
+        "Mid South": "mid_south",
+        "SBT GRVL": "sbt_grvl",
+        "Gravel Worlds": "gravel_worlds",
+        "Crusher in the Tushar": "crusher_in_the_tushar",
+        "Rebecca's Private Idaho": "rebeccas_private_idaho"
+    }
+    race_id = race_id_map.get(race_name, "unbound_gravel_200")  # Default fallback
+    
+    # Extract race date from race data (default to June if not specified)
+    race_date_str = race_data.get("race_metadata", {}).get("date", "June")
+    # Convert month name to date (use first Saturday of month as default)
+    from datetime import datetime
+    try:
+        if race_date_str == "June":
+            race_date = "2025-06-07"  # Default Saturday
+        elif race_date_str == "August":
+            race_date = "2025-08-02"
+        else:
+            # Try to parse if it's already a date string
+            datetime.strptime(race_date_str, "%Y-%m-%d")
+            race_date = race_date_str
+    except:
+        race_date = "2025-06-07"  # Fallback
+    
+    tier_id = plan_info["tier"]
+    plan_weeks = plan_info["weeks"]
+    
+    # Skip 6-week plans (too short for unified system)
+    if plan_weeks < 8:
+        return None, None, None
+    
+    try:
+        print(f"  → Generating unified plan (cycling + strength)...")
+        result = generate_unified_plan(
+            race_id=race_id,
+            tier_id=tier_id,
+            plan_weeks=plan_weeks,
+            race_date=race_date,
+            output_dir=str(output_dir),
+            race_data=race_data,
+            plan_template=plan_template
+        )
+        
+        cycling_count = result["files_generated"]["cycling"]
+        strength_count = result["files_generated"]["strength"]
+        calendar_path = Path(output_dir) / "calendar" / "training_calendar.md"
+        
+        print(f"     ✓ Generated {cycling_count} cycling + {strength_count} strength workouts")
+        if calendar_path.exists():
+            print(f"     ✓ Generated unified calendar: {calendar_path.name}")
+        
+        return cycling_count, strength_count, calendar_path
+        
+    except Exception as e:
+        print(f"     ⚠️  Unified generation failed: {e}")
+        print(f"     Falling back to separate generation...")
+        return None, None, None
 
 def generate_marketplace_description(race_data, plan_template, plan_info, output_dir):
     """Generate marketplace description HTML"""
@@ -155,18 +245,50 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, r
     # Load plan template
     plan_template = load_plan_template(plan_folder_name)
     
-    # Generate outputs
-    zwo_count = generate_zwo_files(plan_template, race_data, plan_info, plan_output_dir)
+    # Try unified generation first (for 8+ week plans)
+    unified_cycling, unified_strength, calendar_path = generate_unified_plan_files(
+        race_data, plan_info, plan_template, plan_output_dir
+    )
+    
+    if unified_cycling is not None:
+        # Unified generation succeeded
+        zwo_count = unified_cycling
+        strength_count = unified_strength
+    else:
+        # Fall back to separate generation
+        zwo_count = generate_zwo_files(plan_template, race_data, plan_info, plan_output_dir)
+        
+        # Generate strength workouts
+        # Templates file path: Use PN version with updated phase names
+        base_path = Path(__file__).parent
+        templates_file = base_path.parent.parent / "Downloads" / "strengt3" / "MASTER_TEMPLATES_V2_PN_FINAL.md"
+        # Fallback: try absolute path
+        if not templates_file.exists():
+            templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2_PN_FINAL.md")
+        # Final fallback: original templates
+        if not templates_file.exists():
+            templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2.md")
+        
+        strength_count = 0
+        if templates_file.exists():
+            strength_count = generate_strength_files(plan_info, plan_output_dir, templates_file)
+        else:
+            print(f"  ⚠️  Strength templates file not found: {templates_file}")
+            print(f"     Skipping strength workout generation")
+    
     marketplace_file = generate_marketplace_description(race_data, plan_template, plan_info, plan_output_dir)
     guide_file = generate_training_guide(race_data, plan_template, plan_info, race_folder, race_json_path)
     
-    print(f"  ✅ Complete: {zwo_count} workouts, guide, marketplace description")
+    total_workouts = zwo_count + strength_count
+    print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength), guide, marketplace description")
     
     return {
         "plan": plan_folder_name,
         "zwo_files": zwo_count,
+        "strength_files": strength_count,
         "marketplace": marketplace_file,
-        "guide": guide_file
+        "guide": guide_file,
+        "calendar": calendar_path if calendar_path and calendar_path.exists() else None
     }
 
 def main():
@@ -256,7 +378,9 @@ def main():
     print(f"📁 Output location: {race_folder}")
     print(f"📊 Generated:")
     print(f"   • 15 plan variants")
-    print(f"   • {sum(r['zwo_files'] for r in results)} total ZWO files")
+    print(f"   • {sum(r['zwo_files'] for r in results)} cycling ZWO files")
+    print(f"   • {sum(r.get('strength_files', 0) for r in results)} strength ZWO files")
+    print(f"   • {sum(r['zwo_files'] + r.get('strength_files', 0) for r in results)} total ZWO files")
     print(f"   • 15 training plan guides (HTML) in: {race_folder / 'guides'}")
     print(f"   • 15 marketplace descriptions")
     print(f"\n📝 Next steps:")

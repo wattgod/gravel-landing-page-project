@@ -40,3 +40,8 @@ token.pickle
 test_output/
 *.zwo.test
 
+
+# Generated plan outputs (should not be committed)
+races/Unbound Gravel 200/
+races/*/calendar/
+races/*/plan_summary.json

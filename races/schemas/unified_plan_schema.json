@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unified Training Plan",
+  "type": "object",
+  "required": ["race", "tier", "plan_weeks", "phases", "weekly_structure"],
+  "properties": {
+    "race": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "e.g., unbound_gravel_200" },
+        "name": { "type": "string", "description": "e.g., Unbound Gravel 200" },
+        "distance_miles": { "type": "number" },
+        "elevation_gain_ft": { "type": "number" },
+        "terrain_type": { 
+          "type": "string", 
+          "enum": ["rolling", "mountainous", "flat", "technical", "mixed"] 
+        },
+        "key_demands": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "e.g., ['endurance', 'hip_stability', 'fueling']"
+        }
+      }
+    },
+    "tier": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "enum": ["ayahuasca", "finisher", "compete", "podium"] },
+        "name": { "type": "string" },
+        "weekly_hours_min": { "type": "number" },
+        "weekly_hours_max": { "type": "number" }
+      }
+    },
+    "plan_weeks": { "type": "integer", "minimum": 8, "maximum": 24 },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "weeks": { "type": "array", "items": { "type": "integer" } },
+          "cycling_focus": { "type": "string" },
+          "cycling_volume": { "type": "string", "enum": ["low", "moderate", "high", "peak", "taper"] },
+          "cycling_intensity": { "type": "string", "enum": ["low", "moderate", "high", "race"] },
+          "strength_phase": { "type": "string" },
+          "strength_sessions_per_week": { "type": "integer", "minimum": 0, "maximum": 3 },
+          "strength_days": { "type": "array", "items": { "type": "string" } },
+          "recovery_priority": { "type": "string", "enum": ["low", "moderate", "high"] }
+        }
+      }
+    },
+    "weekly_structure": {
+      "type": "object",
+      "properties": {
+        "monday": { "$ref": "#/definitions/day_template" },
+        "tuesday": { "$ref": "#/definitions/day_template" },
+        "wednesday": { "$ref": "#/definitions/day_template" },
+        "thursday": { "$ref": "#/definitions/day_template" },
+        "friday": { "$ref": "#/definitions/day_template" },
+        "saturday": { "$ref": "#/definitions/day_template" },
+        "sunday": { "$ref": "#/definitions/day_template" }
+      }
+    },
+    "strength_customization": {
+      "type": "object",
+      "properties": {
+        "emphasized_patterns": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["squat", "hinge", "push", "pull", "core", "carry", "single_leg", "power"] }
+        },
+        "emphasized_exercises": { "type": "array", "items": { "type": "string" } },
+        "de_emphasized_exercises": { "type": "array", "items": { "type": "string" } },
+        "race_specific_notes": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "day_template": {
+      "type": "object",
+      "properties": {
+        "workout_type": { 
+          "type": "string", 
+          "enum": ["rest", "strength", "easy_ride", "intervals", "long_ride", "race_sim", "recovery"] 
+        },
+        "is_key_session": { "type": "boolean" },
+        "no_strength_before": { "type": "boolean", "description": "If true, no strength day before this" }
+      }
+    }
+  }
+}
+
