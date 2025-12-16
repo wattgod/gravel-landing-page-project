@@ -390,7 +390,23 @@ def generate_blackpill_html(data: Dict) -> str:
     
     consequences_items = '\n      '.join([f'<li>{c}</li>' for c in bp['consequences']])
     
-    template = """<section class="gg-blackpill-section">
+    template = """<style>
+  .gg-blackpill-section {{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }}
+  
+  .gg-blackpill-body {{
+    max-width: 100%;
+  }}
+  
+  .gg-blackpill-quote {{
+    max-width: 100%;
+  }}
+</style>
+
+<section class="gg-blackpill-section">
 
   <!-- BLACK PILL BADGE -->
   <div class="gg-blackpill-badge">
