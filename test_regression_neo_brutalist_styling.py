@@ -141,20 +141,25 @@ def check_css_in_page_settings(elementor_path: Path) -> List[str]:
         return errors
     
     # Only check for styles if the file actually uses those sections
+    uses_neo_brutalist = False
+    
     if 'gg-zone-card' in content_str:
+        uses_neo_brutalist = True
         if not re.search(r'\.gg-zone-card', custom_css):
             errors.append("Missing Zone card styles in page_settings.custom_css")
     
     if 'gg-vitals-table' in content_str:
+        uses_neo_brutalist = True
         if not re.search(r'\.gg-vitals-table', custom_css):
             errors.append("Missing Vitals table styles in page_settings.custom_css")
     
     if 'gg-timeline-section' in content_str:
+        uses_neo_brutalist = True
         if not re.search(r'\.gg-timeline-section', custom_css):
             errors.append("Missing Timeline section styles in page_settings.custom_css")
     
-    # Always check for core neo-brutalist patterns if any neo-brutalist classes exist
-    if 'gg-zone-card' in content_str or 'gg-vitals-table' in content_str or 'gg-timeline-section' in content_str:
+    # Only check for core neo-brutalist patterns if file uses neo-brutalist sections
+    if uses_neo_brutalist:
         if not re.search(r'border:\s*4px\s*solid\s*#000000', custom_css):
             errors.append("Missing Bold black borders in page_settings.custom_css")
         if not re.search(r'box-shadow:\s*8px\s*8px\s*0px\s*0px\s*#000000', custom_css):
