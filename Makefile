@@ -44,7 +44,7 @@ qc-full: test-regression-marketplace test-positioning validate-pools validate-ou
 	@echo "✅ Full QC (including positioning) Complete"
 
 # Landing page QC
-qc-landing: test-regression-landing
+qc-landing: test-regression-landing test-regression-color-palette
 	@echo ""
 	@echo "✅ Landing Page QC Complete"
 
@@ -64,6 +64,10 @@ test-regression-landing:
 		echo "⚠ No landing page JSON found. Generate one first."; \
 		exit 1; \
 	fi
+
+# Run color palette regression tests
+test-regression-color-palette:
+	@python3 test_regression_color_palette.py
 
 # Run positioning quality tests
 test-positioning:
