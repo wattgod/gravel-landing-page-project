@@ -760,8 +760,18 @@ def generate_biased_opinion_html(data: Dict) -> str:
             js_metrics.append(f'        {{ label: "{label}",       value: {score} }}')
     js_metrics_str = ',\n'.join(js_metrics)
     
-    # Get quote from biased opinion summary or final verdict
-    opinion_quote = biased.get('summary') or race.get('final_verdict', {}).get('one_liner', 'This race will test every assumption you have about your durability.')
+    # Get quote from biased_opinion.quote (max 30 words, punchy and memorable)
+    opinion_quote = biased.get('quote') or biased.get('summary', 'This race will test every assumption you have about your durability.')
+    # If quote is too long, truncate to first sentence or 30 words max
+    words = opinion_quote.split()
+    if len(words) > 30:
+        # Try to find first sentence
+        sentences = opinion_quote.split('. ')
+        if sentences and len(sentences[0].split()) <= 30:
+            opinion_quote = sentences[0] + '.'
+        else:
+            # Fallback: take first 30 words
+            opinion_quote = ' '.join(words[:30]) + '...'
     
     template = f"""<section class="gg-section gg-ratings-section" id="biased-opinion">
   <div class="gg-ratings-header">

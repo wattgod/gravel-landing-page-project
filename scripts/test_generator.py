@@ -328,6 +328,22 @@ def test_content_length_limits(json_data: Dict) -> Tuple[bool, List[str], List[s
         if word_count > 30:
             errors.append(f"Black Pill quote too long: {word_count} words (max 30)")
     
+    # Extract Course Profile quote
+    cp_quote_match = re.search(r'gg-course-quote-big[^>]*>.*?"(.*?)"', html_content, re.DOTALL)
+    if cp_quote_match:
+        cp_quote_text = cp_quote_match.group(1)
+        word_count = count_words(cp_quote_text)
+        if word_count > 30:
+            errors.append(f"Course Profile quote too long: {word_count} words (max 30)")
+    
+    # Extract Biased Opinion quote
+    bo_quote_match = re.search(r'id="biased-opinion".*?gg-course-quote-big[^>]*>.*?"(.*?)"', html_content, re.DOTALL)
+    if bo_quote_match:
+        bo_quote_text = bo_quote_match.group(1)
+        word_count = count_words(bo_quote_text)
+        if word_count > 30:
+            errors.append(f"Biased Opinion quote too long: {word_count} words (max 30)")
+    
     return len(errors) == 0, errors, warnings
 
 
