@@ -102,72 +102,58 @@
     "ratings_breakdown": {
       "length": {
         "score": 4,
-        "max_score": 5,
         "explanation": "The Waffle varies from 106 to 146 miles depending on the year. The 2025 course was the shortest in event history due to venue relocation. Historical courses average 120-135 miles with 10,000-14,000 feet of climbing. Long enough to require actual endurance training but shorter than Unbound 200."
       },
       "technicality": {
         "score": 5,
-        "max_score": 5,
         "explanation": "BWR is a six-hour cyclocross race wearing gravel clothes. The course mixes single-track, sand, water crossings, rock gardens, and 20%+ grades. Your bike handling determines whether you finish. Tire choice matters. Low gearing is mandatory. If you've only ridden group rides on pavement, this will expose that."
       },
       "elevation": {
         "score": 4,
-        "max_score": 5,
         "explanation": "10,000+ feet of climbing spread across endless rollers. Black Canyon delivers sustained washboard climbing on steep sand. Double Peak hits you with 1,800 feet over 4.5 miles at mile 116-130. The relentless variety hurts more than single massive climbs. You don't get breaks."
       },
       "climate": {
         "score": 4,
-        "max_score": 5,
         "explanation": "April in San Diego County starts cool (50-55°F) under marine layer, burns off to 75°F inland by afternoon. The real problem is wind. April is the windiest month. Constant headwinds that strengthen throughout the day. Sandy Bandy always runs into headwind. UV is moderate but persistent."
       },
       "altitude": {
         "score": 5,
-        "max_score": 5,
         "explanation": "Sea level start rising to approximately 2,500 feet maximum. Zero altitude concerns. Your lungs aren't the problem here."
       },
       "logistics": {
         "score": 5,
-        "max_score": 5,
         "explanation": "San Diego International Airport sits 17 miles from the venue—25 minutes without traffic. Del Mar offers excellent lodging ($150-300/night), quality restaurants, straightforward parking. The Friday Expo and packet pickup are well-organized. You'll pay California prices for California convenience."
       },
       "adventure": {
         "score": 4,
-        "max_score": 5,
         "explanation": "The 'unroad' experience delivers variety for a local training ground turned race course. You'll cross water, navigate rock gardens, question tire choices, ride single-track through chaparral hills. Belgian-themed sector names add cultural texture. It lacks the remoteness of Unbound or the geographic novelty of Mid South, but the technical variety compensates."
       },
       "prestige": {
         "score": 4,
-        "max_score": 5,
         "explanation": "BWR California is one of gravel's original monuments and the only event successfully claiming 'un-road' identity. The $50,000+ prize purse attracts WorldTour talent. The 40% DNF rate creates exclusivity through attrition rather than lottery barriers. Within technical gravel racing, finishing the Waffle carries credibility."
       },
       "race_quality": {
         "score": 5,
-        "max_score": 5,
         "explanation": "Fourteen years of iteration show in every detail. The course delivers variety without feeling arbitrary. Nine fully-stocked feed zones, comprehensive marking with Belgian-themed sector names, Friday Expo with 75+ vendors, Belgian waffles and Lost Abbey ales at the finish. Polished production that works."
       },
       "experience": {
         "score": 5,
-        "max_score": 5,
         "explanation": "The race balances brutality with celebration. Mass start with pros puts amateurs in actual racing. The technical variety demands constant adaptation—you're problem-solving equipment, terrain, and energy management simultaneously. Post-race Belgian waffles and ale with fellow survivors hits right."
       },
       "community": {
         "score": 3,
-        "max_score": 5,
         "explanation": "BWR offers warmth but not intimacy. Large field (2,800 riders) and festival atmosphere create energy, but you won't get Mid South's personal touches or Unbound's collective ethos. The vibe skews toward SoCal cycling culture—equipment-focused, fitness-conscious, competitive. Friendly, professional, slightly distant."
       },
       "field_depth": {
         "score": 5,
-        "max_score": 5,
         "explanation": "The $50,000 prize purse pulls legitimate WorldTour talent. Matt Beers, Peter Stetina, Sofia Gomez Villafañe treat this as a priority race. The competitive field runs deep. Open registration means the back of the field includes undertrained optimists, contributing to that 40% DNF rate."
       },
       "value": {
         "score": 3,
-        "max_score": 5,
         "explanation": "Registration costs $195+ for the Waffle. Add San Diego flights ($300-600), lodging ($300-600), rental car ($150-200), and meals, and you're hitting $1,200-1,800 total. The race production quality justifies the entry fee. But this is expensive."
       },
       "expenses": {
         "score": 2,
-        "max_score": 5,
         "explanation": "Total weekend cost runs $1,200-1,800 minimum. San Diego lodging is expensive ($150-300/night), rental cars are necessary, restaurant carb-loading adds up. Silver lining: easy direct flights to SAN from most major cities."
       }
     },
@@ -175,9 +161,21 @@
     "biased_opinion": {
       "verdict": "Technical Monument (Positive)",
       "summary": "Belgian Waffle Ride earns its 'Hell of the North County' nickname through relentless variety rather than single massive climbs. The course delivers 10,000+ feet of climbing across 120-135 miles mixing 50% pavement with 50% 'unroad'—dirt, gravel, single-track, sand, water crossings, and rock gardens. Founder Michael Marckx designed the route to expose riders who rely on draft in group rides but lack comprehensive bike handling and endurance skills. The 40% DNF rate validates the course's effectiveness at separating technical riders from pure power athletes, maintaining BWR's identity as an 'un-road' race rather than a pure gravel endurance test.",
-      "quote": "Rewards actual bike riding—handling, equipment selection, technical skill—over pure watts. The 40% DNF rate is a feature.",
-      "course_profile_quote": "Six-hour cyclocross race where tire choice matters more than FTP. That 23% grade at mile 130 doesn't negotiate.",
-      "black_pill_quote": "The 23% grade at mile 130 will expose every skipped core workout and every group ride you sat on. Physics doesn't negotiate."
+      "strengths": [
+        "Rewards actual bike riding—handling, equipment selection, technical skill—over pure watts",
+        "The 40% DNF rate is a feature, not a bug—validates course design integrity",
+        "$50,000+ prize purse attracts WorldTour talent for competitive racing",
+        "Technical variety demands constant adaptation and problem-solving",
+        "Fourteen years of iteration show in polished production quality"
+      ],
+      "weaknesses": [
+        "Expensive total cost ($1,200-1,800 minimum for most travelers)",
+        "40% DNF rate means significant risk of not finishing",
+        "Technical sections punish momentary lapses regardless of fitness",
+        "Equipment choices genuinely determine outcomes—tire pressure, gearing, bike selection critical",
+        "Large field (2,800 riders) creates festival atmosphere but lacks intimate community warmth"
+      ],
+      "bottom_line": "BWR rewards actual bike riding over pure watts. The 40% DNF rate isn't a bug—it's validation that the course works as designed. If you're purely a power athlete with limited technical skills, this race will expose you. If you can handle varied terrain, choose correct lines, and manage energy across relentless variety, you'll finish. The course doesn't negotiate with training plans—it tests whether you can ride a bike when everything hurts."
     },
     
     "black_pill": {
@@ -192,10 +190,9 @@
     },
     
     "final_verdict": {
-      "score": "8.5 / 10",
+      "score": "85 / 100",
       "one_liner": "The race where bike handling skills outweigh FTP and 40% learn what DNF feels like.",
-      "should_you_race": "Yes, if you have legitimate technical skills from cyclocross or mountain biking, can handle 12+ hour moving time, and want to test yourself against a course designed to expose weaknesses. The race rewards actual bike riding—handling rough descents, choosing correct lines through sand, managing energy across varied terrain. It's expensive and honest about your capabilities.",
-      "skip_it_if": "You're purely a power athlete with limited technical skills, have never ridden extended single-track or sand, or can't stomach California travel costs ($1,200-1,800 total). Also skip if you need grassroots intimacy—BWR offers professional production and competitive intensity, not community warmth.",
+      "should_you_race": "Yes, if you have legitimate technical skills from cyclocross or mountain biking, can handle 12+ hour moving time, and want to test yourself against a course designed to expose weaknesses. The race rewards actual bike riding—handling rough descents, choosing correct lines through sand, managing energy across varied terrain. It's expensive and honest about your capabilities. Skip it if you're purely a power athlete with limited technical skills, have never ridden extended single-track or sand, or can't stomach California travel costs ($1,200-1,800 total). Also skip if you need grassroots intimacy—BWR offers professional production and competitive intensity, not community warmth.",
       "alternatives": "Unbound 200 for maximum distance prestige without technical demands, Mid South for community warmth at lower cost, SBT GRVL for Colorado altitude climbing with better budget logistics, Leadville Trail 100 MTB for technical mountain terrain with even higher attrition."
     },
     
@@ -205,6 +202,8 @@
     },
     
     "history": {
+      "founded": 2012,
+      "founder": "Michael Marckx (MMX)",
       "origin_story": "The Belgian Waffle Ride began as a marketing exercise in 2012 when Michael Marckx (MMX), then president of SPY Optic, invited 136 people to ride bikes on dirt roads through North County San Diego. Marckx brought diverse athletic credentials—UCI cyclocross pro license, professional triathlete competing alongside Mark Allen and Scott Tinley, marathon runner posting 2:40s at age 14. He wanted to create 'a 6-7-8-12 hour cyclocross race bracketed by Belgian waffles and Belgian ale,' mixing the cobbled brutality of Spring Classics with California's technical terrain. The origin story traces to childhood rebellion. Young Marckx took his road bike through dirt fields as a shortcut to school, passing eighth-grade bullies who yelled 'You can't ride that bike in the dirt.' His response: 'I just did.' BWR embodies this: it refuses the 'gravel race' label in favor of 'un-road,' mixes single-track with pavement, and rewards technical skill alongside fitness. The first event saw 118 of 136 finishers. Within three years, BWR had grown to 1,000+ participants. Today, the series spans multiple locations (California, Utah, North Carolina, British Columbia), but the original San Diego event—now based at Del Mar Polo Fields as of 2025—remains the flagship. The $50,000+ prize purse is the largest in one-day gravel racing, and the 40% DNF rate is nearly double Unbound's attrition. Marckx designed the course to expose riders who 'do the group rides that never do any work and then all of a sudden, they're there for the sprint.' BWR rewards those who can actually ride bikes, not just pedal them. Marckx speaks about transformation stories: 'I signed up for the Belgian Waffle Ride, and I haven't raced my bike in 30 years. And it literally transformed my body and my mindset.' These narratives drive him more than elite results. Fourteen editions in, BWR has become American gravel racing's technical standard.",
       "notable_moments": [
         "2012: First event saw 118 of 136 finishers",
@@ -250,8 +249,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "1-belgian-waffle-ride-ayahuasca-new-to-gravel-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Ayahuasca",
@@ -260,8 +258,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "2-belgian-waffle-ride-ayahuasca-experienced-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Ayahuasca",
@@ -270,8 +267,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "3-belgian-waffle-ride-ayahuasca-masters-40-50-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Finisher",
@@ -280,8 +276,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "4-belgian-waffle-ride-finisher-new-to-gravel-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Finisher",
@@ -290,8 +285,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "5-belgian-waffle-ride-finisher-experienced-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Finisher",
@@ -300,8 +294,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "6-belgian-waffle-ride-finisher-masters-40-50-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Compete",
@@ -310,8 +303,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "7-belgian-waffle-ride-compete-new-to-gravel-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Compete",
@@ -320,8 +312,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "8-belgian-waffle-ride-compete-experienced-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Compete",
@@ -330,8 +321,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "9-belgian-waffle-ride-compete-masters-40-50-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Compete",
@@ -340,8 +330,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "10-belgian-waffle-ride-compete-finisher-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Podium",
@@ -350,8 +339,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "11-belgian-waffle-ride-podium-experienced-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Podium",
@@ -360,8 +348,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "12-belgian-waffle-ride-podium-masters-40-50-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Podium",
@@ -370,8 +357,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "13-belgian-waffle-ride-podium-finisher-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Podium",
@@ -380,8 +366,7 @@
           "weeks": 12,
           "tp_id": "PLACEHOLDER_NEEDS_RESEARCH",
           "tp_slug": "14-belgian-waffle-ride-podium-compete-waffle-12-weeks",
-          "category": "gran-fondo-century",
-          "distance": "Waffle"
+          "category": "gran-fondo-century"
         },
         {
           "tier": "Podium",
