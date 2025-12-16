@@ -447,13 +447,43 @@ def generate_course_map_html(data: Dict) -> str:
     rwgps_id = course['ridewithgps_id']
     rwgps_name = course['ridewithgps_name']
     
-    # Build suffering zones HTML
+    # Build suffering zones HTML with enhanced details
     zones_html = []
     for zone in course['suffering_zones']:
+        mile = zone['mile']
+        label = zone['label']
+        desc = zone['desc']
+        
+        # Enhanced details if available
+        terrain_detail = zone.get('terrain_detail', '')
+        named_section = zone.get('named_section', '')
+        citation = zone.get('citation', '')
+        weather_note = zone.get('weather_note', '')
+        
+        # Build description with enhanced details
+        desc_parts = [desc]
+        
+        if named_section:
+            desc_parts.append(f"<strong>{named_section}</strong>")
+        
+        if terrain_detail:
+            desc_parts.append(terrain_detail)
+        
+        if weather_note:
+            desc_parts.append(f"<em>{weather_note}</em>")
+        
+        full_desc = ' '.join(desc_parts)
+        
+        # Add citation if present
+        citation_html = ''
+        if citation:
+            citation_html = f'<div class="gg-zone-citation">Source: {citation}</div>'
+        
         zones_html.append(f"""        <div class="gg-zone-card">
-          <div class="gg-zone-mile">Mile {zone['mile']}</div>
-          <div class="gg-zone-label">{zone['label']}</div>
-          <div class="gg-zone-desc">{zone['desc']}</div>
+          <div class="gg-zone-mile">Mile {mile}</div>
+          <div class="gg-zone-label">{label}</div>
+          <div class="gg-zone-desc">{full_desc}</div>
+          {citation_html}
         </div>""")
     
     # Calculate distance for title
@@ -486,6 +516,11 @@ def generate_course_map_html(data: Dict) -> str:
       <!-- Suffering Zones -->
       <div class="gg-suffering-zones">
 {chr(10).join(zones_html)}
+      </div>
+
+      <!-- Course Breakdown Research Note -->
+      <div class="gg-course-breakdown-note" style="margin-top: 2rem; padding: 1rem; background: #F5F5DC; border: 2px solid #59473C; font-family: 'Sometype Mono', monospace; font-size: 0.85rem; color: #59473C; line-height: 1.6;">
+        <strong>Course Breakdown:</strong> Suffering zones are based on race reports, Strava segments, and course analysis. Terrain details reflect typical conditions—weather can dramatically change difficulty.
       </div>
 
       <footer class="gg-route-caption">
