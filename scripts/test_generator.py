@@ -503,6 +503,51 @@ def test_quote_replacement(json_data: Dict, race_slug: str) -> Tuple[bool, List[
     return len(errors) == 0, errors
 
 
+def test_blackpill_width_constraint(json_data: Dict) -> Tuple[bool, List[str]]:
+    """Test 13: Ensure Black Pill section has width constraint (max-width)."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Find Black Pill section
+    bp_section = re.search(r'class="gg-blackpill-section".*?</section>', html_content, re.DOTALL | re.IGNORECASE)
+    
+    if not bp_section:
+        errors.append("Black Pill section not found")
+        return False, errors
+    
+    bp_content = bp_section.group(0)
+    
+    # Check for max-width constraint in inline styles or CSS
+    # Look for max-width in style tag or inline style attribute
+    has_max_width = False
+    
+    # Check inline style on section
+    inline_style_match = re.search(r'gg-blackpill-section[^>]*style="[^"]*max-width', bp_content, re.IGNORECASE)
+    if inline_style_match:
+        has_max_width = True
+    
+    # Check for style tag with max-width
+    style_tag_match = re.search(r'<style>.*?gg-blackpill-section.*?max-width.*?</style>', html_content, re.DOTALL | re.IGNORECASE)
+    if style_tag_match:
+        has_max_width = True
+    
+    # Check for max-width value (should be reasonable, like 600-1000px)
+    if has_max_width:
+        max_width_match = re.search(r'max-width:\s*(\d+)px', html_content, re.IGNORECASE)
+        if max_width_match:
+            width_value = int(max_width_match.group(1))
+            if width_value > 1200:
+                errors.append(f"Black Pill max-width too wide: {width_value}px (should be 800px or less)")
+            elif width_value < 600:
+                errors.append(f"Black Pill max-width too narrow: {width_value}px (should be at least 600px)")
+        else:
+            errors.append("Black Pill has max-width but value not found")
+    else:
+        errors.append("Black Pill section missing max-width constraint (should be max-width: 800px)")
+    
+    return len(errors) == 0, errors
+
+
 def test_biased_opinion_layout_structure(json_data: Dict) -> Tuple[bool, List[str]]:
     """Test 12: Ensure Biased Opinion section matches Course Profile structure."""
     errors = []
@@ -803,6 +848,19 @@ def main():
             print(f"     - {error}")
         all_passed = False
     results.append(("Biased Opinion Layout", passed))
+    print("")
+    
+    # Test 13: Black Pill Width Constraint
+    print("TEST 13: Black Pill Width Constraint")
+    passed, errors = test_blackpill_width_constraint(json_data)
+    if passed:
+        print("  ✅ Black Pill section has proper width constraint")
+    else:
+        print("  ❌ Width constraint issues:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("Black Pill Width", passed))
     print("")
     
     # Summary
