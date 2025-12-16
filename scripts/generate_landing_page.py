@@ -232,6 +232,9 @@ def generate_ratings_html(data: Dict) -> str:
         js_metrics.append(f'        {{ label: "{label}",       value: {score} }}')
     js_metrics_str = ',\n'.join(js_metrics)
     
+    # Get course quote from black_pill or final_verdict
+    course_quote = race.get('black_pill', {}).get('quote') or race.get('final_verdict', {}).get('one_liner', 'Something will break out there. Hopefully not you.')
+    
     template = """<section class="gg-section gg-ratings-section" id="course-ratings">
   <div class="gg-ratings-header">
     <div class="gg-pill">
@@ -268,7 +271,7 @@ def generate_ratings_html(data: Dict) -> str:
 
       <!-- Big pull quote living in the LEFT column -->
       <div class="gg-course-quote-big">
-        <span>"Something will break out there. Hopefully not you."</span>
+        <span>"{course_quote}"</span>
       </div>
     </div>
 
@@ -375,7 +378,8 @@ def generate_ratings_html(data: Dict) -> str:
         raw_course_score=raw_course_score,
         profile_rows='\n'.join(profile_rows),
         explanations='\n\n'.join(explanation_html),
-        js_metrics=js_metrics_str
+        js_metrics=js_metrics_str,
+        course_quote=course_quote
     )
 
 
@@ -424,8 +428,8 @@ def generate_blackpill_html(data: Dict) -> str:
 
 </section>"""
     
-    # Get quote from final_verdict or use a default
-    quote = data['race'].get('final_verdict', {}).get('one_liner', 'This race will test every assumption you have about your durability.')
+    # Get quote from black_pill.quote, final_verdict.one_liner, or use a default
+    quote = bp.get('quote') or data['race'].get('final_verdict', {}).get('one_liner', 'This race will test every assumption you have about your durability.')
     
     return template.format(
         title=bp['title'],
@@ -528,18 +532,29 @@ def generate_overview_hero_html(data: Dict) -> str:
 def generate_tldr_html(data: Dict) -> str:
     """Generate TLDR/Decision section HTML."""
     race = data['race']
-    display_name = race['display_name']
+    verdict = race.get('final_verdict', {})
+    
+    # Extract should_you_race text and create skip_if from it
+    should_race_text = verdict.get('should_you_race', 'You like hurting yourself, surprises (not the good kind), and you\'re prepared to commit a month of salary and (hopefully) a shit load of training getting ready for one truly insane day.')
+    
+    # Create skip_if text - if should_you_race mentions "reconsider", use that part, otherwise generic
+    skip_if_text = 'You\'re not ready to find out what\'s actually inside you.'
+    if 'reconsider' in should_race_text.lower():
+        # Try to extract the reconsider part
+        parts = should_race_text.split('—')
+        if len(parts) > 1:
+            skip_if_text = parts[1].strip()
     
     template = f"""<div class="gg-decision-grid">
   <div class="gg-decision-card gg-decision-card--yes">
     <h3>You Should Race This If:</h3>
-    <p>You like hurting yourself, surprises (not the good kind), and you're prepared to commit a month of salary and (hopefully) a shit load of training getting ready for one truly insane day.</p>
+    <p>{should_race_text}</p>
     <a href="#training" class="gg-decision-cta">Get a Training Plan →</a>
   </div>
 
   <div class="gg-decision-card gg-decision-card--no">
     <h3>Skip This If:</h3>
-    <p>You're not ready to find out what's actually inside you.</p>
+    <p>{skip_if_text}</p>
     
   </div>
 </div>"""
@@ -630,6 +645,23 @@ def generate_biased_opinion_html(data: Dict) -> str:
     # Build rating explanations HTML (for biased opinion section)
     # These are the 7 biased opinion ratings: prestige, race_quality, experience, community, field_depth, value, expenses
     opinion_ratings = ['prestige', 'race_quality', 'experience', 'community', 'field_depth', 'value', 'expenses']
+    
+    # Build rating bars for left column (like course profile card)
+    opinion_bars = []
+    raw_opinion_score = 0
+    for rating_key in opinion_ratings:
+        if rating_key in ratings:
+            score = ratings[rating_key]['score']
+            raw_opinion_score += score
+            width_pct = int((score / 5) * 100)
+            label = rating_key.replace('_', ' ').title()
+            opinion_bars.append(f"""        <div class="gg-course-metric-row">
+          <span class="gg-course-metric-label">{label}</span>
+          <div class="gg-rating-bar">
+            <div class="gg-rating-bar-fill" style="width: {width_pct}%;"></div>
+          </div>
+          <span class="gg-course-metric-score">{score}/5</span>
+        </div>""")
     
     rating_html = []
     for rating_key in opinion_ratings:
@@ -792,7 +824,18 @@ def generate_biased_opinion_html(data: Dict) -> str:
         <svg class="gg-radar-svg-opinion" viewBox="0 0 320 320"></svg>
       </div>
 
-      <div style="font-family: 'Sometype Mono', monospace; font-size: 0.95rem; line-height: 1.6; color: #59473C;">
+      <!-- Editorial Profile Card with Bars -->
+      <div class="gg-course-profile-card">
+        <div class="gg-course-profile-title">Editorial Profile</div>
+        <div class="gg-course-profile-meta">
+          Seven variables · 1–5 scale &nbsp;&nbsp;|&nbsp;&nbsp;
+          Raw Editorial Score: <strong>{raw_opinion_score} / 35</strong>
+        </div>
+
+{chr(10).join(opinion_bars)}
+      </div>
+
+      <div style="font-family: 'Sometype Mono', monospace; font-size: 0.95rem; line-height: 1.6; color: #59473C; margin-top: 1.5rem;">
         <p><strong>{biased['summary']}</strong></p>
         
         <p><strong>Strengths:</strong></p>
