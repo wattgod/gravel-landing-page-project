@@ -2,6 +2,21 @@
 
 This folder contains all training plans, generation scripts, and documentation for the Gravel Landing Page project.
 
+## 📝 Voice and Tone Guidelines
+
+**Essential reading for all content generation:**
+
+- **`VOICE_AND_TONE_GUIDELINES.md`** - Core voice principles (dry, matter-of-fact, no theatrical language)
+- **`VOICE_EDGE_CASES.md`** - Extended guidelines for specific content types and situations:
+  - Content-type calibration (marketplace descriptions, training guides, workout text, race previews)
+  - Tier voice handling (Ayahuasca, Finisher, Compete, Podium)
+  - Warmth register (dry/amused, warmer gear, coldest gear)
+  - Brand terminology integration (G Spot, tier names)
+  - Length targets by content type
+  - Quick reference decision tree
+
+**All generation scripts should reference both files when creating content.**
+
 ## 🚀 JSON Template System (NEW)
 
 **Faster plan generation using structured JSON templates!**
