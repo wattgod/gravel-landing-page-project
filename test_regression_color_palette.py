@@ -1,0 +1,320 @@
+#!/usr/bin/env python3
+"""
+COLOR PALETTE REGRESSION TEST
+==============================
+Ensures all content follows Gravel God earth-tone neobrutalist color palette:
+- Muted earth tones (#FFF5E6, #F5E5D3, #BFA595) for large backgrounds
+- Bright yellow (#F4D03F, #FFFF00) ONLY for text shadows and small accents
+- NEVER use bright yellow for table rows, card backgrounds, or large blocks
+
+Exit codes:
+    0 = All color palette tests passed
+    1 = Color palette violations detected
+"""
+
+import json
+import re
+import sys
+from pathlib import Path
+from typing import List, Tuple
+
+# ============================================================================
+# COLOR PALETTE RULES
+# ============================================================================
+
+# Bright yellows that should NOT be used for large backgrounds
+BRIGHT_YELLOWS = [
+    '#F4D03F',
+    '#f4d03f',
+    '#FFFF00',
+    '#ffff00',
+    'FFFF00',
+    'F4D03F',
+]
+
+# Muted earth tones that SHOULD be used for backgrounds
+CORRECT_BACKGROUND_COLORS = [
+    '#FFF5E6',  # Muted cream
+    '#fff5e6',
+    '#F5E5D3',  # Cream
+    '#f5e5d3',
+    '#BFA595',  # Sand
+    '#bfa595',
+    '#E8DDD0',  # Light sand
+    '#e8ddd0',
+    '#FFF9E3',  # Pale yellow-cream
+    '#fff9e3',
+]
+
+# Selectors that indicate LARGE background areas (forbidden for bright yellow)
+LARGE_BACKGROUND_SELECTORS = [
+    r'\.gg-vitals-table\s+tr[^}]*background',
+    r'\.gg-vitals-table\s+td[^}]*background',
+    r'\.gg-zone-card[^}]*background',
+    r'\.gg-fact-card[^}]*background',
+    r'\.gg-course-breakdown-note[^}]*background',
+    r'tr:nth-child\([^)]+\)[^}]*background',
+    r'td:nth-child\([^)]+\)[^}]*background',
+    r'\.gg-plan-card[^}]*background',
+    r'\.gg-overall-card[^}]*background',
+]
+
+# Selectors that indicate SMALL accents (bright yellow acceptable)
+SMALL_ACCENT_SELECTORS = [
+    r'text-shadow',
+    r'\.gg-pill[^}]*background',  # Small badge - acceptable
+    r'\.gg-timeline-event::before[^}]*background',  # Small marker
+    r'\.gg-timeline-year[^}]*background',  # Small badge
+    r'box-shadow[^}]*#F4D03F',  # Shadow color - acceptable
+    r'box-shadow[^}]*#FFFF00',  # Shadow color - acceptable
+]
+
+# ============================================================================
+# TEST FUNCTIONS
+# ============================================================================
+
+def check_css_file(css_path: Path) -> List[str]:
+    """Check CSS file for color palette violations."""
+    errors = []
+    
+    try:
+        with open(css_path, 'r', encoding='utf-8') as f:
+            css = f.read()
+    except Exception as e:
+        return [f"Failed to read CSS file: {e}"]
+    
+    # Find all background declarations with bright yellow
+    background_pattern = r'background[^:]*:\s*([^;]+);'
+    background_matches = re.finditer(background_pattern, css, re.IGNORECASE)
+    
+    for match in background_matches:
+        background_value = match.group(1).strip()
+        line_num = css[:match.start()].count('\n') + 1
+        
+        # Check if this background uses a bright yellow
+        for yellow in BRIGHT_YELLOWS:
+            if yellow in background_value:
+                # Check if this is a large background area (forbidden)
+                context_before = css[max(0, match.start() - 200):match.start()]
+                context_after = css[match.end():min(len(css), match.end() + 200)]
+                full_context = context_before + match.group(0) + context_after
+                
+                # Check if this is a large background selector
+                is_large_background = False
+                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_large_background = True
+                        break
+                
+                # Check if this is a small accent (acceptable)
+                is_small_accent = False
+                for selector_pattern in SMALL_ACCENT_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_small_accent = True
+                        break
+                
+                # If it's a large background, it's a violation
+                if is_large_background and not is_small_accent:
+                    # Extract selector for better error message
+                    selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                    selector = selector_match.group(1).strip() if selector_match else "unknown"
+                    errors.append(
+                        f"Line {line_num}: Bright yellow ({yellow}) used for large background in '{selector}'. "
+                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
+                    )
+    
+    return errors
+
+def check_elementor_file(elementor_path: Path) -> List[str]:
+    """Check Elementor JSON for color palette violations."""
+    errors = []
+    
+    try:
+        with open(elementor_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception as e:
+        return [f"Failed to parse Elementor file: {e}"]
+    
+    # Convert to string for searching
+    content_str = json.dumps(data)
+    
+    # Check custom_css in page_settings
+    custom_css = data.get('page_settings', {}).get('custom_css', '')
+    if custom_css:
+        css_errors = check_css_content(custom_css, f"{elementor_path.name} (custom_css)")
+        errors.extend(css_errors)
+    
+    # Check HTML content for inline styles
+    html_pattern = r'"html"\s*:\s*"([^"]+)"'
+    html_matches = re.finditer(html_pattern, content_str)
+    
+    for match in html_matches:
+        html_content = match.group(1)
+        # Unescape JSON string
+        html_content = html_content.replace('\\n', '\n').replace('\\"', '"').replace('\\/', '/')
+        
+        # Check for bright yellow in style tags
+        style_pattern = r'<style[^>]*>([^<]+)</style>'
+        style_matches = re.finditer(style_pattern, html_content, re.IGNORECASE | re.DOTALL)
+        
+        for style_match in style_matches:
+            style_content = style_match.group(1)
+            css_errors = check_css_content(style_content, f"{elementor_path.name} (inline styles)")
+            errors.extend(css_errors)
+    
+    return errors
+
+def check_css_content(css: str, context: str) -> List[str]:
+    """Check CSS content string for violations."""
+    errors = []
+    
+    # Find all background declarations with bright yellow
+    background_pattern = r'background[^:]*:\s*([^;]+);'
+    background_matches = re.finditer(background_pattern, css, re.IGNORECASE)
+    
+    for match in background_matches:
+        background_value = match.group(1).strip()
+        
+        # Check if this background uses a bright yellow
+        for yellow in BRIGHT_YELLOWS:
+            if yellow in background_value:
+                # Check context to see if this is a large background
+                context_before = css[max(0, match.start() - 200):match.start()]
+                context_after = css[match.end():min(len(css), match.end() + 200)]
+                full_context = context_before + match.group(0) + context_after
+                
+                # Check if this is a large background selector
+                is_large_background = False
+                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_large_background = True
+                        break
+                
+                # Check if this is a small accent (acceptable)
+                is_small_accent = False
+                for selector_pattern in SMALL_ACCENT_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_small_accent = True
+                        break
+                
+                # If it's a large background, it's a violation
+                if is_large_background and not is_small_accent:
+                    # Extract selector for better error message
+                    selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                    selector = selector_match.group(1).strip() if selector_match else "unknown"
+                    errors.append(
+                        f"{context}: Bright yellow ({yellow}) used for large background in '{selector}'. "
+                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
+                    )
+    
+    return errors
+
+def check_generation_script(script_path: Path) -> List[str]:
+    """Check generation script for color palette violations."""
+    errors = []
+    
+    try:
+        with open(script_path, 'r', encoding='utf-8') as f:
+            script = f.read()
+    except Exception as e:
+        return [f"Failed to read script file: {e}"]
+    
+    # Find all background declarations with bright yellow
+    background_pattern = r'background[^:]*:\s*([^;]+)'
+    background_matches = re.finditer(background_pattern, script, re.IGNORECASE)
+    
+    for match in background_matches:
+        background_value = match.group(1).strip()
+        line_num = script[:match.start()].count('\n') + 1
+        
+        # Check if this background uses a bright yellow
+        for yellow in BRIGHT_YELLOWS:
+            if yellow in background_value:
+                # Check context
+                context_before = script[max(0, match.start() - 200):match.start()]
+                context_after = script[match.end():min(len(script), match.end() + 200)]
+                full_context = context_before + match.group(0) + context_after
+                
+                # Check if this is a large background selector
+                is_large_background = False
+                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_large_background = True
+                        break
+                
+                # Check if this is a small accent (acceptable)
+                is_small_accent = False
+                for selector_pattern in SMALL_ACCENT_SELECTORS:
+                    if re.search(selector_pattern, full_context, re.IGNORECASE):
+                        is_small_accent = True
+                        break
+                
+                # If it's a large background, it's a violation
+                if is_large_background and not is_small_accent:
+                    errors.append(
+                        f"Line {line_num}: Bright yellow ({yellow}) used for large background. "
+                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
+                    )
+    
+    return errors
+
+# ============================================================================
+# MAIN TEST RUNNER
+# ============================================================================
+
+def main():
+    """Run all color palette regression tests."""
+    css_file = Path('assets/css/landing-page.css')
+    script_file = Path('scripts/generate_landing_page.py')
+    output_dir = Path('output')
+    
+    all_errors = []
+    
+    # Test CSS file
+    if css_file.exists():
+        print(f"Testing {css_file.name}...")
+        css_errors = check_css_file(css_file)
+        all_errors.extend([f"CSS: {e}" for e in css_errors])
+    else:
+        all_errors.append("CSS file not found: assets/css/landing-page.css")
+    
+    # Test generation script
+    if script_file.exists():
+        print(f"Testing {script_file.name}...")
+        script_errors = check_generation_script(script_file)
+        all_errors.extend([f"Script: {e}" for e in script_errors])
+    else:
+        all_errors.append("Generation script not found: scripts/generate_landing_page.py")
+    
+    # Test Elementor JSON files
+    for json_file in output_dir.glob('elementor-*.json'):
+        print(f"Testing {json_file.name}...")
+        elementor_errors = check_elementor_file(json_file)
+        all_errors.extend([f"{json_file.name}: {e}" for e in elementor_errors])
+    
+    # Report results
+    if all_errors:
+        print("\n" + "="*70)
+        print("COLOR PALETTE VIOLATIONS DETECTED")
+        print("="*70)
+        for error in all_errors:
+            print(f"  ❌ {error}")
+        print("\n" + "="*70)
+        print(f"Total violations: {len(all_errors)}")
+        print("\nColor palette rules:")
+        print("  ✅ Large backgrounds: Use muted earth tones (#FFF5E6, #F5E5D3, #BFA595)")
+        print("  ✅ Small accents: Bright yellow (#F4D03F, #FFFF00) acceptable")
+        print("  ❌ Large backgrounds: NEVER use bright yellow")
+        print("\nSee documentation/COLOR_PALETTE_RULES.md for details.")
+        return 1
+    else:
+        print("\n" + "="*70)
+        print("✅ ALL COLOR PALETTE TESTS PASSED")
+        print("="*70)
+        print("All files follow earth-tone neobrutalist color palette:")
+        print("  - Large backgrounds use muted earth tones")
+        print("  - Bright yellow only used for text shadows and small accents")
+        return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
