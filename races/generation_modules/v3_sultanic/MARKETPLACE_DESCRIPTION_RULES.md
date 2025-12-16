@@ -1,5 +1,20 @@
 # Marketplace Description Rules & Alignment
 
+## Voice & Tone Guidelines
+
+**All marketplace descriptions must follow:**
+- `documentation/VOICE_AND_TONE_GUIDELINES.md` - Core voice principles
+- `documentation/VOICE_EDGE_CASES.md` - Section 7.1 (Marketplace Descriptions) for content-type calibration, Section 11.1 for length targets (300-450 words total)
+
+**Key principles for marketplace descriptions:**
+- Lead with the problem the athlete already knows they have
+- State what the plan does—no inflation
+- Confidence reads as competence; hype reads as desperation
+- One philosophical line max; the rest is practical value
+- End on outcome, not enthusiasm
+
+---
+
 ## CRITICAL RULE: Marketplace Descriptions MUST Match Guides & Plans
 
 **All promises made in marketplace descriptions must be verifiable in:**
