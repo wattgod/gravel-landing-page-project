@@ -682,6 +682,20 @@ def generate_history_html(data: Dict) -> str:
         # Only use first 4 if we don't have quality facts
         facts = facts[:4]
     
+    # Generate dynamic facts header based on race characteristics
+    # Use race-specific variations instead of always "Random Facts"
+    race_name_short = display_name.split()[0] if display_name else "Race"
+    facts_header_variations = [
+        f"{race_name_short} Facts",
+        f"Things You Should Know",
+        f"What Makes {race_name_short} Different",
+        f"The Details That Matter",
+        f"{race_name_short} Reality Check"
+    ]
+    # Use race slug or name to deterministically pick a variation
+    race_slug = race.get('slug', '')
+    facts_header = facts_header_variations[hash(race_slug) % len(facts_header_variations)] if race_slug else "Random Facts"
+    
     facts_html = []
     for i, fact in enumerate(facts[:5], 1):
         facts_html.append(f"""      <div class="gg-fact-card">
@@ -716,7 +730,7 @@ def generate_history_html(data: Dict) -> str:
 
   <!-- Random Facts Cards -->
   <div>
-    <h3 class="gg-facts-header">Random Facts</h3>
+    <h3 class="gg-facts-header">{facts_header}</h3>
     <div class="gg-facts-grid">
 {chr(10).join(facts_html)}
     </div>
