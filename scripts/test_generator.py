@@ -256,6 +256,286 @@ def test_structural_integrity(json_data: Dict) -> Tuple[bool, List[str]]:
     return len(errors) == 0, errors
 
 
+def count_words(text: str) -> int:
+    """Count words in text, handling HTML tags."""
+    # Remove HTML tags
+    text = re.sub(r'<[^>]+>', '', text)
+    # Split on whitespace and count
+    return len(text.split())
+
+
+def extract_html_content(json_data: Dict) -> str:
+    """Extract all HTML content from Elementor JSON."""
+    html_content = []
+    
+    def extract_from_elements(elements):
+        for elem in elements:
+            if elem.get('widgetType') == 'html':
+                settings = elem.get('settings', {})
+                if isinstance(settings, dict):
+                    html = settings.get('html', '')
+                    if html:
+                        html_content.append(html)
+            if 'elements' in elem:
+                extract_from_elements(elem['elements'])
+    
+    if 'content' in json_data:
+        extract_from_elements(json_data['content'])
+    
+    return ' '.join(html_content)
+
+
+def test_content_length_limits(json_data: Dict) -> Tuple[bool, List[str], List[str]]:
+    """Test 6: Check that key sections don't exceed maximum lengths."""
+    errors = []
+    warnings = []
+    html_content = extract_html_content(json_data)
+    
+    # Extract TLDR sections
+    should_race_match = re.search(r'You Should Race This If:.*?<p>(.*?)</p>', html_content, re.DOTALL)
+    skip_if_match = re.search(r'Skip This If:.*?<p>(.*?)</p>', html_content, re.DOTALL)
+    
+    # Check TLDR should_race_if (max 60 words)
+    if should_race_match:
+        should_race_text = should_race_match.group(1)
+        word_count = count_words(should_race_text)
+        if word_count > 60:
+            errors.append(f"TLDR 'should_race_if' too long: {word_count} words (max 60)")
+    else:
+        warnings.append("TLDR 'should_race_if' section not found")
+    
+    # Check TLDR skip_if (max 60 words)
+    if skip_if_match:
+        skip_if_text = skip_if_match.group(1)
+        word_count = count_words(skip_if_text)
+        if word_count > 60:
+            errors.append(f"TLDR 'skip_if' too long: {word_count} words (max 60)")
+    else:
+        warnings.append("TLDR 'skip_if' section not found")
+    
+    # Extract Random Facts
+    fact_matches = re.findall(r'<div class="gg-fact-text">(.*?)</div>', html_content, re.DOTALL)
+    for i, fact in enumerate(fact_matches[:5], 1):
+        word_count = count_words(fact)
+        if word_count > 100:
+            errors.append(f"Random Fact #{i} too long: {word_count} words (max 100)")
+    
+    # Extract Black Pill quote
+    quote_match = re.search(r'class="gg-blackpill-quote"[^>]*>(.*?)</', html_content, re.DOTALL)
+    if quote_match:
+        quote_text = quote_match.group(1)
+        word_count = count_words(quote_text)
+        if word_count > 30:
+            errors.append(f"Black Pill quote too long: {word_count} words (max 30)")
+    
+    return len(errors) == 0, errors, warnings
+
+
+def test_random_facts_quality(json_data: Dict) -> Tuple[bool, List[str], List[str]]:
+    """Test 7: Validate that Random Facts aren't just boring stats."""
+    warnings = []
+    html_content = extract_html_content(json_data)
+    
+    # Extract Random Facts
+    fact_matches = re.findall(r'<div class="gg-fact-text">(.*?)</div>', html_content, re.DOTALL)
+    
+    weak_patterns = [
+        r'The race was founded in \d{4}',
+        r'\d+ riders across distances',
+        r'The course is [^.]*\.$',  # Single sentence ending with period
+    ]
+    
+    for i, fact in enumerate(fact_matches, 1):
+        fact_text = re.sub(r'<[^>]+>', '', fact).strip()
+        
+        # Check if single sentence
+        sentences = [s.strip() for s in re.split(r'[.!?]+', fact_text) if s.strip()]
+        if len(sentences) < 2:
+            warnings.append(f"Random Fact #{i} is only {len(sentences)} sentence(s) - should be 2+ sentences")
+        
+        # Check for weak patterns
+        for pattern in weak_patterns:
+            if re.search(pattern, fact_text, re.IGNORECASE):
+                warnings.append(f"Random Fact #{i} matches weak pattern: '{pattern}'")
+        
+        # Check if it's just a stat with no story
+        if len(fact_text.split()) < 15:
+            warnings.append(f"Random Fact #{i} is too short ({len(fact_text.split())} words) - likely just a stat")
+    
+    # Warnings don't fail the test, but flag for manual review
+    return True, [], warnings
+
+
+def test_section_layout_consistency(json_data: Dict) -> Tuple[bool, List[str]]:
+    """Test 8: Ensure Course Profile and Biased Opinion layouts match."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Find Course Profile section (id="course-ratings")
+    course_profile_section = re.search(r'id="course-ratings".*?(?=id="|</section>)', html_content, re.DOTALL | re.IGNORECASE)
+    # Find Biased Opinion section (id="biased-opinion")
+    biased_opinion_section = re.search(r'id="biased-opinion".*?(?=id="|</section>|FINAL VERDICT)', html_content, re.DOTALL | re.IGNORECASE)
+    
+    if course_profile_section:
+        cp_content = course_profile_section.group(0)
+        # Count rating bars more precisely - look for the container div, not the inner fill
+        cp_bars = len(re.findall(r'<div class="gg-rating-bar">', cp_content))
+        cp_radar = len(re.findall(r'gg-course-radar-svg|radarChart|radar-chart', cp_content, re.IGNORECASE))
+        cp_quote = len(re.findall(r'gg-course-quote|course-quote-big', cp_content, re.IGNORECASE))
+    else:
+        errors.append("Course Profile section not found")
+        cp_bars = cp_radar = cp_quote = 0
+    
+    if biased_opinion_section:
+        bo_content = biased_opinion_section.group(0)
+        # Count rating bars more precisely - look for the container div
+        bo_bars = len(re.findall(r'<div class="gg-rating-bar">', bo_content))
+        # Look for radar chart - uses gg-radar-svg-opinion or gg-radar-card-opinion
+        bo_radar = len(re.findall(r'gg-radar-svg-opinion|gg-radar-card-opinion|radarChart|radar-chart', bo_content, re.IGNORECASE))
+        # Look for quote - uses gg-opinion-quote or editorial-quote
+        bo_quote = len(re.findall(r'gg-opinion-quote|gg-editorial-quote|editorial-quote-big', bo_content, re.IGNORECASE))
+    else:
+        errors.append("Biased Opinion section not found (id='biased-opinion')")
+        bo_bars = bo_radar = bo_quote = 0
+    
+    # Both should have 7 rating bars
+    if cp_bars != 7:
+        errors.append(f"Course Profile has {cp_bars} rating bars (expected 7)")
+    if bo_bars != 7:
+        errors.append(f"Biased Opinion has {bo_bars} rating bars (expected 7)")
+    
+    # Both should have radar charts
+    if cp_radar == 0:
+        errors.append("Course Profile missing radar chart")
+    if bo_radar == 0:
+        errors.append("Biased Opinion missing radar chart")
+    
+    # Course Profile should have quote, Biased Opinion uses summary/strengths/weaknesses instead
+    if cp_quote == 0:
+        errors.append("Course Profile missing quote section")
+    # Biased Opinion doesn't require a quote - it has summary/strengths/weaknesses instead
+    # Check for summary instead
+    bo_summary = len(re.findall(r'<strong>.*?</strong>.*?Strengths:', bo_content if biased_opinion_section else '', re.DOTALL | re.IGNORECASE))
+    if bo_summary == 0 and biased_opinion_section:
+        # This is fine - Biased Opinion structure is different
+        pass
+    
+    return len(errors) == 0, errors
+
+
+def test_formatting_quality(json_data: Dict) -> Tuple[bool, List[str]]:
+    """Test 9: Catch spacing and formatting issues."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Check for double/triple blank lines (indicates spacing bug)
+    double_blank = re.findall(r'\n\n\n+', html_content)
+    if double_blank:
+        errors.append(f"Found {len(double_blank)} instances of double/triple blank lines")
+    
+    # Check for excessive whitespace in paragraphs (but allow normal indentation)
+    # Normal indentation is <p>\n        (newline + 8 spaces) = 9 chars total
+    # Flag only if there are 10+ whitespace chars (excessive)
+    excessive_whitespace = re.findall(r'<p>\s{10,}', html_content)
+    if excessive_whitespace:
+        errors.append(f"Found {len(excessive_whitespace)} paragraphs with excessive leading whitespace")
+    
+    # Check for inconsistent spacing between sections
+    # Look for patterns like </section>\n\n\n<section> (should be single \n)
+    section_spacing = re.findall(r'</section>\s{3,}<section', html_content)
+    if section_spacing:
+        errors.append(f"Found {len(section_spacing)} instances of inconsistent section spacing")
+    
+    return len(errors) == 0, errors
+
+
+def test_quote_replacement(json_data: Dict, race_slug: str) -> Tuple[bool, List[str]]:
+    """Test 10: Verify quotes are race-specific, not template text."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Known template quotes to flag
+    template_quotes = [
+        "Something will break out there. Hopefully not you.",
+        "This race will test every assumption",
+    ]
+    
+    # Extract Black Pill quote
+    bp_quote_match = re.search(r'class="gg-blackpill-quote"[^>]*>(.*?)</', html_content, re.DOTALL)
+    if bp_quote_match:
+        bp_quote = re.sub(r'<[^>]+>', '', bp_quote_match.group(1)).strip()
+        for template in template_quotes:
+            if template.lower() in bp_quote.lower():
+                errors.append(f"Black Pill quote matches template text: '{template}'")
+    
+    # Extract course quote
+    course_quote_match = re.search(r'gg-course-quote[^>]*>(.*?)</', html_content, re.DOTALL)
+    if course_quote_match:
+        course_quote = re.sub(r'<[^>]+>', '', course_quote_match.group(1)).strip()
+        for template in template_quotes:
+            if template.lower() in course_quote.lower():
+                errors.append(f"Course quote matches template text: '{template}'")
+    
+    # For Unbound, check for Mid South quotes (and vice versa)
+    if race_slug == 'unbound-200':
+        if 'Bobby' in html_content or 'Stillwater' in html_content:
+            errors.append("Found Mid South-specific content in Unbound quotes")
+    elif race_slug == 'mid-south':
+        if 'Flint Hills' in html_content and 'annoying little brother' not in html_content:
+            errors.append("Found Unbound-specific content in Mid South quotes")
+    
+    return len(errors) == 0, errors
+
+
+def test_external_links(json_data: Dict) -> Tuple[bool, List[str]]:
+    """Test 11: Ensure external links are valid, not placeholders."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Extract official website URL - look for "Official Race Info" or "Official Site" links
+    official_patterns = [
+        r'Official.*?Info.*?href="([^"]+)"',
+        r'Official.*?Site.*?href="([^"]+)"',
+        r'official.*?website.*?href="([^"]+)"',
+        r'href="([^"]*midsouthgravel[^"]*)"',  # Mid South specific
+        r'href="([^"]*unboundgravel[^"]*)"',  # Unbound specific
+    ]
+    
+    found_official = False
+    for pattern in official_patterns:
+        match = re.search(pattern, html_content, re.IGNORECASE)
+        if match:
+            found_official = True
+            url = match.group(1)
+            if not url.startswith(('http://', 'https://')):
+                errors.append(f"Official website URL invalid format: '{url}'")
+            elif 'placeholder' in url.lower() or 'needs to be researched' in url.lower() or 'replace' in url.lower():
+                errors.append(f"Official website URL is placeholder: '{url}'")
+            break
+    
+    if not found_official:
+        # Check if it exists in logistics section
+        logistics_match = re.search(r'RACE LOGISTICS.*?</section>', html_content, re.DOTALL | re.IGNORECASE)
+        if logistics_match:
+            # Link might be there but pattern didn't match - don't fail, just warn
+            pass
+        else:
+            errors.append("Official website link not found in expected location")
+    
+    # Extract RideWithGPS ID
+    rwgps_match = re.search(r'ridewithgps\.com.*?id=(\d+)', html_content)
+    if rwgps_match:
+        rwgps_id = rwgps_match.group(1)
+        if not rwgps_id.isdigit():
+            errors.append(f"RideWithGPS ID is not numeric: '{rwgps_id}'")
+    else:
+        # Check for placeholder RideWithGPS (but allow if it's a valid route ID format)
+        if 'needs to be researched' in html_content.lower() and 'ridewithgps' in html_content.lower():
+            errors.append("RideWithGPS ID appears to be placeholder")
+    
+    return len(errors) == 0, errors
+
+
 def main():
     if len(sys.argv) < 3:
         print("Usage: python3 test_generator.py <json_file> <race_slug> [comparison_file] [comparison_race]")
@@ -351,6 +631,88 @@ def main():
             print(f"     - {error}")
         all_passed = False
     results.append(("Structural Integrity", passed))
+    print("")
+    
+    # Test 6: Content length limits
+    print("TEST 6: Content Length Limits")
+    passed, errors, warnings = test_content_length_limits(json_data)
+    if passed:
+        print("  ✅ Content length limits respected")
+    else:
+        print("  ❌ Content length violations:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    if warnings:
+        print("  ⚠️  Warnings:")
+        for warning in warnings:
+            print(f"     - {warning}")
+    results.append(("Content Length", passed))
+    print("")
+    
+    # Test 7: Random Facts Quality
+    print("TEST 7: Random Facts Quality")
+    passed, errors, warnings = test_random_facts_quality(json_data)
+    if warnings:
+        print("  ⚠️  Quality warnings (manual review recommended):")
+        for warning in warnings:
+            print(f"     - {warning}")
+    else:
+        print("  ✅ Random facts quality acceptable")
+    # Warnings don't fail, but flag for review
+    results.append(("Random Facts Quality", True))
+    print("")
+    
+    # Test 8: Layout Consistency
+    print("TEST 8: Section Layout Consistency")
+    passed, errors = test_section_layout_consistency(json_data)
+    if passed:
+        print("  ✅ Course Profile and Biased Opinion layouts match")
+    else:
+        print("  ❌ Layout inconsistencies:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("Layout Consistency", passed))
+    print("")
+    
+    # Test 9: Formatting Quality
+    print("TEST 9: Formatting Quality")
+    passed, errors = test_formatting_quality(json_data)
+    if passed:
+        print("  ✅ Formatting is clean")
+    else:
+        print("  ❌ Formatting issues:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("Formatting", passed))
+    print("")
+    
+    # Test 10: Quote Replacement
+    print("TEST 10: Quote Uniqueness")
+    passed, errors = test_quote_replacement(json_data, race_slug)
+    if passed:
+        print("  ✅ Quotes are race-specific")
+    else:
+        print("  ❌ Quote issues:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("Quote Uniqueness", passed))
+    print("")
+    
+    # Test 11: External Links Valid
+    print("TEST 11: External Links Valid")
+    passed, errors = test_external_links(json_data)
+    if passed:
+        print("  ✅ External links are valid")
+    else:
+        print("  ❌ Link issues:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("External Links", passed))
     print("")
     
     # Summary

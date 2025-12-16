@@ -4,6 +4,8 @@
 
 When researching a race for the landing page generator, identify 3-5 **KEY SUFFERING ZONES** where the course gets spicy. These should be specific, sourced, and actionable—not generic milestones.
 
+Also included: **Random Facts Quality Standards** for ensuring facts are memorable and substantive, not just boring stats.
+
 ## What to Research
 
 ### Key Elements to Find:

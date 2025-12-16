@@ -565,25 +565,61 @@ def generate_overview_hero_html(data: Dict) -> str:
 
 
 def generate_tldr_html(data: Dict) -> str:
-    """Generate TLDR/Decision section HTML."""
+    """Generate TLDR/Decision section HTML - brief and scannable (2-3 sentences max, ~40-60 words)."""
     race = data['race']
-    verdict = race.get('final_verdict', {})
     
-    # Extract should_you_race text and create skip_if from it
-    should_race_text = verdict.get('should_you_race', 'You like hurting yourself, surprises (not the good kind), and you\'re prepared to commit a month of salary and (hopefully) a shit load of training getting ready for one truly insane day.')
-    
-    # Create skip_if text - if should_you_race mentions "reconsider", use that part, otherwise generic
-    skip_if_text = 'You\'re not ready to find out what\'s actually inside you.'
-    if 'reconsider' in should_race_text.lower():
-        # Try to extract the reconsider part
-        parts = should_race_text.split('—')
-        if len(parts) > 1:
-            skip_if_text = parts[1].strip()
+    # Use tldr fields if available (preferred - already condensed)
+    if 'tldr' in race:
+        tldr = race['tldr']
+        should_race_condensed = tldr.get('should_race_if', 'You value community and authentic hospitality over predictable conditions.')
+        skip_if_text = tldr.get('skip_if', 'You need to know exactly what you\'re getting into before you commit.')
+    else:
+        # Fallback: extract from final_verdict and condense
+        verdict = race.get('final_verdict', {})
+        should_race_full = verdict.get('should_you_race', 'You like hurting yourself, surprises (not the good kind), and you\'re prepared to commit a month of salary and (hopefully) a shit load of training getting ready for one truly insane day.')
+        
+        # Condense to core message - extract key points
+        should_race_condensed = should_race_full
+        
+        # If it's too long, extract the core message
+        if len(should_race_full.split()) > 60:
+            # Try to extract first 2-3 sentences or key phrases
+            sentences = should_race_full.split('. ')
+            if len(sentences) >= 2:
+                # Take first 2 sentences, condense if needed
+                should_race_condensed = '. '.join(sentences[:2]) + '.'
+                # If still too long, take first sentence + key phrase
+                if len(should_race_condensed.split()) > 60:
+                    should_race_condensed = sentences[0] + '.'
+            else:
+                # Single long sentence - extract key phrases
+                # Look for "if you value" or "if you need" patterns
+                if 'value' in should_race_full.lower():
+                    parts = should_race_full.split('—')
+                    if len(parts) > 0:
+                        should_race_condensed = parts[0].strip() + '.'
+        
+        # Get skip_if - extract from should_you_race or use alternatives
+        skip_if_text = 'You\'re not ready to find out what\'s actually inside you.'
+        if 'reconsider' in should_race_full.lower():
+            # Extract the reconsider part
+            parts = should_race_full.split('—')
+            if len(parts) > 1:
+                skip_part = parts[1].strip()
+                # Condense to 2-3 sentences
+                skip_sentences = skip_part.split('. ')
+                if len(skip_sentences) >= 2:
+                    skip_if_text = '. '.join(skip_sentences[:2]) + '.'
+                else:
+                    skip_if_text = skip_part
+                # Ensure it's not too long
+                if len(skip_if_text.split()) > 60:
+                    skip_if_text = skip_sentences[0] + '.' if skip_sentences else skip_if_text
     
     template = f"""<div class="gg-decision-grid">
   <div class="gg-decision-card gg-decision-card--yes">
     <h3>You Should Race This If:</h3>
-    <p>{should_race_text}</p>
+    <p>{should_race_condensed}</p>
     <a href="#training" class="gg-decision-cta">Get a Training Plan →</a>
   </div>
 
@@ -616,14 +652,19 @@ def generate_history_html(data: Dict) -> str:
       </div>
     </div>""")
     
-    # Random facts - these need to be race-specific, using key details
-    facts = [
-        f"The race was founded in {history['founded']} by {history['founder']}.",
-        f"{history['reputation']}",
-        f"The course is {race['course_description']['character'].lower()}.",
-        f"{race['vitals']['field_size']}",
-        f"{race['black_pill']['reality'][:150]}..."
-    ]
+    # Random facts - use quality facts from data if available, otherwise generate from key details
+    if 'random_facts' in history and isinstance(history['random_facts'], list) and len(history['random_facts']) >= 3:
+        facts = history['random_facts'][:5]  # Use provided quality facts
+    else:
+        # Fallback: generate from key details (but these should be replaced with quality facts)
+        facts = [
+            f"{history['reputation']}",
+            f"The course is {race['course_description']['character'].lower()}.",
+            f"{race['vitals']['field_size']}",
+            f"{race['black_pill']['reality'][:150]}..."
+        ]
+        # Only use first 4 if we don't have quality facts
+        facts = facts[:4]
     
     facts_html = []
     for i, fact in enumerate(facts[:5], 1):
@@ -635,7 +676,7 @@ def generate_history_html(data: Dict) -> str:
       </div>""")
     
     template = f"""<section class="gg-tldr-grid">
-  
+
   <!-- Vision Quest -->
   <div>
     <div class="gg-pill">Facts And History</div>
