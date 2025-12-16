@@ -495,10 +495,27 @@ def generate_course_map_html(data: Dict) -> str:
         if citation:
             citation_html = f'<div class="gg-zone-citation">Source: {citation}</div>'
         
+        # Build structured HTML with proper detail boxes
+        desc_html = f'<p>{desc}</p>'
+        
+        # Add named section as strong element
+        if named_section:
+            desc_html += f'<strong>{named_section}</strong>'
+        
+        # Add terrain detail and weather note as em elements (detail boxes)
+        detail_boxes = []
+        if terrain_detail:
+            detail_boxes.append(f'<em>{terrain_detail}</em>')
+        if weather_note:
+            detail_boxes.append(f'<em>{weather_note}</em>')
+        
+        if detail_boxes:
+            desc_html += ''.join(detail_boxes)
+        
         zones_html.append(f"""        <div class="gg-zone-card">
           <div class="gg-zone-mile">Mile {mile}</div>
           <div class="gg-zone-label">{label}</div>
-          <div class="gg-zone-desc">{full_desc}</div>
+          <div class="gg-zone-desc">{desc_html}</div>
           {citation_html}
         </div>""")
     

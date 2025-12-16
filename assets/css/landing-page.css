@@ -1,10 +1,12 @@
 /* ============================================================================
    NEO BRUTALIST LANDING PAGE STYLES
    ============================================================================
-   Bold, raw, high-contrast styling for course breakdown and facts sections
+   Bold, raw, high-contrast styling for course breakdown, vitals, and timeline
    ============================================================================ */
 
-/* Course Breakdown - Suffering Zones */
+/* ============================================================================
+   COURSE BREAKDOWN - SUFFERING ZONES
+   ============================================================================ */
 .gg-suffering-zones {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -21,6 +23,7 @@
   position: relative;
   box-shadow: 8px 8px 0px 0px #000000;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  overflow: hidden;
 }
 
 .gg-zone-card:hover {
@@ -28,8 +31,9 @@
   box-shadow: 10px 10px 0px 0px #000000;
 }
 
+/* Consistent alternating backgrounds - ALL cards follow same pattern */
 .gg-zone-card:nth-child(odd) {
-  background: #FFFF00; /* Bright yellow accent for alternating cards */
+  background: #FFFF00; /* Bright yellow accent */
 }
 
 .gg-zone-card:nth-child(even) {
@@ -37,7 +41,7 @@
 }
 
 .gg-zone-mile {
-  /* Bold mile marker - top left corner style */
+  /* Bold mile marker - top left corner badge */
   position: absolute;
   top: -12px;
   left: 16px;
@@ -54,20 +58,21 @@
 }
 
 .gg-zone-label {
-  /* Section name - bold, uppercase */
+  /* Header bar - black background, white text */
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 24px 20px 12px 20px;
-  border-bottom: 3px solid #000000;
+  padding: 24px 20px 16px 20px;
+  border-bottom: 4px solid #000000;
   background: #000000;
   color: #FFFFFF;
   line-height: 1.2;
+  margin: 0;
 }
 
 .gg-zone-desc {
-  /* Description text - raw, direct */
+  /* Main description area - consistent padding */
   padding: 20px;
   font-size: 15px;
   line-height: 1.6;
@@ -76,33 +81,44 @@
 }
 
 .gg-zone-desc strong {
-  /* Named section emphasis */
+  /* Named section box - black background, white text, bold border */
   font-weight: 900;
   text-transform: uppercase;
   display: block;
-  margin-top: 12px;
-  padding: 8px 12px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
   background: #000000;
   color: #FFFFFF;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
 }
 
 .gg-zone-desc em {
-  /* Weather/timing notes */
-  font-style: italic;
+  /* Detail boxes - consistent styling with left border */
+  font-style: normal;
   display: block;
-  margin-top: 8px;
-  padding: 6px 10px;
+  margin-top: 10px;
+  padding: 10px 14px;
   background: #F0F0F0;
   border-left: 4px solid #000000;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
   font-weight: 600;
+  color: #000000;
+}
+
+/* Ensure last detail box has consistent styling */
+.gg-zone-desc em:last-of-type {
+  margin-bottom: 0;
 }
 
 .gg-zone-citation {
   /* Source citation - small, muted but visible */
   padding: 12px 20px;
   background: #F5F5F5;
-  border-top: 2px solid #000000;
+  border-top: 3px solid #000000;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -111,7 +127,7 @@
 
 /* Course Breakdown Note */
 .gg-course-breakdown-note {
-  /* Research note - raw, honest */
+  /* Research note - raw, honest, yellow background */
   border: 4px solid #000000;
   background: #FFFF00;
   padding: 16px 20px;
@@ -129,7 +145,142 @@
   font-weight: 900;
 }
 
-/* Facts Section */
+/* ============================================================================
+   RACE VITALS TABLE - NEO BRUTALIST STYLE
+   ============================================================================ */
+.gg-vitals-table-wrap {
+  margin-top: 2rem;
+}
+
+.gg-vitals-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 4px solid #000000;
+  background: #FFFFFF;
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.gg-vitals-table th {
+  /* Label column - black background, white text */
+  background: #000000;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 16px 20px;
+  text-align: left;
+  border-right: 4px solid #000000;
+  border-bottom: 2px solid #FFFFFF;
+  font-family: 'Courier New', monospace;
+}
+
+.gg-vitals-table th:last-child {
+  border-right: none;
+}
+
+.gg-vitals-table td {
+  /* Value column - alternating backgrounds */
+  background: #FFFFFF;
+  color: #000000;
+  font-size: 15px;
+  padding: 16px 20px;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.gg-vitals-table tr:nth-child(even) td {
+  background: #FFFF00; /* Yellow accent for alternating rows */
+}
+
+.gg-vitals-table tr:last-child th,
+.gg-vitals-table tr:last-child td {
+  border-bottom: none;
+}
+
+.gg-vitals-table td:last-child {
+  border-right: none;
+}
+
+/* ============================================================================
+   TIMELINE SECTION - NEO BRUTALIST STYLE
+   ============================================================================ */
+.gg-timeline-section {
+  position: relative;
+  padding-left: 60px;
+  margin: 2rem 0;
+}
+
+/* Vertical line - bold, high contrast */
+.gg-timeline-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #000000;
+  box-shadow: 2px 0 0 0 #000000;
+}
+
+.gg-timeline-event {
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+}
+
+.gg-timeline-event:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Diamond marker on timeline */
+.gg-timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -48px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #FFFF00;
+  border: 4px solid #000000;
+  transform: rotate(45deg);
+  box-shadow: 4px 4px 0px 0px #000000;
+  z-index: 5;
+}
+
+.gg-timeline-year {
+  /* Year box - yellow background, black border, bold shadow */
+  display: inline-block;
+  background: #FFFF00;
+  color: #000000;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.gg-timeline-content {
+  /* Content text - clean, readable */
+  font-size: 15px;
+  line-height: 1.7;
+  color: #000000;
+  padding-left: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ============================================================================
+   FACTS SECTION
+   ============================================================================ */
 .gg-facts-header {
   /* Dynamic facts header - bold, brutal */
   font-weight: 900;
@@ -204,7 +355,9 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Responsive adjustments */
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
 @media (max-width: 768px) {
   .gg-suffering-zones {
     grid-template-columns: 1fr;
@@ -232,9 +385,30 @@
     padding: 12px 16px;
     box-shadow: 4px 4px 0px 0px #FFFF00;
   }
+  
+  .gg-timeline-section {
+    padding-left: 40px;
+  }
+  
+  .gg-timeline-event::before {
+    left: -32px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .gg-vitals-table {
+    font-size: 13px;
+  }
+  
+  .gg-vitals-table th,
+  .gg-vitals-table td {
+    padding: 12px 16px;
+  }
 }
 
-/* High contrast mode support */
+/* ============================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================================================ */
 @media (prefers-contrast: high) {
   .gg-zone-card,
   .gg-fact-card {
@@ -244,5 +418,13 @@
   .gg-zone-mile,
   .gg-fact-number {
     border-width: 4px;
+  }
+  
+  .gg-vitals-table {
+    border-width: 5px;
+  }
+  
+  .gg-timeline-year {
+    border-width: 5px;
   }
 }
