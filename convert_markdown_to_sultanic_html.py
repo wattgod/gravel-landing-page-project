@@ -234,3 +234,4 @@ for plan_name, mapping in plan_mapping.items():
         status = "✓" if char_count <= 4000 else "⚠️"
         print(f"{status} {plan_name}: {char_count} chars")
 
+

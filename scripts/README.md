@@ -184,3 +184,4 @@ If a widget isn't found, check:
 - Generator includes helpful print statements showing progress
 - Missing data is handled gracefully (doesn't crash on None values)
 
+

@@ -77,3 +77,4 @@ The variation is selected deterministically based on the race slug, so each race
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - CSS Grid support required
 - Fallbacks for older browsers not included (intentional - neo brutalist is modern)
+

@@ -160,3 +160,4 @@ Before finalizing any content:
 - Original voice guidelines: `Desktop/GGBD/GG Voice:Tone.pdf`
 - Example of correct voice: Mid South data file
 - Example of violations (now corrected): Previous BWR content
+

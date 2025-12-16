@@ -81,3 +81,4 @@ echo "The hook will now run verification before any commit that includes guide f
 echo "To test: git commit (with guide files staged)"
 echo "To bypass (not recommended): git commit --no-verify"
 
+

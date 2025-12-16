@@ -46,3 +46,4 @@ See `DESCRIPTION_MAPPING.md` for the complete mapping of your 15 TrainingPeaks p
 2. **Update TrainingPeaks:** Follow `ACTION_PLAN.md` to update your 15 plan listings
 3. **Monitor performance:** Track conversions and swap alternatives if needed
 
+

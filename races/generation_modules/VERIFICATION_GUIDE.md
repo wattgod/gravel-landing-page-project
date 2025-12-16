@@ -132,3 +132,4 @@ Use in CI/CD pipelines:
 python3 verify_guide_structure.py docs/guides/ && echo "✅ Verification passed" || exit 1
 ```
 
+

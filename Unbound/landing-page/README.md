@@ -136,3 +136,4 @@ For issues with Elementor import or template customization:
 **Template Version:** 1.0  
 **Elementor Version:** Compatible with 3.0+
 
+

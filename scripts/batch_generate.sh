@@ -63,3 +63,4 @@ done
 echo "Batch generation complete!"
 echo "Output files in: $OUTPUT_DIR"
 
+
