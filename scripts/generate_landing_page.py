@@ -1016,7 +1016,7 @@ def generate_final_verdict_html(data: Dict) -> str:
     gap: 0.65rem;
     padding: 0.40rem 1.7rem 0.48rem;
     border-radius: 999px;
-    background: #F4D03F;
+    background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
     border: 3px solid #59473C;
     box-shadow: 4px 4px 0 #59473C;
     font-family: "Sometype Mono", monospace;
@@ -1400,7 +1400,7 @@ def generate_training_plans_html(data: Dict) -> str:
 /* Training Plans Badge */
 .gg-training-plans-badge {{
   display: inline-block;
-  background: #f4d03f;
+  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
   color: #000;
   padding: 12px 24px;
   border: 3px solid #000;
@@ -1438,7 +1438,7 @@ def generate_training_plans_html(data: Dict) -> str:
 }}
 
 .gg-plan-cta:hover {{
-  background: #f4d03f;
+  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
   color: #000 !important;
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #000;

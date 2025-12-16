@@ -17,6 +17,18 @@ This folder contains all training plans, generation scripts, and documentation f
 
 **All generation scripts should reference both files when creating content.**
 
+## 🎨 Color Palette Rules
+
+**CRITICAL for brand consistency:**
+
+- **`COLOR_PALETTE_RULES.md`** - Earth-tone neobrutalist color system:
+  - Muted earth tones for backgrounds (cream, sand, muted cream)
+  - Bright yellow (#F4D03F, #FFFF00) ONLY for text shadows and small accents
+  - **NEVER use bright yellow for table rows, card backgrounds, or large blocks**
+  - Decision tree for choosing correct colors
+
+**One wrong color value destroys brand consistency. Always verify large backgrounds use muted earth tones.**
+
 ## 🚀 JSON Template System (NEW)
 
 **Faster plan generation using structured JSON templates!**

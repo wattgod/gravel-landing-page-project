@@ -33,7 +33,7 @@
 
 /* Consistent alternating backgrounds - ALL cards follow same pattern */
 .gg-zone-card:nth-child(odd) {
-  background: #FFFF00; /* Bright yellow accent */
+  background: #FFF5E6; /* Muted cream warmth - earth-tone palette, NOT neon yellow */
 }
 
 .gg-zone-card:nth-child(even) {
@@ -127,9 +127,9 @@
 
 /* Course Breakdown Note */
 .gg-course-breakdown-note {
-  /* Research note - raw, honest, yellow background */
+  /* Research note - raw, honest, muted cream background */
   border: 4px solid #000000;
-  background: #FFFF00;
+  background: #FFF5E6; /* Muted cream - earth-tone palette */
   padding: 16px 20px;
   margin-top: 2rem;
   font-family: 'Courier New', monospace;
@@ -192,7 +192,7 @@
 }
 
 .gg-vitals-table tr:nth-child(even) td {
-  background: #FFFF00; /* Yellow accent for alternating rows */
+  background: #FFF5E6; /* Muted cream warmth - earth-tone palette, NOT neon yellow */
 }
 
 .gg-vitals-table tr:last-child th,
