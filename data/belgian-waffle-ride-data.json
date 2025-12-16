@@ -57,7 +57,7 @@
         {
           "mile": 50,
           "label": "Black Canyon (Zwartenberg)",
-          "desc": "Miles 50-65: 1,400+ foot dirt climb on steep sand and washboard surfaces arrives when legs are fresh enough to hurt. The field shatters here.",
+          "desc": "Miles 50-65: 1,400+ foot dirt climb on steep sand and washboard surfaces. The field shatters here—going from hundreds to dozens. One pro described it as shaking them 'to the core.'",
           "terrain_detail": "Washboard fire road with steep sand sections",
           "named_section": "Zwartenberg",
           "weather_note": "Arrives when legs are fresh enough to hurt"
@@ -65,7 +65,7 @@
         {
           "mile": 85,
           "label": "Sandy Bandy",
-          "desc": "Miles 85-95: Long, narrow, twisting sand always into strengthening headwinds. Multiple race leaders have flatted twice here. Destroys equipment and morale.",
+          "desc": "Miles 85-95: Long, narrow, twisting sand always into strengthening headwinds. Multiple race leaders have flatted twice here and lost everything. Destroys equipment and morale.",
           "terrain_detail": "Long twisting sand sectors",
           "named_section": "Sandy Bandy",
           "weather_note": "Always into strengthening headwinds"
@@ -73,15 +73,15 @@
         {
           "mile": 116,
           "label": "Double Peak (Muur van Dubbelberg)",
-          "desc": "Miles 116-130: 4.5 miles, 1,800 feet gain, 8% average with 17-23% grades. Peter Stetina won 2024 by pulling clear on these pitches and soloing the final five miles.",
+          "desc": "Miles 116-130: The terminal exam. 4.5 miles, 1,800 feet gain, 8% average with 17-23% grades. Peter Stetina won 2024 by pulling clear on these pitches and soloing the final five miles.",
           "terrain_detail": "Sustained climbing with extreme grades",
           "named_section": "Muur van Dubbelberg",
-          "weather_note": "Arrives after six hours when legs are empty"
+          "weather_note": "Arrives after six hours when legs are cooked"
         }
       ],
       "signature_challenge": "Six-hour cyclocross race where tire choice matters more than FTP. That 23% grade at mile 130 doesn't negotiate.",
-      "ridewithgps_id": "50373079",
-      "ridewithgps_name": "Belgian%20Waffle%20Ride"
+      "ridewithgps_id": "46433141",
+      "ridewithgps_name": "Belgian%20Waffle%20Ride%202024"
     },
     
     "ratings_breakdown": {
