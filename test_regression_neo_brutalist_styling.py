@@ -134,24 +134,33 @@ def check_css_in_page_settings(elementor_path: Path) -> List[str]:
         return [f"Failed to parse Elementor file: {e}"]
     
     custom_css = data.get('page_settings', {}).get('custom_css', '')
+    content_str = json.dumps(data)
     
     if not custom_css:
         errors.append("No custom_css in page_settings")
         return errors
     
-    # Check for key neo-brutalist styles
-    required_patterns = [
-        (r'\.gg-zone-card', 'Zone card styles'),
-        (r'\.gg-vitals-table', 'Vitals table styles'),
-        (r'\.gg-timeline-section', 'Timeline section styles'),
-        (r'border:\s*4px\s*solid\s*#000000', 'Bold black borders'),
-        (r'box-shadow:\s*8px\s*8px\s*0px\s*0px\s*#000000', 'Neo-brutalist box shadows'),
-        (r'#FFFF00', 'Bright yellow accent color'),
-    ]
+    # Only check for styles if the file actually uses those sections
+    if 'gg-zone-card' in content_str:
+        if not re.search(r'\.gg-zone-card', custom_css):
+            errors.append("Missing Zone card styles in page_settings.custom_css")
     
-    for pattern, description in required_patterns:
-        if not re.search(pattern, custom_css):
-            errors.append(f"Missing {description} in page_settings.custom_css")
+    if 'gg-vitals-table' in content_str:
+        if not re.search(r'\.gg-vitals-table', custom_css):
+            errors.append("Missing Vitals table styles in page_settings.custom_css")
+    
+    if 'gg-timeline-section' in content_str:
+        if not re.search(r'\.gg-timeline-section', custom_css):
+            errors.append("Missing Timeline section styles in page_settings.custom_css")
+    
+    # Always check for core neo-brutalist patterns if any neo-brutalist classes exist
+    if 'gg-zone-card' in content_str or 'gg-vitals-table' in content_str or 'gg-timeline-section' in content_str:
+        if not re.search(r'border:\s*4px\s*solid\s*#000000', custom_css):
+            errors.append("Missing Bold black borders in page_settings.custom_css")
+        if not re.search(r'box-shadow:\s*8px\s*8px\s*0px\s*0px\s*#000000', custom_css):
+            errors.append("Missing Neo-brutalist box shadows in page_settings.custom_css")
+        if not re.search(r'#FFFF00', custom_css):
+            errors.append("Missing Bright yellow accent color in page_settings.custom_css")
     
     return errors
 
