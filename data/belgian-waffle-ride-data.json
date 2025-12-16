@@ -196,11 +196,6 @@
       "alternatives": "Unbound 200 for maximum distance prestige without technical demands, Mid South for community warmth at lower cost, SBT GRVL for Colorado altitude climbing with better budget logistics, Leadville Trail 100 MTB for technical mountain terrain with even higher attrition."
     },
     
-    "tldr": {
-      "should_race_if": "You have legitimate bike handling skills from cyclocross, mountain biking, or technical gravel riding. You can handle 10+ hours of moving time across varied terrain. You value technical course design over pure distance and want to race alongside WorldTour talent. California travel logistics and costs don't deter you.",
-      "skip_if": "You're a pure roadie with limited technical experience or can't dedicate 12+ hours to finish. You need affordable racing or intimate community vibes rather than polished festival production. You're unwilling to research equipment choices—tire pressure, gearing, bike selection genuinely matter here. California's $1,500+ total costs exceed your budget."
-    },
-    
     "history": {
       "founded": 2012,
       "founder": "Michael Marckx (MMX)",
@@ -221,9 +216,6 @@
         "BWR offers gender parity in prize money distribution, with women receiving equal or greater cash prizes than men in certain categories. This progressive stance reflects Marckx's commitment to using the event for cultural change in cycling, predating many of gravel racing's recent equity movements.",
         "The race's 40% DNF rate—nearly double Unbound's attrition—isn't considered a bug but a feature. Marckx explicitly designed the route to 'expose' riders who rely on draft in group rides but lack comprehensive bike handling and endurance skills. The high DNF rate validates the course's effectiveness at separating technical riders from pure power athletes."
       ]
-    },
-    "experience": {
-      "description": "The Belgian Waffle Ride begins with adrenaline and ends with math problems about remaining daylight. The neutral rollout lasts until mile four, where a 1.7-mile road climb immediately breaks the field. Your opening effort determines your pack for much of the race. By mile 14, the first rock garden delivers a 30-foot jagged pit with immediate flats and crashes. You're thirty minutes in and already questioning tire choices. Black Canyon is where the race stops being fun. The washboard fire road vibrates your body while steep sand sections force power outputs you can't sustain. Groups that entered together emerge scattered. Then comes the endurance phase—miles 80-116 where the pace subsides and survivors consolidate. This is the eye of the storm. Sandy Bandy claims equipment casualties. Hodgesmeergate's water crossing and rock garden hit at mile 100+ when precision matters and coordination fails. The final twelve miles deliver technical single-track requiring walking even for strong riders. Double Peak arrives at mile 116-130. You've ridden six hours. Your legs are empty. Now climb 1,800 feet over 4.5 miles with grades reaching 23%. The gradient doesn't care about your training plan. When you finally cross the finish line, the Belgian waffles and Lost Abbey ales taste like survival earned. One finisher: 'Seven hours and 35 minutes of pedaling and questioning my life choices later, I vowed never again, which likely signals the beginning of a long career in gravel racing.'"
     },
     
     "logistics": {
