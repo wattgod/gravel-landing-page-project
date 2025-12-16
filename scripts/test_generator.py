@@ -390,10 +390,10 @@ def test_section_layout_consistency(json_data: Dict) -> Tuple[bool, List[str]]:
         bo_content = biased_opinion_section.group(0)
         # Count rating bars more precisely - look for the container div
         bo_bars = len(re.findall(r'<div class="gg-rating-bar">', bo_content))
-        # Look for radar chart - uses gg-radar-svg-opinion or gg-radar-card-opinion
-        bo_radar = len(re.findall(r'gg-radar-svg-opinion|gg-radar-card-opinion|radarChart|radar-chart', bo_content, re.IGNORECASE))
-        # Look for quote - uses gg-opinion-quote or editorial-quote
-        bo_quote = len(re.findall(r'gg-opinion-quote|gg-editorial-quote|editorial-quote-big', bo_content, re.IGNORECASE))
+        # Look for radar chart - uses same classes as Course Profile (gg-radar-card, gg-course-radar-svg)
+        bo_radar = len(re.findall(r'gg-radar-card|gg-course-radar-svg|radarChart|radar-chart', bo_content, re.IGNORECASE))
+        # Look for quote - uses same class as Course Profile (gg-course-quote-big)
+        bo_quote = len(re.findall(r'gg-course-quote-big|course-quote', bo_content, re.IGNORECASE))
     else:
         errors.append("Biased Opinion section not found (id='biased-opinion')")
         bo_bars = bo_radar = bo_quote = 0
