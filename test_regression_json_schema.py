@@ -225,6 +225,26 @@ def test_race_data_schema(file_path: Path, reference_file: Path) -> List[str]:
                 if unexpected_plan:
                     errors.append(f"{file_path.name}: training_plans.plans[0] has unexpected fields: {', '.join(unexpected_plan)}")
     
+    # Check for HTML tags in content (may cause "Invalid Content In File" errors)
+    import re
+    def check_html_tags(obj, path=''):
+        html_errors = []
+        if isinstance(obj, str):
+            # Check for HTML tags
+            if re.search(r'<[^>]+>', obj):
+                html_errors.append(f"HTML tags found at {path}")
+        elif isinstance(obj, dict):
+            for k, v in obj.items():
+                html_errors.extend(check_html_tags(v, f"{path}.{k}" if path else k))
+        elif isinstance(obj, list):
+            for i, item in enumerate(obj):
+                html_errors.extend(check_html_tags(item, f"{path}[{i}]"))
+        return html_errors
+    
+    html_issues = check_html_tags(test_race)
+    if html_issues:
+        errors.extend([f"{file_path.name}: {issue} (may cause upload failure)" for issue in html_issues])
+    
     return errors
 
 def main():
