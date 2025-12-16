@@ -552,7 +552,7 @@ def generate_course_map_html(data: Dict) -> str:
       </div>
 
       <!-- Course Breakdown Research Note -->
-      <div class="gg-course-breakdown-note" style="margin-top: 2rem; padding: 1rem; background: #F5F5DC; border: 2px solid #59473C; font-family: 'Sometype Mono', monospace; font-size: 0.85rem; color: #59473C; line-height: 1.6;">
+      <div class="gg-course-breakdown-note">
         <strong>Course Breakdown:</strong> Suffering zones are based on race reports, Strava segments, and course analysis. Terrain details reflect typical conditions—weather can dramatically change difficulty.
       </div>
 
