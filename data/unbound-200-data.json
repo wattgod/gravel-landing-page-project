@@ -1,0 +1,298 @@
+{
+  "race": {
+    "name": "Unbound 200",
+    "slug": "unbound-200",
+    "display_name": "Unbound Gravel 200",
+    "tagline": "You don't race Unbound. You survive it.",
+    
+    "vitals": {
+      "distance_mi": 200,
+      "elevation_ft": 11000,
+      "location": "Emporia, Kansas",
+      "location_badge": "EMPORIA, KANSAS",
+      "county": "Lyon County",
+      "date": "Early June annually",
+      "date_specific": "2026: June 6",
+      "terrain_types": ["Flint Hills gravel", "rolling hills", "sharp limestone", "cattle guards"],
+      "field_size": "~1,500 riders in the 200-mile; ~5,000 total across all distances",
+      "start_time": "Saturday 6:00 AM",
+      "registration": "Random lottery plus qualifier coins, charity entries, volunteer & Life Time member paths. You don't buy your way in; you win the right to suffer.",
+      "prize_purse": "$100,000 (split equally men/women)",
+      "aid_stations": "2 full checkpoints + 2 water oases. Everything between those points is on you, your crew, and whatever you can fix in the ditch.",
+      "cutoff_time": "None. (Finish by midnight encouraged)"
+    },
+    
+    "climate": {
+      "primary": "Flint Hills heat",
+      "description": "June brings 85-95°F days with high humidity",
+      "challenges": ["Heat adaptation critical", "Hydration demands extreme", "Sun exposure relentless"]
+    },
+    
+    "terrain": {
+      "primary": "Rolling gravel with punchy climbs",
+      "surface": "Chunky limestone that shreds tires and hands",
+      "technical_rating": 3,
+      "features": ["Sustained rollers", "Cattle guard crossings", "Exposed ridgelines", "Creek crossings in wet years"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 93,
+      "course_profile": 33,
+      "biased_opinion": 47,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "prestige": 5,
+      "length": 5,
+      "technicality": 3,
+      "elevation": 3,
+      "climate": 5,
+      "altitude": 1,
+      "adventure": 5,
+      "logistics": 4
+    },
+    
+    "history": {
+      "founded": 2006,
+      "founder": "Jim Cummins",
+      "origin_story": "Started as 'Dirty Kanza 200' with 34 riders exploring Flint Hills gravel. Grew from underground cult race to North America's most prestigious gravel event.",
+      "notable_moments": [
+        "2019: Renamed 'Unbound Gravel' to reflect evolution",
+        "2021: Prize purse equality ($100K split)",
+        "Record field: 4,000+ across all distances"
+      ],
+      "reputation": "The Ironman of gravel. Finishing earns respect. Winning earns legend status."
+    },
+    
+    "course_description": {
+      "character": "Relentless. Not one killer climb, but 200 miles of constant attrition.",
+      "suffering_zones": [
+        {"mile": 60, "label": "First Meltdown Zone", "desc": "Reality sets in. The polite first hour is gone."},
+        {"mile": 120, "label": "Checkpoint Salvation", "desc": "Halfway. Decide if you're going back out."},
+        {"mile": 180, "label": "Dark Thoughts Begin", "desc": "20 miles left. Your brain starts negotiating."}
+      ],
+      "signature_challenge": "The heat. The duration. The Flint Hills don't negotiate.",
+      "ridewithgps_id": "46551378",
+      "ridewithgps_name": "Unbound%20200"
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 5,
+        "explanation": "This is the race. The one everyone knows. Finishing Unbound carries weight—not because of Instagram, but because riders know what it takes. It's the benchmark. The Ironman of gravel. If you're serious about this sport, you either want to do this race or you've already done it and are deciding if you want to go back."
+      },
+      "length": {
+        "score": 5,
+        "explanation": "200 miles is not a bike ride. It's an expedition compressed into 10-16 hours. The distance alone would be manageable on pavement. On gravel, with heat, wind, and the Flint Hills' relentless rolling terrain? It becomes a test of durability, not speed. Most riders finish closer to half-marathon pace than cycling pace."
+      },
+      "technicality": {
+        "score": 3,
+        "explanation": "Not a technical course by modern gravel standards—no white-knuckle descents, minimal singletrack. But chunky limestone, cattle guards, and the occasional muddy section (in wet years) demand bike-handling confidence. The challenge isn't navigating; it's maintaining speed on rough surfaces for 200 miles without breaking yourself or your equipment."
+      },
+      "elevation": {
+        "score": 3,
+        "explanation": "10,000+ feet sounds intimidating. It's not. There are no sustained climbs—just constant rolling terrain. Think: punchy 2-5% grades that never stop. The Flint Hills don't let you settle into a rhythm. You're either accelerating out of a dip or grinding over a rise. The cumulative fatigue is real, but this isn't climbing in the traditional sense."
+      },
+      "climate": {
+        "score": 5,
+        "explanation": "June in Kansas is a lottery. Best case: 75°F and overcast. Worst case: 95°F, full sun, and humidity that makes breathing feel expensive. Heat adaptation isn't optional—it's the difference between finishing strong and crawling to the line. The unrelenting sun exposure, combined with duration, makes this one of the most climate-punishing gravel races in North America."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Emporia sits at ~1,200 feet. Altitude is a non-factor unless you're coming from sea level and racing the day you arrive (don't do that). For 99% of riders, this score is irrelevant. Train anywhere. Show up ready."
+      },
+      "adventure": {
+        "score": 5,
+        "explanation": "The Flint Hills are stunning—big sky, endless horizons, wildflowers if you're lucky. But 'adventure' here means isolation. Miles 80-140 feel remote. If something goes wrong (mechanicals, bonking, existential crisis), you're managing it yourself. Aid stations are sparse. The course is beautiful in a 'this could go very wrong' kind of way."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Icon",
+      "summary": "Unbound is gravel racing's Mount Everest—not because it's the hardest course, but because it's the race that defines the sport. Riders don't 'do' Unbound casually. They plan for it, obsess over heat protocols, and show up knowing that crossing the line in Emporia means something. The course itself isn't revolutionary—rolling terrain, gravel, heat. What makes it legendary is the field, the atmosphere, and the weight of the finish line. If you finish Unbound, you've earned it.",
+      "strengths": [
+        "The field: Pros, weekend warriors, and everyone in between. Starting alongside Keegan Swenson or Alexey Vermeulen is surreal.",
+        "The finish line vibe: Bobby Wintle (race director) hugs every single finisher. People cry. It's real.",
+        "The community: Post-race Emporia feels like a pilgrimage site. Shared suffering bonds people."
+      ],
+      "weaknesses": [
+        "Logistics are chaotic: 4,000+ riders descending on a town of 25,000. Hotels sell out a year in advance. Parking is a nightmare.",
+        "The lottery: You can't just sign up. You enter. You hope. It's part of the mystique, but also frustrating.",
+        "Cost: $225 entry + travel + lodging. This isn't a cheap race."
+      ],
+      "bottom_line": "If you're serious about gravel, you'll do Unbound eventually. Whether you finish smiling or swearing, you'll never forget it."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "Finishing Unbound doesn't make you a gravel legend. It makes you someone who survived 200 miles of gravel in Kansas. The Instagram glow lasts a week. The pride lasts longer. But the real reward? Knowing you showed up to the hardest day you could design for yourself—and you didn't quit.",
+      "consequences": [
+        "You'll spend $1,500+ (entry, travel, lodging, gear). For one race.",
+        "You'll train 10-20 hours a week for 12+ weeks. That's time away from family, friends, hobbies.",
+        "You'll probably suffer more than you've ever suffered on a bike. The heat, the distance, the relentless terrain—none of it cares about your FTP."
+      ],
+      "expectation_reset": "Unbound is a test of will, not watts. Show up undertrained, and you'll finish broken. Show up overtrained, and you'll finish tired. The sweet spot? Prepared, durable, and mentally ready to hurt for 10-14 hours. That's what training plans are for."
+    },
+    
+    "final_verdict": {
+      "score": "93 / 100",
+      "one_liner": "The gravel race by which all others are measured.",
+      "should_you_race": "If you're asking whether Unbound is 'worth it,' the answer is probably yes—but only if you're willing to commit to the training, the logistics, and the reality that this race will test every assumption you have about your durability. It's not fun. It's not easy. But it's unforgettable.",
+      "alternatives": "If you want the prestige without the chaos: try Belgian Waffle Ride (similar vibe, better logistics). If you want the distance without the heat: try Gravel Worlds in August (still hard, slightly cooler). If you want to test yourself without the hype: try Mid South (intimate, brutal, beautiful)."
+    },
+    
+    "logistics": {
+      "airport": "Wichita (ICT) - 90 minutes to Emporia",
+      "lodging_strategy": "Book 12+ months early. Prioritize proximity to start line over charm. Emporia hotels sell out. Expect $150-250/night for basic rooms.",
+      "food": "Pack your own breakfast. Race-morning lines are absurd. Stock up at Walmart/Dillons day before.",
+      "packet_pickup": "Friday at Emporia State University. Long lines. Budget 45+ minutes.",
+      "parking": "Free lots open 4:00 AM. Arrive early or walk 15+ minutes.",
+      "official_site": "https://unboundgravel.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling",
+      "plans": [
+        {
+          "tier": "Ayahuasca",
+          "level": "Beginner",
+          "name": "Survival Plan",
+          "weeks": 12,
+          "tp_id": "tp-604628",
+          "tp_slug": "1-unbound-200-ayahuasca-beginner-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Ayahuasca",
+          "level": "Intermediate",
+          "name": "Time-Crunched Plan",
+          "weeks": 12,
+          "tp_id": "tp-604627",
+          "tp_slug": "2-unbound-200-ayahuasca-intermediate-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Ayahuasca",
+          "level": "Masters 50+",
+          "name": "Master's Plan",
+          "weeks": 12,
+          "tp_id": "tp-604625",
+          "tp_slug": "3-unbound-200-ayahuasca-masters-50-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Ayahuasca",
+          "level": "Emergency",
+          "name": "Save My Race",
+          "weeks": 6,
+          "tp_id": "tp-604624",
+          "tp_slug": "4-unbound-200-ayahuasca-save-my-race-emergency-plan-6-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Finisher",
+          "level": "Beginner",
+          "name": "First Timer",
+          "weeks": 12,
+          "tp_id": "tp-599529",
+          "tp_slug": "5-unbound-200-finisher-beginner-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Finisher",
+          "level": "Intermediate",
+          "name": "Solid Finisher",
+          "weeks": 12,
+          "tp_id": "tp-599629",
+          "tp_slug": "6-unbound-200-finisher-intermediate-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Finisher",
+          "level": "Advanced",
+          "name": "Strong Finish",
+          "weeks": 12,
+          "tp_id": "tp-599630",
+          "tp_slug": "7-unbound-200-finisher-advanced-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Finisher",
+          "level": "Masters 50+",
+          "name": "Master's Plan",
+          "weeks": 12,
+          "tp_id": "tp-599632",
+          "tp_slug": "8-unbound-200-finisher-masters-50-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Finisher",
+          "level": "Emergency",
+          "name": "Save My Race",
+          "weeks": 6,
+          "tp_id": "tp-599634",
+          "tp_slug": "9-unbound-200-finisher-save-my-race-emergency-plan-6-weeks",
+          "category": "road-cycling"
+        },
+        {
+          "tier": "Compete",
+          "level": "Intermediate",
+          "name": "Competitive",
+          "weeks": 12,
+          "tp_id": "tp-599635",
+          "tp_slug": "10-unbound-200-compete-intermediate-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Compete",
+          "level": "Advanced",
+          "name": "Podium Contender",
+          "weeks": 12,
+          "tp_id": "tp-599636",
+          "tp_slug": "11-unbound-200-compete-advanced-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Compete",
+          "level": "Masters 50+",
+          "name": "50+ Performance",
+          "weeks": 12,
+          "tp_id": "tp-600267",
+          "tp_slug": "12-unbound-200-compete-masters-50-12-weeks",
+          "category": "road-cycling"
+        },
+        {
+          "tier": "Compete",
+          "level": "Emergency",
+          "name": "Save My Race",
+          "weeks": 6,
+          "tp_id": "tp-600272",
+          "tp_slug": "13-unbound-200-compete-save-my-race-emergency-plan-6-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Podium",
+          "level": "Advanced",
+          "name": "Elite Preparation",
+          "weeks": 12,
+          "tp_id": "tp-604613",
+          "tp_slug": "14-unbound-200-podium-advanced-12-weeks",
+          "category": "gran-fondo-century"
+        },
+        {
+          "tier": "Podium",
+          "level": "Advanced",
+          "name": "The G.O.A.T. Plan",
+          "weeks": 12,
+          "tp_id": "tp-604615",
+          "tp_slug": "15-unbound-200-podium-goat-12-weeks",
+          "category": "gran-fondo-century"
+        }
+      ]
+    }
+  }
+}
+

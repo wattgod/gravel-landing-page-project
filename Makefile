@@ -2,7 +2,7 @@
 # ======================================
 # Quality control commands for Cursor
 
-.PHONY: help qc qc-guide qc-all test-regression-marketplace test-regression-guide test-positioning validate-pools validate-output generate clean
+.PHONY: help qc qc-guide qc-all qc-landing test-regression-marketplace test-regression-guide test-regression-landing test-positioning validate-pools validate-output generate clean
 
 help:
 	@echo ""
@@ -11,9 +11,12 @@ help:
 	@echo ""
 	@echo "  make qc                    - Marketplace QC (regression + validation)"
 	@echo "  make qc-guide              - Guide QC (guide regression tests)"
+	@echo "  make qc-landing            - Landing page QC (regression tests)"
 	@echo "  make qc-all                - Full QC (all tests + validation)"
 	@echo "  make test-regression-marketplace - Run marketplace regression tests only"
 	@echo "  make test-regression-guide - Run guide regression tests only"
+	@echo "  make test-regression-landing - Run landing page regression tests only"
+	@echo "  make test-positioning      - Run positioning quality tests only"
 	@echo "  make validate-pools        - Validate variation pools only"
 	@echo "  make validate-output       - Validate generated HTML only"
 	@echo "  make generate              - Generate all descriptions + run QC"
@@ -40,6 +43,11 @@ qc-full: test-regression-marketplace test-positioning validate-pools validate-ou
 	@echo ""
 	@echo "✅ Full QC (including positioning) Complete"
 
+# Landing page QC
+qc-landing: test-regression-landing
+	@echo ""
+	@echo "✅ Landing Page QC Complete"
+
 # Run marketplace regression tests
 test-regression-marketplace:
 	@python3 test_regression_marketplace.py
@@ -47,6 +55,15 @@ test-regression-marketplace:
 # Run guide regression tests
 test-regression-guide:
 	@python3 test_regression_guide.py
+
+# Run landing page regression tests
+test-regression-landing:
+	@if [ -f "output/test-unbound.json" ]; then \
+		python3 test_regression_landing_page.py output/test-unbound.json; \
+	else \
+		echo "⚠ No landing page JSON found. Generate one first."; \
+		exit 1; \
+	fi
 
 # Run positioning quality tests
 test-positioning:
