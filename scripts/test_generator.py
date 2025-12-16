@@ -487,6 +487,67 @@ def test_quote_replacement(json_data: Dict, race_slug: str) -> Tuple[bool, List[
     return len(errors) == 0, errors
 
 
+def test_biased_opinion_layout_structure(json_data: Dict) -> Tuple[bool, List[str]]:
+    """Test 12: Ensure Biased Opinion section matches Course Profile structure."""
+    errors = []
+    html_content = extract_html_content(json_data)
+    
+    # Find both sections
+    course_profile_section = re.search(r'id="course-ratings".*?(?=id="|</section>)', html_content, re.DOTALL | re.IGNORECASE)
+    biased_opinion_section = re.search(r'id="biased-opinion".*?(?=id="|</section>|FINAL VERDICT)', html_content, re.DOTALL | re.IGNORECASE)
+    
+    if not biased_opinion_section:
+        errors.append("Biased Opinion section not found")
+        return False, errors
+    
+    bo_content = biased_opinion_section.group(0)
+    
+    # Check for forbidden patterns (Strengths/Weaknesses sections)
+    forbidden_patterns = [
+        (r'<p><strong>Strengths:</strong></p>', "Strengths section"),
+        (r'<p><strong>Weaknesses:</strong></p>', "Weaknesses section"),
+        (r'<ul>.*?Strengths.*?</ul>', "Strengths list"),
+        (r'<h3>Strengths</h3>', "Strengths heading"),
+        (r'class="strengths-list"', "Strengths list class"),
+        (r'<li>.*?strength.*?</li>', "Strength list items"),
+    ]
+    
+    for pattern, description in forbidden_patterns:
+        if re.search(pattern, bo_content, re.IGNORECASE | re.DOTALL):
+            errors.append(f"Biased Opinion contains forbidden '{description}' section")
+    
+    # Verify structure matches Course Profile
+    # Both should have: radar chart, rating bars card, quote, explanations
+    if course_profile_section:
+        cp_content = course_profile_section.group(0)
+        
+        # Check both have radar charts
+        cp_radar = len(re.findall(r'gg-radar-card|gg-course-radar-svg', cp_content, re.IGNORECASE))
+        bo_radar = len(re.findall(r'gg-radar-card|gg-course-radar-svg', bo_content, re.IGNORECASE))
+        if cp_radar > 0 and bo_radar == 0:
+            errors.append("Biased Opinion missing radar chart (Course Profile has one)")
+        
+        # Check both have rating bars
+        cp_bars = len(re.findall(r'<div class="gg-rating-bar">', cp_content))
+        bo_bars = len(re.findall(r'<div class="gg-rating-bar">', bo_content))
+        if cp_bars == 7 and bo_bars != 7:
+            errors.append(f"Biased Opinion has {bo_bars} rating bars (expected 7, matching Course Profile)")
+        
+        # Check both have quotes
+        cp_quote = len(re.findall(r'gg-course-quote-big|course-quote', cp_content, re.IGNORECASE))
+        bo_quote = len(re.findall(r'gg-course-quote-big|course-quote', bo_content, re.IGNORECASE))
+        if cp_quote > 0 and bo_quote == 0:
+            errors.append("Biased Opinion missing quote section (Course Profile has one)")
+        
+        # Check both have explanations on right
+        cp_explanations = len(re.findall(r'gg-ratings-right|gg-subheading', cp_content, re.IGNORECASE))
+        bo_explanations = len(re.findall(r'gg-ratings-right|gg-subheading', bo_content, re.IGNORECASE))
+        if cp_explanations > 0 and bo_explanations == 0:
+            errors.append("Biased Opinion missing explanations section (Course Profile has one)")
+    
+    return len(errors) == 0, errors
+
+
 def test_external_links(json_data: Dict) -> Tuple[bool, List[str]]:
     """Test 11: Ensure external links are valid, not placeholders."""
     errors = []
@@ -713,6 +774,19 @@ def main():
             print(f"     - {error}")
         all_passed = False
     results.append(("External Links", passed))
+    print("")
+    
+    # Test 12: Biased Opinion Layout Structure
+    print("TEST 12: Biased Opinion Layout Structure")
+    passed, errors = test_biased_opinion_layout_structure(json_data)
+    if passed:
+        print("  ✅ Biased Opinion layout matches Course Profile")
+    else:
+        print("  ❌ Layout structure issues:")
+        for error in errors:
+            print(f"     - {error}")
+        all_passed = False
+    results.append(("Biased Opinion Layout", passed))
     print("")
     
     # Summary

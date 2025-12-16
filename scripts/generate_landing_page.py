@@ -712,26 +712,27 @@ def generate_history_html(data: Dict) -> str:
 
 
 def generate_biased_opinion_html(data: Dict) -> str:
-    """Generate biased opinion section with all rating explanations."""
+    """Generate biased opinion section - EXACTLY matches Course Profile structure."""
     race = data['race']
     ratings = race['ratings_breakdown']
     biased = race['biased_opinion']
-    rating_scores = race['gravel_god_rating']
+    race_name = race['display_name']
     
-    # Build rating explanations HTML (for biased opinion section)
     # These are the 7 biased opinion ratings: prestige, race_quality, experience, community, field_depth, value, expenses
     opinion_ratings = ['prestige', 'race_quality', 'experience', 'community', 'field_depth', 'value', 'expenses']
     
-    # Build rating bars for left column (like course profile card)
-    opinion_bars = []
-    raw_opinion_score = 0
+    # Calculate raw opinion score (sum of all 7 variables)
+    raw_opinion_score = sum(ratings[cat]['score'] for cat in opinion_ratings if cat in ratings)
+    
+    # Generate editorial profile card rows (left column, like course profile)
+    profile_rows = []
     for rating_key in opinion_ratings:
         if rating_key in ratings:
-            score = ratings[rating_key]['score']
-            raw_opinion_score += score
+            cat_data = ratings[rating_key]
+            score = cat_data['score']
             width_pct = int((score / 5) * 100)
             label = rating_key.replace('_', ' ').title()
-            opinion_bars.append(f"""        <div class="gg-course-metric-row">
+            profile_rows.append(f"""        <div class="gg-course-metric-row">
           <span class="gg-course-metric-label">{label}</span>
           <div class="gg-rating-bar">
             <div class="gg-rating-bar-fill" style="width: {width_pct}%;"></div>
@@ -739,168 +740,53 @@ def generate_biased_opinion_html(data: Dict) -> str:
           <span class="gg-course-metric-score">{score}/5</span>
         </div>""")
     
-    rating_html = []
+    # Generate right-side explanations
+    explanation_html = []
     for rating_key in opinion_ratings:
         if rating_key in ratings:
-            rating_data = ratings[rating_key]
-            rating_html.append(f"""      <h3 class="gg-subheading">{rating_key.replace('_', ' ').title()}</h3>
+            cat_data = ratings[rating_key]
+            label = rating_key.replace('_', ' ').title()
+            explanation_html.append(f"""      <h3 class="gg-subheading">{label}</h3>
       <p>
-        {rating_data['explanation']}
+        {cat_data['explanation']}
       </p>""")
     
-    # Build radar chart metrics
-    metrics_js = []
+    # Build JavaScript metrics array for radar chart
+    js_metrics = []
     for rating_key in opinion_ratings:
-        # Get score from ratings_breakdown (where biased opinion ratings are stored)
         if rating_key in ratings:
             score = ratings[rating_key]['score']
-        else:
-            # Fallback to gravel_god_rating if not in ratings_breakdown
-            score = rating_scores.get(rating_key, 0)
-        label = rating_key.replace('_', ' ').title()
-        metrics_js.append(f"        {{ label: \"{label}\", value: {score} }},")
+            label = rating_key.replace('_', ' ').title()
+            js_metrics.append(f'        {{ label: "{label}",       value: {score} }}')
+    js_metrics_str = ',\n'.join(js_metrics)
     
-    template = f"""<style>
-  /* ==============================
-     SECTION – BIASED OPINION / VERDICT
-     ============================== */
-
-  .gg-opinion-section {{
-    padding: 3rem 0 4rem;
-  }}
-
-  .gg-opinion-header {{
-    margin-bottom: 2.5rem;
-  }}
-
-  .gg-opinion-header-title {{
-    font-family: "Sometype Mono", monospace;
-    font-size: 1.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #59473C;
-    margin: 0 0 0.6rem;
-  }}
-
-  .gg-opinion-kicker {{
-    font-family: "Sometype Mono", monospace;
-    font-size: 0.98rem;
-    color: #7A6A5E;
-    margin: 0;
-  }}
-
-  /* Layout: left = radar + card + quote, right = copy */
-  .gg-opinion-grid {{
-    display: grid;
-    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-    gap: 3rem;
-    align-items: flex-start;
-  }}
-
-  .gg-opinion-left,
-  .gg-opinion-right {{
-    min-width: 0;
-  }}
-
-  /* ============= RADAR CARD ============= */
-
-  .gg-radar-card-opinion {{
-    max-width: 420px;
-    background: #F5F5DC;
-    border: 4px solid #59473C;
-    box-shadow: 8px 8px 0 #2C2C2C;
-    padding: 20px 24px 24px;
-    font-family: "Sometype Mono", monospace;
-    margin-bottom: 1.5rem;
-  }}
-
-  .gg-radar-header-opinion {{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #59473C;
-  }}
-
-  .gg-radar-title-opinion {{
-    font-weight: 400;
-  }}
-
-  .gg-radar-pill-opinion {{
-    position: relative;
-    padding: 6px 18px;
-    font-size: 0.7rem;
-    background: #4ECDC4;
-    border: 3px solid #59473C;
-    border-radius: 999px;
-    box-shadow: 4px 4px 0 #2C2C2C;
-    text-transform: uppercase;
-  }}
-
-  .gg-radar-svg-opinion {{
-    width: 100%;
-    height: 320px;
-  }}
-
-  /* ============= RIGHT SIDE COPY ============= */
-
-  .gg-opinion-right h3 {{
-    font-family: "Sometype Mono", monospace;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    margin: 1.5rem 0 0.4rem;
-    color: #59473C;
-  }}
-
-  .gg-opinion-right h3:first-child {{
-    margin-top: 0;
-  }}
-
-  .gg-opinion-right p {{
-    font-family: "Sometype Mono", monospace;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: #59473C;
-    margin: 0 0 1.1rem;
-  }}
-
-  .gg-opinion-right p:last-child {{
-    margin-bottom: 0;
-  }}
-
-  @media (max-width: 960px) {{
-    .gg-opinion-grid {{
-      grid-template-columns: minmax(0, 1fr);
-      gap: 2.5rem;
-    }}
-  }}
-</style>
-
-<section id="biased-opinion" class="gg-section gg-opinion-section">
-  <div class="gg-opinion-header">
-    <h2 class="gg-opinion-header-title">{biased['verdict']}</h2>
-    <p class="gg-opinion-kicker">
-      The part where we stop pretending this is objective.
-    </p>
+    # Get quote from biased opinion summary or final verdict
+    opinion_quote = biased.get('summary') or race.get('final_verdict', {}).get('one_liner', 'This race will test every assumption you have about your durability.')
+    
+    template = f"""<section class="gg-section gg-ratings-section" id="biased-opinion">
+  <div class="gg-ratings-header">
+    <div class="gg-pill">
+      <span class="gg-pill-icon">◆</span>
+      <span>BIASED OPINION</span>
+    </div>
+    <h2 class="gg-section-title">{biased['verdict']}</h2>
   </div>
 
-  <div class="gg-opinion-grid">
-    <!-- LEFT: RADAR + SUMMARY -->
-    <div class="gg-opinion-left">
-      <div class="gg-radar-card-opinion">
-        <div class="gg-radar-header-opinion">
-          <div class="gg-radar-title-opinion">Editorial Radar</div>
-          <div class="gg-radar-pill-opinion"><span>{race['display_name']}</span></div>
+  <div class="gg-ratings-grid">
+    <!-- LEFT: RADAR + EDITORIAL PROFILE CARD + QUOTE -->
+    <div class="gg-ratings-left">
+
+      <!-- Radar card -->
+      <div class="gg-radar-card">
+        <div class="gg-radar-header">
+          <div class="gg-radar-title">Editorial Radar</div>
+          <div class="gg-radar-pill"><span>{race_name}</span></div>
         </div>
 
-        <svg class="gg-radar-svg-opinion" viewBox="0 0 320 320"></svg>
+        <svg class="gg-course-radar-svg" viewBox="0 0 320 320"></svg>
       </div>
 
-      <!-- Editorial Profile Card with Bars -->
+      <!-- Editorial profile / mini bars -->
       <div class="gg-course-profile-card">
         <div class="gg-course-profile-title">Editorial Profile</div>
         <div class="gg-course-profile-meta">
@@ -908,29 +794,19 @@ def generate_biased_opinion_html(data: Dict) -> str:
           Raw Editorial Score: <strong>{raw_opinion_score} / 35</strong>
         </div>
 
-{chr(10).join(opinion_bars)}
+{chr(10).join(profile_rows)}
       </div>
 
-      <div style="font-family: 'Sometype Mono', monospace; font-size: 0.95rem; line-height: 1.6; color: #59473C; margin-top: 1.5rem;">
-        <p><strong>{biased['summary']}</strong></p>
-        
-        <p><strong>Strengths:</strong></p>
-        <ul>
-{chr(10).join([f'          <li>{s}</li>' for s in biased['strengths']])}
-        </ul>
-
-        <p><strong>Weaknesses:</strong></p>
-        <ul>
-{chr(10).join([f'          <li>{w}</li>' for w in biased['weaknesses']])}
-        </ul>
-
-        <p><strong>{biased['bottom_line']}</strong></p>
+      <!-- Big pull quote living in the LEFT column -->
+      <div class="gg-course-quote-big">
+        <span>"{opinion_quote}"</span>
       </div>
     </div>
 
-    <!-- RIGHT: RATING EXPLANATIONS -->
-    <div class="gg-opinion-right">
-{chr(10).join(rating_html)}
+    <!-- RIGHT: COPY FOR EACH VARIABLE -->
+    <div class="gg-ratings-right">
+
+{chr(10).join(explanation_html)}
     </div>
   </div>
 </section>
@@ -940,39 +816,40 @@ def generate_biased_opinion_html(data: Dict) -> str:
     const section = document.querySelector("#biased-opinion");
     if (!section) return;
 
-    const svg = section.querySelector(".gg-radar-svg-opinion");
+    const svg = section.querySelector(".gg-course-radar-svg");
     if (!svg) return;
 
     const ns = "http://www.w3.org/2000/svg";
 
     const config = {{
-      maxScore: 5,
       center: 160,
       radius: 110,
+      maxScore: 5,
       metrics: [
-{chr(10).join(metrics_js)}
+{js_metrics_str}
       ]
     }};
 
-    const {{ maxScore, center, radius, metrics }} = config;
+    const {{ center, radius, maxScore, metrics }} = config;
     const n = metrics.length;
 
-    function polar(angleDeg, r) {{
-      const a = (angleDeg - 90) * Math.PI / 180;
+    function polar(index, r) {{
+      const angleDeg = (360 / n) * index - 90;
+      const a = (angleDeg * Math.PI) / 180;
       return {{
         x: center + r * Math.cos(a),
-        y: center + r * Math.sin(a)
+        y: center + r * Math.sin(a),
+        angleDeg
       }};
     }}
 
-    // GRID RINGS
+    // Grid rings
     const rings = 4;
     for (let i = 1; i <= rings; i++) {{
       const r = (radius * i) / rings;
       let d = "";
       for (let j = 0; j < n; j++) {{
-        const angle = (360 / n) * j;
-        const {{ x, y }} = polar(angle, r);
+        const {{ x, y }} = polar(j, r);
         d += (j === 0 ? "M" : "L") + x + "," + y + " ";
       }}
       d += "Z";
@@ -982,46 +859,44 @@ def generate_biased_opinion_html(data: Dict) -> str:
       svg.appendChild(ring);
     }}
 
-    // AXES + LABELS
-    metrics.forEach((m, i) => {{
-      const angle = (360 / n) * i;
+    // Axes + labels
+    metrics.forEach((metric, i) => {{
+      const {{ x: ex, y: ey, angleDeg }} = polar(i, radius);
 
-      const end = polar(angle, radius);
       const axis = document.createElementNS(ns, "line");
       axis.setAttribute("x1", center);
       axis.setAttribute("y1", center);
-      axis.setAttribute("x2", end.x);
-      axis.setAttribute("y2", end.y);
+      axis.setAttribute("x2", ex);
+      axis.setAttribute("y2", ey);
       axis.setAttribute("class", "gg-radar-axis-line");
       svg.appendChild(axis);
 
-      const labelPos = polar(angle, radius + 22);
+      const labelPos = polar(i, radius + 24);
       const text = document.createElementNS(ns, "text");
       text.setAttribute("x", labelPos.x);
       text.setAttribute("y", labelPos.y);
       text.setAttribute(
         "text-anchor",
-        Math.abs(angle - 180) < 1 ? "middle" : angle < 180 ? "start" : "end"
+        angleDeg > 90 && angleDeg < 270 ? "end" : "start"
       );
       text.setAttribute("dominant-baseline", "middle");
       text.setAttribute("class", "gg-radar-label");
-      text.textContent = m.label.toUpperCase();
+      text.textContent = metric.label.toUpperCase();
       svg.appendChild(text);
     }});
 
-    // DATA POLYGON
-    let pathData = "";
-    metrics.forEach((m, i) => {{
-      const angle = (360 / n) * i;
-      const r = (m.value / maxScore) * radius;
-      const {{ x, y }} = polar(angle, r);
-      pathData += (i === 0 ? "M" : "L") + x + "," + y + " ";
+    // Data polygon
+    let d = "";
+    metrics.forEach((metric, i) => {{
+      const r = (metric.value / maxScore) * radius;
+      const {{ x, y }} = polar(i, r);
+      d += (i === 0 ? "M" : "L") + x + "," + y + " ";
     }});
-    pathData += "Z";
+    d += "Z";
 
     const poly = document.createElementNS(ns, "path");
-    poly.setAttribute("d", pathData);
-    poly.setAttribute("class", "gg-radar-data-fill-opinion");
+    poly.setAttribute("d", d);
+    poly.setAttribute("class", "gg-radar-data-fill");
     svg.appendChild(poly);
   }})();
 </script>"""
