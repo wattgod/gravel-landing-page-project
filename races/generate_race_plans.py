@@ -22,11 +22,18 @@ import subprocess
 try:
     from zwo_generator import generate_all_zwo_files
     from marketplace_generator import generate_marketplace_html
-    from strength_generator import generate_all_strength_workouts
 except ImportError as e:
-    print(f"ERROR: Could not import generation modules: {e}")
-    print("Make sure generation_modules/ folder exists with zwo_generator.py, marketplace_generator.py, guide_generator.py, and strength_generator.py")
+    print(f"ERROR: Could not import required generation modules: {e}")
+    print("Make sure generation_modules/ folder exists with zwo_generator.py and marketplace_generator.py")
     sys.exit(1)
+
+# Optional: strength generator (may not exist)
+try:
+    from strength_generator import generate_all_strength_workouts
+    STRENGTH_GENERATOR_AVAILABLE = True
+except ImportError:
+    STRENGTH_GENERATOR_AVAILABLE = False
+    print("⚠️  Strength generator not available - strength workouts will be skipped")
 
 # Import unified generator
 try:
@@ -94,8 +101,13 @@ def generate_zwo_files(plan_template, race_data, plan_info, output_dir):
 
 def generate_strength_files(plan_info, output_dir, templates_file_path):
     """Generate strength workout ZWO files based on plan duration"""
-    from strength_generator import generate_strength_files as generate_strength_files_impl
-    return generate_strength_files_impl(plan_info, output_dir, templates_file_path)
+    if not STRENGTH_GENERATOR_AVAILABLE:
+        return 0
+    try:
+        from strength_generator import generate_strength_files as generate_strength_files_impl
+        return generate_strength_files_impl(plan_info, output_dir, templates_file_path)
+    except ImportError:
+        return 0
 
 def generate_unified_plan_files(race_data, plan_info, plan_template, output_dir):
     """

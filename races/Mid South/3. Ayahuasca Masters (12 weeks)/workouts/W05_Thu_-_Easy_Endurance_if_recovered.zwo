@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W05 Thu - Easy Endurance (if recovered)</name>
+  <description>• Duration: 30-45 min • Zones: Z2 (65-75% FTP) • Notes: Readiness Check: Easy ride if feeling good. Still tired? Rest another day. No penalty for extra recovery. • CADENCE: Self-selected (85-95 rpm).
+
+• MID SOUTH - WEATHER ADAPTATION PROTOCOL (Weeks 4-10):
+This endurance ride is ideal for weather adaptation training. Mid South's weather lottery means you could face 40°F freezing rain or 75°F heat. Train in varied conditions:
+
+OPTION 1 - COLD WEATHER TRAINING:
+• Ride in cold conditions (40-50°F) with appropriate clothing
+• Practice fueling and hydration in cold (harder to drink when cold)
+• Test clothing layers and wind protection
+
+OPTION 2 - HEAT TRAINING (if available):
+• Ride in warm conditions (70-75°F) if weather permits
+• Practice hydration and cooling strategies
+• Test clothing for heat
+
+OPTION 3 - WIND TRAINING:
+• Ride on exposed roads/ridgelines when windy
+• Practice aero positioning and pacing in wind
+• Build strength and tactics for windy conditions
+
+EFFECT: Adapting to varied conditions prevents race-day shock. Mid South's weather unpredictability is THE defining feature—be ready for anything.
+
+SAFETY: Don't train in dangerous conditions (ice, extreme cold, severe weather). Safety first.
+
+• MID SOUTH - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• MID SOUTH - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1800" Power="0.70" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.70" PowerHigh="0.55"/>
+  </workout>
+</workout_file>

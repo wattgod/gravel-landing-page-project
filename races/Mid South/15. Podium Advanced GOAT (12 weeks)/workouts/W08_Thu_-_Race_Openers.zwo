@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W08 Thu - Race Openers</name>
+  <description>• STRUCTURE: 25 min warmup → 4x4 min @ 105-110% FTP (4 min easy) → 4x1 min @ 115-120% FTP (3 min easy) → 15 min cooldown • Over-threshold + neuromuscular bursts. Race openers—short, sharp, snappy. • CADENCE: High (100+ rpm) throughout.
+
+• MID SOUTH - WEATHER ADAPTATION (Weeks 4-10):
+Complete this quality session in normal conditions (preserve workout quality). Weather adaptation happens on endurance rides. For Mid South, prepare for unpredictable conditions—cold, heat, wind, or mud. Practice your race-day clothing and nutrition strategies during long rides.
+
+• MID SOUTH - HYDRATION:
+&lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
+
+• MID SOUTH - DAILY BASELINE HYDRATION:
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
+  <sportType>bike</sportType>
+      <workout>
+    <Warmup Duration="1500" PowerLow="0.50" PowerHigh="0.78"/>
+    <IntervalsT Repeat="4" OnDuration="240" OnPower="1.08" Cadence="100" OffDuration="240" OffPower="0.55"/>
+    <IntervalsT Repeat="4" OnDuration="60" OnPower="1.18" Cadence="100" OffDuration="180" OffPower="0.55"/>
+    <Cooldown Duration="900" PowerLow="0.70" PowerHigh="0.50"/>
+  </workout>
+</workout_file>

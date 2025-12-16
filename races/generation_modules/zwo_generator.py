@@ -29,43 +29,71 @@ def estimate_workout_duration(blocks):
     return total_seconds // 60
 
 def get_heat_protocol_tier(week_num, race_data):
-    """Determine heat training tier based on week type and race data"""
-    if not race_data.get("workout_modifications", {}).get("heat_training", {}).get("enabled"):
+    """Determine heat/weather training tier based on week type and race data"""
+    # Check for weather_training (Mid South) or heat_training (Unbound)
+    weather_config = race_data.get("workout_modifications", {}).get("weather_training", {})
+    heat_config = race_data.get("workout_modifications", {}).get("heat_training", {})
+    
+    # Use weather_training if available, otherwise fall back to heat_training
+    config = weather_config if weather_config.get("enabled") else heat_config
+    
+    if not config.get("enabled"):
         return None
     
-    heat_config = race_data["workout_modifications"]["heat_training"]
-    
-    if week_num in heat_config.get("tier_1_weeks", []):
+    if week_num in config.get("tier_1_weeks", []):
         return "tier1"
-    elif week_num in heat_config.get("tier_2_weeks", []):
+    elif week_num in config.get("tier_2_weeks", []):
         return "tier2"
-    elif week_num in heat_config.get("tier_3_weeks", []):
+    elif week_num in config.get("tier_3_weeks", []):
         return "tier3"
     return None
 
 def add_heat_training_note(week_num, race_data, heat_tier, is_endurance):
-    """Add heat training note based on tier and workout type"""
+    """Add heat/weather training note based on tier and workout type"""
     if not heat_tier:
         return ""
     
     race_name = race_data["race_metadata"]["name"]
     race_name_upper = race_name.upper()
     
-    # Get heat training weeks from race data (6-10 for 12-week plans, 3-5 for 6-week plans)
-    heat_weeks = race_data.get("workout_modifications", {}).get("heat_training", {}).get("tier_3_weeks", [6, 7, 8, 9, 10])
-    week_range = f"{min(heat_weeks)}-{max(heat_weeks)}" if heat_weeks else "6-10"
+    # Check if this is weather training (Mid South) or heat training (Unbound)
+    weather_config = race_data.get("workout_modifications", {}).get("weather_training", {})
+    heat_config = race_data.get("workout_modifications", {}).get("heat_training", {})
+    is_weather_training = weather_config.get("enabled", False)
     
-    # Heat acclimatization protocol period
-    if week_num in heat_weeks:
-        if is_endurance:
-            # Endurance rides: Use for active heat training
-            return f"\n\n• {race_name_upper} - HEAT ACCLIMATIZATION PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
+    # Get training weeks from race data
+    if is_weather_training:
+        training_weeks = weather_config.get("tier_3_weeks", [4, 5, 6, 7, 8, 9, 10])
+        training_type = "WEATHER ADAPTATION"
+        training_desc = "unpredictable conditions (cold, heat, wind)"
+    else:
+        training_weeks = heat_config.get("tier_3_weeks", [6, 7, 8, 9, 10])
+        training_type = "HEAT ACCLIMATIZATION"
+        training_desc = "hot conditions"
+    
+    week_range = f"{min(training_weeks)}-{max(training_weeks)}" if training_weeks else "6-10"
+    
+    # Training protocol period
+    if week_num in training_weeks:
+        if is_weather_training:
+            # Mid South: Weather adaptation (cold, heat, wind)
+            if is_endurance:
+                return f"\n\n• {race_name_upper} - {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for weather adaptation training. Mid South's weather lottery means you could face 40°F freezing rain or 75°F heat. Train in varied conditions:\n\nOPTION 1 - COLD WEATHER TRAINING:\n• Ride in cold conditions (40-50°F) with appropriate clothing\n• Practice fueling and hydration in cold (harder to drink when cold)\n• Test clothing layers and wind protection\n\nOPTION 2 - HEAT TRAINING (if available):\n• Ride in warm conditions (70-75°F) if weather permits\n• Practice hydration and cooling strategies\n• Test clothing for heat\n\nOPTION 3 - WIND TRAINING:\n• Ride on exposed roads/ridgelines when windy\n• Practice aero positioning and pacing in wind\n• Build strength and tactics for windy conditions\n\nEFFECT: Adapting to varied conditions prevents race-day shock. Mid South's weather unpredictability is THE defining feature—be ready for anything.\n\nSAFETY: Don't train in dangerous conditions (ice, extreme cold, severe weather). Safety first."
+            else:
+                # Quality sessions: Complete in normal conditions, note weather prep
+                return f"\n\n• {race_name_upper} - {training_type} (Weeks {week_range}):\nComplete this quality session in normal conditions (preserve workout quality). Weather adaptation happens on endurance rides. For Mid South, prepare for unpredictable conditions—cold, heat, wind, or mud. Practice your race-day clothing and nutrition strategies during long rides."
         else:
-            # Quality sessions: Complete in cool conditions, add post-exercise heat
-            return f"\n\n• {race_name_upper} - HEAT ACCLIMATIZATION (Weeks {week_range}):\nComplete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:\n\nPOST-EXERCISE OPTION:\n• 30-40 min hot bath at 40°C (104°F) OR\n• 25-30 min sauna at 80-100°C\n\nEFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.\n\nNOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides."
+            # Unbound: Heat acclimatization
+            if is_endurance:
+                return f"\n\n• {race_name_upper} - {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
+            else:
+                return f"\n\n• {race_name_upper} - {training_type} (Weeks {week_range}):\nComplete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:\n\nPOST-EXERCISE OPTION:\n• 30-40 min hot bath at 40°C (104°F) OR\n• 25-30 min sauna at 80-100°C\n\nEFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.\n\nNOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides."
     
-    # Outside weeks 6-10: Maintenance protocol
-    return f"\n\n• {race_name_upper} - HEAT MAINTENANCE:\nAdaptations decay 2.5% per day without exposure. Maintenance: One 60-90 min heat session every 3-5 days OR 30 min sauna 3x/week OR 30-40 min hot bath every 3 days."
+    # Outside training weeks: Maintenance protocol
+    if is_weather_training:
+        return f"\n\n• {race_name_upper} - WEATHER MAINTENANCE:\nContinue training in varied conditions when possible. Mid South's weather lottery means race day could be anything—stay adaptable."
+    else:
+        return f"\n\n• {race_name_upper} - HEAT MAINTENANCE:\nAdaptations decay 2.5% per day without exposure. Maintenance: One 60-90 min heat session every 3-5 days OR 30 min sauna 3x/week OR 30-40 min hot bath every 3 days."
 
 def add_hydration_note(duration_minutes, is_quality_session, race_data):
     """Add hydration note based on duration and intensity"""
@@ -119,7 +147,8 @@ def add_robust_taper_note(week_num, race_data):
         return ""
     
     race_name_upper = race_data["race_metadata"]["name"].upper()
-    return f"\n\n• {race_name_upper} - ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a 200-mile day."
+    race_distance = race_data["race_metadata"].get("distance_miles", 100)
+    return f"\n\n• {race_name_upper} - ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a {race_distance}-mile day."
 
 def add_gravel_grit_note(week_num, workout_name, race_data):
     """Add Gravel Grit note if applicable"""
@@ -183,17 +212,19 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     duration_minutes = estimate_workout_duration(workout.get("blocks", ""))
     
     # Add race-specific notes
-    # Heat training applies to weeks 6-10 for 12-week plans, weeks 3-5 for 6-week plans
+    # Weather/heat training applies to specified weeks
     heat_tier = get_heat_protocol_tier(week_num, race_data)
-    heat_weeks = race_data.get("workout_modifications", {}).get("heat_training", {}).get("tier_3_weeks", [])
-    is_heat_week = week_num in heat_weeks
+    weather_config = race_data.get("workout_modifications", {}).get("weather_training", {})
+    heat_config = race_data.get("workout_modifications", {}).get("heat_training", {})
+    training_weeks = weather_config.get("tier_3_weeks", []) if weather_config.get("enabled") else heat_config.get("tier_3_weeks", [])
+    is_training_week = week_num in training_weeks
     
-    if is_heat_week and "REST" not in workout_name.upper():
-        # Use tier3 for heat training weeks if heat training is enabled
+    if is_training_week and "REST" not in workout_name.upper():
+        # Use tier3 for weather/heat training weeks if enabled
         if heat_tier:
             description += add_heat_training_note(week_num, race_data, heat_tier, is_endurance)
-        elif race_data.get("workout_modifications", {}).get("heat_training", {}).get("enabled", True):
-            # Default: assume heat training is enabled for hot races
+        elif weather_config.get("enabled") or heat_config.get("enabled"):
+            # Default: assume training is enabled
             description += add_heat_training_note(week_num, race_data, "tier3", is_endurance)
     
     if duration_minutes > 0:
