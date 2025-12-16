@@ -48,13 +48,7 @@
       "climate": 4,
       "altitude": 5,
       "adventure": 4,
-      "logistics": 5,
-      "race_quality": 5,
-      "experience": 5,
-      "community": 3,
-      "field_depth": 5,
-      "value": 3,
-      "expenses": 2
+      "logistics": 5
     },
     
     "course_description": {
@@ -199,14 +193,7 @@
         "2025: Venue relocated to Del Mar Polo Fields at Surf Sports Park, shortest course in event history (106.5 miles)",
         "2025: Series expanded to multiple locations (California, Utah, North Carolina, British Columbia)"
       ],
-      "reputation": "BWR California remains the flagship event of the series, with the $50,000+ prize purse being the largest in one-day gravel racing. The 40% DNF rate is nearly double Unbound's attrition. This isn't accidental. Marckx designed the course to expose riders who 'do the group rides that never do any work and then all of a sudden, they're there for the sprint.' BWR rewards those who can actually ride bikes, not just pedal them.",
-      "random_facts": [
-        "Founder Michael Marckx held a UCI cyclocross pro license and competed as a professional triathlete alongside legends Mark Allen and Scott Tinley during triathlon's golden era. His diverse background—from running marathons at age 12 (2:40s at 14) to winning Ironman qualifiers before chronic fatigue ended that career—shaped BWR's philosophy of rewarding technical skill and mental resilience over pure power.",
-        "The Ysabel Kreek sector offers a special prize to any rider who completes it entirely without dabbing. This single-track section features water crossings, rock gardens, and cactus obstacles after mile 100. Simply riding through clean—regardless of speed—earns recognition.",
-        "Karl Bordine, a multiple national champion, crashed and lost a four-minute lead when his front wheel disappeared in sand on the Black Canyon descent. The incident illustrates BWR's core principle: fitness alone doesn't guarantee success. Technical sections punish lapses regardless of your palmares, and equipment choices genuinely determine outcomes.",
-        "BWR offers gender parity in prize money distribution, with women receiving equal or greater cash prizes than men in certain categories. This progressive stance reflects Marckx's commitment to using the event for cultural change in cycling, predating many of gravel racing's recent equity movements.",
-        "The race's 40% DNF rate—nearly double Unbound's attrition—isn't considered a bug but a feature. Marckx explicitly designed the route to 'expose' riders who rely on draft in group rides but lack comprehensive bike handling and endurance skills. The high DNF rate validates the course's effectiveness at separating technical riders from pure power athletes."
-      ]
+      "reputation": "BWR California remains the flagship event of the series, with the $50,000+ prize purse being the largest in one-day gravel racing. The 40% DNF rate is nearly double Unbound's attrition. This isn't accidental. Marckx designed the course to expose riders who 'do the group rides that never do any work and then all of a sudden, they're there for the sprint.' BWR rewards those who can actually ride bikes, not just pedal them."
     },
     
     "logistics": {
