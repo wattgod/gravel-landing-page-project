@@ -692,9 +692,20 @@ def generate_history_html(data: Dict) -> str:
         f"The Details That Matter",
         f"{race_name_short} Reality Check"
     ]
-    # Use race slug or name to deterministically pick a variation
+    # Use race slug to deterministically pick a variation (use hash for consistency)
     race_slug = race.get('slug', '')
     facts_header = facts_header_variations[hash(race_slug) % len(facts_header_variations)] if race_slug else "Random Facts"
+    
+    # Generate dynamic "Vision Quest" title - vary by race
+    vision_quest_variations = [
+        f"{display_name} is a Vision Quest, not a race",
+        f"{display_name} is what happens when ambition meets reality",
+        f"{display_name} isn't a race—it's a character test",
+        f"{display_name} is where training plans meet the truth",
+        f"{display_name} separates riders from racers"
+    ]
+    # Use different hash offset to get different variation than facts header
+    vision_quest_title = vision_quest_variations[(hash(race_slug) + 1) % len(vision_quest_variations)] if race_slug else f"{display_name} is a Vision Quest, not a race"
     
     facts_html = []
     for i, fact in enumerate(facts[:5], 1):
@@ -711,7 +722,7 @@ def generate_history_html(data: Dict) -> str:
   <div>
     <div class="gg-pill">Facts And History</div>
     <div class="gg-tldr-vision-header">
-      <h2 class="gg-tldr-vision-title">{display_name} is a Vision Quest, not a race</h2>
+      <h2 class="gg-tldr-vision-title">{vision_quest_title}</h2>
     </div>
     <p>{history['origin_story']}</p>
   </div>
@@ -1573,6 +1584,13 @@ def build_elementor_json(data: Dict, base_json_path: str) -> Dict:
     # Update page title
     race_name = data['race']['display_name']
     elementor_data['title'] = f"{race_name} Landing Page"
+    
+    # Add neo brutalist CSS to page_settings.custom_css
+    if 'page_settings' in elementor_data and 'custom_css' in elementor_data['page_settings']:
+        with open('assets/css/landing-page.css', 'r', encoding='utf-8') as f:
+            neo_brutalist_css = f.read()
+        # Append to existing CSS
+        elementor_data['page_settings']['custom_css'] += '\n\n' + neo_brutalist_css
     
     return elementor_data
 
