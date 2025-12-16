@@ -115,6 +115,19 @@ def test_race_data_schema(file_path: Path, reference_file: Path) -> List[str]:
     if not test_race:
         return [f"Test file {file_path.name} missing 'race' key"]
     
+    # CRITICAL: Check top-level race keys match exactly
+    # Extra top-level fields cause "Invalid Content In File" upload errors
+    ref_race_keys = set(ref_race.keys())
+    test_race_keys = set(test_race.keys())
+    
+    missing_top_level = ref_race_keys - test_race_keys
+    unexpected_top_level = test_race_keys - ref_race_keys
+    
+    if missing_top_level:
+        errors.append(f"{file_path.name}: Missing top-level race fields: {', '.join(sorted(missing_top_level))}")
+    if unexpected_top_level:
+        errors.append(f"{file_path.name}: EXTRA top-level race fields (will cause upload failure): {', '.join(sorted(unexpected_top_level))}")
+    
     # Compare critical sections directly
     # Check final_verdict, biased_opinion, training_plans match exactly
     critical_sections_to_check = ['final_verdict', 'biased_opinion', 'training_plans']
