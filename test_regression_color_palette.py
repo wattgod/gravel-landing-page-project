@@ -230,31 +230,10 @@ def check_generation_script(script_path: Path) -> List[str]:
         # Check if this background uses forbidden neon yellow
         for yellow in FORBIDDEN_YELLOWS:
             if yellow in background_value:
-                # Check context
-                context_before = script[max(0, match.start() - 200):match.start()]
-                context_after = script[match.end():min(len(script), match.end() + 200)]
-                full_context = context_before + match.group(0) + context_after
-                
-                # Check if this is a large background selector
-                is_large_background = False
-                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_large_background = True
-                        break
-                
-                # Check if this is a small accent (acceptable)
-                is_small_accent = False
-                for selector_pattern in SMALL_ACCENT_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_small_accent = True
-                        break
-                
-                # If it's a large background, it's a violation
-                if is_large_background and not is_small_accent:
-                    errors.append(
-                        f"Line {line_num}: Bright yellow ({yellow}) used for large background. "
-                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
-                    )
+                errors.append(
+                    f"Line {line_num}: Forbidden neon yellow ({yellow}) used for background. "
+                    f"Use brand yellow (#F4D03F) instead."
+                )
     
     return errors
 
