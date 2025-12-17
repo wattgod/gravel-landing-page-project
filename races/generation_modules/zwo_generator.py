@@ -342,8 +342,15 @@ def estimate_race_time_hours(race_data, tier_key, level_key):
     base_speed = speed_map.get((tier_key, level_key), 12.0)
     
     # Adjust for elevation (more elevation = slower)
-    # Rough adjustment: -0.5 mph per 1000ft over 5000ft
-    elevation_penalty = max(0, (elevation - 5000) / 1000) * 0.5
+    # For longer races, elevation penalty is less impactful (spread over more distance)
+    # Rough adjustment: -0.3 mph per 1000ft over 5000ft for races >150 miles
+    # -0.5 mph per 1000ft over 5000ft for shorter races
+    if distance > 150:
+        elevation_penalty_multiplier = 0.3
+    else:
+        elevation_penalty_multiplier = 0.5
+    
+    elevation_penalty = max(0, (elevation - 5000) / 1000) * elevation_penalty_multiplier
     adjusted_speed = base_speed - elevation_penalty
     
     # Calculate time
