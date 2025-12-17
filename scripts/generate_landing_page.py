@@ -1379,24 +1379,33 @@ def generate_logistics_html(data: Dict) -> str:
 
 def generate_training_plans_html(data: Dict) -> str:
     """
-    Generate training plans section with TP URLs.
-    
-    NOTE: This function applies to ALL landing pages (Unbound, Mid South, BWR, etc.).
-    Changes here affect every race landing page generated.
-    
-    Universal features:
-    - 2-column grid layout (not 4) for better card spacing
-    - Coaching CTA and gravel races CTA appended to logistics section
+    Generate training plans section - simplified template without links.
     """
     race = data['race']
     tp = race['training_plans']
     
-    # Group plans by tier
+    # Map tier names to display info
     tiers_data = {
-        'Ayahuasca': {'hours': '0–5 hrs / week', 'footer': 'For chaos schedules and stubborn goals. You train when you can, not when you "should".', 'plans': []},
-        'Finisher': {'hours': '8–12 hrs / week', 'footer': 'For grown-ups with real lives who want to cross the line proud, not shattered.', 'plans': []},
-        'Compete': {'hours': '12–18 hrs / week', 'footer': 'For hitters who want to be in the moves, not just in the photo dump.', 'plans': []},
-        'Podium': {'hours': '18–25+ hrs / week', 'footer': 'For psychos who plan vacations around watts, weather, and start lists.', 'plans': []}
+        'Ayahuasca': {
+            'hours': '0–5 hrs / week',
+            'footer': 'For chaos schedules and stubborn goals. You train when you can,\n        not when you "should".',
+            'plans': []
+        },
+        'Finisher': {
+            'hours': '8–12 hrs / week',
+            'footer': 'For grown-ups with real lives who want to cross the line proud, not shattered.',
+            'plans': []
+        },
+        'Compete': {
+            'hours': '12–18 hrs / week',
+            'footer': 'For hitters who want to be in the moves, not just in the photo dump.',
+            'plans': []
+        },
+        'Podium': {
+            'hours': '18–25+ hrs / week',
+            'footer': 'For psychos who plan vacations around watts, weather, and start lists.',
+            'plans': []
+        }
     }
     
     # Organize plans by tier
@@ -1407,16 +1416,21 @@ def generate_training_plans_html(data: Dict) -> str:
         name_display = plan['name']
         weeks = plan['weeks']
         
-        # Build full TP URL
-        category = plan.get('category', 'gran-fondo-century')
-        tp_url = f"{tp['marketplace_base_url']}/{category}/{plan['tp_id']}/{plan['tp_slug']}"
-        
-        display_name = f"{level_display} – {name_display}"
+        # Format display name based on tier (matching the template format)
+        if tier == 'Finisher' and level != 'Beginner':
+            display_name = f"{tier} {level_display} – {name_display}"
+        elif tier == 'Compete':
+            display_name = f"{tier} {level_display} – {name_display}"
+        elif tier == 'Podium':
+            display_name = f"{tier} {level_display} – {name_display}"
+        elif level == 'Masters 50+':
+            display_name = f"Master's 50+ Plan"
+        else:
+            display_name = f"{level_display} – {name_display}"
         
         tiers_data[tier]['plans'].append({
             'display': display_name,
-            'weeks': weeks,
-            'url': tp_url
+            'weeks': weeks
         })
     
     # Generate tier cards HTML
@@ -1431,11 +1445,11 @@ def generate_training_plans_html(data: Dict) -> str:
           <div class="gg-plan-name">
             {plan['display']} <span>({plan['weeks']} weeks)</span>
           </div>
-          <a href="{plan['url']}" class="gg-plan-cta" target="_blank">View Plan</a>
         </div>"""
             plans_html.append(plan_html)
         
-        card_html = f"""    <article class="gg-volume-card">
+        card_html = f"""    <!-- ================= {tier_name.upper()} ================= -->
+    <article class="gg-volume-card">
       <div class="gg-volume-tag">Volume Track</div>
       <h3 class="gg-volume-title">{tier_name}</h3>
       <div class="gg-volume-hours">{tier_info['hours']}</div>
@@ -1467,11 +1481,11 @@ def generate_training_plans_html(data: Dict) -> str:
 /* Training Plans Badge */
 .gg-training-plans-badge {{
   display: inline-block;
-    background: #F4D03F; /* Brand yellow - use judiciously */
+  background: #f4d03f; /* Yellow */
   color: #000;
   padding: 12px 24px;
   border: 3px solid #000;
-  border-radius: 50px;
+  border-radius: 50px; /* Pill shape */
   box-shadow: 6px 6px 0 #000;
   font-family: 'Sometype Mono', monospace;
   font-size: 13px;
@@ -1486,161 +1500,27 @@ def generate_training_plans_html(data: Dict) -> str:
   font-size: 11px;
 }}
 
-/* Volume Grid - 2 columns instead of 4 */
-.gg-volume-grid {{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}}
-
-@media (max-width: 768px) {{
-  .gg-volume-grid {{
-    grid-template-columns: 1fr;
-  }}
-}}
-
-/* Workout Cards - Neo Brutalist styling like zone cards */
-.gg-volume-card {{
-  border: 4px solid #000000;
-  background: #FFFFFF;
-  padding: 0;
-  position: relative;
-  box-shadow: 8px 8px 0px 0px #000000;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  overflow: hidden;
-}}
-
-.gg-volume-card:hover {{
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0px 0px #000000;
-}}
-
-/* Alternating backgrounds */
-.gg-volume-card:nth-child(odd) {{
-  background: #4ECDC4; /* Turquoise - pops on white */
-}}
-
-.gg-volume-card:nth-child(even) {{
-  background: #FFFFFF;
-}}
-
-/* Volume tag badge */
-.gg-volume-tag {{
-  position: absolute;
-  top: -12px;
-  left: 16px;
-  background: #59473C; /* Earth-tone brown */
-  color: #FFFFFF;
-  font-weight: 900;
-  font-size: 12px;
-  padding: 6px 12px;
-  border: 3px solid #000000;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  z-index: 10;
-  box-shadow: 4px 4px 0px 0px #000000;
-  font-family: 'Sometype Mono', monospace;
-}}
-
-/* Volume title */
-.gg-volume-title {{
-  font-weight: 900;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 24px 20px 12px 20px;
-  border-bottom: 4px solid #000000;
-  background: #59473C; /* Earth-tone brown */
-  color: #FFFFFF;
-  line-height: 1.2;
-  margin: 0;
-  font-family: 'Sometype Mono', monospace;
-}}
-
-/* Volume hours */
-.gg-volume-hours {{
-  padding: 16px 20px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #000000;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: 2px solid #000000;
-  font-family: 'Sometype Mono', monospace;
-}}
-
-/* Divider */
-.gg-volume-divider {{
-  height: 2px;
-  background: #000000;
-}}
-
-/* Plan stack */
-.gg-plan-stack {{
-  padding: 20px;
-}}
-
-.gg-plan {{
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid #000000;
-}}
-
-.gg-plan:last-child {{
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}}
-
-.gg-plan-name {{
-  font-size: 15px;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 12px;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}}
-
-.gg-plan-name span {{
-  color: #666666;
-  font-weight: 400;
-}}
-
-/* Footer */
-.gg-volume-footer {{
-  padding: 16px 20px;
-  background: #F0F0F0;
-  border-top: 4px solid #000000;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #000000;
-  font-style: italic;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}}
-
 /* Fix for button text visibility */
 .gg-plan-cta {{
   display: inline-block;
   padding: 8px 16px;
-  background: #40E0D0;
-  color: #000 !important;
+  background: #40E0D0; /* Turquoise */
+  color: #000 !important; /* Black for maximum visibility - !important to override inheritance */
   border: 3px solid #000;
   text-decoration: none !important;
   font-family: 'Sometype Mono', monospace;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 700; /* Bolder */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   box-shadow: 4px 4px 0 #000;
   transition: all 0.15s ease;
   cursor: pointer;
-  margin-top: 0.5rem;
 }}
 
 .gg-plan-cta:hover {{
-  background: #4ECDC4; /* Turquoise - better contrast */
-  color: #000 !important;
+  background: #f4d03f; /* Yellow */
+  color: #000 !important; /* Black text for contrast - !important to override */
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #000;
 }}
