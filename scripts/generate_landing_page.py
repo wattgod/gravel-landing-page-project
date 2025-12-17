@@ -1544,8 +1544,8 @@ def generate_coaching_cta_html() -> str:
 .gg-coaching-cta-button {
   display: inline-block;
   padding: 14px 32px;
-  background: #000000;
-  color: #FFFFFF !important;
+  background: #4ECDC4; /* Turquoise - matches card background */
+  color: #000000 !important;
   border: 4px solid #000000;
   text-decoration: none !important;
   font-family: 'Sometype Mono', monospace;
@@ -1559,8 +1559,8 @@ def generate_coaching_cta_html() -> str:
 }
 
 .gg-coaching-cta-button:hover {
-  background: #59473C;
-  color: #FFFFFF !important;
+  background: #FFF5E6; /* Muted cream - earth-tone palette */
+  color: #000000 !important;
   transform: translate(3px, 3px);
   box-shadow: 3px 3px 0 #59473C;
 }
