@@ -56,12 +56,23 @@ test-regression-marketplace:
 test-regression-guide:
 	@python3 test_regression_guide.py
 
-# Run landing page regression tests
+# Run landing page regression tests (all generated landing pages)
 test-regression-landing:
-	@if [ -f "output/test-unbound.json" ]; then \
-		python3 test_regression_landing_page.py output/test-unbound.json; \
+	@echo "Running landing page regression tests..."
+	@failed=0; \
+	for json_file in output/elementor-*.json; do \
+		if [ -f "$$json_file" ]; then \
+			echo ""; \
+			echo "Testing: $$json_file"; \
+			python3 test_regression_landing_page.py "$$json_file" || failed=$$((failed + 1)); \
+		fi; \
+	done; \
+	if [ $$failed -eq 0 ]; then \
+		echo ""; \
+		echo "✅ All landing page regression tests passed"; \
 	else \
-		echo "⚠ No landing page JSON found. Generate one first."; \
+		echo ""; \
+		echo "❌ $$failed landing page(s) failed regression tests"; \
 		exit 1; \
 	fi
 
