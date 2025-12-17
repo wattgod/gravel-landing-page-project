@@ -6,9 +6,14 @@ Generates complete Elementor JSON from race data schema.
 
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from html import unescape
+
+# Add automation module to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from automation.training_plans import generate_training_plans_html, build_training_plans_data
 
 
 def load_race_data(json_path: str) -> Dict[str, Any]:
@@ -1379,190 +1384,17 @@ def generate_logistics_html(data: Dict) -> str:
 
 def generate_training_plans_html(data: Dict) -> str:
     """
-    Generate training plans section - exact template structure, links removed.
+    Generate training plans section using automation module.
+    Delegates to automation.training_plans for consistent structure.
     """
     race = data['race']
-    tp = race['training_plans']
+    race_name = race.get('name', '')
     
-    # Map tier names to display info
-    tiers_data = {
-        'Ayahuasca': {
-            'hours': '0–5 hrs / week',
-            'footer': 'For chaos schedules and stubborn goals. You train when you can,\n        not when you "should".',
-            'plans': []
-        },
-        'Finisher': {
-            'hours': '8–12 hrs / week',
-            'footer': 'For grown-ups with real lives who want to cross the line proud, not shattered.',
-            'plans': []
-        },
-        'Compete': {
-            'hours': '12–18 hrs / week',
-            'footer': 'For hitters who want to be in the moves, not just in the photo dump.',
-            'plans': []
-        },
-        'Podium': {
-            'hours': '18–25+ hrs / week',
-            'footer': 'For psychos who plan vacations around watts, weather, and start lists.',
-            'plans': []
-        }
-    }
+    # Build tiers data using module function
+    tiers_data = build_training_plans_data(race)
     
-    # Organize plans by tier
-    for plan in tp['plans']:
-        tier = plan['tier']
-        level = plan['level']
-        level_display = level if level != 'Emergency' else 'Save My Race'
-        name_display = plan['name']
-        weeks = plan['weeks']
-        
-        # Format display name to match template exactly
-        if tier == 'Ayahuasca':
-            if level == 'Masters 50+':
-                display_name = "Master's 50+ Plan"
-            elif level == 'Emergency':
-                display_name = "Save My Race – Emergency Plan"
-            else:
-                display_name = f"{level_display} – {name_display}"
-        elif tier == 'Finisher':
-            if level == 'Beginner':
-                display_name = f"Beginner – {name_display}"
-            elif level == 'Masters 50+':
-                display_name = f"Finisher Master's – 50+ Plan"
-            elif level == 'Emergency':
-                display_name = f"Finisher – Save My Race"
-            else:
-                display_name = f"Finisher {level_display} – {name_display}"
-        elif tier == 'Compete':
-            if level == 'Masters 50+':
-                display_name = f"Compete Master's – 50+ Performance"
-            elif level == 'Emergency':
-                display_name = f"Compete – Save My Race"
-            else:
-                display_name = f"Compete {level_display} – {name_display}"
-        elif tier == 'Podium':
-            display_name = f"Podium {level_display} – {name_display}"
-        else:
-            display_name = f"{level_display} – {name_display}"
-        
-        # Build TrainingPeaks URL
-        tp_id = plan.get('tp_id', 'PLACEHOLDER_NEEDS_RESEARCH')
-        tp_slug = plan.get('tp_slug', '')
-        category = plan.get('category', 'gran-fondo-century')
-        marketplace_base = tp.get('marketplace_base_url', 'https://www.trainingpeaks.com/training-plans/cycling')
-        
-        if tp_id and tp_id != 'PLACEHOLDER_NEEDS_RESEARCH' and tp_slug:
-            plan_url = f"{marketplace_base}/{category}/tp-{tp_id}/{tp_slug}"
-        else:
-            plan_url = "#"  # Placeholder if URL not ready
-        
-        tiers_data[tier]['plans'].append({
-            'display': display_name,
-            'weeks': weeks,
-            'url': plan_url
-        })
-    
-    # Generate tier cards HTML - EXACT structure from template
-    tier_cards = []
-    for tier_name, tier_info in tiers_data.items():
-        if not tier_info['plans']:  # Skip tiers with no plans
-            continue
-            
-        plans_html = []
-        for plan in tier_info['plans']:
-            plan_url = plan.get('url', '#')
-            plan_html = f"""        <div class="gg-plan">
-          <div class="gg-plan-name">
-            {plan['display']} <span>({plan['weeks']} weeks)</span>
-          </div>
-          <a href="{plan_url}" class="gg-plan-cta" target="_blank">View Plan</a>
-        </div>"""
-            plans_html.append(plan_html)
-        
-        card_html = f"""    <!-- ================= {tier_name.upper()} ================= -->
-    <article class="gg-volume-card">
-      <div class="gg-volume-tag">Volume Track</div>
-      <h3 class="gg-volume-title">{tier_name}</h3>
-      <div class="gg-volume-hours">{tier_info['hours']}</div>
-      <div class="gg-volume-divider"></div>
-
-      <div class="gg-plan-stack">
-{chr(10).join(plans_html)}
-      </div>
-
-      <div class="gg-volume-footer">
-        {tier_info['footer']}
-      </div>
-    </article>"""
-        tier_cards.append(card_html)
-    
-    template = """<section class="gg-volume-section" id="volume-tracks">
-  <!-- TRAINING PLANS BADGE -->
-  <div class="gg-training-plans-badge">
-    <span class="gg-training-plans-badge-icon">◆</span>
-    TRAINING PLANS
-  </div>
-
-  <div class="gg-volume-grid">
-{tier_cards}
-  </div>
-</section>
-
-<style>
-/* Training Plans Badge */
-.gg-training-plans-badge {{
-  display: inline-block;
-  background: #f4d03f; /* Yellow */
-  color: #000;
-  padding: 12px 24px;
-  border: 3px solid #000;
-  border-radius: 50px; /* Pill shape */
-  box-shadow: 6px 6px 0 #000;
-  font-family: 'Sometype Mono', monospace;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 24px;
-}}
-
-.gg-training-plans-badge-icon {{
-  margin-right: 8px;
-  font-size: 11px;
-}}
-
-/* Fix for button text visibility */
-.gg-plan-cta {{
-  display: inline-block;
-  padding: 8px 16px;
-  background: #40E0D0; /* Turquoise */
-  color: #000 !important; /* Black for maximum visibility - !important to override inheritance */
-  border: 3px solid #000;
-  text-decoration: none !important;
-  font-family: 'Sometype Mono', monospace;
-  font-size: 13px;
-  font-weight: 700; /* Bolder */
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  box-shadow: 4px 4px 0 #000;
-  transition: all 0.15s ease;
-  cursor: pointer;
-}}
-
-.gg-plan-cta:hover {{
-  background: #f4d03f; /* Yellow */
-  color: #000 !important; /* Black text for contrast - !important to override */
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
-}}
-
-.gg-plan-cta:active {{
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 #000;
-}}
-</style>"""
-    
-    return template.format(tier_cards='\n\n'.join(tier_cards))
+    # Generate HTML using module function
+    return generate_training_plans_html(tiers_data, race_name)
 
 
 def generate_coaching_cta_html() -> str:
