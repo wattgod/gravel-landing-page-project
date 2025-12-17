@@ -58,14 +58,14 @@
 }
 
 .gg-zone-label {
-  /* Header bar - black background, white text */
+  /* Header bar - earth-tone background, white text */
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 24px 20px 16px 20px;
   border-bottom: 4px solid #000000;
-  background: #000000;
+  background: #59473C; /* Earth-tone brown - no black blocks in neobrutalist design */
   color: #FFFFFF;
   line-height: 1.2;
   margin: 0;
@@ -81,14 +81,14 @@
 }
 
 .gg-zone-desc strong {
-  /* Named section box - black background, white text, bold border */
+  /* Named section box - earth-tone background, white text, bold border */
   font-weight: 900;
   text-transform: uppercase;
   display: block;
   margin-top: 16px;
   margin-bottom: 12px;
   padding: 10px 14px;
-  background: #000000;
+  background: #59473C; /* Earth-tone brown - no black blocks in neobrutalist design */
   color: #FFFFFF;
   border: 3px solid #000000;
   box-shadow: 4px 4px 0px 0px #000000;
