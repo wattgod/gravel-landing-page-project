@@ -206,15 +206,15 @@ class LandingPageRegressionTests:
         if not has_2_col:
             self.errors.append("Training plans grid missing 2-column layout")
     
-    def test_plan_cards_have_description(self):
-        """REGRESSION: Plan cards must include description text from marketplace (added 2025-12-16)."""
+    def test_plan_cards_no_descriptions(self):
+        """REGRESSION: Plan cards must NOT have descriptions - just name and button (fixed 2025-12-16)."""
         has_description = 'gg-plan-description' in self.html_content
         has_explicit_labels = 'Challenge:' in self.html_content or 'Solution:' in self.html_content
         
-        if not has_description:
-            self.errors.append("Plan cards missing description section (gg-plan-description class)")
+        if has_description:
+            self.errors.append("Plan cards should NOT have description section (gg-plan-description class) - removed per user request")
         if has_explicit_labels:
-            self.errors.append("Plan cards should NOT have explicit 'Challenge:' or 'Solution:' labels - use natural prose")
+            self.errors.append("Plan cards should NOT have explicit 'Challenge:' or 'Solution:' labels")
     
     def test_course_breakdown_header_not_ratings(self):
         """REGRESSION: Header must be 'COURSE BREAKDOWN', not 'THE RATINGS' (fixed 2025-12-16)."""
@@ -278,7 +278,7 @@ class LandingPageRegressionTests:
         self.test_no_duplicate_sections()
         self.test_training_plans_urls_valid()
         self.test_training_plans_2_column_grid()
-        self.test_plan_cards_have_description()
+        self.test_plan_cards_no_descriptions()
         self.test_course_breakdown_header_not_ratings()
         self.test_coaching_cta_present()
         self.test_gravel_races_cta_present()
