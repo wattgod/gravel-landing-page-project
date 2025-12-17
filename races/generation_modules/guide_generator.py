@@ -29,8 +29,8 @@ def load_template():
     """Load the HTML template"""
     # Get path relative to this script's location
     script_dir = Path(__file__).parent
-    # Template is in the same directory as the generator
-    template_path = script_dir / 'guide_template_full.html'
+    # Use simplified template (new design)
+    template_path = script_dir / 'guide_template_simplified.html'
     with open(template_path, 'r', encoding='utf-8') as f:
         return f.read()
 
@@ -171,72 +171,37 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         if not weather_strategy:
             weather_strategy = "Check forecast week of race. Pack appropriate layers. Start hydrated if hot conditions expected. Monitor conditions daily starting 5 days out."
     
-    # Build substitution dictionary
+    # Build substitution dictionary for simplified template
+    race_name = metadata.get('name', race_data.get('name', 'Race Name'))
+    plan_title = get_plan_title(tier_name, ability_level)
+    
+    # Generate simplified content
+    tier_philosophy = generate_tier_philosophy(tier_name, ability_level)
+    training_approach = generate_training_approach(race_data, tier_name, ability_level, distance_str, elevation_str, weather_strategy)
+    plan_features = generate_plan_features(race_data, tier_name, ability_level, distance_str, duration_estimate, weather_strategy)
+    guide_content_summary = generate_guide_content_summary(race_data, tier_name)
+    alternative_warning = generate_alternative_warning(tier_name)
+    delivery_headline = generate_delivery_headline(tier_name)
+    delivery_details = generate_delivery_details(race_data, tier_name, distance_str)
+    
+    # Get race URL
+    race_url = metadata.get('website', race_data.get('website', ''))
+    if not race_url:
+        # Generate URL from race name slug
+        race_slug = race_name.lower().replace(' ', '-').replace('the ', '')
+        race_url = f"https://gravelgodcycling.com/{race_slug}"
+    
     substitutions = {
-        '{{RACE_NAME}}': metadata.get('name', race_data.get('name', 'Race Name')),
-        '{{DISTANCE}}': distance_str,
-        '{{TERRAIN_DESCRIPTION}}': terrain_desc,
-        '{{ELEVATION_GAIN}}': elevation_str,
-        '{{DURATION_ESTIMATE}}': duration_estimate,
-        '{{RACE_DESCRIPTION}}': convert_markdown_to_html(hooks.get('detail', metadata.get('description', 'Race description here'))),
-        '{{ABILITY_LEVEL}}': ability_level,
-        '{{TIER_NAME}}': tier_name,
-        '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
-        '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
-        '{{RACE_KEY_CHALLENGES}}': ', '.join(guide_vars.get('race_challenges', [])) if isinstance(guide_vars.get('race_challenges'), list) else guide_vars.get('race_challenges', 'technical terrain, elevation, and endurance'),
-        '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
-        '{{RACE_INTRO_PARAGRAPH}}': generate_race_intro_paragraph(race_data),
-        '{{COURSE_DESCRIPTION_PARAGRAPH}}': generate_course_description_paragraph(race_data),
-        '{{RACE_SIGNIFICANCE_PARAGRAPH}}': generate_race_significance_paragraph(race_data),
-        '{{WHAT_IT_TAKES_TO_FINISH}}': generate_what_it_takes_to_finish(race_data),
-        '{{PLAN_PREPARATION_SUMMARY}}': generate_plan_preparation_summary(race_data),
-        '{{PLAN_TITLE}}': get_plan_title(tier_name, ability_level),
-        '{{ABILITY_LEVEL_EXPLANATION}}': get_ability_level_explanation(ability_level, tier_name),
-        '{{TIER_VOLUME_EXPLANATION}}': get_tier_volume_explanation(tier_name),
-        '{{PERFORMANCE_EXPECTATIONS}}': get_performance_expectations(tier_name),
-        '{{RACE_ELEVATION}}': str(elevation_gain) if elevation_gain and isinstance(elevation_gain, (int, float)) else 'XXX',
-        '{{RACE_SPECIFIC_SKILL_NOTES}}': convert_markdown_to_html(guide_vars.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.')),
-        '{{RACE_SPECIFIC_TACTICS}}': convert_markdown_to_html(guide_vars.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.')),
-        '{{WEATHER_STRATEGY}}': convert_markdown_to_html(weather_strategy),
-        '{{AID_STATION_STRATEGY}}': convert_markdown_to_html(guide_vars.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.')),
-        '{{ALTITUDE_POWER_LOSS}}': guide_vars.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
-        '{{RECOMMENDED_TIRE_WIDTH}}': characteristics.get('recommended_tire_width', guide_vars.get('recommended_tire_width', '38-42mm')),
-        '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
-        '{{RACE_SUPPORT_URL}}': metadata.get('website', race_data.get('website', 'https://example.com')),
-        
-        # Infographic placeholders (now all generated as HTML tables/diagrams)
-        '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',  # Could be enhanced later
-        '{{INFOGRAPHIC_RATING_HEX}}': generate_rating_hex(race_data),
-        '{{INFOGRAPHIC_DIFFICULTY_TABLE}}': generate_difficulty_table(race_data),
-        '{{INFOGRAPHIC_FUELING_TABLE}}': generate_fueling_table(race_data),
-        '{{INFOGRAPHIC_MENTAL_MAP}}': generate_mental_map(race_data),
-        '{{INFOGRAPHIC_THREE_ACTS}}': generate_three_acts(race_data),
-        '{{INFOGRAPHIC_INDOOR_OUTDOOR_DECISION}}': generate_indoor_outdoor_decision(race_data),
-        '{{INFOGRAPHIC_TIRE_DECISION}}': generate_tire_decision(race_data),
-        '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': generate_key_workout_summary(race_data),
-        
-        # Non-negotiables (extract from race_data)
-        '{{NON_NEG_1_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 0)['requirement']),
-        '{{NON_NEG_1_BY_WHEN}}': extract_non_negotiables(race_data, 0)['by_when'],
-        '{{NON_NEG_1_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 0)['why']),
-        '{{NON_NEG_2_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 1)['requirement']),
-        '{{NON_NEG_2_BY_WHEN}}': extract_non_negotiables(race_data, 1)['by_when'],
-        '{{NON_NEG_2_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 1)['why']),
-        '{{NON_NEG_3_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 2)['requirement']),
-        '{{NON_NEG_3_BY_WHEN}}': extract_non_negotiables(race_data, 2)['by_when'],
-        '{{NON_NEG_3_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 2)['why']),
-        '{{NON_NEG_4_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 3)['requirement']),
-        '{{NON_NEG_4_BY_WHEN}}': extract_non_negotiables(race_data, 3)['by_when'],
-        '{{NON_NEG_4_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 3)['why']),
-        '{{NON_NEG_5_REQUIREMENT}}': convert_markdown_to_html(extract_non_negotiables(race_data, 4)['requirement']),
-        '{{NON_NEG_5_BY_WHEN}}': extract_non_negotiables(race_data, 4)['by_when'],
-        '{{NON_NEG_5_WHY}}': convert_markdown_to_html(extract_non_negotiables(race_data, 4)['why']),
-        
-        # Skill placeholder examples (would be race-specific)
-        '{{SKILL_5_NAME}}': 'Emergency Repairs',
-        '{{SKILL_5_WHY}}': convert_markdown_to_html('Mechanical issues will happen. Knowing how to fix them keeps you racing. A flat tire at mile 150 doesn\'t have to end your day---if you can fix it quickly. A dropped chain doesn\'t have to cost you 10 minutes---if you\'ve practiced the fix. The difference between finishing and DNF often comes down to mechanical competence. You can\'t control when mechanicals happen, but you can control how prepared you are to handle them.'),
-        '{{SKILL_5_HOW}}': convert_markdown_to_html('Practice changing tubes under time pressure: set a timer, change a tube, aim to beat your previous time. Practice fixing dropped chains: intentionally drop your chain, then fix it quickly. Learn to use tire plugs: practice inserting plugs into a punctured tire. Know your quick-link: practice breaking and rejoining your chain. Test your multi-tool: make sure every tool works before race day. Practice in conditions similar to race day: cold hands, tired, stressed. Build a troubleshooting decision tree: flat = tube or plug? Chain break = quick-link. Derailleur hanger bent = straighten or replace? Spoke break = true wheel or ride carefully? The goal isn\'t perfection---it\'s competence under pressure.'),
-        '{{SKILL_5_CUE}}': convert_markdown_to_html('Carry tools. Know your bike. Practice fixes. Mechanicals are when, not if.'),
+        '{{TIER_PHILOSOPHY}}': tier_philosophy,
+        '{{TRAINING_APPROACH}}': training_approach,
+        '{{PLAN_TITLE}}': plan_title,
+        '{{PLAN_FEATURES}}': plan_features,
+        '{{GUIDE_CONTENT_SUMMARY}}': guide_content_summary,
+        '{{ALTERNATIVE_WARNING}}': alternative_warning,
+        '{{DELIVERY_HEADLINE}}': delivery_headline,
+        '{{DELIVERY_DETAILS}}': delivery_details,
+        '{{RACE_NAME}}': race_name,
+        '{{RACE_URL}}': race_url,
     }
     
     # Perform all substitutions
@@ -244,79 +209,11 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
     
-    # Conditionally remove Masters section if not a Masters plan
-    import re
-    if ability_level != 'Masters':
-        # Remove Masters section from TOC
-        masters_toc_pattern = r'<!-- START MASTERS SECTION TOC -->.*?<!-- END MASTERS SECTION TOC -->'
-        output = re.sub(masters_toc_pattern, '', output, flags=re.DOTALL)
-        # Remove Masters section content
-        masters_section_pattern = r'<!-- START MASTERS SECTION -->.*?<!-- END MASTERS SECTION -->'
-        output = re.sub(masters_section_pattern, '', output, flags=re.DOTALL)
-        # Renumber Women-Specific from section 14 to section 13
-        output = output.replace('id="section-14-women-specific-considerations"', 'id="section-13-women-specific-considerations"')
-        output = output.replace('14 · Women-Specific Considerations', '13 · Women-Specific Considerations')
-        output = output.replace('href="#section-14-women-specific-considerations"', 'href="#section-13-women-specific-considerations"')
-        # Renumber FAQ from section 15 to section 14
-        output = output.replace('id="section-15-faq"', 'id="section-14-faq"')
-        output = output.replace('15 · Frequently Asked Questions', '14 · Frequently Asked Questions')
-        output = output.replace('href="#section-15-faq"', 'href="#section-14-faq"')
-        print(f"  → Removed Masters section (not a Masters plan)")
-        print(f"  → Renumbered Women-Specific to section 13, FAQ to section 14")
-    else:
-        print(f"  → Included Masters section (Masters plan)")
-        print(f"  → Women-Specific is section 14, FAQ is section 15")
-    
-    # Wire in race-specific modules
-    race_specific = race_data.get("race_specific") or {}
-    output = output.replace("{{FLINT_MODULE}}", build_flint_module(race_specific))
-    output = output.replace("{{TIRE_PRESSURE_MODULE}}", build_tire_pressure_module(race_specific))
-    output = output.replace("{{WIND_MODULE}}", build_wind_module(race_specific))
-    output = output.replace("{{TIME_DRIFT_MODULE}}", build_time_drift_module(race_specific))
-    output = output.replace("{{DECISION_TREE_MODULE}}", build_decision_tree_module(race_specific))
-    output = output.replace("{{PSYCH_LANDMARKS_MODULE}}", build_psych_landmarks_module(race_specific))
-    
     # Validate no unreplaced placeholders remain
     import re
     unreplaced = re.findall(r'\{\{[A-Z_]+\}\}', output)
     if unreplaced:
-        # Filter out known placeholders that are intentionally left (like INFOGRAPHIC placeholders that are handled)
-        critical_unreplaced = [p for p in unreplaced if 'XXX' not in p and 'INFOGRAPHIC' not in p and 'PHASE' not in p]
-        if critical_unreplaced:
-            print(f"  Warning: Unreplaced placeholders found: {set(critical_unreplaced)}")
-    
-    # Conditionally remove altitude section if elevation < 5000 feet
-    # Check multiple possible field names for elevation (avg_elevation_feet is the race location elevation)
-    race_elevation = 0
-    if isinstance(race_data, dict):
-        race_elevation = (metadata.get('avg_elevation_feet', 0) or
-                         characteristics.get('altitude_feet', 0) or
-                         metadata.get('altitude_feet', 0) or
-                         race_data.get('elevation_feet', 0) or
-                         race_data.get('avg_elevation_feet', 0) or
-                         race_data.get('altitude_feet', 0))
-    
-    try:
-        race_elevation = int(race_elevation) if race_elevation else 0
-    except (ValueError, TypeError):
-        race_elevation = 0
-    
-    if race_elevation < 5000:
-        # Remove altitude section (between START and END comments - match both instances)
-        import re
-        # Remove first altitude section marker (ONLY SHOW IF >= 3000)
-        altitude_pattern1 = r'<!-- START ALTITUDE SECTION - ONLY SHOW IF RACE_ELEVATION >= 3000 -->.*?<!-- END ALTITUDE SECTION -->'
-        output = re.sub(altitude_pattern1, '', output, flags=re.DOTALL)
-        # Remove second altitude section (the detailed one - REMOVE IF < 5000)
-        altitude_pattern2 = r'<!-- START ALTITUDE SECTION - REMOVE IF.*?<!-- END ALTITUDE SECTION -->'
-        output = re.sub(altitude_pattern2, '', output, flags=re.DOTALL)
-        print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 5000)")
-    else:
-        # Remove only the "REMOVE IF < 5000" section, keep the main one
-        import re
-        altitude_pattern2 = r'<!-- START ALTITUDE SECTION - REMOVE IF.*?<!-- END ALTITUDE SECTION -->'
-        output = re.sub(altitude_pattern2, '', output, flags=re.DOTALL)
-        print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 5000)")
+        print(f"  Warning: Unreplaced placeholders found: {set(unreplaced)}")
     
     # Convert any remaining markdown syntax to HTML in the body
     import re
@@ -1542,6 +1439,91 @@ def get_performance_expectations(tier_name):
         return f"With {weekly_hours} hours per week, you're training at professional-level volume. Realistic expectations: At this volume, you should be competing for top positions. However, if you're training 20+ hours per week, consider getting coaching rather than following a pre-made plan."
     else:
         return "Performance expectations vary based on your training consistency, natural ability, and race-day execution."
+
+
+# Simplified template content generators
+def generate_tier_philosophy(tier_name, ability_level):
+    """Generate tier philosophy paragraph for simplified template"""
+    if tier_name == 'AYAHUASCA':
+        return "High-intensity interval training works for time-crunched athletes. You get maximum fitness from minimal time, enough intensity to sharpen performance, and enough recovery to absorb the stress. No junk miles. No hero intervals. Just systematic progression toward finishing the distance."
+    elif tier_name == 'FINISHER':
+        return "Polarized training principles work for athletes with moderate time. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a strong finish."
+    elif tier_name == 'COMPETE':
+        return "Polarized training principles work for time-crunched competitive athletes. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target."
+    elif tier_name == 'PODIUM':
+        return "Block periodization and high-volume training work for serious athletes. You get massive aerobic volume to build extreme durability, concentrated intensity blocks to target limiters, and systematic recovery to absorb the load. No junk miles. No wasted time. Just elite-level preparation."
+    else:
+        return "Systematic training principles work. You get the right volume, the right intensity, and the right recovery. No junk miles. No hero intervals. Just progression toward your goal."
+
+
+def generate_training_approach(race_data, tier_name, ability_level, distance_str, elevation_str, weather_strategy):
+    """Generate training approach paragraph for simplified template"""
+    race_name = race_data.get('race_metadata', {}).get('name', 'Race')
+    weekly_hours = get_weekly_hours(tier_name)
+    
+    # Build approach based on tier and race specifics
+    approach = ""
+    
+    if tier_name == 'AYAHUASCA':
+        approach = f"Minimal-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {get_plan_title(tier_name, ability_level)} builds systems that work under load. "
+    elif tier_name == 'FINISHER':
+        approach = f"Moderate-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {get_plan_title(tier_name, ability_level)} builds systems that work under load. "
+    elif tier_name == 'COMPETE':
+        approach = f"High-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {get_plan_title(tier_name, ability_level)} builds systems that work under load. "
+    elif tier_name == 'PODIUM':
+        approach = f"Elite-level training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {get_plan_title(tier_name, ability_level)} builds systems that work under load. "
+    
+    # Add race-specific elements
+    if 'hot' in weather_strategy.lower() or 'heat' in weather_strategy.lower():
+        approach += "Heat adaptation in weeks 6-10 prepares you for race conditions. "
+    elif 'cold' in weather_strategy.lower() or 'unpredictable' in weather_strategy.lower():
+        approach += "Weather adaptation training prepares you for variable conditions. "
+    
+    approach += f"Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline."
+    
+    return approach
+
+
+def generate_plan_features(race_data, tier_name, ability_level, distance_str, duration_estimate, weather_strategy):
+    """Generate plan features paragraph for simplified template"""
+    features = f"Precision taper protocol with deload timing proven for {ability_level.lower()} athletes. Distance-specific fueling for the {distance_str}: 60-80g carbs/hour protocol tested for extended efforts. "
+    
+    if 'hot' in weather_strategy.lower() or 'heat' in weather_strategy.lower():
+        features += "Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to race conditions. "
+    elif 'cold' in weather_strategy.lower() or 'unpredictable' in weather_strategy.lower():
+        features += "Weather adaptation built in: weeks 4-10 varied condition training—arrive at race prepared for anything. "
+    
+    return features
+
+
+def generate_guide_content_summary(race_data, tier_name):
+    """Generate guide content summary for simplified template"""
+    return "Technical Skills Practice — Progressive drills for cornering, descending, rough terrain—weekly practice building competence. Race-Specific Preparation — Heat protocols, altitude adaptation (if needed), equipment choices. Training Fundamentals — Periodization principles that create predictable performance."
+
+
+def generate_alternative_warning(tier_name):
+    """Generate alternative warning paragraph for simplified template"""
+    if tier_name == 'AYAHUASCA':
+        return "Or you could keep doing random intensity without structure. Minimal volume without periodization. Fitness doesn't peak when needed."
+    elif tier_name == 'FINISHER':
+        return "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed."
+    elif tier_name == 'COMPETE':
+        return "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed."
+    elif tier_name == 'PODIUM':
+        return "Or you could keep doing massive volume without structure. Random intensity distribution. Fitness doesn't peak when needed."
+    else:
+        return "Or you could keep doing random training without structure. Fitness doesn't peak when needed."
+
+
+def generate_delivery_headline(tier_name):
+    """Generate delivery headline for simplified template"""
+    return "Systematic progression eliminates guesswork. Training becomes results."
+
+
+def generate_delivery_details(race_data, tier_name, distance_str):
+    """Generate delivery details for simplified template"""
+    details = f"Power distribution for {distance_str} • Race execution protocols • Fueling and hydration at intensity • Technical skills under fatigue"
+    return details
 
 
 if __name__ == '__main__':
