@@ -325,7 +325,7 @@ def estimate_race_time_hours(race_data, tier_key, level_key):
         ("ayahuasca", "intermediate"): 12.0,
         ("ayahuasca", "masters"): 11.5,
         ("ayahuasca", "save_my_race"): 10.5,
-        ("finisher", "beginner"): 14.0,
+        ("finisher", "beginner"): 14.5,
         ("finisher", "intermediate"): 14.5,
         ("finisher", "advanced"): 16.0,
         ("finisher", "masters"): 13.5,
