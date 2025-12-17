@@ -1500,6 +1500,125 @@ def generate_training_plans_html(data: Dict) -> str:
   }}
 }}
 
+/* Workout Cards - Neo Brutalist styling like zone cards */
+.gg-volume-card {{
+  border: 4px solid #000000;
+  background: #FFFFFF;
+  padding: 0;
+  position: relative;
+  box-shadow: 8px 8px 0px 0px #000000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  overflow: hidden;
+}}
+
+.gg-volume-card:hover {{
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000000;
+}}
+
+/* Alternating backgrounds */
+.gg-volume-card:nth-child(odd) {{
+  background: #4ECDC4; /* Turquoise - pops on white */
+}}
+
+.gg-volume-card:nth-child(even) {{
+  background: #FFFFFF;
+}}
+
+/* Volume tag badge */
+.gg-volume-tag {{
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #59473C; /* Earth-tone brown */
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 6px 12px;
+  border: 3px solid #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+/* Volume title */
+.gg-volume-title {{
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 24px 20px 12px 20px;
+  border-bottom: 4px solid #000000;
+  background: #59473C; /* Earth-tone brown */
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+/* Volume hours */
+.gg-volume-hours {{
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #000000;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+/* Divider */
+.gg-volume-divider {{
+  height: 2px;
+  background: #000000;
+}}
+
+/* Plan stack */
+.gg-plan-stack {{
+  padding: 20px;
+}}
+
+.gg-plan {{
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #000000;
+}}
+
+.gg-plan:last-child {{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}}
+
+.gg-plan-name {{
+  font-size: 15px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}}
+
+.gg-plan-name span {{
+  color: #666666;
+  font-weight: 400;
+}}
+
+/* Footer */
+.gg-volume-footer {{
+  padding: 16px 20px;
+  background: #F0F0F0;
+  border-top: 4px solid #000000;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #000000;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}}
+
 /* Fix for button text visibility */
 .gg-plan-cta {{
   display: inline-block;
@@ -1520,7 +1639,7 @@ def generate_training_plans_html(data: Dict) -> str:
 }}
 
 .gg-plan-cta:hover {{
-  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
+  background: #4ECDC4; /* Turquoise - better contrast */
   color: #000 !important;
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #000;
