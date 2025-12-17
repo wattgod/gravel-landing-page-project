@@ -292,8 +292,13 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, r
     marketplace_file = generate_marketplace_description(race_data, plan_template, plan_info, plan_output_dir)
     guide_file = generate_training_guide(race_data, plan_template, plan_info, plan_output_dir, race_json_path)
     
-    total_workouts = zwo_count + strength_count
-    print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength), guide, marketplace description")
+    # Generate race day workout
+    from zwo_generator import generate_race_workout
+    race_workout_file = generate_race_workout(race_data, plan_info, plan_output_dir)
+    print(f"     ✓ Generated race day workout: {race_workout_file.name}")
+    
+    total_workouts = zwo_count + strength_count + 1  # +1 for race workout
+    print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength + 1 race), guide, marketplace description")
     
     return {
         "plan": plan_folder_name,

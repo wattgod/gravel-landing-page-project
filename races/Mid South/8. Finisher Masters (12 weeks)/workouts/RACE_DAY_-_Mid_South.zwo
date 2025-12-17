@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>RACE DAY - Mid South</name>
+  <description>• RACE DAY - MID SOUTH
+Estimated completion time: 8.0 hours (480 minutes)
+Distance: 100 miles | Elevation: 4,500 feet
+
+• PRE-RACE CHECKLIST (Review 1-2 weeks before race):
+✓ Review your training guide's equipment checklist
+✓ Test all race-day nutrition products
+✓ Practice race-day fueling strategy (60-90g carbs/hour)
+✓ Check weather forecast 5 days out, then daily
+✓ Pack layers for variable conditions
+✓ Test bike setup and tire pressure
+✓ Review race route and aid station locations
+✓ Plan pacing strategy (Three-Act framework)
+✓ Review mental protocols for when it gets hard
+✓ Prepare emergency repair kit
+
+• RACE TACTICS &amp; STRATEGY:
+• Unpredictable weather (the defining feature)
+• Red clay that becomes unrideable mud when wet
+• Wind exposure on exposed ridgelines
+
+PACING - Three-Act Framework:
+• Act 1 (First 1/3): Start conservatively. Build into the race. Don't go too hard early.
+• Act 2 (Middle 1/3): Settle into sustainable pace. Focus on nutrition and hydration.
+• Act 3 (Final 1/3): This is where training pays off. Stay strong when others fade.
+
+FUELING:
+• Start fueling from mile 1 - don't wait until you're hungry
+• Target 60-90g carbs/hour (up to 100g if trained)
+• Practice your race-day products - no experiments on race day
+• Hydration: 1-1.5 bottles/hour, 600-1500mg sodium/hour depending on conditions
+• Monitor urine color - light yellow (not clear) = well hydrated
+
+RACE-SPECIFIC NOTES:
+Weather lottery: 40-75°F swings, potential freezing rain, heat, or wildfires
+
+• RESOURCES IN YOUR GUIDE:
+Before race day, review these sections in your training guide:
+• Equipment Checklist (download and use)
+• Race Strategy &amp; Tactics section
+• Nutrition &amp; Hydration protocols
+• Technical Skills section
+• Mental Training protocols
+• Race Week preparation
+
+• RACE DAY MINDSET:
+You've done the work. Trust your training. Execute your plan. When it gets hard (and it will), remember: this is what you trained for. Stay patient, stay fueled, stay strong.
+
+Good luck! You've got this. 🚴</description>
+  <sportType>bike</sportType>
+      <workout>
+    <FreeRide Duration="480"/>
+  </workout>
+</workout_file>

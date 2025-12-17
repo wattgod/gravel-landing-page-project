@@ -312,3 +312,147 @@ def generate_all_zwo_files(plan_template, race_data, plan_info, output_dir):
     
     return total_workouts
 
+def estimate_race_time_hours(race_data, tier_key, level_key):
+    """Estimate race completion time in hours based on tier, level, and race distance"""
+    distance = race_data.get("race_metadata", {}).get("distance_miles", 100)
+    elevation = race_data.get("race_metadata", {}).get("elevation_feet", 0)
+    
+    # Base average speeds (mph) by tier and level
+    # These are conservative estimates for typical athletes
+    # Adjusted for realistic gravel race speeds (slower than road)
+    speed_map = {
+        ("ayahuasca", "beginner"): 11.0,
+        ("ayahuasca", "intermediate"): 12.0,
+        ("ayahuasca", "masters"): 11.5,
+        ("ayahuasca", "save_my_race"): 10.5,
+        ("finisher", "beginner"): 13.0,
+        ("finisher", "intermediate"): 14.5,
+        ("finisher", "advanced"): 16.0,
+        ("finisher", "masters"): 13.5,
+        ("finisher", "save_my_race"): 12.5,
+        ("compete", "intermediate"): 15.5,
+        ("compete", "advanced"): 17.5,
+        ("compete", "masters"): 15.0,
+        ("compete", "save_my_race"): 14.0,
+        ("podium", "advanced"): 19.0,
+        ("podium", "advanced_goat"): 20.5,
+    }
+    
+    # Get base speed
+    base_speed = speed_map.get((tier_key, level_key), 12.0)
+    
+    # Adjust for elevation (more elevation = slower)
+    # Rough adjustment: -0.5 mph per 1000ft over 5000ft
+    elevation_penalty = max(0, (elevation - 5000) / 1000) * 0.5
+    adjusted_speed = base_speed - elevation_penalty
+    
+    # Calculate time
+    time_hours = distance / adjusted_speed
+    
+    # Round to nearest 0.5 hours
+    time_hours = round(time_hours * 2) / 2
+    
+    return max(4.0, time_hours)  # Minimum 4 hours
+
+def generate_race_workout(race_data, plan_info, output_dir):
+    """Generate a race day workout file"""
+    tier_key = plan_info.get("tier", "").lower()
+    level_key = plan_info.get("level", "").lower()
+    race_name = race_data.get("race_metadata", {}).get("name", "Race")
+    race_name_upper = race_name.upper()
+    distance = race_data.get("race_metadata", {}).get("distance_miles", 100)
+    elevation = race_data.get("race_metadata", {}).get("elevation_feet", 0)
+    
+    # Estimate race time
+    estimated_hours = estimate_race_time_hours(race_data, tier_key, level_key)
+    estimated_minutes = int(estimated_hours * 60)
+    
+    # Get race-specific tactics from guide variables
+    guide_vars = race_data.get("guide_variables", {})
+    race_challenges = guide_vars.get("race_challenges", [])
+    race_terrain = guide_vars.get("race_terrain", "")
+    race_weather = guide_vars.get("race_weather", "")
+    
+    # Format challenges
+    challenges_text = ""
+    if race_challenges:
+        challenges_text = "\n".join([f"• {challenge}" for challenge in race_challenges[:3]])
+    
+    # Build description with race tactics and checklists
+    description = f"""• RACE DAY - {race_name_upper}
+Estimated completion time: {estimated_hours:.1f} hours ({estimated_minutes} minutes)
+Distance: {distance} miles | Elevation: {elevation:,} feet
+
+• PRE-RACE CHECKLIST (Review 1-2 weeks before race):
+✓ Review your training guide's equipment checklist
+✓ Test all race-day nutrition products
+✓ Practice race-day fueling strategy (60-90g carbs/hour)
+✓ Check weather forecast 5 days out, then daily
+✓ Pack layers for variable conditions
+✓ Test bike setup and tire pressure
+✓ Review race route and aid station locations
+✓ Plan pacing strategy (Three-Act framework)
+✓ Review mental protocols for when it gets hard
+✓ Prepare emergency repair kit
+
+• RACE TACTICS & STRATEGY:
+{challenges_text if challenges_text else f"• {race_terrain}" if race_terrain else ""}
+
+PACING - Three-Act Framework:
+• Act 1 (First 1/3): Start conservatively. Build into the race. Don't go too hard early.
+• Act 2 (Middle 1/3): Settle into sustainable pace. Focus on nutrition and hydration.
+• Act 3 (Final 1/3): This is where training pays off. Stay strong when others fade.
+
+FUELING:
+• Start fueling from mile 1 - don't wait until you're hungry
+• Target 60-90g carbs/hour (up to 100g if trained)
+• Practice your race-day products - no experiments on race day
+• Hydration: 1-1.5 bottles/hour, 600-1500mg sodium/hour depending on conditions
+• Monitor urine color - light yellow (not clear) = well hydrated
+
+RACE-SPECIFIC NOTES:
+{race_weather if race_weather else "Check weather forecast and adjust gear accordingly."}
+
+• RESOURCES IN YOUR GUIDE:
+Before race day, review these sections in your training guide:
+• Equipment Checklist (download and use)
+• Race Strategy & Tactics section
+• Nutrition & Hydration protocols
+• Technical Skills section
+• Mental Training protocols
+• Race Week preparation
+
+• RACE DAY MINDSET:
+You've done the work. Trust your training. Execute your plan. When it gets hard (and it will), remember: this is what you trained for. Stay patient, stay fueled, stay strong.
+
+Good luck! You've got this. 🚴"""
+    
+    # Create workout name
+    plan_title = plan_info.get("tier", "").title() + " " + plan_info.get("level", "").replace("_", " ").title()
+    workout_name = f"RACE DAY - {race_name}"
+    
+    # Create ZWO blocks - long free ride for the estimated duration
+    blocks = f"    <FreeRide Duration=\"{estimated_minutes}\"/>\n"
+    
+    # Create ZWO file
+    workouts_dir = Path(output_dir) / "workouts"
+    workouts_dir.mkdir(parents=True, exist_ok=True)
+    
+    filename = f"RACE_DAY_-_{race_name.replace(' ', '_')}.zwo"
+    output_path = workouts_dir / filename
+    
+    # Escape XML
+    name_escaped = html.escape(workout_name, quote=False)
+    description_escaped = html.escape(description, quote=False)
+    
+    zwo_content = ZWO_TEMPLATE.format(
+        name=name_escaped,
+        description=description_escaped,
+        blocks=blocks
+    )
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(zwo_content)
+    
+    return output_path
+
