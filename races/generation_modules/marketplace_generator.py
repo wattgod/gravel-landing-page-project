@@ -207,12 +207,21 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     # Get masterclass topics using varied copy
     masterclass_topics = get_masterclass_topics_html(race_data, copy)
     
-    # Build non-negotiables HTML from varied copy
-    non_negotiables = copy.get('non_negotiables', [])
-    if not non_negotiables:
-        # Fallback to original non-negotiables if copy variations didn't generate them
-        non_negs = race_data.get("non_negotiables", [])[:3]
-        non_negotiables = [f"&#10004; {nn}" for nn in non_negs]  # Use HTML entity instead of Unicode
+    # Build non-negotiables HTML from race-specific requirements
+    # Use race_data non-negotiables directly to preserve race-specific content
+    # Don't rephrase - the requirements are already race-specific and well-written
+    non_negs = race_data.get("non_negotiables", [])[:3]
+    non_negotiables = []
+    for nn in non_negs:
+        if isinstance(nn, dict):
+            # Extract requirement text from dict - preserve race-specific wording exactly
+            req_text = nn.get('requirement', str(nn))
+        else:
+            # Already a string
+            req_text = str(nn)
+        # Use original requirement text directly to preserve race-specific details
+        # (get_non_negotiable_phrasing was losing race-specific content)
+        non_negotiables.append(f"&#10004; {req_text}")  # Use HTML entity instead of Unicode
     
     # Convert any remaining Unicode characters to HTML entities
     non_negotiables_html = "\n".join([
