@@ -2027,6 +2027,26 @@ def generate_landing_page(race_data_path: str, base_json_path: str, output_path:
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(elementor_json, f, ensure_ascii=False, indent=2)
     
+    # Copy to Downloads with LATEST label if this is Mid South or BWR CA
+    race_name_lower = data['race']['display_name'].lower()
+    if 'mid south' in race_name_lower or 'belgian waffle' in race_name_lower or 'bwr' in race_name_lower:
+        from datetime import datetime
+        import shutil
+        downloads_dir = Path.home() / "Downloads"
+        date_str = datetime.now().strftime("%Y%m%d")
+        
+        if 'mid south' in race_name_lower:
+            downloads_name = f"elementor-mid-south-LATEST-{date_str}.json"
+        elif 'belgian waffle' in race_name_lower or 'bwr' in race_name_lower:
+            downloads_name = f"elementor-belgian-waffle-ride-CA-LATEST-{date_str}.json"
+        else:
+            downloads_name = None
+        
+        if downloads_name:
+            downloads_path = downloads_dir / downloads_name
+            shutil.copy2(output_path, downloads_path)
+            print(f"✓ Copied to Downloads: {downloads_path.name}")
+    
     race_name = data['race']['name']
     print(f"✓ Landing page generated for {race_name}")
     print(f"✓ Output: {output_path}")
