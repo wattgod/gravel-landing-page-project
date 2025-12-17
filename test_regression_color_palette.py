@@ -60,13 +60,11 @@ LARGE_BACKGROUND_SELECTORS = [
 ]
 
 # Selectors that indicate SMALL accents (bright yellow acceptable)
+# NOTE: Even small accents should use muted colors for backgrounds - bright yellow ONLY for text shadows
 SMALL_ACCENT_SELECTORS = [
-    r'text-shadow',
-    r'\.gg-pill[^}]*background',  # Small badge - acceptable
-    r'\.gg-timeline-event::before[^}]*background',  # Small marker
-    r'\.gg-timeline-year[^}]*background',  # Small badge
-    r'box-shadow[^}]*#F4D03F',  # Shadow color - acceptable
-    r'box-shadow[^}]*#FFFF00',  # Shadow color - acceptable
+    r'text-shadow',  # Text shadow - ONLY acceptable use of bright yellow
+    r'box-shadow[^}]*#F4D03F',  # Shadow color in box-shadow - acceptable
+    r'box-shadow[^}]*#FFFF00',  # Shadow color in box-shadow - acceptable
 ]
 
 # ============================================================================
@@ -190,21 +188,21 @@ def check_css_content(css: str, context: str) -> List[str]:
                         is_large_background = True
                         break
                 
-                # Check if this is a small accent (acceptable)
+                # Check if this is a small accent (acceptable) - ONLY text shadows
                 is_small_accent = False
                 for selector_pattern in SMALL_ACCENT_SELECTORS:
                     if re.search(selector_pattern, full_context, re.IGNORECASE):
                         is_small_accent = True
                         break
                 
-                # If it's a large background, it's a violation
-                if is_large_background and not is_small_accent:
+                # ANY background with bright yellow is a violation UNLESS it's a text shadow
+                if not is_small_accent:
                     # Extract selector for better error message
                     selector_match = re.search(r'([^{]+)\{', context_before[-100:])
                     selector = selector_match.group(1).strip() if selector_match else "unknown"
                     errors.append(
-                        f"{context}: Bright yellow ({yellow}) used for large background in '{selector}'. "
-                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
+                        f"{context}: Bright yellow ({yellow}) used for background in '{selector}'. "
+                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead. Bright yellow ONLY for text shadows."
                     )
     
     return errors

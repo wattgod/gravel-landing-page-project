@@ -1322,96 +1322,6 @@ def generate_logistics_html(data: Dict) -> str:
     return template
 
 
-def load_marketplace_description(race_slug: str, tier: str, level: str) -> Optional[str]:
-    """Load marketplace description HTML for a specific plan."""
-    # Map level names to folder names
-    level_map = {
-        'Beginner': 'Beginner',
-        'Intermediate': 'Intermediate', 
-        'Advanced': 'Advanced',
-        'Masters 50+': 'Masters',
-        'Emergency': 'Save My Race'
-    }
-    
-    # Map tier names to folder numbers
-    tier_map = {
-        'Ayahuasca': '1',
-        'Finisher': '5',
-        'Compete': '10',
-        'Podium': '14'
-    }
-    
-    folder_level = level_map.get(level, level)
-    tier_num = tier_map.get(tier, '')
-    
-    if not tier_num:
-        return None
-    
-    # Try to find the marketplace description file
-    race_dir = Path(f'races/{race_slug.replace("-", " ").title()}')
-    if not race_dir.exists():
-        # Try alternative naming
-        race_dir = Path(f'races/{race_slug}')
-    
-    if not race_dir.exists():
-        return None
-    
-    # Look for plan folder (format: "X. Tier Level (weeks)")
-    for plan_dir in race_dir.iterdir():
-        if plan_dir.is_dir() and tier_num in plan_dir.name and folder_level in plan_dir.name:
-            desc_file = plan_dir / 'marketplace_description.html'
-            if desc_file.exists():
-                with open(desc_file, 'r', encoding='utf-8') as f:
-                    return f.read()
-    
-    return None
-
-
-def extract_challenge_solution_from_marketplace(html_content: str) -> Dict[str, str]:
-    """Extract challenge and solution from marketplace description HTML opening hook/story."""
-    if not html_content:
-        return {'challenge': '', 'solution': ''}
-    
-    # Look for the opening hook/story box (usually in a border-left div or first strong paragraph)
-    # Pattern: First strong paragraph or border-left div usually contains the hook
-    hook_patterns = [
-        r'<p[^>]*><strong>([^<]+)</strong>([^<]*)</p>',  # Strong tag in paragraph
-        r'border-left[^>]*>.*?<p[^>]*>([^<]+)</p>',  # Border-left div
-        r'<div[^>]*border-left[^>]*>.*?<p[^>]*>([^<]+)</p>',  # Nested
-    ]
-    
-    hook_text = ''
-    for pattern in hook_patterns:
-        match = re.search(pattern, html_content, re.IGNORECASE | re.DOTALL)
-        if match:
-            hook_text = match.group(1) + (match.group(2) if len(match.groups()) > 1 else '')
-            break
-    
-    # If no hook found, extract first 2-3 sentences from first paragraph
-    if not hook_text:
-        # Get first paragraph
-        first_p = re.search(r'<p[^>]*>([^<]+)</p>', html_content, re.IGNORECASE)
-        if first_p:
-            hook_text = first_p.group(1)
-    
-    # Clean up text
-    hook_text = unescape(hook_text)
-    hook_text = re.sub(r'\s+', ' ', hook_text).strip()
-    
-    # Limit length for card display (should be concise)
-    if len(hook_text) > 250:
-        # Try to cut at sentence boundary
-        sentences = re.split(r'[.!?]', hook_text)
-        hook_text = '. '.join(sentences[:2]).strip()
-        if hook_text and not hook_text.endswith(('.', '!', '?')):
-            hook_text += '.'
-    
-    return {
-        'challenge': hook_text[:250] if hook_text else '',
-        'solution': ''  # Combined into single prose
-    }
-
-
 def generate_training_plans_html(data: Dict) -> str:
     """
     Generate training plans section with TP URLs.
@@ -1421,76 +1331,10 @@ def generate_training_plans_html(data: Dict) -> str:
     
     Universal features:
     - 2-column grid layout (not 4) for better card spacing
-    - Challenge/solution text on each plan card (from marketplace descriptions)
     - Coaching CTA and gravel races CTA appended to logistics section
     """
     race = data['race']
     tp = race['training_plans']
-    race_slug = race.get('slug', '').replace('_', '-')
-    
-    # Group plans by tier
-    tiers_data = {
-        ('Ayahuasca', 'Beginner'): {
-            'challenge': 'You have zero time but refuse to quit.',
-            'solution': 'HIIT that actually works—max fitness from 3-5 hours per week.'
-        },
-        ('Ayahuasca', 'Intermediate'): {
-            'challenge': 'Life keeps getting in the way of training.',
-            'solution': 'Time-crunched G-Spot training that builds real fitness without breaking your schedule.'
-        },
-        ('Ayahuasca', 'Masters 50+'): {
-            'challenge': 'Recovery takes longer, but goals haven\'t changed.',
-            'solution': 'HRV-based autoregulation that adapts to your body, not a calendar.'
-        },
-        ('Ayahuasca', 'Emergency'): {
-            'challenge': 'Race is 6 weeks away and you\'re not ready.',
-            'solution': 'Emergency sharpening protocol that maximizes fitness in minimal time.'
-        },
-        ('Finisher', 'Beginner'): {
-            'challenge': 'First gravel race and you don\'t know where to start.',
-            'solution': 'Progressive 12-week build that teaches you how to finish strong, not just survive.'
-        },
-        ('Finisher', 'Intermediate'): {
-            'challenge': 'You finish races but always feel like you left something out there.',
-            'solution': 'Polarized training that builds the endurance to finish proud, not shattered.'
-        },
-        ('Finisher', 'Advanced'): {
-            'challenge': 'You want a strong finish, not just a finish.',
-            'solution': 'GOAT Method training that optimizes every hour for maximum race-day performance.'
-        },
-        ('Finisher', 'Masters 50+'): {
-            'challenge': 'Age isn\'t an excuse, but recovery is real.',
-            'solution': 'Masters-specific periodization that respects recovery while building race fitness.'
-        },
-        ('Finisher', 'Emergency'): {
-            'challenge': 'Six weeks to go and you\'re behind schedule.',
-            'solution': 'Compressed training that maximizes fitness gains when time is short.'
-        },
-        ('Compete', 'Intermediate'): {
-            'challenge': 'You want to be in the moves, not just finish.',
-            'solution': 'Polarized training that builds the repeatability to surge and recover when it matters.'
-        },
-        ('Compete', 'Advanced'): {
-            'challenge': 'You want to compete, not just participate.',
-            'solution': 'Block periodization that builds threshold power that holds for hours.'
-        },
-        ('Compete', 'Masters 50+'): {
-            'challenge': 'You still want to race, not just ride.',
-            'solution': 'HRV-based autoregulation that adapts training to your recovery capacity.'
-        },
-        ('Compete', 'Emergency'): {
-            'challenge': 'Race is close and you need to be sharp.',
-            'solution': 'Emergency protocol that maximizes race-readiness in 6 weeks.'
-        },
-        ('Podium', 'Advanced'): {
-            'challenge': 'You want to contend, not just compete.',
-            'solution': 'HVLI training that builds massive aerobic volume for elite-level performance.'
-        },
-        ('Podium', 'GOAT'): {
-            'challenge': 'You want to win, not just finish.',
-            'solution': 'GOAT Method that optimizes every training signal for maximum race-day power.'
-        }
-    }
     
     # Group plans by tier
     tiers_data = {
@@ -1508,14 +1352,6 @@ def generate_training_plans_html(data: Dict) -> str:
         name_display = plan['name']
         weeks = plan['weeks']
         
-        # Load marketplace description and extract opening hook (challenge/solution)
-        marketplace_html = load_marketplace_description(race_slug, tier, level)
-        challenge_solution = extract_challenge_solution_from_marketplace(marketplace_html)
-        
-        # If no marketplace description found, use minimal fallback
-        if not challenge_solution['challenge']:
-            challenge_solution['challenge'] = 'Training plan for this tier and level.'
-        
         # Build full TP URL
         category = plan.get('category', 'gran-fondo-century')
         tp_url = f"{tp['marketplace_base_url']}/{category}/{plan['tp_id']}/{plan['tp_slug']}"
@@ -1525,8 +1361,7 @@ def generate_training_plans_html(data: Dict) -> str:
         tiers_data[tier]['plans'].append({
             'display': display_name,
             'weeks': weeks,
-            'url': tp_url,
-            'description': challenge_solution['challenge']  # Single prose text, not separate challenge/solution
+            'url': tp_url
         })
     
     # Generate tier cards HTML
@@ -1541,7 +1376,6 @@ def generate_training_plans_html(data: Dict) -> str:
           <div class="gg-plan-name">
             {plan['display']} <span>({plan['weeks']} weeks)</span>
           </div>
-          {f'<div class="gg-plan-description">{plan["description"]}</div>' if plan.get('description') else ''}
           <a href="{plan['url']}" class="gg-plan-cta" target="_blank">View Plan</a>
         </div>"""
             plans_html.append(plan_html)
@@ -1609,17 +1443,6 @@ def generate_training_plans_html(data: Dict) -> str:
   .gg-volume-grid {{
     grid-template-columns: 1fr;
   }}
-}}
-
-/* Plan description text (natural prose, not explicit labels) */
-.gg-plan-description {{
-  margin: 1rem 0;
-  padding: 0;
-  font-family: 'Sometype Mono', monospace;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #59473C;
-  font-weight: 400;
 }}
 
 /* Fix for button text visibility */
@@ -1822,7 +1645,7 @@ a.gravel-races-cta-button:visited {
 .gravel-races-cta a.gravel-races-cta-button:hover {
   transform: translate(4px, 4px) !important;
   box-shadow: 4px 4px 0 #000000 !important;
-  background: #F4D03F !important;
+  background: #FFF5E6 !important; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
   color: #000000 !important;
 }
 
