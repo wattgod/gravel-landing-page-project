@@ -1321,7 +1321,17 @@ def generate_logistics_html(data: Dict) -> str:
 
 
 def generate_training_plans_html(data: Dict) -> str:
-    """Generate training plans section with TP URLs."""
+    """
+    Generate training plans section with TP URLs.
+    
+    NOTE: This function applies to ALL landing pages (Unbound, Mid South, BWR, etc.).
+    Changes here affect every race landing page generated.
+    
+    Universal features:
+    - 2-column grid layout (not 4) for better card spacing
+    - Challenge/solution text on each plan card
+    - Coaching CTA and gravel races CTA appended to logistics section
+    """
     race = data['race']
     tp = race['training_plans']
     
