@@ -655,6 +655,163 @@ DELIVERY_DETAILS_VARIATIONS = [
 # RACE-SPECIFIC CONTENT POOLS
 # ============================================================================
 
+# ============================================================================
+# RACE-SPECIFIC CONTENT POOL GENERATOR
+# ============================================================================
+
+def extract_race_specific_content(race_data, research_doc_path=None):
+    """
+    Automatically extract race-specific content from race JSON and research docs.
+    Generates content pools for terrain, weather, location, character, and challenges.
+    
+    Args:
+        race_data: Race JSON data
+        research_doc_path: Optional path to research document (e.g., COURSE_BREAKDOWN_RESEARCH.md)
+    
+    Returns:
+        Dictionary with race-specific content pools by category
+    """
+    race_metadata = race_data.get("race_metadata", {})
+    race_characteristics = race_data.get("race_characteristics", {})
+    race_hooks = race_data.get("race_hooks", {})
+    non_negotiables = race_data.get("non_negotiables", [])
+    
+    race_name = race_metadata.get("name", "")
+    location = race_metadata.get("location", "")
+    distance = race_metadata.get("distance_miles", 0)
+    terrain_type = race_characteristics.get("terrain", "")
+    typical_weather = race_characteristics.get("typical_weather", "")
+    climate = race_characteristics.get("climate", "")
+    
+    # Extract from race hooks
+    punchy_hook = race_hooks.get("punchy", "")
+    detail_hook = race_hooks.get("detail", "")
+    
+    # Build terrain references
+    terrain_refs = []
+    if terrain_type:
+        # Convert terrain type to readable format
+        terrain_readable = terrain_type.replace("_", " ").title()
+        terrain_refs.append(f"{terrain_readable}")
+        if location:
+            terrain_refs.append(f"{location} {terrain_readable.lower()}")
+        terrain_refs.append(f"{terrain_readable.lower()} terrain")
+    
+    # Extract terrain details from non-negotiables
+    for nn in non_negotiables:
+        requirement = nn.get("requirement", "").lower()
+        why = nn.get("why", "").lower()
+        if "clay" in requirement or "clay" in why:
+            if "red clay" in why:
+                terrain_refs.append("red clay that becomes unrideable mud when wet")
+                terrain_refs.append("red clay that turns to peanut butter mud")
+        if "flint" in requirement or "flint" in why:
+            terrain_refs.append("Flint Hills terrain")
+            terrain_refs.append("Flint-specific cornering")
+    
+    # Build weather references
+    weather_refs = []
+    if "unpredictable" in climate.lower() or "unpredictable" in typical_weather.lower():
+        weather_refs.append("weather lottery")
+        weather_refs.append("weather lottery that decides your race")
+        weather_refs.append("unpredictable weather")
+        weather_refs.append("unpredictable conditions")
+        if "40-75" in typical_weather or "swing" in typical_weather.lower():
+            weather_refs.append("40-75°F temperature swings")
+        if "freezing" in typical_weather.lower() or "heat" in typical_weather.lower():
+            weather_refs.append("weather lottery: freezing rain or heat")
+    elif "hot" in climate.lower() or "hot" in typical_weather.lower():
+        weather_refs.append("June heat")
+        weather_refs.append("85-95°F conditions")
+        weather_refs.append("hot and humid conditions")
+        weather_refs.append("heat that breaks people")
+    
+    # Build location references
+    location_refs = []
+    if location:
+        location_refs.append(location)
+        if distance:
+            location_refs.append(f"{distance} miles of {location.split(',')[0]}")
+        location_refs.append(f"{location.split(',')[0]} gravel")
+    
+    # Build character references from hooks
+    character_refs = []
+    if punchy_hook:
+        # Extract key phrases from punchy hook
+        if "Bobby Wintle" in punchy_hook or "hugs" in punchy_hook:
+            character_refs.append("Bobby Wintle hugs every finisher")
+        if "hospitality" in detail_hook.lower():
+            character_refs.append("unreasonable hospitality instead of unreasonable suffering")
+    
+    # Extract from non-negotiables for character
+    for nn in non_negotiables:
+        why = nn.get("why", "").lower()
+        if "tactical" in why or "pack" in why:
+            character_refs.append("tactical pack racing")
+        if "exposed" in why or "ridgeline" in why:
+            character_refs.append("exposed ridgelines amplify wind")
+            character_refs.append("exposed terrain")
+    
+    # Build challenge references from non-negotiables
+    challenge_refs = []
+    for nn in non_negotiables:
+        requirement = nn.get("requirement", "").lower()
+        why = nn.get("why", "").lower()
+        
+        if "clay" in why and "mud" in why:
+            challenge_refs.append("red clay becomes unrideable peanut butter mud when wet")
+        if "exposed" in why and "wind" in why:
+            challenge_refs.append("exposed ridgelines amplify wind")
+        if "tactical" in why:
+            challenge_refs.append("tactical pack racing on exposed sections")
+        if "weather" in why and "turn" in why:
+            challenge_refs.append("weather turns mid-race")
+            challenge_refs.append("conditions change mid-race")
+        if "heat" in why:
+            challenge_refs.append("heat that breaks people")
+        if "flint" in requirement.lower():
+            challenge_refs.append("Flint-specific cornering and line selection")
+    
+    # Read research document if provided
+    research_content = ""
+    if research_doc_path and Path(research_doc_path).exists():
+        try:
+            with open(research_doc_path, 'r', encoding='utf-8') as f:
+                research_content = f.read()
+        except:
+            pass
+    
+    # Extract additional references from research doc
+    if research_content:
+        research_lower = research_content.lower()
+        race_name_lower = race_name.lower()
+        
+        # Look for race-specific mentions in research doc
+        if race_name_lower in research_lower:
+            # Extract sentences mentioning the race
+            import re
+            sentences = re.findall(rf'[^.!?]*{re.escape(race_name_lower)}[^.!?]*[.!?]', research_content, re.IGNORECASE)
+            for sentence in sentences[:3]:  # Limit to 3 sentences
+                sentence_clean = sentence.strip()
+                if len(sentence_clean) < 150:  # Only short, usable phrases
+                    if "terrain" in sentence_clean.lower() or "clay" in sentence_clean.lower() or "flint" in sentence_clean.lower():
+                        terrain_refs.append(sentence_clean)
+                    elif "weather" in sentence_clean.lower() or "heat" in sentence_clean.lower():
+                        weather_refs.append(sentence_clean)
+    
+    # Remove duplicates and empty strings
+    def clean_refs(ref_list):
+        return list(dict.fromkeys([r.strip() for r in ref_list if r.strip()]))
+    
+    return {
+        "terrain": clean_refs(terrain_refs),
+        "weather": clean_refs(weather_refs),
+        "location": clean_refs(location_refs),
+        "character": clean_refs(character_refs),
+        "challenges": clean_refs(challenge_refs),
+    }
+
+# Legacy Mid South references (kept for backward compatibility)
 MID_SOUTH_REFERENCES = {
     "terrain": [
         "Oklahoma red clay",
@@ -695,6 +852,7 @@ MID_SOUTH_REFERENCES = {
 def get_race_specific_reference(race_data, category, tier_key, level_key, used_refs=None):
     """
     Get a race-specific reference that's unique to this plan.
+    Automatically extracts content from race JSON and research docs.
     
     Args:
         race_data: Race JSON data
@@ -708,18 +866,23 @@ def get_race_specific_reference(race_data, category, tier_key, level_key, used_r
     """
     race_name = race_data.get("race_metadata", {}).get("name", "").lower()
     
-    # Only return Mid South references for Mid South
-    if "mid south" not in race_name:
-        return ""
-    
     if used_refs is None:
         used_refs = set()
     
-    # Get appropriate pool
-    if race_name == "mid south":
+    # Try to find research document
+    from pathlib import Path
+    base_path = Path(__file__).parent.parent.parent
+    research_doc = base_path / "docs" / "COURSE_BREAKDOWN_RESEARCH.md"
+    
+    # Extract race-specific content automatically
+    race_content = extract_race_specific_content(race_data, research_doc if research_doc.exists() else None)
+    
+    # Get pool for this category
+    pool = race_content.get(category, [])
+    
+    # Fall back to legacy Mid South references if pool is empty and it's Mid South
+    if not pool and "mid south" in race_name:
         pool = MID_SOUTH_REFERENCES.get(category, [])
-    else:
-        return ""
     
     if not pool:
         return ""
