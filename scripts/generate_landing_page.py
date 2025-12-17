@@ -459,7 +459,7 @@ def generate_blackpill_html(data: Dict) -> str:
     margin-top: 2rem;
     padding: 1.5rem;
     border-left: 4px solid #59473C;
-    background: #FFF5E6;
+    background: #F4D03F;
   }}
 </style>
 
@@ -1073,7 +1073,7 @@ def generate_final_verdict_html(data: Dict) -> str:
     gap: 0.65rem;
     padding: 0.40rem 1.7rem 0.48rem;
     border-radius: 999px;
-    background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
+    background: #F4D03F; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
     border: 3px solid #59473C;
     box-shadow: 4px 4px 0 #59473C;
     font-family: "Sometype Mono", monospace;
@@ -1467,7 +1467,7 @@ def generate_training_plans_html(data: Dict) -> str:
 /* Training Plans Badge */
 .gg-training-plans-badge {{
   display: inline-block;
-  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
+    background: #F4D03F; /* Brand yellow - use judiciously */
   color: #000;
   padding: 12px 24px;
   border: 3px solid #000;
@@ -1819,7 +1819,7 @@ a.gravel-races-cta-button:visited {
 .gravel-races-cta a.gravel-races-cta-button:hover {
   transform: translate(4px, 4px) !important;
   box-shadow: 4px 4px 0 #000000 !important;
-  background: #FFF5E6 !important; /* Muted cream - earth-tone palette. #F4D03F is ONLY for text shadows/small accents, NOT backgrounds */
+  background: #F4D03F !important; /* Brand yellow - use judiciously */
   color: #000000 !important;
 }
 
