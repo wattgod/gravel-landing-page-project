@@ -150,6 +150,35 @@ def add_robust_taper_note(week_num, race_data):
     race_distance = race_data["race_metadata"].get("distance_miles", 100)
     return f"\n\n• {race_name_upper} - ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a {race_distance}-mile day."
 
+def add_survey_link(week_num, workout_name, race_data, plan_info):
+    """Add survey link to the final workout (last week, Sunday)"""
+    # Get plan duration from plan_info
+    plan_weeks = plan_info.get("weeks", 12)
+    
+    # Check if this is the final week and Sunday workout
+    is_final_week = week_num == plan_weeks
+    is_sunday = "Sun" in workout_name or "Sunday" in workout_name
+    
+    if is_final_week and is_sunday:
+        race_name = race_data.get("race_metadata", {}).get("name", "Race")
+        tier = plan_info.get("tier", "").title()
+        level = plan_info.get("level", "").replace("_", " ").title()
+        plan_name = f"{tier} {level}"
+        
+        # Create survey URL with plan-specific parameters
+        survey_url = f"https://wattgod.github.io/gravel-landing-page-project/survey.html?race={race_name.replace(' ', '%20')}&plan={plan_name.replace(' ', '%20')}"
+        
+        return f"""
+
+• TRAINING PLAN SURVEY (POST-COMPLETION):
+You've completed your training plan! Share your experience to help us improve plans for future athletes. Takes 3-4 minutes.
+
+Survey: {survey_url}
+
+Your feedback helps us make each plan better. Thank you!"""
+    
+    return ""
+
 def add_gravel_grit_note(week_num, workout_name, race_data):
     """Add Gravel Grit note if applicable"""
     grit_config = race_data.get("workout_modifications", {}).get("gravel_grit", {})
@@ -241,6 +270,9 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     description += add_dress_rehearsal_note(week_num, workout_name, race_data, plan_info)
     description += add_robust_taper_note(week_num, race_data)
     description += add_gravel_grit_note(week_num, workout_name, race_data)
+    
+    # Add survey link to final workout (last week, Sunday)
+    description += add_survey_link(week_num, workout_name, race_data, plan_info)
     
     return description
 
