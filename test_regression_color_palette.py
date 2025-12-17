@@ -104,7 +104,7 @@ def check_css_file(css_path: Path) -> List[str]:
                     f"Use brand yellow (#F4D03F) instead."
                 )
     
-    # Check for yellow in box-shadows (FORBIDDEN)
+    # Check for forbidden neon yellow in box-shadows
     boxshadow_pattern = r'box-shadow[^:]*:\s*([^;]+);'
     boxshadow_matches = re.finditer(boxshadow_pattern, css, re.IGNORECASE)
     
@@ -112,16 +112,16 @@ def check_css_file(css_path: Path) -> List[str]:
         boxshadow_value = match.group(1).strip()
         line_num = css[:match.start()].count('\n') + 1
         
-        # Check if this box-shadow uses a bright yellow
-        for yellow in BRIGHT_YELLOWS:
+        # Check if this box-shadow uses forbidden neon yellow
+        for yellow in FORBIDDEN_YELLOWS:
             if yellow in boxshadow_value:
                 # Extract selector for better error message
                 context_before = css[max(0, match.start() - 200):match.start()]
                 selector_match = re.search(r'([^{]+)\{', context_before[-100:])
                 selector = selector_match.group(1).strip() if selector_match else "unknown"
                 errors.append(
-                    f"Line {line_num}: Bright yellow ({yellow}) used in box-shadow for '{selector}'. "
-                    f"NO yellow allowed - use brown (#59473C) or black (#000000) instead."
+                    f"Line {line_num}: Forbidden neon yellow ({yellow}) used in box-shadow for '{selector}'. "
+                    f"Use brand yellow (#F4D03F) or brown (#59473C) instead."
                 )
     
     return errors
@@ -305,18 +305,18 @@ def main():
         print("\n" + "="*70)
         print(f"Total violations: {len(all_errors)}")
         print("\nColor palette rules:")
-        print("  ✅ Large backgrounds: Use muted earth tones (#FFF5E6, #F5E5D3, #BFA595)")
-        print("  ✅ Small accents: Bright yellow (#F4D03F, #FFFF00) acceptable")
-        print("  ❌ Large backgrounds: NEVER use bright yellow")
+        print("  ✅ Brand yellow (#F4D03F) allowed for backgrounds and accents (use judiciously)")
+        print("  ❌ Forbidden: Neon yellow (#FFFF00) - never use, replace with brand yellow")
+        print("  ❌ Forbidden: Muted cream (#FFF5E6) - replace with brand yellow or earth tones")
         print("\nSee documentation/COLOR_PALETTE_RULES.md for details.")
         return 1
     else:
         print("\n" + "="*70)
         print("✅ ALL COLOR PALETTE TESTS PASSED")
         print("="*70)
-        print("All files follow earth-tone neobrutalist color palette:")
-        print("  - Large backgrounds use muted earth tones")
-        print("  - Bright yellow only used for text shadows and small accents")
+        print("All files follow neobrutalist color palette:")
+        print("  - Brand yellow (#F4D03F) used judiciously for backgrounds and accents")
+        print("  - No forbidden neon yellow (#FFFF00) or muted cream (#FFF5E6)")
         return 0
 
 if __name__ == '__main__':
