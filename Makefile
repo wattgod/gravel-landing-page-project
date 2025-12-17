@@ -2,7 +2,7 @@
 # ======================================
 # Quality control commands for Cursor
 
-.PHONY: help qc qc-guide qc-all qc-landing test-regression-marketplace test-regression-guide test-regression-landing test-positioning validate-pools validate-output generate clean
+.PHONY: help qc qc-guide qc-all qc-landing test-regression-marketplace test-regression-guide test-regression-landing test-regression-route-ids test-positioning validate-pools validate-output generate clean
 
 help:
 	@echo ""
@@ -44,7 +44,7 @@ qc-full: test-regression-marketplace test-positioning validate-pools validate-ou
 	@echo "✅ Full QC (including positioning) Complete"
 
 # Landing page QC
-qc-landing: test-regression-landing test-regression-color-palette test-regression-downloads
+qc-landing: test-regression-landing test-regression-color-palette test-regression-downloads test-regression-route-ids
 	@echo ""
 	@echo "✅ Landing Page QC Complete"
 
@@ -87,6 +87,9 @@ test-regression-color-palette:
 
 test-regression-downloads:
 	@python3 test_regression_downloads.py
+
+test-regression-route-ids:
+	@python3 test_regression_route_ids.py
 
 # Run positioning quality tests
 test-positioning:

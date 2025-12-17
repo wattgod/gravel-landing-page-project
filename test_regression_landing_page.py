@@ -260,6 +260,42 @@ class LandingPageRegressionTests:
         if not has_course_breakdown:
             self.errors.append("TOC missing 'Course Breakdown' link")
     
+    def test_ridewithgps_route_id_valid(self):
+        """REGRESSION: RideWithGPS route IDs must be valid numeric IDs, NOT placeholders (fixed 2025-12-16)."""
+        # Find all RideWithGPS embed URLs
+        rwgps_pattern = re.compile(r'ridewithgps\.com/embeds\?[^"\s]+')
+        urls = rwgps_pattern.findall(self.html_content)
+        
+        if not urls:
+            # If there's a course map section, there should be a RideWithGPS URL
+            if 'gg-route-section' in self.html_content or 'course-map' in self.html_content:
+                self.errors.append("Course map section found but no RideWithGPS embed URL")
+            return
+        
+        # Check each URL for valid route ID
+        for url in urls:
+            # Extract the route ID from the URL
+            id_match = re.search(r'[?&]id=([^&"\s]+)', url)
+            if not id_match:
+                self.errors.append(f"RideWithGPS URL missing route ID: {url[:80]}...")
+                continue
+            
+            route_id = id_match.group(1)
+            
+            # Check for placeholder values
+            if 'PLACEHOLDER' in route_id.upper() or 'NEEDS_RESEARCH' in route_id.upper():
+                self.errors.append(f"RideWithGPS route ID is still a placeholder: {route_id}")
+                continue
+            
+            # Check that it's a valid numeric ID (RideWithGPS IDs are numeric)
+            if not route_id.isdigit():
+                self.errors.append(f"RideWithGPS route ID must be numeric, found: {route_id}")
+                continue
+            
+            # Check that it's a reasonable length (RideWithGPS IDs are typically 6-8 digits)
+            if len(route_id) < 6 or len(route_id) > 10:
+                self.errors.append(f"RideWithGPS route ID length suspicious: {route_id} (expected 6-10 digits)")
+    
     def run_all_tests(self) -> List[str]:
         """Run all regression tests."""
         self.errors = []
@@ -283,6 +319,7 @@ class LandingPageRegressionTests:
         self.test_coaching_cta_present()
         self.test_gravel_races_cta_present()
         self.test_toc_has_course_breakdown()
+        self.test_ridewithgps_route_id_valid()
         
         return self.errors
 
