@@ -13,6 +13,8 @@ Usage:
 import json
 import os
 import sys
+import shutil
+import tempfile
 from pathlib import Path
 from datetime import datetime
 
@@ -193,17 +195,16 @@ def generate_marketplace_description(race_data, plan_template, plan_info, output
     print(f"     ✓ Generated marketplace description ({len(html_content)} chars)")
     return output_file
 
-def generate_training_guide(race_data, plan_template, plan_info, race_folder, race_json_path):
+def generate_training_guide(race_data, plan_template, plan_info, plan_output_dir, race_json_path):
     """Generate HTML training guide using guide_generator.py"""
     print(f"  → Generating training plan guide...")
     
-    # Output to guides folder: races/[race-slug]/guides/
-    guides_folder = race_folder / "guides"
-    guides_folder.mkdir(exist_ok=True)
+    # Output to plan folder: races/[race-slug]/[plan-folder]/
+    # This keeps guides with their corresponding workouts and marketplace descriptions
     
     # Create plan JSON file path (temporary, for guide generator)
     plan_name_slug = plan_info['tier'] + '_' + plan_info['level']
-    plan_json_path = guides_folder / f"{plan_name_slug}_temp.json"
+    plan_json_path = plan_output_dir / f"{plan_name_slug}_temp.json"
     
     # Save plan template to temp JSON file for guide generator
     with open(plan_json_path, 'w') as f:
@@ -218,20 +219,20 @@ def generate_training_guide(race_data, plan_template, plan_info, race_folder, ra
             str(guide_generator_path),
             "--race", str(race_json_path),
             "--plan", str(plan_json_path),
-            "--output-dir", str(guides_folder)
+            "--output-dir", str(plan_output_dir)
         ], capture_output=True, text=True, check=True)
         
         # Clean up temp plan JSON
         plan_json_path.unlink()
         
         # Find the generated guide file
-        guide_files = list(guides_folder.glob(f"*{plan_name_slug}*.html"))
+        guide_files = list(plan_output_dir.glob(f"*{plan_name_slug}*.html"))
         if guide_files:
             guide_file = guide_files[0]
         else:
             # Fallback: look for any HTML file with plan name
-            guide_files = list(guides_folder.glob("*.html"))
-            guide_file = guide_files[0] if guide_files else guides_folder / f"{plan_name_slug}_guide.html"
+            guide_files = list(plan_output_dir.glob("*guide.html"))
+            guide_file = guide_files[0] if guide_files else plan_output_dir / f"{plan_name_slug}_guide.html"
         
         print(f"     ✓ Generated training plan guide: {guide_file.name}")
         return guide_file
@@ -289,7 +290,7 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, r
             print(f"     Skipping strength workout generation")
     
     marketplace_file = generate_marketplace_description(race_data, plan_template, plan_info, plan_output_dir)
-    guide_file = generate_training_guide(race_data, plan_template, plan_info, race_folder, race_json_path)
+    guide_file = generate_training_guide(race_data, plan_template, plan_info, plan_output_dir, race_json_path)
     
     total_workouts = zwo_count + strength_count
     print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength), guide, marketplace description")
@@ -346,42 +347,61 @@ def main():
         results.append(result)
     
     # Verify generated guides (MANDATORY)
+    # Guides are now in each plan folder, so collect them all
     print(f"\n{'='*60}")
     print(f"🔍 Verifying generated guides (MANDATORY)...")
     print(f"{'='*60}")
     verify_script = Path(__file__).parent / "generation_modules" / "verify_guide_structure.py"
-    guides_dir = race_folder / "guides"
-    
-    if not guides_dir.exists():
-        print("❌ ERROR: Guides directory not found!")
-        sys.exit(1)
     
     if not verify_script.exists():
         print("❌ ERROR: Verification script not found!")
         sys.exit(1)
     
-    try:
-        import subprocess
-        result = subprocess.run(
-            [sys.executable, str(verify_script), str(guides_dir), "--skip-index"],
-            capture_output=True,
-            text=True
-        )
-        print(result.stdout)
-        if result.returncode != 0:
-            print("\n" + "="*60)
-            print("❌ VERIFICATION FAILED - Generation aborted")
-            print("="*60)
-            print("Fix the issues above before proceeding.")
-            print("Guides were generated but contain errors.")
-            if result.stderr:
-                print("\nErrors:")
-                print(result.stderr)
-            sys.exit(1)
-        print("\n✅ All guides passed verification")
-    except Exception as e:
-        print(f"❌ ERROR: Could not run verification script: {e}")
+    # Collect all guide files from plan folders
+    guide_files = []
+    for plan_folder_name in PLAN_MAPPING.keys():
+        plan_dir = race_folder / plan_folder_name
+        if plan_dir.exists():
+            # Find guide HTML files in this plan folder
+            plan_guides = list(plan_dir.glob("*guide.html"))
+            guide_files.extend(plan_guides)
+    
+    if not guide_files:
+        print("❌ ERROR: No guide files found in plan folders!")
         sys.exit(1)
+    
+    # Create temporary directory with all guides for verification
+    temp_guides_dir = Path(tempfile.mkdtemp())
+    try:
+        for guide_file in guide_files:
+            # Copy guide to temp directory for verification
+            shutil.copy2(guide_file, temp_guides_dir / guide_file.name)
+        
+        try:
+            import subprocess
+            result = subprocess.run(
+                [sys.executable, str(verify_script), str(temp_guides_dir), "--skip-index"],
+                capture_output=True,
+                text=True
+            )
+            print(result.stdout)
+            if result.returncode != 0:
+                print("\n" + "="*60)
+                print("❌ VERIFICATION FAILED - Generation aborted")
+                print("="*60)
+                print("Fix the issues above before proceeding.")
+                print("Guides were generated but contain errors.")
+                if result.stderr:
+                    print("\nErrors:")
+                    print(result.stderr)
+                sys.exit(1)
+            print("\n✅ All guides passed verification")
+        except Exception as e:
+            print(f"❌ ERROR: Could not run verification script: {e}")
+            sys.exit(1)
+    finally:
+        # Clean up temp directory
+        shutil.rmtree(temp_guides_dir, ignore_errors=True)
     
     # Summary
     print(f"\n{'='*60}")
@@ -393,7 +413,7 @@ def main():
     print(f"   • {sum(r['zwo_files'] for r in results)} cycling ZWO files")
     print(f"   • {sum(r.get('strength_files', 0) for r in results)} strength ZWO files")
     print(f"   • {sum(r['zwo_files'] + r.get('strength_files', 0) for r in results)} total ZWO files")
-    print(f"   • 15 training plan guides (HTML) in: {race_folder / 'guides'}")
+    print(f"   • 15 training plan guides (HTML) in each plan folder")
     print(f"   • 15 marketplace descriptions")
     print(f"\n📝 Next steps:")
     print(f"   1. Review outputs in: {race_folder}")
