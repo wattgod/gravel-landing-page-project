@@ -61,6 +61,10 @@ test-regression-landing:
 	@echo "Running landing page regression tests..."
 	@failed=0; \
 	for json_file in output/elementor-*.json; do \
+		# Skip backup/old files
+		if echo "$$json_file" | grep -qE "(FIXED|OLD|BACKUP|CORRECTED)"; then \
+			continue; \
+		fi; \
 		if [ -f "$$json_file" ]; then \
 			echo ""; \
 			echo "Testing: $$json_file"; \
