@@ -75,15 +75,15 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
         if f'<h3 class="gg-volume-title">{tier}</h3>' not in html_content:
             errors.append(f"Missing tier title: {tier}")
     
-    # Check for NO links (plans not built yet)
+    # Check for links (should exist now)
     link_pattern = r'<a[^>]*class="gg-plan-cta"[^>]*>'
     links = re.findall(link_pattern, html_content)
-    if links:
-        errors.append(f"Found {len(links)} training plan links - should be NONE (plans not built yet)")
+    if not links:
+        errors.append("Missing training plan links - should have <a> tags with class='gg-plan-cta'")
     
-    # Check for "View Plan" text (should not exist)
-    if 'View Plan' in html_content:
-        errors.append("Found 'View Plan' text - links should be removed")
+    # Check for "View Plan" text (should exist)
+    if 'View Plan' not in html_content:
+        errors.append("Missing 'View Plan' text in links")
     
     # Check CSS structure
     css_checks = [
@@ -99,19 +99,16 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
         if not re.search(pattern, html_content, re.IGNORECASE | re.DOTALL):
             errors.append(f"Missing CSS: {description}")
     
-    # Check that style tag is INSIDE the section (before closing tag)
+    # Check that style tag is AFTER the section (after closing tag)
     section_match = re.search(r'<section[^>]*class="gg-volume-section"[^>]*>.*?</section>', html_content, re.IGNORECASE | re.DOTALL)
     if section_match:
         section_html = section_match.group(0)
+        section_end = section_match.end()
         
-        # Style tag MUST be inside the section, before </section>
-        if '<style' not in section_html or '</style>' not in section_html:
-            errors.append("Style tag must be INSIDE the section, before closing </section> tag")
-        else:
-            style_pos = section_html.find('<style')
-            section_close_pos = section_html.find('</section>')
-            if style_pos > section_close_pos:
-                errors.append("Style tag is AFTER section close - must be INSIDE section before </section>")
+        # Style tag MUST be AFTER the section close
+        after_section = html_content[section_end:section_end+50]
+        if '<style' not in after_section:
+            errors.append("Style tag must be AFTER </section> tag, not inside section")
         
         # Extract style tag from this section
         style_match = re.search(r'<style[^>]*>(.*?)</style>', section_html, re.IGNORECASE | re.DOTALL)

@@ -1445,9 +1445,21 @@ def generate_training_plans_html(data: Dict) -> str:
         else:
             display_name = f"{level_display} – {name_display}"
         
+        # Build TrainingPeaks URL
+        tp_id = plan.get('tp_id', 'PLACEHOLDER_NEEDS_RESEARCH')
+        tp_slug = plan.get('tp_slug', '')
+        category = plan.get('category', 'gran-fondo-century')
+        marketplace_base = tp.get('marketplace_base_url', 'https://www.trainingpeaks.com/training-plans/cycling')
+        
+        if tp_id and tp_id != 'PLACEHOLDER_NEEDS_RESEARCH' and tp_slug:
+            plan_url = f"{marketplace_base}/{category}/tp-{tp_id}/{tp_slug}"
+        else:
+            plan_url = "#"  # Placeholder if URL not ready
+        
         tiers_data[tier]['plans'].append({
             'display': display_name,
-            'weeks': weeks
+            'weeks': weeks,
+            'url': plan_url
         })
     
     # Generate tier cards HTML - EXACT structure from template
@@ -1458,10 +1470,12 @@ def generate_training_plans_html(data: Dict) -> str:
             
         plans_html = []
         for plan in tier_info['plans']:
+            plan_url = plan.get('url', '#')
             plan_html = f"""        <div class="gg-plan">
           <div class="gg-plan-name">
             {plan['display']} <span>({plan['weeks']} weeks)</span>
           </div>
+          <a href="{plan_url}" class="gg-plan-cta" target="_blank">View Plan</a>
         </div>"""
             plans_html.append(plan_html)
         
@@ -1492,6 +1506,7 @@ def generate_training_plans_html(data: Dict) -> str:
   <div class="gg-volume-grid">
 {tier_cards}
   </div>
+</section>
 
 <style>
 /* Training Plans Badge */
@@ -1545,8 +1560,7 @@ def generate_training_plans_html(data: Dict) -> str:
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 #000;
 }}
-</style>
-</section>"""
+</style>"""
     
     return template.format(tier_cards='\n\n'.join(tier_cards))
 
