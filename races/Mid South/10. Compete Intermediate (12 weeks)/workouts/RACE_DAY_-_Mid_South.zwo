@@ -53,6 +53,11 @@ You've done the work. Trust your training. Execute your plan. When it gets hard 
 Good luck! You've got this. 🚴</description>
   <sportType>bike</sportType>
       <workout>
-    <FreeRide Duration="390"/>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="3613" Power="0.78" Cadence="85"/>
+    <SteadyState Duration="3614" Power="0.83" Cadence="85"/>
+    <SteadyState Duration="7446" Power="0.83" Cadence="85"/>
+    <SteadyState Duration="7227" Power="0.85" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.85" PowerHigh="0.55"/>
   </workout>
 </workout_file>

@@ -3,7 +3,7 @@
   <author>Gravel God Training</author>
   <name>RACE DAY - Mid South</name>
   <description>• RACE DAY - MID SOUTH
-Estimated completion time: 7.5 hours (450 minutes)
+Estimated completion time: 7.0 hours (420 minutes)
 Distance: 100 miles | Elevation: 4,500 feet
 
 • PRE-RACE CHECKLIST (Review 1-2 weeks before race):
@@ -53,6 +53,11 @@ You've done the work. Trust your training. Execute your plan. When it gets hard 
 Good luck! You've got this. 🚴</description>
   <sportType>bike</sportType>
       <workout>
-    <FreeRide Duration="450"/>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="3910" Power="0.70" Cadence="85"/>
+    <SteadyState Duration="3911" Power="0.75" Cadence="85"/>
+    <SteadyState Duration="8058" Power="0.75" Cadence="85"/>
+    <SteadyState Duration="7821" Power="0.78" Cadence="85"/>
+    <Cooldown Duration="600" PowerLow="0.78" PowerHigh="0.55"/>
   </workout>
 </workout_file>

@@ -361,6 +361,73 @@ def estimate_race_time_hours(race_data, tier_key, level_key):
     
     return max(4.0, time_hours)  # Minimum 4 hours
 
+def generate_race_workout_blocks(total_minutes, tier_key, level_key, distance, elevation):
+    """Generate structured workout blocks for race day based on Three-Act pacing framework"""
+    
+    # Define intensity zones by tier (as % of FTP)
+    # These represent sustainable race pace for each tier
+    intensity_map = {
+        ("ayahuasca", "beginner"): {"steady": 0.65, "build": 0.70, "strong": 0.72},
+        ("ayahuasca", "intermediate"): {"steady": 0.68, "build": 0.73, "strong": 0.75},
+        ("ayahuasca", "masters"): {"steady": 0.66, "build": 0.71, "strong": 0.73},
+        ("ayahuasca", "save_my_race"): {"steady": 0.63, "build": 0.68, "strong": 0.70},
+        ("finisher", "beginner"): {"steady": 0.70, "build": 0.75, "strong": 0.78},
+        ("finisher", "intermediate"): {"steady": 0.73, "build": 0.78, "strong": 0.80},
+        ("finisher", "advanced"): {"steady": 0.76, "build": 0.81, "strong": 0.83},
+        ("finisher", "masters"): {"steady": 0.72, "build": 0.77, "strong": 0.79},
+        ("finisher", "save_my_race"): {"steady": 0.68, "build": 0.73, "strong": 0.75},
+        ("compete", "intermediate"): {"steady": 0.78, "build": 0.83, "strong": 0.85},
+        ("compete", "advanced"): {"steady": 0.82, "build": 0.87, "strong": 0.90},
+        ("compete", "masters"): {"steady": 0.76, "build": 0.81, "strong": 0.83},
+        ("compete", "save_my_race"): {"steady": 0.74, "build": 0.79, "strong": 0.81},
+        ("podium", "advanced"): {"steady": 0.85, "build": 0.90, "strong": 0.93},
+        ("podium", "advanced_goat"): {"steady": 0.88, "build": 0.93, "strong": 0.96},
+    }
+    
+    intensities = intensity_map.get((tier_key, level_key), {"steady": 0.70, "build": 0.75, "strong": 0.78})
+    
+    # Warmup: 10-15 minutes (in seconds)
+    warmup_duration = min(900, max(600, total_minutes * 60 // 20))  # 10-15 min or 5% of total
+    
+    # Cooldown: 5-10 minutes (in seconds)
+    cooldown_duration = min(600, max(300, total_minutes * 60 // 30))  # 5-10 min or 3% of total
+    
+    # Three-Act framework breakdown (remaining time after warmup/cooldown)
+    total_seconds = total_minutes * 60
+    race_seconds = total_seconds - warmup_duration - cooldown_duration
+    
+    # Split race time into three acts
+    act1_seconds = int(race_seconds * 0.33)  # First third
+    act2_seconds = int(race_seconds * 0.34)  # Middle third
+    act3_seconds = race_seconds - act1_seconds - act2_seconds  # Final third (gets remainder)
+    
+    # Build workout blocks
+    blocks = []
+    
+    # Warmup
+    blocks.append(f'    <Warmup Duration="{warmup_duration}" PowerLow="0.50" PowerHigh="0.65"/>\n')
+    
+    # Act 1: Build into race (conservative start, building intensity)
+    # Split into segments to show progression if long enough
+    if act1_seconds > 1800:  # If >30 min, split into segments
+        act1_part1 = act1_seconds // 2
+        act1_part2 = act1_seconds - act1_part1
+        blocks.append(f'    <SteadyState Duration="{act1_part1}" Power="{intensities["steady"]:.2f}" Cadence="85"/>\n')
+        blocks.append(f'    <SteadyState Duration="{act1_part2}" Power="{intensities["build"]:.2f}" Cadence="85"/>\n')
+    else:
+        blocks.append(f'    <SteadyState Duration="{act1_seconds}" Power="{intensities["steady"]:.2f}" Cadence="85"/>\n')
+    
+    # Act 2: Sustainable pace (main race effort)
+    blocks.append(f'    <SteadyState Duration="{act2_seconds}" Power="{intensities["build"]:.2f}" Cadence="85"/>\n')
+    
+    # Act 3: Stay strong (maintain or slightly increase)
+    blocks.append(f'    <SteadyState Duration="{act3_seconds}" Power="{intensities["strong"]:.2f}" Cadence="85"/>\n')
+    
+    # Cooldown
+    blocks.append(f'    <Cooldown Duration="{cooldown_duration}" PowerLow="{intensities["strong"]:.2f}" PowerHigh="0.55"/>\n')
+    
+    return "".join(blocks)
+
 def generate_race_workout(race_data, plan_info, output_dir):
     """Generate a race day workout file"""
     tier_key = plan_info.get("tier", "").lower()
@@ -438,8 +505,9 @@ Good luck! You've got this. 🚴"""
     plan_title = plan_info.get("tier", "").title() + " " + plan_info.get("level", "").replace("_", " ").title()
     workout_name = f"RACE DAY - {race_name}"
     
-    # Create ZWO blocks - long free ride for the estimated duration
-    blocks = f"    <FreeRide Duration=\"{estimated_minutes}\"/>\n"
+    # Create structured workout blocks based on tier and estimated time
+    # Three-Act pacing framework with appropriate intensities
+    blocks = generate_race_workout_blocks(estimated_minutes, tier_key, level_key, distance, elevation)
     
     # Create ZWO file
     workouts_dir = Path(output_dir) / "workouts"
