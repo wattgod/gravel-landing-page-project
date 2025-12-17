@@ -140,7 +140,8 @@
     "dark_mile": "60",
     "non_negotiable_1": "Weather adaptation training for unpredictable conditions",
     "non_negotiable_2": "Red clay handling skills and mud preparation",
-    "non_negotiable_3": "5-7 hour dress rehearsal in week 9"
+    "non_negotiable_3": "5-7 hour dress rehearsal in week 9",
+    "trainingpeaks_url": "https://www.trainingpeaks.com/my-training-plans/MidSouth"
   },
   "tier_overrides": {
     "ayahuasca": {

@@ -253,8 +253,10 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     delivery_headline = copy.get('delivery_headline', 'Systematic progression eliminates guesswork. Training becomes results.')
     delivery_details = copy.get('delivery_details', '').format(distance=distance)
     
-    # Get race URL
-    race_url = race_data.get("race_metadata", {}).get("website", "")
+    # Get race URL - prioritize TrainingPeaks URL, then website, then generate
+    race_url = marketplace_vars.get("trainingpeaks_url", "")
+    if not race_url:
+        race_url = race_data.get("race_metadata", {}).get("website", "")
     if not race_url:
         # Generate URL from race name slug
         race_slug = race_name.lower().replace(' ', '-').replace('the ', '').replace(' ', '-')
