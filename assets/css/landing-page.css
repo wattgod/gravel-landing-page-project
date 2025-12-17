@@ -45,7 +45,7 @@
   position: absolute;
   top: -12px;
   left: 16px;
-  background: #000000;
+  background: #59473C; /* Earth-tone brown - no black blocks in neobrutalist design */
   color: #FFFFFF;
   font-weight: 900;
   font-size: 14px;
@@ -332,7 +332,7 @@
   position: absolute;
   top: -16px;
   left: 20px;
-  background: #000000;
+  background: #59473C; /* Earth-tone brown - no black blocks in neobrutalist design */
   color: #FFFFFF;
   font-weight: 900;
   font-size: 24px;
