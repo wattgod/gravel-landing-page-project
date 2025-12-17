@@ -4,9 +4,11 @@ REGRESSION TEST: Training Plans Template Structure
 ==================================================
 Ensures training plans section matches exact template structure:
 - Exact HTML structure with comments
-- No links (plans not built yet)
-- Correct CSS (badge + button styles only)
+- Links present and correctly positioned on cards
+- Style tag AFTER section (not inside)
+- Correct CSS (badge + button styles only in inline, card CSS in base file)
 - Proper plan name formatting
+- Grid columns not changed (should use auto-fit, not fixed number)
 
 Exit codes:
     0 = All tests passed
@@ -110,8 +112,19 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
         if '<style' not in after_section:
             errors.append("Style tag must be AFTER </section> tag, not inside section")
         
-        # Extract style tag from this section
-        style_match = re.search(r'<style[^>]*>(.*?)</style>', section_html, re.IGNORECASE | re.DOTALL)
+        # Check that links are INSIDE gg-plan divs (on the cards)
+        plan_pattern = r'<div class="gg-plan">.*?</div>.*?<a href'
+        plan_matches = list(re.finditer(plan_pattern, section_html, re.DOTALL))
+        if not plan_matches:
+            errors.append("Links must be INSIDE <div class='gg-plan'> elements (on the workout cards)")
+        
+        # Check exact structure: plan-name div closes, then link appears
+        structure_check = re.search(r'gg-plan-name.*?</div>\s*<a href.*?gg-plan-cta', section_html, re.DOTALL)
+        if not structure_check:
+            errors.append("Link structure incorrect: <a> tag with class='gg-plan-cta' must come immediately after </div> closing gg-plan-name")
+        
+        # Extract style tag from after section
+        style_match = re.search(r'<style[^>]*>(.*?)</style>', html_content[section_end:], re.IGNORECASE | re.DOTALL)
         if style_match:
             css_content = style_match.group(1)
             
@@ -159,6 +172,32 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
     if not found_pattern and 'gg-plan-name' in html_content:
         # If we have plan names but no matches, might be okay - just warn
         pass
+    
+    # Check that base CSS file has card styles (not in inline styles)
+    css_file = Path(__file__).parent / 'assets' / 'css' / 'landing-page.css'
+    if css_file.exists():
+        with open(css_file, 'r', encoding='utf-8') as f:
+            base_css = f.read()
+        
+        # Card CSS should be in base file, not inline
+        required_base_css = [
+            (r'\.gg-volume-grid\s*\{', 'gg-volume-grid in base CSS'),
+            (r'\.gg-volume-card\s*\{', 'gg-volume-card in base CSS'),
+            (r'\.gg-plan-stack\s*\{', 'gg-plan-stack in base CSS'),
+            (r'\.gg-plan\s*\{', 'gg-plan in base CSS'),
+        ]
+        
+        for pattern, description in required_base_css:
+            if not re.search(pattern, base_css, re.IGNORECASE):
+                errors.append(f"Missing {description} - card CSS must be in base CSS file, not inline")
+        
+        # Grid should use auto-fit, not fixed number of columns
+        grid_match = re.search(r'\.gg-volume-grid[^{]*\{[^}]*grid-template-columns[^}]*\}', base_css, re.DOTALL | re.IGNORECASE)
+        if grid_match:
+            grid_css = grid_match.group(0)
+            # Should use auto-fit, not a fixed number like repeat(2, 1fr) or repeat(4, 1fr)
+            if re.search(r'repeat\(\s*\d+\s*,', grid_css):
+                errors.append("gg-volume-grid uses fixed number of columns - should use auto-fit for responsive layout")
     
     return errors
 
@@ -217,8 +256,10 @@ def main():
     else:
         print("✓ All training plans structure tests passed")
         print("  - Exact template structure verified")
-        print("  - No links found (as expected)")
-        print("  - CSS matches template")
+        print("  - Links present on workout cards")
+        print("  - Style tag after section (not inside)")
+        print("  - CSS structure correct (badge/button inline, cards in base CSS)")
+        print("  - Grid uses auto-fit (not fixed column count)")
         sys.exit(0)
 
 
