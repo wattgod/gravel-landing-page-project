@@ -54,6 +54,18 @@ def test_race_workout_exists(race_folder):
             ("Elevation:", "Elevation info"),
         ]
         
+        # Must have structured workout blocks (not just FreeRide)
+        if "<FreeRide" in content and "SteadyState" not in content:
+            errors.append(f"❌ {plan_folder.name}: Race workout uses FreeRide instead of structured blocks")
+        
+        # Must have Warmup, SteadyState, and Cooldown blocks
+        if "<Warmup" not in content:
+            errors.append(f"❌ {plan_folder.name}: Missing Warmup block in race workout")
+        if "<SteadyState" not in content:
+            errors.append(f"❌ {plan_folder.name}: Missing SteadyState blocks in race workout")
+        if "<Cooldown" not in content:
+            errors.append(f"❌ {plan_folder.name}: Missing Cooldown block in race workout")
+        
         for check_text, check_name in checks:
             if check_text not in content:
                 errors.append(f"❌ {plan_folder.name}: Missing '{check_name}' in race workout")
