@@ -556,6 +556,103 @@ LEVEL_MODIFIERS = {
 
 # ============================================================================
 
+# SIMPLIFIED TEMPLATE VARIATIONS
+
+# ============================================================================
+
+TIER_PHILOSOPHY_VARIATIONS = {
+    "ayahuasca": [
+        "High-intensity interval training works for time-crunched athletes. You get maximum fitness from minimal time, enough intensity to sharpen performance, and enough recovery to absorb the stress. No junk miles. No hero intervals. Just systematic progression toward finishing the distance.",
+        "Minimal time demands maximum efficiency. HIIT delivers fitness when volume isn't possible. You get intensity that sharpens, recovery that enables, and progression that gets you to the finish. No wasted sessions. No filler. Just results.",
+        "Time-crunched doesn't mean unprepared. High-intensity training works when every minute counts. You get the stimulus you need, the recovery you require, and the progression that finishes the distance.",
+    ],
+    "finisher": [
+        "Polarized training principles work for athletes with moderate time. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a strong finish.",
+        "Moderate hours demand smart structure. Polarized training builds the base and sharpens the edge. You get volume that builds durability, intensity that creates fitness, and recovery that enables both. Systematic progression toward finishing strong.",
+        "8-12 hours is enough to prepare properly. Polarized training maximizes those hours. You get the base you need, the intensity that sharpens, and the recovery that enables. No wasted time. Just progression toward a strong finish.",
+    ],
+    "compete": [
+        "Polarized training principles work for time-crunched competitive athletes. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target.",
+        "Competitive athletes need competitive training. Polarized structure delivers. You get volume that builds race fitness, intensity that sharpens performance, and recovery that enables progression. Systematic training toward competitive results.",
+        "12-18 hours demands smart periodization. Polarized training builds the engine and sharpens the edge. You get the volume for durability, the intensity for performance, and the recovery for progression. No wasted sessions. Just competitive preparation.",
+    ],
+    "podium": [
+        "Block periodization and high-volume training work for serious athletes. You get massive aerobic volume to build extreme durability, concentrated intensity blocks to target limiters, and systematic recovery to absorb the load. No junk miles. No wasted time. Just elite-level preparation.",
+        "Elite preparation demands elite structure. Block periodization targets limiters. High volume builds durability. Systematic recovery enables progression. You get the volume for extreme fitness, the intensity for performance, and the structure for results.",
+        "18+ hours requires professional-level structure. Block periodization concentrates intensity. High volume builds extreme durability. Systematic recovery enables progression. No wasted time. Just elite-level preparation.",
+    ],
+}
+
+TRAINING_APPROACH_VARIATIONS = {
+    "ayahuasca": [
+        "Minimal-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. {weather_adaptation}Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline.",
+        "Time-crunched training demands precision. Fueling at 60-80g carbs/hour—practiced until automatic. The {plan_title} builds systems that function under stress. {weather_adaptation}Three-Act pacing maps strategy to race timeline. Skills and mental protocols practiced under load. {weekly_hours} hours requires systems, not hope.",
+    ],
+    "finisher": [
+        "Moderate-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. {weather_adaptation}Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline.",
+        "8-12 hours demands smart structure. Fueling at 60-80g carbs/hour—practiced until automatic. The {plan_title} builds systems that function under stress. {weather_adaptation}Three-Act pacing maps strategy to race timeline. Skills and mental protocols practiced under load. {weekly_hours} hours requires systems, not hope.",
+    ],
+    "compete": [
+        "High-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. {weather_adaptation}Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline.",
+        "Competitive training demands competitive systems. Fueling at 60-80g carbs/hour—practiced until automatic. The {plan_title} builds systems that function under stress. {weather_adaptation}Three-Act pacing maps strategy to race timeline. Skills and mental protocols practiced under load. {weekly_hours} hours requires systems, not hope.",
+    ],
+    "podium": [
+        "Elite-level training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. {weather_adaptation}Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline.",
+        "Elite preparation demands elite systems. Fueling at 60-80g carbs/hour—practiced until automatic. The {plan_title} builds systems that function under stress. {weather_adaptation}Three-Act pacing maps strategy to race timeline. Skills and mental protocols practiced under load. {weekly_hours} hours requires systems, not hope.",
+    ],
+}
+
+PLAN_FEATURES_VARIATIONS = {
+    "ayahuasca": [
+        "Precision taper protocol with deload timing proven for {level} athletes. Distance-specific fueling for the {distance} miles: 60-80g carbs/hour protocol tested for extended efforts. {weather_adaptation}",
+        "Taper protocol optimized for {level} athletes. Fueling strategy for {distance} miles: 60-80g carbs/hour tested under load. {weather_adaptation}",
+    ],
+    "finisher": [
+        "Precision taper protocol with deload timing proven for {level} athletes. Distance-specific fueling for the {distance} miles: 60-80g carbs/hour protocol tested for extended efforts. {weather_adaptation}",
+        "Taper protocol optimized for {level} athletes. Fueling strategy for {distance} miles: 60-80g carbs/hour tested under load. {weather_adaptation}",
+    ],
+    "compete": [
+        "Precision taper protocol with deload timing proven for {level} athletes. Distance-specific fueling for the {distance} miles: 60-80g carbs/hour protocol tested for extended efforts. {weather_adaptation}",
+        "Taper protocol optimized for {level} athletes. Fueling strategy for {distance} miles: 60-80g carbs/hour tested under load. {weather_adaptation}",
+    ],
+    "podium": [
+        "Precision taper protocol with deload timing proven for {level} athletes. Distance-specific fueling for the {distance} miles: 60-80g carbs/hour protocol tested for extended efforts. {weather_adaptation}",
+        "Taper protocol optimized for {level} athletes. Fueling strategy for {distance} miles: 60-80g carbs/hour tested under load. {weather_adaptation}",
+    ],
+}
+
+ALTERNATIVE_WARNING_VARIATIONS = {
+    "ayahuasca": [
+        "Or you could keep doing random intensity without structure. Minimal volume without periodization. Fitness doesn't peak when needed.",
+        "Or you could wing it with random training. No structure, no periodization, no peak when it matters.",
+    ],
+    "finisher": [
+        "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed.",
+        "Or you could just ride more without structure. Random intensity, no periodization, no peak when it matters.",
+    ],
+    "compete": [
+        "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed.",
+        "Or you could just ride more without structure. Random intensity, no periodization, no peak when it matters.",
+    ],
+    "podium": [
+        "Or you could keep doing massive volume without structure. Random intensity distribution. Fitness doesn't peak when needed.",
+        "Or you could just ride more without structure. Random intensity, no periodization, no peak when it matters.",
+    ],
+}
+
+DELIVERY_HEADLINE_VARIATIONS = [
+    "Systematic progression eliminates guesswork. Training becomes results.",
+    "Structured training creates predictable results. No guesswork, just progression.",
+    "Systematic preparation delivers systematic results. Training becomes performance.",
+]
+
+DELIVERY_DETAILS_VARIATIONS = [
+    "Power distribution for {distance} miles • Race execution protocols • Fueling and hydration at intensity • Technical skills under fatigue",
+    "Power management for {distance} miles • Race execution systems • Fueling protocols under load • Technical skills when tired",
+]
+
+# ============================================================================
+
 # UTILITY FUNCTIONS
 
 # ============================================================================
@@ -598,6 +695,18 @@ def get_variation(category: str, subcategory: str = None, **kwargs) -> str:
 
         'masterclass_intro': MASTERCLASS_INTROS,
 
+        'tier_philosophy': TIER_PHILOSOPHY_VARIATIONS.get(subcategory, []) if subcategory else [],
+
+        'training_approach': TRAINING_APPROACH_VARIATIONS.get(subcategory, []) if subcategory else [],
+
+        'plan_features': PLAN_FEATURES_VARIATIONS.get(subcategory, []) if subcategory else [],
+
+        'alternative_warning': ALTERNATIVE_WARNING_VARIATIONS.get(subcategory, []) if subcategory else [],
+
+        'delivery_headline': DELIVERY_HEADLINE_VARIATIONS,
+
+        'delivery_details': DELIVERY_DETAILS_VARIATIONS,
+
     }
 
     
@@ -613,6 +722,22 @@ def get_variation(category: str, subcategory: str = None, **kwargs) -> str:
     elif category == 'level_modifier' and subcategory:
 
         variations = LEVEL_MODIFIERS.get(subcategory, [])
+
+    elif category == 'tier_philosophy' and subcategory:
+
+        variations = TIER_PHILOSOPHY_VARIATIONS.get(subcategory, [])
+
+    elif category == 'training_approach' and subcategory:
+
+        variations = TRAINING_APPROACH_VARIATIONS.get(subcategory, [])
+
+    elif category == 'plan_features' and subcategory:
+
+        variations = PLAN_FEATURES_VARIATIONS.get(subcategory, [])
+
+    elif category == 'alternative_warning' and subcategory:
+
+        variations = ALTERNATIVE_WARNING_VARIATIONS.get(subcategory, [])
 
     else:
 
@@ -815,53 +940,37 @@ def generate_varied_marketplace_copy(race_data: dict, tier: str, level: str, see
     
 
     # Build varied copy
-
     copy = {
-
         'fifteen_plans_headline': get_variation('fifteen_plans_headline'),
-
         'fifteen_plans_body': get_variation('fifteen_plans_body'),
-
         'philosophy_tagline': get_variation('philosophy_tagline'),
-
         'masterclass_headline': get_variation('masterclass_headline'),
-
         'masterclass_intro': get_variation('masterclass_intro'),
-
         'tier_description': get_variation('tier_description', tier),
-
         'level_modifier': get_variation('level_modifier', level),
-
         
-
         # Topic descriptions with race-specific values
-
         'topic_heat': get_variation('topic', 'heat_training'),
-
         'topic_fueling': get_variation('topic', 'fueling', distance=race_metadata.get('distance_miles', 100)),
-
         'topic_tactics': get_variation('topic', 'race_tactics'),
-
         'topic_mental': get_variation('topic', 'mental_training', dark_mile=guide_variables.get('DARK_MILE', 100)),
-
         'topic_execution': get_variation('topic', 'workout_execution'),
-
         'topic_recovery': get_variation('topic', 'recovery'),
-
         'topic_altitude': get_variation('topic', 'altitude'),
-
         
-
         # Non-negotiables (rephrased)
-
         'non_negotiables': [
-
             get_non_negotiable_phrasing(nn, race_data) 
-
             for nn in race_data.get('non_negotiables', [])[:3]
-
         ],
-
+        
+        # Simplified template fields (will be formatted with race-specific data)
+        'tier_philosophy': get_variation('tier_philosophy', tier),
+        'training_approach': get_variation('training_approach', tier),
+        'plan_features': get_variation('plan_features', tier),
+        'alternative_warning': get_variation('alternative_warning', tier),
+        'delivery_headline': get_variation('delivery_headline'),
+        'delivery_details': get_variation('delivery_details'),
     }
 
     

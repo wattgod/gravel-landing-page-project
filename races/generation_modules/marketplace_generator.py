@@ -212,18 +212,46 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     # Get masterclass topics using varied copy
     masterclass_topics = get_masterclass_topics_html(race_data, copy)
     
-    # Generate simplified content for new template
+    # Generate simplified content for new template using copy variations
     race_name = marketplace_vars.get("race_name", race_data["race_metadata"]["name"])
     plan_title = get_plan_title(tier_key, level_key)
     
-    # Generate content sections
-    tier_philosophy = generate_tier_philosophy_marketplace(tier_key, level_key)
-    training_approach = generate_training_approach_marketplace(race_data, tier_key, level_key, plan_title, weekly_hours)
-    plan_features = generate_plan_features_marketplace(race_data, tier_key, level_key)
+    # Get race-specific data for formatting
+    metadata = race_data.get('race_metadata', {})
+    characteristics = race_data.get('race_characteristics', {})
+    distance = metadata.get('distance_miles', 0)
+    typical_weather = characteristics.get('typical_weather', '')
+    climate = characteristics.get('climate', '')
+    
+    # Build weather adaptation text
+    weather_adaptation = ""
+    if 'unpredictable' in str(climate).lower() or 'unpredictable' in str(typical_weather).lower():
+        weather_adaptation = "Weather adaptation training prepares you for variable conditions. "
+    elif 'hot' in str(typical_weather).lower() or 'heat' in str(typical_weather).lower():
+        weather_adaptation = "Heat adaptation in weeks 6-10 prepares you for race conditions. "
+    elif 'cold' in str(typical_weather).lower() or 'cold' in str(climate).lower():
+        weather_adaptation = "Weather adaptation training prepares you for variable conditions. "
+    
+    # Format copy variations with race-specific data
+    level_display = level_key.replace('_', ' ').title()
+    if level_key == 'save_my_race':
+        level_display = 'Save My Race'
+    
+    tier_philosophy = copy.get('tier_philosophy', '')
+    training_approach = copy.get('training_approach', '').format(
+        plan_title=plan_title,
+        weather_adaptation=weather_adaptation,
+        weekly_hours=weekly_hours
+    )
+    plan_features = copy.get('plan_features', '').format(
+        level=level_display.lower(),
+        distance=distance,
+        weather_adaptation=weather_adaptation
+    )
     guide_content_summary = "Technical Skills Practice — Progressive drills for cornering, descending, rough terrain—weekly practice building competence. Race-Specific Preparation — Heat protocols, altitude adaptation (if needed), equipment choices. Training Fundamentals — Periodization principles that create predictable performance."
-    alternative_warning = generate_alternative_warning_marketplace(tier_key)
-    delivery_headline = "Systematic progression eliminates guesswork. Training becomes results."
-    delivery_details = generate_delivery_details_marketplace(race_data)
+    alternative_warning = copy.get('alternative_warning', '')
+    delivery_headline = copy.get('delivery_headline', 'Systematic progression eliminates guesswork. Training becomes results.')
+    delivery_details = copy.get('delivery_details', '').format(distance=distance)
     
     # Get race URL
     race_url = race_data.get("race_metadata", {}).get("website", "")
