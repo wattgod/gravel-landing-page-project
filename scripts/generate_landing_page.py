@@ -397,14 +397,69 @@ def generate_blackpill_html(data: Dict) -> str:
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    font-family: 'Sometype Mono', monospace;
+  }}
+  
+  .gg-blackpill-badge {{
+    font-family: 'Sometype Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #59473C;
+    margin-bottom: 1.5rem;
+  }}
+  
+  .gg-blackpill-badge-icon {{
+    margin-right: 8px;
+  }}
+  
+  .gg-blackpill-heading {{
+    font-family: 'Sometype Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: #59473C;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.3;
   }}
   
   .gg-blackpill-body {{
-    max-width: 100%;
+    font-family: 'Sometype Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #59473C;
+    margin-bottom: 2rem;
+  }}
+  
+  .gg-blackpill-body p {{
+    margin: 0 0 1rem 0;
+  }}
+  
+  .gg-blackpill-body ul {{
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding: 0;
+  }}
+  
+  .gg-blackpill-body li {{
+    margin: 0.5rem 0;
+  }}
+  
+  .gg-blackpill-body strong {{
+    font-weight: 700;
+    color: #000000;
   }}
   
   .gg-blackpill-quote {{
-    max-width: 100%;
+    font-family: 'Sometype Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    color: #59473C;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid #59473C;
+    background: #FFF5E6;
   }}
 </style>
 
