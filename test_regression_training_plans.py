@@ -99,16 +99,22 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
         if not re.search(pattern, html_content, re.IGNORECASE | re.DOTALL):
             errors.append(f"Missing CSS: {description}")
     
-    # Check that ONLY the allowed CSS is present in training plans section (badge + button styles only)
-    # Find the training plans section and its associated style tag (may be after section close)
+    # Check that style tag is INSIDE the section (before closing tag)
     section_match = re.search(r'<section[^>]*class="gg-volume-section"[^>]*>.*?</section>', html_content, re.IGNORECASE | re.DOTALL)
     if section_match:
         section_html = section_match.group(0)
-        section_end = section_match.end()
         
-        # Look for style tag immediately after the section (within 200 chars)
-        after_section = html_content[section_end:section_end+200]
-        style_match = re.search(r'<style[^>]*>(.*?)</style>', after_section, re.IGNORECASE | re.DOTALL)
+        # Style tag MUST be inside the section, before </section>
+        if '<style' not in section_html or '</style>' not in section_html:
+            errors.append("Style tag must be INSIDE the section, before closing </section> tag")
+        else:
+            style_pos = section_html.find('<style')
+            section_close_pos = section_html.find('</section>')
+            if style_pos > section_close_pos:
+                errors.append("Style tag is AFTER section close - must be INSIDE section before </section>")
+        
+        # Extract style tag from this section
+        style_match = re.search(r'<style[^>]*>(.*?)</style>', section_html, re.IGNORECASE | re.DOTALL)
         if style_match:
             css_content = style_match.group(1)
             
