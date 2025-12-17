@@ -206,16 +206,15 @@ class LandingPageRegressionTests:
         if not has_2_col:
             self.errors.append("Training plans grid missing 2-column layout")
     
-    def test_plan_cards_have_challenge_solution(self):
-        """REGRESSION: Plan cards must include challenge/solution text (added 2025-12-16)."""
-        has_challenge_solution = 'gg-plan-challenge-solution' in self.html_content
-        has_challenge_label = 'Challenge:' in self.html_content or 'CHALLENGE:' in self.html_content
-        has_solution_label = 'Solution:' in self.html_content or 'SOLUTION:' in self.html_content
+    def test_plan_cards_have_description(self):
+        """REGRESSION: Plan cards must include description text from marketplace (added 2025-12-16)."""
+        has_description = 'gg-plan-description' in self.html_content
+        has_explicit_labels = 'Challenge:' in self.html_content or 'Solution:' in self.html_content
         
-        if not has_challenge_solution:
-            self.errors.append("Plan cards missing challenge/solution section (gg-plan-challenge-solution class)")
-        if not (has_challenge_label and has_solution_label):
-            self.errors.append("Plan cards missing challenge or solution labels")
+        if not has_description:
+            self.errors.append("Plan cards missing description section (gg-plan-description class)")
+        if has_explicit_labels:
+            self.errors.append("Plan cards should NOT have explicit 'Challenge:' or 'Solution:' labels - use natural prose")
     
     def test_course_breakdown_header_not_ratings(self):
         """REGRESSION: Header must be 'COURSE BREAKDOWN', not 'THE RATINGS' (fixed 2025-12-16)."""
@@ -251,6 +250,16 @@ class LandingPageRegressionTests:
         if not (has_button or has_link):
             self.errors.append("Missing gravel races CTA button/link")
     
+    def test_toc_has_course_breakdown(self):
+        """REGRESSION: TOC must say 'Course Breakdown', not 'The Ratings' (fixed 2025-12-16)."""
+        has_course_breakdown = 'Course Breakdown' in self.html_content or 'course-breakdown' in self.html_content.lower()
+        has_the_ratings = 'The Ratings' in self.html_content and 'gg-topnav' in self.html_content
+        
+        if has_the_ratings:
+            self.errors.append("TOC still has 'The Ratings' link (should be 'Course Breakdown')")
+        if not has_course_breakdown:
+            self.errors.append("TOC missing 'Course Breakdown' link")
+    
     def run_all_tests(self) -> List[str]:
         """Run all regression tests."""
         self.errors = []
@@ -269,10 +278,11 @@ class LandingPageRegressionTests:
         self.test_no_duplicate_sections()
         self.test_training_plans_urls_valid()
         self.test_training_plans_2_column_grid()
-        self.test_plan_cards_have_challenge_solution()
+        self.test_plan_cards_have_description()
         self.test_course_breakdown_header_not_ratings()
         self.test_coaching_cta_present()
         self.test_gravel_races_cta_present()
+        self.test_toc_has_course_breakdown()
         
         return self.errors
 

@@ -6,7 +6,9 @@ Generates complete Elementor JSON from race data schema.
 
 import json
 import re
+from pathlib import Path
 from typing import Dict, Any, List, Optional
+from html import unescape
 
 
 def load_race_data(json_path: str) -> Dict[str, Any]:
@@ -1320,6 +1322,96 @@ def generate_logistics_html(data: Dict) -> str:
     return template
 
 
+def load_marketplace_description(race_slug: str, tier: str, level: str) -> Optional[str]:
+    """Load marketplace description HTML for a specific plan."""
+    # Map level names to folder names
+    level_map = {
+        'Beginner': 'Beginner',
+        'Intermediate': 'Intermediate', 
+        'Advanced': 'Advanced',
+        'Masters 50+': 'Masters',
+        'Emergency': 'Save My Race'
+    }
+    
+    # Map tier names to folder numbers
+    tier_map = {
+        'Ayahuasca': '1',
+        'Finisher': '5',
+        'Compete': '10',
+        'Podium': '14'
+    }
+    
+    folder_level = level_map.get(level, level)
+    tier_num = tier_map.get(tier, '')
+    
+    if not tier_num:
+        return None
+    
+    # Try to find the marketplace description file
+    race_dir = Path(f'races/{race_slug.replace("-", " ").title()}')
+    if not race_dir.exists():
+        # Try alternative naming
+        race_dir = Path(f'races/{race_slug}')
+    
+    if not race_dir.exists():
+        return None
+    
+    # Look for plan folder (format: "X. Tier Level (weeks)")
+    for plan_dir in race_dir.iterdir():
+        if plan_dir.is_dir() and tier_num in plan_dir.name and folder_level in plan_dir.name:
+            desc_file = plan_dir / 'marketplace_description.html'
+            if desc_file.exists():
+                with open(desc_file, 'r', encoding='utf-8') as f:
+                    return f.read()
+    
+    return None
+
+
+def extract_challenge_solution_from_marketplace(html_content: str) -> Dict[str, str]:
+    """Extract challenge and solution from marketplace description HTML opening hook/story."""
+    if not html_content:
+        return {'challenge': '', 'solution': ''}
+    
+    # Look for the opening hook/story box (usually in a border-left div or first strong paragraph)
+    # Pattern: First strong paragraph or border-left div usually contains the hook
+    hook_patterns = [
+        r'<p[^>]*><strong>([^<]+)</strong>([^<]*)</p>',  # Strong tag in paragraph
+        r'border-left[^>]*>.*?<p[^>]*>([^<]+)</p>',  # Border-left div
+        r'<div[^>]*border-left[^>]*>.*?<p[^>]*>([^<]+)</p>',  # Nested
+    ]
+    
+    hook_text = ''
+    for pattern in hook_patterns:
+        match = re.search(pattern, html_content, re.IGNORECASE | re.DOTALL)
+        if match:
+            hook_text = match.group(1) + (match.group(2) if len(match.groups()) > 1 else '')
+            break
+    
+    # If no hook found, extract first 2-3 sentences from first paragraph
+    if not hook_text:
+        # Get first paragraph
+        first_p = re.search(r'<p[^>]*>([^<]+)</p>', html_content, re.IGNORECASE)
+        if first_p:
+            hook_text = first_p.group(1)
+    
+    # Clean up text
+    hook_text = unescape(hook_text)
+    hook_text = re.sub(r'\s+', ' ', hook_text).strip()
+    
+    # Limit length for card display (should be concise)
+    if len(hook_text) > 250:
+        # Try to cut at sentence boundary
+        sentences = re.split(r'[.!?]', hook_text)
+        hook_text = '. '.join(sentences[:2]).strip()
+        if hook_text and not hook_text.endswith(('.', '!', '?')):
+            hook_text += '.'
+    
+    return {
+        'challenge': hook_text[:250] if hook_text else '',
+        'solution': ''  # Combined into single prose
+    }
+
+
 def generate_training_plans_html(data: Dict) -> str:
     """
     Generate training plans section with TP URLs.
@@ -1329,14 +1421,15 @@ def generate_training_plans_html(data: Dict) -> str:
     
     Universal features:
     - 2-column grid layout (not 4) for better card spacing
-    - Challenge/solution text on each plan card
+    - Challenge/solution text on each plan card (from marketplace descriptions)
     - Coaching CTA and gravel races CTA appended to logistics section
     """
     race = data['race']
     tp = race['training_plans']
+    race_slug = race.get('slug', '').replace('_', '-')
     
-    # Challenge/solution mapping by tier and level
-    challenge_solution_map = {
+    # Group plans by tier
+    tiers_data = {
         ('Ayahuasca', 'Beginner'): {
             'challenge': 'You have zero time but refuse to quit.',
             'solution': 'HIIT that actually works—max fitness from 3-5 hours per week.'
@@ -1415,15 +1508,13 @@ def generate_training_plans_html(data: Dict) -> str:
         name_display = plan['name']
         weeks = plan['weeks']
         
-        # Get challenge/solution
-        key = (tier, level)
-        if key not in challenge_solution_map:
-            # Fallback for missing combinations
-            challenge_solution_map[key] = {
-                'challenge': 'You need a plan that works.',
-                'solution': 'Training that builds the fitness you need for race day.'
-            }
-        challenge_solution = challenge_solution_map[key]
+        # Load marketplace description and extract opening hook (challenge/solution)
+        marketplace_html = load_marketplace_description(race_slug, tier, level)
+        challenge_solution = extract_challenge_solution_from_marketplace(marketplace_html)
+        
+        # If no marketplace description found, use minimal fallback
+        if not challenge_solution['challenge']:
+            challenge_solution['challenge'] = 'Training plan for this tier and level.'
         
         # Build full TP URL
         category = plan.get('category', 'gran-fondo-century')
@@ -1435,8 +1526,7 @@ def generate_training_plans_html(data: Dict) -> str:
             'display': display_name,
             'weeks': weeks,
             'url': tp_url,
-            'challenge': challenge_solution['challenge'],
-            'solution': challenge_solution['solution']
+            'description': challenge_solution['challenge']  # Single prose text, not separate challenge/solution
         })
     
     # Generate tier cards HTML
@@ -1451,10 +1541,7 @@ def generate_training_plans_html(data: Dict) -> str:
           <div class="gg-plan-name">
             {plan['display']} <span>({plan['weeks']} weeks)</span>
           </div>
-          <div class="gg-plan-challenge-solution">
-            <div class="gg-plan-challenge"><strong>Challenge:</strong> {plan['challenge']}</div>
-            <div class="gg-plan-solution"><strong>Solution:</strong> {plan['solution']}</div>
-          </div>
+          {f'<div class="gg-plan-description">{plan["description"]}</div>' if plan.get('description') else ''}
           <a href="{plan['url']}" class="gg-plan-cta" target="_blank">View Plan</a>
         </div>"""
             plans_html.append(plan_html)
@@ -1524,32 +1611,15 @@ def generate_training_plans_html(data: Dict) -> str:
   }}
 }}
 
-/* Plan challenge/solution text */
-.gg-plan-challenge-solution {{
+/* Plan description text (natural prose, not explicit labels) */
+.gg-plan-description {{
   margin: 1rem 0;
-  padding: 1rem;
-  background: #F5F5F5;
-  border-left: 4px solid #000;
+  padding: 0;
   font-family: 'Sometype Mono', monospace;
   font-size: 13px;
   line-height: 1.6;
-}}
-
-.gg-plan-challenge {{
-  margin-bottom: 0.75rem;
   color: #59473C;
-}}
-
-.gg-plan-solution {{
-  color: #59473C;
-}}
-
-.gg-plan-challenge strong,
-.gg-plan-solution strong {{
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 11px;
+  font-weight: 400;
 }}
 
 /* Fix for button text visibility */
@@ -1879,9 +1949,6 @@ def build_elementor_json(data: Dict, base_json_path: str) -> Dict:
     print("  Generating gravel races CTA...")
     gravel_races_cta_html = generate_gravel_races_cta_html()
     
-    # Append CTAs to logistics section
-    logistics_html += '\n\n' + coaching_cta_html + '\n\n' + gravel_races_cta_html
-    
     # Find and replace widgets in Elementor JSON
     print("  Replacing hero widget...")
     if not replace_widget_html(elementor_data, 'gg-hero-inner', hero_html):
@@ -1928,6 +1995,9 @@ def build_elementor_json(data: Dict, base_json_path: str) -> Dict:
         print("  WARNING: Final verdict widget not found!")
     
     print("  Replacing logistics widget...")
+    # Append CTAs directly to logistics HTML (simpler approach)
+    logistics_html += '\n\n' + coaching_cta_html + '\n\n' + gravel_races_cta_html
+    
     if not replace_widget_html(elementor_data, 'gg-logistics-section', logistics_html, element_id='logistics'):
         print("  WARNING: Logistics widget not found!")
     
