@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <workout_file>
   <author>Gravel God Training</author>
-  <name>W12 Sun - Race Day or Recovery</name>
+  <name>Training Plan Survey</name>
   <description>• If racing Sunday: RACE DAY—EXECUTE YOUR PLAN • If raced Saturday: Easy 45-60 min recovery spin, celebrate • Race Day Notes: You've built race-pace power through concentrated threshold work. Your FTP is sharp. Your race fitness is ready. Execute: controlled start, aggressive nutrition, push the second half, finish strong. Dominate.
 
 • MID SOUTH - HYDRATION:
@@ -13,12 +13,16 @@ Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride 
 • MID SOUTH - ROBUST TAPER:
 Freshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a 100-mile day.
 
+🎉 CONGRATULATIONS - YOU DID IT! 🎉
+
+You've completed the Compete Advanced training plan. That's not easy. You showed up. You put in the work. You built the fitness. Now it's time to race—or you already did.
+
 • TRAINING PLAN SURVEY (POST-COMPLETION):
-You've completed your training plan! Share your experience to help us improve plans for future athletes. Takes 3-4 minutes.
+Your experience matters. Share what worked, what didn't, and what we can improve. This feedback directly shapes future plans. Takes 3-4 minutes.
 
 Survey: https://wattgod.github.io/gravel-landing-page-project/guides/mid-south/surveys/survey-mid-south-compete-advanced.html
 
-Your feedback helps us make each plan better. Thank you!</description>
+Your honest feedback helps us make each plan better. Thank you for trusting the process. Now go execute. 🚴</description>
   <sportType>bike</sportType>
       <workout>
     <FreeRide Duration="60"/>

@@ -151,7 +151,9 @@ def add_robust_taper_note(week_num, race_data):
     return f"\n\n• {race_name_upper} - ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a {race_distance}-mile day."
 
 def add_survey_link(week_num, workout_name, race_data, plan_info):
-    """Add survey link to the final workout (last week, Sunday)"""
+    """Add survey link to the final workout (last week, Sunday)
+    Returns tuple: (new_workout_name, description_addition)
+    """
     # Get plan duration from plan_info
     plan_weeks = plan_info.get("weeks", 12)
     
@@ -171,16 +173,31 @@ def add_survey_link(week_num, workout_name, race_data, plan_info):
         survey_filename = f"survey-{race_slug}-{tier_slug}-{level_slug}.html"
         survey_url = f"https://wattgod.github.io/gravel-landing-page-project/guides/{race_slug}/surveys/{survey_filename}"
         
-        return f"""
+        # GG brand tone congratulations
+        tier_display = plan_info.get("tier", "").title()
+        level_display = plan_info.get("level", "").replace("_", " ").title()
+        if level_display == "Save My Race":
+            level_display = "Save My Race"
+        elif level_display == "Advanced Goat":
+            level_display = "Advanced GOAT"
+        
+        description_addition = f"""
+
+🎉 CONGRATULATIONS - YOU DID IT! 🎉
+
+You've completed the {tier_display} {level_display} training plan. That's not easy. You showed up. You put in the work. You built the fitness. Now it's time to race—or you already did.
 
 • TRAINING PLAN SURVEY (POST-COMPLETION):
-You've completed your training plan! Share your experience to help us improve plans for future athletes. Takes 3-4 minutes.
+Your experience matters. Share what worked, what didn't, and what we can improve. This feedback directly shapes future plans. Takes 3-4 minutes.
 
 Survey: {survey_url}
 
-Your feedback helps us make each plan better. Thank you!"""
+Your honest feedback helps us make each plan better. Thank you for trusting the process. Now go execute. 🚴"""
+        
+        # Return new workout name and description addition
+        return ("Training Plan Survey", description_addition)
     
-    return ""
+    return (None, "")
 
 def add_gravel_grit_note(week_num, workout_name, race_data):
     """Add Gravel Grit note if applicable"""
@@ -275,14 +292,21 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     description += add_gravel_grit_note(week_num, workout_name, race_data)
     
     # Add survey link to final workout (last week, Sunday)
-    description += add_survey_link(week_num, workout_name, race_data, plan_info)
+    new_name, survey_description = add_survey_link(week_num, workout_name, race_data, plan_info)
+    description += survey_description
     
-    return description
+    # Return description and potentially new name
+    return description, new_name
 
 def create_zwo_file(workout, output_path, race_data, plan_info):
     """Create a single ZWO workout file"""
     name = workout.get("name", "")
-    description = enhance_workout_description(workout, workout.get("week_number", 1), race_data, plan_info)
+    description, new_name = enhance_workout_description(workout, workout.get("week_number", 1), race_data, plan_info)
+    
+    # Use new name if provided (for survey workout)
+    if new_name:
+        name = new_name
+    
     blocks = workout.get("blocks", "    <FreeRide Duration=\"60\"/>\n")
     
     # Escape XML special characters
