@@ -284,8 +284,11 @@ def main():
     else:
         all_errors.append("Generation script not found: scripts/generate_landing_page.py")
     
-    # Test Elementor JSON files
+    # Test Elementor JSON files (exclude backup/old files)
     for json_file in output_dir.glob('elementor-*.json'):
+        # Skip backup/old files
+        if any(skip in json_file.name.lower() for skip in ['fixed', 'old', 'backup', 'corrected']):
+            continue
         print(f"Testing {json_file.name}...")
         elementor_errors = check_elementor_file(json_file)
         all_errors.extend([f"{json_file.name}: {e}" for e in elementor_errors])
