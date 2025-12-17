@@ -99,17 +99,46 @@ def check_training_plans_structure(json_path: Path) -> List[str]:
         if not re.search(pattern, html_content, re.IGNORECASE | re.DOTALL):
             errors.append(f"Missing CSS: {description}")
     
-    # Check for forbidden CSS (card styling that was removed)
-    forbidden_css = [
-        (r'\.gg-volume-card\s*\{[^}]*border:\s*4px', 'Volume card border styling'),
-        (r'\.gg-volume-card\s*\{[^}]*box-shadow', 'Volume card box-shadow'),
-        (r'\.gg-volume-tag\s*\{[^}]*position:\s*absolute', 'Volume tag absolute positioning'),
-        (r'\.gg-volume-title\s*\{[^}]*background:', 'Volume title background'),
-    ]
+    # Check that ONLY the allowed CSS is present (badge + button styles only)
+    # Extract all CSS rules from style tags
+    style_pattern = r'<style[^>]*>([^<]+)</style>'
+    style_matches = re.findall(style_pattern, html_content, re.IGNORECASE | re.DOTALL)
     
-    for pattern, description in forbidden_css:
-        if re.search(pattern, html_content, re.IGNORECASE | re.DOTALL):
-            errors.append(f"Forbidden CSS found: {description} (should use base CSS only)")
+    if style_matches:
+        css_content = '\n'.join(style_matches)
+        
+        # Check for forbidden CSS classes (card styling that was removed)
+        forbidden_css_classes = [
+            r'\.gg-volume-grid',
+            r'\.gg-volume-card',
+            r'\.gg-volume-tag',
+            r'\.gg-volume-title',
+            r'\.gg-volume-hours',
+            r'\.gg-volume-divider',
+            r'\.gg-plan-stack',
+            r'\.gg-plan\s*\{',
+            r'\.gg-plan-name',
+            r'\.gg-volume-footer',
+        ]
+        
+        for pattern in forbidden_css_classes:
+            if re.search(pattern, css_content, re.IGNORECASE):
+                errors.append(f"Forbidden CSS class found in inline styles: {pattern} (should use base CSS only, not inline)")
+        
+        # Verify ONLY allowed CSS classes are present
+        allowed_css_classes = [
+            r'\.gg-training-plans-badge',
+            r'\.gg-training-plans-badge-icon',
+            r'\.gg-plan-cta',
+        ]
+        
+        # Count total CSS rules
+        css_rule_count = len(re.findall(r'\.\w+[^{]*\{', css_content))
+        allowed_count = sum(1 for pattern in allowed_css_classes if re.search(pattern, css_content, re.IGNORECASE))
+        
+        # Should only have badge and button CSS (3 classes max)
+        if css_rule_count > 3:
+            errors.append(f"Too many CSS rules in inline styles: {css_rule_count} (should only have badge + button styles, max 3 rules)")
     
     # Check plan name formatting
     plan_name_patterns = [
