@@ -1492,7 +1492,6 @@ def generate_training_plans_html(data: Dict) -> str:
   <div class="gg-volume-grid">
 {tier_cards}
   </div>
-</section>
 
 <style>
 /* Training Plans Badge */
@@ -1546,7 +1545,8 @@ def generate_training_plans_html(data: Dict) -> str:
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 #000;
 }}
-</style>"""
+</style>
+</section>"""
     
     return template.format(tier_cards='\n\n'.join(tier_cards))
 
