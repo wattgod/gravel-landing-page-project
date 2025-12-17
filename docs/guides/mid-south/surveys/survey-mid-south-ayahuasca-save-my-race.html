@@ -1,18 +1,9 @@
-#!/usr/bin/env python3
-"""
-Survey Generator
-Generates plan-specific survey HTML files
-"""
-
-import html
-from pathlib import Path
-
-SURVEY_TEMPLATE = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Plan Survey - {race_name} - {plan_name}</title>
+    <title>Training Plan Survey - Mid South - Ayahuasca Save My Race</title>
     
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,20 +11,20 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        :root {{
+        :root {
             --gg-bg: #ffffff;
             --gg-fg: #111111;
             --gg-border: #000000;
             --gg-muted: #777777;
             --gg-soft: #f5f5f5;
             --gg-success: #4caf50;
-        }}
+        }
 
-        * {{
+        * {
             box-sizing: border-box;
-        }}
+        }
 
-        body {{
+        body {
             margin: 32px auto 64px auto;
             padding: 0 20px;
             max-width: 800px;
@@ -43,9 +34,9 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             font-size: 15px;
             line-height: 1.7;
             letter-spacing: 0.01em;
-        }}
+        }
 
-        h1 {{
+        h1 {
             font-size: 26px;
             padding-bottom: 6px;
             border-bottom: 3px solid var(--gg-border);
@@ -53,40 +44,40 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             letter-spacing: 0.16em;
             margin-top: 0;
             margin-bottom: 1.5rem;
-        }}
+        }
 
-        .intro {{
+        .intro {
             color: var(--gg-muted);
             margin-bottom: 32px;
             font-size: 14px;
-        }}
+        }
 
-        .survey-form {{
+        .survey-form {
             margin-top: 2rem;
-        }}
+        }
 
-        .question-group {{
+        .question-group {
             margin-bottom: 2.5rem;
-        }}
+        }
 
-        .question-label {{
+        .question-label {
             display: block;
             font-weight: 600;
             font-size: 15px;
             margin-bottom: 0.8rem;
             color: var(--gg-fg);
-        }}
+        }
 
-        .question-help {{
+        .question-help {
             font-size: 12px;
             color: var(--gg-muted);
             margin-top: 0.4rem;
             margin-bottom: 0.8rem;
-        }}
+        }
 
         input[type="text"],
         input[type="number"],
-        textarea {{
+        textarea {
             width: 100%;
             padding: 10px 12px;
             border: 1px solid var(--gg-border);
@@ -95,23 +86,23 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             font-family: inherit;
             font-size: 14px;
             line-height: 1.5;
-        }}
+        }
 
-        textarea {{
+        textarea {
             min-height: 100px;
             resize: vertical;
-        }}
+        }
 
         .radio-group,
-        .checkbox-group {{
+        .checkbox-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-top: 0.8rem;
-        }}
+        }
 
         .radio-option,
-        .checkbox-option {{
+        .checkbox-option {
             display: flex;
             align-items: flex-start;
             padding: 8px;
@@ -119,40 +110,40 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             background: var(--gg-soft);
             cursor: pointer;
             transition: background 0.2s;
-        }}
+        }
 
         .radio-option:hover,
-        .checkbox-option:hover {{
+        .checkbox-option:hover {
             background: #e8e8e8;
-        }}
+        }
 
         .radio-option input[type="radio"],
-        .checkbox-option input[type="checkbox"] {{
+        .checkbox-option input[type="checkbox"] {
             margin-right: 10px;
             margin-top: 2px;
             cursor: pointer;
-        }}
+        }
 
         .radio-option label,
-        .checkbox-option label {{
+        .checkbox-option label {
             cursor: pointer;
             flex: 1;
             margin: 0;
-        }}
+        }
 
-        .rating-scale {{
+        .rating-scale {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: 0.8rem;
             gap: 8px;
-        }}
+        }
 
-        .rating-scale input[type="radio"] {{
+        .rating-scale input[type="radio"] {
             display: none;
-        }}
+        }
 
-        .rating-scale label {{
+        .rating-scale label {
             flex: 1;
             padding: 10px;
             border: 1px solid var(--gg-border);
@@ -161,19 +152,19 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             cursor: pointer;
             transition: background 0.2s;
             font-size: 13px;
-        }}
+        }
 
-        .rating-scale label:hover {{
+        .rating-scale label:hover {
             background: #e8e8e8;
-        }}
+        }
 
-        .rating-scale input[type="radio"]:checked + label {{
+        .rating-scale input[type="radio"]:checked + label {
             background: var(--gg-fg);
             color: var(--gg-bg);
             font-weight: 600;
-        }}
+        }
 
-        .submit-button {{
+        .submit-button {
             width: 100%;
             padding: 14px 24px;
             margin-top: 2rem;
@@ -187,32 +178,32 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             letter-spacing: 0.1em;
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
-        }}
+        }
 
-        .submit-button:hover {{
+        .submit-button:hover {
             background: var(--gg-muted);
-        }}
+        }
 
-        .submit-button:disabled {{
+        .submit-button:disabled {
             background: var(--gg-soft);
             color: var(--gg-muted);
             cursor: not-allowed;
-        }}
+        }
 
-        .success-message {{
+        .success-message {
             display: none;
             padding: 20px;
             border: 2px solid var(--gg-success);
             background: #f1f8f4;
             margin-top: 2rem;
             text-align: center;
-        }}
+        }
 
-        .success-message.show {{
+        .success-message.show {
             display: block;
-        }}
+        }
 
-        .error-message {{
+        .error-message {
             display: none;
             padding: 12px;
             border: 1px solid #d32f2f;
@@ -220,45 +211,45 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             color: #c62828;
             margin-top: 1rem;
             font-size: 13px;
-        }}
+        }
 
-        .error-message.show {{
+        .error-message.show {
             display: block;
-        }}
+        }
 
-        .required {{
+        .required {
             color: #d32f2f;
-        }}
+        }
 
-        .plan-info {{
+        .plan-info {
             padding: 16px;
             background: var(--gg-soft);
             border: 1px solid var(--gg-border);
             margin-bottom: 2rem;
-        }}
+        }
 
-        .plan-info-label {{
+        .plan-info-label {
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--gg-muted);
             margin-bottom: 8px;
-        }}
+        }
 
-        .plan-info-name {{
+        .plan-info-name {
             font-weight: 600;
             font-size: 16px;
-        }}
+        }
 
-        @media (max-width: 600px) {{
-            .rating-scale {{
+        @media (max-width: 600px) {
+            .rating-scale {
                 flex-wrap: wrap;
-            }}
+            }
             
-            .rating-scale label {{
+            .rating-scale label {
                 min-width: 60px;
-            }}
-        }}
+            }
+        }
     </style>
 </head>
 <body>
@@ -267,7 +258,7 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
 
     <div class="plan-info">
         <div class="plan-info-label">Training Plan</div>
-        <div class="plan-info-name">{race_name} - {plan_name}</div>
+        <div class="plan-info-name">Mid South - Ayahuasca Save My Race</div>
     </div>
 
     <form id="surveyForm" class="survey-form">
@@ -531,19 +522,19 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
         const completedInputs = document.querySelectorAll('input[name="completed"]');
         const performanceGroup = document.getElementById('performance-group');
         
-        completedInputs.forEach(input => {{
-            input.addEventListener('change', function() {{
-                if (this.value === 'yes' || this.value === 'dnf') {{
+        completedInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.value === 'yes' || this.value === 'dnf') {
                     performanceGroup.style.display = 'block';
                     performanceGroup.querySelector('input[type="radio"]').required = true;
-                }} else {{
+                } else {
                     performanceGroup.style.display = 'none';
                     performanceGroup.querySelectorAll('input[type="radio"]').forEach(r => r.required = false);
-                }}
-            }});
-        }});
+                }
+            });
+        });
 
-        form.addEventListener('submit', async (e) => {{
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Disable submit button
@@ -558,11 +549,11 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             const workedBest = formData.getAll('worked_best');
             const didntWork = formData.getAll('didnt_work');
             
-            const data = {{
+            const data = {
                 timestamp: new Date().toISOString(),
                 // Plan identification
-                race: '{race_name}',
-                plan: '{plan_name}',
+                race: 'Mid South',
+                plan: 'Ayahuasca Save My Race',
                 // Post-completion questions
                 completed: formData.get('completed'),
                 effectiveness: formData.get('effectiveness'),
@@ -575,16 +566,16 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
                 recommend: formData.get('recommend'),
                 improvements: formData.get('improvements'),
                 feedback: formData.get('feedback') || ''
-            }};
+            };
 
             // Format data for GitHub Issue
-            const issueTitle = `Training Plan Survey: ${{data.race}} - ${{data.plan}} (Post-Completion)`;
+            const issueTitle = `Training Plan Survey: ${data.race} - ${data.plan} (Post-Completion)`;
             const issueBody = formatSurveyData(data);
             
             // Create GitHub Issue URL with pre-filled data
             const githubIssueUrl = `https://github.com/wattgod/gravel-landing-page-project/issues/new?` +
-                `title=${{encodeURIComponent(issueTitle)}}&` +
-                `body=${{encodeURIComponent(issueBody)}}&` +
+                `title=${encodeURIComponent(issueTitle)}&` +
+                `body=${encodeURIComponent(issueBody)}&` +
                 `labels=survey,training-plan-feedback,post-completion`;
             
             // Save to localStorage as backup
@@ -596,83 +587,38 @@ SURVEY_TEMPLATE = """<!DOCTYPE html>
             successMessage.innerHTML = `
                 <strong>Thank you!</strong><br>
                 Your feedback is ready to submit.<br><br>
-                <a href="${{githubIssueUrl}}" target="_blank" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--gg-fg); color: var(--gg-bg); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Submit to GitHub</a><br><br>
+                <a href="${githubIssueUrl}" target="_blank" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--gg-fg); color: var(--gg-bg); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Submit to GitHub</a><br><br>
                 <div style="margin-top: 20px; padding: 12px; background: var(--gg-soft); border: 1px solid var(--gg-border); font-size: 12px;">
                     <strong>Or copy the data below:</strong><br>
-                    <textarea readonly onclick="this.select()" style="width: 100%; min-height: 150px; margin-top: 8px; font-family: monospace; font-size: 11px; padding: 8px; border: 1px solid var(--gg-border); background: var(--gg-bg);">${{issueBody}}</textarea>
+                    <textarea readonly onclick="this.select()" style="width: 100%; min-height: 150px; margin-top: 8px; font-family: monospace; font-size: 11px; padding: 8px; border: 1px solid var(--gg-border); background: var(--gg-bg);">${issueBody}</textarea>
                 </div>
             `;
             successMessage.classList.add('show');
-        }});
+        });
 
-        function formatSurveyData(data) {{
+        function formatSurveyData(data) {
             return `## Training Plan Survey Response - Post-Completion
 
-**Training Plan:** ${{data.race}} - ${{data.plan}}
-**Timestamp:** ${{data.timestamp}}
+**Training Plan:** ${data.race} - ${data.plan}
+**Timestamp:** ${data.timestamp}
 
 ### Responses
 
-1. **Race completion:** ${{data.completed}}
-2. **Plan effectiveness:** ${{data.effectiveness}}/5
-3. **Plan adherence:** ${{data.adherence}}
-4. **Average training hours/week:** ${{data.hours}}
-5. **What worked best:** ${{data.worked_best || 'N/A'}}
-6. **What didn't work:** ${{data.didnt_work || 'N/A'}}
-7. **Race performance vs expectations:** ${{data.performance || 'N/A'}}
-8. **Plan difficulty:** ${{data.difficulty}}/5
-9. **Would recommend:** ${{data.recommend}}
-10. **Specific improvements needed:** ${{data.improvements || 'N/A'}}
-11. **Additional feedback:** ${{data.feedback || 'N/A'}}
+1. **Race completion:** ${data.completed}
+2. **Plan effectiveness:** ${data.effectiveness}/5
+3. **Plan adherence:** ${data.adherence}
+4. **Average training hours/week:** ${data.hours}
+5. **What worked best:** ${data.worked_best || 'N/A'}
+6. **What didn't work:** ${data.didnt_work || 'N/A'}
+7. **Race performance vs expectations:** ${data.performance || 'N/A'}
+8. **Plan difficulty:** ${data.difficulty}/5
+9. **Would recommend:** ${data.recommend}
+10. **Specific improvements needed:** ${data.improvements || 'N/A'}
+11. **Additional feedback:** ${data.feedback || 'N/A'}
 
 ---
 *Submitted via post-completion training plan survey*`;
-        }}
+        }
     </script>
 </body>
-</html>"""
-
-def generate_survey_filename(race_name, tier, level):
-    """Generate filename for plan-specific survey"""
-    # Create URL-friendly slug
-    race_slug = race_name.lower().replace(' ', '-').replace('the ', '')
-    tier_slug = tier.lower()
-    level_slug = level.lower().replace('_', '-').replace(' ', '-')
-    
-    return f"survey-{race_slug}-{tier_slug}-{level_slug}.html"
-
-def generate_plan_survey(race_data, plan_info, output_dir):
-    """Generate a plan-specific survey HTML file"""
-    race_name = race_data.get("race_metadata", {}).get("name", "Race")
-    tier = plan_info.get("tier", "")
-    level = plan_info.get("level", "")
-    
-    # Format level for display (keep underscores for filename, replace for display)
-    level_display = level.replace("_", " ").title()
-    if level == "advanced_goat":
-        level_display = "Advanced GOAT"
-    elif level == "save_my_race":
-        level_display = "Save My Race"
-    
-    # Format plan name
-    plan_name = f"{tier.title()} {level_display}"
-    
-    # Generate survey HTML
-    survey_html = SURVEY_TEMPLATE.format(
-        race_name=html.escape(race_name),
-        plan_name=html.escape(plan_name)
-    )
-    
-    # Create surveys directory
-    surveys_dir = Path(output_dir) / "surveys"
-    surveys_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Generate filename
-    filename = generate_survey_filename(race_name, tier, level)
-    output_path = surveys_dir / filename
-    
-    # Write survey file
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(survey_html)
-    
-    return output_path, filename
+</html>
