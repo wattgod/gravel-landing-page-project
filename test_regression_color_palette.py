@@ -60,11 +60,10 @@ LARGE_BACKGROUND_SELECTORS = [
 ]
 
 # Selectors that indicate SMALL accents (bright yellow acceptable)
-# NOTE: Even small accents should use muted colors for backgrounds - bright yellow ONLY for text shadows
+# NOTE: Bright yellow is FORBIDDEN everywhere - NO yellow in backgrounds, NO yellow in box-shadows
+# Only text-shadow is acceptable (but even that should be minimal)
 SMALL_ACCENT_SELECTORS = [
-    r'text-shadow',  # Text shadow - ONLY acceptable use of bright yellow
-    r'box-shadow[^}]*#F4D03F',  # Shadow color in box-shadow - acceptable
-    r'box-shadow[^}]*#FFFF00',  # Shadow color in box-shadow - acceptable
+    r'text-shadow',  # Text shadow - ONLY acceptable use of bright yellow (and even this should be minimal)
 ]
 
 # ============================================================================
@@ -92,7 +91,7 @@ def check_css_file(css_path: Path) -> List[str]:
         # Check if this background uses a bright yellow
         for yellow in BRIGHT_YELLOWS:
             if yellow in background_value:
-                # Check if this is a large background area (forbidden)
+                # NO yellow backgrounds allowed - flag it
                 context_before = css[max(0, match.start() - 200):match.start()]
                 context_after = css[match.end():min(len(css), match.end() + 200)]
                 full_context = context_before + match.group(0) + context_after
@@ -120,6 +119,26 @@ def check_css_file(css_path: Path) -> List[str]:
                         f"Line {line_num}: Bright yellow ({yellow}) used for large background in '{selector}'. "
                         f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
                     )
+    
+    # Check for yellow in box-shadows (FORBIDDEN)
+    boxshadow_pattern = r'box-shadow[^:]*:\s*([^;]+);'
+    boxshadow_matches = re.finditer(boxshadow_pattern, css, re.IGNORECASE)
+    
+    for match in boxshadow_matches:
+        boxshadow_value = match.group(1).strip()
+        line_num = css[:match.start()].count('\n') + 1
+        
+        # Check if this box-shadow uses a bright yellow
+        for yellow in BRIGHT_YELLOWS:
+            if yellow in boxshadow_value:
+                # Extract selector for better error message
+                context_before = css[max(0, match.start() - 200):match.start()]
+                selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                selector = selector_match.group(1).strip() if selector_match else "unknown"
+                errors.append(
+                    f"Line {line_num}: Bright yellow ({yellow}) used in box-shadow for '{selector}'. "
+                    f"NO yellow allowed - use brown (#59473C) or black (#000000) instead."
+                )
     
     return errors
 
@@ -204,6 +223,25 @@ def check_css_content(css: str, context: str) -> List[str]:
                         f"{context}: Bright yellow ({yellow}) used for background in '{selector}'. "
                         f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead. Bright yellow ONLY for text shadows."
                     )
+    
+    # Check for yellow in box-shadows (FORBIDDEN)
+    boxshadow_pattern = r'box-shadow[^:]*:\s*([^;]+);'
+    boxshadow_matches = re.finditer(boxshadow_pattern, css, re.IGNORECASE)
+    
+    for match in boxshadow_matches:
+        boxshadow_value = match.group(1).strip()
+        
+        # Check if this box-shadow uses a bright yellow
+        for yellow in BRIGHT_YELLOWS:
+            if yellow in boxshadow_value:
+                # Extract selector for better error message
+                context_before = css[max(0, match.start() - 200):match.start()]
+                selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                selector = selector_match.group(1).strip() if selector_match else "unknown"
+                errors.append(
+                    f"{context}: Bright yellow ({yellow}) used in box-shadow for '{selector}'. "
+                    f"NO yellow allowed - use brown (#59473C) or black (#000000) instead."
+                )
     
     return errors
 
