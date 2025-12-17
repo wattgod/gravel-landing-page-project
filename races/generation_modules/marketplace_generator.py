@@ -39,45 +39,50 @@ def unicode_to_html_entities(text):
     
     return result
 
-# Marketplace HTML Template (neo-brutalist styling)
+# Marketplace HTML Template (simplified design matching Unbound style)
 # Uses varied copy from gravel_god_copy_variations.py
 # Note: Uses HTML entities instead of Unicode to avoid encoding issues
-MARKETPLACE_TEMPLATE = """<div style="font-family:'Courier New',monospace;background:#F5F5DC;padding:20px;">
-<div style="background:#59473C;color:#F5F5DC;padding:12px 20px;display:inline-block;margin-bottom:16px;">
-GRAVEL GOD CYCLING
----
+MARKETPLACE_TEMPLATE = """<div style="font-family:'Courier New',monospace;color:#111;max-width:800px;margin:0 auto;line-height:1.5;font-size:16px">
+
+<div style="margin-bottom:20px">
+<p style="margin:0;font-size:24px;font-weight:700;line-height:1.3">{tier_philosophy}</p>
 </div>
-<div style="border-left:4px solid #40E0D0;padding-left:16px;margin-bottom:20px;">
-<p style="font-size:18px;color:#000;margin:0;"><strong>{race_hook}</strong></p>
-<p style="font-size:14px;color:#59473C;margin-top:8px;">{race_hook_detail}</p>
+
+<div style="margin-bottom:14px">
+<p style="margin:0;font-size:16px">{training_approach}</p>
 </div>
-<div style="border:4px solid #000;box-shadow:8px 8px 0 #000;padding:20px;margin:20px 0;background:#fff;">
-<h2 style="margin-top:0;color:#000;">{fifteen_plans_headline}</h2>
-<p>{fifteen_plans_body}</p>
-<p style="margin-bottom:0;">{philosophy_tagline}</p>
+
+<div style="margin-bottom:14px">
+<h3 style="font-size:14px;text-transform:uppercase;border-bottom:1px solid #000;padding-bottom:5px;margin-bottom:8px">What the {plan_title} Includes</h3>
+<p style="margin:0;font-size:16px">{plan_features}</p>
 </div>
-<div style="border:4px solid #000;box-shadow:8px 8px 0 #40E0D0;padding:20px;margin:20px 0;background:#fff;">
-<h2 style="margin-top:0;color:#000;">{masterclass_headline}</h2>
-<p style="margin-bottom:12px;">{masterclass_intro}</p>
-{masterclass_topics}
+
+<div style="background:#f5f5f5;border:1px solid #ccc;border-left:5px solid #777;padding:12px;margin-bottom:14px">
+<p style="margin:0 0 6px;font-size:14px"><strong>18,000+ Word Guide</strong></p>
+<p style="margin:0 0 6px;font-size:14px;font-style:italic;color:#555">Everything you need in one manual. No gaps. No guesswork. All tested.</p>
+<p style="margin:0;font-size:14px">{guide_content_summary}</p>
 </div>
-<div style="border:4px solid #000;box-shadow:8px 8px 0 #59473C;padding:20px;margin:20px 0;background:#fff;">
-<h2 style="margin-top:0;color:#000;">BUILT FOR {race_name}</h2>
-{non_negotiables_html}
-<p style="margin-top:12px;margin-bottom:0;font-size:14px;">Plus: {plan_weeks} weeks, {num_workouts} workouts (Zwift/TrainerRoad/Wahoo/Garmin), race week protocol, gear checklist.</p>
+
+<div style="margin-bottom:14px">
+<h3 style="font-size:14px;text-transform:uppercase;border-bottom:1px solid #000;padding-bottom:5px;margin-bottom:8px">Alternative?</h3>
+<p style="margin:0;font-size:16px">{alternative_warning}</p>
 </div>
-<div style="background:#59473C;border:4px solid #000;padding:20px;margin:20px 0;color:#F5F5DC;">
----
-<h2 style="margin-top:0;color:#40E0D0;">{tier} | {level} | {weekly_hours} HRS/WEEK</h2>
-<p style="margin-bottom:0;">{tier_description}</p>
-<p style="margin-top:8px;margin-bottom:0;font-size:12px;font-style:italic;">{level_modifier}</p>
+
+<div style="background:#f5f5f5;border:1px solid #ccc;border-left:5px solid #777;padding:12px;margin-bottom:14px">
+<h3 style="font-size:13px;text-transform:uppercase;margin:0 0 8px;color:#555">What This Plan Delivers</h3>
+<p style="margin:0 0 8px;font-size:14px;font-weight:700">{delivery_headline}</p>
+<p style="margin:0;font-size:14px">{delivery_details}</p>
 </div>
-<div style="background:#000;color:#F5F5DC;padding:20px;text-align:center;border:4px solid #000;">
-<div style="font-size:24px;font-weight:bold;letter-spacing:4px;">GRAVEL GOD</div>
-<div style="font-size:14px;color:#40E0D0;margin:8px 0;">gravelgodcycling.com</div>
-<div style="font-size:13px;font-style:italic;">Become what you are.</div>
+
+<div style="margin-bottom:14px">
+<p style="margin:0;font-size:16px">This is {race_name}. For people whose fitness needs to show up in results.</p>
 </div>
-<p style="font-size:12px;color:#59473C;text-align:center;margin-top:12px;">gravelgodcoaching@gmail.com</p>
+
+<div style="border-top:2px solid #000;padding-top:10px">
+<p style="margin:0;font-size:14px">Browse all plans: <a href="{race_url}" style="color:#111">{race_url}</a></p>
+<p style="margin:8px 0 0;font-size:13px;color:#777">GRAVEL GOD CYCLING<br>gravelgodcoaching@gmail.com</p>
+</div>
+
 </div>"""
 
 def get_masterclass_topics_html(race_data, copy_variations):
@@ -207,47 +212,38 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     # Get masterclass topics using varied copy
     masterclass_topics = get_masterclass_topics_html(race_data, copy)
     
-    # Build non-negotiables HTML from race-specific requirements
-    # Use race_data non-negotiables directly to preserve race-specific content
-    # Don't rephrase - the requirements are already race-specific and well-written
-    non_negs = race_data.get("non_negotiables", [])[:3]
-    non_negotiables = []
-    for nn in non_negs:
-        if isinstance(nn, dict):
-            # Extract requirement text from dict - preserve race-specific wording exactly
-            req_text = nn.get('requirement', str(nn))
-        else:
-            # Already a string
-            req_text = str(nn)
-        # Use original requirement text directly to preserve race-specific details
-        # (get_non_negotiable_phrasing was losing race-specific content)
-        non_negotiables.append(f"&#10004; {req_text}")  # Use HTML entity instead of Unicode
+    # Generate simplified content for new template
+    race_name = marketplace_vars.get("race_name", race_data["race_metadata"]["name"])
+    plan_title = get_plan_title(tier_key, level_key)
     
-    # Convert any remaining Unicode characters to HTML entities
-    non_negotiables_html = "\n".join([
-        f'<p style="margin:4px 0;">{unicode_to_html_entities(nn)}</p>' 
-        for nn in non_negotiables
-    ])
+    # Generate content sections
+    tier_philosophy = generate_tier_philosophy_marketplace(tier_key, level_key)
+    training_approach = generate_training_approach_marketplace(race_data, tier_key, level_key, plan_title, weekly_hours)
+    plan_features = generate_plan_features_marketplace(race_data, tier_key, level_key)
+    guide_content_summary = "Technical Skills Practice — Progressive drills for cornering, descending, rough terrain—weekly practice building competence. Race-Specific Preparation — Heat protocols, altitude adaptation (if needed), equipment choices. Training Fundamentals — Periodization principles that create predictable performance."
+    alternative_warning = generate_alternative_warning_marketplace(tier_key)
+    delivery_headline = "Systematic progression eliminates guesswork. Training becomes results."
+    delivery_details = generate_delivery_details_marketplace(race_data)
     
-    # Fill template with varied copy (convert Unicode to HTML entities)
+    # Get race URL
+    race_url = race_data.get("race_metadata", {}).get("website", "")
+    if not race_url:
+        # Generate URL from race name slug
+        race_slug = race_name.lower().replace(' ', '-').replace('the ', '').replace(' ', '-')
+        race_url = f"https://gravelgodcycling.com/{race_slug}"
+    
+    # Fill template with simplified content
     html_content = MARKETPLACE_TEMPLATE.format(
-        race_hook=unicode_to_html_entities(race_data.get("race_hooks", {}).get("punchy", marketplace_vars.get("race_hook", ""))),
-        race_hook_detail=unicode_to_html_entities(race_data.get("race_hooks", {}).get("detail", marketplace_vars.get("race_hook_detail", ""))),
-        fifteen_plans_headline=unicode_to_html_entities(copy['fifteen_plans_headline']),
-        fifteen_plans_body=unicode_to_html_entities(copy['fifteen_plans_body']),
-        philosophy_tagline=unicode_to_html_entities(copy['philosophy_tagline']),
-        masterclass_headline=unicode_to_html_entities(copy['masterclass_headline']),
-        masterclass_intro=unicode_to_html_entities(copy['masterclass_intro']),
-        masterclass_topics=masterclass_topics,  # Already converted in get_masterclass_topics_html
-        race_name=unicode_to_html_entities(marketplace_vars.get("race_name", race_data["race_metadata"]["name"])),
-        non_negotiables_html=non_negotiables_html,  # Already converted above
-        plan_weeks=plan_weeks,
-        num_workouts=num_workouts,
-        tier=unicode_to_html_entities(tier),
-        level=unicode_to_html_entities(level),
-        weekly_hours=weekly_hours,
-        tier_description=unicode_to_html_entities(copy['tier_description']),
-        level_modifier=unicode_to_html_entities(copy['level_modifier'])
+        tier_philosophy=unicode_to_html_entities(tier_philosophy),
+        training_approach=unicode_to_html_entities(training_approach),
+        plan_title=unicode_to_html_entities(plan_title),
+        plan_features=unicode_to_html_entities(plan_features),
+        guide_content_summary=unicode_to_html_entities(guide_content_summary),
+        alternative_warning=unicode_to_html_entities(alternative_warning),
+        delivery_headline=unicode_to_html_entities(delivery_headline),
+        delivery_details=unicode_to_html_entities(delivery_details),
+        race_name=unicode_to_html_entities(race_name),
+        race_url=race_url
     )
     
     # Validate character count (must be <4000)
@@ -257,4 +253,113 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
         print(f"     Consider shortening race hook or reducing masterclass topics")
     
     return html_content
+
+
+def get_plan_title(tier_key, level_key):
+    """Get plan title from tier and level"""
+    titles = {
+        ('ayahuasca', 'beginner'): 'Survival Plan',
+        ('ayahuasca', 'intermediate'): 'Time Crunched Plan',
+        ('ayahuasca', 'masters'): '50+ Plan',
+        ('ayahuasca', 'save_my_race'): 'Emergency Plan',
+        ('finisher', 'beginner'): 'First Timer Plan',
+        ('finisher', 'intermediate'): 'Solid Finisher Plan',
+        ('finisher', 'advanced'): 'Strong Finish Plan',
+        ('finisher', 'masters'): '50+ Plan',
+        ('finisher', 'save_my_race'): 'Emergency Plan',
+        ('compete', 'intermediate'): 'Competitive Plan',
+        ('compete', 'advanced'): 'Podium Contender Plan',
+        ('compete', 'masters'): '50+ Performance Plan',
+        ('compete', 'save_my_race'): 'Emergency Plan',
+        ('podium', 'advanced'): 'Elite Preparation',
+        ('podium', 'advanced_goat'): 'The G.O.A.T. Plan',
+    }
+    return titles.get((tier_key, level_key), f'{level_key.title()} Plan')
+
+
+def generate_tier_philosophy_marketplace(tier_key, level_key):
+    """Generate tier philosophy for marketplace"""
+    if tier_key == 'ayahuasca':
+        return "High-intensity interval training works for time-crunched athletes. You get maximum fitness from minimal time, enough intensity to sharpen performance, and enough recovery to absorb the stress. No junk miles. No hero intervals. Just systematic progression toward finishing the distance."
+    elif tier_key == 'finisher':
+        return "Polarized training principles work for athletes with moderate time. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a strong finish."
+    elif tier_key == 'compete':
+        return "Polarized training principles work for time-crunched competitive athletes. You get enough volume to build durability, enough intensity to sharpen performance, and enough recovery to absorb both. No junk miles. No hero intervals. Just systematic progression toward a specific performance target."
+    elif tier_key == 'podium':
+        return "Block periodization and high-volume training work for serious athletes. You get massive aerobic volume to build extreme durability, concentrated intensity blocks to target limiters, and systematic recovery to absorb the load. No junk miles. No wasted time. Just elite-level preparation."
+    else:
+        return "Systematic training principles work. You get the right volume, the right intensity, and the right recovery. No junk miles. No hero intervals. Just progression toward your goal."
+
+
+def generate_training_approach_marketplace(race_data, tier_key, level_key, plan_title, weekly_hours):
+    """Generate training approach for marketplace"""
+    characteristics = race_data.get('race_characteristics', {})
+    typical_weather = characteristics.get('typical_weather', '')
+    climate = characteristics.get('climate', '')
+    
+    approach = ""
+    
+    if tier_key == 'ayahuasca':
+        approach = f"Minimal-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. "
+    elif tier_key == 'finisher':
+        approach = f"Moderate-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. "
+    elif tier_key == 'compete':
+        approach = f"High-volume training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. "
+    elif tier_key == 'podium':
+        approach = f"Elite-level training without fueling precision breaks athletes. 60-80g carbs/hour—not theory, practiced at race intensity until automatic when you're suffering. The {plan_title} builds systems that work under load. "
+    
+    # Add race-specific elements
+    if 'hot' in str(typical_weather).lower() or 'hot' in str(climate).lower():
+        approach += "Heat adaptation in weeks 6-10 prepares you for race conditions. "
+    elif 'cold' in str(typical_weather).lower() or 'unpredictable' in str(climate).lower():
+        approach += "Weather adaptation training prepares you for variable conditions. "
+    
+    approach += f"Three-Act pacing framework maps tactics to the race timeline. Technical skills and mental protocols are practiced under load. Training at {weekly_hours} hours requires systems, not just discipline."
+    
+    return approach
+
+
+def generate_plan_features_marketplace(race_data, tier_key, level_key):
+    """Generate plan features for marketplace"""
+    characteristics = race_data.get('race_characteristics', {})
+    typical_weather = characteristics.get('typical_weather', '')
+    climate = characteristics.get('climate', '')
+    metadata = race_data.get('race_metadata', {})
+    distance = metadata.get('distance_miles', 0)
+    
+    level_display = level_key.replace('_', ' ').title()
+    if level_key == 'save_my_race':
+        level_display = 'Save My Race'
+    
+    features = f"Precision taper protocol with deload timing proven for {level_display.lower()} athletes. Distance-specific fueling for the {distance} miles: 60-80g carbs/hour protocol tested for extended efforts. "
+    
+    if 'hot' in str(typical_weather).lower() or 'heat' in str(typical_weather).lower():
+        features += "Heat adaptation built in: weeks 6-10 controlled exposure protocol—arrive at race acclimated to race conditions."
+    elif 'unpredictable' in str(climate).lower() or 'unpredictable' in str(typical_weather).lower():
+        features += "Weather adaptation built in: weeks 4-10 varied condition training—arrive at race prepared for anything."
+    elif 'cold' in str(typical_weather).lower() or 'cold' in str(climate).lower():
+        features += "Weather adaptation built in: weeks 4-10 varied condition training—arrive at race prepared for anything."
+    
+    return features
+
+
+def generate_alternative_warning_marketplace(tier_key):
+    """Generate alternative warning for marketplace"""
+    if tier_key == 'ayahuasca':
+        return "Or you could keep doing random intensity without structure. Minimal volume without periodization. Fitness doesn't peak when needed."
+    elif tier_key == 'finisher':
+        return "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed."
+    elif tier_key == 'compete':
+        return "Or you could keep doing big volume without periodization. Random intensity distribution. Fitness doesn't peak when needed."
+    elif tier_key == 'podium':
+        return "Or you could keep doing massive volume without structure. Random intensity distribution. Fitness doesn't peak when needed."
+    else:
+        return "Or you could keep doing random training without structure. Fitness doesn't peak when needed."
+
+
+def generate_delivery_details_marketplace(race_data):
+    """Generate delivery details for marketplace"""
+    metadata = race_data.get('race_metadata', {})
+    distance = metadata.get('distance_miles', 0)
+    return f"Power distribution for {distance} miles • Race execution protocols • Fueling and hydration at intensity • Technical skills under fatigue"
 
