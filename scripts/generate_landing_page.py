@@ -1379,7 +1379,7 @@ def generate_logistics_html(data: Dict) -> str:
 
 def generate_training_plans_html(data: Dict) -> str:
     """
-    Generate training plans section - simplified template without links.
+    Generate training plans section - exact template structure, links removed.
     """
     race = data['race']
     tp = race['training_plans']
@@ -1416,15 +1416,32 @@ def generate_training_plans_html(data: Dict) -> str:
         name_display = plan['name']
         weeks = plan['weeks']
         
-        # Format display name based on tier (matching the template format)
-        if tier == 'Finisher' and level != 'Beginner':
-            display_name = f"{tier} {level_display} – {name_display}"
+        # Format display name to match template exactly
+        if tier == 'Ayahuasca':
+            if level == 'Masters 50+':
+                display_name = "Master's 50+ Plan"
+            elif level == 'Emergency':
+                display_name = "Save My Race – Emergency Plan"
+            else:
+                display_name = f"{level_display} – {name_display}"
+        elif tier == 'Finisher':
+            if level == 'Beginner':
+                display_name = f"Beginner – {name_display}"
+            elif level == 'Masters 50+':
+                display_name = f"Finisher Master's – 50+ Plan"
+            elif level == 'Emergency':
+                display_name = f"Finisher – Save My Race"
+            else:
+                display_name = f"Finisher {level_display} – {name_display}"
         elif tier == 'Compete':
-            display_name = f"{tier} {level_display} – {name_display}"
+            if level == 'Masters 50+':
+                display_name = f"Compete Master's – 50+ Performance"
+            elif level == 'Emergency':
+                display_name = f"Compete – Save My Race"
+            else:
+                display_name = f"Compete {level_display} – {name_display}"
         elif tier == 'Podium':
-            display_name = f"{tier} {level_display} – {name_display}"
-        elif level == 'Masters 50+':
-            display_name = f"Master's 50+ Plan"
+            display_name = f"Podium {level_display} – {name_display}"
         else:
             display_name = f"{level_display} – {name_display}"
         
@@ -1433,7 +1450,7 @@ def generate_training_plans_html(data: Dict) -> str:
             'weeks': weeks
         })
     
-    # Generate tier cards HTML
+    # Generate tier cards HTML - EXACT structure from template
     tier_cards = []
     for tier_name, tier_info in tiers_data.items():
         if not tier_info['plans']:  # Skip tiers with no plans
