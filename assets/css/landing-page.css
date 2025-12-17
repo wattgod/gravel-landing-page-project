@@ -129,7 +129,7 @@
 .gg-course-breakdown-note {
   /* Research note - raw, honest, muted cream background */
   border: 4px solid #000000;
-  background: #FFF5E6; /* Muted cream - earth-tone palette */
+  background: #F4D03F; /* Brand yellow - use judiciously */
   padding: 16px 20px;
   margin-top: 2rem;
   font-family: 'Courier New', monospace;
@@ -244,7 +244,7 @@
   top: 8px;
   width: 20px;
   height: 20px;
-  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F/#FFFF00 is ONLY for text shadows/small accents, NOT backgrounds */
+  background: #F4D03F; /* Brand yellow - use judiciously */
   border: 4px solid #000000;
   transform: rotate(45deg);
   box-shadow: 4px 4px 0px 0px #000000;
@@ -254,7 +254,7 @@
 .gg-timeline-year {
   /* Year box - muted cream background, black border, bold shadow */
   display: inline-block;
-  background: #FFF5E6; /* Muted cream - earth-tone palette. #F4D03F/#FFFF00 is ONLY for text shadows/small accents, NOT backgrounds */
+  background: #F4D03F; /* Brand yellow - use judiciously */
   color: #000000;
   font-weight: 900;
   font-size: 16px;
