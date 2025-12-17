@@ -659,6 +659,9 @@ DELIVERY_DETAILS_VARIATIONS = [
 # RACE-SPECIFIC CONTENT POOL GENERATOR
 # ============================================================================
 
+from pathlib import Path
+import re
+
 def extract_race_specific_content(race_data, research_doc_path=None):
     """
     Automatically extract race-specific content from race JSON and research docs.
@@ -789,7 +792,6 @@ def extract_race_specific_content(race_data, research_doc_path=None):
         # Look for race-specific mentions in research doc
         if race_name_lower in research_lower:
             # Extract sentences mentioning the race
-            import re
             sentences = re.findall(rf'[^.!?]*{re.escape(race_name_lower)}[^.!?]*[.!?]', research_content, re.IGNORECASE)
             for sentence in sentences[:3]:  # Limit to 3 sentences
                 sentence_clean = sentence.strip()
@@ -870,7 +872,6 @@ def get_race_specific_reference(race_data, category, tier_key, level_key, used_r
         used_refs = set()
     
     # Try to find research document
-    from pathlib import Path
     base_path = Path(__file__).parent.parent.parent
     research_doc = base_path / "docs" / "COURSE_BREAKDOWN_RESEARCH.md"
     
