@@ -13,7 +13,7 @@ from html import unescape
 
 # Add automation module to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from automation.training_plans import generate_training_plans_html, build_training_plans_data
+from automation.training_plans import generate_training_plans_html as generate_training_plans_html_module, build_training_plans_data
 
 
 def load_race_data(json_path: str) -> Dict[str, Any]:
@@ -1394,7 +1394,7 @@ def generate_training_plans_html(data: Dict) -> str:
     tiers_data = build_training_plans_data(race)
     
     # Generate HTML using module function
-    return generate_training_plans_html(tiers_data, race_name)
+    return generate_training_plans_html_module(tiers_data, race_name)
 
 
 def generate_coaching_cta_html() -> str:
