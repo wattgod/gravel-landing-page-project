@@ -297,8 +297,13 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, r
     race_workout_file = generate_race_workout(race_data, plan_info, plan_output_dir)
     print(f"     ✓ Generated race day workout: {race_workout_file.name}")
     
+    # Generate plan-specific survey
+    from survey_generator import generate_plan_survey
+    survey_file, survey_filename = generate_plan_survey(race_data, plan_info, plan_output_dir)
+    print(f"     ✓ Generated survey: {survey_filename}")
+    
     total_workouts = zwo_count + strength_count + 1  # +1 for race workout
-    print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength + 1 race), guide, marketplace description")
+    print(f"  ✅ Complete: {total_workouts} workouts ({zwo_count} cycling + {strength_count} strength + 1 race), guide, marketplace description, survey")
     
     return {
         "plan": plan_folder_name,

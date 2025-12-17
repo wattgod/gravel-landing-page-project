@@ -161,12 +161,15 @@ def add_survey_link(week_num, workout_name, race_data, plan_info):
     
     if is_final_week and is_sunday:
         race_name = race_data.get("race_metadata", {}).get("name", "Race")
-        tier = plan_info.get("tier", "").title()
-        level = plan_info.get("level", "").replace("_", " ").title()
-        plan_name = f"{tier} {level}"
+        tier = plan_info.get("tier", "").lower()
+        level = plan_info.get("level", "").lower()
         
-        # Create survey URL with plan-specific parameters
-        survey_url = f"https://wattgod.github.io/gravel-landing-page-project/survey.html?race={race_name.replace(' ', '%20')}&plan={plan_name.replace(' ', '%20')}"
+        # Generate plan-specific survey URL
+        race_slug = race_name.lower().replace(' ', '-').replace('the ', '')
+        tier_slug = tier.lower()
+        level_slug = level.lower().replace('_', '-')
+        survey_filename = f"survey-{race_slug}-{tier_slug}-{level_slug}.html"
+        survey_url = f"https://wattgod.github.io/gravel-landing-page-project/guides/{race_slug}/surveys/{survey_filename}"
         
         return f"""
 

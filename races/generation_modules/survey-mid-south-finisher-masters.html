@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Plan Survey - Mid South - Finisher Masters</title>
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --gg-bg: #ffffff;
+            --gg-fg: #111111;
+            --gg-border: #000000;
+            --gg-muted: #777777;
+            --gg-soft: #f5f5f5;
+            --gg-success: #4caf50;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 32px auto 64px auto;
+            padding: 0 20px;
+            max-width: 800px;
+            background: var(--gg-bg);
+            color: var(--gg-fg);
+            font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        h1 {
+            font-size: 26px;
+            padding-bottom: 6px;
+            border-bottom: 3px solid var(--gg-border);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro {
+            color: var(--gg-muted);
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+
+        .survey-form {
+            margin-top: 2rem;
+        }
+
+        .question-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .question-label {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 0.8rem;
+            color: var(--gg-fg);
+        }
+
+        .question-help {
+            font-size: 12px;
+            color: var(--gg-muted);
+            margin-top: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--gg-border);
+            background: var(--gg-bg);
+            color: var(--gg-fg);
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 0.8rem;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px;
+            border: 1px solid var(--gg-border);
+            background: var(--gg-soft);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .radio-option:hover,
+        .checkbox-option:hover {
+            background: #e8e8e8;
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            cursor: pointer;
+            flex: 1;
+            margin: 0;
+        }
+
+        .rating-scale {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.8rem;
+            gap: 8px;
+        }
+
+        .rating-scale input[type="radio"] {
+            display: none;
+        }
+
+        .rating-scale label {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--gg-border);
+            background: var(--gg-soft);
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 13px;
+        }
+
+        .rating-scale label:hover {
+            background: #e8e8e8;
+        }
+
+        .rating-scale input[type="radio"]:checked + label {
+            background: var(--gg-fg);
+            color: var(--gg-bg);
+            font-weight: 600;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px 24px;
+            margin-top: 2rem;
+            background: var(--gg-fg);
+            color: var(--gg-bg);
+            border: 2px solid var(--gg-border);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .submit-button:hover {
+            background: var(--gg-muted);
+        }
+
+        .submit-button:disabled {
+            background: var(--gg-soft);
+            color: var(--gg-muted);
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            padding: 20px;
+            border: 2px solid var(--gg-success);
+            background: #f1f8f4;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .error-message {
+            display: none;
+            padding: 12px;
+            border: 1px solid #d32f2f;
+            background: #ffebee;
+            color: #c62828;
+            margin-top: 1rem;
+            font-size: 13px;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .required {
+            color: #d32f2f;
+        }
+
+        .plan-info {
+            padding: 16px;
+            background: var(--gg-soft);
+            border: 1px solid var(--gg-border);
+            margin-bottom: 2rem;
+        }
+
+        .plan-info-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gg-muted);
+            margin-bottom: 8px;
+        }
+
+        .plan-info-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .rating-scale {
+                flex-wrap: wrap;
+            }
+            
+            .rating-scale label {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Training Plan Survey</h1>
+    <p class="intro">You've completed your training plan! Share your experience to help us improve. This survey takes 3-4 minutes.</p>
+
+    <div class="plan-info">
+        <div class="plan-info-label">Training Plan</div>
+        <div class="plan-info-name">Mid South - Finisher Masters</div>
+    </div>
+
+    <form id="surveyForm" class="survey-form">
+        <!-- Question 1: Race completion -->
+        <div class="question-group">
+            <label class="question-label">
+                Did you complete the race? <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="completed-yes" name="completed" value="yes" required>
+                    <label for="completed-yes">Yes, finished</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="completed-dnf" name="completed" value="dnf">
+                    <label for="completed-dnf">No, DNF (Did Not Finish)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="completed-dns" name="completed" value="dns">
+                    <label for="completed-dns">No, DNS (Did Not Start)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="completed-not-yet" name="completed" value="not-yet">
+                    <label for="completed-not-yet">Haven't raced yet</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Overall plan effectiveness -->
+        <div class="question-group">
+            <label class="question-label">
+                How effective was this training plan for preparing you? <span class="required">*</span>
+            </label>
+            <div class="rating-scale">
+                <input type="radio" id="effectiveness-1" name="effectiveness" value="1" required>
+                <label for="effectiveness-1">1</label>
+                <input type="radio" id="effectiveness-2" name="effectiveness" value="2">
+                <label for="effectiveness-2">2</label>
+                <input type="radio" id="effectiveness-3" name="effectiveness" value="3">
+                <label for="effectiveness-3">3</label>
+                <input type="radio" id="effectiveness-4" name="effectiveness" value="4">
+                <label for="effectiveness-4">4</label>
+                <input type="radio" id="effectiveness-5" name="effectiveness" value="5">
+                <label for="effectiveness-5">5</label>
+            </div>
+            <div class="question-help">1 = Not effective, 5 = Very effective</div>
+        </div>
+
+        <!-- Question 3: Plan adherence -->
+        <div class="question-group">
+            <label class="question-label">
+                How closely did you follow the plan? <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="adherence-exact" name="adherence" value="exact" required>
+                    <label for="adherence-exact">Exactly as written (90-100%)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="adherence-mostly" name="adherence" value="mostly">
+                    <label for="adherence-mostly">Mostly followed (70-90%)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="adherence-partially" name="adherence" value="partially">
+                    <label for="adherence-partially">Partially followed (50-70%)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="adherence-reference" name="adherence" value="reference">
+                    <label for="adherence-reference">Used as reference only (&lt;50%)</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Average training hours -->
+        <div class="question-group">
+            <label class="question-label" for="hours">
+                What was your average training hours per week? <span class="required">*</span>
+            </label>
+            <input type="number" id="hours" name="hours" min="0" max="30" step="0.5" required>
+            <div class="question-help">Enter the average across the entire plan</div>
+        </div>
+
+        <!-- Question 5: What worked best -->
+        <div class="question-group">
+            <label class="question-label">
+                What worked best in this plan? <span class="required">*</span>
+            </label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-intensity" name="worked_best" value="intensity">
+                    <label for="worked-intensity">Workout intensity/progression</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-volume" name="worked_best" value="volume">
+                    <label for="worked-volume">Training volume/load</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-structure" name="worked_best" value="structure">
+                    <label for="worked-structure">Weekly structure/organization</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-recovery" name="worked_best" value="recovery">
+                    <label for="worked-recovery">Recovery days/taper</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-specificity" name="worked_best" value="specificity">
+                    <label for="worked-specificity">Race-specific workouts</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-guide" name="worked_best" value="guide">
+                    <label for="worked-guide">Training guide content</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="worked-other" name="worked_best" value="other">
+                    <label for="worked-other">Other (specify in feedback)</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 6: What didn't work -->
+        <div class="question-group">
+            <label class="question-label">
+                What didn't work well or needs improvement? <span class="required">*</span>
+            </label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-intensity" name="didnt_work" value="intensity">
+                    <label for="didnt-intensity">Workout intensity too hard/easy</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-volume" name="didnt_work" value="volume">
+                    <label for="didnt-volume">Training volume too high/low</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-structure" name="didnt_work" value="structure">
+                    <label for="didnt-structure">Weekly structure didn't fit my schedule</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-recovery" name="didnt_work" value="recovery">
+                    <label for="didnt-recovery">Not enough recovery</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-specificity" name="didnt_work" value="specificity">
+                    <label for="didnt-specificity">Lacked race-specific preparation</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-guide" name="didnt_work" value="guide">
+                    <label for="didnt-guide">Training guide unclear or incomplete</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="didnt-nothing" name="didnt_work" value="nothing">
+                    <label for="didnt-nothing">Nothing major - plan worked well</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7: Race performance vs expectations -->
+        <div class="question-group" id="performance-group" style="display: none;">
+            <label class="question-label">
+                How did your race performance compare to your expectations? <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="performance-exceeded" name="performance" value="exceeded">
+                    <label for="performance-exceeded">Exceeded expectations</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="performance-met" name="performance" value="met">
+                    <label for="performance-met">Met expectations</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="performance-below" name="performance" value="below">
+                    <label for="performance-below">Below expectations</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="performance-significantly" name="performance" value="significantly">
+                    <label for="performance-significantly">Significantly below expectations</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 8: Plan difficulty rating -->
+        <div class="question-group">
+            <label class="question-label">
+                How would you rate the plan difficulty? <span class="required">*</span>
+            </label>
+            <div class="rating-scale">
+                <input type="radio" id="difficulty-1" name="difficulty" value="1" required>
+                <label for="difficulty-1">1</label>
+                <input type="radio" id="difficulty-2" name="difficulty" value="2">
+                <label for="difficulty-2">2</label>
+                <input type="radio" id="difficulty-3" name="difficulty" value="3">
+                <label for="difficulty-3">3</label>
+                <input type="radio" id="difficulty-4" name="difficulty" value="4">
+                <label for="difficulty-4">4</label>
+                <input type="radio" id="difficulty-5" name="difficulty" value="5">
+                <label for="difficulty-5">5</label>
+            </div>
+            <div class="question-help">1 = Too easy, 3 = Just right, 5 = Too hard</div>
+        </div>
+
+        <!-- Question 9: Would recommend -->
+        <div class="question-group">
+            <label class="question-label">
+                Would you recommend this plan to others? <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="recommend-yes" name="recommend" value="yes" required>
+                    <label for="recommend-yes">Yes, definitely</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="recommend-probably" name="recommend" value="probably">
+                    <label for="recommend-probably">Probably</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="recommend-maybe" name="recommend" value="maybe">
+                    <label for="recommend-maybe">Maybe, with modifications</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="recommend-no" name="recommend" value="no">
+                    <label for="recommend-no">No</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 10: Specific improvements -->
+        <div class="question-group">
+            <label class="question-label" for="improvements">
+                What specific improvements would you make to this plan? <span class="required">*</span>
+            </label>
+            <textarea id="improvements" name="improvements" placeholder="Be specific: which workouts, weeks, or aspects need changes..." required></textarea>
+            <div class="question-help">This feedback is most valuable - be as specific as possible</div>
+        </div>
+
+        <!-- Question 11: Additional feedback -->
+        <div class="question-group">
+            <label class="question-label" for="feedback">
+                Any other feedback about your experience? (optional)
+            </label>
+            <textarea id="feedback" name="feedback" placeholder="Race day experience, unexpected challenges, what surprised you..."></textarea>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <button type="submit" class="submit-button" id="submitButton">Submit Survey</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+        <strong>Thank you!</strong><br>
+        Your feedback has been submitted. We appreciate you taking the time to help us improve.
+    </div>
+
+    <script>
+        const form = document.getElementById('surveyForm');
+        const submitButton = document.getElementById('submitButton');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Show/hide performance question based on completion status
+        const completedInputs = document.querySelectorAll('input[name="completed"]');
+        const performanceGroup = document.getElementById('performance-group');
+        
+        completedInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.value === 'yes' || this.value === 'dnf') {
+                    performanceGroup.style.display = 'block';
+                    performanceGroup.querySelector('input[type="radio"]').required = true;
+                } else {
+                    performanceGroup.style.display = 'none';
+                    performanceGroup.querySelectorAll('input[type="radio"]').forEach(r => r.required = false);
+                }
+            });
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            errorMessage.classList.remove('show');
+
+            // Collect form data
+            const formData = new FormData(form);
+            
+            // Get checkbox values
+            const workedBest = formData.getAll('worked_best');
+            const didntWork = formData.getAll('didnt_work');
+            
+            const data = {
+                timestamp: new Date().toISOString(),
+                // Plan identification
+                race: 'Mid South',
+                plan: 'Finisher Masters',
+                // Post-completion questions
+                completed: formData.get('completed'),
+                effectiveness: formData.get('effectiveness'),
+                adherence: formData.get('adherence'),
+                hours: formData.get('hours'),
+                worked_best: workedBest.join(', '),
+                didnt_work: didntWork.join(', '),
+                performance: formData.get('performance') || '',
+                difficulty: formData.get('difficulty'),
+                recommend: formData.get('recommend'),
+                improvements: formData.get('improvements'),
+                feedback: formData.get('feedback') || ''
+            };
+
+            // Format data for GitHub Issue
+            const issueTitle = `Training Plan Survey: ${data.race} - ${data.plan} (Post-Completion)`;
+            const issueBody = formatSurveyData(data);
+            
+            // Create GitHub Issue URL with pre-filled data
+            const githubIssueUrl = `https://github.com/wattgod/gravel-landing-page-project/issues/new?` +
+                `title=${encodeURIComponent(issueTitle)}&` +
+                `body=${encodeURIComponent(issueBody)}&` +
+                `labels=survey,training-plan-feedback,post-completion`;
+            
+            // Save to localStorage as backup
+            const surveyId = 'survey_' + Date.now();
+            localStorage.setItem(surveyId, JSON.stringify(data));
+            
+            // Show success with GitHub Issue link
+            form.style.display = 'none';
+            successMessage.innerHTML = `
+                <strong>Thank you!</strong><br>
+                Your feedback is ready to submit.<br><br>
+                <a href="${githubIssueUrl}" target="_blank" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--gg-fg); color: var(--gg-bg); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Submit to GitHub</a><br><br>
+                <div style="margin-top: 20px; padding: 12px; background: var(--gg-soft); border: 1px solid var(--gg-border); font-size: 12px;">
+                    <strong>Or copy the data below:</strong><br>
+                    <textarea readonly onclick="this.select()" style="width: 100%; min-height: 150px; margin-top: 8px; font-family: monospace; font-size: 11px; padding: 8px; border: 1px solid var(--gg-border); background: var(--gg-bg);">${issueBody}</textarea>
+                </div>
+            `;
+            successMessage.classList.add('show');
+        });
+
+        function formatSurveyData(data) {
+            return `## Training Plan Survey Response - Post-Completion
+
+**Training Plan:** ${data.race} - ${data.plan}
+**Timestamp:** ${data.timestamp}
+
+### Responses
+
+1. **Race completion:** ${data.completed}
+2. **Plan effectiveness:** ${data.effectiveness}/5
+3. **Plan adherence:** ${data.adherence}
+4. **Average training hours/week:** ${data.hours}
+5. **What worked best:** ${data.worked_best || 'N/A'}
+6. **What didn't work:** ${data.didnt_work || 'N/A'}
+7. **Race performance vs expectations:** ${data.performance || 'N/A'}
+8. **Plan difficulty:** ${data.difficulty}/5
+9. **Would recommend:** ${data.recommend}
+10. **Specific improvements needed:** ${data.improvements || 'N/A'}
+11. **Additional feedback:** ${data.feedback || 'N/A'}
+
+---
+*Submitted via post-completion training plan survey*`;
+        }
+    </script>
+</body>
+</html>
