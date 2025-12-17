@@ -2,10 +2,10 @@
 """
 COLOR PALETTE REGRESSION TEST
 ==============================
-Ensures all content follows Gravel God earth-tone neobrutalist color palette:
-- Muted earth tones (#FFF5E6, #F5E5D3, #BFA595) for large backgrounds
-- Bright yellow (#F4D03F, #FFFF00) ONLY for text shadows and small accents
-- NEVER use bright yellow for table rows, card backgrounds, or large blocks
+Ensures all content follows Gravel God neobrutalist color palette:
+- Brand yellow (#F4D03F) allowed for backgrounds and accents (use judiciously)
+- Forbidden: Neon yellow (#FFFF00) - never use, replace with brand yellow (#F4D03F)
+- Forbidden: Muted cream (#FFF5E6) - replace with brand yellow (#F4D03F) or earth tones
 
 Exit codes:
     0 = All color palette tests passed
@@ -22,13 +22,17 @@ from typing import List, Tuple
 # COLOR PALETTE RULES
 # ============================================================================
 
-# Bright yellows that should NOT be used for large backgrounds
-BRIGHT_YELLOWS = [
-    '#F4D03F',
-    '#f4d03f',
+# Forbidden yellows (neon yellow - never use)
+FORBIDDEN_YELLOWS = [
     '#FFFF00',
     '#ffff00',
     'FFFF00',
+]
+
+# Brand yellow (allowed, but use judiciously - not excessively)
+BRAND_YELLOW = [
+    '#F4D03F',
+    '#f4d03f',
     'F4D03F',
 ]
 
@@ -80,7 +84,7 @@ def check_css_file(css_path: Path) -> List[str]:
     except Exception as e:
         return [f"Failed to read CSS file: {e}"]
     
-    # Find all background declarations with bright yellow
+    # Find all background declarations with forbidden yellow (neon yellow)
     background_pattern = r'background[^:]*:\s*([^;]+);'
     background_matches = re.finditer(background_pattern, css, re.IGNORECASE)
     
@@ -88,37 +92,17 @@ def check_css_file(css_path: Path) -> List[str]:
         background_value = match.group(1).strip()
         line_num = css[:match.start()].count('\n') + 1
         
-        # Check if this background uses a bright yellow
-        for yellow in BRIGHT_YELLOWS:
+        # Check if this background uses forbidden neon yellow (#FFFF00)
+        for yellow in FORBIDDEN_YELLOWS:
             if yellow in background_value:
-                # NO yellow backgrounds allowed - flag it
+                # Extract selector for better error message
                 context_before = css[max(0, match.start() - 200):match.start()]
-                context_after = css[match.end():min(len(css), match.end() + 200)]
-                full_context = context_before + match.group(0) + context_after
-                
-                # Check if this is a large background selector
-                is_large_background = False
-                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_large_background = True
-                        break
-                
-                # Check if this is a small accent (acceptable)
-                is_small_accent = False
-                for selector_pattern in SMALL_ACCENT_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_small_accent = True
-                        break
-                
-                # If it's a large background, it's a violation
-                if is_large_background and not is_small_accent:
-                    # Extract selector for better error message
-                    selector_match = re.search(r'([^{]+)\{', context_before[-100:])
-                    selector = selector_match.group(1).strip() if selector_match else "unknown"
-                    errors.append(
-                        f"Line {line_num}: Bright yellow ({yellow}) used for large background in '{selector}'. "
-                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead."
-                    )
+                selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                selector = selector_match.group(1).strip() if selector_match else "unknown"
+                errors.append(
+                    f"Line {line_num}: Forbidden neon yellow ({yellow}) used in '{selector}'. "
+                    f"Use brand yellow (#F4D03F) instead."
+                )
     
     # Check for yellow in box-shadows (FORBIDDEN)
     boxshadow_pattern = r'box-shadow[^:]*:\s*([^;]+);'
@@ -185,62 +169,42 @@ def check_css_content(css: str, context: str) -> List[str]:
     """Check CSS content string for violations."""
     errors = []
     
-    # Find all background declarations with bright yellow
+    # Find all background declarations with forbidden neon yellow
     background_pattern = r'background[^:]*:\s*([^;]+);'
     background_matches = re.finditer(background_pattern, css, re.IGNORECASE)
     
     for match in background_matches:
         background_value = match.group(1).strip()
         
-        # Check if this background uses a bright yellow
-        for yellow in BRIGHT_YELLOWS:
+        # Check if this background uses forbidden neon yellow (#FFFF00)
+        for yellow in FORBIDDEN_YELLOWS:
             if yellow in background_value:
-                # Check context to see if this is a large background
+                # Extract selector for better error message
                 context_before = css[max(0, match.start() - 200):match.start()]
-                context_after = css[match.end():min(len(css), match.end() + 200)]
-                full_context = context_before + match.group(0) + context_after
-                
-                # Check if this is a large background selector
-                is_large_background = False
-                for selector_pattern in LARGE_BACKGROUND_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_large_background = True
-                        break
-                
-                # Check if this is a small accent (acceptable) - ONLY text shadows
-                is_small_accent = False
-                for selector_pattern in SMALL_ACCENT_SELECTORS:
-                    if re.search(selector_pattern, full_context, re.IGNORECASE):
-                        is_small_accent = True
-                        break
-                
-                # ANY background with bright yellow is a violation UNLESS it's a text shadow
-                if not is_small_accent:
-                    # Extract selector for better error message
-                    selector_match = re.search(r'([^{]+)\{', context_before[-100:])
-                    selector = selector_match.group(1).strip() if selector_match else "unknown"
-                    errors.append(
-                        f"{context}: Bright yellow ({yellow}) used for background in '{selector}'. "
-                        f"Use muted earth tone (#FFF5E6, #F5E5D3, etc.) instead. Bright yellow ONLY for text shadows."
-                    )
+                selector_match = re.search(r'([^{]+)\{', context_before[-100:])
+                selector = selector_match.group(1).strip() if selector_match else "unknown"
+                errors.append(
+                    f"{context}: Forbidden neon yellow ({yellow}) used for background in '{selector}'. "
+                    f"Use brand yellow (#F4D03F) instead."
+                )
     
-    # Check for yellow in box-shadows (FORBIDDEN)
+    # Check for forbidden neon yellow in box-shadows
     boxshadow_pattern = r'box-shadow[^:]*:\s*([^;]+);'
     boxshadow_matches = re.finditer(boxshadow_pattern, css, re.IGNORECASE)
     
     for match in boxshadow_matches:
         boxshadow_value = match.group(1).strip()
         
-        # Check if this box-shadow uses a bright yellow
-        for yellow in BRIGHT_YELLOWS:
+        # Check if this box-shadow uses forbidden neon yellow
+        for yellow in FORBIDDEN_YELLOWS:
             if yellow in boxshadow_value:
                 # Extract selector for better error message
                 context_before = css[max(0, match.start() - 200):match.start()]
                 selector_match = re.search(r'([^{]+)\{', context_before[-100:])
                 selector = selector_match.group(1).strip() if selector_match else "unknown"
                 errors.append(
-                    f"{context}: Bright yellow ({yellow}) used in box-shadow for '{selector}'. "
-                    f"NO yellow allowed - use brown (#59473C) or black (#000000) instead."
+                    f"{context}: Forbidden neon yellow ({yellow}) used in box-shadow for '{selector}'. "
+                    f"Use brand yellow (#F4D03F) or brown (#59473C) instead."
                 )
     
     return errors
@@ -255,7 +219,7 @@ def check_generation_script(script_path: Path) -> List[str]:
     except Exception as e:
         return [f"Failed to read script file: {e}"]
     
-    # Find all background declarations with bright yellow
+    # Find all background declarations with forbidden neon yellow
     background_pattern = r'background[^:]*:\s*([^;]+)'
     background_matches = re.finditer(background_pattern, script, re.IGNORECASE)
     
@@ -263,8 +227,8 @@ def check_generation_script(script_path: Path) -> List[str]:
         background_value = match.group(1).strip()
         line_num = script[:match.start()].count('\n') + 1
         
-        # Check if this background uses a bright yellow
-        for yellow in BRIGHT_YELLOWS:
+        # Check if this background uses forbidden neon yellow
+        for yellow in FORBIDDEN_YELLOWS:
             if yellow in background_value:
                 # Check context
                 context_before = script[max(0, match.start() - 200):match.start()]
