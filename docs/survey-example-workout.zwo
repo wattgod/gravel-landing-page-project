@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <workout_file>
   <author>Gravel God Training</author>
-  <name>W04 Fri - Rest</name>
-  <description>• Rest day. Life day. Do what you need to do.
+  <name>W12 Sun - Race Day or Recovery</name>
+  <description>• Race day or recovery day. You've completed the training plan!
 
-• TRAINING PLAN SURVEY:
-Take 2-3 minutes to share your feedback on how the plan is working for you. Your input helps us improve training plans for everyone.
+• TRAINING PLAN SURVEY (POST-COMPLETION):
+You've finished your training plan! Share your experience to help us improve plans for future athletes. Takes 3-4 minutes.
 
-Survey: https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&amp;plan=Ayahuasca%20Beginner&amp;week=4
+Survey: https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&amp;plan=Ayahuasca%20Beginner
 
-• REST DAY NOTE: Fine to ride if you really want, but no longer than an hour and don't break 30 TSS.</description>
+Your feedback helps us make each plan better. Thank you!</description>
   <sportType>bike</sportType>
   <workout>
     <FreeRide Duration="60"/>

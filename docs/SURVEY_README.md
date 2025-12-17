@@ -1,14 +1,15 @@
-# Training Plan Survey
+# Training Plan Survey - Post-Completion
 
-A survey system for collecting feedback from athletes using Gravel God training plans.
+A survey system for collecting feedback from athletes **after completing** their Gravel God training plans.
 
 ## Overview
 
 The survey is designed to:
-- Collect feedback on training plan effectiveness
-- Identify common challenges athletes face
-- Gather data on plan adherence and confidence levels
-- Provide actionable insights for plan improvements
+- Collect post-completion feedback on training plan effectiveness
+- Identify what worked and what didn't work in each specific plan
+- Gather data on race performance vs expectations
+- Provide actionable, plan-specific insights for improvements
+- Track plan adherence and outcomes
 
 ## Files
 
@@ -18,35 +19,43 @@ The survey is designed to:
 
 ## Embedding in Workouts
 
-### Option 1: Link in ZWO Description
+**Important:** This survey is for **after** completing the training plan, not during. Add it to the final week or post-race.
 
-Add a link to the survey in rest day workout descriptions:
+### Option 1: Link in Final Week ZWO Description
+
+Add a link to the survey in the final week's rest day or post-race workout:
 
 ```xml
 <description>
 • Rest day. Life day. Do what you need to do.
 
-• TRAINING PLAN SURVEY:
-Take 2-3 minutes to share your feedback: https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&plan=Ayahuasca%20Beginner&week=4
+• TRAINING PLAN SURVEY (POST-COMPLETION):
+You've completed your training plan! Share your experience to help us improve: 
+https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&plan=Ayahuasca%20Beginner
 </description>
 ```
 
-### Option 2: Direct Link in TrainingPeaks
+### Option 2: Post-Race Follow-up
 
-Add the survey link directly in TrainingPeaks workout notes for rest days or specific weeks.
+Send the survey link after race completion via email or TrainingPeaks message.
 
-## Survey Questions
+### Option 3: Final Week Workout
 
-1. **Overall satisfaction** (1-5 rating)
-2. **Biggest challenge** (multiple choice)
-3. **Confidence level** (1-5 rating)
-4. **Training hours per week** (number)
-5. **Following plan** (yes/mostly/partially/no)
-6. **What's working well** (open-ended, optional)
-7. **Biggest concern** (multiple choice)
-8. **Plan difficulty** (1-5 rating)
-9. **What to change** (open-ended, optional)
-10. **Additional feedback** (open-ended, optional)
+Add to the last workout of the plan (Week 12 or Week 6 for SMR plans).
+
+## Survey Questions (Post-Completion)
+
+1. **Race completion status** (Yes/DNF/DNS/Haven't raced yet)
+2. **Plan effectiveness** (1-5 rating)
+3. **Plan adherence** (Exactly/Mostly/Partially/Reference only)
+4. **Average training hours per week** (number)
+5. **What worked best** (checkboxes: intensity, volume, structure, recovery, specificity, guide, other)
+6. **What didn't work** (checkboxes: intensity, volume, structure, recovery, specificity, guide, nothing major)
+7. **Race performance vs expectations** (Exceeded/Met/Below/Significantly below) - *shown only if race completed*
+8. **Plan difficulty rating** (1-5 rating)
+9. **Would recommend** (Yes/Probably/Maybe/No)
+10. **Specific improvements needed** (required open-ended - most important for actionable feedback)
+11. **Additional feedback** (optional open-ended)
 
 ## Data Collection
 
@@ -65,15 +74,16 @@ https://github.com/wattgod/gravel-landing-page-project/issues/new
 
 ## URL Parameters
 
-The survey accepts these URL parameters:
+The survey accepts these URL parameters (both required for plan-specific feedback):
 - `race` - Race name (e.g., "Mid South")
 - `plan` - Plan name (e.g., "Ayahuasca Beginner")
-- `week` - Current week number (e.g., "4")
 
 Example:
 ```
-https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&plan=Ayahuasca%20Beginner&week=4
+https://wattgod.github.io/gravel-landing-page-project/survey.html?race=Mid%20South&plan=Ayahuasca%20Beginner
 ```
+
+**Note:** The `week` parameter is no longer used since this is a post-completion survey.
 
 ## Styling
 

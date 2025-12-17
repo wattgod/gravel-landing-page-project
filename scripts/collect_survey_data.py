@@ -31,28 +31,27 @@ def save_survey_response(data):
 
 def create_github_issue_body(data):
     """Format survey data as GitHub Issue body"""
-    return f"""## Training Plan Survey Response
+    return f"""## Training Plan Survey Response - Post-Completion
 
-**Race:** {data.get('race', 'Unknown')}
-**Plan:** {data.get('plan', 'Unknown')}
-**Week:** {data.get('week', 'Unknown')}
+**Training Plan:** {data.get('race', 'Unknown')} - {data.get('plan', 'Unknown')}
 **Timestamp:** {data.get('timestamp', 'Unknown')}
 
 ### Responses
 
-1. **Overall satisfaction:** {data.get('satisfaction', 'N/A')}/5
-2. **Biggest challenge:** {data.get('challenge', 'N/A')}
-3. **Confidence level:** {data.get('confidence', 'N/A')}/5
-4. **Training hours/week:** {data.get('hours', 'N/A')}
-5. **Following plan:** {data.get('following', 'N/A')}
-6. **What's working well:** {data.get('working_well', 'N/A') or 'N/A'}
-7. **Biggest concern:** {data.get('concern', 'N/A')}
+1. **Race completion:** {data.get('completed', 'N/A')}
+2. **Plan effectiveness:** {data.get('effectiveness', 'N/A')}/5
+3. **Plan adherence:** {data.get('adherence', 'N/A')}
+4. **Average training hours/week:** {data.get('hours', 'N/A')}
+5. **What worked best:** {data.get('worked_best', 'N/A') or 'N/A'}
+6. **What didn't work:** {data.get('didnt_work', 'N/A') or 'N/A'}
+7. **Race performance vs expectations:** {data.get('performance', 'N/A') or 'N/A'}
 8. **Plan difficulty:** {data.get('difficulty', 'N/A')}/5
-9. **What to change:** {data.get('changes', 'N/A') or 'N/A'}
-10. **Additional feedback:** {data.get('feedback', 'N/A') or 'N/A'}
+9. **Would recommend:** {data.get('recommend', 'N/A')}
+10. **Specific improvements needed:** {data.get('improvements', 'N/A') or 'N/A'}
+11. **Additional feedback:** {data.get('feedback', 'N/A') or 'N/A'}
 
 ---
-*Submitted via training plan survey*"""
+*Submitted via post-completion training plan survey*"""
 
 if __name__ == "__main__":
     # Example usage
@@ -60,17 +59,17 @@ if __name__ == "__main__":
         "timestamp": datetime.now().isoformat(),
         "race": "Mid South",
         "plan": "Ayahuasca Beginner",
-        "week": "4",
-        "satisfaction": "4",
-        "challenge": "time",
-        "confidence": "3",
+        "completed": "yes",
+        "effectiveness": "4",
+        "adherence": "mostly",
         "hours": "3.5",
-        "following": "mostly",
-        "working_well": "The HIIT sessions are effective",
-        "concern": "readiness",
+        "worked_best": "intensity, structure",
+        "didnt_work": "volume",
+        "performance": "met",
         "difficulty": "3",
-        "changes": "More recovery days",
-        "feedback": "Great plan overall"
+        "recommend": "yes",
+        "improvements": "Add one more recovery day per week in weeks 6-8",
+        "feedback": "Great plan overall, felt well prepared for race day"
     }
     
     filepath = save_survey_response(sample_data)
