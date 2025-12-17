@@ -15,6 +15,7 @@ from generation_modules.gravel_god_copy_variations import (
     generate_varied_marketplace_copy,
     get_variation,
     get_non_negotiable_phrasing,
+    get_race_specific_reference,
     CHECKMARK
 )
 
@@ -237,18 +238,121 @@ def generate_marketplace_html(race_data, plan_template, plan_info):
     if level_key == 'save_my_race':
         level_display = 'Save My Race'
     
+    # Get race-specific references (Mid South content) - ensures uniqueness per plan
+    used_refs = set()
+    race_terrain_ref = get_race_specific_reference(race_data, "terrain", tier_key, level_key, used_refs)
+    race_weather_ref = get_race_specific_reference(race_data, "weather", tier_key, level_key, used_refs)
+    race_location_ref = get_race_specific_reference(race_data, "location", tier_key, level_key, used_refs)
+    race_character_ref = get_race_specific_reference(race_data, "character", tier_key, level_key, used_refs)
+    race_challenge_ref = get_race_specific_reference(race_data, "challenges", tier_key, level_key, used_refs)
+    
     tier_philosophy = copy.get('tier_philosophy', '')
-    training_approach = copy.get('training_approach', '').format(
+    
+    # Build training_approach with Mid South references integrated
+    training_approach_base = copy.get('training_approach', '').format(
         plan_title=plan_title,
         weather_adaptation=weather_adaptation,
         weekly_hours=weekly_hours
     )
-    plan_features = copy.get('plan_features', '').format(
+    
+    # Inject Mid South-specific content naturally into training_approach
+    # Strategy: Add 1-2 race references that make it clear this is for Mid South
+    race_inserts = []
+    if race_terrain_ref:
+        race_inserts.append(race_terrain_ref)
+    if race_weather_ref and len(race_inserts) < 2:
+        race_inserts.append(race_weather_ref)
+    
+    if race_inserts:
+        # Build natural race reference text with proper capitalization
+        if len(race_inserts) == 2:
+            # Capitalize first word of each reference
+            ref1 = race_inserts[0][0].upper() + race_inserts[0][1:] if race_inserts[0] else ""
+            ref2 = race_inserts[1][0].upper() + race_inserts[1][1:] if race_inserts[1] else ""
+            race_text = f"{ref1} and {ref2}"
+        else:
+            race_text = race_inserts[0][0].upper() + race_inserts[0][1:] if race_inserts[0] else ""
+        
+        # Insert naturally into training_approach
+        if f"The {plan_title} builds systems" in training_approach_base:
+            # Insert as integrated phrase for natural grammar
+            # "The Plan builds systems for Mid South's [reference]."
+            # Make first word lowercase for natural flow, fix capitalization
+            race_text_lower = race_text[0].lower() + race_text[1:] if race_text else ""
+            # Capitalize proper nouns
+            race_text_lower = race_text_lower.replace("oklahoma", "Oklahoma")
+            race_text_lower = race_text_lower.replace("mid south", "Mid South")
+            # Fix "weather lottery" capitalization (should be lowercase)
+            race_text_lower = race_text_lower.replace("Weather lottery", "weather lottery")
+            race_text_lower = race_text_lower.replace("Unpredictable", "unpredictable")
+            race_text_lower = race_text_lower.replace("unpredictable conditions", "unpredictable conditions")
+            
+            # Insert as prepositional phrase - restructure sentence for better grammar
+            # Original: "The Plan builds systems that work/function"
+            # New: "The Plan builds systems for Mid South's [reference] that work/function"
+            if f" that work" in training_approach_base and f"The {plan_title} builds systems that work" in training_approach_base:
+                training_approach = training_approach_base.replace(
+                    f"The {plan_title} builds systems that work",
+                    f"The {plan_title} builds systems for Mid South's {race_text_lower} that work"
+                )
+            elif f" that function" in training_approach_base and f"The {plan_title} builds systems that function" in training_approach_base:
+                training_approach = training_approach_base.replace(
+                    f"The {plan_title} builds systems that function",
+                    f"The {plan_title} builds systems for Mid South's {race_text_lower} that function"
+                )
+            else:
+                # Fallback: insert after "builds systems" as separate clause
+                training_approach = training_approach_base.replace(
+                    f"The {plan_title} builds systems",
+                    f"The {plan_title} builds systems for Mid South's {race_text_lower}"
+                )
+        elif weather_adaptation and weather_adaptation in training_approach_base:
+            # Insert before weather adaptation as context
+            training_approach = training_approach_base.replace(
+                weather_adaptation,
+                f"Mid South's {race_text.lower()}. {weather_adaptation}"
+            )
+        else:
+            # Insert as new sentence after first sentence
+            sentences = training_approach_base.split('. ')
+            if len(sentences) > 1:
+                training_approach = sentences[0] + '. ' + f"Mid South's {race_text.lower()}. " + '. '.join(sentences[1:])
+            else:
+                training_approach = training_approach_base + f" Mid South's {race_text.lower()}."
+    else:
+        training_approach = training_approach_base
+    
+    # Build plan_features with Mid South reference
+    plan_features_base = copy.get('plan_features', '').format(
         level=level_display.lower(),
         distance=distance,
         weather_adaptation=weather_adaptation
     )
-    guide_content_summary = "Technical Skills Practice — Progressive drills for cornering, descending, rough terrain—weekly practice building competence. Race-Specific Preparation — Heat protocols, altitude adaptation (if needed), equipment choices. Training Fundamentals — Periodization principles that create predictable performance."
+    
+    # Add Mid South-specific challenge reference to plan_features
+    if race_challenge_ref and race_challenge_ref not in plan_features_base:
+        # Add at end if it fits naturally, with proper capitalization
+        challenge_text = race_challenge_ref[0].lower() + race_challenge_ref[1:] if race_challenge_ref else ""
+        plan_features = plan_features_base.rstrip('. ') + f". {challenge_text}."
+    else:
+        plan_features = plan_features_base
+    # Build guide content summary with race-specific references
+    guide_content_base = "Technical Skills Practice — Progressive drills for cornering, descending, rough terrain—weekly practice building competence. Race-Specific Preparation — Heat protocols, altitude adaptation (if needed), equipment choices. Training Fundamentals — Periodization principles that create predictable performance."
+    
+    # Add Mid South-specific content to guide summary if available
+    if race_terrain_ref or race_challenge_ref:
+        mid_south_note = ""
+        if race_terrain_ref:
+            mid_south_note = f"Mid South-specific: {race_terrain_ref.lower()}. "
+        elif race_challenge_ref:
+            mid_south_note = f"Mid South-specific: {race_challenge_ref.lower()}. "
+        # Insert before "Heat protocols" for natural flow
+        guide_content_summary = guide_content_base.replace(
+            "Race-Specific Preparation — Heat protocols",
+            f"Race-Specific Preparation — {mid_south_note}Heat protocols"
+        ) if mid_south_note else guide_content_base
+    else:
+        guide_content_summary = guide_content_base
     alternative_warning = copy.get('alternative_warning', '')
     delivery_headline = copy.get('delivery_headline', 'Systematic progression eliminates guesswork. Training becomes results.')
     delivery_details = copy.get('delivery_details', '').format(distance=distance)

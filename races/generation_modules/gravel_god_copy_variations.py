@@ -652,6 +652,94 @@ DELIVERY_DETAILS_VARIATIONS = [
 ]
 
 # ============================================================================
+# RACE-SPECIFIC CONTENT POOLS
+# ============================================================================
+
+MID_SOUTH_REFERENCES = {
+    "terrain": [
+        "Oklahoma red clay",
+        "red clay terrain",
+        "red clay roads",
+        "red clay that becomes unrideable mud when wet",
+        "red clay that turns to peanut butter mud",
+    ],
+    "weather": [
+        "weather lottery",
+        "weather lottery that decides your race",
+        "unpredictable weather",
+        "40-75°F temperature swings",
+        "weather lottery: freezing rain or heat",
+        "unpredictable conditions",
+    ],
+    "location": [
+        "Stillwater, Oklahoma",
+        "Oklahoma gravel",
+        "100 miles of Oklahoma",
+    ],
+    "character": [
+        "Bobby Wintle hugs every finisher",
+        "unreasonable hospitality instead of unreasonable suffering",
+        "tactical pack racing",
+        "exposed ridgelines amplify wind",
+        "exposed terrain",
+    ],
+    "challenges": [
+        "red clay becomes unrideable peanut butter mud when wet",
+        "exposed ridgelines amplify wind",
+        "tactical pack racing on exposed sections",
+        "weather turns mid-race",
+        "conditions change mid-race",
+    ],
+}
+
+def get_race_specific_reference(race_data, category, tier_key, level_key, used_refs=None):
+    """
+    Get a race-specific reference that's unique to this plan.
+    
+    Args:
+        race_data: Race JSON data
+        category: Reference category (terrain, weather, location, character, challenges)
+        tier_key: Tier key for uniqueness
+        level_key: Level key for uniqueness
+        used_refs: Set of already-used references to avoid duplicates
+    
+    Returns:
+        Race-specific reference string, or empty string if not applicable
+    """
+    race_name = race_data.get("race_metadata", {}).get("name", "").lower()
+    
+    # Only return Mid South references for Mid South
+    if "mid south" not in race_name:
+        return ""
+    
+    if used_refs is None:
+        used_refs = set()
+    
+    # Get appropriate pool
+    if race_name == "mid south":
+        pool = MID_SOUTH_REFERENCES.get(category, [])
+    else:
+        return ""
+    
+    if not pool:
+        return ""
+    
+    # Use tier+level as seed to get consistent but varied references
+    import random
+    seed_value = hash(f"{tier_key}_{level_key}_{category}")
+    random.seed(seed_value)
+    
+    # Filter out already-used references
+    available = [ref for ref in pool if ref not in used_refs]
+    if not available:
+        available = pool  # Fall back to all if all used
+    
+    selected = random.choice(available)
+    used_refs.add(selected)
+    
+    return selected
+
+# ============================================================================
 
 # UTILITY FUNCTIONS
 
