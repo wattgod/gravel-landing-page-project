@@ -241,7 +241,7 @@ def generate_ratings_html(data: Dict) -> str:
       <span class="gg-pill-icon">◆</span>
       <span>WHAT THE COURSE IS LIKE</span>
     </div>
-    <h2 class="gg-section-title">THE RATINGS</h2>
+    <h2 class="gg-section-title">COURSE BREAKDOWN</h2>
   </div>
 
   <div class="gg-ratings-grid">
@@ -1325,6 +1325,70 @@ def generate_training_plans_html(data: Dict) -> str:
     race = data['race']
     tp = race['training_plans']
     
+    # Challenge/solution mapping by tier and level
+    challenge_solution_map = {
+        ('Ayahuasca', 'Beginner'): {
+            'challenge': 'You have zero time but refuse to quit.',
+            'solution': 'HIIT that actually works—max fitness from 3-5 hours per week.'
+        },
+        ('Ayahuasca', 'Intermediate'): {
+            'challenge': 'Life keeps getting in the way of training.',
+            'solution': 'Time-crunched G-Spot training that builds real fitness without breaking your schedule.'
+        },
+        ('Ayahuasca', 'Masters 50+'): {
+            'challenge': 'Recovery takes longer, but goals haven\'t changed.',
+            'solution': 'HRV-based autoregulation that adapts to your body, not a calendar.'
+        },
+        ('Ayahuasca', 'Emergency'): {
+            'challenge': 'Race is 6 weeks away and you\'re not ready.',
+            'solution': 'Emergency sharpening protocol that maximizes fitness in minimal time.'
+        },
+        ('Finisher', 'Beginner'): {
+            'challenge': 'First gravel race and you don\'t know where to start.',
+            'solution': 'Progressive 12-week build that teaches you how to finish strong, not just survive.'
+        },
+        ('Finisher', 'Intermediate'): {
+            'challenge': 'You finish races but always feel like you left something out there.',
+            'solution': 'Polarized training that builds the endurance to finish proud, not shattered.'
+        },
+        ('Finisher', 'Advanced'): {
+            'challenge': 'You want a strong finish, not just a finish.',
+            'solution': 'GOAT Method training that optimizes every hour for maximum race-day performance.'
+        },
+        ('Finisher', 'Masters 50+'): {
+            'challenge': 'Age isn\'t an excuse, but recovery is real.',
+            'solution': 'Masters-specific periodization that respects recovery while building race fitness.'
+        },
+        ('Finisher', 'Emergency'): {
+            'challenge': 'Six weeks to go and you\'re behind schedule.',
+            'solution': 'Compressed training that maximizes fitness gains when time is short.'
+        },
+        ('Compete', 'Intermediate'): {
+            'challenge': 'You want to be in the moves, not just finish.',
+            'solution': 'Polarized training that builds the repeatability to surge and recover when it matters.'
+        },
+        ('Compete', 'Advanced'): {
+            'challenge': 'You want to compete, not just participate.',
+            'solution': 'Block periodization that builds threshold power that holds for hours.'
+        },
+        ('Compete', 'Masters 50+'): {
+            'challenge': 'You still want to race, not just ride.',
+            'solution': 'HRV-based autoregulation that adapts training to your recovery capacity.'
+        },
+        ('Compete', 'Emergency'): {
+            'challenge': 'Race is close and you need to be sharp.',
+            'solution': 'Emergency protocol that maximizes race-readiness in 6 weeks.'
+        },
+        ('Podium', 'Advanced'): {
+            'challenge': 'You want to contend, not just compete.',
+            'solution': 'HVLI training that builds massive aerobic volume for elite-level performance.'
+        },
+        ('Podium', 'GOAT'): {
+            'challenge': 'You want to win, not just finish.',
+            'solution': 'GOAT Method that optimizes every training signal for maximum race-day power.'
+        }
+    }
+    
     # Group plans by tier
     tiers_data = {
         'Ayahuasca': {'hours': '0–5 hrs / week', 'footer': 'For chaos schedules and stubborn goals. You train when you can, not when you "should".', 'plans': []},
@@ -1336,9 +1400,20 @@ def generate_training_plans_html(data: Dict) -> str:
     # Organize plans by tier
     for plan in tp['plans']:
         tier = plan['tier']
-        level_display = plan['level'] if plan['level'] != 'Emergency' else 'Save My Race'
+        level = plan['level']
+        level_display = level if level != 'Emergency' else 'Save My Race'
         name_display = plan['name']
         weeks = plan['weeks']
+        
+        # Get challenge/solution
+        key = (tier, level)
+        if key not in challenge_solution_map:
+            # Fallback for missing combinations
+            challenge_solution_map[key] = {
+                'challenge': 'You need a plan that works.',
+                'solution': 'Training that builds the fitness you need for race day.'
+            }
+        challenge_solution = challenge_solution_map[key]
         
         # Build full TP URL
         category = plan.get('category', 'gran-fondo-century')
@@ -1349,7 +1424,9 @@ def generate_training_plans_html(data: Dict) -> str:
         tiers_data[tier]['plans'].append({
             'display': display_name,
             'weeks': weeks,
-            'url': tp_url
+            'url': tp_url,
+            'challenge': challenge_solution['challenge'],
+            'solution': challenge_solution['solution']
         })
     
     # Generate tier cards HTML
@@ -1363,6 +1440,10 @@ def generate_training_plans_html(data: Dict) -> str:
             plan_html = f"""        <div class="gg-plan">
           <div class="gg-plan-name">
             {plan['display']} <span>({plan['weeks']} weeks)</span>
+          </div>
+          <div class="gg-plan-challenge-solution">
+            <div class="gg-plan-challenge"><strong>Challenge:</strong> {plan['challenge']}</div>
+            <div class="gg-plan-solution"><strong>Solution:</strong> {plan['solution']}</div>
           </div>
           <a href="{plan['url']}" class="gg-plan-cta" target="_blank">View Plan</a>
         </div>"""
@@ -1419,6 +1500,48 @@ def generate_training_plans_html(data: Dict) -> str:
   font-size: 11px;
 }}
 
+/* Volume Grid - 2 columns instead of 4 */
+.gg-volume-grid {{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}}
+
+@media (max-width: 768px) {{
+  .gg-volume-grid {{
+    grid-template-columns: 1fr;
+  }}
+}}
+
+/* Plan challenge/solution text */
+.gg-plan-challenge-solution {{
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #F5F5F5;
+  border-left: 4px solid #000;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}}
+
+.gg-plan-challenge {{
+  margin-bottom: 0.75rem;
+  color: #59473C;
+}}
+
+.gg-plan-solution {{
+  color: #59473C;
+}}
+
+.gg-plan-challenge strong,
+.gg-plan-solution strong {{
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+}}
+
 /* Fix for button text visibility */
 .gg-plan-cta {{
   display: inline-block;
@@ -1435,6 +1558,7 @@ def generate_training_plans_html(data: Dict) -> str:
   box-shadow: 4px 4px 0 #000;
   transition: all 0.15s ease;
   cursor: pointer;
+  margin-top: 0.5rem;
 }}
 
 .gg-plan-cta:hover {{
@@ -1451,6 +1575,196 @@ def generate_training_plans_html(data: Dict) -> str:
 </style>"""
     
     return template.format(tier_cards='\n\n'.join(tier_cards))
+
+
+def generate_coaching_cta_html() -> str:
+    """Generate coaching CTA section HTML."""
+    return """<section class="gg-coaching-cta-section">
+  <div class="gg-coaching-cta-card">
+    <div class="gg-coaching-cta-content">
+      <h3 class="gg-coaching-cta-title">Really Want to Train Right?</h3>
+      <p class="gg-coaching-cta-text">
+        Plans are templates. Coaching is personal. If you want someone who adapts your training to your life, not the other way around, let's talk.
+      </p>
+      <a href="https://gravelgodcycling.com/coaching/" class="gg-coaching-cta-button">
+        Apply for Coaching →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============================================================================
+   COACHING CTA BLOCK - NEOBRUTALIST
+   ============================================================================ */
+.gg-coaching-cta-section {
+  margin: 3rem 0 4rem;
+  padding: 0;
+}
+
+.gg-coaching-cta-card {
+  border: 4px solid #000000;
+  background: #4ECDC4;  /* Turquoise - matches tier badges */
+  padding: 2.5rem 2rem;
+  box-shadow: 10px 10px 0px 0px #000000;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gg-coaching-cta-content {
+  text-align: center;
+}
+
+.gg-coaching-cta-title {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000000;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.gg-coaching-cta-text {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0 0 1.5rem 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gg-coaching-cta-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #000000;
+  color: #FFFFFF !important;
+  border: 4px solid #000000;
+  text-decoration: none !important;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 6px 6px 0 #59473C;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.gg-coaching-cta-button:hover {
+  background: #59473C;
+  color: #FFFFFF !important;
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 #59473C;
+}
+
+.gg-coaching-cta-button:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 #59473C;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .gg-coaching-cta-card {
+    padding: 2rem 1.5rem;
+    box-shadow: 6px 6px 0px 0px #000000;
+  }
+  
+  .gg-coaching-cta-title {
+    font-size: 20px;
+  }
+  
+  .gg-coaching-cta-text {
+    font-size: 14px;
+  }
+  
+  .gg-coaching-cta-button {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+}
+</style>"""
+
+
+def generate_gravel_races_cta_html() -> str:
+    """Generate 'more gravel races' CTA section HTML."""
+    return """<div class="gravel-races-cta">
+  <h2>Ready to explore more suffering?</h2>
+  <a href="https://gravelgodcycling.com/gravel-races/" class="gravel-races-cta-button">← ALL GRAVEL RACES</a>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;700&display=swap');
+
+.gravel-races-cta {
+  background: #F5E5D3;
+  padding: 60px 20px;
+  border-top: 4px solid #000000;
+  text-align: center;
+  font-family: 'Sometype Mono', monospace;
+}
+
+.gravel-races-cta h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #59473C;
+  margin: 0 0 30px 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Multiple selectors for maximum specificity */
+.gravel-races-cta-button,
+.gravel-races-cta a.gravel-races-cta-button,
+a.gravel-races-cta-button:link,
+a.gravel-races-cta-button:visited {
+  display: inline-block !important;
+  background: #4ECDC4 !important;
+  color: #000000 !important;
+  font-family: 'Sometype Mono', monospace !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  padding: 16px 36px !important;
+  border: 4px solid #000000 !important;
+  box-shadow: 8px 8px 0 #000000 !important;
+  transition: all 0.15s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+}
+
+.gravel-races-cta-button:hover,
+.gravel-races-cta a.gravel-races-cta-button:hover {
+  transform: translate(4px, 4px) !important;
+  box-shadow: 4px 4px 0 #000000 !important;
+  background: #F4D03F !important;
+  color: #000000 !important;
+}
+
+.gravel-races-cta-button:active,
+.gravel-races-cta a.gravel-races-cta-button:active {
+  transform: translate(8px, 8px) !important;
+  box-shadow: 0 0 0 #000000 !important;
+  color: #000000 !important;
+}
+
+@media (max-width: 768px) {
+  .gravel-races-cta h2 {
+    font-size: 22px;
+  }
+  
+  .gravel-races-cta-button,
+  .gravel-races-cta a.gravel-races-cta-button {
+    font-size: 14px !important;
+    padding: 14px 28px !important;
+  }
+}
+</style>"""
 
 
 def find_widget_by_content(elements: List[Dict], search_pattern: str) -> Optional[Dict]:
@@ -1548,6 +1862,15 @@ def build_elementor_json(data: Dict, base_json_path: str) -> Dict:
     
     print("  Generating logistics section...")
     logistics_html = generate_logistics_html(data)
+    
+    print("  Generating coaching CTA...")
+    coaching_cta_html = generate_coaching_cta_html()
+    
+    print("  Generating gravel races CTA...")
+    gravel_races_cta_html = generate_gravel_races_cta_html()
+    
+    # Append CTAs to logistics section
+    logistics_html += '\n\n' + coaching_cta_html + '\n\n' + gravel_races_cta_html
     
     # Find and replace widgets in Elementor JSON
     print("  Replacing hero widget...")
