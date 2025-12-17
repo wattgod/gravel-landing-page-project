@@ -1733,7 +1733,7 @@ def generate_coaching_cta_html() -> str:
 }
 
 .gg-coaching-cta-button:hover {
-  background: #FFF5E6; /* Muted cream - earth-tone palette */
+  background: #F4D03F; /* Brand yellow - use judiciously */
   color: #000000 !important;
   transform: translate(3px, 3px);
   box-shadow: 3px 3px 0 #59473C;
