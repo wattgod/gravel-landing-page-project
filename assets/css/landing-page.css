@@ -162,8 +162,8 @@
 }
 
 .gg-vitals-table th {
-  /* Label column - black background, white text */
-  background: #000000;
+  /* Label column - earth-tone background, white text */
+  background: #59473C; /* Earth-tone brown - no black blocks in neobrutalist design */
   color: #FFFFFF;
   font-weight: 900;
   font-size: 14px;
