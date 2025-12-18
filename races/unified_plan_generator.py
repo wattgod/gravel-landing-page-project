@@ -169,10 +169,11 @@ class UnifiedPlanGenerator:
             )
             generated["cycling_workouts"] = list(workouts_dir.glob("*.zwo"))
         
-        # Load strength templates
-        templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2_PN_FINAL.md")
+        # Load strength templates (relative to this file)
+        generation_modules_dir = Path(__file__).parent / "generation_modules"
+        templates_file = generation_modules_dir / "MASTER_TEMPLATES_V2_PN_FINAL.md"
         if not templates_file.exists():
-            templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2.md")
+            templates_file = generation_modules_dir / "MASTER_TEMPLATES_V2.md"
         
         strength_templates = load_strength_templates(str(templates_file))
         

@@ -506,7 +506,7 @@ Examples:
     parser.add_argument(
         'templates_file',
         nargs='?',
-        default="../../Downloads/strengt3/MASTER_TEMPLATES_V2.md",
+        default=str(Path(__file__).parent / "MASTER_TEMPLATES_V2_PN_FINAL.md"),
         help='Path to MASTER_TEMPLATES_V2.md file'
     )
     

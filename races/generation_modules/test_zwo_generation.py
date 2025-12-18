@@ -24,7 +24,7 @@ class TestZWOGeneration(unittest.TestCase):
     def setUp(self):
         """Setup test environment"""
         self.test_output_dir = Path(tempfile.mkdtemp())
-        self.templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2_PN_FINAL.md")
+        self.templates_file = Path("generation_modules/MASTER_TEMPLATES_V2_PN_FINAL.md")
         
         if not self.templates_file.exists():
             self.skipTest(f"Templates file not found: {self.templates_file}")

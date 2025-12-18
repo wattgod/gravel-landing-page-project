@@ -37,7 +37,7 @@ def extract_exercises_from_templates(template_file: str) -> list:
     return sorted(exercises)
 
 def main():
-    template_file = sys.argv[1] if len(sys.argv) > 1 else "/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2_PN_FINAL.md"
+    template_file = sys.argv[1] if len(sys.argv) > 1 else "generation_modules/MASTER_TEMPLATES_V2_PN_FINAL.md"
     
     print("=" * 70)
     print("TEMPLATE EXERCISE VALIDATION")

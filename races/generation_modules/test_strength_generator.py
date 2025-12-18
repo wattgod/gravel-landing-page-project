@@ -36,7 +36,7 @@ class TestStrengthGenerator(unittest.TestCase):
     def setUpClass(cls):
         """Set up test fixtures once for all tests"""
         # Use the actual templates file
-        cls.templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2.md")
+        cls.templates_file = Path("generation_modules/MASTER_TEMPLATES_V2.md")
         if not cls.templates_file.exists():
             raise FileNotFoundError(f"Templates file not found: {cls.templates_file}")
         

@@ -272,15 +272,12 @@ def generate_plan_variant(race_data, plan_folder_name, plan_info, race_folder, r
         zwo_count = generate_zwo_files(plan_template, race_data, plan_info, plan_output_dir)
         
         # Generate strength workouts
-        # Templates file path: Use PN version with updated phase names
+        # Templates file path: Use PN version with updated phase names (relative to this file)
         base_path = Path(__file__).parent
-        templates_file = base_path.parent.parent / "Downloads" / "strengt3" / "MASTER_TEMPLATES_V2_PN_FINAL.md"
-        # Fallback: try absolute path
+        templates_file = base_path / "generation_modules" / "MASTER_TEMPLATES_V2_PN_FINAL.md"
+        # Fallback: original templates
         if not templates_file.exists():
-            templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2_PN_FINAL.md")
-        # Final fallback: original templates
-        if not templates_file.exists():
-            templates_file = Path("/Users/mattirowe/Downloads/strengt3/MASTER_TEMPLATES_V2.md")
+            templates_file = base_path / "generation_modules" / "MASTER_TEMPLATES_V2.md"
         
         strength_count = 0
         if templates_file.exists():
