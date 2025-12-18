@@ -22,7 +22,8 @@ from html import unescape
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import all section generators from automation modules
-from automation.training_plans import generate_training_plans_html as generate_training_plans_html_module, build_training_plans_data
+# NEW: On-demand training plans section (single CTA to questionnaire)
+from automation.training_plans_section import generate_training_plans_html as generate_training_plans_section_html
 from automation.blackpill import generate_blackpill_html
 from automation.hero import generate_hero_html
 from automation.vitals import generate_vitals_html
@@ -45,17 +46,10 @@ def load_race_data(json_path: str) -> Dict[str, Any]:
 
 def generate_training_plans_html(data: Dict) -> str:
     """
-    Generate training plans section using automation module.
-    Delegates to automation.training_plans for consistent structure.
+    Generate training plans section using on-demand model.
+    Single CTA pointing to questionnaire instead of 15 tier cards.
     """
-    race = data['race']
-    race_name = race.get('name', '')
-    
-    # Build tiers data using module function
-    tiers_data = build_training_plans_data(race)
-    
-    # Generate HTML using module function
-    return generate_training_plans_html_module(tiers_data, race_name)
+    return generate_training_plans_section_html(data)
 
 
 def find_widget_by_content(elements: List[Dict], search_pattern: str) -> Optional[Dict]:

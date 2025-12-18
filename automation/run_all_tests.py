@@ -26,6 +26,7 @@ TEST_FILES = [
     'test_final_verdict.py',
     'test_logistics.py',
     'test_ctas.py',
+    'test_training_plans_section.py',
 ]
 
 
