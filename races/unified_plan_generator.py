@@ -37,7 +37,17 @@ from generation_modules.zwo_generator import generate_all_zwo_files
 class UnifiedPlanGenerator:
     """Generates unified cycling + strength training plans."""
     
-    def __init__(self, race_id: str, tier_id: str, plan_weeks: int, race_date: str, race_data: dict = None):
+    def __init__(
+        self, 
+        race_id: str, 
+        tier_id: str, 
+        plan_weeks: int, 
+        race_date: str, 
+        race_data: dict = None,
+        weekly_structure_override: dict = None,
+        exercise_exclusions: list = None,
+        equipment_available: list = None
+    ):
         self.race_id = race_id
         self.tier_id = tier_id
         self.plan_weeks = plan_weeks
@@ -47,6 +57,11 @@ class UnifiedPlanGenerator:
         self.tier = get_tier(tier_id)
         self.race_profile = get_race_profile(race_id)
         self.race_data = race_data or {}
+        
+        # Athlete-specific overrides
+        self.weekly_structure_override = weekly_structure_override
+        self.exercise_exclusions = exercise_exclusions or []
+        self.equipment_available = equipment_available or []
         
         # Calculate plan start date
         self.start_date = self.race_date - timedelta(weeks=plan_weeks)
@@ -102,8 +117,18 @@ class UnifiedPlanGenerator:
                     
                 strength_phase = get_strength_phase(phase_name)
                 strength_freq = get_strength_frequency(self.tier_id, phase_name)
-                weekly_template = get_weekly_template(self.tier_id, phase_name)
-                strength_days = get_strength_days(self.tier_id, phase_name, strength_freq)
+                
+                # Use custom weekly structure if provided, otherwise use template
+                if self.weekly_structure_override:
+                    weekly_template = self.weekly_structure_override
+                    # Extract strength days from custom structure
+                    strength_days = [
+                        day for day, schedule in weekly_template.get("days", {}).items()
+                        if schedule.get("am") == "strength" or schedule.get("pm") == "strength"
+                    ]
+                else:
+                    weekly_template = get_weekly_template(self.tier_id, phase_name)
+                    strength_days = get_strength_days(self.tier_id, phase_name, strength_freq)
                 
                 schedule.append({
                     "week": week,
@@ -245,6 +270,10 @@ class UnifiedPlanGenerator:
             filename = f"W{week:02d}_STR_{pathway_name.replace(' ', '_')}_{session_letter}.zwo"
             output_path = output_dir / filename
             
+            # Apply exercise exclusions if provided
+            if self.exercise_exclusions:
+                description = self._apply_exercise_exclusions(description, self.exercise_exclusions)
+            
             # Create ZWO file
             create_strength_zwo_file(
                 week=week,
@@ -304,6 +333,54 @@ class UnifiedPlanGenerator:
             }
         
         return calendar
+    
+    def _apply_exercise_exclusions(self, description: str, exclusions: list) -> str:
+        """
+        Remove or replace excluded exercises from workout description.
+        
+        Args:
+            description: Workout description text
+            exclusions: List of exercise names to exclude
+        
+        Returns:
+            Modified description with excluded exercises removed/replaced
+        """
+        import re
+        
+        # Normalize exclusion names for matching (case-insensitive, handle variations)
+        exclusion_patterns = []
+        for exclusion in exclusions:
+            # Create pattern that matches exercise name (handles variations)
+            pattern = re.escape(exclusion)
+            # Match exercise name at start of line or after bullet/number
+            exclusion_patterns.append(
+                re.compile(
+                    rf'(?i)(?:^|\n)\s*[A-Z]?\d*\s*{pattern}[^→\n]*→[^\n]*',
+                    re.MULTILINE
+                )
+            )
+        
+        # Remove excluded exercises
+        modified_description = description
+        for pattern in exclusion_patterns:
+            modified_description = pattern.sub('', modified_description)
+        
+        # Clean up extra blank lines
+        modified_description = re.sub(r'\n{3,}', '\n\n', modified_description)
+        
+        # Add note about exclusions if any were removed
+        if modified_description != description:
+            exclusion_note = f"\n\n⚠️  Note: Some exercises have been excluded based on your injury history/limitations.\n"
+            # Find a good place to insert the note (after header, before first section)
+            header_end = modified_description.find('\n\n★')
+            if header_end > 0:
+                modified_description = (
+                    modified_description[:header_end] + 
+                    exclusion_note + 
+                    modified_description[header_end:]
+                )
+        
+        return modified_description
     
     def _generate_calendar_file(self, calendar: List[Dict], output_dir: Path):
         """Generate calendar file (JSON and markdown)."""
@@ -384,7 +461,10 @@ def generate_unified_plan(
     race_date: str,
     output_dir: str,
     race_data: dict = None,
-    plan_template: dict = None
+    plan_template: dict = None,
+    weekly_structure_override: dict = None,
+    exercise_exclusions: list = None,
+    equipment_available: list = None
 ) -> Dict:
     """
     Main entry point for unified plan generation.
@@ -397,11 +477,23 @@ def generate_unified_plan(
         output_dir: Output directory path
         race_data: Optional race data dict
         plan_template: Optional cycling plan template
+        weekly_structure_override: Optional custom weekly structure (from athlete preferences)
+        exercise_exclusions: Optional list of exercises to exclude (from injuries/limitations)
+        equipment_available: Optional list of available equipment
     
     Returns:
         Generation summary dict
     """
-    generator = UnifiedPlanGenerator(race_id, tier_id, plan_weeks, race_date, race_data)
+    generator = UnifiedPlanGenerator(
+        race_id=race_id,
+        tier_id=tier_id,
+        plan_weeks=plan_weeks,
+        race_date=race_date,
+        race_data=race_data,
+        weekly_structure_override=weekly_structure_override,
+        exercise_exclusions=exercise_exclusions,
+        equipment_available=equipment_available
+    )
     return generator.generate_plan(output_dir, plan_template)
 
 
