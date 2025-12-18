@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W12 STR: Fortify Engine (B)</name>
+  <description>★ STRENGTH: Yellow Pathway │ Session B │ Weeks 10-12
+  Phase: Max Strength │ RPE Target: 8-9
+  Equipment: KB/DB/Barbell (heavy), pull-up bar optional
+  Duration: ~50 min
+
+★ WARMUP (8 min) → All demos: gravelgod.com/demos
+  • Cat-Cow ─ 10 reps
+  • World's Greatest Stretch ─ 5/side
+  • Hip Circles (standing) ─ 10/side
+  • Band Pull-Aparts ─ 15 reps
+
+★ PREP (5 min) │ 2 rounds │ 60s rest
+  • Glute Bridge (banded) ─ 15 reps
+  • Dead Hang ─ 30 sec
+  • KB Swing (light, groove pattern) ─ 10 reps
+     → https://www.youtube.com/watch?v=sSESeQAir2M
+
+★ MAIN 1: Hinge Pattern │ 4 sets │ 2-3 min rest │ RPE 8-9
+  A1 Trap Bar DL or Heavy KB Deadlift ─ 5 reps
+     → Trap Bar: https://www.youtube.com/watch?v=_T7S5pEXVYI
+     → KB DL: https://www.youtube.com/watch?v=UGv0YjxPNBg
+  A2 Inverted Row (steep) or Weighted Pull-Up ─ 5-6 reps
+     → Inverted: https://www.youtube.com/watch?v=GdyhjXlxE-U
+     → Pull-Up: https://www.youtube.com/watch?v=eGo4IYlbE5g
+     → Default: Steep Inverted Row or Row + 3 sec hold.
+     → Weighted Pull-Up only if 8+ BW reps.
+
+★ MAIN 2: Single-Leg + Row │ 4 sets │ 2-3 min rest │ RPE 8-9
+  B1 Single-Leg RDL (heavy) or Conventional RDL ─ [same reps/sets]
+     → https://vimeo.com/111545574
+  B2 Heavy DB Row (3-point) ─ 6/side
+     → https://www.youtube.com/watch?v=pYcpY20QaE8
+
+★ CORE (8 min) │ 2 rounds │ 90s rest
+  C1 Pallof Press (heavy band) ─ [same reps/sets]
+     → https://vimeo.com/111469204
+  C2 Side Plank ─ [same reps/sets]
+     → https://vimeo.com/111522888
+  C3 Suitcase Deadlift ─ 6/side
+     → https://www.youtube.com/watch?v=PdEy1pNcbdA
+
+★ COOLDOWN (5 min) → All demos: gravelgod.com/demos
+  • 90-90 Hip Stretch ─ 45 sec/side
+  • Supine Hamstring Stretch ─ 45 sec/side
+  • Thread the Needle ─ 5/side
+
+★ ZERO EQUIPMENT (Hotel/Travel)
+  • Trap Bar/KB DL → Good Morning (BW)
+  • Inverted Row/Pull-Up → Towel Row or under table
+  • Single-Leg RDL → Same (BW)
+  • DB Row → Superman Pull
+  • Suitcase DL → Side Plank (hold)
+
+★ NOTES
+  Max Strength: heavy hinge = power on the pedals.
+  Full rest between sets. Quality reps only.
+  → Unilateral failing? Go bilateral. Strength &gt; wobble.
+  → No pull-up bar? Steep inverted row with pause at top.
+  → KB jump too big? Add reps or pause before adding weight.
+  → Week 12: Test day OR deload (cut volume 30%).
+  → Full guide: https://gravelgod.com/strength</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <FreeRide Duration="60" Power="0.0"/>
+  </workout>
+</workout_file>

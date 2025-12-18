@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W09 STR: Lift Heavy Shit (B)</name>
+  <description>★ STRENGTH: Lift Heavy Shit │ Session B │ Week 9
+
+  Progressive overload. Real weight.
+
+  RPE Target: 6-8 │ Equipment: Barbell, DB, bench
+
+
+★ WARMUP (8 min) → All demos: gravelgod.com/demos
+  • Cat-Cow ─ 10 reps
+  • World's Greatest Stretch ─ 5/side
+  • Hip Circles (standing) ─ 10/side
+  • Band Pull-Aparts ─ 15 reps
+
+★ PREP (5 min) │ 2 rounds │ 45s rest
+  • Glute Bridge (banded) ─ 15 reps
+  • Dead Hang or Lat Stretch ─ 20 sec
+  • Good Morning (bodyweight) ─ 10 reps
+
+★ MAIN 1: Hinge Pattern │ 4 sets │ 90s rest │ RPE 7-8
+  A1 Single-Leg RDL (or Conventional RDL) ─ [same reps/sets]
+     → https://vimeo.com/111545574
+  A2 Bent-Over DB Row ─ [same reps/sets]
+     → https://vimeo.com/111048714
+
+★ MAIN 2: Pull + Hinge │ 4 sets │ 90s rest │ RPE 7-8
+  B1 KB/DB Deadlift ─ [same reps/sets]
+     → https://vimeo.com/111040676
+  B2 Inverted Row or Pull-Up ─ 6-10 reps
+     → Inverted: https://www.youtube.com/watch?v=GdyhjXlxE-U
+     → Pull-Up: https://www.youtube.com/watch?v=eGo4IYlbE5g
+     → Default: Inverted Row. Pull-Up only if you own 5+ strict reps.
+
+★ CORE (10 min) │ 3 rounds │ 60s rest
+  C1 Pallof Press (hold 5 sec) ─ [same reps/sets]
+     → https://vimeo.com/111469204
+  C2 Side Plank ─ [same reps/sets]
+     → https://vimeo.com/111522888
+  C3 Band Chop ─ [same reps/sets]
+     → https://vimeo.com/111132217
+
+★ COOLDOWN (5 min) → All demos: gravelgod.com/demos
+  • 90-90 Hip Stretch ─ 45 sec/side
+  • Supine Hamstring Stretch ─ 45 sec/side
+  • Thread the Needle ─ 5/side
+
+★ ZERO EQUIPMENT (Hotel/Travel)
+  • Single-Leg RDL → Same (BW, reach to floor)
+  • Bent-Over DB Row → Superman Pull (face-down, lift arms/chest)
+  • KB/DB Deadlift → Good Morning (BW)
+  • Inverted Row/Pull-Up → Towel Row or under table
+  • Band Chop → Russian Twist (fast)
+
+★ NOTES
+  Hypertrophy zone: 8-12 reps builds muscle that serves the bike.
+  → SL RDL wobbling? Switch to Conventional RDL.
+  → No pull-up bar? Inverted row IS the exercise.
+  → KB jump too big? Add reps or pause before adding weight.
+  → Full guide: https://gravelgod.com/strength</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <FreeRide Duration="60" Power="0.0"/>
+  </workout>
+</workout_file>

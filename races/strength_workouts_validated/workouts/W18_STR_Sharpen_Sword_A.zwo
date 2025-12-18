@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W18 STR: Sharpen Sword (A)</name>
+  <description>★ STRENGTH: Green Pathway │ Session A │ Weeks 17-18
+  Phase: Conversion │ RPE Target: 6-7
+  Equipment: Light KB/DB, bands
+  Duration: ~35 min
+
+★ WARMUP (8 min) → All demos: gravelgod.com/demos
+  • Jump Rope ─ 60 sec
+  • Leg Swings ─ 10/direction
+  • Air Squat (fast) ─ 10 reps
+  • Arm Circles ─ 10/direction
+
+★ POWER PREP (5 min) │ 2 rounds │ 60s rest
+  • Squat Jump (low box) ─ [same reps/sets]
+     → https://vimeo.com/111473749
+  • Push-Up (explosive, not plyometric) ─ 5 reps
+
+★ MAIN 1: Sport-Specific │ 3 sets │ 2 min rest │ Quality Focus
+  A1 Single-Leg Squat to Box (or Goblet Squat) ─ [same reps/sets]
+     → https://vimeo.com/111550275
+  A2 Clapping Push-Up or Fast Push-Up ─ [same reps/sets]
+     → https://vimeo.com/111126228
+
+★ MAIN 2: Reduced Volume │ 3 sets │ 2 min rest │ RPE 6-7
+  B1 Split Squat Jump (or Jump Squat) ─ [same reps/sets]
+     → https://vimeo.com/111473749
+  B2 Med Ball Push or Explosive Push-Up ─ [same reps/sets]
+     → https://vimeo.com/111126228
+
+★ CORE (5 min) │ 2 rounds │ 45s rest
+  C1 Dead Bug (fast) ─ [same reps/sets]
+     → https://vimeo.com/111109110
+  C2 Mountain Climbers ─ 20 total
+
+★ COOLDOWN (5 min) → All demos: gravelgod.com/demos
+  • Foam Roll Quads ─ 60 sec
+  • Hip Flexor Stretch ─ 45 sec/side
+  • Pigeon Pose ─ 45 sec/side
+
+★ ZERO EQUIPMENT (Hotel/Travel)
+  • Single-Leg Squat to Box → Pistol (chair assist)
+  • Clapping Push-Up → Same (or fast standard)
+  • Split Squat Jump → Same or Tuck Jump
+  • Med Ball Push → Explosive Push-Up
+
+★ NOTES
+  Conversion: Volume drops, intensity stays.
+  You're transferring strength → pedal power.
+  Feel athletic after this, not destroyed.
+  → Unilateral failing? Go bilateral. Strength &gt; wobble.
+  → Full guide: https://gravelgod.com/strength</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <FreeRide Duration="60" Power="0.0"/>
+  </workout>
+</workout_file>

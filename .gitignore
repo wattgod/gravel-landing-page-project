@@ -14,6 +14,12 @@ races/*/workouts/
 races/*/marketplace_description.html
 races/*/training_plan_guide.*
 
+# BUT keep standalone strength workout libraries
+!races/strength_workouts_final/
+!races/strength_workouts_final/workouts/
+!races/strength_workouts_validated/
+!races/strength_workouts_validated/workouts/
+
 # Keep race JSON templates
 !races/*.json
 !races/race_schema_template.json

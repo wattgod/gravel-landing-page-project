@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>W19 STR: Race Ready (A)</name>
+  <description>★ STRENGTH: Green Pathway │ Session A │ Weeks 19-20
+  Phase: Maintenance │ RPE Target: 5-6
+  Equipment: Bodyweight, light KB/DB optional
+  Duration: ~25 min
+
+★ WARMUP (5 min) → All demos: gravelgod.com/demos
+  • Light Jog in Place ─ 60 sec
+  • Leg Swings ─ 8/direction
+  • Air Squat ─ 8 reps
+  • Arm Circles ─ 8/direction
+
+★ ACTIVATION (5 min) │ 1 round
+  • Box Jump or Squat Jump (light) ─ [same reps/sets]
+     → https://vimeo.com/111032509
+  • Push-Up ─ 5 reps
+  • Lateral Lunge ─ 5/side
+
+★ MAIN (10 min) │ 2 sets │ 2 min rest │ Stay Sharp
+  A1 Goblet Squat (light) ─ [same reps/sets]
+     → https://vimeo.com/111129796
+  A2 Push-Up ─ [same reps/sets]
+     → https://vimeo.com/111473394
+  A3 Jump Squat ─ [same reps/sets]
+     → https://vimeo.com/111473749
+
+★ CORE (5 min) │ 1-2 rounds
+  C1 Plank ─ [same reps/sets]
+     → https://vimeo.com/111471004
+  C2 Dead Bug ─ [same reps/sets]
+     → https://vimeo.com/111109110
+  C3 Ab Wheel or Weighted Dead Bug ─ 6 reps
+     → Ab Wheel: https://www.youtube.com/watch?v=rGevQLZ5aOw
+     → Weighted DB: https://www.youtube.com/watch?v=xmQ9zF3DoW8
+
+★ COOLDOWN (5 min) → All demos: gravelgod.com/demos
+  • Stretch what's tight
+  • Focus on hip flexors + quads
+
+★ ZERO EQUIPMENT (Hotel/Travel)
+  • Goblet Squat → Air Squat
+  • Push-Up → Same
+  • Jump Squat → Same
+  • Ab Wheel → Plank Knee-to-Elbow
+
+★ NOTES
+  Minimal effective dose. Don't dig a hole.
+  Race week? Consider skipping or 1 set only.
+  You're sharp. Stay sharp. Trust the work.
+  → Full guide: https://gravelgod.com/strength</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <FreeRide Duration="60" Power="0.0"/>
+  </workout>
+</workout_file>
