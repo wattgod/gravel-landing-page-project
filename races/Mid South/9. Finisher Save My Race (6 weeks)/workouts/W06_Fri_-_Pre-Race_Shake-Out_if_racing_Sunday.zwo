@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <workout_file>
   <author>Gravel God Training</author>
-  <name>Training Plan Survey</name>
+  <name>W06 Fri - Pre-Race Shake-Out (if racing Sunday)</name>
   <description>• STRUCTURE: 15 min easy → 2x3 min @ race pace (2 min easy between) → 2x90sec @ 105% FTP (2 min easy between) → 2x30sec @ 110% FTP (90sec easy between) → 10 min easy • Final ride before race. Legs should feel fresh and powerful. Check bike one last time. Visualize race execution—conservative start, steady middle, finish strong. • CADENCE WORK: High cadence on all efforts (100+ rpm).
 
 • MID SOUTH - WEATHER ADAPTATION (Weeks 4-10):
@@ -11,18 +11,7 @@ Complete this quality session in normal conditions (preserve workout quality). W
 &lt;90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated.
 
 • MID SOUTH - DAILY BASELINE HYDRATION:
-Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).
-
-🎉 CONGRATULATIONS - YOU DID IT! 🎉
-
-You've completed the Finisher Save My Race training plan. That's not easy. You showed up. You put in the work. You built the fitness. Now it's time to race—or you already did.
-
-• TRAINING PLAN SURVEY (POST-COMPLETION):
-Your experience matters. Share what worked, what didn't, and what we can improve. This feedback directly shapes future plans. Takes 3-4 minutes.
-
-Survey: https://wattgod.github.io/gravel-landing-page-project/guides/mid-south/surveys/survey-mid-south-finisher-save-my-race.html
-
-Your honest feedback helps us make each plan better. Thank you for trusting the process. Now go execute. 🚴</description>
+Start day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear).</description>
   <sportType>bike</sportType>
       <workout>
     <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.70"/>

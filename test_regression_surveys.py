@@ -196,6 +196,53 @@ def test_survey_url_in_workout(race_folder, race_json_path):
     
     return errors
 
+def test_survey_only_on_final_sunday(race_folder):
+    """Test that survey is ONLY added to final Sunday workout, not other workouts"""
+    race_folder = Path(race_folder)
+    errors = []
+    
+    plan_folders = [d for d in race_folder.iterdir() if d.is_dir() and d.name[0].isdigit()]
+    
+    for plan_folder in sorted(plan_folders):
+        workouts_dir = plan_folder / "workouts"
+        if not workouts_dir.exists():
+            continue
+        
+        # Get plan weeks from folder name
+        weeks_match = re.search(r'(\d+)\s*weeks?', plan_folder.name, re.I)
+        final_week = int(weeks_match.group(1)) if weeks_match else 12
+        
+        for workout_file in workouts_dir.glob("*.zwo"):
+            filename = workout_file.name
+            content = workout_file.read_text(encoding='utf-8')
+            
+            # Extract week number from filename (e.g., W06_Sun -> 6)
+            week_match = re.search(r'W(\d+)_', filename)
+            if not week_match:
+                continue
+            week_num = int(week_match.group(1))
+            
+            # Check if this is the actual day indicator (not just "Sunday" in the name)
+            # Pattern: W##_Sun_- is Sunday, W##_Fri_- is Friday even if "Sunday" is in the name
+            is_sunday_workout = "_Sun_-" in filename or "_Sun_" in filename
+            is_final_week = week_num == final_week
+            
+            has_survey = "TRAINING PLAN SURVEY" in content
+            has_survey_name = "<name>Training Plan Survey</name>" in content
+            
+            # Survey should ONLY be on final week Sunday
+            if is_final_week and is_sunday_workout:
+                # Should have survey
+                if not has_survey:
+                    errors.append(f"❌ {plan_folder.name}: Survey missing from final Sunday ({filename})")
+            else:
+                # Should NOT have survey
+                if has_survey or has_survey_name:
+                    errors.append(f"❌ {plan_folder.name}: Survey incorrectly added to {filename} (week {week_num}, not final Sunday)")
+    
+    return errors
+
+
 def test_survey_github_pages_deployment(race_json_path):
     """Test that surveys are deployed to GitHub Pages docs structure"""
     race_data = json.load(open(race_json_path))
@@ -284,7 +331,17 @@ if __name__ == "__main__":
             for error in errors:
                 print(f"    {error}")
         
-        # Test 5: GitHub Pages deployment
+        # Test 5: Survey ONLY on final Sunday (regression for bug where "Sunday" in name triggered survey)
+        print("  Testing survey only on final Sunday (not Fri/other days)...")
+        errors = test_survey_only_on_final_sunday(mid_south_folder)
+        all_errors.extend(errors)
+        if not errors:
+            print("    ✓ Survey correctly placed only on final Sunday workouts")
+        else:
+            for error in errors:
+                print(f"    {error}")
+        
+        # Test 6: GitHub Pages deployment
         print("  Testing GitHub Pages deployment...")
         errors = test_survey_github_pages_deployment(mid_south_json)
         all_errors.extend(errors)

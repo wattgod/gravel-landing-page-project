@@ -158,8 +158,10 @@ def add_survey_link(week_num, workout_name, race_data, plan_info):
     plan_weeks = plan_info.get("weeks", 12)
     
     # Check if this is the final week and Sunday workout
+    # Pattern: "W## Sun - ..." where Sun is the day indicator (not a substring like "Sunday")
     is_final_week = week_num == plan_weeks
-    is_sunday = "Sun" in workout_name or "Sunday" in workout_name
+    # Check for Sunday day indicator pattern: " Sun - " or starts with "W## Sun"
+    is_sunday = " Sun - " in workout_name or re.match(r'^W\d+\s+Sun\s+-', workout_name) is not None
     
     if is_final_week and is_sunday:
         race_name = race_data.get("race_metadata", {}).get("name", "Race")
