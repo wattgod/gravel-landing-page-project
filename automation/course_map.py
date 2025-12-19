@@ -2,6 +2,7 @@
 Gravel God Course Map Section Generator
 
 Generates the course map section with RideWithGPS embed and suffering zones.
+Includes inline CSS for complete modularization.
 
 Usage:
     from automation.course_map import generate_course_map_html
@@ -84,45 +85,253 @@ def generate_course_map_html(data: Dict) -> str:
     else:
         iframe_src = f"https://ridewithgps.com/embeds?type=route&id={rwgps_id}&title={rwgps_name}&sampleGraph=true&distanceMarkers=true"
     
-    template = f"""<section class="gg-route-section js-guide-section" id="course-map">
-      <div class="gg-route-card">
-        <div class="gg-route-card-inner">
-
+    # Section HTML - compacted
+    section_html = f"""<section class="gg-route-section" id="course-map">
+  <div class="gg-route-card">
+    <div class="gg-route-card-inner">
       <header class="gg-route-header">
-        <span class="gg-pill gg-pill--small">Course Map</span>
-        <h2 class="gg-route-title">
-          WHAT {distance} MILES OF {location.upper()} ACTUALLY LOOKS LIKE
-        </h2>
-        <p class="gg-route-lede">
-          Hover over the profile to see where the climbs, chaos, and
-          "why did I sign up for this" moments actually are.
-        </p>
+        <span class="gg-pill">Course Map</span>
+        <h2 class="gg-route-title">WHAT {distance} MILES OF {location.upper()} ACTUALLY LOOKS LIKE</h2>
+        <p class="gg-route-lede">Hover over the profile to see where the climbs, chaos, and "why did I sign up for this" moments actually are.</p>
       </header>
-
       <div class="gg-route-frame-wrap">
-        <iframe
-          src="{iframe_src}"
-          style="width: 1px; min-width: 100%; height: 650px; border: none;"
-          scrolling="no"
-        ></iframe>
+        <iframe src="{iframe_src}" style="width: 1px; min-width: 100%; height: 650px; border: none;" scrolling="no"></iframe>
       </div>
-
-      <!-- Suffering Zones -->
       <div class="gg-suffering-zones">
 {chr(10).join(zones_html)}
       </div>
-
-      <!-- Course Breakdown Research Note -->
       <div class="gg-course-breakdown-note">
         <strong>Course Breakdown:</strong> Suffering zones are based on race reports, Strava segments, and course analysis. Terrain details reflect typical conditions—weather can dramatically change difficulty.
       </div>
-
-      <footer class="gg-route-caption">
-        Elevation + route courtesy of RideWithGPS. Suffering courtesy of you.
-      </footer>
-
+      <footer class="gg-route-caption">Elevation + route courtesy of RideWithGPS. Suffering courtesy of you.</footer>
     </div>
   </div>
 </section>"""
     
-    return template
+    # Style block - complete CSS for course map section
+    style_html = f"""<style>
+/* Course Map Section */
+.gg-route-section {{
+  max-width: 1000px;
+  margin: 48px auto;
+  padding: 0 24px;
+}}
+
+.gg-route-card {{
+  border: 4px solid #000000;
+  background: #FFFFFF;
+  box-shadow: 8px 8px 0px 0px #000000;
+}}
+
+.gg-route-card-inner {{
+  padding: 32px;
+}}
+
+.gg-route-header {{
+  text-align: center;
+  margin-bottom: 32px;
+}}
+
+.gg-pill {{
+  display: inline-block;
+  background: #F4D03F;
+  color: #000000;
+  padding: 8px 20px;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  margin-bottom: 20px;
+}}
+
+.gg-route-title {{
+  font-family: 'Sometype Mono', monospace;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}}
+
+.gg-route-lede {{
+  font-family: 'Sometype Mono', monospace;
+  font-size: 16px;
+  color: #59473C;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}}
+
+.gg-route-frame-wrap {{
+  margin: 32px 0;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px #000000;
+  overflow: hidden;
+}}
+
+.gg-suffering-zones {{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}}
+
+.gg-zone-card {{
+  border: 4px solid #000000;
+  background: #FFFFFF;
+  padding: 0;
+  position: relative;
+  box-shadow: 8px 8px 0px 0px #000000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  overflow: hidden;
+}}
+
+.gg-zone-card:hover {{
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000000;
+}}
+
+.gg-zone-card:nth-child(odd) {{
+  background: #4ECDC4;
+}}
+
+.gg-zone-card:nth-child(even) {{
+  background: #FFFFFF;
+}}
+
+.gg-zone-mile {{
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #59473C;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 3px solid #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+.gg-zone-label {{
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 24px 20px 16px 20px;
+  border-bottom: 4px solid #000000;
+  background: #59473C;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+.gg-zone-desc {{
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}}
+
+.gg-zone-desc p {{
+  margin: 0 0 12px 0;
+}}
+
+.gg-zone-desc strong {{
+  font-weight: 900;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: #59473C;
+  color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+.gg-zone-desc em {{
+  font-style: normal;
+  display: block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #F0F0F0;
+  border-left: 4px solid #000000;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  font-weight: 600;
+  color: #000000;
+}}
+
+.gg-zone-citation {{
+  padding: 12px 20px;
+  background: #F5F5F5;
+  border-top: 3px solid #000000;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666666;
+  font-family: 'Sometype Mono', monospace;
+}}
+
+.gg-course-breakdown-note {{
+  border: 4px solid #000000;
+  background: #FFF5E6;
+  padding: 16px 20px;
+  margin-top: 32px;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 6px 6px 0px 0px #000000;
+}}
+
+.gg-course-breakdown-note strong {{
+  font-weight: 900;
+}}
+
+.gg-route-caption {{
+  text-align: center;
+  margin-top: 24px;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 13px;
+  color: #8C7568;
+  font-style: italic;
+}}
+
+/* Responsive */
+@media (max-width: 768px) {{
+  .gg-route-section {{
+    padding: 0 16px;
+  }}
+  
+  .gg-route-card-inner {{
+    padding: 24px 16px;
+  }}
+  
+  .gg-route-title {{
+    font-size: 24px;
+  }}
+  
+  .gg-suffering-zones {{
+    grid-template-columns: 1fr;
+  }}
+}}
+</style>"""
+    
+    # CRITICAL: Style tag comes AFTER section (like blackpill.py)
+    return section_html + "\n" + style_html
