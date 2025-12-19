@@ -96,7 +96,6 @@ def generate_training_plans_section(
     </div>
     
     <div class="cta-footer">
-      <div class="cta-price">$199 <span>one-time</span></div>
       <div class="cta-delivery">Plans delivered same day.</div>
     </div>
   </div>
