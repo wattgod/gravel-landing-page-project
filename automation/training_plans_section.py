@@ -37,67 +37,67 @@ def generate_training_plans_section(
     
     questionnaire_url = f"https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race={race_slug}"
     
-    html = f"""<section class="gg-training-section" id="training">
+    html = f"""<section class="training-section" id="training">
 
 {get_training_plans_css()}
 
   <!-- Section Header -->
-  <div class="gg-training-header">
-    <div class="gg-training-badge">◆ Training Plans</div>
-    <h2 class="gg-training-title">Your Plan. Built for You.</h2>
-    <p class="gg-training-subtitle">We build a plan calibrated to <strong>{race_name}'s</strong> {race_challenge}.</p>
+  <div class="section-header">
+    <div class="section-badge">◆ Training Plans</div>
+    <h2 class="section-title">Your Plan. Built for You.</h2>
+    <p class="section-subtitle">We build a plan calibrated to <strong>{race_name}'s</strong> {race_challenge}.</p>
   </div>
   
   <!-- 3-Step Process -->
-  <div class="gg-training-process-row">
-    <div class="gg-training-process-step">
-      <div class="gg-training-process-number">1</div>
+  <div class="process-row">
+    <div class="process-step">
+      <div class="process-number">1</div>
       <h3>Fill Out the Questionnaire</h3>
       <p>Hours per week, race goals, schedule constraints, injury history. Takes 5 minutes.</p>
     </div>
-    <div class="gg-training-process-step">
-      <div class="gg-training-process-number">2</div>
+    <div class="process-step">
+      <div class="process-number">2</div>
       <h3>I Build Your Plan</h3>
       <p>A custom training plan structured around YOUR life with workouts you can upload to any device or platform.</p>
-      <p class="gg-training-device-list">Garmin · Wahoo · Hammerhead · Zwift · TrainerRoad · TrainingPeaks</p>
+      <p class="device-list">Garmin · Wahoo · Hammerhead · Zwift · TrainerRoad · TrainingPeaks</p>
     </div>
-    <div class="gg-training-process-step">
-      <div class="gg-training-process-number">3</div>
+    <div class="process-step">
+      <div class="process-number">3</div>
       <h3>Train With Confidence</h3>
       <p>Personalized guide with race strategy, fueling, pacing, and race-day execution.</p>
     </div>
   </div>
   
   <!-- CTA Block -->
-  <div class="gg-training-cta-block">
+  <div class="cta-block">
     <h3>Ready to Build Your {race_name} Plan?</h3>
     
-    <a href="{questionnaire_url}" class="gg-training-cta-button" target="_blank">
+    <a href="{questionnaire_url}" class="cta-button" target="_blank">
       Build My Training Plan →
     </a>
     
-    <div class="gg-training-includes-row">
-      <div class="gg-training-includes-item">
-        <div class="gg-training-includes-icon">✓</div>
-        <span>Custom structured workouts</span>
+    <div class="includes-row">
+      <div class="includes-item">
+        <div class="includes-icon">✓</div>
+        <span>Workouts for head unit or Zwift</span>
       </div>
-      <div class="gg-training-includes-item">
-        <div class="gg-training-includes-icon">✓</div>
-        <span>ZWO files for all platforms</span>
+      <div class="includes-item">
+        <div class="includes-icon">✓</div>
+        <span>35,000+ word gravel manual</span>
       </div>
-      <div class="gg-training-includes-item">
-        <div class="gg-training-includes-icon">✓</div>
-        <span>Personalized race guide</span>
+      <div class="includes-item">
+        <div class="includes-icon">✓</div>
+        <span>Heat, fueling, pacing playbooks</span>
       </div>
-      <div class="gg-training-includes-item">
-        <div class="gg-training-includes-icon">✓</div>
+      <div class="includes-item">
+        <div class="includes-icon">✓</div>
         <span>Race-specific strategy</span>
       </div>
     </div>
     
-    <div class="gg-training-cta-footer">
-      <div class="gg-training-cta-price">$199 <span>one-time</span></div>
-      <div class="gg-training-cta-delivery">Plans delivered same day.</div>
+    <div class="cta-footer">
+      <div class="cta-price">$199 <span>one-time</span></div>
+      <div class="cta-delivery">Plans delivered same day.</div>
     </div>
   </div>
   
@@ -113,18 +113,18 @@ def get_training_plans_css() -> str:
     """
     return """<style>
 /* Training Plans Section - On-Demand Model */
-.gg-training-section {
+.training-section {
   max-width: 1000px;
   margin: 0 auto;
   padding: 48px 24px;
 }
 
-.gg-training-header {
+.section-header {
   text-align: center;
   margin-bottom: 48px;
 }
 
-.gg-training-badge {
+.section-badge {
   display: inline-block;
   background: #F4D03F;
   color: #2c2c2c;
@@ -139,7 +139,7 @@ def get_training_plans_css() -> str:
   margin-bottom: 20px;
 }
 
-.gg-training-title {
+.section-title {
   font-family: 'Sometype Mono', monospace;
   font-size: 36px;
   font-weight: 700;
@@ -149,7 +149,7 @@ def get_training_plans_css() -> str:
   letter-spacing: 0.02em;
 }
 
-.gg-training-subtitle {
+.section-subtitle {
   font-family: 'Sometype Mono', monospace;
   font-size: 16px;
   color: #8C7568;
@@ -158,12 +158,12 @@ def get_training_plans_css() -> str:
   line-height: 1.6;
 }
 
-.gg-training-subtitle strong {
+.section-subtitle strong {
   color: #59473C;
 }
 
 /* 3-Step Process */
-.gg-training-process-row {
+.process-row {
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -171,7 +171,7 @@ def get_training_plans_css() -> str:
   flex-wrap: wrap;
 }
 
-.gg-training-process-step {
+.process-step {
   background: #fff;
   border: 3px solid #2c2c2c;
   padding: 28px 24px;
@@ -182,7 +182,7 @@ def get_training_plans_css() -> str:
   font-family: 'Sometype Mono', monospace;
 }
 
-.gg-training-process-number {
+.process-number {
   position: absolute;
   top: -16px;
   left: 50%;
@@ -199,7 +199,7 @@ def get_training_plans_css() -> str:
   font-size: 14px;
 }
 
-.gg-training-process-step h3 {
+.process-step h3 {
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -209,14 +209,14 @@ def get_training_plans_css() -> str:
   color: #2c2c2c;
 }
 
-.gg-training-process-step p {
+.process-step p {
   font-size: 13px;
   color: #59473C;
   line-height: 1.6;
   margin: 0;
 }
 
-.gg-training-device-list {
+.device-list {
   font-size: 12px !important;
   color: #8C7568 !important;
   margin-top: 10px !important;
@@ -224,7 +224,7 @@ def get_training_plans_css() -> str:
 }
 
 /* CTA Block */
-.gg-training-cta-block {
+.cta-block {
   background: #2c2c2c;
   padding: 40px;
   text-align: center;
@@ -232,7 +232,7 @@ def get_training_plans_css() -> str:
   box-shadow: 8px 8px 0 #59473C;
 }
 
-.gg-training-cta-block h3 {
+.cta-block h3 {
   font-family: 'Sometype Mono', monospace;
   color: #F5F5DC;
   font-size: 24px;
@@ -241,7 +241,7 @@ def get_training_plans_css() -> str:
   margin-bottom: 24px;
 }
 
-.gg-training-cta-button {
+.cta-button {
   display: inline-block;
   background: #4ECDC4;
   color: #2c2c2c !important;
@@ -257,13 +257,13 @@ def get_training_plans_css() -> str:
   transition: transform 0.1s, box-shadow 0.1s;
 }
 
-.gg-training-cta-button:hover {
+.cta-button:hover {
   transform: translate(3px, 3px);
   box-shadow: 3px 3px 0 #F4D03F;
   color: #2c2c2c !important;
 }
 
-.gg-training-includes-row {
+.includes-row {
   display: flex;
   justify-content: center;
   gap: 32px;
@@ -271,7 +271,7 @@ def get_training_plans_css() -> str:
   flex-wrap: wrap;
 }
 
-.gg-training-includes-item {
+.includes-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -280,7 +280,7 @@ def get_training_plans_css() -> str:
   font-size: 13px;
 }
 
-.gg-training-includes-icon {
+.includes-icon {
   width: 24px;
   height: 24px;
   background: #4ECDC4;
@@ -292,7 +292,7 @@ def get_training_plans_css() -> str:
   color: #2c2c2c;
 }
 
-.gg-training-cta-footer {
+.cta-footer {
   margin-top: 28px;
   display: flex;
   justify-content: center;
@@ -301,21 +301,21 @@ def get_training_plans_css() -> str:
   flex-wrap: wrap;
 }
 
-.gg-training-cta-price {
+.cta-price {
   font-family: 'Sometype Mono', monospace;
   color: #4ECDC4;
   font-size: 28px;
   font-weight: 700;
 }
 
-.gg-training-cta-price span {
+.cta-price span {
   font-size: 14px;
   color: #A89074;
   font-weight: 400;
   margin-left: 8px;
 }
 
-.gg-training-cta-delivery {
+.cta-delivery {
   font-family: 'Sometype Mono', monospace;
   color: #A89074;
   font-size: 13px;
@@ -323,28 +323,28 @@ def get_training_plans_css() -> str:
 
 /* Responsive */
 @media (max-width: 900px) {
-  .gg-training-process-row {
+  .process-row {
     flex-direction: column;
     align-items: center;
   }
   
-  .gg-training-process-step {
+  .process-step {
     width: 100%;
     max-width: 400px;
   }
 }
 
 @media (max-width: 600px) {
-  .gg-training-includes-row {
+  .includes-row {
     flex-direction: column;
     align-items: center;
   }
   
-  .gg-training-cta-footer {
+  .cta-footer {
     flex-direction: column;
   }
   
-  .gg-training-title {
+  .section-title {
     font-size: 28px;
   }
 }
