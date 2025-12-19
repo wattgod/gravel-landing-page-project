@@ -1,0 +1,152 @@
+{
+  "race_id": "barry-roubaix",
+  "race_name": "Barry-Roubaix",
+  "race_slug": "barry-roubaix",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "World's Largest Gravel Race",
+  "race_date": "2026: April 18",
+  "year": null,
+  "course": {
+    "distance_miles": 62,
+    "elevation_gain_feet": 4000,
+    "terrain_type": "Seasonal two-track roads with sand, mud, and rocks",
+    "terrain_surface": "Sager Road isn't gravel—it's an unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks",
+    "technical_rating": 4,
+    "signature_challenge": "The weather. April Michigan weather spans 20°F to 81°F. You're gambling on conditions you can't know until race morning.",
+    "character": "Punchy, technical, unpredictable. Michigan doesn't do sustained climbs—it does 50+ rollers that hit you constantly. Sager Road defines the race's character.",
+    "key_features": [
+      "Three Sisters (miles 1.5-2)",
+      "Sager Road signature section (mile 18 on 36-mile, mile 60 on 100-mile)",
+      "The Wall (mile 25) - 11% pitch",
+      "50+ punchy rollers",
+      "Two unavoidable mud puddles on 100-mile at mile 60"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 1.5,
+        "label": "Three Sisters",
+        "desc": "Three consecutive punchy climbs immediately after leaving pavement. Primary selection point. If you're not with the lead group here, you won't bridge.",
+        "terrain_detail": "First real test of the day",
+        "named_section": "The Selection Point"
+      },
+      {
+        "mile": 18,
+        "label": "Sager Road",
+        "desc": "Unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks. This is the signature section that defines Barry-Roubaix.",
+        "terrain_detail": "100-mile version adds 'Big Papa' with more sand, more climbing, and two unavoidable mud puddles",
+        "named_section": "The Signature Suffering"
+      },
+      {
+        "mile": 25,
+        "label": "The Wall",
+        "desc": "0.2-mile climb averaging 11% with a false summit and a 'fun little final pitch.' Many athletes walk portions.",
+        "terrain_detail": "Comes late enough to expose fatigue but early enough to not be the final climb",
+        "named_section": "The Walk Zone"
+      }
+    ],
+    "location": "Hastings, Michigan",
+    "climate_primary": "April Michigan weather chaos",
+    "climate_description": "Historical race temps range from 20°F to 81°F—a 61-degree swing. In bad years (2017, 2022), DNF rates hit 40%+. In good years, course records fall.",
+    "climate_challenges": [
+      "Weather unpredictability is THE defining feature",
+      "35°F with 19°F wind chill possible (2022)",
+      "Freezing rain and snow possible (2017)",
+      "Perfect 58°F conditions possible (2025)",
+      "Equipment strategy must account for all scenarios"
+    ]
+  },
+  "ratings": {
+    "overall_score": 86,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 4,
+    "elevation_score": 2,
+    "climate_score": 5,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": 5,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 35,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Barry-Roubaix is the world's largest gravel race for a reason. It's professionally run, technically challenging, and completely unpredictable. The weather roulette makes every year different. The community ownership makes it feel like home. The value proposition is unmatched in American gravel."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Hastings, Michigan",
+    "location_badge": "HASTINGS, MICHIGAN",
+    "county": "Barry County",
+    "city": "Hastings",
+    "state": "Michigan",
+    "country": "USA",
+    "date": "Third Saturday of April annually",
+    "date_specific": "2026: April 18",
+    "venue": null,
+    "parking": "Available near start line. Arrive early for best spots.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens November 15 annually. Sells out in 24 hours. Cost: $79-119 depending on distance",
+    "start_time": "62-mile: 10:00 AM, 36-mile: 9:00 AM, 18-mile: 10:15 AM, 100-mile: 7:00 AM",
+    "field_size": "5,500+ riders from 48 states and 9 countries"
+  },
+  "final_verdict": {
+    "overall_score": 86,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2009,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [
+      "Sells out in 24 hours every year",
+      "350 volunteers from 15+ local organizations",
+      "$1M+ economic impact on Hastings",
+      "100% of Blackrocks Brewery party proceeds go to Hastings Rotary Club",
+      "Youth 18 and under ride FREE for 18-mile and 36-mile distances",
+      "The 100-mile Psycho Killer requires GPS navigation (unmarked course)"
+    ],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=barry-roubaix",
+    "race_challenge_tagline": "unpredictable April Michigan weather and technical Sager Road"
+  },
+  "seo": {
+    "title": "Barry-Roubaix Race Guide | Training Plans & Hastings Course Intel",
+    "meta_description": "Barry-Roubaix Hastings guide: 62-mile Michigan gravel race. World's largest gravel race with unpredictable April weather and technical Sager Road. Get training plans & course breakdown.",
+    "focus_keyword": "barry roubaix race",
+    "slug": "barry-roubaix"
+  },
+  "index_generated_at": "2025-12-19T13:38:36.840716",
+  "landing_page_url": "/races/barry-roubaix",
+  "ridewithgps_id": "27062354",
+  "prize_purse": "$40,000+ distributed",
+  "field_size": "5,500+ riders from 48 states and 9 countries",
+  "searchable_text": "Barry-Roubaix World's Largest Gravel Race Punchy, technical, unpredictable. Michigan doesn't do sustained climbs—it does 50+ rollers that hit you constantly. Sager Road defines the race's character. The weather. April Michigan weather spans 20°F to 81°F. You're gambling on conditions you can't know until race morning. Three Sisters (miles 1.5-2) Sager Road signature section (mile 18 on 36-mile, mile 60 on 100-mile) The Wall (mile 25) - 11% pitch 50+ punchy rollers Two unavoidable mud puddles on 100-mile at mile 60 Hastings, Michigan Barry County April Michigan weather chaos Seasonal two-track roads with sand, mud, and rocks",
+  "filter_tags": [
+    "tier-1",
+    "distance-medium",
+    "elevation-moderate",
+    "terrain-gravel",
+    "terrain-pavement",
+    "terrain-sand",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}
