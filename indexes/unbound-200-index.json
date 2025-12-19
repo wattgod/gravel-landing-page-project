@@ -1,0 +1,129 @@
+{
+  "race_id": "unbound-200",
+  "race_name": "Unbound Gravel 200",
+  "race_slug": "unbound-200",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "You don't race Unbound. You survive it.",
+  "race_date": "2026: June 6",
+  "year": null,
+  "course": {
+    "distance_miles": 200,
+    "elevation_gain_feet": 11000,
+    "terrain_type": "Rolling gravel with punchy climbs",
+    "terrain_surface": "Chunky limestone that shreds tires and hands",
+    "technical_rating": 3,
+    "signature_challenge": "The heat. The duration. The Flint Hills don't negotiate.",
+    "character": "Relentless. Not one killer climb, but 200 miles of constant attrition.",
+    "key_features": [
+      "Sustained rollers",
+      "Cattle guard crossings",
+      "Exposed ridgelines",
+      "Creek crossings in wet years"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 60,
+        "label": "First Meltdown Zone",
+        "desc": "Reality sets in. The polite first hour is gone."
+      },
+      {
+        "mile": 120,
+        "label": "Checkpoint Salvation",
+        "desc": "Halfway. Decide if you're going back out."
+      },
+      {
+        "mile": 180,
+        "label": "Dark Thoughts Begin",
+        "desc": "20 miles left. Your brain starts negotiating."
+      }
+    ],
+    "location": "Emporia, Kansas",
+    "climate_primary": "Flint Hills heat",
+    "climate_description": "June brings 85-95°F days with high humidity",
+    "climate_challenges": [
+      "Heat adaptation critical",
+      "Hydration demands extreme",
+      "Sun exposure relentless"
+    ]
+  },
+  "ratings": {
+    "overall_score": 93,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 5,
+    "technicality_score": 3,
+    "elevation_score": 3,
+    "climate_score": 5,
+    "altitude_score": 1,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 47,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Unbound is gravel racing's Mount Everest—not because it's the hardest course, but because it's the race that defines the sport. Riders don't 'do' Unbound casually. They plan for it, obsess over heat protocols, and show up knowing that crossing the line in Emporia means something. The course itself isn't revolutionary—rolling terrain, gravel, heat. What makes it legendary is the field, the atmosphere, and the weight of the finish line. If you finish Unbound, you've earned it."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Emporia, Kansas",
+    "location_badge": "EMPORIA, KANSAS",
+    "county": "Lyon County",
+    "city": "Emporia",
+    "state": "Kansas",
+    "country": "USA",
+    "date": "Early June annually",
+    "date_specific": "2026: June 6",
+    "venue": null,
+    "parking": "Free lots open 4:00 AM. Arrive early or walk 15+ minutes.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Random lottery plus qualifier coins, charity entries, volunteer & Life Time member paths. You don't buy your way in; you win the right to suffer.",
+    "start_time": "Saturday 6:00 AM",
+    "field_size": "~1,500 riders in the 200-mile; ~5,000 total across all distances"
+  },
+  "final_verdict": {
+    "overall_score": 93,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2006,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=unbound-200",
+    "race_challenge_tagline": "heat demands and 200 miles of relentless Flint Hills terrain"
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-18T21:48:00.083436",
+  "landing_page_url": "/races/unbound-200",
+  "ridewithgps_id": "46551378",
+  "prize_purse": "$100,000 (split equally men/women)",
+  "field_size": "~1,500 riders in the 200-mile; ~5,000 total across all distances",
+  "searchable_text": "Unbound Gravel 200 You don't race Unbound. You survive it. Relentless. Not one killer climb, but 200 miles of constant attrition. The heat. The duration. The Flint Hills don't negotiate. Sustained rollers Cattle guard crossings Exposed ridgelines Creek crossings in wet years Emporia, Kansas Lyon County Flint Hills heat Rolling gravel with punchy climbs",
+  "filter_tags": [
+    "tier-1",
+    "distance-ultra",
+    "elevation-extreme",
+    "terrain-gravel",
+    "technical-moderate",
+    "score-excellent"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "race_id": "sbt-grvl",
+  "race_name": "SBT GRVL",
+  "race_slug": "sbt-grvl",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "The altitude is the third discipline after fitness and mental fortitude.",
+  "race_date": "2026: June 28 (new June date, moved from August)",
+  "year": null,
+  "course": {
+    "distance_miles": 108,
+    "elevation_gain_feet": 8189,
+    "terrain_type": "Champagne gravel—smooth, fast, golden county roads",
+    "terrain_surface": "Hard-packed gravel that rewards speed. Not chunky or technical.",
+    "technical_rating": 2,
+    "signature_challenge": "The altitude. Everything else is manageable. The thin air is not.",
+    "character": "Fast and flowing on smooth gravel, punctuated by lung-busting climbs at altitude. The surface forgives; the elevation does not.",
+    "key_features": [
+      "Wahooligan Pass (15%+ pitches)",
+      "Cow Creek descent (washboard, rocks)",
+      "Steamboat Lake climb",
+      "Cattle guards",
+      "Recently graded loose sections"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 30,
+        "label": "Wahooligan Pass",
+        "desc": "15%+ pitches on loose gravel. Where overconfident starters blow up.",
+        "terrain_detail": "Recently graded loose surface makes traction unpredictable",
+        "named_section": "The Lung Crusher"
+      },
+      {
+        "mile": 65,
+        "label": "The Oxygen Debt Zone",
+        "desc": "Altitude fatigue compounds. Legs work, lungs don't.",
+        "weather_note": "Peak heat if afternoon temps climb"
+      },
+      {
+        "mile": 90,
+        "label": "Cow Creek Descent",
+        "desc": "Washboard and rocks when you're most fatigued. Where focus fails.",
+        "terrain_detail": "Softball-sized rocks and washboard surfaces demand attention"
+      }
+    ],
+    "location": "Steamboat Springs, Colorado",
+    "climate_primary": "High altitude mountain",
+    "climate_description": "June brings 40-50°F starts warming to 75-85°F by afternoon. Possible 100°F in extreme years.",
+    "climate_challenges": [
+      "30-40°F temperature swing start to finish",
+      "Altitude compounds heat stress",
+      "Afternoon thunderstorm risk (rare during race)",
+      "Intense high-altitude sun exposure"
+    ]
+  },
+  "ratings": {
+    "overall_score": 92,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 2,
+    "elevation_score": 4,
+    "climate_score": 3,
+    "altitude_score": 5,
+    "adventure_score": 4,
+    "logistics_score": 4,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 30,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "SBT GRVL is what happens when smart people build a race from scratch with intention. Gender parity from day one. Champagne gravel that rewards fitness over bike handling. The altitude makes it hard; the community makes it special."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Steamboat Springs, Colorado",
+    "location_badge": "STEAMBOAT SPRINGS, COLORADO",
+    "county": "Routt County",
+    "city": "Steamboat Springs",
+    "state": "Colorado",
+    "country": "USA",
+    "date": "Late June annually",
+    "date_specific": "2026: June 28 (new June date, moved from August)",
+    "venue": null,
+    "parking": "Limited downtown. Howelsen Hill campervan parking available through registration. Arrive early race morning.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Lottery October 14-31, notification November 5. Cost: $295 (Black), $275 (Blue/Red), $200 (Green)",
+    "start_time": "Black Elite Women 8:20 AM, Black Elite Men 8:15 AM, Amateur waves start 6:45 AM",
+    "field_size": "2,750 total (750 Black racers, 2,000 riders on Green/Red/Blue)"
+  },
+  "final_verdict": {
+    "overall_score": 92,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2019,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [
+      "The term 'champagne gravel' comes from Steamboat's famous 'Champagne Powder' snow—the roads roll just as smooth.",
+      "In 2022, Keegan Swenson won SBT GRVL one day after winning Leadville 100—a feat now called 'LeadBoat'.",
+      "The BOCO finisher hats are so recognizable that founder Amy Charity sees them 'in airports around the country.'",
+      "The race was literally designed on a napkin at a bar in July 2018.",
+      "SBT GRVL pioneered gender pay parity from day one—$5K to win for both men and women."
+    ],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=sbt-grvl",
+    "race_challenge_tagline": "altitude demands and 8,000+ feet of climbing at elevation"
+  },
+  "seo": {
+    "title": "SBT GRVL Race Guide | Training Plans & Steamboat Course Intel",
+    "meta_description": "SBT GRVL Steamboat Springs guide: 108-mile Colorado mountain gravel race at 6,700+ feet. Altitude is the race. Get training plans & course breakdown.",
+    "focus_keyword": "sbt grvl race",
+    "slug": "sbt-grvl"
+  },
+  "index_generated_at": "2025-12-18T21:48:00.081912",
+  "landing_page_url": "/races/sbt-grvl",
+  "ridewithgps_id": "47069637",
+  "prize_purse": "$22,000 (equal split men/women, $5K to win)",
+  "field_size": "2,750 total (750 Black racers, 2,000 riders on Green/Red/Blue)",
+  "searchable_text": "SBT GRVL The altitude is the third discipline after fitness and mental fortitude. Fast and flowing on smooth gravel, punctuated by lung-busting climbs at altitude. The surface forgives; the elevation does not. The altitude. Everything else is manageable. The thin air is not. Wahooligan Pass (15%+ pitches) Cow Creek descent (washboard, rocks) Steamboat Lake climb Cattle guards Recently graded loose sections Steamboat Springs, Colorado Routt County High altitude mountain Champagne gravel—smooth, fast, golden county roads",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-easy",
+    "score-excellent"
+  ]
+}

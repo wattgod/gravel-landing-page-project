@@ -1,0 +1,131 @@
+{
+  "race_id": "mid-south",
+  "race_name": "The Mid South",
+  "race_slug": "mid-south",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "Oklahoma's weather lottery with a $100K prize purse and a guaranteed Bobby hug.",
+  "race_date": "2026: March 13-14 (Pro race Friday, Amateur race Saturday)",
+  "year": null,
+  "course": {
+    "distance_miles": 100,
+    "elevation_gain_feet": 4500,
+    "terrain_type": "Rolling red clay gravel",
+    "terrain_surface": "Oklahoma red clay—fast when dry, adhesive mud when wet",
+    "technical_rating": 2,
+    "signature_challenge": "The weather lottery. You train for months but Oklahoma decides what race you're riding.",
+    "character": "Fast and tactical when dry. Unrideable mud slog when wet. The weather decides what race you're getting.",
+    "key_features": [
+      "Constant rolling terrain",
+      "No sustained climbs",
+      "Exposed ridgelines",
+      "Iconic red dirt roads",
+      "Surface quality depends entirely on weather"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 30,
+        "label": "First Reality Check",
+        "desc": "Aid station one. Decide if you're racing or surviving."
+      },
+      {
+        "mile": 60,
+        "label": "The Grind Begins",
+        "desc": "Aid station two. 40 miles left. Mental game starts here."
+      },
+      {
+        "mile": 85,
+        "label": "The Final Push",
+        "desc": "Last 15 miles. You can see the finish but your legs disagree."
+      }
+    ],
+    "location": "Stillwater, Oklahoma",
+    "climate_primary": "Oklahoma weather lottery",
+    "climate_description": "Early March brings 40-75°F swings, potential freezing rain, potential heat, potential wildfires",
+    "climate_challenges": [
+      "Weather unpredictability is THE defining feature",
+      "Red clay turns to peanut butter mud when wet",
+      "Wind exposure on open roads",
+      "2025 cancelled due to wildfires"
+    ]
+  },
+  "ratings": {
+    "overall_score": 85,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 2,
+    "elevation_score": 2,
+    "climate_score": 5,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": 3,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 32,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "The Mid South is what happens when someone builds a gravel race around unreasonable hospitality instead of unreasonable suffering. Bobby Wintle hugs every finisher. The DFL gets the biggest trophy. The community shows up like their lives depend on it. And the weather? The weather does whatever Oklahoma wants. When it's dry, you get a blazing-fast tactical race. When it's wet, you get an unrideable mud nightmare. Either way, you finish to live music, local beer, and a town that genuinely wants you there. This isn't the hardest gravel race. It's not the longest. But it might be the one with the biggest heart."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Stillwater, Oklahoma",
+    "location_badge": "STILLWATER, OKLAHOMA",
+    "county": "Payne County",
+    "city": "Stillwater",
+    "state": "Oklahoma",
+    "country": "USA",
+    "date": "Mid-March annually",
+    "date_specific": "2026: March 13-14 (Pro race Friday, Amateur race Saturday)",
+    "venue": null,
+    "parking": "Free parking available downtown. Easier than Unbound logistics.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Lottery system ('The Randomizer'). Opens October. Cost: ~$165 (100mi)",
+    "start_time": "Pro Race: Friday 1:00 PM (2026 new format)<br>Amateur Race: Saturday 6:00 AM",
+    "field_size": "2,500+ riders (100mi), plus 50mi and 12mi options"
+  },
+  "final_verdict": {
+    "overall_score": 85,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2013,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=mid-south",
+    "race_challenge_tagline": "unpredictable weather and potential red dirt chaos"
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-18T21:48:00.083028",
+  "landing_page_url": "/races/mid-south",
+  "ridewithgps_id": "48969927",
+  "prize_purse": "$100,000 (split equally between elite men and women)",
+  "field_size": "2,500+ riders (100mi), plus 50mi and 12mi options",
+  "searchable_text": "The Mid South Oklahoma's weather lottery with a $100K prize purse and a guaranteed Bobby hug. Fast and tactical when dry. Unrideable mud slog when wet. The weather decides what race you're getting. The weather lottery. You train for months but Oklahoma decides what race you're riding. Constant rolling terrain No sustained climbs Exposed ridgelines Iconic red dirt roads Surface quality depends entirely on weather Stillwater, Oklahoma Payne County Oklahoma weather lottery Rolling red clay gravel",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-moderate",
+    "terrain-gravel",
+    "technical-easy",
+    "score-very-good"
+  ]
+}

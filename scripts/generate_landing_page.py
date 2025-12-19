@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 # NEW: On-demand training plans section (single CTA to questionnaire)
 from automation.training_plans_section import generate_training_plans_html as generate_training_plans_section_html
 from automation.blackpill import generate_blackpill_html
+from automation.generate_landing_page_index import generate_index
 from automation.hero import generate_hero_html
 from automation.vitals import generate_vitals_html
 from automation.ratings import generate_ratings_html
@@ -231,6 +232,13 @@ def generate_landing_page(race_data_path: str, base_json_path: str, output_path:
     print(f"Writing Elementor JSON to {output_path}...")
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(elementor_json, f, ensure_ascii=False, indent=2)
+    
+    # Generate searchable index file
+    print("Generating searchable index...")
+    race_slug = data['race'].get('slug', Path(race_data_path).stem.replace('-data', ''))
+    index_output = Path(output_path).parent / f"{race_slug}-index.json"
+    generate_index(data, str(index_output))
+    print(f"✓ Index saved: {index_output.name}")
     
     # Copy to Downloads with LATEST label if this is Mid South or BWR CA
     race_name_lower = data['race']['display_name'].lower()

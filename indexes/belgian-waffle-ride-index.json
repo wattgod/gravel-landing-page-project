@@ -1,0 +1,146 @@
+{
+  "race_id": "belgian-waffle-ride",
+  "race_name": "Belgian Waffle Ride",
+  "race_slug": "belgian-waffle-ride",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "Hell of the North County",
+  "race_date": "2025: April 27 (completed). 2026: TBD (registration opened October 14, 2025)",
+  "year": null,
+  "course": {
+    "distance_miles": 120,
+    "elevation_gain_feet": 10000,
+    "terrain_type": "Mixed unroad and pavement",
+    "terrain_surface": "50% pavement, 50% unroad—dirt, gravel, single-track, sand, water crossings, rock gardens",
+    "technical_rating": 5,
+    "signature_challenge": "Six-hour cyclocross race where tire choice matters more than FTP. That 23% grade at mile 130 doesn't negotiate.",
+    "character": "Belgian Waffle Ride delivers 10,000+ feet of climbing across 120-135 miles (2025's 106-mile course being an outlier) mixing 50% pavement with 50% 'unroad'—dirt, gravel, single-track, sand, water crossings, rock gardens. The route uses Belgian-themed sector names marking specific suffering zones.",
+    "key_features": [
+      "Single-track sections",
+      "Sand sectors (Sandy Bandy)",
+      "Rock gardens",
+      "Water crossings",
+      "20%+ grades",
+      "Technical descents",
+      "Belgian-themed sector names"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 50,
+        "label": "Black Canyon (Zwartenberg)",
+        "desc": "Miles 50-65: 1,400+ foot dirt climb on steep sand and washboard surfaces. The field shatters here—going from hundreds to dozens. One pro described it as shaking them 'to the core.'",
+        "terrain_detail": "Washboard fire road with steep sand sections",
+        "named_section": "Zwartenberg",
+        "weather_note": "Arrives when legs are fresh enough to hurt"
+      },
+      {
+        "mile": 85,
+        "label": "Sandy Bandy",
+        "desc": "Miles 85-95: Long, narrow, twisting sand always into strengthening headwinds. Multiple race leaders have flatted twice here and lost everything. Destroys equipment and morale.",
+        "terrain_detail": "Long twisting sand sectors",
+        "named_section": "Sandy Bandy",
+        "weather_note": "Always into strengthening headwinds"
+      },
+      {
+        "mile": 116,
+        "label": "Double Peak (Muur van Dubbelberg)",
+        "desc": "Miles 116-130: The terminal exam. 4.5 miles, 1,800 feet gain, 8% average with 17-23% grades. Peter Stetina won 2024 by pulling clear on these pitches and soloing the final five miles.",
+        "terrain_detail": "Sustained climbing with extreme grades",
+        "named_section": "Muur van Dubbelberg",
+        "weather_note": "Arrives after six hours when legs are cooked"
+      }
+    ],
+    "location": "Del Mar, California",
+    "climate_primary": "Marine layer to inland heat",
+    "climate_description": "April in San Diego County starts cool (50-55°F) under marine layer, burns off to 75-95°F inland heat by afternoon. San Diego's windiest month delivering constant 10+ mph headwinds that strengthen throughout the day.",
+    "climate_challenges": [
+      "Temperature swings from 50°F start to 95°F afternoon",
+      "Constant headwinds strengthening throughout day",
+      "UV exposure moderate but persistent",
+      "Approximately 6 rainy days average in April"
+    ]
+  },
+  "ratings": {
+    "overall_score": 85,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 5,
+    "elevation_score": 4,
+    "climate_score": 4,
+    "altitude_score": 5,
+    "adventure_score": 4,
+    "logistics_score": 5,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 28,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Belgian Waffle Ride earns its 'Hell of the North County' nickname through relentless variety rather than single massive climbs. The course delivers 10,000+ feet of climbing across 120-135 miles mixing 50% pavement with 50% 'unroad'—dirt, gravel, single-track, sand, water crossings, and rock gardens. Founder Michael Marckx designed the route to expose riders who rely on draft in group rides but lack comprehensive bike handling and endurance skills. The 40% DNF rate validates the course's effectiveness at separating technical riders from pure power athletes, maintaining BWR's identity as an 'un-road' race rather than a pure gravel endurance test."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Del Mar, California",
+    "location_badge": "DEL MAR, CALIFORNIA",
+    "county": "San Diego County",
+    "city": "Del Mar",
+    "state": "California",
+    "country": "USA",
+    "date": "Late April annually",
+    "date_specific": "2025: April 27 (completed). 2026: TBD (registration opened October 14, 2025)",
+    "venue": null,
+    "parking": "Available at Del Mar Polo Fields/Surf Sports Park. Arrive by 5 AM for breakfast. RV camping available at Del Mar Fairgrounds via camplife.com.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Open registration (no lottery). Early bird: $195+ (increases after December 1). Registration: belgianwaffleride.bike",
+    "start_time": "7:00 AM mass start",
+    "field_size": "~2,800 total across all distances, ~1,600 in Waffle"
+  },
+  "final_verdict": {
+    "overall_score": 85,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2012,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=belgian-waffle-ride",
+    "race_challenge_tagline": "10,000+ feet of climbing and punchy SoCal heat"
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-18T21:48:00.082394",
+  "landing_page_url": "/races/belgian-waffle-ride",
+  "ridewithgps_id": "46433141",
+  "prize_purse": "$50,000+ (Waffle elites only, largest in one-day gravel racing)",
+  "field_size": "~2,800 total across all distances, ~1,600 in Waffle",
+  "searchable_text": "Belgian Waffle Ride Hell of the North County Belgian Waffle Ride delivers 10,000+ feet of climbing across 120-135 miles (2025's 106-mile course being an outlier) mixing 50% pavement with 50% 'unroad'—dirt, gravel, single-track, sand, water crossings, rock gardens. The route uses Belgian-themed sector names marking specific suffering zones. Six-hour cyclocross race where tire choice matters more than FTP. That 23% grade at mile 130 doesn't negotiate. Single-track sections Sand sectors (Sandy Bandy) Rock gardens Water crossings 20%+ grades Technical descents Belgian-themed sector names Del Mar, California San Diego County Marine layer to inland heat Mixed unroad and pavement",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-extreme",
+    "terrain-gravel",
+    "terrain-pavement",
+    "terrain-singletrack",
+    "terrain-sand",
+    "terrain-water-crossings",
+    "technical-hard",
+    "score-very-good"
+  ]
+}
