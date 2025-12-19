@@ -225,6 +225,28 @@ def test_color_palette_consistency():
     print(f"✓ All {len(used_colors)} colors come from approved palette")
 
 
+def test_max_width_constraint():
+    """Test that section has max-width constraint like other sections."""
+    data = {
+        'race': {
+            'black_pill': {
+                'title': 'Test',
+                'reality': 'Test',
+                'consequences': ['Test'],
+                'expectation_reset': 'Test'
+            }
+        }
+    }
+    
+    html = generate_blackpill_html(data)
+    
+    # Should have max-width: 1000px and margin: auto for centering
+    assert 'max-width: 1000px' in html, "Missing max-width constraint!"
+    assert 'margin:' in html and 'auto' in html, "Missing margin: auto for centering!"
+    
+    print("✓ Max-width constraint present (matches other sections)")
+
+
 def test_responsive_styles_present():
     """Test that responsive media query is present."""
     data = {
@@ -282,6 +304,7 @@ def run_all_tests():
         test_style_tag_position,
         test_consequences_list_rendering,
         test_color_palette_consistency,
+        test_max_width_constraint,
         test_responsive_styles_present,
         test_no_template_placeholders
     ]

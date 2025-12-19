@@ -119,8 +119,9 @@ def generate_blackpill_html(data: Dict) -> str:
     style_html = f"""<style>
 /* Black Pill Section */
 .gg-blackpill-section {{
+  max-width: 1000px;
+  margin: 48px auto;
   padding: 48px 24px;
-  margin: 48px 0;
   background: {validate_background_color('section_bg')};  /* FIXED: Was #F4D03F */
   border: 3px solid {COLOR_PALETTE['black']};
   border-radius: 8px;
