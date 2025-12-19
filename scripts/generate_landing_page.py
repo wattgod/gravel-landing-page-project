@@ -221,6 +221,84 @@ def build_elementor_json(data: Dict, base_json_path: str) -> Dict:
     return elementor_data
 
 
+def generate_wordpress_config(data: Dict) -> str:
+    """
+    Generate WordPress Quick Config block for easy copy-paste.
+    
+    RULE: After generating any landing page JSON, ALWAYS output this block.
+    """
+    race = data['race']
+    race_name = race['display_name']
+    race_slug = race.get('slug', race_name.lower().replace(' ', '-'))
+    
+    # Extract location info
+    location_full = race['vitals']['location']
+    city = location_full.split(',')[0].strip()
+    state = location_full.split(',')[1].strip() if ',' in location_full else ''
+    
+    # Extract distance
+    distance = race['vitals']['distance_mi']
+    distance_str = f"{distance}-mile" if isinstance(distance, (int, float)) else str(distance)
+    
+    # Get defining challenge from race_challenge_tagline or signature_challenge
+    challenge = race.get('race_challenge_tagline', '') or race.get('course_description', {}).get('signature_challenge', '')
+    
+    # Get hook from tagline or biased_opinion quote
+    hook = race.get('tagline', '') or race.get('biased_opinion', {}).get('quote', '')
+    
+    # Build meta description (must be ≤160 chars)
+    # Try to include hook if it's short enough
+    base = f"{race_name} {city} guide: {distance_str} {state} gravel race"
+    
+    # Add challenge if short
+    if challenge and len(challenge) < 40:
+        base += f" at {challenge}"
+    
+    # Add hook if it fits
+    if hook:
+        hook_short = hook[:50] if len(hook) > 50 else hook
+        test_desc = f"{base}. {hook_short}. Get training plans & course breakdown."
+        if len(test_desc) <= 160:
+            meta_desc = test_desc
+        else:
+            meta_desc = f"{base}. Get training plans & course breakdown."
+    else:
+        meta_desc = f"{base}. Get training plans & course breakdown."
+    
+    # Final safety truncation
+    if len(meta_desc) > 160:
+        meta_desc = meta_desc[:157] + "..."
+    
+    # Build SEO title
+    seo_title = f"{race_name} Race Guide | Training Plans & {city} Course Intel | Gravel God"
+    
+    config = f"""═══════════════════════════════════════════════════════════════
+WORDPRESS QUICK CONFIG: {race_name}
+═══════════════════════════════════════════════════════════════
+
+PAGE SETUP (Right Sidebar)
+─────────────────────────────────────────────────────────────
+Page Title:     {race_name}
+Slug:           {race_slug}
+Parent:         Gravel Races
+Template:       Elementor Full Width
+
+─────────────────────────────────────────────────────────────
+AIOSEO SETTINGS (Bottom Panel → General Tab)
+─────────────────────────────────────────────────────────────
+Page Title:
+{seo_title}
+
+Meta Description:
+{meta_desc}
+
+Focus Keyword:
+{race_name.lower()}
+═══════════════════════════════════════════════════════════════"""
+    
+    return config
+
+
 def generate_landing_page(race_data_path: str, base_json_path: str, output_path: str):
     """Main generation function."""
     print(f"Loading race data from {race_data_path}...")
@@ -239,6 +317,9 @@ def generate_landing_page(race_data_path: str, base_json_path: str, output_path:
     index_output = Path(output_path).parent / f"{race_slug}-index.json"
     generate_index(data, str(index_output))
     print(f"✓ Index saved: {index_output.name}")
+    
+    # Generate WordPress Quick Config
+    print("\n" + generate_wordpress_config(data) + "\n")
     
     # Copy to Downloads with LATEST label if this is Mid South or BWR CA
     race_name_lower = data['race']['display_name'].lower()

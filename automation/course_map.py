@@ -77,9 +77,16 @@ def generate_course_map_html(data: Dict) -> str:
     distance = race['vitals']['distance_mi']
     location = race['vitals']['location'].split(',')[0]  # Just city name
     
+    # Use map_url if provided, otherwise use embed URL
+    map_url = course.get('map_url')
+    if map_url:
+        iframe_src = map_url
+    else:
+        iframe_src = f"https://ridewithgps.com/embeds?type=route&id={rwgps_id}&title={rwgps_name}&sampleGraph=true&distanceMarkers=true"
+    
     template = f"""<section class="gg-route-section js-guide-section" id="course-map">
-  <div class="gg-route-card">
-    <div class="gg-route-card-inner">
+      <div class="gg-route-card">
+        <div class="gg-route-card-inner">
 
       <header class="gg-route-header">
         <span class="gg-pill gg-pill--small">Course Map</span>
@@ -94,7 +101,7 @@ def generate_course_map_html(data: Dict) -> str:
 
       <div class="gg-route-frame-wrap">
         <iframe
-          src="https://ridewithgps.com/embeds?type=route&id={rwgps_id}&title={rwgps_name}&sampleGraph=true&distanceMarkers=true"
+          src="{iframe_src}"
           style="width: 1px; min-width: 100%; height: 650px; border: none;"
           scrolling="no"
         ></iframe>
