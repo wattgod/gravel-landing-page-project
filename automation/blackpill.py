@@ -83,36 +83,23 @@ def generate_blackpill_html(data: Dict) -> str:
     if missing:
         raise KeyError(f"Black pill data missing required fields: {missing}")
     
-    # Build consequences list
-    consequences_items = '\n      '.join([f'<li>{c}</li>' for c in bp['consequences']])
+    # Build consequences list - compacted
+    consequences_items = ''.join([f'<li>{c}</li>' for c in bp['consequences']])
     
     # Get quote from black_pill.quote, final_verdict.one_liner, or use a default
     quote = bp.get('quote') or data['race'].get('final_verdict', {}).get('one_liner', 'This race will test every assumption you have about your durability.')
     
-    # Section HTML
+    # Section HTML - compacted
     section_html = f"""<section class="gg-blackpill-section">
-  <div class="gg-blackpill-badge">
-    <span class="gg-blackpill-badge-icon">◆</span>
-    THE BLACK PILL
-  </div>
-  
+  <div class="gg-blackpill-badge"><span class="gg-blackpill-badge-icon">◆</span> THE BLACK PILL</div>
   <h2 class="gg-blackpill-title">{bp['title']}</h2>
-  
   <div class="gg-blackpill-body">
     <p><strong>{bp['reality']}</strong></p>
-    
     <p><strong>Here's what it actually costs:</strong></p>
-    <ul>
-      {consequences_items}
-    </ul>
-    
+    <ul>{consequences_items}</ul>
     <p><strong>{bp['expectation_reset']}</strong></p>
   </div>
-  
-  <!-- PULL QUOTE -->
-  <div class="gg-blackpill-quote">
-    {quote}
-  </div>
+  <div class="gg-blackpill-quote">{quote}</div>
 </section>"""
     
     # Style block with FIXED colors

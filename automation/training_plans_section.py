@@ -38,17 +38,12 @@ def generate_training_plans_section(
     questionnaire_url = f"https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race={race_slug}"
     
     html = f"""<section class="training-section" id="training">
-
 {get_training_plans_css()}
-
-  <!-- Section Header -->
   <div class="section-header">
     <div class="section-badge">◆ Training Plans</div>
     <h2 class="section-title">Your Plan. Built for You.</h2>
     <p class="section-subtitle">We build a plan calibrated to <strong>{race_name}'s</strong> {race_challenge}.</p>
   </div>
-  
-  <!-- 3-Step Process -->
   <div class="process-row">
     <div class="process-step">
       <div class="process-number">1</div>
@@ -67,39 +62,17 @@ def generate_training_plans_section(
       <p>Personalized guide with race strategy, fueling, pacing, and race-day execution.</p>
     </div>
   </div>
-  
-  <!-- CTA Block -->
   <div class="cta-block">
     <h3>Ready to Build Your {race_name} Plan?</h3>
-    
-    <a href="{questionnaire_url}" class="cta-button" target="_blank">
-      Build My Training Plan →
-    </a>
-    
+    <a href="{questionnaire_url}" class="cta-button" target="_blank">Build My Training Plan →</a>
     <div class="includes-row">
-      <div class="includes-item">
-        <div class="includes-icon">✓</div>
-        <span>Workouts for head unit or Zwift</span>
-      </div>
-      <div class="includes-item">
-        <div class="includes-icon">✓</div>
-        <span>35,000+ word gravel manual</span>
-      </div>
-      <div class="includes-item">
-        <div class="includes-icon">✓</div>
-        <span>Heat, fueling, pacing playbooks</span>
-      </div>
-      <div class="includes-item">
-        <div class="includes-icon">✓</div>
-        <span>Race-specific strategy</span>
-      </div>
+      <div class="includes-item"><div class="includes-icon">✓</div><span>Workouts for head unit or Zwift</span></div>
+      <div class="includes-item"><div class="includes-icon">✓</div><span>35,000+ word gravel manual</span></div>
+      <div class="includes-item"><div class="includes-icon">✓</div><span>Heat, fueling, pacing playbooks</span></div>
+      <div class="includes-item"><div class="includes-icon">✓</div><span>Race-specific strategy</span></div>
     </div>
-    
-    <div class="cta-footer">
-      <div class="cta-delivery">Plans delivered same day.</div>
-    </div>
+    <div class="cta-footer"><div class="cta-delivery">Plans delivered same day.</div></div>
   </div>
-  
 </section>"""
     
     return html.strip()
@@ -298,20 +271,6 @@ def get_training_plans_css() -> str:
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
-}
-
-.cta-price {
-  font-family: 'Sometype Mono', monospace;
-  color: #4ECDC4;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.cta-price span {
-  font-size: 14px;
-  color: #A89074;
-  font-weight: 400;
-  margin-left: 8px;
 }
 
 .cta-delivery {
