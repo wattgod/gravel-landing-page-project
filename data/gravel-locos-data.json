@@ -177,7 +177,7 @@
     },
     "seo": {
       "title": "Gravel Locos Race Guide | Training Plans & Hico Course Intel",
-      "meta_description": "Gravel Locos Hico guide: 115-mile gravel race. Get training plans & course breakdown.",
+      "meta_description": "Gravel Locos Hico guide: 115-mile gravel race at 6K+ feet of climbing. Get training plans & course breakdown.",
       "focus_keyword": "gravel locos",
       "slug": "gravel-locos"
     },
@@ -187,6 +187,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "race_challenge_tagline": "6K+ feet of climbing"
   }
 }

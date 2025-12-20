@@ -176,7 +176,7 @@
     },
     "seo": {
       "title": "Sea Otter Classic Gravel Race Guide | Training Plans & Monterey Course Intel",
-      "meta_description": "Sea Otter Classic Gravel Monterey guide: 65-mile gravel race. Get training plans & course breakdown.",
+      "meta_description": "Sea Otter Classic Gravel Monterey guide: 65-mile gravel race at 6K+ feet of climbing. Get training plans & course breakdown.",
       "focus_keyword": "sea otter classic gravel",
       "slug": "sea-otter-gravel"
     },
@@ -186,6 +186,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "race_challenge_tagline": "6K+ feet of climbing"
   }
 }

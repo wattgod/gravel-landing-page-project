@@ -176,7 +176,7 @@
     },
     "seo": {
       "title": "Rebecca's Private Idaho Race Guide | Training Plans & Ketchum Course Intel",
-      "meta_description": "Rebecca's Private Idaho Ketchum guide: 103-mile gravel race. Get training plans & course breakdown.",
+      "meta_description": "Rebecca's Private Idaho Ketchum guide: 103-mile gravel race at 8K+ feet of climbing. Get training plans & course breakdown.",
       "focus_keyword": "rebecca's private idaho",
       "slug": "rebeccas-private-idaho"
     },
@@ -186,6 +186,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "race_challenge_tagline": "8K+ feet of climbing"
   }
 }

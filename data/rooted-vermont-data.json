@@ -176,7 +176,7 @@
     },
     "seo": {
       "title": "Rooted Vermont Race Guide | Training Plans & East Burke Course Intel",
-      "meta_description": "Rooted Vermont East Burke guide: 87-mile gravel race. Get training plans & course breakdown.",
+      "meta_description": "Rooted Vermont East Burke guide: 87-mile gravel race at 10K+ feet of climbing. Get training plans & course breakdown.",
       "focus_keyword": "rooted vermont",
       "slug": "rooted-vermont"
     },
@@ -186,6 +186,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "race_challenge_tagline": "10K+ feet of climbing"
   }
 }
