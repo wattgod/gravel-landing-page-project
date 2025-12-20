@@ -3968,7 +3968,3981 @@
         "Protocol Fit": "Standard",
         "Priority Score": 7,
         "Notes": "Thousands of riders, major NZ event"
+      },
+      {
+        "Race Name": "Reliance Tennessee Gravel",
+        "Location": "Reliance TN",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "April 25-27",
+        "Distance (mi)": "65+50 (2-day)",
+        "Elevation (ft)": "15000+",
+        "Field Size": "250",
+        "Entry Cost": "$85-100",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "Two-day stage race format; Cherokee National Forest; cult following",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Revival",
+        "Location": "Hickman County TN",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "October 17-19",
+        "Distance (mi)": "50-70",
+        "Elevation (ft)": "Unknown",
+        "Field Size": "150",
+        "Entry Cost": "$75",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 12.0,
+        "Notes": "6th annual; benefits Make-A-Wish Foundation",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Waucheesi Bike Race",
+        "Location": "Tellico Plains TN",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 30",
+        "Distance (mi)": "88/63/45",
+        "Elevation (ft)": "11500/8800",
+        "Field Size": "100-150",
+        "Entry Cost": "$65",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "Cherokee/Nantahala forests; Cherohala Skyway; challenging climbs",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Rust Buster Gravel Fondo",
+        "Location": "Memphis TN",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "April 5",
+        "Distance (mi)": "50-100",
+        "Elevation (ft)": "3000",
+        "Field Size": "100-150",
+        "Entry Cost": "$60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.5,
+        "Notes": "Early season event; growing Memphis cycling community",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bootlegger 100",
+        "Location": "Lenoir NC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "April 19",
+        "Distance (mi)": "85/58",
+        "Elevation (ft)": "6000-8000",
+        "Field Size": "150-200",
+        "Entry Cost": "$75",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.5,
+        "Notes": "Pisgah Productions; Grandfather Ranger District; post-race meal",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Uwharrie Forest Gravel Grinder",
+        "Location": "Central NC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "February 23",
+        "Distance (mi)": "40-60",
+        "Elevation (ft)": "4000",
+        "Field Size": "150-200",
+        "Entry Cost": "$55-70",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Trans-Sylvania Productions; chip timing; well-marked course",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Holly Shelter Gravel Grinder",
+        "Location": "SE NC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 23",
+        "Distance (mi)": "40-60",
+        "Elevation (ft)": "Low",
+        "Field Size": "100-150",
+        "Entry Cost": "$55-65",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Flat/Technical",
+        "Priority Score": 9.5,
+        "Notes": "Trans-Sylvania Productions; coastal terrain; game land",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Pisgah Monster-Cross Challenge",
+        "Location": "Brevard NC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "October",
+        "Distance (mi)": "69.2",
+        "Elevation (ft)": "8777",
+        "Field Size": "150-200",
+        "Entry Cost": "$80",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.5,
+        "Notes": "Premier all-road racing since 2012; brutal Pisgah terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hot Springs Gravel Gauntlet",
+        "Location": "Hot Springs NC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 29",
+        "Distance (mi)": "50-70",
+        "Elevation (ft)": "5000+",
+        "Field Size": "100-150",
+        "Entry Cost": "$70",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "Southeast Gravel Series; Blue Ridge foothills; epic climbing",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Southern Cross Gravel",
+        "Location": "Dahlonega GA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 1",
+        "Distance (mi)": "50-100",
+        "Elevation (ft)": "5000+",
+        "Field Size": "150-200",
+        "Entry Cost": "$75-85",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.5,
+        "Notes": "Montaluce Winery start; North Georgia Mountains; cult following",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Homegrown Gravel Adventure",
+        "Location": "Franklin GA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "February 28",
+        "Distance (mi)": "100/62/40/20",
+        "Elevation (ft)": "8000/5000",
+        "Field Size": "300-400",
+        "Entry Cost": "$85",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 12.0,
+        "Notes": "50% Georgia/50% Alabama course; $10K prize purse 2026; strong community",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dirty Sheets Gravel Grind",
+        "Location": "Chattahoochee Hills GA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "October 11",
+        "Distance (mi)": "100/62/22",
+        "Elevation (ft)": "6000",
+        "Field Size": "200",
+        "Entry Cost": "$70-80",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 12.0,
+        "Notes": "Mixed-surface with singletrack; live music; MTB Atlanta organized",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Rose City Rampage Gravel Race",
+        "Location": "Thomasville GA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 22",
+        "Distance (mi)": "60/30",
+        "Elevation (ft)": "Low",
+        "Field Size": "100-150",
+        "Entry Cost": "$60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 9.5,
+        "Notes": "South Georgia clay roads; plantation country; 300 miles of clay roads",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Roll - Pecan Shaker",
+        "Location": "Hawkinsville GA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "October 18",
+        "Distance (mi)": "106/72/41",
+        "Elevation (ft)": "3000",
+        "Field Size": "150-200",
+        "Entry Cost": "$75",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Gravel Roll series; segmented race format",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Opelika Okey Dokey",
+        "Location": "Opelika AL",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "April 12",
+        "Distance (mi)": "100+/65/34",
+        "Elevation (ft)": "5000",
+        "Field Size": "150-200",
+        "Entry Cost": "$75",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 12.0,
+        "Notes": "Gravel Roll series; hard red dirt; endless timberland",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Standard Deluxe Dirt Road Century",
+        "Location": "Waverly AL",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "November 8",
+        "Distance (mi)": "100/65/35",
+        "Elevation (ft)": "4000",
+        "Field Size": "150-200",
+        "Entry Cost": "$65",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Since 2016; 60%+ gravel/dirt; benefits Alabama Animal Rescue",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Battle of Sumter Forest",
+        "Location": "Whitmire SC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "May 17",
+        "Distance (mi)": "74/49",
+        "Elevation (ft)": "4000",
+        "Field Size": "150",
+        "Entry Cost": "$70",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Southeast Gravel Series; Piedmont terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Race to Valhalla",
+        "Location": "Walhalla SC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "April 26",
+        "Distance (mi)": "50-70",
+        "Elevation (ft)": "7231",
+        "Field Size": "150",
+        "Entry Cost": "$70",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "Southeast Gravel Series; Blue Ridge foothills; most challenging in series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hellhole Gravel Grind Stage Race",
+        "Location": "Jamestown SC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "October 3-5",
+        "Distance (mi)": "150 (75x2)",
+        "Elevation (ft)": "Low",
+        "Field Size": "150",
+        "Entry Cost": "100+",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Unique",
+        "Priority Score": 11.5,
+        "Notes": "First/longest running US gravel STAGE RACE; night prologue; Swamp Fox history",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Swamp Fox Gravel Fondo",
+        "Location": "Francis Marion NF SC",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March 14-15",
+        "Distance (mi)": "100/50/27",
+        "Elevation (ft)": "Low",
+        "Field Size": "100-150",
+        "Entry Cost": "$65",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 9.5,
+        "Notes": "Revolutionary War history; extremely remote",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "GRUSK",
+        "Location": "Circleville WV",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "July 10-12",
+        "Distance (mi)": "89/50/32 (+220-316 bikepacking)",
+        "Elevation (ft)": "8000+",
+        "Field Size": "200",
+        "Entry Cost": "$75-100",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "WV Gravel Series flagship; highest WV peak; camping/music; premier East Coast event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Lost River Classic",
+        "Location": "Mathias WV",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "August 16",
+        "Distance (mi)": "85/60/28",
+        "Elevation (ft)": "8500",
+        "Field Size": "150",
+        "Entry Cost": "$75-95",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 13.0,
+        "Notes": "WV Gravel Series; benefits Lost River Trails Coalition; Hardy County",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "OMG (Oxford MS Gravel)",
+        "Location": "Oxford MS",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "January",
+        "Distance (mi)": "100/50/20",
+        "Elevation (ft)": "7000+",
+        "Field Size": "100-150",
+        "Entry Cost": "$65",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "MS Gravel Cup 4-race series opener; Holly Springs National Forest",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Scratch Ankle Gravel",
+        "Location": "Milton FL",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "March",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "Low",
+        "Field Size": "100-150",
+        "Entry Cost": "$60-75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "Blackwater River State Forest; unique Florida Panhandle gravel",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "USA Cycling Gravel Nationals",
+        "Location": "La Crescent MN",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 20",
+        "Distance (mi)": "100/74/31",
+        "Elevation (ft)": "7171",
+        "Field Size": "760+",
+        "Entry Cost": "$95-175",
+        "Tier": 1,
+        "Competition": "HIGH",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "National Championship; Stars-and-Stripes jerseys; $20K purse; 43 categories",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bear 100",
+        "Location": "Laona WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 3",
+        "Distance (mi)": "31/61/80/113",
+        "Elevation (ft)": "3000-5500",
+        "Field Size": "<200",
+        "Entry Cost": "$55-85",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Ironbear 1000 Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hungry Bear 100",
+        "Location": "Cable WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 10",
+        "Distance (mi)": "30/60/100",
+        "Elevation (ft)": "4000-6500",
+        "Field Size": "1000",
+        "Entry Cost": "$65-95",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000; 1000 participants chip-timed 2025",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Crystal Bear",
+        "Location": "Laona WI to Crystal Falls MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 17-18",
+        "Distance (mi)": "192 bikepacking",
+        "Elevation (ft)": "8000",
+        "Field Size": "<100",
+        "Entry Cost": "$75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical/Cold",
+        "Priority Score": 12.0,
+        "Notes": "Ironbear 1000; overnight bikepacking format",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Pickerel Buck40",
+        "Location": "Pickerel WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 1",
+        "Distance (mi)": "140",
+        "Elevation (ft)": "4500",
+        "Field Size": "<100",
+        "Entry Cost": "FREE",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "Ironbear 1000; self-supported",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Essential Gravel",
+        "Location": "Ringle WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 30-June 15",
+        "Distance (mi)": "10/20/44",
+        "Elevation (ft)": "800-2000",
+        "Field Size": "<200",
+        "Entry Cost": "FREE",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Ironbear 1000; free intro ride",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The Insayner",
+        "Location": "Sayner WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 14",
+        "Distance (mi)": "12/25",
+        "Elevation (ft)": "800-1500",
+        "Field Size": "<100",
+        "Entry Cost": "$35-45",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000; Lambo Riders event",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Total Tomahawk Terrain",
+        "Location": "Tomahawk WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 21",
+        "Distance (mi)": "33/63/103",
+        "Elevation (ft)": "3000-5500",
+        "Field Size": "<200",
+        "Entry Cost": "FREE",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000; 7th edition; free event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "BURGR 95",
+        "Location": "Gleason WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 12",
+        "Distance (mi)": "47/95",
+        "Elevation (ft)": "4000",
+        "Field Size": "<150",
+        "Entry Cost": "FREE",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Ironbear 1000; free ride",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Nicolet Hot Days",
+        "Location": "Wabeno WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 10",
+        "Distance (mi)": "69",
+        "Elevation (ft)": "3500",
+        "Field Size": "<100",
+        "Entry Cost": "$45",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000; community campout",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hardwood Hustle",
+        "Location": "Nelma WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 27",
+        "Distance (mi)": "39/62/101",
+        "Elevation (ft)": "4500",
+        "Field Size": "<200",
+        "Entry Cost": "$60-80",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000 Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hibernator",
+        "Location": "Laona WI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "October 4",
+        "Distance (mi)": "32/63/100",
+        "Elevation (ft)": "4000",
+        "Field Size": "<200",
+        "Entry Cost": "$55-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 10.5,
+        "Notes": "Ironbear 1000; fall colors",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Melting Mann",
+        "Location": "Vandalia MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "March 22",
+        "Distance (mi)": "23/38/58",
+        "Elevation (ft)": "2500",
+        "Field Size": "<200",
+        "Entry Cost": "$45-65",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Season opener",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dirty 30",
+        "Location": "Saranac MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "April 19",
+        "Distance (mi)": "16/30/50/100",
+        "Elevation (ft)": "3500",
+        "Field Size": "<500",
+        "Entry Cost": "$45-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 10.0,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hart Hills",
+        "Location": "Hart MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 10",
+        "Distance (mi)": "13/25/55",
+        "Elevation (ft)": "2500",
+        "Field Size": "<200",
+        "Entry Cost": "$40-60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Cow Pie Classic",
+        "Location": "Ionia MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 14",
+        "Distance (mi)": "20/34/63",
+        "Elevation (ft)": "2500",
+        "Field Size": "<300",
+        "Entry Cost": "$45-65",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Coast to Coast",
+        "Location": "Au Gres to Ludington MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 28",
+        "Distance (mi)": "100/204",
+        "Elevation (ft)": "6000",
+        "Field Size": "<200",
+        "Entry Cost": "$75-125",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "MGRS; cross-Michigan",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Cedar Blitz",
+        "Location": "Cedar Springs MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 12",
+        "Distance (mi)": "18/36/50/130",
+        "Elevation (ft)": "3500",
+        "Field Size": "<300",
+        "Entry Cost": "$45-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "MGRS; World Bicycle Relief fundraiser",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The Crusher",
+        "Location": "Upper Peninsula MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 19",
+        "Distance (mi)": "40/100/175",
+        "Elevation (ft)": "5000",
+        "Field Size": "<200",
+        "Entry Cost": "$60-90",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "MGRS; UP wilderness",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The Divide",
+        "Location": "Manton MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 27",
+        "Distance (mi)": "18/30/44",
+        "Elevation (ft)": "2500",
+        "Field Size": "<200",
+        "Entry Cost": "$40-60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "De Ronde Van Grampian",
+        "Location": "Oxford MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 2",
+        "Distance (mi)": "12/25/50",
+        "Elevation (ft)": "2000",
+        "Field Size": "<200",
+        "Entry Cost": "$40-60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The Watermoo",
+        "Location": "Dexter MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 9",
+        "Distance (mi)": "111",
+        "Elevation (ft)": "3500",
+        "Field Size": "<200",
+        "Entry Cost": "$55-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series; Long+Ultra format",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Fast Fitty",
+        "Location": "Charlotte MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 16",
+        "Distance (mi)": "19/36/54",
+        "Elevation (ft)": "2500",
+        "Field Size": "<200",
+        "Entry Cost": "$45-65",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Uncle John's Gravel Race",
+        "Location": "St Johns MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 7",
+        "Distance (mi)": "16/28/57",
+        "Elevation (ft)": "2000",
+        "Field Size": "<200",
+        "Entry Cost": "$45-65",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS; cider mill venue",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Thunder Bay Thriller",
+        "Location": "Alpena MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 14",
+        "Distance (mi)": "16/27/62",
+        "Elevation (ft)": "2500",
+        "Field Size": "<200",
+        "Entry Cost": "$45-65",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Lone Wolf Gravel",
+        "Location": "Iron Mountain MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 28",
+        "Distance (mi)": "36/50/100",
+        "Elevation (ft)": "4000",
+        "Field Size": "<200",
+        "Entry Cost": "$55-80",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Lowell Classic",
+        "Location": "Lowell MI",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "October 25",
+        "Distance (mi)": "15/38/54/100",
+        "Elevation (ft)": "3500",
+        "Field Size": "<300",
+        "Entry Cost": "$50-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 10.5,
+        "Notes": "MGRS Series Finale + Awards",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Heywood Ride",
+        "Location": "Northfield MN",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 16",
+        "Distance (mi)": "30/60/110/165/390",
+        "Elevation (ft)": "2000-8000",
+        "Field Size": "<300",
+        "Entry Cost": "Donation",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "Grassroots; donation-based; inclusive",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Le Grand du Nord",
+        "Location": "Grand Marais MN",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 23",
+        "Distance (mi)": "26/50/110",
+        "Elevation (ft)": "5000",
+        "Field Size": "<300",
+        "Entry Cost": "$65-95",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "Spectacular North Shore course",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gray Duck Grit",
+        "Location": "Cannon Falls MN",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 5",
+        "Distance (mi)": "50/69/111/222/333",
+        "Elevation (ft)": "6000-12000",
+        "Field Size": "<200",
+        "Entry Cost": "$55-85",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "Grassroots Southern MN; ultra options",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Old Fashioned Gravel",
+        "Location": "Hokah MN",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 13",
+        "Distance (mi)": "40/66/100",
+        "Elevation (ft)": "2000-6000",
+        "Field Size": "<200",
+        "Entry Cost": "$55-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "Driftless Region; new venue",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Kalona Horseshoe",
+        "Location": "Kalona IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 10",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "1500",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Silver City Century",
+        "Location": "Silver City IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "May 17",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "1800",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Waukon 100",
+        "Location": "Waukon IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June 21",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "2500",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Iowa Gravel Series; Driftless terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Albia Holy Cow",
+        "Location": "Albia IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 12",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "1500",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Glenwood Gravel",
+        "Location": "Glenwood IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 9",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "1800",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Soldier Cutoff Hillduro",
+        "Location": "Pisgah IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "September 20",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "2000",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Fairfield Harvest Rush",
+        "Location": "Fairfield IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "October 4",
+        "Distance (mi)": "31/62",
+        "Elevation (ft)": "1500",
+        "Field Size": "<150",
+        "Entry Cost": "$40-50",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Iowa Gravel Series finale",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Prairie Burn 100",
+        "Location": "Grinnell IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "June",
+        "Distance (mi)": "25/50/100",
+        "Elevation (ft)": "2000",
+        "Field Size": "<200",
+        "Entry Cost": "$55-75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "Music fest + gravel",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Iowa Wind and Rock",
+        "Location": "Winterset IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "April 19-20",
+        "Distance (mi)": "340",
+        "Elevation (ft)": "8000+",
+        "Field Size": "<100",
+        "Entry Cost": "FREE",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Ultra",
+        "Priority Score": 12.0,
+        "Notes": "Ultra event; self-supported",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Mad Gravel",
+        "Location": "Elbert CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "May 24-25",
+        "Distance (mi)": "Various circuit",
+        "Elevation (ft)": "High plains",
+        "Field Size": "100-150",
+        "Entry Cost": "$75-125",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "5th year; Saturday circuit + Sunday main; family-friendly",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "KowTown Gravel",
+        "Location": "Kremmling CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "July 5",
+        "Distance (mi)": "95/65/34",
+        "Elevation (ft)": "7400+ base",
+        "Field Size": "100-150",
+        "Entry Cost": "$75-100",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 11.5,
+        "Notes": "3rd annual; BLM land; post-race BBQ included",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Crooked Gravel",
+        "Location": "Winter Park CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "August 2",
+        "Distance (mi)": "95/25",
+        "Elevation (ft)": "10500 peak",
+        "Field Size": "100-200",
+        "Entry Cost": "$100-150",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.0,
+        "Notes": "Gemini Adventures; 12-mile sustained climb to 10500ft",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Salida 76",
+        "Location": "Salida CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "September 13",
+        "Distance (mi)": "76",
+        "Elevation (ft)": "7000+ base",
+        "Field Size": "100-175",
+        "Entry Cost": "$85-110",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.0,
+        "Notes": "Spectacular backcountry; 3 stocked aid stations",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Wild Horse Gravel",
+        "Location": "De Beque CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "May 17",
+        "Distance (mi)": "65/46/30",
+        "Elevation (ft)": "5250 base",
+        "Field Size": "100-175",
+        "Entry Cost": "$100-140",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical/Altitude",
+        "Priority Score": 10.0,
+        "Notes": "High Lonesome Ranch exclusive; technical washboards",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bighorn Gravel",
+        "Location": "Gypsum CO",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "June 22",
+        "Distance (mi)": "85/50/20",
+        "Elevation (ft)": "10000+ vert",
+        "Field Size": "100-150",
+        "Entry Cost": "$100-150",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude/Technical",
+        "Priority Score": 10.0,
+        "Notes": "E-bike friendly short course; heart-of-Rockies location",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dead Swede Gravel",
+        "Location": "Sheridan WY",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "June 7",
+        "Distance (mi)": "100/60/40/20",
+        "Elevation (ft)": "Bighorn climbing",
+        "Field Size": "100-200",
+        "Entry Cost": "$75-120",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude/Technical",
+        "Priority Score": 11.5,
+        "Notes": "Premium Bighorn Mountain foothills; Bekton Hill Climb",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Cowboy Crusher",
+        "Location": "Glenrock WY",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "July 19",
+        "Distance (mi)": "121/75/40/17",
+        "Elevation (ft)": "9000/6500/3200/1000",
+        "Field Size": "100-175",
+        "Entry Cost": "$75-125",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 9.5,
+        "Notes": "Rocky Mountain foothills; champagne to whiskey gravel variety",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "WYO 131",
+        "Location": "Lander WY",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "September 13",
+        "Distance (mi)": "131/75/45/13",
+        "Elevation (ft)": "10000+ (max 9576)",
+        "Field Size": "100-200",
+        "Entry Cost": "$100-175",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 11.5,
+        "Notes": "Wyoming Gravel Series; ultimate altitude challenge; Sinks Canyon descent",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The Mane Event Gravel",
+        "Location": "Sheridan WY",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "September 20",
+        "Distance (mi)": "78/54/32/25",
+        "Elevation (ft)": "Rolling foothills",
+        "Field Size": "75-150",
+        "Entry Cost": "$60-100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "Fall event; Koltiska Pumpkin Patch; supports local nonprofits",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Salty Lizard",
+        "Location": "Wendover UT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "April 4",
+        "Distance (mi)": "98/74/38",
+        "Elevation (ft)": "3500",
+        "Field Size": "100-175",
+        "Entry Cost": "$85-125",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Unique",
+        "Priority Score": 11.5,
+        "Notes": "Utah Gravel Series opener; Bonneville Salt Flats views; 91% gravel",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dirty Dino",
+        "Location": "Vernal UT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "June 13",
+        "Distance (mi)": "102/67/27",
+        "Elevation (ft)": "Uinta terrain",
+        "Field Size": "75-150",
+        "Entry Cost": "$85-125",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.5,
+        "Notes": "Jurass-kicked theme; Dinosaurland; Uinta Mountains",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Wasatch All-Road",
+        "Location": "Francis UT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "August 8",
+        "Distance (mi)": "100/58/31",
+        "Elevation (ft)": "Extreme Wasatch Wall",
+        "Field Size": "100-175",
+        "Entry Cost": "$90-130",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude/Technical",
+        "Priority Score": 10.0,
+        "Notes": "Utah Series finale; legendary Wasatch Wall climb",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Montana Gravel Challenge",
+        "Location": "Huson MT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "May 1",
+        "Distance (mi)": "3-day (TT 11 + 56 + 45)",
+        "Elevation (ft)": "5500 total",
+        "Field Size": "75-150",
+        "Entry Cost": "$25-100",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.5,
+        "Notes": "3-day stage race; Montana Off-Road Series; Nine Mile area",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Big Sky Gravel",
+        "Location": "Red Lodge MT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "August",
+        "Distance (mi)": "100/50/22",
+        "Elevation (ft)": "Beartooth foothills",
+        "Field Size": "100-175",
+        "Entry Cost": "$80-130",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude/Technical",
+        "Priority Score": 9.5,
+        "Notes": "Beartooth Mountains setting",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dusty Bandita",
+        "Location": "Ovando MT",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "Summer",
+        "Distance (mi)": "80/45",
+        "Elevation (ft)": "Mountain terrain",
+        "Field Size": "Limited women+",
+        "Entry Cost": "$100-150",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Unique",
+        "Priority Score": 13.0,
+        "Notes": "Women+ only event; Great Divide/Tour Divide stopover town",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bear Howard Gravel",
+        "Location": "Flagstaff AZ",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "August 2",
+        "Distance (mi)": "100/60/30",
+        "Elevation (ft)": "7000 base",
+        "Field Size": "100-175",
+        "Entry Cost": "$75-120",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.0,
+        "Notes": "5th year; Saddle Mountain climb segment; Lowell Observatory finish",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Chino Grinder",
+        "Location": "Chino Valley AZ",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "October 17",
+        "Distance (mi)": "150/115/62/44/25",
+        "Elevation (ft)": "Prescott area",
+        "Field Size": "100-200",
+        "Entry Cost": "$80-150",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 9.0,
+        "Notes": "Multiple distance options; Shendoca Racing production",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Ruby Roubaix",
+        "Location": "Lamoille NV",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "June 27",
+        "Distance (mi)": "120/62/38/22",
+        "Elevation (ft)": "Ruby Mountains",
+        "Field Size": "150-200",
+        "Entry Cost": "$80-125",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude/Technical",
+        "Priority Score": 10.0,
+        "Notes": "Remote northern Nevada; Ruby Mountains scenery; E-bike category",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Beaver Dam Gravel Grinder",
+        "Location": "Beaver Dam State Park NV",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "June 21",
+        "Distance (mi)": "Various",
+        "Elevation (ft)": "State park",
+        "Field Size": "50-100",
+        "Entry Cost": "$50-75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "Nevada's first and only state park gravel event; very grassroots",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Santa Fe Century Gravel\u00f3n",
+        "Location": "Santa Fe NM",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "May 16-17",
+        "Distance (mi)": "55/25",
+        "Elevation (ft)": "7000 area",
+        "Field Size": "100-200",
+        "Entry Cost": "$75-100",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.0,
+        "Notes": "40th edition 2026; timed event; stunning Northern NM",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Galactic Grinder",
+        "Location": "Cedar Hill NM",
+        "Country": "USA",
+        "Region": "Mountain West",
+        "Date/Month": "April",
+        "Distance (mi)": "50/35/9",
+        "Elevation (ft)": "San Juan Alps",
+        "Field Size": "50-100",
+        "Entry Cost": "$50-75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "Aztec Adventures; Alien Crash Site theme; 4-mile singletrack",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Real West Gravel",
+        "Location": "Pendleton OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "March 15",
+        "Distance (mi)": "67/47",
+        "Elevation (ft)": "5000",
+        "Field Size": "150",
+        "Entry Cost": "$85-110",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "Oregon Triple Crown Series opener; Eastern Oregon high desert",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Sasquatch Duro",
+        "Location": "Carlton OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "April 11",
+        "Distance (mi)": "65/37",
+        "Elevation (ft)": "3000+",
+        "Field Size": "150",
+        "Entry Cost": "$85-110",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 11.0,
+        "Notes": "OTC Series #2; Willamette Valley vineyards; varied terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Oregon Coast Gravel Epic",
+        "Location": "Waldport OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "May 2",
+        "Distance (mi)": "60/49/37",
+        "Elevation (ft)": "4500",
+        "Field Size": "150-500",
+        "Entry Cost": "$95-120",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "OTC Series #3; 65% logging roads; Siuslaw National Forest",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "West Coast Gravel",
+        "Location": "Yachats OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "May 3",
+        "Distance (mi)": "45/34",
+        "Elevation (ft)": "3500",
+        "Field Size": "150",
+        "Entry Cost": "$85-100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "OTC Series #4; double-header weekend; coastal gravel",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Oregon Gran Fondo",
+        "Location": "Cottage Grove OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "May 16",
+        "Distance (mi)": "100/66/68",
+        "Elevation (ft)": "6000+",
+        "Field Size": "500",
+        "Entry Cost": "$100-140",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "OTC Series #5; South Willamette Valley; Phil Gaimon participated",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Takelma Gravel Grinder",
+        "Location": "Canyonville OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "June 27",
+        "Distance (mi)": "55",
+        "Elevation (ft)": "4000",
+        "Field Size": "150",
+        "Entry Cost": "$85-100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "OTC Series #6; Southern Oregon; steep 9-15% grade climb",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bend Dirt Fest",
+        "Location": "Bend OR",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "July 11",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "3000+",
+        "Field Size": "500",
+        "Entry Cost": "$75-100",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "OTC Series Finale; multi-discipline MTB + gravel + trail run",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Bald Eagle Gravel Grinder",
+        "Location": "Lock Haven PA",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "April 19",
+        "Distance (mi)": "60/30/15",
+        "Elevation (ft)": "4000",
+        "Field Size": "200-300",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 9.0,
+        "Notes": "PA Gravel Series #1; State Forest gravel; rugged terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Parker Dam Gravel Grinder",
+        "Location": "Clearfield County PA",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "May 10",
+        "Distance (mi)": "65/35/20",
+        "Elevation (ft)": "4500",
+        "Field Size": "200-300",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "PA Gravel Series #2; logging roads and forest gravel",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Camp Michaux Gravel Grinder",
+        "Location": "Gardners PA",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "June 29",
+        "Distance (mi)": "55/30/15",
+        "Elevation (ft)": "4000",
+        "Field Size": "200-300",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 9.0,
+        "Notes": "PA Gravel Series #3; Historic WWII POW camp area; rocky terrain",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Mid-State Gravel Grinder",
+        "Location": "Central PA",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "August 3",
+        "Distance (mi)": "65/35/18",
+        "Elevation (ft)": "5000",
+        "Field Size": "200-300",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "PA Gravel Series #4; chip timing",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Trough Creek Gravel Grinder",
+        "Location": "Trough Creek State Park PA",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "September 21",
+        "Distance (mi)": "60/30/15",
+        "Elevation (ft)": "4200",
+        "Field Size": "200-300",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "PA Gravel Series Finale; Huntingdon County; series awards",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Pony Xpress - CO State Championship",
+        "Location": "Cokedale CO",
+        "Country": "USA",
+        "Region": "Rocky Mountain",
+        "Date/Month": "April 19",
+        "Distance (mi)": "100+",
+        "Elevation (ft)": "8000+",
+        "Field Size": "150-300",
+        "Entry Cost": "$80-120",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Altitude",
+        "Priority Score": 10.0,
+        "Notes": "USAC State Championship; Colorado mountain gravel",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dirty Hector - NY State Championship",
+        "Location": "Trumansburg NY",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "May 25",
+        "Distance (mi)": "50-100",
+        "Elevation (ft)": "4000",
+        "Field Size": "200-400",
+        "Entry Cost": "$75-100",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 10.0,
+        "Notes": "USAC NY State Championship; Finger Lakes wine country",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "THE EQUALIZER - MO State Championship",
+        "Location": "Marthasville MO",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "July 26",
+        "Distance (mi)": "100",
+        "Elevation (ft)": "5000",
+        "Field Size": "200-300",
+        "Entry Cost": "$75-95",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 11.0,
+        "Notes": "USAC MO State Championship; Missouri River Valley; emerging scene",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Little Apple 100 - IL State Championship",
+        "Location": "Manhattan IL",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 3",
+        "Distance (mi)": "100",
+        "Elevation (ft)": "2000",
+        "Field Size": "200-300",
+        "Entry Cost": "$80-100",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "USAC IL State Championship; prairie gravel; fast flat course",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Iowa State Gravel TT Championship",
+        "Location": "Amana IA",
+        "Country": "USA",
+        "Region": "Midwest",
+        "Date/Month": "August 31",
+        "Distance (mi)": "Time trial",
+        "Elevation (ft)": "1500",
+        "Field Size": "100-200",
+        "Entry Cost": "$50-75",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "USAC IA State Championship; unique TT format; Amana Colonies",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Unravel Gravel - VA State Championship",
+        "Location": "Cumberland VA",
+        "Country": "USA",
+        "Region": "Southeast",
+        "Date/Month": "Fall TBD",
+        "Distance (mi)": "62/31",
+        "Elevation (ft)": "3500",
+        "Field Size": "200",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "USAC VA State Championship; mixed surface with singletrack",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Rasputitsa Dirt",
+        "Location": "Burke VT",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "March 29",
+        "Distance (mi)": "46",
+        "Elevation (ft)": "5000",
+        "Field Size": "500-800",
+        "Entry Cost": "$85-110",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "10th Anniversary 2026; early season mud fest; self-supported",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Raid Rockingham",
+        "Location": "SE NH",
+        "Country": "USA",
+        "Region": "Northeast",
+        "Date/Month": "June 1",
+        "Distance (mi)": "40-60",
+        "Elevation (ft)": "3000",
+        "Field Size": "200-400",
+        "Entry Cost": "$65-85",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 9.0,
+        "Notes": "GRVL Cycling since 2011; one of New England's oldest gravel rides",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Unravel - Bon Jon Pass Out",
+        "Location": "Quilcene WA",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "June 14",
+        "Distance (mi)": "77/55/35",
+        "Elevation (ft)": "4000",
+        "Field Size": "400",
+        "Entry Cost": "$60-80",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "Peninsula Adventure Sports; remote Olympic Peninsula; Ted King impressed",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Unravel - Why-Not-Chee",
+        "Location": "Hoquiam WA",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "July 26",
+        "Distance (mi)": "77/42/36/17",
+        "Elevation (ft)": "5000+",
+        "Field Size": "400",
+        "Entry Cost": "$60-80",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "Most epic race you've never heard of; remote camping required",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "The GRiT Adventure",
+        "Location": "Snoqualmie Pass WA",
+        "Country": "USA",
+        "Region": "Northwest",
+        "Date/Month": "July 19",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "4000+",
+        "Field Size": "200-300",
+        "Entry Cost": "$70-90",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Technical",
+        "Priority Score": 10.0,
+        "Notes": "North Cascades wilderness; brutal climbs; double-track",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Muck n Mac Fest",
+        "Location": "Traquair House Scotland",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "June 7",
+        "Distance (mi)": "31-50",
+        "Elevation (ft)": "4921",
+        "Field Size": "~200",
+        "Entry Cost": "$75",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.5,
+        "Notes": "Weekend festival; live music; enduro-style timed stages; cult Scottish following",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "North Wales Gravel X",
+        "Location": "Ruthin Wales",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "May 3",
+        "Distance (mi)": "31-50",
+        "Elevation (ft)": "2625-3937",
+        "Field Size": "150-200",
+        "Entry Cost": "$62",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.0,
+        "Notes": "Shares UCI Graean Cymru route sections; reservoirs; remote Welsh riding",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Lauf Gritfest",
+        "Location": "Cambrian Mountains Wales",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "June 20-22",
+        "Distance (mi)": "78",
+        "Elevation (ft)": "8038",
+        "Field Size": "~200",
+        "Entry Cost": "$190",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 8.0,
+        "Notes": "3-day event; 7 timed enduro stages; Gravel Earth Series event; growing reputation",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dalby Grit",
+        "Location": "Dalby Forest North York Moors",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "June 28",
+        "Distance (mi)": "68",
+        "Elevation (ft)": "3937",
+        "Field Size": "~150",
+        "Entry Cost": "$75",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.5,
+        "Notes": "New event 2025; punchy climbs; fast descents; forest gravel",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "JUST.GRAVEL",
+        "Location": "Southern Lake District",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "Various 2025",
+        "Distance (mi)": "25-50",
+        "Elevation (ft)": "1969-3281",
+        "Field Size": "100-150",
+        "Entry Cost": "$57",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.0,
+        "Notes": "Beginner-friendly options; Forestry England collaboration",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Rocks",
+        "Location": "North York Moors",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "TBC 2025",
+        "Distance (mi)": "62",
+        "Elevation (ft)": "4921",
+        "Field Size": "100-150",
+        "Entry Cost": "$100",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 7.0,
+        "Notes": "Enduro-style; night stages; mystery timed sections",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Tor Divide",
+        "Location": "Peak District",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "TBC 2025",
+        "Distance (mi)": "100",
+        "Elevation (ft)": "6562",
+        "Field Size": "~100",
+        "Entry Cost": "$63",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Cold",
+        "Priority Score": 6.5,
+        "Notes": "Non-competitive; unsupported; single-stage bikepacking format",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Yorkshire Coast Dirt Dash",
+        "Location": "Whitby",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "July 5-6",
+        "Distance (mi)": "100 (2-day)",
+        "Elevation (ft)": "8202",
+        "Field Size": "80-100",
+        "Entry Cost": "$100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.5,
+        "Notes": "2-day bikepacking event; campsite social; scenic coastal route",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dunoon Dirt Dash",
+        "Location": "Dunoon Scotland",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "September 27-28",
+        "Distance (mi)": "100 (2-day)",
+        "Elevation (ft)": "8202",
+        "Field Size": "80-100",
+        "Entry Cost": "$100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Cold",
+        "Priority Score": 6.5,
+        "Notes": "Scottish bikepacking; autumn riding; community event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Haldon Heroic",
+        "Location": "Haldon Forest Devon",
+        "Country": "UK",
+        "Region": "UK",
+        "Date/Month": "Various 2025",
+        "Distance (mi)": "15-50",
+        "Elevation (ft)": "1640-3937",
+        "Field Size": "~150",
+        "Entry Cost": "$40-70",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.0,
+        "Notes": "Self-navigate format; chip timing; forest trails",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Grinduro Germany",
+        "Location": "Hellenthal Eifel",
+        "Country": "Germany",
+        "Region": "Germany",
+        "Date/Month": "May 23-25",
+        "Distance (mi)": "62",
+        "Elevation (ft)": "6562",
+        "Field Size": "300-500",
+        "Entry Cost": "$130",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 8.0,
+        "Notes": "Enduro format (4 timed stages); festival weekend; live music expo",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Hegau Gravel Race",
+        "Location": "Singen",
+        "Country": "Germany",
+        "Region": "Germany",
+        "Date/Month": "June 28-29",
+        "Distance (mi)": "68",
+        "Elevation (ft)": "4921",
+        "Field Size": "~200",
+        "Entry Cost": "$87",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.5,
+        "Notes": "UCI Gravel World Series event; 3-day stage race format; volcanic landscapes",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "3Rides Aachen",
+        "Location": "Winterberg/Aachen",
+        "Country": "Germany",
+        "Region": "Germany",
+        "Date/Month": "May 2025",
+        "Distance (mi)": "62",
+        "Elevation (ft)": "5906",
+        "Field Size": "150-200",
+        "Entry Cost": "$87",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 7.0,
+        "Notes": "UCI World Series qualifier; 3-day stage race; Sauerland mountains",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Rad am Ring Gravel",
+        "Location": "N\u00fcrburgring",
+        "Country": "Germany",
+        "Region": "Germany",
+        "Date/Month": "TBC 2025",
+        "Distance (mi)": "TBC",
+        "Elevation (ft)": "TBC",
+        "Field Size": "150-200",
+        "Entry Cost": "$76",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.5,
+        "Notes": "New event 2025; designed by Paul Vo\u00df (ex-Tour de France); Nordschleife-adjacent",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel Fever",
+        "Location": "Ch\u00e2tellerault France",
+        "Country": "France",
+        "Region": "France",
+        "Date/Month": "September 13-15",
+        "Distance (mi)": "31-310",
+        "Elevation (ft)": "Various",
+        "Field Size": "500+",
+        "Entry Cost": "$38-217",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.5,
+        "Notes": "French Championships host; Ultra 500 option; multi-distance festival",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "La Dr\u00f4moise Gravel",
+        "Location": "Die Dr\u00f4me France",
+        "Country": "France",
+        "Region": "France",
+        "Date/Month": "September 2025",
+        "Distance (mi)": "17-47",
+        "Elevation (ft)": "1312-3281",
+        "Field Size": "150-200",
+        "Entry Cost": "$38-54",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.5,
+        "Notes": "Classic gravel event; Vercors mountain backdrop; vineyards; family-friendly",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Grinduro France",
+        "Location": "Xonrupt-Longemer Vosges",
+        "Country": "France",
+        "Region": "France",
+        "Date/Month": "June 28-30",
+        "Distance (mi)": "62",
+        "Elevation (ft)": "6562",
+        "Field Size": "200-300",
+        "Entry Cost": "$130",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Technical",
+        "Priority Score": 7.5,
+        "Notes": "New venue 2024; Vosges mountains; enduro format; party atmosphere",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dusty Gravel Series - Andenne",
+        "Location": "Andenne",
+        "Country": "Belgium",
+        "Region": "Benelux",
+        "Date/Month": "April 13",
+        "Distance (mi)": "47-62",
+        "Elevation (ft)": "3281",
+        "Field Size": "150-200",
+        "Entry Cost": "$49-65",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.0,
+        "Notes": "Part of Belgium Bike Festival; Condroz region; series with overall ranking",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Dusty Gravel - Lacs de l'Eau d'Heure",
+        "Location": "Cerfontaine",
+        "Country": "Belgium",
+        "Region": "Benelux",
+        "Date/Month": "April 19",
+        "Distance (mi)": "43-68",
+        "Elevation (ft)": "3281-5906",
+        "Field Size": "~150",
+        "Entry Cost": "$49-65",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 6.5,
+        "Notes": "Lake district setting; Wallonia exploration",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Ardenne Gravel Stages",
+        "Location": "Vielsalm/Engreux",
+        "Country": "Belgium",
+        "Region": "Benelux",
+        "Date/Month": "September 26-28",
+        "Distance (mi)": "43-68 x 3 days",
+        "Elevation (ft)": "3773-5906/day",
+        "Field Size": "170",
+        "Entry Cost": "$163",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 7.5,
+        "Notes": "First Belgian gravel stage race; attracted WorldTour names (Terpstra Naesen)",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Ottawa Valley Gravel Experience",
+        "Location": "Calabogie ON",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "April 12",
+        "Distance (mi)": "60/34/21",
+        "Elevation (ft)": "1200",
+        "Field Size": "100-150",
+        "Entry Cost": "$45-60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Cold",
+        "Priority Score": 8.0,
+        "Notes": "Canadian Gravel Cup #1; logging road network; K&P Trail finish; family-friendly",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Glengarry Games Gravel Run",
+        "Location": "Maxville ON",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "August 3",
+        "Distance (mi)": "71/52/26",
+        "Elevation (ft)": "1000",
+        "Field Size": "80-120",
+        "Entry Cost": "$45-60",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 8.5,
+        "Notes": "Canadian Gravel Cup #2; finishes on oval track in front of grandstands; Scottish heritage",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Back Forty Highlander",
+        "Location": "Mississippi Station ON",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "September 6",
+        "Distance (mi)": "67/43/22",
+        "Elevation (ft)": "1500",
+        "Field Size": "100-150",
+        "Entry Cost": "$50-65",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.5,
+        "Notes": "Canadian Gravel Cup #3; Back Forty Artisan Cheese Farm; white marble roads like Strada Bianche",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "River City Gravel Fondo",
+        "Location": "Campbell River BC",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "April 19-20",
+        "Distance (mi)": "19-62",
+        "Elevation (ft)": "2000-4000",
+        "Field Size": "150-200",
+        "Entry Cost": "$60-90",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Cold",
+        "Priority Score": 7.5,
+        "Notes": "BC Gravel Series; exclusive private Mosaic Forest Management roads; remote wilderness",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Burnt Bridge Classic",
+        "Location": "Cowichan Valley BC",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "May 17-18",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "3000-4500",
+        "Field Size": "150-200",
+        "Entry Cost": "$60-90",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 8.0,
+        "Notes": "BC Gravel Series; will host 2026 Canadian Gravel Championships",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Nanaimo Unpaved",
+        "Location": "Nanaimo BC",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "June 14-15",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "2500-4000",
+        "Field Size": "100-150",
+        "Entry Cost": "$60-90",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.5,
+        "Notes": "BC Gravel Series; new event in 2025 expansion; Vancouver Island",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Forbidden Gravel",
+        "Location": "Cumberland BC",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "September 13-14",
+        "Distance (mi)": "Multiple",
+        "Elevation (ft)": "3000-4500",
+        "Field Size": "100-150",
+        "Entry Cost": "$60-90",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 8.0,
+        "Notes": "BC Gravel Series; series finale; Cumberland bike culture hub",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Canmore Crux",
+        "Location": "Canmore AB",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "July 12",
+        "Distance (mi)": "50/20",
+        "Elevation (ft)": "2500-4000",
+        "Field Size": "100-150",
+        "Entry Cost": "$40-55",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 8.5,
+        "Notes": "Canmore Nordic Centre; Canadian Rockies backdrop; affordable grassroots event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Cowichan Crusher Gravel Fondo",
+        "Location": "Lake Cowichan BC",
+        "Country": "Canada",
+        "Region": "Canada",
+        "Date/Month": "June 1",
+        "Distance (mi)": "15-75",
+        "Elevation (ft)": "1500-4000",
+        "Field Size": "150-200",
+        "Entry Cost": "$60-75",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7.0,
+        "Notes": "Vancouver Island's oldest gravel fondo (8th edition); BC Triple Crown Part 1",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "MAAP Beechworth Granite Classic",
+        "Location": "Beechworth VIC",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "April 4-6",
+        "Distance (mi)": "71/56/28/9",
+        "Elevation (ft)": "5250",
+        "Field Size": "1300",
+        "Entry Cost": "$65-100",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 7.5,
+        "Notes": "Not a race (non-competitive); 85% gravel; Champagne de Pilot granite roads; gin shots",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Gravel and Granite",
+        "Location": "Tenterfield NSW",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "2025 TBC",
+        "Distance (mi)": "31-62",
+        "Elevation (ft)": "2500-4000",
+        "Field Size": "100-150",
+        "Entry Cost": "$55-80",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 8.0,
+        "Notes": "Rugged landscapes; adaptive rider friendly; spectacular mountain views",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Marys Mayhem",
+        "Location": "Mudgee NSW",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "August 2-3",
+        "Distance (mi)": "19-62 (2-day)",
+        "Elevation (ft)": "1500-3000",
+        "Field Size": "100-150",
+        "Entry Cost": "$55-80",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Heat",
+        "Priority Score": 8.0,
+        "Notes": "Champagne gravel; craft brewers; live music; 2-day festival format; Graveleur event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Clarkes Gambit",
+        "Location": "Nelligen NSW",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "October 26-27",
+        "Distance (mi)": "19-62 (2-day)",
+        "Elevation (ft)": "1500-3000",
+        "Field Size": "80-120",
+        "Entry Cost": "$65-100",
+        "Tier": 4,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 8.0,
+        "Notes": "4th year; Clyde River scenery; Mogo single-track network; overnighter format",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Wollombi Gravel Fest",
+        "Location": "Wollombi Valley NSW",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "December 2025",
+        "Distance (mi)": "56",
+        "Elevation (ft)": "2500-3500",
+        "Field Size": "100-150",
+        "Entry Cost": "$100-130",
+        "Tier": 3,
+        "Competition": "NONE",
+        "Protocol Fit": "Heat",
+        "Priority Score": 8.0,
+        "Notes": "3-day festival; Tiffany Cromwell & Valtteri Bottas hosted; gourmet dining; local wines",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Noosa Gravel Enduro",
+        "Location": "Noosa Hinterland QLD",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "July 5-6",
+        "Distance (mi)": "56",
+        "Elevation (ft)": "4100",
+        "Field Size": "150-200",
+        "Entry Cost": "$120-140",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Heat",
+        "Priority Score": 7.5,
+        "Notes": "Sunshine Coast premier gravel; Noosa Trail Network; 100% gravel; AusCycling sanctioned",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Sunday Creek Classic",
+        "Location": "Kenilworth QLD",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "May 23",
+        "Distance (mi)": "75",
+        "Elevation (ft)": "9800",
+        "Field Size": "100-150",
+        "Entry Cost": "$65-100",
+        "Tier": 3,
+        "Competition": "LOW",
+        "Protocol Fit": "Heat",
+        "Priority Score": 7.5,
+        "Notes": "Almost entirely gravel; includes notorious Mt Buggery climb; one of Australia's toughest",
+        "_data_quality": {
+          "field_size": "Estimated",
+          "competition": "Estimated",
+          "elevation": "Estimated"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "Wild Gravel",
+        "Location": "Gnowangerup WA",
+        "Country": "Australia",
+        "Region": "Australia",
+        "Date/Month": "2025 TBC",
+        "Distance (mi)": "62-93",
+        "Elevation (ft)": "1500-3000",
+        "Field Size": "100-150",
+        "Entry Cost": "$60-85",
+        "Tier": 4,
+        "Competition": "LOW",
+        "Protocol Fit": "Heat",
+        "Priority Score": 8.0,
+        "Notes": "WA's most spectacular gravel event; 2025 WA Bike Month regional event",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
+      },
+      {
+        "Race Name": "USA Cycling Gravel Nationals",
+        "Location": "La Crescent MN",
+        "Country": "USA",
+        "Region": "Driftless",
+        "Date/Month": "September 20",
+        "Distance (mi)": "September TBD",
+        "Elevation (ft)": "100/74/31",
+        "Field Size": "7171",
+        "Entry Cost": "760+",
+        "Tier": 3,
+        "Competition": "1",
+        "Protocol Fit": "MAXIMUM",
+        "Priority Score": 5.0,
+        "Notes": "10",
+        "_data_quality": {
+          "field_size": "Verified",
+          "competition": "Estimated",
+          "elevation": "Verified"
+        },
+        "_sources": [
+          "Small Races PDF",
+          "Claude research"
+        ],
+        "_last_verified": "2025-12-20",
+        "_added_date": "2025-12-20"
       }
     ]
+  },
+  "_metadata": {
+    "last_updated": "2025-12-20 00:10:23",
+    "total_races": 394,
+    "small_races_added": 147
   }
 }
