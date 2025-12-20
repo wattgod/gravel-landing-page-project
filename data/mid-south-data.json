@@ -82,17 +82,23 @@
         {
           "mile": 30,
           "label": "First Reality Check",
-          "desc": "Aid station one. Decide if you're racing or surviving."
+          "desc": "Aid station one. Decide if you're racing or surviving.",
+          "terrain_detail": "Key section at mile 30",
+          "named_section": "First Reality Check"
         },
         {
           "mile": 60,
           "label": "The Grind Begins",
-          "desc": "Aid station two. 40 miles left. Mental game starts here."
+          "desc": "Aid station two. 40 miles left. Mental game starts here.",
+          "terrain_detail": "Key section at mile 60",
+          "named_section": "The Grind Begins"
         },
         {
           "mile": 85,
           "label": "The Final Push",
-          "desc": "Last 15 miles. You can see the finish but your legs disagree."
+          "desc": "Last 15 miles. You can see the finish but your legs disagree.",
+          "terrain_detail": "Key section at mile 85",
+          "named_section": "The Final Push"
         }
       ],
       "signature_challenge": "The weather lottery. You train for months but Oklahoma decides what race you're riding.",

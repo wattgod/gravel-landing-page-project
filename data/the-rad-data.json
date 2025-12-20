@@ -76,18 +76,23 @@
       "suffering_zones": [
         {
           "mile": 30,
-          "label": "Reality Check",
-          "desc": "The rollers are adding up. Legs are talking."
+          "label": "First Major Test",
+          "desc": "The rollers are adding up. Legs are talking.",
+          "terrain_detail": "Key section at mile 30"
         },
         {
           "mile": 60,
           "label": "Wind Games",
-          "desc": "Open prairie means exposure. Wind direction determines your fate."
+          "desc": "Open prairie means exposure. Wind direction determines your fate.",
+          "terrain_detail": "Open terrain where wind is a factor",
+          "named_section": "Wind Games"
         },
         {
           "mile": 85,
           "label": "Closing Miles",
-          "desc": "You can see the finish but the hills don't stop coming."
+          "desc": "You can see the finish but the hills don't stop coming.",
+          "terrain_detail": "Key section at mile 85",
+          "named_section": "Closing Miles"
         }
       ],
       "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful.",

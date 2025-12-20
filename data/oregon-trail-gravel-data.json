@@ -77,17 +77,23 @@
         {
           "stage": 1,
           "label": "Opening Salvo",
-          "desc": "60+ miles to set the tone. Fresh legs meet Oregon reality."
+          "desc": "60+ miles to set the tone. Fresh legs meet Oregon reality.",
+          "terrain_detail": "Exposed terrain with no shelter",
+          "named_section": "Opening Salvo"
         },
         {
           "stage": 3,
           "label": "The Queen Stage",
-          "desc": "The longest, hardest day. Where GC hopes live or die."
+          "desc": "The longest, hardest day. Where GC hopes live or die.",
+          "terrain_detail": "Key section at mile 3",
+          "named_section": "The Queen Stage"
         },
         {
           "stage": 5,
           "label": "Final Test",
-          "desc": "Tired bodies, one more day. Celebrate or suffer to the end."
+          "desc": "Tired bodies, one more day. Celebrate or suffer to the end.",
+          "terrain_detail": "Key section at mile 5",
+          "named_section": "Final Test"
         }
       ],
       "signature_challenge": "The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal.",

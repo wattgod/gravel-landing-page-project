@@ -77,17 +77,23 @@
         {
           "mile": 30,
           "label": "Wind Games Begin",
-          "desc": "Wyoming's famous wind starts testing your patience."
+          "desc": "Wyoming's famous wind starts testing your patience.",
+          "terrain_detail": "Open terrain where wind is a factor",
+          "named_section": "Wind Games Begin"
         },
         {
           "mile": 55,
           "label": "Remote Section",
-          "desc": "Miles from anything. Self-sufficiency matters."
+          "desc": "Miles from anything. Self-sufficiency matters.",
+          "terrain_detail": "Key section at mile 55",
+          "named_section": "Remote Section"
         },
         {
           "mile": 80,
           "label": "Mountain Shadows",
-          "desc": "The Big Horns loom. You're not done yet."
+          "desc": "The Big Horns loom. You're not done yet.",
+          "terrain_detail": "Key section at mile 80",
+          "named_section": "Mountain Shadows"
         }
       ],
       "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything.",

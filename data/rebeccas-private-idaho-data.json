@@ -78,17 +78,22 @@
         {
           "mile": 30,
           "label": "Trail Creek Climb",
-          "desc": "The signature climb. Long and steady. Pace yourself."
+          "desc": "The signature climb. Long and steady. Pace yourself.",
+          "terrain_detail": "Sustained climbing at mile 30",
+          "named_section": "Trail Creek Climb"
         },
         {
           "mile": 65,
           "label": "Afternoon Exposure",
-          "desc": "Open terrain, sun beating down, halfway fatigue settling in."
+          "desc": "Open terrain, sun beating down, halfway fatigue settling in.",
+          "terrain_detail": "Exposed terrain with no shelter",
+          "named_section": "Afternoon Exposure"
         },
         {
           "mile": 90,
-          "label": "Final Push",
-          "desc": "You can see Ketchum. But there's still climbing between you and the finish."
+          "label": "Final Challenge",
+          "desc": "You can see Ketchum. But there's still climbing between you and the finish.",
+          "terrain_detail": "Key section at mile 90"
         }
       ],
       "signature_challenge": "The combination of distance, altitude, and relentless terrain. Nothing is crazy steep\u2014but nothing is flat either."

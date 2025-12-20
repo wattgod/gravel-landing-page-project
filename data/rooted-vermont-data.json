@@ -77,17 +77,23 @@
         {
           "mile": 25,
           "label": "First Reality Check",
-          "desc": "The pitches start adding up. Vermont doesn't do gradual."
+          "desc": "The pitches start adding up. Vermont doesn't do gradual.",
+          "terrain_detail": "Key section at mile 25",
+          "named_section": "First Reality Check"
         },
         {
           "mile": 50,
           "label": "Deep Woods",
-          "desc": "Class 4 terrain. True Vermont gravel experience."
+          "desc": "Class 4 terrain. True Vermont gravel experience.",
+          "terrain_detail": "Key section at mile 50",
+          "named_section": "Deep Woods"
         },
         {
           "mile": 75,
           "label": "Final Pitches",
-          "desc": "Tired legs meet steep grades. Vermont isn't done yet."
+          "desc": "Tired legs meet steep grades. Vermont isn't done yet.",
+          "terrain_detail": "Key section at mile 75",
+          "named_section": "Final Pitches"
         }
       ],
       "signature_challenge": "The pitch grades. Vermont climbs aren't long\u2014they're steep. 15-20% pitches shred legs that expected steady grades.",

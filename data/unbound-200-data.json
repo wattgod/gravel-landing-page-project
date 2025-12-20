@@ -73,22 +73,28 @@
       "reputation": "The Ironman of gravel. Finishing earns respect. Winning earns legend status."
     },
     "course_description": {
-      "character": "Relentless. Not one killer climb, but 200 miles of constant attrition.",
+      "character": "Relentless. Not one killer climb, but 200 miles of constant attrition. At 200 miles, this is a full-day effort. With 11K+ feet of climbing, the vertical gain is relentless.",
       "suffering_zones": [
         {
           "mile": 60,
           "label": "First Meltdown Zone",
-          "desc": "Reality sets in. The polite first hour is gone."
+          "desc": "Reality sets in. The polite first hour is gone.",
+          "terrain_detail": "Key section at mile 60",
+          "named_section": "First Meltdown Zone"
         },
         {
           "mile": 120,
           "label": "Checkpoint Salvation",
-          "desc": "Halfway. Decide if you're going back out."
+          "desc": "Halfway. Decide if you're going back out.",
+          "terrain_detail": "Key section at mile 120",
+          "named_section": "Checkpoint Salvation"
         },
         {
           "mile": 180,
           "label": "Dark Thoughts Begin",
-          "desc": "20 miles left. Your brain starts negotiating."
+          "desc": "20 miles left. Your brain starts negotiating.",
+          "terrain_detail": "Key section at mile 180",
+          "named_section": "Dark Thoughts Begin"
         }
       ],
       "signature_challenge": "The heat. The duration. The Flint Hills don't negotiate.",

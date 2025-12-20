@@ -78,17 +78,22 @@
         {
           "mile": 40,
           "label": "Canyon Entry",
-          "desc": "The climbing begins in earnest. Utah terrain reveals itself."
+          "desc": "The climbing begins in earnest. Utah terrain reveals itself.",
+          "terrain_detail": "Key section at mile 40",
+          "named_section": "Canyon Entry"
         },
         {
           "mile": 80,
           "label": "Brian Head Approach",
-          "desc": "The big climb. 10,000+ feet awaits."
+          "desc": "The big climb. 10,000+ feet awaits. This section demands attention and proper pacing. The cumulative fatigue is real by mile 80.",
+          "terrain_detail": "Key section at mile 80",
+          "named_section": "Brian Head Approach"
         },
         {
           "mile": 110,
-          "label": "Final Push",
-          "desc": "Descending on tired legs. Focus matters."
+          "label": "Final Challenge",
+          "desc": "Descending on tired legs. Focus matters.",
+          "terrain_detail": "Key section at mile 110"
         }
       ],
       "signature_challenge": "Brian Head summit\u2014climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance.",

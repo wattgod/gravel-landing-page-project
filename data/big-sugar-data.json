@@ -78,17 +78,22 @@
         {
           "mile": 25,
           "label": "Welcome to the Ozarks",
-          "desc": "The punchy climbs start adding up. You realize there's no flat."
+          "desc": "The punchy climbs start adding up. You realize there's no flat.",
+          "terrain_detail": "Key section at mile 25",
+          "named_section": "Welcome to the Ozarks"
         },
         {
           "mile": 55,
           "label": "War Eagle Territory",
-          "desc": "Deep in the course. The climbing feels personal."
+          "desc": "Deep in the course. The climbing feels personal.",
+          "terrain_detail": "Key section at mile 55",
+          "named_section": "War Eagle Territory"
         },
         {
           "mile": 85,
-          "label": "Final Push",
-          "desc": "Legs are shattered but the Ozarks aren't done with you yet."
+          "label": "Final Challenge",
+          "desc": "Legs are shattered but the Ozarks aren't done with you yet.",
+          "terrain_detail": "Key section at mile 85"
         }
       ],
       "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches.",

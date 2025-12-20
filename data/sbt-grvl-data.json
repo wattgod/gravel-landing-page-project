@@ -95,7 +95,7 @@
       ]
     },
     "course_description": {
-      "character": "Fast and flowing on smooth gravel, punctuated by lung-busting climbs at altitude. The surface forgives; the elevation does not.",
+      "character": "Fast and flowing on smooth gravel, punctuated by lung-busting climbs at altitude. The surface forgives; the elevation does not. The Black course at 108 miles is the premier distance.",
       "suffering_zones": [
         {
           "mile": 30,
@@ -108,13 +108,16 @@
           "mile": 65,
           "label": "The Oxygen Debt Zone",
           "desc": "Altitude fatigue compounds. Legs work, lungs don't.",
-          "weather_note": "Peak heat if afternoon temps climb"
+          "weather_note": "Peak heat if afternoon temps climb",
+          "terrain_detail": "Key section at mile 65",
+          "named_section": "The Oxygen Debt Zone"
         },
         {
           "mile": 90,
           "label": "Cow Creek Descent",
           "desc": "Washboard and rocks when you're most fatigued. Where focus fails.",
-          "terrain_detail": "Softball-sized rocks and washboard surfaces demand attention"
+          "terrain_detail": "Softball-sized rocks and washboard surfaces demand attention",
+          "named_section": "Cow Creek Descent"
         }
       ],
       "signature_challenge": "The altitude. Everything else is manageable. The thin air is not.",

@@ -96,25 +96,29 @@
           "stage": 1,
           "label": "Savanna Introduction",
           "desc": "150km across the open Mara. The scale hits you. So does the dust.",
-          "terrain_detail": "First exposure to volcanic dust and game reserve terrain"
+          "terrain_detail": "First exposure to volcanic dust and game reserve terrain",
+          "named_section": "Savanna Introduction"
         },
         {
           "stage": 2,
           "label": "Volcanic Highlands",
           "desc": "Climbing into the highlands. Altitude starts to bite. Heat doesn't quit.",
-          "terrain_detail": "Reaches 2,800m elevation"
+          "terrain_detail": "Reaches 2,800m elevation",
+          "named_section": "Volcanic Highlands"
         },
         {
           "stage": 3,
           "label": "Queen Stage",
           "desc": "The longest, hardest day. Remote. Exposed. Beautiful. Breaking point for many.",
-          "terrain_detail": "Cumulative fatigue compounds"
+          "terrain_detail": "Cumulative fatigue compounds",
+          "named_section": "Queen Stage"
         },
         {
           "stage": 4,
           "label": "Victory Lap",
           "desc": "Final stage to finish. Wildebeest may join your peloton. Not a joke.",
-          "terrain_detail": "Wildlife encounters most likely"
+          "terrain_detail": "Wildlife encounters most likely",
+          "named_section": "Victory Lap"
         }
       ],
       "signature_challenge": "It's not one thing\u2014it's everything. Heat. Altitude. Dust. Distance. Wildlife. Four days of sensory overload.",

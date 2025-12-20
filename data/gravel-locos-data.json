@@ -73,22 +73,28 @@
       "reputation": "The anti-corporate gravel race. Where hospitality matters more than prize purses."
     },
     "course_description": {
-      "character": "Classic Texas gravel\u2014rolling, exposed, beautiful in a rugged Hill Country way.",
+      "character": "Classic Texas gravel\u2014rolling, exposed, beautiful in a rugged Hill Country way. At 115 miles, this is a full-day effort. The 6K+ feet of climbing demands consistent effort throughout.",
       "suffering_zones": [
         {
           "mile": 35,
           "label": "Wind Reality",
-          "desc": "Texas wind starts asserting itself."
+          "desc": "Texas wind starts asserting itself. Open terrain means no shelter from elements. Weather conditions become a major factor here.",
+          "terrain_detail": "Open terrain where wind is a factor",
+          "named_section": "Wind Reality"
         },
         {
           "mile": 70,
           "label": "Deep Country",
-          "desc": "Ranch country isolation. Just you and the road."
+          "desc": "Ranch country isolation. Just you and the road.",
+          "terrain_detail": "Key section at mile 70",
+          "named_section": "Deep Country"
         },
         {
           "mile": 100,
           "label": "Home Stretch",
-          "desc": "Hico in sight but legs are tired. BBQ motivation."
+          "desc": "Hico in sight but legs are tired. BBQ motivation.",
+          "terrain_detail": "Key section at mile 100",
+          "named_section": "Home Stretch"
         }
       ],
       "signature_challenge": "The combination of distance, February conditions, and early-season fitness. This is often a season opener\u2014meaning legs aren't ready.",

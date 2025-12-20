@@ -78,17 +78,23 @@
         {
           "mile": 40,
           "label": "Columbine Climb Begins",
-          "desc": "The defining climb. 3,000+ feet of gain to 12,600 feet."
+          "desc": "The defining climb. 3,000+ feet of gain to 12,600 feet.",
+          "terrain_detail": "Sustained climbing at mile 40",
+          "named_section": "Columbine Climb Begins"
         },
         {
           "mile": 50,
           "label": "Columbine Summit",
-          "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point."
+          "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point.",
+          "terrain_detail": "Sustained climbing at mile 50",
+          "named_section": "Columbine Summit"
         },
         {
           "mile": 80,
           "label": "Powerline Return",
-          "desc": "You've done this climb already. Now do it again on dead legs."
+          "desc": "You've done this climb already. Now do it again on dead legs.",
+          "terrain_detail": "Key section at mile 80",
+          "named_section": "Powerline Return"
         }
       ],
       "signature_challenge": "Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville.",

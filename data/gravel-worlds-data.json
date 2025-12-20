@@ -73,22 +73,28 @@
       "reputation": "The OG grassroots race. Where the gravel movement's spirit lives on."
     },
     "course_description": {
-      "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard\u2014until it is.",
+      "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard\u2014until it is. At 150 miles, this is a full-day effort. The 8K+ feet of climbing demands consistent effort throughout.",
       "suffering_zones": [
         {
           "mile": 50,
           "label": "Heat Onset",
-          "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation."
+          "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation.",
+          "terrain_detail": "Key section at mile 50",
+          "named_section": "Heat Onset"
         },
         {
           "mile": 100,
           "label": "Century Club",
-          "desc": "You've done 100 miles. There's 50 more. In August heat."
+          "desc": "You've done 100 miles. There's 50 more. In August heat.",
+          "terrain_detail": "Key section at mile 100",
+          "named_section": "Century Club"
         },
         {
           "mile": 130,
           "label": "Mind Games",
-          "desc": "Close enough to finish to hurt. Far enough to break."
+          "desc": "Close enough to finish to hurt. Far enough to break.",
+          "terrain_detail": "Key section at mile 130",
+          "named_section": "Mind Games"
         }
       ],
       "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional\u2014it's survival.",

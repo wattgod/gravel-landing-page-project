@@ -77,17 +77,22 @@
         {
           "mile": 15,
           "label": "Fort Ord Rollers",
-          "desc": "The terrain starts testing your legs."
+          "desc": "The terrain starts testing your legs. This section demands attention and proper pacing. The cumulative fatigue is real by mile 15.",
+          "terrain_detail": "Key section at mile 15",
+          "named_section": "Fort Ord Rollers"
         },
         {
           "mile": 40,
           "label": "Sandy Sections",
-          "desc": "Beach proximity means sand. Momentum matters."
+          "desc": "Beach proximity means sand. Momentum matters.",
+          "terrain_detail": "Key section at mile 40",
+          "named_section": "Sandy Sections"
         },
         {
           "mile": 55,
-          "label": "Final Push",
-          "desc": "Tired legs, dusty conditions, festival finish awaits."
+          "label": "Final Challenge",
+          "desc": "Tired legs, dusty conditions, festival finish awaits.",
+          "terrain_detail": "Key section at mile 55"
         }
       ],
       "signature_challenge": "The distraction. There's so much happening at Sea Otter that the race can feel secondary. Stay focused or get caught up in expo madness.",
