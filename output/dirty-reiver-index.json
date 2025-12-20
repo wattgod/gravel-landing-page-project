@@ -1,0 +1,148 @@
+{
+  "race_id": "dirty-reiver",
+  "race_name": "Dirty Reiver",
+  "race_slug": "dirty-reiver",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "Britain's original gravel race. Sells out in 6 hours.",
+  "race_date": "2026: April 25",
+  "year": null,
+  "course": {
+    "distance_miles": 130,
+    "elevation_gain_feet": 14100,
+    "terrain_type": "Forest gravel roads with technical sections",
+    "terrain_surface": "Forest gravel roads, technical singletrack, moorland crossings. Varies from smooth forest roads to rocky singletrack to exposed moorland.",
+    "technical_rating": 4,
+    "signature_challenge": "The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders.",
+    "character": "Classic British suffering. Cold, wet, hilly, and beautiful. Kielder Forest doesn't negotiate.",
+    "key_features": [
+      "Kielder Forest fire roads",
+      "Exposed moorland crossings",
+      "Technical rocky descents",
+      "Notorious mud potential",
+      "MTB skills required in sections"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 31,
+        "label": "First Moorland Crossing",
+        "desc": "Exposed. Wind hits. Weather reveals itself. Your clothing choices get tested.",
+        "terrain_detail": "Exposed moorland, no shelter"
+      },
+      {
+        "mile": 62,
+        "label": "Midway Reality Check",
+        "desc": "If it's wet, you're wet. If it's cold, you're cold. No changing that now.",
+        "terrain_detail": "Weather compounds fatigue"
+      },
+      {
+        "mile": 106,
+        "label": "Final Climbs",
+        "desc": "Tired legs meet technical terrain. The finish is still 40km away.",
+        "terrain_detail": "Technical sections on exhausted legs"
+      }
+    ],
+    "location": "Kielder, Northumberland, England",
+    "climate_primary": "British April weather gamble",
+    "climate_description": "5-15°C (41-59°F), high rain probability. Cold + wet + wind. British April is a dice roll.",
+    "climate_challenges": [
+      "Cold + wet + wind combination",
+      "High rain probability",
+      "British April gamble",
+      "Hypothermia risk in bad years",
+      "Weather determines your race"
+    ]
+  },
+  "ratings": {
+    "overall_score": 85,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 4,
+    "elevation_score": 4,
+    "climate_score": 4,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": 3,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 44,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Dirty Reiver is what happens when you take American gravel ambition and drop it in British conditions. The result is a genuinely hard event that tests fitness, skills, and weather resilience. If you want to understand UK gravel culture, you do Dirty Reiver."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Kielder, Northumberland, England",
+    "location_badge": "KIELDER, NORTHUMBERLAND, ENGLAND",
+    "county": "Northumberland",
+    "city": "Kielder",
+    "state": "Northumberland",
+    "country": "USA",
+    "date": "Late April annually",
+    "date_specific": "2026: April 25",
+    "venue": null,
+    "parking": "On-site available. Arrive early for best spots.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens winter/spring. Sells out in 6 hours. Cost: £100-150",
+    "start_time": "Saturday early morning (exact time TBD)",
+    "field_size": "2,000 riders (sells out in 6 hours)"
+  },
+  "final_verdict": {
+    "overall_score": 85,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2015,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [
+      "Named after Scottish border 'reivers'—raiders who once roamed these lands",
+      "Sells out in 6 hours every year—registration is a competitive sport",
+      "Kielder Forest is England's largest man-made forest",
+      "The course crosses Scottish-English border multiple times",
+      "Mud years turn the race into survival mode"
+    ],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=dirty-reiver",
+    "race_challenge_tagline": "cold, wet, and hilly in British April conditions"
+  },
+  "seo": {
+    "title": "Dirty Reiver Race Guide | Training Plans & Kielder Course Intel",
+    "meta_description": "Dirty Reiver Kielder guide: 130-mile UK gravel race. Britain's original gravel race with 4,300 meters of climbing in British April weather. Get training plans & course breakdown.",
+    "focus_keyword": "dirty reiver",
+    "slug": "dirty-reiver"
+  },
+  "index_generated_at": "2025-12-19T21:02:58.394488",
+  "landing_page_url": "/races/dirty-reiver",
+  "ridewithgps_id": "TBD",
+  "prize_purse": "Varies",
+  "field_size": "2,000 riders (sells out in 6 hours)",
+  "searchable_text": "Dirty Reiver Britain's original gravel race. Sells out in 6 hours. Classic British suffering. Cold, wet, hilly, and beautiful. Kielder Forest doesn't negotiate. The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders. Kielder Forest fire roads Exposed moorland crossings Technical rocky descents Notorious mud potential MTB skills required in sections Kielder, Northumberland, England Northumberland British April weather gamble Forest gravel roads with technical sections",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-extreme",
+    "terrain-gravel",
+    "terrain-pavement",
+    "terrain-singletrack",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}
