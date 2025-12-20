@@ -4,7 +4,6 @@
     "slug": "oregon-trail-gravel",
     "display_name": "Oregon Trail Gravel Grinder",
     "tagline": "5 days. 5 stages. The Grand Tour of American Gravel.",
-    
     "vitals": {
       "distance_mi": 375,
       "elevation_ft": 35000,
@@ -13,7 +12,12 @@
       "county": "Multiple counties",
       "date": "Late June annually",
       "date_specific": "2025: June 23-27",
-      "terrain_types": ["High desert gravel", "Forest service roads", "Mountain passes", "Volcanic terrain"],
+      "terrain_types": [
+        "High desert gravel",
+        "Forest service roads",
+        "Mountain passes",
+        "Volcanic terrain"
+      ],
       "field_size": "200+ riders",
       "start_time": "Varies by stage",
       "registration": "Opens fall prior. Cost: ~$500+",
@@ -21,20 +25,27 @@
       "aid_stations": "Full support with vehicle access",
       "cutoff_time": "Stage-dependent"
     },
-    
     "climate": {
       "primary": "High desert Oregon",
       "description": "Late June brings long days, warm temps, and Oregon's classic high desert conditions",
-      "challenges": ["Temperature swings 40-90°F", "High-altitude sun exposure", "Dust in dry years", "Variable weather across 5 days"]
+      "challenges": [
+        "Temperature swings 40-90\u00b0F",
+        "High-altitude sun exposure",
+        "Dust in dry years",
+        "Variable weather across 5 days"
+      ]
     },
-    
     "terrain": {
       "primary": "High desert and forest service gravel across Central Oregon",
-      "surface": "Variable—smooth forest roads to chunky volcanic gravel",
+      "surface": "Variable\u2014smooth forest roads to chunky volcanic gravel",
       "technical_rating": 3,
-      "features": ["McKenzie Pass", "Cascade Range views", "High desert landscapes", "Old-growth forests"]
+      "features": [
+        "McKenzie Pass",
+        "Cascade Range views",
+        "High desert landscapes",
+        "Old-growth forests"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 92,
       "course_profile": 38,
@@ -49,7 +60,6 @@
       "altitude": 4,
       "adventure": 5
     },
-    
     "history": {
       "founded": 2015,
       "founder": "Breakaway Promotions",
@@ -61,23 +71,33 @@
       ],
       "reputation": "The gravel Grand Tour. Where one-day races feel limiting."
     },
-    
     "course_description": {
-      "character": "Five distinct stages showcasing Oregon's diversity—high desert, forests, mountains, and everything between.",
+      "character": "Five distinct stages showcasing Oregon's diversity\u2014high desert, forests, mountains, and everything between.",
       "suffering_zones": [
-        {"stage": 1, "label": "Opening Salvo", "desc": "60+ miles to set the tone. Fresh legs meet Oregon reality."},
-        {"stage": 3, "label": "The Queen Stage", "desc": "The longest, hardest day. Where GC hopes live or die."},
-        {"stage": 5, "label": "Final Test", "desc": "Tired bodies, one more day. Celebrate or suffer to the end."}
+        {
+          "stage": 1,
+          "label": "Opening Salvo",
+          "desc": "60+ miles to set the tone. Fresh legs meet Oregon reality."
+        },
+        {
+          "stage": 3,
+          "label": "The Queen Stage",
+          "desc": "The longest, hardest day. Where GC hopes live or die."
+        },
+        {
+          "stage": 5,
+          "label": "Final Test",
+          "desc": "Tired bodies, one more day. Celebrate or suffer to the end."
+        }
       ],
       "signature_challenge": "The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal.",
       "map_url": null,
       "map_note": "Course map coming soon"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
-        "explanation": "The premier multi-day gravel event in America. Finishing Oregon Trail carries weight—it's not a casual commitment."
+        "explanation": "The premier multi-day gravel event in America. Finishing Oregon Trail carries weight\u2014it's not a casual commitment."
       },
       "length": {
         "score": 5,
@@ -89,7 +109,7 @@
       },
       "elevation": {
         "score": 5,
-        "explanation": "35,000 feet across 5 days—7,000 feet average per day. The climbing is relentless and cumulative. Recovery matters."
+        "explanation": "35,000 feet across 5 days\u20147,000 feet average per day. The climbing is relentless and cumulative. Recovery matters."
       },
       "climate": {
         "score": 3,
@@ -101,13 +121,12 @@
       },
       "adventure": {
         "score": 5,
-        "explanation": "Central Oregon is spectacular—volcanic landscapes, old-growth forests, high desert, Cascade views. Five days means deep immersion."
+        "explanation": "Central Oregon is spectacular\u2014volcanic landscapes, old-growth forests, high desert, Cascade views. Five days means deep immersion."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Gravel's Grand Tour",
-      "summary": "Oregon Trail is for those who find single-day races limiting. The stage format creates different demands—recovery, consistency, pacing across days. It's closer to bikepacking than racing, with timing chips.",
+      "summary": "Oregon Trail is for those who find single-day races limiting. The stage format creates different demands\u2014recovery, consistency, pacing across days. It's closer to bikepacking than racing, with timing chips.",
       "strengths": [
         "The format: Multi-day racing is a completely different experience.",
         "The scenery: Central Oregon delivers world-class landscapes.",
@@ -120,10 +139,9 @@
       ],
       "bottom_line": "If you've exhausted one-day races and want something deeper, Oregon Trail is the next level. It's a proper cycling adventure disguised as a race."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The stage race format sounds romantic until you realize you're waking up on Day 4 with yesterday's fatigue plus three days of accumulated suffering. This isn't five races—it's one long test with sleep breaks.",
+      "reality": "The stage race format sounds romantic until you realize you're waking up on Day 4 with yesterday's fatigue plus three days of accumulated suffering. This isn't five races\u2014it's one long test with sleep breaks.",
       "consequences": [
         "Time commitment: 7+ days including travel and buffer.",
         "Financial commitment: $1,500-2,500+ when all costs included.",
@@ -131,14 +149,12 @@
       ],
       "expectation_reset": "This is closer to a bikepacking event with support than a traditional race. Your goal might shift from 'win' to 'finish with dignity' after Stage 2."
     },
-    
     "final_verdict": {
       "score": "92 / 100",
-      "one_liner": "The Grand Tour of American gravel—five days of Oregon's best, compressed into one transformative experience.",
+      "one_liner": "The Grand Tour of American gravel\u2014five days of Oregon's best, compressed into one transformative experience.",
       "should_you_race": "Yes if you're ready for multi-day racing and want to experience gravel at its deepest. Not if you can't commit the time or prefer the intensity of one-day events.",
       "alternatives": "If you want Oregon without 5-day commitment: Gorge Gravel Grinder. If you want multi-day elsewhere: Trans-Provence (Europe), Bike Nonstop (various)."
     },
-    
     "logistics": {
       "airport": "Portland (PDX) or Redmond (RDM) depending on stage locations.",
       "lodging_strategy": "Organized lodging packages available. Or book hotels in each stage town.",
@@ -147,13 +163,30 @@
       "parking": "Vehicle support recommended for gear transport between stages.",
       "official_site": "https://www.oregontrailgravelgrinder.com"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Oregon Trail Gravel Grinder Race Guide | Training Plans & Central Oregon (multiple towns) Course Intel",
+      "meta_description": "Oregon Trail Gravel Grinder Central Oregon (multiple towns) guide: 375-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "oregon trail gravel grinder",
+      "slug": "oregon-trail-gravel"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

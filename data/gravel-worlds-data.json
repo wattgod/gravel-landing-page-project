@@ -4,7 +4,6 @@
     "slug": "gravel-worlds",
     "display_name": "Gravel Worlds",
     "tagline": "The world championship nobody asked for. The grassroots OG.",
-    
     "vitals": {
       "distance_mi": 150,
       "elevation_ft": 8000,
@@ -13,7 +12,12 @@
       "county": "Lancaster County",
       "date": "Mid-August annually",
       "date_specific": "2025: August 16",
-      "terrain_types": ["Nebraska farm gravel", "Minimum maintenance roads", "Rolling terrain", "Prairie exposure"],
+      "terrain_types": [
+        "Nebraska farm gravel",
+        "Minimum maintenance roads",
+        "Rolling terrain",
+        "Prairie exposure"
+      ],
       "field_size": "1,500+ riders across all distances",
       "start_time": "Saturday 6:00 AM",
       "registration": "Opens early in year. Cost: ~$150",
@@ -21,20 +25,27 @@
       "aid_stations": "Multiple aid stations at key points",
       "cutoff_time": "Varies by distance"
     },
-    
     "climate": {
       "primary": "Nebraska summer",
       "description": "August brings humidity, heat, and the kind of Midwest summer that tests your heat tolerance",
-      "challenges": ["Heat index can exceed 100°F", "Humidity is brutal", "Limited shade on course", "Hydration is critical"]
+      "challenges": [
+        "Heat index can exceed 100\u00b0F",
+        "Humidity is brutal",
+        "Limited shade on course",
+        "Hydration is critical"
+      ]
     },
-    
     "terrain": {
       "primary": "Classic Nebraska farm gravel with minimum maintenance roads",
       "surface": "Loose gravel, some rough minimum maintenance, occasional sand/mud",
       "technical_rating": 3,
-      "features": ["Endless horizon", "Farm crossings", "Rolling terrain", "Prairie isolation"]
+      "features": [
+        "Endless horizon",
+        "Farm crossings",
+        "Rolling terrain",
+        "Prairie isolation"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 86,
       "course_profile": 32,
@@ -49,7 +60,6 @@
       "altitude": 1,
       "adventure": 4
     },
-    
     "history": {
       "founded": 2014,
       "founder": "Corey Godfrey / Gravel Cycling Hall of Fame",
@@ -62,18 +72,28 @@
       ],
       "reputation": "The OG grassroots race. Where the gravel movement's spirit lives on."
     },
-    
     "course_description": {
-      "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard—until it is.",
+      "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard\u2014until it is.",
       "suffering_zones": [
-        {"mile": 50, "label": "Heat Onset", "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation."},
-        {"mile": 100, "label": "Century Club", "desc": "You've done 100 miles. There's 50 more. In August heat."},
-        {"mile": 130, "label": "Mind Games", "desc": "Close enough to finish to hurt. Far enough to break."}
+        {
+          "mile": 50,
+          "label": "Heat Onset",
+          "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation."
+        },
+        {
+          "mile": 100,
+          "label": "Century Club",
+          "desc": "You've done 100 miles. There's 50 more. In August heat."
+        },
+        {
+          "mile": 130,
+          "label": "Mind Games",
+          "desc": "Close enough to finish to hurt. Far enough to break."
+        }
       ],
-      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival.",
+      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional\u2014it's survival.",
       "map_url": "https://ridewithgps.com/routes/51659517"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
@@ -85,7 +105,7 @@
       },
       "technicality": {
         "score": 3,
-        "explanation": "Nebraska gravel isn't technical in the traditional sense—but loose surfaces, minimum maintenance roads, and fatigue create challenges."
+        "explanation": "Nebraska gravel isn't technical in the traditional sense\u2014but loose surfaces, minimum maintenance roads, and fatigue create challenges."
       },
       "elevation": {
         "score": 3,
@@ -101,10 +121,9 @@
       },
       "adventure": {
         "score": 4,
-        "explanation": "The Nebraska prairie is its own kind of beautiful—endless sky, rural isolation, agricultural landscapes that stretch forever."
+        "explanation": "The Nebraska prairie is its own kind of beautiful\u2014endless sky, rural isolation, agricultural landscapes that stretch forever."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Grassroots Legend",
       "summary": "Gravel Worlds represents what the sport was before corporate money arrived. It's authentic, community-driven, and legitimately hard. The 'World Championship' name started as a joke but the race earned its reputation through genuine challenge.",
@@ -120,25 +139,22 @@
       ],
       "bottom_line": "If you want to experience what gravel racing meant before it went mainstream, Gravel Worlds is your pilgrimage. Harder than it looks, more meaningful than its name suggests."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The 'World Championship' is self-proclaimed and tongue-in-cheek—but the race is legitimately hard. Don't let the name fool you into thinking it's a marketing gimmick. The course will humble you.",
+      "reality": "The 'World Championship' is self-proclaimed and tongue-in-cheek\u2014but the race is legitimately hard. Don't let the name fool you into thinking it's a marketing gimmick. The course will humble you.",
       "consequences": [
-        "August heat training is mandatory. If you can't handle 90°F+ humidity, don't start.",
-        "150 miles is ultra-endurance. This isn't a 'long ride'—it's a day-long test.",
+        "August heat training is mandatory. If you can't handle 90\u00b0F+ humidity, don't start.",
+        "150 miles is ultra-endurance. This isn't a 'long ride'\u2014it's a day-long test.",
         "Lincoln, Nebraska isn't a destination. You're coming for the race."
       ],
       "expectation_reset": "This is a grassroots ultra-endurance race in brutal conditions. The prestige is earned through suffering, not production value."
     },
-    
     "final_verdict": {
       "score": "86 / 100",
-      "one_liner": "The OG grassroots gravel race—where the spirit of the sport lives on in Nebraska summer heat.",
+      "one_liner": "The OG grassroots gravel race\u2014where the spirit of the sport lives on in Nebraska summer heat.",
       "should_you_race": "Yes if you value authenticity, community, and genuine challenge over polish. Yes if you can handle August Midwest heat. Not if you need corporate production value.",
       "alternatives": "If you want heat without the distance: Unbound 100. If you want distance without the heat: fall ultra events. If you want grassroots elsewhere: local favorites."
     },
-    
     "logistics": {
       "airport": "Omaha (OMA) - 1 hour. Lincoln (LNK) - 15 minutes but limited flights.",
       "lodging_strategy": "Lincoln has ample hotels. Book 1-2 months ahead.",
@@ -147,13 +163,30 @@
       "parking": "Start area parking is generally available.",
       "official_site": "https://www.gravel-worlds.com"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Gravel Worlds Race Guide | Training Plans & Lincoln Course Intel",
+      "meta_description": "Gravel Worlds Lincoln guide: 150-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "gravel worlds",
+      "slug": "gravel-worlds"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

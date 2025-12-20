@@ -4,7 +4,6 @@
     "slug": "bwr-cedar-city",
     "display_name": "Belgian Waffle Ride Cedar City",
     "tagline": "The Waffle goes to the desert. Utah red rock gravel at its finest.",
-    
     "vitals": {
       "distance_mi": 131,
       "elevation_ft": 11000,
@@ -13,7 +12,12 @@
       "county": "Iron County",
       "date": "Late May annually",
       "date_specific": "2025: May 31",
-      "terrain_types": ["High desert gravel", "Red rock terrain", "Mountain climbing", "Technical descents"],
+      "terrain_types": [
+        "High desert gravel",
+        "Red rock terrain",
+        "Mountain climbing",
+        "Technical descents"
+      ],
       "field_size": "1,000+ riders across distances",
       "start_time": "Saturday 7:00 AM",
       "registration": "Opens fall prior. Cost: ~$200",
@@ -21,20 +25,27 @@
       "aid_stations": "Full aid station support throughout course",
       "cutoff_time": "12+ hours"
     },
-    
     "climate": {
       "primary": "Utah high desert",
       "description": "Late May brings warm days, cool mornings, and Utah's intense high-altitude sun",
-      "challenges": ["Temperature swings 40-80°F", "High-altitude sun exposure", "Dry conditions", "Altitude at 5,000-10,000 feet"]
+      "challenges": [
+        "Temperature swings 40-80\u00b0F",
+        "High-altitude sun exposure",
+        "Dry conditions",
+        "Altitude at 5,000-10,000 feet"
+      ]
     },
-    
     "terrain": {
       "primary": "Red rock desert gravel with sustained mountain climbing",
-      "surface": "Variable—smooth hardpack to chunky volcanic gravel",
+      "surface": "Variable\u2014smooth hardpack to chunky volcanic gravel",
       "technical_rating": 4,
-      "features": ["Brian Head summit", "Red rock canyons", "High-altitude terrain", "Technical descents"]
+      "features": [
+        "Brian Head summit",
+        "Red rock canyons",
+        "High-altitude terrain",
+        "Technical descents"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 89,
       "course_profile": 36,
@@ -49,7 +60,6 @@
       "altitude": 4,
       "adventure": 5
     },
-    
     "history": {
       "founded": 2019,
       "founder": "Michael Marckx / Monuments of Cycling",
@@ -62,18 +72,28 @@
       ],
       "reputation": "The Waffle's mountain sibling. Where San Diego vibes meet Utah altitude."
     },
-    
     "course_description": {
       "character": "Epic Utah scenery with serious climbing. Red rock meets alpine in one spectacular package.",
       "suffering_zones": [
-        {"mile": 40, "label": "Canyon Entry", "desc": "The climbing begins in earnest. Utah terrain reveals itself."},
-        {"mile": 80, "label": "Brian Head Approach", "desc": "The big climb. 10,000+ feet awaits."},
-        {"mile": 110, "label": "Final Push", "desc": "Descending on tired legs. Focus matters."}
+        {
+          "mile": 40,
+          "label": "Canyon Entry",
+          "desc": "The climbing begins in earnest. Utah terrain reveals itself."
+        },
+        {
+          "mile": 80,
+          "label": "Brian Head Approach",
+          "desc": "The big climb. 10,000+ feet awaits."
+        },
+        {
+          "mile": 110,
+          "label": "Final Push",
+          "desc": "Descending on tired legs. Focus matters."
+        }
       ],
-      "signature_challenge": "Brian Head summit—climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance.",
+      "signature_challenge": "Brian Head summit\u2014climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance.",
       "map_url": "https://ridewithgps.com/routes/50876055"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
@@ -104,10 +124,9 @@
         "explanation": "Red rock canyons, alpine summits, and Utah's otherworldly landscapes. This is bucket-list scenery."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Desert Masterpiece",
-      "summary": "BWR Cedar City takes the Waffle formula—long, hard, beautiful—and applies it to Utah's stunning terrain. The red rock landscape combined with alpine climbing creates a unique experience that justifies the travel.",
+      "summary": "BWR Cedar City takes the Waffle formula\u2014long, hard, beautiful\u2014and applies it to Utah's stunning terrain. The red rock landscape combined with alpine climbing creates a unique experience that justifies the travel.",
       "strengths": [
         "Scenery: Utah's red rock country is world-class.",
         "The BWR brand: Professional organization with gravel pedigree.",
@@ -120,10 +139,9 @@
       ],
       "bottom_line": "If you want the Waffle experience in spectacular desert scenery, Cedar City delivers. It's the sibling that might be even better than the original."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The Instagram photos don't show the 11,000 feet of climbing at altitude. Red rock selfies happen after real suffering. This isn't a scenic cruise—it's a genuine test.",
+      "reality": "The Instagram photos don't show the 11,000 feet of climbing at altitude. Red rock selfies happen after real suffering. This isn't a scenic cruise\u2014it's a genuine test.",
       "consequences": [
         "Cedar City requires intentional travel. Vegas is the closest major airport (2.5 hours).",
         "Altitude matters. Arrive 2-3 days early if coming from sea level.",
@@ -131,14 +149,12 @@
       ],
       "expectation_reset": "Come for the scenery, stay for the suffering. The views are spectacular, but they're earned through 11,000 feet of climbing."
     },
-    
     "final_verdict": {
       "score": "89 / 100",
-      "one_liner": "The Waffle goes to the desert—Utah red rock gravel with serious altitude and unmatched scenery.",
+      "one_liner": "The Waffle goes to the desert\u2014Utah red rock gravel with serious altitude and unmatched scenery.",
       "should_you_race": "Yes if you love climbing, altitude, and want scenery that justifies the travel. Yes if you're a BWR fan wanting a different experience.",
       "alternatives": "If you want BWR without altitude: San Diego original. If you want Utah without BWR: Crusher in the Tushar."
     },
-    
     "logistics": {
       "airport": "Las Vegas (LAS) - 2.5 hours. Salt Lake City (SLC) - 4 hours.",
       "lodging_strategy": "Cedar City has adequate hotels. Book 2+ months early.",
@@ -147,13 +163,30 @@
       "parking": "Downtown start area. Arrive early for good spots.",
       "official_site": "https://belgianwaffleride.bike"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Belgian Waffle Ride Cedar City Race Guide | Training Plans & Cedar City Course Intel",
+      "meta_description": "Belgian Waffle Ride Cedar City Cedar City guide: 131-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "belgian waffle ride cedar city",
+      "slug": "bwr-cedar-city"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

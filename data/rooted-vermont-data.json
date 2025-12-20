@@ -4,7 +4,6 @@
     "slug": "rooted-vermont",
     "display_name": "Rooted Vermont",
     "tagline": "Where New England gravel meets Green Mountain grit.",
-    
     "vitals": {
       "distance_mi": 87,
       "elevation_ft": 10000,
@@ -13,7 +12,12 @@
       "county": "Caledonia County",
       "date": "Late July / Early August annually",
       "date_specific": "2025: August 2",
-      "terrain_types": ["Vermont gravel roads", "Class 4 dirt", "Steep pitches", "New England forest"],
+      "terrain_types": [
+        "Vermont gravel roads",
+        "Class 4 dirt",
+        "Steep pitches",
+        "New England forest"
+      ],
       "field_size": "700+ riders",
       "start_time": "Saturday 7:00 AM",
       "registration": "Opens early in year. Cost: ~$150",
@@ -21,20 +25,27 @@
       "aid_stations": "Multiple aid stations along course",
       "cutoff_time": "10+ hours"
     },
-    
     "climate": {
       "primary": "New England summer",
       "description": "Late July/August brings warm, humid conditions with potential for summer storms",
-      "challenges": ["Humidity can be high", "Summer thunderstorm risk", "Temperature 60-85°F", "Muddy conditions if recent rain"]
+      "challenges": [
+        "Humidity can be high",
+        "Summer thunderstorm risk",
+        "Temperature 60-85\u00b0F",
+        "Muddy conditions if recent rain"
+      ]
     },
-    
     "terrain": {
       "primary": "Classic Vermont gravel and Class 4 roads with steep pitches",
-      "surface": "Varied—packed gravel to loose rocks to Class 4 'adventure' roads",
+      "surface": "Varied\u2014packed gravel to loose rocks to Class 4 'adventure' roads",
       "technical_rating": 4,
-      "features": ["Steep Vermont pitches", "Class 4 roads", "Covered bridges", "Green Mountain views"]
+      "features": [
+        "Steep Vermont pitches",
+        "Class 4 roads",
+        "Covered bridges",
+        "Green Mountain views"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 85,
       "course_profile": 33,
@@ -49,7 +60,6 @@
       "altitude": 1,
       "adventure": 5
     },
-    
     "history": {
       "founded": 2019,
       "founder": "Local Vermont gravel enthusiasts",
@@ -61,18 +71,28 @@
       ],
       "reputation": "New England gravel at its finest. Where steep pitches and covered bridges define the experience."
     },
-    
     "course_description": {
-      "character": "Quintessential Vermont—steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
+      "character": "Quintessential Vermont\u2014steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
       "suffering_zones": [
-        {"mile": 25, "label": "First Reality Check", "desc": "The pitches start adding up. Vermont doesn't do gradual."},
-        {"mile": 50, "label": "Deep Woods", "desc": "Class 4 terrain. True Vermont gravel experience."},
-        {"mile": 75, "label": "Final Pitches", "desc": "Tired legs meet steep grades. Vermont isn't done yet."}
+        {
+          "mile": 25,
+          "label": "First Reality Check",
+          "desc": "The pitches start adding up. Vermont doesn't do gradual."
+        },
+        {
+          "mile": 50,
+          "label": "Deep Woods",
+          "desc": "Class 4 terrain. True Vermont gravel experience."
+        },
+        {
+          "mile": 75,
+          "label": "Final Pitches",
+          "desc": "Tired legs meet steep grades. Vermont isn't done yet."
+        }
       ],
-      "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades.",
+      "signature_challenge": "The pitch grades. Vermont climbs aren't long\u2014they're steep. 15-20% pitches shred legs that expected steady grades.",
       "map_url": "https://ridewithgps.com/routes/30629483"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
@@ -80,7 +100,7 @@
       },
       "length": {
         "score": 3,
-        "explanation": "87 miles is moderate distance, but 10,000 feet of climbing—much of it steep—makes it feel longer."
+        "explanation": "87 miles is moderate distance, but 10,000 feet of climbing\u2014much of it steep\u2014makes it feel longer."
       },
       "technicality": {
         "score": 4,
@@ -88,7 +108,7 @@
       },
       "elevation": {
         "score": 5,
-        "explanation": "10,000 feet in 87 miles is 115 feet per mile average. But the grades are the story—steep pitches rather than steady climbs."
+        "explanation": "10,000 feet in 87 miles is 115 feet per mile average. But the grades are the story\u2014steep pitches rather than steady climbs."
       },
       "climate": {
         "score": 2,
@@ -103,10 +123,9 @@
         "explanation": "This is Vermont tourism on two wheels. Covered bridges, forest roads, small towns, Green Mountain views. Quintessential New England."
       }
     },
-    
     "biased_opinion": {
       "verdict": "New England Classic",
-      "summary": "Rooted Vermont is what New England gravel should be—steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event.",
+      "summary": "Rooted Vermont is what New England gravel should be\u2014steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event.",
       "strengths": [
         "Authenticity: This is real Vermont, not a manufactured course.",
         "The terrain: Steep pitches create drama that steady climbs don't.",
@@ -119,10 +138,9 @@
       ],
       "bottom_line": "If you want to experience New England gravel at its finest, Rooted Vermont delivers. Steep, beautiful, and genuinely challenging."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The 'average grade' stats hide the reality. Vermont climbs in steep bursts—15-20% pitches that hurt worse than sustained 8% grades. Train for power, not just endurance.",
+      "reality": "The 'average grade' stats hide the reality. Vermont climbs in steep bursts\u201415-20% pitches that hurt worse than sustained 8% grades. Train for power, not just endurance.",
       "consequences": [
         "East Burke requires intentional travel. Burlington airport is 1.5+ hours away.",
         "Lodging is limited. Book 6+ months early or consider camping.",
@@ -130,14 +148,12 @@
       ],
       "expectation_reset": "This isn't a course you diesel through. The steep grades demand punch. Train for short, hard efforts or suffer the consequences."
     },
-    
     "final_verdict": {
       "score": "85 / 100",
-      "one_liner": "The New England gravel showcase—steep pitches, covered bridges, and Green Mountain beauty.",
+      "one_liner": "The New England gravel showcase\u2014steep pitches, covered bridges, and Green Mountain beauty.",
       "should_you_race": "Yes if you want East Coast gravel at its finest. Yes if you can handle steep grades. Not if you're strictly a tempo/steady-state rider.",
       "alternatives": "If you want Vermont without the intensity: Vermont Overland. If you want East Coast gravel elsewhere: Rasputitsa, Gravel Worlds."
     },
-    
     "logistics": {
       "airport": "Burlington (BTV) - 1.5+ hours. Boston (BOS) - 3 hours.",
       "lodging_strategy": "East Burke has very limited lodging. Book immediately. Consider Lyndonville, St. Johnsbury, or camping.",
@@ -146,13 +162,30 @@
       "parking": "Start area parking available but limited. Arrive early.",
       "official_site": "https://rootedvermont.com"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Rooted Vermont Race Guide | Training Plans & East Burke Course Intel",
+      "meta_description": "Rooted Vermont East Burke guide: 87-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "rooted vermont",
+      "slug": "rooted-vermont"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

@@ -4,7 +4,6 @@
     "slug": "big-horn-gravel",
     "display_name": "Big Horn Gravel",
     "tagline": "Wyoming wilderness gravel. Where the mountains meet the high plains.",
-    
     "vitals": {
       "distance_mi": 100,
       "elevation_ft": 8000,
@@ -13,7 +12,12 @@
       "county": "Sheridan County",
       "date": "Early August annually",
       "date_specific": "2025: August 2",
-      "terrain_types": ["High plains gravel", "Mountain foothills", "Forest service roads", "Open range"],
+      "terrain_types": [
+        "High plains gravel",
+        "Mountain foothills",
+        "Forest service roads",
+        "Open range"
+      ],
       "field_size": "400+ riders",
       "start_time": "Saturday 6:00 AM",
       "registration": "Opens winter/spring. Cost: ~$150",
@@ -21,20 +25,27 @@
       "aid_stations": "Multiple aid stations along course",
       "cutoff_time": "14 hours"
     },
-    
     "climate": {
       "primary": "High plains Wyoming",
       "description": "August brings warm days, cool mornings, and the ever-present Wyoming wind",
-      "challenges": ["Wind is constant", "High-altitude sun exposure", "Temperature swings 45-85°F", "Afternoon storm potential"]
+      "challenges": [
+        "Wind is constant",
+        "High-altitude sun exposure",
+        "Temperature swings 45-85\u00b0F",
+        "Afternoon storm potential"
+      ]
     },
-    
     "terrain": {
       "primary": "Big Horn Mountain foothills meeting high plains",
-      "surface": "Variable gravel—maintained county roads to rougher forest service roads",
+      "surface": "Variable gravel\u2014maintained county roads to rougher forest service roads",
       "technical_rating": 3,
-      "features": ["Big Horn Mountain views", "Open range terrain", "Creek crossings", "Rolling high plains"]
+      "features": [
+        "Big Horn Mountain views",
+        "Open range terrain",
+        "Creek crossings",
+        "Rolling high plains"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 80,
       "course_profile": 30,
@@ -49,7 +60,6 @@
       "altitude": 3,
       "adventure": 5
     },
-    
     "history": {
       "founded": 2020,
       "founder": "Local Wyoming gravel enthusiasts",
@@ -61,22 +71,32 @@
       ],
       "reputation": "True Wyoming adventure. Remote, wild, and utterly beautiful."
     },
-    
     "course_description": {
       "character": "Big sky, big views, big wind. Classic high-plains gravel with mountain backdrop.",
       "suffering_zones": [
-        {"mile": 30, "label": "Wind Games Begin", "desc": "Wyoming's famous wind starts testing your patience."},
-        {"mile": 55, "label": "Remote Section", "desc": "Miles from anything. Self-sufficiency matters."},
-        {"mile": 80, "label": "Mountain Shadows", "desc": "The Big Horns loom. You're not done yet."}
+        {
+          "mile": 30,
+          "label": "Wind Games Begin",
+          "desc": "Wyoming's famous wind starts testing your patience."
+        },
+        {
+          "mile": 55,
+          "label": "Remote Section",
+          "desc": "Miles from anything. Self-sufficiency matters."
+        },
+        {
+          "mile": 80,
+          "label": "Mountain Shadows",
+          "desc": "The Big Horns loom. You're not done yet."
+        }
       ],
       "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything.",
       "map_url": "https://ridewithgps.com/routes/48561741"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 2,
-        "explanation": "Regional race without national recognition—yet. As the event matures and word spreads, this could grow. Right now it's a hidden gem."
+        "explanation": "Regional race without national recognition\u2014yet. As the event matures and word spreads, this could grow. Right now it's a hidden gem."
       },
       "length": {
         "score": 4,
@@ -103,7 +123,6 @@
         "explanation": "This is genuine Wyoming wilderness. Big Horn Mountains, open range, cowboy country. Few gravel races offer this level of authenticity."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Hidden Gem",
       "summary": "Big Horn Gravel delivers what many big races have lost: genuine adventure in actual wilderness. No crowds, no chaos, just you and the Wyoming landscape. If you want to feel small against something vast, this is your race.",
@@ -119,7 +138,6 @@
       ],
       "bottom_line": "For adventure seekers who want gravel racing in actual wilderness, Big Horn delivers. Not for those chasing prestige or Instagram clout."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
       "reality": "Sheridan, Wyoming is not a cycling destination. You're going specifically for this race into genuine backcountry. That's the beauty and the challenge.",
@@ -130,14 +148,12 @@
       ],
       "expectation_reset": "This is backcountry adventure racing. The infrastructure is minimal by design. Come prepared, mentally and physically, for genuine challenge."
     },
-    
     "final_verdict": {
       "score": "80 / 100",
-      "one_liner": "True Wyoming wilderness gravel—where prestige takes a backseat to genuine adventure.",
+      "one_liner": "True Wyoming wilderness gravel\u2014where prestige takes a backseat to genuine adventure.",
       "should_you_race": "Yes if you value authentic backcountry experience over recognition. Yes if you want to feel small against something big. Not if you need crowds and clout.",
       "alternatives": "If you want Western gravel with more infrastructure: SBT GRVL or Crusher. If you want similar intimacy: other regional races in less traveled areas."
     },
-    
     "logistics": {
       "airport": "Billings, MT (BIL) - 2.5 hours. Denver (DEN) - 5+ hours.",
       "lodging_strategy": "Sheridan has limited hotels. Book 2+ months ahead. Consider camping or VRBO.",
@@ -146,13 +162,30 @@
       "parking": "Start area parking is generally manageable.",
       "official_site": "https://www.bighorngravel.com"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Big Horn Gravel Race Guide | Training Plans & Sheridan Course Intel",
+      "meta_description": "Big Horn Gravel Sheridan guide: 100-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "big horn gravel",
+      "slug": "big-horn-gravel"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

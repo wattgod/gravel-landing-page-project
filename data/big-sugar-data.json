@@ -4,7 +4,6 @@
     "slug": "big-sugar",
     "display_name": "Big Sugar Gravel",
     "tagline": "Southern hospitality meets gravel brutality in the Ozark Mountains.",
-    
     "vitals": {
       "distance_mi": 100,
       "elevation_ft": 9500,
@@ -13,7 +12,12 @@
       "county": "Benton County / McDonald County (crosses into Missouri)",
       "date": "Late October annually",
       "date_specific": "2025: October 18",
-      "terrain_types": ["Ozark gravel", "Punchy climbs", "Technical descents", "Forest roads"],
+      "terrain_types": [
+        "Ozark gravel",
+        "Punchy climbs",
+        "Technical descents",
+        "Forest roads"
+      ],
       "field_size": "2,000+ riders across all distances",
       "start_time": "Saturday 7:00 AM",
       "registration": "Opens early in year. Cost: ~$175",
@@ -21,20 +25,27 @@
       "aid_stations": "Well-stocked aid stations throughout course",
       "cutoff_time": "12 hours for 100-mile distance"
     },
-    
     "climate": {
       "primary": "Ozark fall",
       "description": "Late October brings crisp mornings, mild afternoons, and peak fall colors",
-      "challenges": ["Morning temps 35-50°F", "Afternoon can reach 65-70°F", "Occasional rain creates mud", "Humidity varies"]
+      "challenges": [
+        "Morning temps 35-50\u00b0F",
+        "Afternoon can reach 65-70\u00b0F",
+        "Occasional rain creates mud",
+        "Humidity varies"
+      ]
     },
-    
     "terrain": {
       "primary": "Ozark Mountain gravel with punchy repeated climbs",
-      "surface": "Variable gravel quality—smooth to chunky, with some technical sections",
+      "surface": "Variable gravel quality\u2014smooth to chunky, with some technical sections",
       "technical_rating": 4,
-      "features": ["Sugar Creek descent", "War Eagle Mill", "Punchy Ozark climbs", "Creek crossings"]
+      "features": [
+        "Sugar Creek descent",
+        "War Eagle Mill",
+        "Punchy Ozark climbs",
+        "Creek crossings"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 88,
       "course_profile": 34,
@@ -49,7 +60,6 @@
       "altitude": 1,
       "adventure": 5
     },
-    
     "history": {
       "founded": 2019,
       "founder": "Erik Spelde / Life Time",
@@ -62,18 +72,28 @@
       ],
       "reputation": "The fall classic. Where the Grand Prix battles play out in the Ozark Mountains."
     },
-    
     "course_description": {
-      "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs—they have endless short ones.",
+      "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs\u2014they have endless short ones.",
       "suffering_zones": [
-        {"mile": 25, "label": "Welcome to the Ozarks", "desc": "The punchy climbs start adding up. You realize there's no flat."},
-        {"mile": 55, "label": "War Eagle Territory", "desc": "Deep in the course. The climbing feels personal."},
-        {"mile": 85, "label": "Final Push", "desc": "Legs are shattered but the Ozarks aren't done with you yet."}
+        {
+          "mile": 25,
+          "label": "Welcome to the Ozarks",
+          "desc": "The punchy climbs start adding up. You realize there's no flat."
+        },
+        {
+          "mile": 55,
+          "label": "War Eagle Territory",
+          "desc": "Deep in the course. The climbing feels personal."
+        },
+        {
+          "mile": 85,
+          "label": "Final Push",
+          "desc": "Legs are shattered but the Ozarks aren't done with you yet."
+        }
       ],
       "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches.",
       "map_url": "https://ridewithgps.com/routes/52306059"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
@@ -81,7 +101,7 @@
       },
       "length": {
         "score": 4,
-        "explanation": "100 miles with nearly 10,000 feet of climbing in the punchy Ozarks. This isn't a cruiser—expect 6-10 hours depending on fitness."
+        "explanation": "100 miles with nearly 10,000 feet of climbing in the punchy Ozarks. This isn't a cruiser\u2014expect 6-10 hours depending on fitness."
       },
       "technicality": {
         "score": 4,
@@ -104,10 +124,9 @@
         "explanation": "Peak fall colors in the Ozarks are spectacular. Bentonville is a world-class cycling town. The combination of racing and destination makes this special."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Fall Showstopper",
-      "summary": "Big Sugar takes everything great about fall gravel—colors, weather, community—and combines it with a legitimately hard course. The Ozarks' endless punchy terrain creates a unique challenge. Add Bentonville's cycling culture and you've got a complete experience.",
+      "summary": "Big Sugar takes everything great about fall gravel\u2014colors, weather, community\u2014and combines it with a legitimately hard course. The Ozarks' endless punchy terrain creates a unique challenge. Add Bentonville's cycling culture and you've got a complete experience.",
       "strengths": [
         "The destination: Bentonville is cycling paradise. Trails, restaurants, coffee, culture.",
         "The scenery: Peak fall colors make suffering beautiful.",
@@ -120,25 +139,22 @@
       ],
       "bottom_line": "If you want a fall gravel destination with a legitimately hard course and world-class town, Big Sugar delivers. Just bring your climbing legs."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
       "reality": "The 'punchy' climbing style of the Ozarks rewards a specific rider type. If you're all about steady-state power and long climbs, this course will shred you with its repeated accelerations.",
       "consequences": [
-        "Training should include VO2max work and repeated short efforts—not just tempo.",
+        "Training should include VO2max work and repeated short efforts\u2014not just tempo.",
         "Bentonville is awesome but hotels book up. Plan early.",
         "The technical descents when tired create real crash risk. Stay focused late in the race."
       ],
       "expectation_reset": "This isn't a race you can diesel through. The constant on/off nature of Ozark terrain requires specific fitness. A 12-week plan with punchy interval focus is essential."
     },
-    
     "final_verdict": {
       "score": "88 / 100",
-      "one_liner": "Fall gravel perfection—stunning scenery, world-class town, legitimately hard course.",
+      "one_liner": "Fall gravel perfection\u2014stunning scenery, world-class town, legitimately hard course.",
       "should_you_race": "Yes if you love punchy terrain and want a complete cycling destination experience. Maybe not if you're strictly a flat-course diesel.",
       "alternatives": "If you want fall gravel without the punchy terrain: Gravel Worlds (Nebraska, flatter). If you want Ozarks without the distance: shorter Big Sugar distances."
     },
-    
     "logistics": {
       "airport": "Northwest Arkansas (XNA) - 20 minutes to Bentonville. Tulsa (TUL) - 2 hours.",
       "lodging_strategy": "Book 3+ months early. Bentonville hotels are nice but limited. Consider Rogers or surrounding areas.",
@@ -147,13 +163,30 @@
       "parking": "Downtown start requires early arrival or shuttle from remote lots.",
       "official_site": "https://bigsugargravelevents.com"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Big Sugar Gravel Race Guide | Training Plans & Bentonville Course Intel",
+      "meta_description": "Big Sugar Gravel Bentonville guide: 100-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "big sugar gravel",
+      "slug": "big-sugar"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

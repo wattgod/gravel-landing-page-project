@@ -4,7 +4,6 @@
     "slug": "leadville-trail-100-mtb",
     "display_name": "Leadville Trail 100 MTB",
     "tagline": "100 miles at 10,000 feet. The Race Across the Sky.",
-    
     "vitals": {
       "distance_mi": 100,
       "elevation_ft": 11900,
@@ -13,7 +12,12 @@
       "county": "Lake County",
       "date": "Mid-August annually",
       "date_specific": "2025: August 9",
-      "terrain_types": ["Singletrack", "Gravel roads", "Paved sections", "High-altitude jeep roads"],
+      "terrain_types": [
+        "Singletrack",
+        "Gravel roads",
+        "Paved sections",
+        "High-altitude jeep roads"
+      ],
       "field_size": "1,500+ riders (limited)",
       "start_time": "Saturday 6:30 AM",
       "registration": "Lottery in December. Cost: ~$350",
@@ -21,20 +25,27 @@
       "aid_stations": "8+ aid stations with crew access points",
       "cutoff_time": "12 hours (big belt buckle), 9 hours (sub-9 club)"
     },
-    
     "climate": {
       "primary": "High-altitude Colorado mountain",
-      "description": "August at 10,000-12,600 feet means unpredictable weather—sun, rain, snow all possible",
-      "challenges": ["Starts at 10,200 feet elevation", "Columbine summit at 12,600 feet", "Afternoon thunderstorm risk", "Temperature swings 35-75°F"]
+      "description": "August at 10,000-12,600 feet means unpredictable weather\u2014sun, rain, snow all possible",
+      "challenges": [
+        "Starts at 10,200 feet elevation",
+        "Columbine summit at 12,600 feet",
+        "Afternoon thunderstorm risk",
+        "Temperature swings 35-75\u00b0F"
+      ]
     },
-    
     "terrain": {
-      "primary": "Mixed mountain terrain—singletrack, fire roads, pavement",
+      "primary": "Mixed mountain terrain\u2014singletrack, fire roads, pavement",
       "surface": "Variable: buffed singletrack to rocky jeep roads to pavement",
       "technical_rating": 4,
-      "features": ["Powerline climb", "Columbine Mine summit", "Sugarloaf descent", "Pipeline"]
+      "features": [
+        "Powerline climb",
+        "Columbine Mine summit",
+        "Sugarloaf descent",
+        "Pipeline"
+      ]
     },
-    
     "gravel_god_rating": {
       "overall_score": 95,
       "course_profile": 38,
@@ -49,7 +60,6 @@
       "altitude": 5,
       "adventure": 5
     },
-    
     "history": {
       "founded": 1994,
       "founder": "Ken Chlouber",
@@ -62,34 +72,44 @@
       ],
       "reputation": "The original 'Race Across the Sky.' The bucket-list race that started the endurance mountain bike movement."
     },
-    
     "course_description": {
       "character": "Out-and-back with one massive climb (Columbine) and relentless terrain. The altitude is the course.",
       "suffering_zones": [
-        {"mile": 40, "label": "Columbine Climb Begins", "desc": "The defining climb. 3,000+ feet of gain to 12,600 feet."},
-        {"mile": 50, "label": "Columbine Summit", "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point."},
-        {"mile": 80, "label": "Powerline Return", "desc": "You've done this climb already. Now do it again on dead legs."}
+        {
+          "mile": 40,
+          "label": "Columbine Climb Begins",
+          "desc": "The defining climb. 3,000+ feet of gain to 12,600 feet."
+        },
+        {
+          "mile": 50,
+          "label": "Columbine Summit",
+          "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point."
+        },
+        {
+          "mile": 80,
+          "label": "Powerline Return",
+          "desc": "You've done this climb already. Now do it again on dead legs."
+        }
       ],
       "signature_challenge": "Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville.",
       "map_url": "https://ridewithgps.com/routes/3227417"
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 5,
-        "explanation": "This is THE mountain bike endurance race. Period. A Leadville buckle carries weight that transcends cycling. Finishing means something—the race has defined endurance riding for 30 years."
+        "explanation": "This is THE mountain bike endurance race. Period. A Leadville buckle carries weight that transcends cycling. Finishing means something\u2014the race has defined endurance riding for 30 years."
       },
       "length": {
         "score": 5,
-        "explanation": "100 miles of mountain terrain, with 12,000 feet of climbing at altitude. Most riders take 8-12 hours. This isn't a long ride—it's a day-long survival test."
+        "explanation": "100 miles of mountain terrain, with 12,000 feet of climbing at altitude. Most riders take 8-12 hours. This isn't a long ride\u2014it's a day-long survival test."
       },
       "technicality": {
         "score": 4,
-        "explanation": "Not technical by modern MTB standards—no drops, no rock gardens. But 100 miles of varied terrain requires solid bike handling. The Powerline descent punishes poor form."
+        "explanation": "Not technical by modern MTB standards\u2014no drops, no rock gardens. But 100 miles of varied terrain requires solid bike handling. The Powerline descent punishes poor form."
       },
       "elevation": {
         "score": 5,
-        "explanation": "12,000 feet of climbing with significant portions above 11,000 feet. The vertical isn't the problem—the altitude at which you're climbing is. Your power drops 15-25%."
+        "explanation": "12,000 feet of climbing with significant portions above 11,000 feet. The vertical isn't the problem\u2014the altitude at which you're climbing is. Your power drops 15-25%."
       },
       "climate": {
         "score": 4,
@@ -101,16 +121,15 @@
       },
       "adventure": {
         "score": 5,
-        "explanation": "Leadville is a ghost town brought back to life by endurance racing. The history, the scenery, the community—it's more than a race. It's a pilgrimage."
+        "explanation": "Leadville is a ghost town brought back to life by endurance racing. The history, the scenery, the community\u2014it's more than a race. It's a pilgrimage."
       }
     },
-    
     "biased_opinion": {
       "verdict": "Bucket List Legend",
-      "summary": "Leadville isn't the hardest 100-mile race technically. It's not even the most scenic. But it's the most meaningful. The history, the community, the belt buckle—finishing Leadville changes how you see yourself as an endurance athlete. It's a rite of passage.",
+      "summary": "Leadville isn't the hardest 100-mile race technically. It's not even the most scenic. But it's the most meaningful. The history, the community, the belt buckle\u2014finishing Leadville changes how you see yourself as an endurance athlete. It's a rite of passage.",
       "strengths": [
         "The prestige: A Leadville buckle is universally recognized. It means something.",
-        "The community: Crews, spectators, aid stations—everyone is invested in your success.",
+        "The community: Crews, spectators, aid stations\u2014everyone is invested in your success.",
         "The history: 30 years of legends. Racing the same course as Tinker and the greats."
       ],
       "weaknesses": [
@@ -118,12 +137,11 @@
         "Altitude: Non-negotiable. If you can't acclimatize, don't start.",
         "Not gravel-specific: This is mountain biking. Different skills, different bike, different training."
       ],
-      "bottom_line": "If you want to test yourself against the defining endurance mountain bike race, this is it. The altitude is the great equalizer—respect it or suffer."
+      "bottom_line": "If you want to test yourself against the defining endurance mountain bike race, this is it. The altitude is the great equalizer\u2014respect it or suffer."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The belt buckle pictures look great on Instagram. Getting one requires a level of altitude preparation most people underestimate. DNF rates are real—and most DNFs are altitude-related, not fitness-related.",
+      "reality": "The belt buckle pictures look great on Instagram. Getting one requires a level of altitude preparation most people underestimate. DNF rates are real\u2014and most DNFs are altitude-related, not fitness-related.",
       "consequences": [
         "You need 7-14 days at altitude before race day. That's significant vacation time.",
         "The race is expensive: $350 entry, travel, lodging in a tourist town, crew needs.",
@@ -131,29 +149,44 @@
       ],
       "expectation_reset": "This isn't a gravel race you 'add on' to your season. Leadville requires dedicated preparation: altitude training, altitude acclimatization, and altitude race-day strategy. Respect the sky, or it will humble you."
     },
-    
     "final_verdict": {
       "score": "95 / 100",
       "one_liner": "The mountain bike endurance race that defines the category. Bucket list for a reason.",
-      "should_you_race": "Yes—if you're serious about endurance riding and willing to commit to proper altitude preparation. No—if you can't take time to acclimatize or haven't trained specifically for high-altitude suffering.",
+      "should_you_race": "Yes\u2014if you're serious about endurance riding and willing to commit to proper altitude preparation. No\u2014if you can't take time to acclimatize or haven't trained specifically for high-altitude suffering.",
       "alternatives": "If you want Leadville's prestige without the lottery: Leadville Camp (August warmup). If you want 100 miles without altitude: Unbound 200 (longer, lower, different). If you want Colorado gravel: SBT GRVL is lower altitude, pure gravel."
     },
-    
     "logistics": {
       "airport": "Denver (DEN) - 2.5 hours to Leadville. Consider arriving days early.",
       "lodging_strategy": "Book immediately after lottery acceptance. Leadville sells out. Consider Frisco/Buena Vista as backup.",
-      "food": "Tennessee Pass Cafe is tradition. Pack nutrition—options are limited.",
+      "food": "Tennessee Pass Cafe is tradition. Pack nutrition\u2014options are limited.",
       "packet_pickup": "Thursday-Friday at the Leadville 6th Street Gym.",
       "parking": "Start line parking requires very early arrival. Shuttle from downtown available.",
       "official_site": "https://www.leadvilleraceseries.com/mtb"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    },
+    "seo": {
+      "title": "Leadville Trail 100 MTB Race Guide | Training Plans & Leadville Course Intel",
+      "meta_description": "Leadville Trail 100 MTB Leadville guide: 100-mile gravel race. Get training plans & course breakdown.",
+      "focus_keyword": "leadville trail 100 mtb",
+      "slug": "leadville-trail-100-mtb"
+    },
+    "altitude": {
+      "start_elevation_ft": 0,
+      "max_elevation_ft": 0,
+      "min_elevation_ft": 0,
+      "altitude_impact": "NONE - Altitude data not specified.",
+      "acclimatization_required": false
     }
   }
 }

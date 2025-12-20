@@ -5,39 +5,51 @@
     "display_name": "The Rift",
     "tagline": "Ride the divide between two continents. Literally cross the Mid-Atlantic Ridge.",
     "race_challenge_tagline": "volcanic terrain and unpredictable Iceland weather",
-    
     "vitals": {
       "distance_mi": 124,
       "elevation_ft": 9800,
-      "location": "Hvolsvöllur, Southern Iceland",
-      "location_badge": "HVOLSVÖLLUR, SOUTHERN ICELAND",
+      "location": "Hvolsv\u00f6llur, Southern Iceland",
+      "location_badge": "HVOLSV\u00d6LLUR, SOUTHERN ICELAND",
       "county": "",
       "date": "Early July annually",
       "date_specific": "2026: July 4",
-      "terrain_types": ["Black volcanic sand", "sharp lava rock", "loose highland roads", "lava field crossings"],
+      "terrain_types": [
+        "Black volcanic sand",
+        "sharp lava rock",
+        "loose highland roads",
+        "lava field crossings"
+      ],
       "field_size": "1,000+ riders",
       "start_time": "Saturday early morning",
-      "registration": "Opens winter/spring. Cost: €150-250",
+      "registration": "Opens winter/spring. Cost: \u20ac150-250",
       "prize_purse": "Varies",
       "aid_stations": "4 stations with full support",
       "cutoff_time": "12 hours"
     },
-    
     "climate": {
       "primary": "Icelandic weather chaos",
-      "description": "10-15°C (50-59°F) with extreme variability. Cold + wet + wind. Hypothermia risk is real.",
-      "challenges": ["Iceland can deliver rain, wind, fog simultaneously", "Hypothermia risk in bad weather", "Weather changes faster than you can unzip a jacket", "Four seasons possible in four hours"]
+      "description": "10-15\u00b0C (50-59\u00b0F) with extreme variability. Cold + wet + wind. Hypothermia risk is real.",
+      "challenges": [
+        "Iceland can deliver rain, wind, fog simultaneously",
+        "Hypothermia risk in bad weather",
+        "Weather changes faster than you can unzip a jacket",
+        "Four seasons possible in four hours"
+      ]
     },
-    
     "terrain": {
       "primary": "Black volcanic sand and sharp lava rock",
       "surface": "Black volcanic sand, sharp lava rock, loose highland roads",
       "gravel_percentage": 60,
       "pavement_percentage": 40,
       "technical_rating": 4,
-      "features": ["Lava field crossings", "Glacier-fed river fords", "Highland F-road terrain", "Exposed volcanic plateaus", "Continental divide crossing (literally between tectonic plates)"]
+      "features": [
+        "Lava field crossings",
+        "Glacier-fed river fords",
+        "Highland F-road terrain",
+        "Exposed volcanic plateaus",
+        "Continental divide crossing (literally between tectonic plates)"
+      ]
     },
-    
     "altitude": {
       "start_elevation_ft": 150,
       "max_elevation_ft": 2300,
@@ -45,7 +57,6 @@
       "altitude_impact": "NONE - Tops out ~700m. Altitude irrelevant. The challenge is terrain and weather.",
       "acclimatization_required": false
     },
-    
     "gravel_god_rating": {
       "overall_score": 89,
       "course_profile": 35,
@@ -61,26 +72,24 @@
       "adventure": 5,
       "logistics": 3
     },
-    
     "history": {
       "founded": 2016,
-      "founder": "Reykjavík Cycling Club",
-      "origin_story": "Created by Reykjavík Cycling Club to showcase Iceland's volcanic terrain. The course crosses the Mid-Atlantic Ridge—geological boundary between continents.",
+      "founder": "Reykjav\u00edk Cycling Club",
+      "origin_story": "Created by Reykjav\u00edk Cycling Club to showcase Iceland's volcanic terrain. The course crosses the Mid-Atlantic Ridge\u2014geological boundary between continents.",
       "notable_moments": [
         "2018: Joined UCI Gravel World Series",
         "Expanded to 1,000+ riders",
         "Course literally rides the continental divide"
       ],
-      "reputation": "The bucket-list adventure race. Not just gravel—geological pilgrimage.",
+      "reputation": "The bucket-list adventure race. Not just gravel\u2014geological pilgrimage.",
       "random_facts": [
-        "Course crosses Mid-Atlantic Ridge—literally between North American and Eurasian tectonic plates",
+        "Course crosses Mid-Atlantic Ridge\u2014literally between North American and Eurasian tectonic plates",
         "Volcanic terrain looks like Mars with better air",
         "UCI Gravel World Series event",
         "Midnight sun in July means extended daylight",
         "Glacier-fed river crossings require dismount decisions"
       ]
     },
-    
     "course_description": {
       "character": "Otherworldly. Black volcanic sand, lava fields, glacier views. It looks like Mars with better air.",
       "suffering_zones": [
@@ -111,7 +120,6 @@
       "ridewithgps_name": "The Rift",
       "map_url": null
     },
-    
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
@@ -131,7 +139,7 @@
       },
       "climate": {
         "score": 5,
-        "explanation": "Maximum challenge—but for cold, not heat. Iceland can deliver rain, wind, fog simultaneously. Hypothermia risk."
+        "explanation": "Maximum challenge\u2014but for cold, not heat. Iceland can deliver rain, wind, fog simultaneously. Hypothermia risk."
       },
       "altitude": {
         "score": 1,
@@ -147,7 +155,7 @@
       },
       "race_quality": {
         "score": 4,
-        "explanation": "UCI World Series event with professional organization. Reykjavík Cycling Club runs it well."
+        "explanation": "UCI World Series event with professional organization. Reykjav\u00edk Cycling Club runs it well."
       },
       "experience": {
         "score": 5,
@@ -163,17 +171,16 @@
       },
       "value": {
         "score": 3,
-        "explanation": "€150-250 entry is reasonable. But Iceland travel costs add significantly. Total easily exceeds $2,000."
+        "explanation": "\u20ac150-250 entry is reasonable. But Iceland travel costs add significantly. Total easily exceeds $2,000."
       },
       "expenses": {
         "score": 3,
         "explanation": "Iceland is expensive. Flights + entry + lodging easily exceeds $2,000. Bike transport requires planning."
       }
     },
-    
     "biased_opinion": {
       "verdict": "BUCKET LIST",
-      "summary": "The Rift is gravel racing as geological adventure. The course crosses the Mid-Atlantic Ridge—you literally ride between continents. The terrain is volcanic, the weather is unpredictable, and the landscapes are unlike anywhere else on Earth. This is cycling adventure at its most otherworldly.",
+      "summary": "The Rift is gravel racing as geological adventure. The course crosses the Mid-Atlantic Ridge\u2014you literally ride between continents. The terrain is volcanic, the weather is unpredictable, and the landscapes are unlike anywhere else on Earth. This is cycling adventure at its most otherworldly.",
       "quote": "You literally ride between continents.",
       "strengths": [
         "The terrain: Volcanic gravel unlike anywhere else. Black sand, lava fields, glacier views.",
@@ -187,10 +194,9 @@
       ],
       "bottom_line": "If bucket-list adventure matters more than racing, The Rift delivers like few other events. Pack for four seasons. Expect the unexpected."
     },
-    
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The photos look epic—black volcanic sand, glacier backdrops, midnight sun. The reality includes potential hypothermia, tire-shredding lava rock, and weather that changes faster than you can unzip a jacket. Iceland doesn't care about your Instagram.",
+      "reality": "The photos look epic\u2014black volcanic sand, glacier backdrops, midnight sun. The reality includes potential hypothermia, tire-shredding lava rock, and weather that changes faster than you can unzip a jacket. Iceland doesn't care about your Instagram.",
       "consequences": [
         "Iceland is expensive. Flights + entry + lodging easily exceeds $2,000",
         "Bike transport is a logistical challenge. Box or shipping required.",
@@ -200,40 +206,40 @@
       "quote": "Your Zwift FTP doesn't matter if you're shivering too hard to pedal.",
       "expectation_reset": "Train for cold, wet endurance. Your Zwift FTP doesn't matter if you're shivering too hard to pedal. Practice riding in rain, wind, and cool temperatures."
     },
-    
     "tldr": {
       "should_race_if": "You want bucket-list adventure, you can handle unpredictable weather, and you're ready for otherworldly volcanic terrain.",
       "skip_if": "You need guaranteed good weather, you can't handle cold/wet conditions, or you're looking for smooth, fast gravel."
     },
-    
     "final_verdict": {
       "score": "89 / 100",
       "one_liner": "Iceland's volcanic gravel race where you literally cross between continents and experience weather that doesn't negotiate.",
       "should_you_race": "Yes, if bucket-list adventure matters more than racing. The Rift delivers geological pilgrimage, otherworldly terrain, and a story you'll tell forever. Just be ready for Iceland's weather and the expense of getting there.",
       "alternatives": "If you want European adventure: Traka 360 (Spain, 360km). If you want guaranteed good weather: Unbound (Kansas, June). If you want premium adventure: Migration Gravel Race (Kenya, 4-day)."
     },
-    
     "logistics": {
-      "airport": "Keflavík (KEF) - 130km to Hvolsvöllur",
-      "lodging_strategy": "Book 6+ months early. Hvolsvöllur is tiny. Consider Reykjavík + driving.",
-      "food": "Icelandic food is expensive. Plan accordingly. Hvolsvöllur has limited options.",
-      "packet_pickup": "Friday in Hvolsvöllur. Long drive from airport—plan accordingly.",
+      "airport": "Keflav\u00edk (KEF) - 130km to Hvolsv\u00f6llur",
+      "lodging_strategy": "Book 6+ months early. Hvolsv\u00f6llur is tiny. Consider Reykjav\u00edk + driving.",
+      "food": "Icelandic food is expensive. Plan accordingly. Hvolsv\u00f6llur has limited options.",
+      "packet_pickup": "Friday in Hvolsv\u00f6llur. Long drive from airport\u2014plan accordingly.",
       "parking": "Limited village parking. Carpool or hotel shuttles.",
       "official_site": "https://therift.bike"
     },
-    
     "training_plans": {
       "total_count": 15,
-      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "tiers": [
+        "Ayahuasca",
+        "Finisher",
+        "Compete",
+        "Podium"
+      ],
       "base_price": 99,
       "save_my_race_price": 59,
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling",
       "plans": []
     },
-    
     "seo": {
       "title": "The Rift Race Guide | Training Plans & Iceland Course Intel",
-      "meta_description": "The Rift Iceland guide: 124-mile volcanic gravel race. Cross the Mid-Atlantic Ridge between continents. Volcanic terrain and unpredictable weather. Get training plans & course breakdown.",
+      "meta_description": "The Rift Iceland guide: 124-mile volcanic gravel race. Cross the Mid-Atlantic Ridge between continents. Volcanic terrain and unpredictable weather. Get train...",
       "focus_keyword": "the rift iceland",
       "slug": "the-rift"
     }
