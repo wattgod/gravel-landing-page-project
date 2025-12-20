@@ -70,7 +70,8 @@
         {"mile": 70, "label": "Deep Country", "desc": "Ranch country isolation. Just you and the road."},
         {"mile": 100, "label": "Home Stretch", "desc": "Hico in sight but legs are tired. BBQ motivation."}
       ],
-      "signature_challenge": "The combination of distance, February conditions, and early-season fitness. This is often a season opener—meaning legs aren't ready."
+      "signature_challenge": "The combination of distance, February conditions, and early-season fitness. This is often a season opener—meaning legs aren't ready.",
+      "map_url": "https://ridewithgps.com/routes/41681363"
     },
     
     "ratings_breakdown": {

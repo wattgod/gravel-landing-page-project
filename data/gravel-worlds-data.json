@@ -70,7 +70,8 @@
         {"mile": 100, "label": "Century Club", "desc": "You've done 100 miles. There's 50 more. In August heat."},
         {"mile": 130, "label": "Mind Games", "desc": "Close enough to finish to hurt. Far enough to break."}
       ],
-      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival."
+      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival.",
+      "map_url": "https://ridewithgps.com/routes/51659517"
     },
     
     "ratings_breakdown": {

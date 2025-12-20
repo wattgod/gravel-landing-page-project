@@ -70,7 +70,8 @@
         {"mile": 80, "label": "Brian Head Approach", "desc": "The big climb. 10,000+ feet awaits."},
         {"mile": 110, "label": "Final Push", "desc": "Descending on tired legs. Focus matters."}
       ],
-      "signature_challenge": "Brian Head summit—climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance."
+      "signature_challenge": "Brian Head summit—climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance.",
+      "map_url": "https://ridewithgps.com/routes/50876055"
     },
     
     "ratings_breakdown": {

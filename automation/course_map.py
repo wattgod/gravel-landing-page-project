@@ -83,6 +83,8 @@ def generate_course_map_html(data: Dict) -> str:
     
     # Use map_url if provided, otherwise use embed URL if rwgps_id exists
     map_url = course.get('map_url')
+    map_note = course.get('map_note', 'Course map coming soon')
+    
     if map_url:
         iframe_src = map_url
     elif rwgps_id:
@@ -90,6 +92,12 @@ def generate_course_map_html(data: Dict) -> str:
     else:
         # No map available - return section without iframe
         iframe_src = None
+    
+    # Build map frame HTML
+    if iframe_src:
+        map_frame_html = f'<div class="gg-route-frame-wrap"><iframe src="{iframe_src}" style="width: 1px; min-width: 100%; height: 650px; border: none;" scrolling="no"></iframe></div>'
+    else:
+        map_frame_html = f'<div class="gg-route-frame-wrap"><p style="padding: 40px; text-align: center; color: #8C7568; font-family: \'Sometype Mono\', monospace; font-size: 16px;">{map_note}</p></div>'
     
     # Section HTML - compacted
     section_html = f"""<section class="gg-route-section" id="course-map">
@@ -100,7 +108,7 @@ def generate_course_map_html(data: Dict) -> str:
         <h2 class="gg-route-title">WHAT {distance} MILES OF {location.upper()} ACTUALLY LOOKS LIKE</h2>
         <p class="gg-route-lede">Hover over the profile to see where the climbs, chaos, and "why did I sign up for this" moments actually are.</p>
       </header>
-      {f'<div class="gg-route-frame-wrap"><iframe src="{iframe_src}" style="width: 1px; min-width: 100%; height: 650px; border: none;" scrolling="no"></iframe></div>' if iframe_src else '<div class="gg-route-frame-wrap"><p style="padding: 40px; text-align: center; color: #8C7568;">Course map coming soon</p></div>'}
+      {map_frame_html}
       <div class="gg-suffering-zones">
 {chr(10).join(zones_html)}
       </div>

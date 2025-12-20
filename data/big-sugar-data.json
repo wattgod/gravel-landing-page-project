@@ -70,7 +70,8 @@
         {"mile": 55, "label": "War Eagle Territory", "desc": "Deep in the course. The climbing feels personal."},
         {"mile": 85, "label": "Final Push", "desc": "Legs are shattered but the Ozarks aren't done with you yet."}
       ],
-      "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches."
+      "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches.",
+      "map_url": "https://ridewithgps.com/routes/52306059"
     },
     
     "ratings_breakdown": {

@@ -69,7 +69,8 @@
         {"mile": 60, "label": "Wind Games", "desc": "Open prairie means exposure. Wind direction determines your fate."},
         {"mile": 85, "label": "Closing Miles", "desc": "You can see the finish but the hills don't stop coming."}
       ],
-      "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful."
+      "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful.",
+      "map_url": "https://ridewithgps.com/routes/51731077"
     },
     
     "ratings_breakdown": {

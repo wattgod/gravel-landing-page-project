@@ -70,7 +70,8 @@
         {"mile": 50, "label": "Columbine Summit", "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point."},
         {"mile": 80, "label": "Powerline Return", "desc": "You've done this climb already. Now do it again on dead legs."}
       ],
-      "signature_challenge": "Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville."
+      "signature_challenge": "Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville.",
+      "map_url": "https://ridewithgps.com/routes/3227417"
     },
     
     "ratings_breakdown": {

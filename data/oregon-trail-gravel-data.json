@@ -69,7 +69,9 @@
         {"stage": 3, "label": "The Queen Stage", "desc": "The longest, hardest day. Where GC hopes live or die."},
         {"stage": 5, "label": "Final Test", "desc": "Tired bodies, one more day. Celebrate or suffer to the end."}
       ],
-      "signature_challenge": "The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal."
+      "signature_challenge": "The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal.",
+      "map_url": null,
+      "map_note": "Course map coming soon"
     },
     
     "ratings_breakdown": {

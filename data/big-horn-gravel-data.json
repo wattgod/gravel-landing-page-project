@@ -69,7 +69,8 @@
         {"mile": 55, "label": "Remote Section", "desc": "Miles from anything. Self-sufficiency matters."},
         {"mile": 80, "label": "Mountain Shadows", "desc": "The Big Horns loom. You're not done yet."}
       ],
-      "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything."
+      "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything.",
+      "map_url": "https://ridewithgps.com/routes/48561741"
     },
     
     "ratings_breakdown": {

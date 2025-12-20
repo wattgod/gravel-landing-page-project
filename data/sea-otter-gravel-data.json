@@ -69,7 +69,8 @@
         {"mile": 40, "label": "Sandy Sections", "desc": "Beach proximity means sand. Momentum matters."},
         {"mile": 55, "label": "Final Push", "desc": "Tired legs, dusty conditions, festival finish awaits."}
       ],
-      "signature_challenge": "The distraction. There's so much happening at Sea Otter that the race can feel secondary. Stay focused or get caught up in expo madness."
+      "signature_challenge": "The distraction. There's so much happening at Sea Otter that the race can feel secondary. Stay focused or get caught up in expo madness.",
+      "map_url": "https://ridewithgps.com/routes/50233482"
     },
     
     "ratings_breakdown": {

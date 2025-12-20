@@ -69,7 +69,8 @@
         {"mile": 50, "label": "Deep Woods", "desc": "Class 4 terrain. True Vermont gravel experience."},
         {"mile": 75, "label": "Final Pitches", "desc": "Tired legs meet steep grades. Vermont isn't done yet."}
       ],
-      "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades."
+      "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades.",
+      "map_url": "https://ridewithgps.com/routes/30629483"
     },
     
     "ratings_breakdown": {

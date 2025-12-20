@@ -69,7 +69,8 @@
         {"mile": 35, "label": "High Point", "desc": "Above 10,000 feet. Thin air, big views, hard pedaling."},
         {"mile": 50, "label": "Final Descent", "desc": "Fast gravel back to Nederland. Stay focused."}
       ],
-      "signature_challenge": "The altitude. Racing between 8,000-11,000 feet means your power is compromised. Pacing matters more than fitness."
+      "signature_challenge": "The altitude. Racing between 8,000-11,000 feet means your power is compromised. Pacing matters more than fitness.",
+      "map_url": "https://ridewithgps.com/routes/41299465"
     },
     
     "ratings_breakdown": {
