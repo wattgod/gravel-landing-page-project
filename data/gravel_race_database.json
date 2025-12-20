@@ -3952,6 +3952,22 @@
         "Protocol Fit": "Standard",
         "Priority Score": 8,
         "Notes": "USA Cycling debut event 2026 - Valley of Tears race"
+      },
+      {
+        "Race Name": "Lake Taupo Cycle",
+        "Location": "New Zealand",
+        "Country": "Australia",
+        "Region": "New Zealand",
+        "Date/Month": "November",
+        "Distance (mi)": "100-200",
+        "Elevation (ft)": "6000-10000",
+        "Field Size": "1000+",
+        "Entry Cost": "$80-120 NZD",
+        "Tier": 2,
+        "Competition": "NONE",
+        "Protocol Fit": "Standard",
+        "Priority Score": 7,
+        "Notes": "Thousands of riders, major NZ event"
       }
     ]
   }
