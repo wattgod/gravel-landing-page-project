@@ -269,8 +269,20 @@ def generate_wordpress_config(data: Dict) -> str:
     if len(meta_desc) > 160:
         meta_desc = meta_desc[:157] + "..."
     
-    # Build SEO title
-    seo_title = f"{race_name} Race Guide | Training Plans & {city} Course Intel | Gravel God"
+    # Build SEO title (use from seo section if available, otherwise generate)
+    seo = race.get('seo', {})
+    seo_title = seo.get('title') or f"{race_name} Race Guide | Training Plans & {city} Course Intel | Gravel God"
+    # Ensure "| Gravel God" suffix if not present
+    if seo.get('title') and '| Gravel God' not in seo_title:
+        seo_title += ' | Gravel God'
+    
+    # Use meta description from seo section if available and valid length
+    if seo.get('meta_description') and len(seo.get('meta_description', '')) <= 160:
+        meta_desc = seo.get('meta_description')
+    # Otherwise use generated one
+    
+    # Get focus keyword from seo section, fallback to race name lowercase
+    focus_keyword = seo.get('focus_keyword') or race_name.lower()
     
     config = f"""═══════════════════════════════════════════════════════════════
 WORDPRESS QUICK CONFIG: {race_name}
@@ -293,7 +305,7 @@ Meta Description:
 {meta_desc}
 
 Focus Keyword:
-{race_name.lower()}
+{focus_keyword}
 ═══════════════════════════════════════════════════════════════"""
     
     return config
