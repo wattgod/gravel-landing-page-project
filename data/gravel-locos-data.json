@@ -1,0 +1,158 @@
+{
+  "race": {
+    "name": "Gravel Locos",
+    "slug": "gravel-locos",
+    "display_name": "Gravel Locos",
+    "tagline": "The free race with legendary Texas hospitality. Where gravel meets community.",
+    
+    "vitals": {
+      "distance_mi": 115,
+      "elevation_ft": 6500,
+      "location": "Hico, Texas",
+      "location_badge": "HICO, TEXAS",
+      "county": "Hamilton County",
+      "date": "Early February annually",
+      "date_specific": "2025: February 1",
+      "terrain_types": ["Texas Hill Country gravel", "Ranch roads", "Cattle guards", "Rolling terrain"],
+      "field_size": "500+ riders",
+      "start_time": "Saturday 7:00 AM",
+      "registration": "Free but donations welcome. Opens fall prior.",
+      "prize_purse": "None (community event)",
+      "aid_stations": "Community-run aid stations with Texas hospitality",
+      "cutoff_time": "Loose—the party waits for everyone"
+    },
+    
+    "climate": {
+      "primary": "Texas Hill Country winter/spring",
+      "description": "February in Texas brings variable conditions—could be 35°F or 70°F",
+      "challenges": ["Temperature unpredictable 35-70°F", "Wind is common", "Occasional rain/mud", "Early season fitness test"]
+    },
+    
+    "terrain": {
+      "primary": "Texas Hill Country gravel and ranch roads",
+      "surface": "Variable Texas gravel—hard-packed to loose, with cattle guard crossings",
+      "technical_rating": 2,
+      "features": ["Rolling hills", "Cattle guards", "Ranch views", "Small town crossings"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 82,
+      "course_profile": 28,
+      "biased_opinion": 44,
+      "tier": 2,
+      "tier_label": "TIER 2",
+      "prestige": 3,
+      "length": 4,
+      "technicality": 2,
+      "elevation": 3,
+      "climate": 2,
+      "altitude": 1,
+      "adventure": 4
+    },
+    
+    "history": {
+      "founded": 2015,
+      "founder": "Bobby Wintle (yes, same as Unbound)",
+      "origin_story": "Created as a free, community-driven gravel event showcasing Texas Hill Country. Bobby Wintle's vision of grassroots hospitality applied to Texas—because gravel racing should be accessible.",
+      "notable_moments": [
+        "Remains free in an era of $200+ entries",
+        "Bobby Wintle connection brings credibility",
+        "Known for legendary post-race BBQ",
+        "Hico embraces the event as community festival"
+      ],
+      "reputation": "The anti-corporate gravel race. Where hospitality matters more than prize purses."
+    },
+    
+    "course_description": {
+      "character": "Classic Texas gravel—rolling, exposed, beautiful in a rugged Hill Country way.",
+      "suffering_zones": [
+        {"mile": 35, "label": "Wind Reality", "desc": "Texas wind starts asserting itself."},
+        {"mile": 70, "label": "Deep Country", "desc": "Ranch country isolation. Just you and the road."},
+        {"mile": 100, "label": "Home Stretch", "desc": "Hico in sight but legs are tired. BBQ motivation."}
+      ],
+      "signature_challenge": "The combination of distance, February conditions, and early-season fitness. This is often a season opener—meaning legs aren't ready."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 3,
+        "explanation": "Not a bucket-list name-drop race, but deeply respected for what it represents. Bobby Wintle's involvement gives it credibility in the gravel world."
+      },
+      "length": {
+        "score": 4,
+        "explanation": "115 miles is serious distance, especially early in the season. The February timing means many riders are undertrained."
+      },
+      "technicality": {
+        "score": 2,
+        "explanation": "Texas gravel isn't technical. Cattle guards require attention. Otherwise it's about fitness, not handling."
+      },
+      "elevation": {
+        "score": 3,
+        "explanation": "6,500 feet across 115 miles is steady rolling. Not punishing, but constant. Hill Country terrain never truly flattens."
+      },
+      "climate": {
+        "score": 2,
+        "explanation": "February is wildcard season. Could be shorts weather or full winter kit. Pack layers and hope."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Texas Hill Country sits at modest elevation. Altitude is irrelevant."
+      },
+      "adventure": {
+        "score": 4,
+        "explanation": "Hico and the Hill Country have genuine Texas charm. Ranch country, small-town vibes, and the legendary post-race experience."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Grassroots Gold",
+      "summary": "Gravel Locos represents everything good about grassroots gravel: free entry, community spirit, legendary hospitality, and a genuinely fun day on the bike. In an era of $250 entries and lottery stress, this is refreshing.",
+      "strengths": [
+        "Free: You literally can't beat the price.",
+        "Community: Hico embraces the event. Volunteers are amazing.",
+        "Bobby Wintle: The same spirit that made Unbound special, applied to Texas."
+      ],
+      "weaknesses": [
+        "February timing: Season opener fitness means many riders suffer.",
+        "Limited infrastructure: Free race means modest production value.",
+        "Hico is small: Lodging requires planning or road trip approach."
+      ],
+      "bottom_line": "If you want to experience what gravel racing should feel like—welcoming, fun, community-driven—Gravel Locos delivers. The price is right and the vibe is unmatched."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "Free doesn't mean easy. February fitness levels combined with Texas wind and 115 miles creates real suffering. Many riders use this as a 'training race' and end up humbled.",
+      "consequences": [
+        "February fitness is often weak. Prepare accordingly.",
+        "Hico has limited lodging. Book early or plan day-of arrival.",
+        "Don't skip the post-race BBQ. It's the whole point."
+      ],
+      "expectation_reset": "This is a community celebration with bikes. Race if you want, but come for the experience. The clock matters less than the vibes."
+    },
+    
+    "final_verdict": {
+      "score": "82 / 100",
+      "one_liner": "Free gravel racing with Texas hospitality—where community comes first and everyone's welcome.",
+      "should_you_race": "Yes if you want grassroots gravel, early-season miles, and legendary hospitality. Yes if corporate racing feels soulless. Not if you need Instagram prestige.",
+      "alternatives": "If you want Texas gravel later in year: various Hill Country events. If you want similar grassroots vibes: look for community-organized races near you."
+    },
+    
+    "logistics": {
+      "airport": "Dallas-Fort Worth (DFW) - 2 hours. Austin (AUS) - 1.5 hours.",
+      "lodging_strategy": "Hico is tiny. Book immediately or stay in Stephenville (20 min) or Waco (45 min).",
+      "food": "Hico has basics. Post-race BBQ is legendary and provided.",
+      "packet_pickup": "Morning of race or day before. Simple process.",
+      "parking": "Downtown Hico start. Manageable parking.",
+      "official_site": "https://gravellocoscycling.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

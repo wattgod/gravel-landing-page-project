@@ -1,0 +1,158 @@
+{
+  "race": {
+    "name": "Rebecca's Private Idaho",
+    "slug": "rebeccas-private-idaho",
+    "display_name": "Rebecca's Private Idaho",
+    "tagline": "Where the Queen of Pain invites you to suffer beautifully.",
+    
+    "vitals": {
+      "distance_mi": 103,
+      "elevation_ft": 8500,
+      "location": "Ketchum, Idaho",
+      "location_badge": "KETCHUM, IDAHO",
+      "county": "Blaine County",
+      "date": "Early September annually",
+      "date_specific": "2025: September 5-6",
+      "terrain_types": ["High desert gravel", "Mountain passes", "Scenic forest roads", "Technical descents"],
+      "field_size": "1,500+ riders across all distances",
+      "start_time": "Saturday 7:00 AM",
+      "registration": "Opens early in year. Cost: ~$250",
+      "prize_purse": "$50,000+ in the Queen's Stage",
+      "aid_stations": "Well-stocked aid stations at key points",
+      "cutoff_time": "12 hours for 100-mile distance"
+    },
+    
+    "climate": {
+      "primary": "High desert mountain",
+      "description": "September in Idaho brings crisp mornings, warm afternoons, and possibility of early fall weather",
+      "challenges": ["Morning temps can be 40°F", "Afternoon can hit 75°F", "Altitude at 6,000-8,000 feet", "Dry conditions—hydration critical"]
+    },
+    
+    "terrain": {
+      "primary": "High desert gravel with sustained climbs",
+      "surface": "Well-maintained gravel roads, some chunky sections, forest service roads",
+      "technical_rating": 3,
+      "features": ["Trail Creek Summit", "Long steady climbs", "Fast gravel descents", "Stunning mountain views"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 91,
+      "course_profile": 34,
+      "biased_opinion": 46,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "prestige": 5,
+      "length": 4,
+      "technicality": 3,
+      "elevation": 4,
+      "climate": 3,
+      "altitude": 4,
+      "adventure": 5
+    },
+    
+    "history": {
+      "founded": 2013,
+      "founder": "Rebecca Rusch",
+      "origin_story": "Created by legendary endurance athlete Rebecca Rusch to share her backyard with the gravel community. What started as an intimate gathering has become one of gravel's marquee events.",
+      "notable_moments": [
+        "Rebecca Rusch—4x world champion and 'Queen of Pain'—hosts personally",
+        "Queen's Stage format added elite racing element",
+        "Featured on Lifetime Grand Prix circuit",
+        "Known for exceptional community vibe and post-race party"
+      ],
+      "reputation": "Where gravel royalty meets grassroots community. The event Rebecca built in her backyard."
+    },
+    
+    "course_description": {
+      "character": "Big mountain beauty with sustained but manageable climbing. Not the steepest grades, but relentless.",
+      "suffering_zones": [
+        {"mile": 30, "label": "Trail Creek Climb", "desc": "The signature climb. Long and steady. Pace yourself."},
+        {"mile": 65, "label": "Afternoon Exposure", "desc": "Open terrain, sun beating down, halfway fatigue settling in."},
+        {"mile": 90, "label": "Final Push", "desc": "You can see Ketchum. But there's still climbing between you and the finish."}
+      ],
+      "signature_challenge": "The combination of distance, altitude, and relentless terrain. Nothing is crazy steep—but nothing is flat either."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 5,
+        "explanation": "Rebecca Rusch built this, hosts it, and races it. When a 4x world champion invites you to her backyard, you show up. The event has grown but maintained its intimate, athlete-first vibe."
+      },
+      "length": {
+        "score": 4,
+        "explanation": "100+ miles is serious distance. The course isn't ultra-extreme, but combining that mileage with 8,500 feet of climbing and altitude creates a proper full-day challenge."
+      },
+      "technicality": {
+        "score": 3,
+        "explanation": "The gravel is generally good quality—fast and predictable. Some sections get chunky, descents require attention, but this isn't a bike-handling test. It's a fitness and pacing race."
+      },
+      "elevation": {
+        "score": 4,
+        "explanation": "8,500 feet in 100+ miles is meaningful but manageable. The grades are steady rather than steep. Climbers have an advantage, but diesels can survive."
+      },
+      "climate": {
+        "score": 3,
+        "explanation": "September in Idaho is usually beautiful. Mornings are cool, afternoons pleasant. The main variable is early fall weather—pack a layer in case temperatures drop."
+      },
+      "altitude": {
+        "score": 4,
+        "explanation": "Racing between 6,000-8,000 feet matters. Sea-level riders will feel it. Arrive 2-3 days early minimum. It's not Leadville-level, but it's not trivial."
+      },
+      "adventure": {
+        "score": 5,
+        "explanation": "The Sawtooth Mountains are world-class scenery. Sun Valley is a destination. This isn't just a race—it's a reason to explore one of America's most beautiful regions."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Must-Do Experience",
+      "summary": "RPI is what happens when a legendary athlete shares her passion with the community. It's not the hardest race, not the longest, not the most technical—but it might be the most soulful. The combination of world-class scenery, genuine community, and Rebecca's personal involvement makes this special.",
+      "strengths": [
+        "The host: Rebecca Rusch is there, racing, cheering, hugging finishers. It's personal.",
+        "The scenery: Sawtooth Mountains are bucket-list beautiful.",
+        "The community: Post-race party is legendary. People come for the race, stay for the vibes."
+      ],
+      "weaknesses": [
+        "Travel: Ketchum is remote. Expect a drive from Boise (2+ hours).",
+        "Cost: Sun Valley prices. Lodging isn't cheap.",
+        "Competition: The Queen's Stage brings serious racers. Don't expect a chill ride."
+      ],
+      "bottom_line": "This is the event that makes you fall in love with gravel racing. The challenge is real, but the experience is the point. Do this once in your gravel life."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "The race is beautiful, the community is real—but the logistics aren't cheap. Sun Valley is a ski resort. Hotels cost accordingly. If you're on a budget, this race takes some planning.",
+      "consequences": [
+        "Lodging: Book 6+ months early. Expect $200-400/night for decent options.",
+        "Travel: Boise is the closest major airport. That's 2.5 hours to Ketchum.",
+        "The Queen's Stage is real racing. If you enter it thinking 'charity ride,' you'll get humbled."
+      ],
+      "expectation_reset": "This is a premium experience at premium prices. Budget accordingly. The race itself is worth it—but only if you can swing the logistics without stress."
+    },
+    
+    "final_verdict": {
+      "score": "91 / 100",
+      "one_liner": "The gravel pilgrimage that sells itself through pure experience.",
+      "should_you_race": "Yes—if you can afford the trip and want to experience gravel at its most soulful. This isn't just a race; it's a community gathering hosted by royalty.",
+      "alternatives": "If you want Idaho scenery without the cost: check out smaller Idaho events. If you want the Lifetime GP experience: SBT GRVL has similar vibes, closer to Denver."
+    },
+    
+    "logistics": {
+      "airport": "Boise (BOI) - 2.5 hours to Ketchum. Sun Valley (SUN) has limited flights.",
+      "lodging_strategy": "Book 6+ months early. Sun Valley/Ketchum prices are resort-level. Consider VRBO for groups.",
+      "food": "Ketchum has excellent restaurants. Plan a post-race dinner.",
+      "packet_pickup": "Friday at event expo. Small-town vibes, quick process.",
+      "parking": "Start area parking requires early arrival. Shuttles may be available.",
+      "official_site": "https://rebeccasprivateidaho.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

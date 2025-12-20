@@ -1,0 +1,158 @@
+{
+  "race": {
+    "name": "The Rad",
+    "slug": "the-rad",
+    "display_name": "The Rad Dirt Fest",
+    "tagline": "Fall gravel in the Flint Hills. The off-season Unbound you can actually get into.",
+    
+    "vitals": {
+      "distance_mi": 100,
+      "elevation_ft": 7000,
+      "location": "Emporia, Kansas",
+      "location_badge": "EMPORIA, KANSAS",
+      "county": "Lyon County",
+      "date": "Late October annually",
+      "date_specific": "2025: October 25",
+      "terrain_types": ["Flint Hills gravel", "Rolling terrain", "Limestone roads", "Creek crossings"],
+      "field_size": "500+ riders across distances",
+      "start_time": "Saturday 8:00 AM",
+      "registration": "Opens summer. Cost: ~$100-150",
+      "prize_purse": "Varies by year",
+      "aid_stations": "Multiple aid stations along course",
+      "cutoff_time": "Varies by distance"
+    },
+    
+    "climate": {
+      "primary": "Late fall Midwest",
+      "description": "October in Kansas means cool mornings, mild afternoons, and chance of everything from Indian summer to early freeze",
+      "challenges": ["Temperature range 35-65°F typical", "Wind is always a factor", "Occasional rain/mud", "Shorter daylight hours"]
+    },
+    
+    "terrain": {
+      "primary": "Classic Flint Hills gravel—same roads as Unbound",
+      "surface": "Chunky limestone gravel, some paved connectors, maintained county roads",
+      "technical_rating": 3,
+      "features": ["Rolling hills", "Cattle guards", "Open prairie exposure", "Creek bed crossings"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 78,
+      "course_profile": 28,
+      "biased_opinion": 40,
+      "tier": 2,
+      "tier_label": "TIER 2",
+      "prestige": 3,
+      "length": 4,
+      "technicality": 3,
+      "elevation": 3,
+      "climate": 2,
+      "altitude": 1,
+      "adventure": 4
+    },
+    
+    "history": {
+      "founded": 2019,
+      "founder": "Same organizers as local Emporia cycling community",
+      "origin_story": "Created as a fall festival to extend Emporia's gravel season beyond Unbound. Offers a chance to ride the Flint Hills when they're not trying to kill you with heat.",
+      "notable_moments": [
+        "Positioned as the 'accessible' Emporia experience",
+        "Shares roads and vibe with Unbound without the lottery",
+        "Fall colors add different character to familiar terrain"
+      ],
+      "reputation": "Unbound's cooler, more approachable sibling. Same great roads, less suffering."
+    },
+    
+    "course_description": {
+      "character": "The Flint Hills you know (or want to know) without June's heat. Rolling, relentless, beautiful.",
+      "suffering_zones": [
+        {"mile": 30, "label": "Reality Check", "desc": "The rollers are adding up. Legs are talking."},
+        {"mile": 60, "label": "Wind Games", "desc": "Open prairie means exposure. Wind direction determines your fate."},
+        {"mile": 85, "label": "Closing Miles", "desc": "You can see the finish but the hills don't stop coming."}
+      ],
+      "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 3,
+        "explanation": "Not Unbound, and it doesn't pretend to be. But racing the same Flint Hills roads with the same community carries weight. Think of it as Unbound's training race."
+      },
+      "length": {
+        "score": 4,
+        "explanation": "100 miles of gravel is serious regardless of season. The cooler temps help, but the distance still demands respect and proper preparation."
+      },
+      "technicality": {
+        "score": 3,
+        "explanation": "Same terrain as Unbound—chunky limestone, cattle guards, nothing crazy technical. Bike handling helps, but this is a fitness race."
+      },
+      "elevation": {
+        "score": 3,
+        "explanation": "7,000 feet across 100 miles is constant rolling, not climbing. The Flint Hills never let you settle. Expect punchy efforts all day."
+      },
+      "climate": {
+        "score": 2,
+        "explanation": "Fall is the kindest season in the Flint Hills. No June heat trying to kill you. But Kansas wind is ever-present, and late October can surprise with cold snaps."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Emporia sits at ~1,200 feet. Altitude is irrelevant. Train anywhere, show up ready."
+      },
+      "adventure": {
+        "score": 4,
+        "explanation": "The Flint Hills are stunning in fall—golden grasses, big sky, solitude. It's the same beautiful desolation as Unbound, just in a gentler season."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Unbound Lite",
+      "summary": "The Rad is perfect if you want to experience Emporia gravel without the Unbound commitment. Same roads, same community, cooler temps, lower stakes. It's also a great prep race if you're building toward Unbound the following June.",
+      "strengths": [
+        "No lottery: You can actually register and race.",
+        "Cooler weather: October > June in the Flint Hills.",
+        "Community: Same Emporia vibe, same great volunteers.",
+        "Training race: Perfect Unbound prep 8 months before the main event."
+      ],
+      "weaknesses": [
+        "Less prestige: It's not Unbound. The Instagram engagement is lower.",
+        "Wind: Fall means consistent wind. Some years it's brutal.",
+        "Smaller field: Less energy, fewer pros, quieter experience."
+      ],
+      "bottom_line": "If you want the Flint Hills without the suffering, The Rad delivers. If you want the full Emporia experience, it's a great appetizer before the main course."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "The Rad is overshadowed by its famous sibling. Finishing doesn't carry the same weight as an Unbound buckle. That's okay—not every race needs to be a life-defining moment.",
+      "consequences": [
+        "October weather in Kansas is unpredictable. Pack layers and rain gear.",
+        "Wind can make or break your day. Headwind miles feel twice as long.",
+        "Post-race options in Emporia are limited compared to June's festival atmosphere."
+      ],
+      "expectation_reset": "This is a great race, not a legendary one. Treat it as a training race, a preview, or simply a fun day on great roads. Don't expect Unbound's atmosphere at Unbound's off-peak event."
+    },
+    
+    "final_verdict": {
+      "score": "78 / 100",
+      "one_liner": "The accessible Flint Hills experience—same great roads, lower stakes, better temps.",
+      "should_you_race": "Yes if you want to experience Emporia gravel without the Unbound circus. Yes if you're prepping for Unbound next year. Maybe not if you're chasing prestige.",
+      "alternatives": "If you want the full Emporia experience: Unbound 200 in June. If you want fall gravel elsewhere: Big Sugar (Arkansas) or Gravel Worlds (Nebraska)."
+    },
+    
+    "logistics": {
+      "airport": "Wichita (ICT) - 90 minutes to Emporia. Kansas City (MCI) - 2 hours.",
+      "lodging_strategy": "Easier to book than Unbound. Hotels in Emporia are available. Book 1-2 months ahead.",
+      "food": "Same Emporia options as Unbound weekend. Less crowded.",
+      "packet_pickup": "Friday evening or Saturday morning at event venue.",
+      "parking": "Much easier than Unbound. Ample space near start.",
+      "official_site": "Check Emporia cycling event calendar"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

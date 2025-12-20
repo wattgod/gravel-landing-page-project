@@ -1,0 +1,157 @@
+{
+  "race": {
+    "name": "Ned Gravel",
+    "slug": "ned-gravel",
+    "display_name": "Ned Gravel",
+    "tagline": "Colorado high country gravel from Ned Overend's hometown. Altitude included.",
+    
+    "vitals": {
+      "distance_mi": 55,
+      "elevation_ft": 6000,
+      "location": "Nederland, Colorado",
+      "location_badge": "NEDERLAND, COLORADO",
+      "county": "Boulder County",
+      "date": "Late August annually",
+      "date_specific": "2025: August 23",
+      "terrain_types": ["High-altitude gravel", "Forest service roads", "Technical sections", "Mountain passes"],
+      "field_size": "400+ riders",
+      "start_time": "Saturday 7:30 AM",
+      "registration": "Opens spring. Cost: ~$100",
+      "prize_purse": "Varies",
+      "aid_stations": "Multiple aid stations",
+      "cutoff_time": "8 hours"
+    },
+    
+    "climate": {
+      "primary": "Colorado high country",
+      "description": "Late August at 8,000-11,000 feet means cool mornings, warm midday, and afternoon storm risk",
+      "challenges": ["Morning temps 40-50°F", "Altitude at 8,000-11,000 feet", "Afternoon thunderstorm window", "Intense high-altitude sun"]
+    },
+    
+    "terrain": {
+      "primary": "Colorado Front Range gravel with sustained climbing",
+      "surface": "Maintained gravel roads, some chunky sections, forest service quality",
+      "technical_rating": 3,
+      "features": ["Peak to Peak Highway area", "High-altitude forest roads", "Mountain views", "Roosevelt National Forest"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 79,
+      "course_profile": 30,
+      "biased_opinion": 40,
+      "tier": 2,
+      "tier_label": "TIER 2",
+      "prestige": 3,
+      "length": 2,
+      "technicality": 3,
+      "elevation": 4,
+      "climate": 3,
+      "altitude": 4,
+      "adventure": 4
+    },
+    
+    "history": {
+      "founded": 2019,
+      "founder": "Local organizers inspired by mountain bike legend Ned Overend",
+      "origin_story": "Named for mountain bike pioneer Ned Overend and his hometown of Durango (with a Colorado mountain town vibe), this race showcases the gravel roads above Boulder's backyard.",
+      "notable_moments": [
+        "Positioned as an intimate Colorado high-country experience",
+        "Benefits from Nederland's quirky mountain town culture",
+        "Growing reputation for quality organization"
+      ],
+      "reputation": "A local's favorite that's gaining broader attention. Colorado gravel without the big-race chaos."
+    },
+    
+    "course_description": {
+      "character": "Pure Colorado high country. Forests, peaks, and thin air. Intimate race with big views.",
+      "suffering_zones": [
+        {"mile": 15, "label": "First Climb", "desc": "The altitude starts making itself known."},
+        {"mile": 35, "label": "High Point", "desc": "Above 10,000 feet. Thin air, big views, hard pedaling."},
+        {"mile": 50, "label": "Final Descent", "desc": "Fast gravel back to Nederland. Stay focused."}
+      ],
+      "signature_challenge": "The altitude. Racing between 8,000-11,000 feet means your power is compromised. Pacing matters more than fitness."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 3,
+        "explanation": "Not a bucket-list race nationally, but respected in Colorado gravel circles. The Ned Overend connection gives it heritage cred."
+      },
+      "length": {
+        "score": 2,
+        "explanation": "At 55 miles, this is approachable. Not a full-day suffer-fest. Good for intermediate riders or as a shorter altitude test."
+      },
+      "technicality": {
+        "score": 3,
+        "explanation": "Quality Colorado gravel—not overly technical but varied. Good bike handling helps on descents."
+      },
+      "elevation": {
+        "score": 4,
+        "explanation": "6,000 feet in 55 miles is solid vertical. The climbing is steady and sustained rather than punchy."
+      },
+      "climate": {
+        "score": 3,
+        "explanation": "Late August in Colorado is generally great. Morning chill, afternoon warmth. Thunderstorm risk exists but timing usually favors morning finish."
+      },
+      "altitude": {
+        "score": 4,
+        "explanation": "Racing at 8,000-11,000 feet matters. Sea-level riders need 2-4 days minimum acclimation. Altitude is a real factor here."
+      },
+      "adventure": {
+        "score": 4,
+        "explanation": "The Colorado Front Range above Boulder is stunning. Nederland itself is a quirky mountain town worth exploring."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Colorado Gem",
+      "summary": "Ned Gravel is the intimate Colorado experience—no massive crowds, no lottery drama, just quality gravel in beautiful high country. Perfect for Colorado locals or those who want altitude racing without Leadville's intensity.",
+      "strengths": [
+        "Intimate vibe: Small enough to feel personal, big enough to have energy.",
+        "Altitude: Real high-country racing for those who want to test themselves.",
+        "Nederland: Quirky mountain town with character."
+      ],
+      "weaknesses": [
+        "Size: Less energy than bigger events. If you want festival atmosphere, look elsewhere.",
+        "Altitude: Non-acclimated riders will struggle. This isn't optional.",
+        "Access: Nederland is close to Boulder but requires mountain driving."
+      ],
+      "bottom_line": "A perfect 'local's race' that visitors can enjoy. Great for altitude testing, Colorado exploration, or just a quality gravel day."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "Ned Gravel is low-key in the best way. Don't expect Unbound production value. Expect a well-organized race with a small-town vibe. That's the point.",
+      "consequences": [
+        "Nederland lodging is very limited. Book immediately or stay in Boulder (30 min drive).",
+        "The altitude will affect you. Arrive 2+ days early if coming from sea level.",
+        "This is a 'one nice dinner' kind of town. Pack snacks."
+      ],
+      "expectation_reset": "This is a solid regional race, not a destination event. The experience is quality—just calibrate expectations for scale."
+    },
+    
+    "final_verdict": {
+      "score": "79 / 100",
+      "one_liner": "Intimate Colorado high-country gravel with altitude bite and mountain town charm.",
+      "should_you_race": "Yes if you want altitude racing without Leadville's commitment, or want a quality Colorado gravel experience. Great for Front Range locals.",
+      "alternatives": "If you want more challenge: Leadville or Crusher. If you want bigger vibes: SBT GRVL. If you want similar intimacy elsewhere: any regional favorite."
+    },
+    
+    "logistics": {
+      "airport": "Denver (DEN) - 90 minutes to Nederland.",
+      "lodging_strategy": "Book immediately. Nederland has few options. Boulder is 30 minutes and has plenty of hotels.",
+      "food": "Nederland has a few restaurants. Plan meals or bring supplies.",
+      "packet_pickup": "Friday or Saturday morning in Nederland.",
+      "parking": "Small-town parking. Arrive early for start area spots.",
+      "official_site": "https://www.nedgravel.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

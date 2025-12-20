@@ -1,0 +1,131 @@
+{
+  "race_id": "ned-gravel",
+  "race_name": "Ned Gravel",
+  "race_slug": "ned-gravel",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "Colorado high country gravel from Ned Overend's hometown. Altitude included.",
+  "race_date": "2025: August 23",
+  "year": null,
+  "course": {
+    "distance_miles": 55,
+    "elevation_gain_feet": 6000,
+    "terrain_type": "Colorado Front Range gravel with sustained climbing",
+    "terrain_surface": "Maintained gravel roads, some chunky sections, forest service quality",
+    "technical_rating": 3,
+    "signature_challenge": "The altitude. Racing between 8,000-11,000 feet means your power is compromised. Pacing matters more than fitness.",
+    "character": "Pure Colorado high country. Forests, peaks, and thin air. Intimate race with big views.",
+    "key_features": [
+      "Peak to Peak Highway area",
+      "High-altitude forest roads",
+      "Mountain views",
+      "Roosevelt National Forest"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 15,
+        "label": "First Climb",
+        "desc": "The altitude starts making itself known."
+      },
+      {
+        "mile": 35,
+        "label": "High Point",
+        "desc": "Above 10,000 feet. Thin air, big views, hard pedaling."
+      },
+      {
+        "mile": 50,
+        "label": "Final Descent",
+        "desc": "Fast gravel back to Nederland. Stay focused."
+      }
+    ],
+    "location": "Nederland, Colorado",
+    "climate_primary": "Colorado high country",
+    "climate_description": "Late August at 8,000-11,000 feet means cool mornings, warm midday, and afternoon storm risk",
+    "climate_challenges": [
+      "Morning temps 40-50°F",
+      "Altitude at 8,000-11,000 feet",
+      "Afternoon thunderstorm window",
+      "Intense high-altitude sun"
+    ]
+  },
+  "ratings": {
+    "overall_score": 79,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 2,
+    "technicality_score": 3,
+    "elevation_score": 4,
+    "climate_score": 3,
+    "altitude_score": 4,
+    "adventure_score": 4,
+    "logistics_score": null,
+    "prestige_score": 3
+  },
+  "biased_opinion": {
+    "overall_score": 40,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Ned Gravel is the intimate Colorado experience—no massive crowds, no lottery drama, just quality gravel in beautiful high country. Perfect for Colorado locals or those who want altitude racing without Leadville's intensity."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Nederland, Colorado",
+    "location_badge": "NEDERLAND, COLORADO",
+    "county": "Boulder County",
+    "city": "Nederland",
+    "state": "Colorado",
+    "country": "USA",
+    "date": "Late August annually",
+    "date_specific": "2025: August 23",
+    "venue": null,
+    "parking": "Small-town parking. Arrive early for start area spots.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens spring. Cost: ~$100",
+    "start_time": "Saturday 7:30 AM",
+    "field_size": "400+ riders"
+  },
+  "final_verdict": {
+    "overall_score": 79,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2019,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=ned-gravel",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.934185",
+  "landing_page_url": "/races/ned-gravel",
+  "ridewithgps_id": null,
+  "prize_purse": "Varies",
+  "field_size": "400+ riders",
+  "searchable_text": "Ned Gravel Colorado high country gravel from Ned Overend's hometown. Altitude included. Pure Colorado high country. Forests, peaks, and thin air. Intimate race with big views. The altitude. Racing between 8,000-11,000 feet means your power is compromised. Pacing matters more than fitness. Peak to Peak Highway area High-altitude forest roads Mountain views Roosevelt National Forest Nederland, Colorado Boulder County Colorado high country Colorado Front Range gravel with sustained climbing",
+  "filter_tags": [
+    "tier-2",
+    "distance-medium",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-good"
+  ]
+}

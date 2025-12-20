@@ -1,0 +1,130 @@
+{
+  "race_id": "bwr-cedar-city",
+  "race_name": "Belgian Waffle Ride Cedar City",
+  "race_slug": "bwr-cedar-city",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "The Waffle goes to the desert. Utah red rock gravel at its finest.",
+  "race_date": "2025: May 31",
+  "year": null,
+  "course": {
+    "distance_miles": 131,
+    "elevation_gain_feet": 11000,
+    "terrain_type": "Red rock desert gravel with sustained mountain climbing",
+    "terrain_surface": "Variable—smooth hardpack to chunky volcanic gravel",
+    "technical_rating": 4,
+    "signature_challenge": "Brian Head summit—climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance.",
+    "character": "Epic Utah scenery with serious climbing. Red rock meets alpine in one spectacular package.",
+    "key_features": [
+      "Brian Head summit",
+      "Red rock canyons",
+      "High-altitude terrain",
+      "Technical descents"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 40,
+        "label": "Canyon Entry",
+        "desc": "The climbing begins in earnest. Utah terrain reveals itself."
+      },
+      {
+        "mile": 80,
+        "label": "Brian Head Approach",
+        "desc": "The big climb. 10,000+ feet awaits."
+      },
+      {
+        "mile": 110,
+        "label": "Final Push",
+        "desc": "Descending on tired legs. Focus matters."
+      }
+    ],
+    "location": "Cedar City, Utah",
+    "climate_primary": "Utah high desert",
+    "climate_description": "Late May brings warm days, cool mornings, and Utah's intense high-altitude sun",
+    "climate_challenges": [
+      "Temperature swings 40-80°F",
+      "High-altitude sun exposure",
+      "Dry conditions",
+      "Altitude at 5,000-10,000 feet"
+    ]
+  },
+  "ratings": {
+    "overall_score": 89,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 4,
+    "elevation_score": 5,
+    "climate_score": 3,
+    "altitude_score": 4,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 44,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "BWR Cedar City takes the Waffle formula—long, hard, beautiful—and applies it to Utah's stunning terrain. The red rock landscape combined with alpine climbing creates a unique experience that justifies the travel."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Cedar City, Utah",
+    "location_badge": "CEDAR CITY, UTAH",
+    "county": "Iron County",
+    "city": "Cedar City",
+    "state": "Utah",
+    "country": "USA",
+    "date": "Late May annually",
+    "date_specific": "2025: May 31",
+    "venue": null,
+    "parking": "Downtown start area. Arrive early for good spots.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens fall prior. Cost: ~$200",
+    "start_time": "Saturday 7:00 AM",
+    "field_size": "1,000+ riders across distances"
+  },
+  "final_verdict": {
+    "overall_score": 89,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2019,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=bwr-cedar-city",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.536920",
+  "landing_page_url": "/races/bwr-cedar-city",
+  "ridewithgps_id": null,
+  "prize_purse": "$50,000+",
+  "field_size": "1,000+ riders across distances",
+  "searchable_text": "Belgian Waffle Ride Cedar City The Waffle goes to the desert. Utah red rock gravel at its finest. Epic Utah scenery with serious climbing. Red rock meets alpine in one spectacular package. Brian Head summit—climbing to 10,000+ feet on gravel tests both fitness and altitude tolerance. Brian Head summit Red rock canyons High-altitude terrain Technical descents Cedar City, Utah Iron County Utah high desert Red rock desert gravel with sustained mountain climbing",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-extreme",
+    "terrain-gravel",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}

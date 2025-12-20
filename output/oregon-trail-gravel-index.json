@@ -1,0 +1,131 @@
+{
+  "race_id": "oregon-trail-gravel",
+  "race_name": "Oregon Trail Gravel Grinder",
+  "race_slug": "oregon-trail-gravel",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "5 days. 5 stages. The Grand Tour of American Gravel.",
+  "race_date": "2025: June 23-27",
+  "year": null,
+  "course": {
+    "distance_miles": 375,
+    "elevation_gain_feet": 35000,
+    "terrain_type": "High desert and forest service gravel across Central Oregon",
+    "terrain_surface": "Variable—smooth forest roads to chunky volcanic gravel",
+    "technical_rating": 3,
+    "signature_challenge": "The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal.",
+    "character": "Five distinct stages showcasing Oregon's diversity—high desert, forests, mountains, and everything between.",
+    "key_features": [
+      "McKenzie Pass",
+      "Cascade Range views",
+      "High desert landscapes",
+      "Old-growth forests"
+    ],
+    "suffering_zones": [
+      {
+        "stage": 1,
+        "label": "Opening Salvo",
+        "desc": "60+ miles to set the tone. Fresh legs meet Oregon reality."
+      },
+      {
+        "stage": 3,
+        "label": "The Queen Stage",
+        "desc": "The longest, hardest day. Where GC hopes live or die."
+      },
+      {
+        "stage": 5,
+        "label": "Final Test",
+        "desc": "Tired bodies, one more day. Celebrate or suffer to the end."
+      }
+    ],
+    "location": "Central Oregon (multiple towns)",
+    "climate_primary": "High desert Oregon",
+    "climate_description": "Late June brings long days, warm temps, and Oregon's classic high desert conditions",
+    "climate_challenges": [
+      "Temperature swings 40-90°F",
+      "High-altitude sun exposure",
+      "Dust in dry years",
+      "Variable weather across 5 days"
+    ]
+  },
+  "ratings": {
+    "overall_score": 92,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 5,
+    "technicality_score": 3,
+    "elevation_score": 5,
+    "climate_score": 3,
+    "altitude_score": 4,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 45,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Oregon Trail is for those who find single-day races limiting. The stage format creates different demands—recovery, consistency, pacing across days. It's closer to bikepacking than racing, with timing chips."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Central Oregon (multiple towns)",
+    "location_badge": "CENTRAL OREGON",
+    "county": "Multiple counties",
+    "city": "Central Oregon (multiple towns)",
+    "state": null,
+    "country": "USA",
+    "date": "Late June annually",
+    "date_specific": "2025: June 23-27",
+    "venue": null,
+    "parking": "Vehicle support recommended for gear transport between stages.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens fall prior. Cost: ~$500+",
+    "start_time": "Varies by stage",
+    "field_size": "200+ riders"
+  },
+  "final_verdict": {
+    "overall_score": 92,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2015,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=oregon-trail-gravel",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.984470",
+  "landing_page_url": "/races/oregon-trail-gravel",
+  "ridewithgps_id": null,
+  "prize_purse": "Varies",
+  "field_size": "200+ riders",
+  "searchable_text": "Oregon Trail Gravel Grinder 5 days. 5 stages. The Grand Tour of American Gravel. Five distinct stages showcasing Oregon's diversity—high desert, forests, mountains, and everything between. The cumulative nature. Any single stage is manageable. Five consecutive days of 60-80+ miles with major climbing is a different animal. McKenzie Pass Cascade Range views High desert landscapes Old-growth forests Central Oregon (multiple towns) Multiple counties High desert Oregon High desert and forest service gravel across Central Oregon",
+  "filter_tags": [
+    "tier-1",
+    "distance-ultra",
+    "elevation-extreme",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-excellent"
+  ]
+}

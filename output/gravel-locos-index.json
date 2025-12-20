@@ -1,0 +1,131 @@
+{
+  "race_id": "gravel-locos",
+  "race_name": "Gravel Locos",
+  "race_slug": "gravel-locos",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "The free race with legendary Texas hospitality. Where gravel meets community.",
+  "race_date": "2025: February 1",
+  "year": null,
+  "course": {
+    "distance_miles": 115,
+    "elevation_gain_feet": 6500,
+    "terrain_type": "Texas Hill Country gravel and ranch roads",
+    "terrain_surface": "Variable Texas gravel—hard-packed to loose, with cattle guard crossings",
+    "technical_rating": 2,
+    "signature_challenge": "The combination of distance, February conditions, and early-season fitness. This is often a season opener—meaning legs aren't ready.",
+    "character": "Classic Texas gravel—rolling, exposed, beautiful in a rugged Hill Country way.",
+    "key_features": [
+      "Rolling hills",
+      "Cattle guards",
+      "Ranch views",
+      "Small town crossings"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 35,
+        "label": "Wind Reality",
+        "desc": "Texas wind starts asserting itself."
+      },
+      {
+        "mile": 70,
+        "label": "Deep Country",
+        "desc": "Ranch country isolation. Just you and the road."
+      },
+      {
+        "mile": 100,
+        "label": "Home Stretch",
+        "desc": "Hico in sight but legs are tired. BBQ motivation."
+      }
+    ],
+    "location": "Hico, Texas",
+    "climate_primary": "Texas Hill Country winter/spring",
+    "climate_description": "February in Texas brings variable conditions—could be 35°F or 70°F",
+    "climate_challenges": [
+      "Temperature unpredictable 35-70°F",
+      "Wind is common",
+      "Occasional rain/mud",
+      "Early season fitness test"
+    ]
+  },
+  "ratings": {
+    "overall_score": 82,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 4,
+    "technicality_score": 2,
+    "elevation_score": 3,
+    "climate_score": 2,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": null,
+    "prestige_score": 3
+  },
+  "biased_opinion": {
+    "overall_score": 44,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Gravel Locos represents everything good about grassroots gravel: free entry, community spirit, legendary hospitality, and a genuinely fun day on the bike. In an era of $250 entries and lottery stress, this is refreshing."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Hico, Texas",
+    "location_badge": "HICO, TEXAS",
+    "county": "Hamilton County",
+    "city": "Hico",
+    "state": "Texas",
+    "country": "USA",
+    "date": "Early February annually",
+    "date_specific": "2025: February 1",
+    "venue": null,
+    "parking": "Downtown Hico start. Manageable parking.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Free but donations welcome. Opens fall prior.",
+    "start_time": "Saturday 7:00 AM",
+    "field_size": "500+ riders"
+  },
+  "final_verdict": {
+    "overall_score": 82,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2015,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=gravel-locos",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.679689",
+  "landing_page_url": "/races/gravel-locos",
+  "ridewithgps_id": null,
+  "prize_purse": "None (community event)",
+  "field_size": "500+ riders",
+  "searchable_text": "Gravel Locos The free race with legendary Texas hospitality. Where gravel meets community. Classic Texas gravel—rolling, exposed, beautiful in a rugged Hill Country way. The combination of distance, February conditions, and early-season fitness. This is often a season opener—meaning legs aren't ready. Rolling hills Cattle guards Ranch views Small town crossings Hico, Texas Hamilton County Texas Hill Country winter/spring Texas Hill Country gravel and ranch roads",
+  "filter_tags": [
+    "tier-2",
+    "distance-long",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-easy",
+    "score-very-good"
+  ]
+}

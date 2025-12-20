@@ -1,0 +1,131 @@
+{
+  "race_id": "the-rad",
+  "race_name": "The Rad Dirt Fest",
+  "race_slug": "the-rad",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "Fall gravel in the Flint Hills. The off-season Unbound you can actually get into.",
+  "race_date": "2025: October 25",
+  "year": null,
+  "course": {
+    "distance_miles": 100,
+    "elevation_gain_feet": 7000,
+    "terrain_type": "Classic Flint Hills gravel—same roads as Unbound",
+    "terrain_surface": "Chunky limestone gravel, some paved connectors, maintained county roads",
+    "technical_rating": 3,
+    "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful.",
+    "character": "The Flint Hills you know (or want to know) without June's heat. Rolling, relentless, beautiful.",
+    "key_features": [
+      "Rolling hills",
+      "Cattle guards",
+      "Open prairie exposure",
+      "Creek bed crossings"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 30,
+        "label": "Reality Check",
+        "desc": "The rollers are adding up. Legs are talking."
+      },
+      {
+        "mile": 60,
+        "label": "Wind Games",
+        "desc": "Open prairie means exposure. Wind direction determines your fate."
+      },
+      {
+        "mile": 85,
+        "label": "Closing Miles",
+        "desc": "You can see the finish but the hills don't stop coming."
+      }
+    ],
+    "location": "Emporia, Kansas",
+    "climate_primary": "Late fall Midwest",
+    "climate_description": "October in Kansas means cool mornings, mild afternoons, and chance of everything from Indian summer to early freeze",
+    "climate_challenges": [
+      "Temperature range 35-65°F typical",
+      "Wind is always a factor",
+      "Occasional rain/mud",
+      "Shorter daylight hours"
+    ]
+  },
+  "ratings": {
+    "overall_score": 78,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 4,
+    "technicality_score": 3,
+    "elevation_score": 3,
+    "climate_score": 2,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": null,
+    "prestige_score": 3
+  },
+  "biased_opinion": {
+    "overall_score": 40,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "The Rad is perfect if you want to experience Emporia gravel without the Unbound commitment. Same roads, same community, cooler temps, lower stakes. It's also a great prep race if you're building toward Unbound the following June."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Emporia, Kansas",
+    "location_badge": "EMPORIA, KANSAS",
+    "county": "Lyon County",
+    "city": "Emporia",
+    "state": "Kansas",
+    "country": "USA",
+    "date": "Late October annually",
+    "date_specific": "2025: October 25",
+    "venue": null,
+    "parking": "Much easier than Unbound. Ample space near start.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens summer. Cost: ~$100-150",
+    "start_time": "Saturday 8:00 AM",
+    "field_size": "500+ riders across distances"
+  },
+  "final_verdict": {
+    "overall_score": 78,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2019,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=the-rad",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:40.126117",
+  "landing_page_url": "/races/the-rad",
+  "ridewithgps_id": null,
+  "prize_purse": "Varies by year",
+  "field_size": "500+ riders across distances",
+  "searchable_text": "The Rad Dirt Fest Fall gravel in the Flint Hills. The off-season Unbound you can actually get into. The Flint Hills you know (or want to know) without June's heat. Rolling, relentless, beautiful. The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful. Rolling hills Cattle guards Open prairie exposure Creek bed crossings Emporia, Kansas Lyon County Late fall Midwest Classic Flint Hills gravel—same roads as Unbound",
+  "filter_tags": [
+    "tier-2",
+    "distance-long",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-good"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "race_id": "big-horn-gravel",
+  "race_name": "Big Horn Gravel",
+  "race_slug": "big-horn-gravel",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "Wyoming wilderness gravel. Where the mountains meet the high plains.",
+  "race_date": "2025: August 2",
+  "year": null,
+  "course": {
+    "distance_miles": 100,
+    "elevation_gain_feet": 8000,
+    "terrain_type": "Big Horn Mountain foothills meeting high plains",
+    "terrain_surface": "Variable gravel—maintained county roads to rougher forest service roads",
+    "technical_rating": 3,
+    "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything.",
+    "character": "Big sky, big views, big wind. Classic high-plains gravel with mountain backdrop.",
+    "key_features": [
+      "Big Horn Mountain views",
+      "Open range terrain",
+      "Creek crossings",
+      "Rolling high plains"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 30,
+        "label": "Wind Games Begin",
+        "desc": "Wyoming's famous wind starts testing your patience."
+      },
+      {
+        "mile": 55,
+        "label": "Remote Section",
+        "desc": "Miles from anything. Self-sufficiency matters."
+      },
+      {
+        "mile": 80,
+        "label": "Mountain Shadows",
+        "desc": "The Big Horns loom. You're not done yet."
+      }
+    ],
+    "location": "Sheridan, Wyoming",
+    "climate_primary": "High plains Wyoming",
+    "climate_description": "August brings warm days, cool mornings, and the ever-present Wyoming wind",
+    "climate_challenges": [
+      "Wind is constant",
+      "High-altitude sun exposure",
+      "Temperature swings 45-85°F",
+      "Afternoon storm potential"
+    ]
+  },
+  "ratings": {
+    "overall_score": 80,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 4,
+    "technicality_score": 3,
+    "elevation_score": 4,
+    "climate_score": 3,
+    "altitude_score": 3,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 2
+  },
+  "biased_opinion": {
+    "overall_score": 41,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Big Horn Gravel delivers what many big races have lost: genuine adventure in actual wilderness. No crowds, no chaos, just you and the Wyoming landscape. If you want to feel small against something vast, this is your race."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Sheridan, Wyoming",
+    "location_badge": "SHERIDAN, WYOMING",
+    "county": "Sheridan County",
+    "city": "Sheridan",
+    "state": "Wyoming",
+    "country": "USA",
+    "date": "Early August annually",
+    "date_specific": "2025: August 2",
+    "venue": null,
+    "parking": "Start area parking is generally manageable.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens winter/spring. Cost: ~$150",
+    "start_time": "Saturday 6:00 AM",
+    "field_size": "400+ riders"
+  },
+  "final_verdict": {
+    "overall_score": 80,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2020,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=big-horn-gravel",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.479352",
+  "landing_page_url": "/races/big-horn-gravel",
+  "ridewithgps_id": null,
+  "prize_purse": "Varies",
+  "field_size": "400+ riders",
+  "searchable_text": "Big Horn Gravel Wyoming wilderness gravel. Where the mountains meet the high plains. Big sky, big views, big wind. Classic high-plains gravel with mountain backdrop. The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything. Big Horn Mountain views Open range terrain Creek crossings Rolling high plains Sheridan, Wyoming Sheridan County High plains Wyoming Big Horn Mountain foothills meeting high plains",
+  "filter_tags": [
+    "tier-2",
+    "distance-long",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}

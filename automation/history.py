@@ -21,9 +21,15 @@ def generate_history_html(data: Dict) -> str:
     
     # Build timeline events
     timeline_html = []
-    for moment in history['notable_moments']:
-        year = moment.split(':')[0]
-        content = moment.split(':', 1)[1].strip()
+    for moment in history.get('notable_moments', []):
+        # Handle both "Year: Description" format and plain string format
+        if ':' in moment:
+            year = moment.split(':')[0].strip()
+            content = moment.split(':', 1)[1].strip()
+        else:
+            # No year specified - use founded year or current year
+            year = str(history.get('founded', '')) if history.get('founded') else 'Recent'
+            content = moment
         timeline_html.append(f"""    <div class="gg-timeline-event">
       <div class="gg-timeline-year">{year}</div>
       <div class="gg-timeline-content">

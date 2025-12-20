@@ -1,0 +1,131 @@
+{
+  "race_id": "leadville-trail-100-mtb",
+  "race_name": "Leadville Trail 100 MTB",
+  "race_slug": "leadville-trail-100-mtb",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "100 miles at 10,000 feet. The Race Across the Sky.",
+  "race_date": "2025: August 9",
+  "year": null,
+  "course": {
+    "distance_miles": 100,
+    "elevation_gain_feet": 11900,
+    "terrain_type": "Mixed mountain terrain—singletrack, fire roads, pavement",
+    "terrain_surface": "Variable: buffed singletrack to rocky jeep roads to pavement",
+    "technical_rating": 4,
+    "signature_challenge": "Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville.",
+    "character": "Out-and-back with one massive climb (Columbine) and relentless terrain. The altitude is the course.",
+    "key_features": [
+      "Powerline climb",
+      "Columbine Mine summit",
+      "Sugarloaf descent",
+      "Pipeline"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 40,
+        "label": "Columbine Climb Begins",
+        "desc": "The defining climb. 3,000+ feet of gain to 12,600 feet."
+      },
+      {
+        "mile": 50,
+        "label": "Columbine Summit",
+        "desc": "12,600 feet. Thin air. Hike-a-bike likely. Turnaround point."
+      },
+      {
+        "mile": 80,
+        "label": "Powerline Return",
+        "desc": "You've done this climb already. Now do it again on dead legs."
+      }
+    ],
+    "location": "Leadville, Colorado",
+    "climate_primary": "High-altitude Colorado mountain",
+    "climate_description": "August at 10,000-12,600 feet means unpredictable weather—sun, rain, snow all possible",
+    "climate_challenges": [
+      "Starts at 10,200 feet elevation",
+      "Columbine summit at 12,600 feet",
+      "Afternoon thunderstorm risk",
+      "Temperature swings 35-75°F"
+    ]
+  },
+  "ratings": {
+    "overall_score": 95,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 5,
+    "technicality_score": 4,
+    "elevation_score": 5,
+    "climate_score": 4,
+    "altitude_score": 5,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 47,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Leadville isn't the hardest 100-mile race technically. It's not even the most scenic. But it's the most meaningful. The history, the community, the belt buckle—finishing Leadville changes how you see yourself as an endurance athlete. It's a rite of passage."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Leadville, Colorado",
+    "location_badge": "LEADVILLE, COLORADO",
+    "county": "Lake County",
+    "city": "Leadville",
+    "state": "Colorado",
+    "country": "USA",
+    "date": "Mid-August annually",
+    "date_specific": "2025: August 9",
+    "venue": null,
+    "parking": "Start line parking requires very early arrival. Shuttle from downtown available.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Lottery in December. Cost: ~$350",
+    "start_time": "Saturday 6:30 AM",
+    "field_size": "1,500+ riders (limited)"
+  },
+  "final_verdict": {
+    "overall_score": 95,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 1994,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=leadville-trail-100-mtb",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.873482",
+  "landing_page_url": "/races/leadville-trail-100-mtb",
+  "ridewithgps_id": null,
+  "prize_purse": "$25,000+",
+  "field_size": "1,500+ riders (limited)",
+  "searchable_text": "Leadville Trail 100 MTB 100 miles at 10,000 feet. The Race Across the Sky. Out-and-back with one massive climb (Columbine) and relentless terrain. The altitude is the course. Columbine. The climb to 12,600 feet breaks people. If you can't hike-a-bike at altitude, you can't Leadville. Powerline climb Columbine Mine summit Sugarloaf descent Pipeline Leadville, Colorado Lake County High-altitude Colorado mountain Mixed mountain terrain—singletrack, fire roads, pavement",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-extreme",
+    "terrain-pavement",
+    "terrain-singletrack",
+    "technical-moderate",
+    "score-excellent"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "race_id": "sea-otter-gravel",
+  "race_name": "Sea Otter Classic Gravel",
+  "race_slug": "sea-otter-gravel",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "Festival racing on California's Central Coast. Where gravel meets expo madness.",
+  "race_date": "2025: April 10-13 (gravel race specific day varies)",
+  "year": null,
+  "course": {
+    "distance_miles": 65,
+    "elevation_gain_feet": 6500,
+    "terrain_type": "Former military base fire roads and coastal gravel",
+    "terrain_surface": "Hardpacked fire roads, sandy sections, some technical connectors",
+    "technical_rating": 3,
+    "signature_challenge": "The distraction. There's so much happening at Sea Otter that the race can feel secondary. Stay focused or get caught up in expo madness.",
+    "character": "Fast fire roads with coastal character. More about the experience than pure gravel suffering.",
+    "key_features": [
+      "Fort Ord terrain",
+      "Ocean views",
+      "Sandy washes",
+      "Technical transitions"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 15,
+        "label": "Fort Ord Rollers",
+        "desc": "The terrain starts testing your legs."
+      },
+      {
+        "mile": 40,
+        "label": "Sandy Sections",
+        "desc": "Beach proximity means sand. Momentum matters."
+      },
+      {
+        "mile": 55,
+        "label": "Final Push",
+        "desc": "Tired legs, dusty conditions, festival finish awaits."
+      }
+    ],
+    "location": "Monterey, California",
+    "climate_primary": "California Central Coast",
+    "climate_description": "April brings mild coastal weather—fog possible in morning, clearing to pleasant afternoons",
+    "climate_challenges": [
+      "Morning fog/chill",
+      "Midday can warm quickly",
+      "Coastal wind",
+      "Dry dusty conditions"
+    ]
+  },
+  "ratings": {
+    "overall_score": 75,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 2,
+    "technicality_score": 3,
+    "elevation_score": 3,
+    "climate_score": 2,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": null,
+    "prestige_score": 3
+  },
+  "biased_opinion": {
+    "overall_score": 39,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Sea Otter gravel is best understood as part of the larger festival experience. If you want a pure gravel race, look elsewhere. If you want to race gravel AND attend North America's biggest bike expo, this is your event."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Monterey, California",
+    "location_badge": "MONTEREY, CALIFORNIA",
+    "county": "Monterey County",
+    "city": "Monterey",
+    "state": "California",
+    "country": "USA",
+    "date": "Mid-April annually",
+    "date_specific": "2025: April 10-13 (gravel race specific day varies)",
+    "venue": null,
+    "parking": "Laguna Seca parking requires pass or shuttle. Plan accordingly.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens fall prior. Cost: ~$125 race entry",
+    "start_time": "Saturday morning (varies)",
+    "field_size": "500+ gravel riders (festival has 10,000+ total)"
+  },
+  "final_verdict": {
+    "overall_score": 75,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 1991,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=sea-otter-gravel",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:40.094062",
+  "landing_page_url": "/races/sea-otter-gravel",
+  "ridewithgps_id": null,
+  "prize_purse": "$15,000+",
+  "field_size": "500+ gravel riders (festival has 10,000+ total)",
+  "searchable_text": "Sea Otter Classic Gravel Festival racing on California's Central Coast. Where gravel meets expo madness. Fast fire roads with coastal character. More about the experience than pure gravel suffering. The distraction. There's so much happening at Sea Otter that the race can feel secondary. Stay focused or get caught up in expo madness. Fort Ord terrain Ocean views Sandy washes Technical transitions Monterey, California Monterey County California Central Coast Former military base fire roads and coastal gravel",
+  "filter_tags": [
+    "tier-2",
+    "distance-medium",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "terrain-sand",
+    "technical-moderate",
+    "score-good"
+  ]
+}

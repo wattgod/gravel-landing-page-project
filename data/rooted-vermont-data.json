@@ -1,0 +1,157 @@
+{
+  "race": {
+    "name": "Rooted Vermont",
+    "slug": "rooted-vermont",
+    "display_name": "Rooted Vermont",
+    "tagline": "Where New England gravel meets Green Mountain grit.",
+    
+    "vitals": {
+      "distance_mi": 87,
+      "elevation_ft": 10000,
+      "location": "East Burke, Vermont",
+      "location_badge": "EAST BURKE, VERMONT",
+      "county": "Caledonia County",
+      "date": "Late July / Early August annually",
+      "date_specific": "2025: August 2",
+      "terrain_types": ["Vermont gravel roads", "Class 4 dirt", "Steep pitches", "New England forest"],
+      "field_size": "700+ riders",
+      "start_time": "Saturday 7:00 AM",
+      "registration": "Opens early in year. Cost: ~$150",
+      "prize_purse": "Varies",
+      "aid_stations": "Multiple aid stations along course",
+      "cutoff_time": "10+ hours"
+    },
+    
+    "climate": {
+      "primary": "New England summer",
+      "description": "Late July/August brings warm, humid conditions with potential for summer storms",
+      "challenges": ["Humidity can be high", "Summer thunderstorm risk", "Temperature 60-85°F", "Muddy conditions if recent rain"]
+    },
+    
+    "terrain": {
+      "primary": "Classic Vermont gravel and Class 4 roads with steep pitches",
+      "surface": "Varied—packed gravel to loose rocks to Class 4 'adventure' roads",
+      "technical_rating": 4,
+      "features": ["Steep Vermont pitches", "Class 4 roads", "Covered bridges", "Green Mountain views"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 85,
+      "course_profile": 33,
+      "biased_opinion": 43,
+      "tier": 2,
+      "tier_label": "TIER 2",
+      "prestige": 4,
+      "length": 3,
+      "technicality": 4,
+      "elevation": 5,
+      "climate": 2,
+      "altitude": 1,
+      "adventure": 5
+    },
+    
+    "history": {
+      "founded": 2019,
+      "founder": "Local Vermont gravel enthusiasts",
+      "origin_story": "Created to showcase Vermont's legendary gravel roads and Kingdom Trails region. The race celebrates the rugged beauty and cycling heritage of the Green Mountain State.",
+      "notable_moments": [
+        "Part of Life Time Grand Prix series",
+        "Features iconic Vermont covered bridges",
+        "Known for punchy, relentless terrain"
+      ],
+      "reputation": "New England gravel at its finest. Where steep pitches and covered bridges define the experience."
+    },
+    
+    "course_description": {
+      "character": "Quintessential Vermont—steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
+      "suffering_zones": [
+        {"mile": 25, "label": "First Reality Check", "desc": "The pitches start adding up. Vermont doesn't do gradual."},
+        {"mile": 50, "label": "Deep Woods", "desc": "Class 4 terrain. True Vermont gravel experience."},
+        {"mile": 75, "label": "Final Pitches", "desc": "Tired legs meet steep grades. Vermont isn't done yet."}
+      ],
+      "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 4,
+        "explanation": "Life Time Grand Prix inclusion brought national attention. Vermont gravel heritage adds authenticity. Growing reputation as a must-do East Coast event."
+      },
+      "length": {
+        "score": 3,
+        "explanation": "87 miles is moderate distance, but 10,000 feet of climbing—much of it steep—makes it feel longer."
+      },
+      "technicality": {
+        "score": 4,
+        "explanation": "Class 4 roads, steep descents, and varied surfaces require bike-handling skills. Vermont gravel punishes sloppy technique."
+      },
+      "elevation": {
+        "score": 5,
+        "explanation": "10,000 feet in 87 miles is 115 feet per mile average. But the grades are the story—steep pitches rather than steady climbs."
+      },
+      "climate": {
+        "score": 2,
+        "explanation": "New England summer humidity can be oppressive. Rain creates mud. Weather is variable but rarely extreme."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Vermont elevations are modest. Altitude is irrelevant."
+      },
+      "adventure": {
+        "score": 5,
+        "explanation": "This is Vermont tourism on two wheels. Covered bridges, forest roads, small towns, Green Mountain views. Quintessential New England."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "New England Classic",
+      "summary": "Rooted Vermont is what New England gravel should be—steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event.",
+      "strengths": [
+        "Authenticity: This is real Vermont, not a manufactured course.",
+        "The terrain: Steep pitches create drama that steady climbs don't.",
+        "The destination: Kingdom Trails region is cycling paradise."
+      ],
+      "weaknesses": [
+        "Accessibility: East Burke is remote even by Vermont standards.",
+        "The pitches: If you can't climb steep, this course will humble you.",
+        "Weather: Summer humidity and potential mud add variables."
+      ],
+      "bottom_line": "If you want to experience New England gravel at its finest, Rooted Vermont delivers. Steep, beautiful, and genuinely challenging."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "The 'average grade' stats hide the reality. Vermont climbs in steep bursts—15-20% pitches that hurt worse than sustained 8% grades. Train for power, not just endurance.",
+      "consequences": [
+        "East Burke requires intentional travel. Burlington airport is 1.5+ hours away.",
+        "Lodging is limited. Book 6+ months early or consider camping.",
+        "The pitches require specific training. VO2max work matters here."
+      ],
+      "expectation_reset": "This isn't a course you diesel through. The steep grades demand punch. Train for short, hard efforts or suffer the consequences."
+    },
+    
+    "final_verdict": {
+      "score": "85 / 100",
+      "one_liner": "The New England gravel showcase—steep pitches, covered bridges, and Green Mountain beauty.",
+      "should_you_race": "Yes if you want East Coast gravel at its finest. Yes if you can handle steep grades. Not if you're strictly a tempo/steady-state rider.",
+      "alternatives": "If you want Vermont without the intensity: Vermont Overland. If you want East Coast gravel elsewhere: Rasputitsa, Gravel Worlds."
+    },
+    
+    "logistics": {
+      "airport": "Burlington (BTV) - 1.5+ hours. Boston (BOS) - 3 hours.",
+      "lodging_strategy": "East Burke has very limited lodging. Book immediately. Consider Lyndonville, St. Johnsbury, or camping.",
+      "food": "Small-town dining. East Burke has basics. Pack provisions.",
+      "packet_pickup": "Friday at event venue.",
+      "parking": "Start area parking available but limited. Arrive early.",
+      "official_site": "https://rootedvermont.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

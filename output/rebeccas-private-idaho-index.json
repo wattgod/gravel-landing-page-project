@@ -1,0 +1,131 @@
+{
+  "race_id": "rebeccas-private-idaho",
+  "race_name": "Rebecca's Private Idaho",
+  "race_slug": "rebeccas-private-idaho",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "Where the Queen of Pain invites you to suffer beautifully.",
+  "race_date": "2025: September 5-6",
+  "year": null,
+  "course": {
+    "distance_miles": 103,
+    "elevation_gain_feet": 8500,
+    "terrain_type": "High desert gravel with sustained climbs",
+    "terrain_surface": "Well-maintained gravel roads, some chunky sections, forest service roads",
+    "technical_rating": 3,
+    "signature_challenge": "The combination of distance, altitude, and relentless terrain. Nothing is crazy steep—but nothing is flat either.",
+    "character": "Big mountain beauty with sustained but manageable climbing. Not the steepest grades, but relentless.",
+    "key_features": [
+      "Trail Creek Summit",
+      "Long steady climbs",
+      "Fast gravel descents",
+      "Stunning mountain views"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 30,
+        "label": "Trail Creek Climb",
+        "desc": "The signature climb. Long and steady. Pace yourself."
+      },
+      {
+        "mile": 65,
+        "label": "Afternoon Exposure",
+        "desc": "Open terrain, sun beating down, halfway fatigue settling in."
+      },
+      {
+        "mile": 90,
+        "label": "Final Push",
+        "desc": "You can see Ketchum. But there's still climbing between you and the finish."
+      }
+    ],
+    "location": "Ketchum, Idaho",
+    "climate_primary": "High desert mountain",
+    "climate_description": "September in Idaho brings crisp mornings, warm afternoons, and possibility of early fall weather",
+    "climate_challenges": [
+      "Morning temps can be 40°F",
+      "Afternoon can hit 75°F",
+      "Altitude at 6,000-8,000 feet",
+      "Dry conditions—hydration critical"
+    ]
+  },
+  "ratings": {
+    "overall_score": 91,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 4,
+    "technicality_score": 3,
+    "elevation_score": 4,
+    "climate_score": 3,
+    "altitude_score": 4,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 5
+  },
+  "biased_opinion": {
+    "overall_score": 46,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "RPI is what happens when a legendary athlete shares her passion with the community. It's not the hardest race, not the longest, not the most technical—but it might be the most soulful. The combination of world-class scenery, genuine community, and Rebecca's personal involvement makes this special."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Ketchum, Idaho",
+    "location_badge": "KETCHUM, IDAHO",
+    "county": "Blaine County",
+    "city": "Ketchum",
+    "state": "Idaho",
+    "country": "USA",
+    "date": "Early September annually",
+    "date_specific": "2025: September 5-6",
+    "venue": null,
+    "parking": "Start area parking requires early arrival. Shuttles may be available.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens early in year. Cost: ~$250",
+    "start_time": "Saturday 7:00 AM",
+    "field_size": "1,500+ riders across all distances"
+  },
+  "final_verdict": {
+    "overall_score": 91,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2013,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=rebeccas-private-idaho",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:40.025510",
+  "landing_page_url": "/races/rebeccas-private-idaho",
+  "ridewithgps_id": null,
+  "prize_purse": "$50,000+ in the Queen's Stage",
+  "field_size": "1,500+ riders across all distances",
+  "searchable_text": "Rebecca's Private Idaho Where the Queen of Pain invites you to suffer beautifully. Big mountain beauty with sustained but manageable climbing. Not the steepest grades, but relentless. The combination of distance, altitude, and relentless terrain. Nothing is crazy steep—but nothing is flat either. Trail Creek Summit Long steady climbs Fast gravel descents Stunning mountain views Ketchum, Idaho Blaine County High desert mountain High desert gravel with sustained climbs",
+  "filter_tags": [
+    "tier-1",
+    "distance-long",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-excellent"
+  ]
+}

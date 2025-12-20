@@ -1,0 +1,158 @@
+{
+  "race": {
+    "name": "Gravel Worlds",
+    "slug": "gravel-worlds",
+    "display_name": "Gravel Worlds",
+    "tagline": "The world championship nobody asked for. The grassroots OG.",
+    
+    "vitals": {
+      "distance_mi": 150,
+      "elevation_ft": 8000,
+      "location": "Lincoln, Nebraska",
+      "location_badge": "LINCOLN, NEBRASKA",
+      "county": "Lancaster County",
+      "date": "Mid-August annually",
+      "date_specific": "2025: August 16",
+      "terrain_types": ["Nebraska farm gravel", "Minimum maintenance roads", "Rolling terrain", "Prairie exposure"],
+      "field_size": "1,500+ riders across all distances",
+      "start_time": "Saturday 6:00 AM",
+      "registration": "Opens early in year. Cost: ~$150",
+      "prize_purse": "$25,000+",
+      "aid_stations": "Multiple aid stations at key points",
+      "cutoff_time": "Varies by distance"
+    },
+    
+    "climate": {
+      "primary": "Nebraska summer",
+      "description": "August brings humidity, heat, and the kind of Midwest summer that tests your heat tolerance",
+      "challenges": ["Heat index can exceed 100°F", "Humidity is brutal", "Limited shade on course", "Hydration is critical"]
+    },
+    
+    "terrain": {
+      "primary": "Classic Nebraska farm gravel with minimum maintenance roads",
+      "surface": "Loose gravel, some rough minimum maintenance, occasional sand/mud",
+      "technical_rating": 3,
+      "features": ["Endless horizon", "Farm crossings", "Rolling terrain", "Prairie isolation"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 86,
+      "course_profile": 32,
+      "biased_opinion": 44,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "prestige": 4,
+      "length": 5,
+      "technicality": 3,
+      "elevation": 3,
+      "climate": 5,
+      "altitude": 1,
+      "adventure": 4
+    },
+    
+    "history": {
+      "founded": 2014,
+      "founder": "Corey Godfrey / Gravel Cycling Hall of Fame",
+      "origin_story": "Started as a tongue-in-cheek 'World Championship' for a sport that didn't have one. The name stuck. The race became legitimate. Now it's a bucket-list event with grassroots soul.",
+      "notable_moments": [
+        "One of the original grassroots gravel races",
+        "Created the 'Pirate' ethos in gravel culture",
+        "Gravel Cycling Hall of Fame is based here",
+        "Self-proclaimed but now recognized 'World Championship'"
+      ],
+      "reputation": "The OG grassroots race. Where the gravel movement's spirit lives on."
+    },
+    
+    "course_description": {
+      "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard—until it is.",
+      "suffering_zones": [
+        {"mile": 50, "label": "Heat Onset", "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation."},
+        {"mile": 100, "label": "Century Club", "desc": "You've done 100 miles. There's 50 more. In August heat."},
+        {"mile": 130, "label": "Mind Games", "desc": "Close enough to finish to hurt. Far enough to break."}
+      ],
+      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 4,
+        "explanation": "The 'World Championship' name is cheeky but the race is legit. Grassroots pedigree gives it authenticity that corporate races can't buy."
+      },
+      "length": {
+        "score": 5,
+        "explanation": "150 miles is serious distance. The long course pushes into ultra-endurance territory. Most riders take 10-15+ hours."
+      },
+      "technicality": {
+        "score": 3,
+        "explanation": "Nebraska gravel isn't technical in the traditional sense—but loose surfaces, minimum maintenance roads, and fatigue create challenges."
+      },
+      "elevation": {
+        "score": 3,
+        "explanation": "8,000 feet across 150 miles is constant rolling, not climbing. Nebraska is deceptively not flat. The terrain is relentless."
+      },
+      "climate": {
+        "score": 5,
+        "explanation": "August heat and humidity make this one of the most climate-challenging races in gravel. Heat adaptation is mandatory."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Lincoln sits at ~1,200 feet. Altitude is irrelevant."
+      },
+      "adventure": {
+        "score": 4,
+        "explanation": "The Nebraska prairie is its own kind of beautiful—endless sky, rural isolation, agricultural landscapes that stretch forever."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Grassroots Legend",
+      "summary": "Gravel Worlds represents what the sport was before corporate money arrived. It's authentic, community-driven, and legitimately hard. The 'World Championship' name started as a joke but the race earned its reputation through genuine challenge.",
+      "strengths": [
+        "Authenticity: Grassroots soul in a corporatized sport.",
+        "The community: Pirate culture means inclusive, welcoming energy.",
+        "The challenge: 150 miles in August Nebraska heat is no joke."
+      ],
+      "weaknesses": [
+        "The heat: August humidity and heat can be punishing.",
+        "Nebraska: Not a tourist destination. You're here for the race.",
+        "Infrastructure: Less polished than Life Time events."
+      ],
+      "bottom_line": "If you want to experience what gravel racing meant before it went mainstream, Gravel Worlds is your pilgrimage. Harder than it looks, more meaningful than its name suggests."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "The 'World Championship' is self-proclaimed and tongue-in-cheek—but the race is legitimately hard. Don't let the name fool you into thinking it's a marketing gimmick. The course will humble you.",
+      "consequences": [
+        "August heat training is mandatory. If you can't handle 90°F+ humidity, don't start.",
+        "150 miles is ultra-endurance. This isn't a 'long ride'—it's a day-long test.",
+        "Lincoln, Nebraska isn't a destination. You're coming for the race."
+      ],
+      "expectation_reset": "This is a grassroots ultra-endurance race in brutal conditions. The prestige is earned through suffering, not production value."
+    },
+    
+    "final_verdict": {
+      "score": "86 / 100",
+      "one_liner": "The OG grassroots gravel race—where the spirit of the sport lives on in Nebraska summer heat.",
+      "should_you_race": "Yes if you value authenticity, community, and genuine challenge over polish. Yes if you can handle August Midwest heat. Not if you need corporate production value.",
+      "alternatives": "If you want heat without the distance: Unbound 100. If you want distance without the heat: fall ultra events. If you want grassroots elsewhere: local favorites."
+    },
+    
+    "logistics": {
+      "airport": "Omaha (OMA) - 1 hour. Lincoln (LNK) - 15 minutes but limited flights.",
+      "lodging_strategy": "Lincoln has ample hotels. Book 1-2 months ahead.",
+      "food": "Lincoln has solid food options. Not a foodie destination but functional.",
+      "packet_pickup": "Friday at event venue. Grassroots vibe, efficient process.",
+      "parking": "Start area parking is generally available.",
+      "official_site": "https://www.gravel-worlds.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}

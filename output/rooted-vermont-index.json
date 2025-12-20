@@ -1,0 +1,131 @@
+{
+  "race_id": "rooted-vermont",
+  "race_name": "Rooted Vermont",
+  "race_slug": "rooted-vermont",
+  "tier": 2,
+  "tier_label": "TIER 2",
+  "tagline": "Where New England gravel meets Green Mountain grit.",
+  "race_date": "2025: August 2",
+  "year": null,
+  "course": {
+    "distance_miles": 87,
+    "elevation_gain_feet": 10000,
+    "terrain_type": "Classic Vermont gravel and Class 4 roads with steep pitches",
+    "terrain_surface": "Varied—packed gravel to loose rocks to Class 4 'adventure' roads",
+    "technical_rating": 4,
+    "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades.",
+    "character": "Quintessential Vermont—steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
+    "key_features": [
+      "Steep Vermont pitches",
+      "Class 4 roads",
+      "Covered bridges",
+      "Green Mountain views"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 25,
+        "label": "First Reality Check",
+        "desc": "The pitches start adding up. Vermont doesn't do gradual."
+      },
+      {
+        "mile": 50,
+        "label": "Deep Woods",
+        "desc": "Class 4 terrain. True Vermont gravel experience."
+      },
+      {
+        "mile": 75,
+        "label": "Final Pitches",
+        "desc": "Tired legs meet steep grades. Vermont isn't done yet."
+      }
+    ],
+    "location": "East Burke, Vermont",
+    "climate_primary": "New England summer",
+    "climate_description": "Late July/August brings warm, humid conditions with potential for summer storms",
+    "climate_challenges": [
+      "Humidity can be high",
+      "Summer thunderstorm risk",
+      "Temperature 60-85°F",
+      "Muddy conditions if recent rain"
+    ]
+  },
+  "ratings": {
+    "overall_score": 85,
+    "tier": 2,
+    "tier_label": "TIER 2",
+    "length_score": 3,
+    "technicality_score": 4,
+    "elevation_score": 5,
+    "climate_score": 2,
+    "altitude_score": 1,
+    "adventure_score": 5,
+    "logistics_score": null,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 43,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Rooted Vermont is what New England gravel should be—steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "East Burke, Vermont",
+    "location_badge": "EAST BURKE, VERMONT",
+    "county": "Caledonia County",
+    "city": "East Burke",
+    "state": "Vermont",
+    "country": "USA",
+    "date": "Late July / Early August annually",
+    "date_specific": "2025: August 2",
+    "venue": null,
+    "parking": "Start area parking available but limited. Arrive early.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens early in year. Cost: ~$150",
+    "start_time": "Saturday 7:00 AM",
+    "field_size": "700+ riders"
+  },
+  "final_verdict": {
+    "overall_score": 85,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2019,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=rooted-vermont",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:40.058001",
+  "landing_page_url": "/races/rooted-vermont",
+  "ridewithgps_id": null,
+  "prize_purse": "Varies",
+  "field_size": "700+ riders",
+  "searchable_text": "Rooted Vermont Where New England gravel meets Green Mountain grit. Quintessential Vermont—steep pitches, beautiful forests, Class 4 adventure. Nothing is flat. The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades. Steep Vermont pitches Class 4 roads Covered bridges Green Mountain views East Burke, Vermont Caledonia County New England summer Classic Vermont gravel and Class 4 roads with steep pitches",
+  "filter_tags": [
+    "tier-2",
+    "distance-medium",
+    "elevation-extreme",
+    "terrain-gravel",
+    "terrain-pavement",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}

@@ -17,15 +17,18 @@ def generate_course_map_html(data: Dict) -> str:
     """Generate course map section with RideWithGPS embed and suffering zones."""
     race = data['race']
     course = race['course_description']
-    rwgps_id = course['ridewithgps_id']
-    rwgps_name = course['ridewithgps_name']
+    rwgps_id = course.get('ridewithgps_id', '')
+    rwgps_name = course.get('ridewithgps_name', race.get('display_name', 'Race Course'))
     
     # Build suffering zones HTML with enhanced details
     zones_html = []
-    for zone in course['suffering_zones']:
-        mile = zone['mile']
-        label = zone['label']
-        desc = zone['desc']
+    suffering_zones = course.get('suffering_zones', [])
+    for zone in suffering_zones:
+        # Handle both 'mile' and 'stage' formats
+        mile = zone.get('mile') or zone.get('stage', '')
+        mile_label = f"Mile {mile}" if zone.get('mile') else f"Stage {mile}" if zone.get('stage') else "Key Section"
+        label = zone.get('label', '')
+        desc = zone.get('desc', '')
         
         # Enhanced details if available
         terrain_detail = zone.get('terrain_detail', '')
@@ -68,7 +71,7 @@ def generate_course_map_html(data: Dict) -> str:
             desc_html += ''.join(detail_boxes)
         
         zones_html.append(f"""        <div class="gg-zone-card">
-          <div class="gg-zone-mile">Mile {mile}</div>
+          <div class="gg-zone-mile">{mile_label}</div>
           <div class="gg-zone-label">{label}</div>
           <div class="gg-zone-desc">{desc_html}</div>
           {citation_html}
@@ -78,12 +81,15 @@ def generate_course_map_html(data: Dict) -> str:
     distance = race['vitals']['distance_mi']
     location = race['vitals']['location'].split(',')[0]  # Just city name
     
-    # Use map_url if provided, otherwise use embed URL
+    # Use map_url if provided, otherwise use embed URL if rwgps_id exists
     map_url = course.get('map_url')
     if map_url:
         iframe_src = map_url
-    else:
+    elif rwgps_id:
         iframe_src = f"https://ridewithgps.com/embeds?type=route&id={rwgps_id}&title={rwgps_name}&sampleGraph=true&distanceMarkers=true"
+    else:
+        # No map available - return section without iframe
+        iframe_src = None
     
     # Section HTML - compacted
     section_html = f"""<section class="gg-route-section" id="course-map">
@@ -94,9 +100,7 @@ def generate_course_map_html(data: Dict) -> str:
         <h2 class="gg-route-title">WHAT {distance} MILES OF {location.upper()} ACTUALLY LOOKS LIKE</h2>
         <p class="gg-route-lede">Hover over the profile to see where the climbs, chaos, and "why did I sign up for this" moments actually are.</p>
       </header>
-      <div class="gg-route-frame-wrap">
-        <iframe src="{iframe_src}" style="width: 1px; min-width: 100%; height: 650px; border: none;" scrolling="no"></iframe>
-      </div>
+      {f'<div class="gg-route-frame-wrap"><iframe src="{iframe_src}" style="width: 1px; min-width: 100%; height: 650px; border: none;" scrolling="no"></iframe></div>' if iframe_src else '<div class="gg-route-frame-wrap"><p style="padding: 40px; text-align: center; color: #8C7568;">Course map coming soon</p></div>'}
       <div class="gg-suffering-zones">
 {chr(10).join(zones_html)}
       </div>

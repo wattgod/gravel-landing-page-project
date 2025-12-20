@@ -1,0 +1,132 @@
+{
+  "race_id": "gravel-worlds",
+  "race_name": "Gravel Worlds",
+  "race_slug": "gravel-worlds",
+  "tier": 1,
+  "tier_label": "TIER 1",
+  "tagline": "The world championship nobody asked for. The grassroots OG.",
+  "race_date": "2025: August 16",
+  "year": null,
+  "course": {
+    "distance_miles": 150,
+    "elevation_gain_feet": 8000,
+    "terrain_type": "Classic Nebraska farm gravel with minimum maintenance roads",
+    "terrain_surface": "Loose gravel, some rough minimum maintenance, occasional sand/mud",
+    "technical_rating": 3,
+    "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival.",
+    "character": "Long, hot, and humbling. Nebraska gravel doesn't look hard—until it is.",
+    "key_features": [
+      "Endless horizon",
+      "Farm crossings",
+      "Rolling terrain",
+      "Prairie isolation"
+    ],
+    "suffering_zones": [
+      {
+        "mile": 50,
+        "label": "Heat Onset",
+        "desc": "Morning cool is gone. The Nebraska sun starts earning its reputation."
+      },
+      {
+        "mile": 100,
+        "label": "Century Club",
+        "desc": "You've done 100 miles. There's 50 more. In August heat."
+      },
+      {
+        "mile": 130,
+        "label": "Mind Games",
+        "desc": "Close enough to finish to hurt. Far enough to break."
+      }
+    ],
+    "location": "Lincoln, Nebraska",
+    "climate_primary": "Nebraska summer",
+    "climate_description": "August brings humidity, heat, and the kind of Midwest summer that tests your heat tolerance",
+    "climate_challenges": [
+      "Heat index can exceed 100°F",
+      "Humidity is brutal",
+      "Limited shade on course",
+      "Hydration is critical"
+    ]
+  },
+  "ratings": {
+    "overall_score": 86,
+    "tier": 1,
+    "tier_label": "TIER 1",
+    "length_score": 5,
+    "technicality_score": 3,
+    "elevation_score": 3,
+    "climate_score": 5,
+    "altitude_score": 1,
+    "adventure_score": 4,
+    "logistics_score": null,
+    "prestige_score": 4
+  },
+  "biased_opinion": {
+    "overall_score": 44,
+    "course_quality": null,
+    "organization": null,
+    "value": null,
+    "atmosphere": null,
+    "summary": "Gravel Worlds represents what the sport was before corporate money arrived. It's authentic, community-driven, and legitimately hard. The 'World Championship' name started as a joke but the race earned its reputation through genuine challenge."
+  },
+  "tldr": {
+    "best_for": null,
+    "not_for": null,
+    "key_considerations": []
+  },
+  "logistics": {
+    "location": "Lincoln, Nebraska",
+    "location_badge": "LINCOLN, NEBRASKA",
+    "county": "Lancaster County",
+    "city": "Lincoln",
+    "state": "Nebraska",
+    "country": "USA",
+    "date": "Mid-August annually",
+    "date_specific": "2025: August 16",
+    "venue": null,
+    "parking": "Start area parking is generally available.",
+    "lodging": null,
+    "travel_tips": null,
+    "registration": "Opens early in year. Cost: ~$150",
+    "start_time": "Saturday 6:00 AM",
+    "field_size": "1,500+ riders across all distances"
+  },
+  "final_verdict": {
+    "overall_score": 86,
+    "recommendation": null,
+    "best_for_riders": [],
+    "key_strengths": [],
+    "considerations": [],
+    "summary": null
+  },
+  "history": {
+    "founded": 2014,
+    "editions": null,
+    "notable_facts": [],
+    "random_facts": [],
+    "timeline": []
+  },
+  "training_plans": {
+    "available": true,
+    "model": "on-demand",
+    "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=gravel-worlds",
+    "race_challenge_tagline": null
+  },
+  "seo": {},
+  "index_generated_at": "2025-12-19T18:02:39.767647",
+  "landing_page_url": "/races/gravel-worlds",
+  "ridewithgps_id": null,
+  "prize_purse": "$25,000+",
+  "field_size": "1,500+ riders across all distances",
+  "searchable_text": "Gravel Worlds The world championship nobody asked for. The grassroots OG. Long, hot, and humbling. Nebraska gravel doesn't look hard—until it is. The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival. Endless horizon Farm crossings Rolling terrain Prairie isolation Lincoln, Nebraska Lancaster County Nebraska summer Classic Nebraska farm gravel with minimum maintenance roads",
+  "filter_tags": [
+    "tier-1",
+    "distance-ultra",
+    "elevation-high",
+    "terrain-gravel",
+    "terrain-pavement",
+    "terrain-sand",
+    "technical-moderate",
+    "score-very-good"
+  ]
+}

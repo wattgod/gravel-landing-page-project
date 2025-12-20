@@ -1,0 +1,158 @@
+{
+  "race": {
+    "name": "Big Sugar",
+    "slug": "big-sugar",
+    "display_name": "Big Sugar Gravel",
+    "tagline": "Southern hospitality meets gravel brutality in the Ozark Mountains.",
+    
+    "vitals": {
+      "distance_mi": 100,
+      "elevation_ft": 9500,
+      "location": "Bentonville, Arkansas",
+      "location_badge": "BENTONVILLE, ARKANSAS",
+      "county": "Benton County / McDonald County (crosses into Missouri)",
+      "date": "Late October annually",
+      "date_specific": "2025: October 18",
+      "terrain_types": ["Ozark gravel", "Punchy climbs", "Technical descents", "Forest roads"],
+      "field_size": "2,000+ riders across all distances",
+      "start_time": "Saturday 7:00 AM",
+      "registration": "Opens early in year. Cost: ~$175",
+      "prize_purse": "$50,000+",
+      "aid_stations": "Well-stocked aid stations throughout course",
+      "cutoff_time": "12 hours for 100-mile distance"
+    },
+    
+    "climate": {
+      "primary": "Ozark fall",
+      "description": "Late October brings crisp mornings, mild afternoons, and peak fall colors",
+      "challenges": ["Morning temps 35-50°F", "Afternoon can reach 65-70°F", "Occasional rain creates mud", "Humidity varies"]
+    },
+    
+    "terrain": {
+      "primary": "Ozark Mountain gravel with punchy repeated climbs",
+      "surface": "Variable gravel quality—smooth to chunky, with some technical sections",
+      "technical_rating": 4,
+      "features": ["Sugar Creek descent", "War Eagle Mill", "Punchy Ozark climbs", "Creek crossings"]
+    },
+    
+    "gravel_god_rating": {
+      "overall_score": 88,
+      "course_profile": 34,
+      "biased_opinion": 44,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "prestige": 4,
+      "length": 4,
+      "technicality": 4,
+      "elevation": 4,
+      "climate": 2,
+      "altitude": 1,
+      "adventure": 5
+    },
+    
+    "history": {
+      "founded": 2019,
+      "founder": "Erik Spelde / Life Time",
+      "origin_story": "Created as part of Life Time's Grand Prix series, leveraging Bentonville's growing reputation as a cycling destination. Named for the beautiful Sugar Creek that runs through the course.",
+      "notable_moments": [
+        "Featured on Life Time Grand Prix circuit",
+        "Attracts world-class pro field",
+        "Known for stunning fall colors and challenging course",
+        "Benefits from Bentonville's cycling infrastructure"
+      ],
+      "reputation": "The fall classic. Where the Grand Prix battles play out in the Ozark Mountains."
+    },
+    
+    "course_description": {
+      "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs—they have endless short ones.",
+      "suffering_zones": [
+        {"mile": 25, "label": "Welcome to the Ozarks", "desc": "The punchy climbs start adding up. You realize there's no flat."},
+        {"mile": 55, "label": "War Eagle Territory", "desc": "Deep in the course. The climbing feels personal."},
+        {"mile": 85, "label": "Final Push", "desc": "Legs are shattered but the Ozarks aren't done with you yet."}
+      ],
+      "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches."
+    },
+    
+    "ratings_breakdown": {
+      "prestige": {
+        "score": 4,
+        "explanation": "A Life Time Grand Prix race with serious pro attendance. Not quite Unbound's fame, but finishing Big Sugar carries weight. The course difficulty earns respect."
+      },
+      "length": {
+        "score": 4,
+        "explanation": "100 miles with nearly 10,000 feet of climbing in the punchy Ozarks. This isn't a cruiser—expect 6-10 hours depending on fitness."
+      },
+      "technicality": {
+        "score": 4,
+        "explanation": "More technical than Midwest gravel. Steep descents, varied surface quality, and fatigue make this a bike-handling challenge. Skills matter here."
+      },
+      "elevation": {
+        "score": 4,
+        "explanation": "9,500 feet of gain across 100 miles, almost all in short punchy climbs. There's no recovering on 'flat' sections because there aren't any."
+      },
+      "climate": {
+        "score": 2,
+        "explanation": "Late October in the Ozarks is generally pleasant. Mornings are cool, afternoons comfortable. The main wildcard is rain turning the course muddy."
+      },
+      "altitude": {
+        "score": 1,
+        "explanation": "Ozark elevations top out around 2,000 feet. Altitude is a non-factor. Train anywhere."
+      },
+      "adventure": {
+        "score": 5,
+        "explanation": "Peak fall colors in the Ozarks are spectacular. Bentonville is a world-class cycling town. The combination of racing and destination makes this special."
+      }
+    },
+    
+    "biased_opinion": {
+      "verdict": "Fall Showstopper",
+      "summary": "Big Sugar takes everything great about fall gravel—colors, weather, community—and combines it with a legitimately hard course. The Ozarks' endless punchy terrain creates a unique challenge. Add Bentonville's cycling culture and you've got a complete experience.",
+      "strengths": [
+        "The destination: Bentonville is cycling paradise. Trails, restaurants, coffee, culture.",
+        "The scenery: Peak fall colors make suffering beautiful.",
+        "The competition: Grand Prix field brings energy and racing."
+      ],
+      "weaknesses": [
+        "The punchy terrain: If you're a diesel, this course will frustrate you.",
+        "Travel: Bentonville is accessible but not a major hub. Northwest Arkansas (XNA) is the airport.",
+        "October weather: Generally great, but rain creates mud fest potential."
+      ],
+      "bottom_line": "If you want a fall gravel destination with a legitimately hard course and world-class town, Big Sugar delivers. Just bring your climbing legs."
+    },
+    
+    "black_pill": {
+      "title": "THE THING NOBODY TELLS YOU",
+      "reality": "The 'punchy' climbing style of the Ozarks rewards a specific rider type. If you're all about steady-state power and long climbs, this course will shred you with its repeated accelerations.",
+      "consequences": [
+        "Training should include VO2max work and repeated short efforts—not just tempo.",
+        "Bentonville is awesome but hotels book up. Plan early.",
+        "The technical descents when tired create real crash risk. Stay focused late in the race."
+      ],
+      "expectation_reset": "This isn't a race you can diesel through. The constant on/off nature of Ozark terrain requires specific fitness. A 12-week plan with punchy interval focus is essential."
+    },
+    
+    "final_verdict": {
+      "score": "88 / 100",
+      "one_liner": "Fall gravel perfection—stunning scenery, world-class town, legitimately hard course.",
+      "should_you_race": "Yes if you love punchy terrain and want a complete cycling destination experience. Maybe not if you're strictly a flat-course diesel.",
+      "alternatives": "If you want fall gravel without the punchy terrain: Gravel Worlds (Nebraska, flatter). If you want Ozarks without the distance: shorter Big Sugar distances."
+    },
+    
+    "logistics": {
+      "airport": "Northwest Arkansas (XNA) - 20 minutes to Bentonville. Tulsa (TUL) - 2 hours.",
+      "lodging_strategy": "Book 3+ months early. Bentonville hotels are nice but limited. Consider Rogers or surrounding areas.",
+      "food": "Bentonville food scene is excellent. Plan a nice dinner.",
+      "packet_pickup": "Friday at event expo. Great vendors, good energy.",
+      "parking": "Downtown start requires early arrival or shuttle from remote lots.",
+      "official_site": "https://bigsugargravelevents.com"
+    },
+    
+    "training_plans": {
+      "total_count": 15,
+      "tiers": ["Ayahuasca", "Finisher", "Compete", "Podium"],
+      "base_price": 99,
+      "save_my_race_price": 59,
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+    }
+  }
+}
