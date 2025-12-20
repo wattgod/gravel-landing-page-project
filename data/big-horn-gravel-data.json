@@ -176,7 +176,7 @@
     },
     "seo": {
       "title": "Big Horn Gravel Race Guide | Training Plans & Sheridan Course Intel",
-      "meta_description": "Big Horn Gravel Sheridan guide: 100-mile gravel race. Get training plans & course breakdown.",
+      "meta_description": "Big Horn Gravel Sheridan guide: 100-mile gravel race featuring 8K+ feet of climbing (TIER 2 event). Get training plans & course breakdown.",
       "focus_keyword": "big horn gravel",
       "slug": "big-horn-gravel"
     },
@@ -186,6 +186,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "race_challenge_tagline": "8K+ feet of climbing"
   }
 }
