@@ -4,7 +4,7 @@
     "slug": "dirty-reiver",
     "display_name": "Dirty Reiver",
     "tagline": "Britain's original gravel race. Sells out in 6 hours.",
-    "race_challenge_tagline": "cold, wet, and hilly in British April conditions",
+    "race_challenge_tagline": "4,300 meters of climbing on technical terrain in British weather",
     
     "vitals": {
       "distance_mi": 130,
@@ -16,26 +16,26 @@
       "date_specific": "2026: April 25",
       "terrain_types": ["Forest gravel roads", "technical singletrack", "moorland crossings", "rocky descents"],
       "field_size": "2,000 riders (sells out in 6 hours)",
-      "start_time": "Saturday early morning (exact time TBD)",
-      "registration": "Opens winter/spring. Sells out in 6 hours. Cost: £100-150",
+      "start_time": "Saturday early morning",
+      "registration": "Opens winter. Sells out in 6 hours. Cost: £100-150",
       "prize_purse": "Varies",
-      "aid_stations": "3 stations with full support",
+      "aid_stations": "3 with full support",
       "cutoff_time": "12 hours"
     },
     
     "climate": {
       "primary": "British April weather gamble",
       "description": "5-15°C (41-59°F), high rain probability. Cold + wet + wind. British April is a dice roll.",
-      "challenges": ["Cold + wet + wind combination", "High rain probability", "British April gamble", "Hypothermia risk in bad years", "Weather determines your race"]
+      "challenges": ["Cold + wet + wind combination", "High rain probability", "Hypothermia risk in bad years", "Weather determines your race"]
     },
     
     "terrain": {
-      "primary": "Forest gravel roads with technical sections",
-      "surface": "Forest gravel roads, technical singletrack, moorland crossings. Varies from smooth forest roads to rocky singletrack to exposed moorland.",
-      "gravel_percentage": 85,
-      "pavement_percentage": 15,
+      "primary": "Forest gravel roads with technical singletrack",
+      "surface": "Forest gravel roads, technical singletrack, moorland crossings",
+      "gravel_percentage": 70,
+      "pavement_percentage": 30,
       "technical_rating": 4,
-      "features": ["Kielder Forest fire roads", "Exposed moorland crossings", "Technical rocky descents", "Notorious mud potential", "MTB skills required in sections"]
+      "features": ["Kielder Forest fire roads", "Exposed moorland crossings", "Technical rocky descents", "Notorious mud potential"]
     },
     
     "altitude": {
@@ -69,16 +69,15 @@
       "notable_moments": [
         "2016: Sold out in hours, became instant classic",
         "Expanded to 2,000 riders",
-        "Consistently sells out in under 6 hours",
-        "Established as UK's premier gravel event"
+        "Consistently sells out in under 6 hours"
       ],
       "reputation": "The UK's original gravel race. If you want to say you've done British gravel, you do Dirty Reiver.",
       "random_facts": [
         "Named after Scottish border 'reivers'—raiders who once roamed these lands",
-        "Sells out in 6 hours every year—registration is a competitive sport",
-        "Kielder Forest is England's largest man-made forest",
-        "The course crosses Scottish-English border multiple times",
-        "Mud years turn the race into survival mode"
+        "Sells out in 6 hours every year",
+        "Kielder Forest is genuinely remote and beautiful",
+        "UK's answer to American gravel racing",
+        "Northumberland border history adds character"
       ]
     },
     
@@ -89,38 +88,42 @@
           "mile": 31,
           "label": "First Moorland Crossing",
           "desc": "Exposed. Wind hits. Weather reveals itself. Your clothing choices get tested.",
-          "terrain_detail": "Exposed moorland, no shelter"
+          "terrain_detail": "Exposed moorland with no shelter",
+          "named_section": "The Exposure Test"
         },
         {
           "mile": 62,
           "label": "Midway Reality Check",
           "desc": "If it's wet, you're wet. If it's cold, you're cold. No changing that now.",
-          "terrain_detail": "Weather compounds fatigue"
+          "terrain_detail": "Deep in Kielder Forest",
+          "named_section": "The Acceptance Zone"
         },
         {
           "mile": 106,
           "label": "Final Climbs",
           "desc": "Tired legs meet technical terrain. The finish is still 40km away.",
-          "terrain_detail": "Technical sections on exhausted legs"
+          "terrain_detail": "Rocky descents on exhausted legs",
+          "named_section": "The Grind Home"
         }
       ],
       "signature_challenge": "The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders.",
       "ridewithgps_id": "TBD",
-      "ridewithgps_name": "Dirty Reiver"
+      "ridewithgps_name": "Dirty Reiver",
+      "map_url": null
     },
     
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
-        "explanation": "In UK circles, Dirty Reiver IS gravel. The 6-hour sellout isn't marketing—it's genuine demand. The UK's original and most respected gravel race."
+        "explanation": "In UK circles, Dirty Reiver IS gravel. The 6-hour sellout isn't marketing—it's genuine demand."
       },
       "length": {
         "score": 4,
-        "explanation": "210km in 8-12 hours. British conditions make distance feel longer. Sustained difficulty. Not ultra, but full day effort."
+        "explanation": "210km in 8-12 hours. British conditions make distance feel longer. Sustained difficulty."
       },
       "technicality": {
         "score": 4,
-        "explanation": "Varies from smooth forest roads to rocky singletrack to exposed moorland. MTB skills needed late in race. Technical sections separate prepared riders."
+        "explanation": "Varies from smooth forest roads to rocky singletrack to exposed moorland. MTB skills needed late in race."
       },
       "elevation": {
         "score": 4,
@@ -128,7 +131,7 @@
       },
       "climate": {
         "score": 4,
-        "explanation": "British April gamble. Best case: manageable. Worst case: cold, wet misery. Weather determines your race. Hypothermia risk in bad years."
+        "explanation": "British April gamble. Best case: manageable. Worst case: cold, wet misery. Weather determines your race."
       },
       "altitude": {
         "score": 1,
@@ -136,53 +139,51 @@
       },
       "adventure": {
         "score": 4,
-        "explanation": "Kielder Forest is genuinely remote and beautiful. Northumberland landscapes, border history, real wilderness. This is proper British adventure."
+        "explanation": "Kielder Forest is genuinely remote and beautiful. Northumberland landscapes, border history, real wilderness."
       },
       "logistics": {
         "score": 3,
-        "explanation": "Newcastle (NCL) 90 minutes to Kielder. Book immediately upon registration. Kielder is limited. Consider Hexham or Newcastle for lodging."
+        "explanation": "Newcastle airport 90 minutes away. Accommodation near Kielder is limited. Book months in advance."
       },
       "race_quality": {
         "score": 4,
-        "explanation": "Professional organization that matches the field's dedication. Course marking, support, and finish experience all feel dialed."
+        "explanation": "Well-organized with UK production standards. The sellout speed proves quality. Community-run feel."
       },
       "experience": {
-        "score": 5,
-        "explanation": "You'll remember Dirty Reiver. The year it was beautiful. The year you suffered. Kielder Forest, Northumberland landscapes, authentic UK gravel culture."
+        "score": 4,
+        "explanation": "You'll remember Dirty Reiver. The weather. The Kielder Forest. The moment you realize British gravel is different."
       },
       "community": {
         "score": 5,
-        "explanation": "UK gravel riders are dedicated. Atmosphere is authentic. The 6-hour sellout proves genuine demand. This is community-driven gravel at its best."
+        "explanation": "UK gravel riders are dedicated. Atmosphere is authentic. The 6-hour sellout creates genuine community."
       },
       "field_depth": {
         "score": 4,
-        "explanation": "2,000 riders creates competitive depth. UK's best gravel riders show up. The field is serious and committed."
+        "explanation": "2,000 riders creates competitive depth. UK's best show up. Not WorldTour, but serious riders."
       },
       "value": {
         "score": 4,
-        "explanation": "£100-150 entry is reasonable for a premier UK event. The experience and challenge justify the cost."
+        "explanation": "£100-150 entry is reasonable for UK events. Good value for the experience."
       },
       "expenses": {
         "score": 3,
-        "explanation": "Transatlantic flights add up. Newcastle accommodation reasonable. Total trip easily exceeds $1,500-2,000 for US riders."
+        "explanation": "Flights to Newcastle, accommodation near Kielder, rental car. Total for US riders: $1,500-2,000."
       }
     },
     
     "biased_opinion": {
       "verdict": "ESSENTIAL UK EVENT",
       "summary": "Dirty Reiver is what happens when you take American gravel ambition and drop it in British conditions. The result is a genuinely hard event that tests fitness, skills, and weather resilience. If you want to understand UK gravel culture, you do Dirty Reiver.",
-      "quote": "Britain's original gravel race. Cold, wet, hilly. Sells out in 6 hours. Kielder Forest doesn't negotiate.",
+      "quote": "The UK's original gravel race. If you want to say you've done British gravel, you do Dirty Reiver.",
       "strengths": [
         "The challenge: Legitimate suffering. Not manufactured difficulty—earned.",
         "The community: UK gravel riders are dedicated. Atmosphere is authentic.",
-        "The terrain: Kielder Forest is beautiful, remote, properly demanding.",
-        "The sellout: 6-hour registration window proves genuine demand"
+        "The terrain: Kielder Forest is beautiful, remote, properly demanding."
       ],
       "weaknesses": [
         "The sellout: 6 hours to register requires calendar blocking and fast fingers",
         "The weather: British April can deliver misery. Pack for worst.",
-        "The terrain: If you've only done smooth gravel, technical sections will surprise you.",
-        "Travel complexity: Transatlantic flights add cost and jet lag"
+        "The terrain: If you've only done smooth gravel, technical sections will surprise you."
       ],
       "bottom_line": "If British gravel interests you, Dirty Reiver is non-negotiable. Just be ready for the registration sprint and the weather roulette."
     },
@@ -193,32 +194,30 @@
       "consequences": [
         "Registration is a competitive sport. Miss the 6-hour window, wait a year.",
         "Accommodation near Kielder is limited. Book months in advance.",
-        "If conditions are bad, DNF rates spike. Cold + wet compounds fatigue exponentially.",
-        "Jet lag compounds everything. Arriving from US means racing on compromised recovery.",
-        "The technical sections on exhausted legs: MTB skills matter when you're most tired"
+        "If conditions are bad, DNF rates spike. Cold + wet compounds fatigue exponentially."
       ],
-      "quote": "Train for British conditions. Cold, wet rides. Long days in the rain.",
+      "quote": "Your Zwift FTP doesn't matter if you're shivering and hypothermic.",
       "expectation_reset": "Train for British conditions. Cold, wet rides. Long days in the rain. Your Zwift FTP doesn't matter if you're shivering and hypothermic."
     },
     
     "tldr": {
-      "should_race_if": "You want UK's premier gravel event, you can handle cold/wet conditions, and you're ready to compete for registration within 6 hours.",
-      "skip_if": "You need guaranteed good weather, you can't handle technical terrain, or you're looking for smooth, fast gravel without weather challenges."
+      "should_race_if": "You want UK gravel credibility, you can handle cold/wet conditions, and you're ready to register within 6 hours of opening.",
+      "skip_if": "You need guaranteed good weather, you can't handle technical terrain, or you're looking for smooth, fast gravel."
     },
     
     "final_verdict": {
       "score": "85 / 100",
-      "one_liner": "Britain's original gravel race where 4,300 meters of climbing meets technical terrain in unpredictable British April weather.",
-      "should_you_race": "Yes, if British gravel interests you. Dirty Reiver is the UK's premier gravel event with authentic community, legitimate challenge, and proper British suffering. Just be ready for the registration sprint and weather roulette.",
-      "alternatives": "If you want European gravel without UK weather: Traka 360 (Spain, climbing). If you want bucket-list adventure: The Rift (Iceland, volcanic). If you want US gravel: Unbound 200 (Kansas, heat)."
+      "one_liner": "Britain's original gravel race where 4,300 meters of climbing meets technical terrain and British weather that doesn't negotiate.",
+      "should_you_race": "Yes, if British gravel interests you. Dirty Reiver is non-negotiable for UK gravel credibility. Just be ready for the registration sprint, the weather roulette, and the technical terrain that separates prepared riders from hopeful ones.",
+      "alternatives": "If you want European gravel without UK weather: Traka 360 (Spain, better weather). If you want bucket-list adventure: The Rift (Iceland, volcanic). If you want guaranteed conditions: Unbound (Kansas, June)."
     },
     
     "logistics": {
       "airport": "Newcastle (NCL) - 90 minutes to Kielder",
-      "lodging_strategy": "Book immediately upon registration. Kielder is limited. Consider Hexham or Newcastle for better availability.",
-      "food": "Northumberland has good options. Kielder limited—plan meals accordingly.",
+      "lodging_strategy": "Book immediately upon registration. Kielder is limited. Consider Hexham or Newcastle.",
+      "food": "Kielder has limited options. Plan meals. Newcastle has good restaurants if staying there.",
       "packet_pickup": "Friday/Saturday at venue. Long drive—plan accordingly.",
-      "parking": "On-site available. Arrive early for best spots.",
+      "parking": "On-site available. Arrive early.",
       "official_site": "https://dirtyreiver.co.uk"
     },
     
@@ -233,8 +232,8 @@
     
     "seo": {
       "title": "Dirty Reiver Race Guide | Training Plans & Kielder Course Intel",
-      "meta_description": "Dirty Reiver Kielder guide: 130-mile UK gravel race. Britain's original gravel race with 4,300 meters of climbing in British April weather. Get training plans & course breakdown.",
-      "focus_keyword": "dirty reiver",
+      "meta_description": "Dirty Reiver Kielder guide: 130-mile UK gravel race. Britain's original gravel race with 4,300 meters of climbing on technical terrain in British weather. Get training plans & course breakdown.",
+      "focus_keyword": "dirty reiver race",
       "slug": "dirty-reiver"
     }
   }

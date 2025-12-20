@@ -11,12 +11,12 @@
       "elevation_ft": 23000,
       "location": "Girona, Catalonia, Spain",
       "location_badge": "GIRONA, CATALONIA, SPAIN",
-      "county": "Gironès",
+      "county": "",
       "date": "Early May annually",
       "date_specific": "2026: May 2-3",
-      "terrain_types": ["Rocky Mediterranean gravel", "forest trails", "technical descents", "singletrack sections", "exposed ridgelines"],
+      "terrain_types": ["Rocky Mediterranean gravel", "forest trails", "technical descents", "Pyrenean foothill terrain", "exposed ridgeline traverses"],
       "field_size": "4,000+ riders from 74 countries",
-      "start_time": "Saturday early morning (exact time TBD)",
+      "start_time": "Saturday early morning",
       "registration": "Opens winter/spring. Cost: €80-200",
       "prize_purse": "Varies",
       "aid_stations": "Every 40-50km with full support",
@@ -24,25 +24,25 @@
     },
     
     "climate": {
-      "primary": "Variable spring weather in Catalonia",
-      "description": "18-28°C (65-82°F) with variable spring weather. Morning cold, afternoon heat, possible mountain rain.",
-      "challenges": ["Temperature variability", "Mountain weather unpredictability", "Layer management critical", "Possible rain in high elevations"]
+      "primary": "Variable spring weather",
+      "description": "18-28°C (65-82°F), variable spring weather with morning cold, afternoon heat, possible mountain rain",
+      "challenges": ["Temperature swings throughout the day", "Mountain weather unpredictability", "Layer management critical", "Possible rain in Pyrenean sections"]
     },
     
     "terrain": {
-      "primary": "Rocky Mediterranean gravel with technical sections",
-      "surface": "Mediterranean gravel—loose rocks, forest singletrack, technical descents that punish tired legs",
-      "gravel_percentage": 80,
-      "pavement_percentage": 20,
+      "primary": "Rocky Mediterranean gravel with forest singletrack",
+      "surface": "Rocky Mediterranean gravel, forest trails, technical descents—not smooth gravel",
+      "gravel_percentage": 70,
+      "pavement_percentage": 30,
       "technical_rating": 4,
-      "features": ["Sustained Category 1 climbs on gravel", "Pyrenean foothill terrain", "Forest singletrack sections", "Exposed ridgeline traverses", "Technical descents at hour 18"]
+      "features": ["Sustained Category 1 climbs on gravel", "Pyrenean foothill terrain", "Forest singletrack that punishes tired legs", "Exposed ridgeline traverses", "Technical descents at hour 18"]
     },
     
     "altitude": {
-      "start_elevation_ft": 300,
+      "start_elevation_ft": 200,
       "max_elevation_ft": 4600,
       "min_elevation_ft": 200,
-      "altitude_impact": "MODERATE - Tops out ~1,400m (4,600 ft). Not high enough to significantly impact oxygen. Volume of climbing, not altitude of climbing.",
+      "altitude_impact": "MODERATE - Tops out ~1,400m. Not high enough to impact oxygen. Volume of climbing, not altitude of climbing.",
       "acclimatization_required": false
     },
     
@@ -65,20 +65,19 @@
     "history": {
       "founded": 2019,
       "founder": "Local Girona cycling community",
-      "origin_story": "Born in Girona—where WorldTour pros live and train. Exploded from grassroots to Europe's largest gravel event in four years. The race that proved European gravel could match American ambition.",
+      "origin_story": "Born in Girona—where WorldTour pros live and train. Exploded from grassroots to Europe's largest gravel event in four years.",
       "notable_moments": [
         "2022: Joined UCI Gravel World Series",
         "2023: 4,000+ participants from 74 countries",
-        "Equal prize purse men/women from inception",
-        "WorldTour crossover athletes regularly compete"
+        "Equal prize purse men/women from day one"
       ],
-      "reputation": "Europe's Unbound. If Unbound is America's gravel Ironman, Traka is Europe's. The field draws WorldTour crossover athletes and weekend warriors alike.",
+      "reputation": "If Unbound is America's gravel Ironman, Traka is Europe's. The field draws WorldTour crossover athletes and weekend warriors alike.",
       "random_facts": [
-        "Girona is where Tadej Pogačar and other WorldTour pros train",
-        "The course literally rides through pro cycling's spiritual home",
-        "4,000+ riders from 74 countries creates genuine international field",
-        "Night racing through Pyrenean foothills is mandatory for 360km",
-        "UCI World Series status brings legitimacy and points"
+        "4,000+ riders from 74 countries",
+        "WorldTour pros cross over to race",
+        "Girona is cycling's spiritual home—where Pogačar trains",
+        "UCI Gravel World Series event",
+        "Equal prize purse men/women"
       ]
     },
     
@@ -89,30 +88,34 @@
           "mile": 50,
           "label": "First Mountain Pass",
           "desc": "The opening act. Legs still fresh, ego intact. You think you've got this.",
-          "terrain_detail": "First real test of climbing fitness"
+          "terrain_detail": "First real test of the day",
+          "named_section": "The Selection Point"
         },
         {
           "mile": 112,
           "label": "Halfway Reality",
           "desc": "The climbing doesn't stop. Your legs know exactly what's coming for the next 180km.",
-          "terrain_detail": "Accumulated fatigue starts showing"
+          "terrain_detail": "Pyrenean foothills reveal themselves",
+          "named_section": "The Grind Begins"
         },
         {
           "mile": 186,
           "label": "Night Falls",
           "desc": "Headlamps on. The final 60km in darkness. Technical terrain on empty legs.",
-          "terrain_detail": "Technical descents on fried legs separate finishers from DNFs"
+          "terrain_detail": "Forest singletrack on fried legs",
+          "named_section": "The Dark Hours"
         }
       ],
       "signature_challenge": "23,000 feet of climbing on technical Mediterranean terrain. The pro cycling training ground becomes YOUR proving ground.",
       "ridewithgps_id": "TBD",
-      "ridewithgps_name": "Traka 360"
+      "ridewithgps_name": "Traka 360",
+      "map_url": null
     },
     
     "ratings_breakdown": {
       "prestige": {
         "score": 5,
-        "explanation": "Europe's Unbound. 74 countries. WorldTour crossover athletes. UCI World Series. The race that proved European gravel could match American ambition."
+        "explanation": "Europe's Unbound. 74 countries. WorldTour crossover athletes. UCI World Series. The race that proved European gravel deserves a seat at the table."
       },
       "length": {
         "score": 5,
@@ -120,69 +123,67 @@
       },
       "technicality": {
         "score": 4,
-        "explanation": "Mediterranean rock isn't forgiving. Technical descents on fried legs separate finishers from DNFs. Forest singletrack sections demand bike handling when you're most fatigued."
+        "explanation": "Mediterranean rock isn't forgiving. Technical descents on fried legs separate finishers from DNFs. Forest singletrack that punishes tired legs."
       },
       "elevation": {
         "score": 5,
-        "explanation": "7,000m of climbing. Not one epic climb—dozens of punchy efforts that never let you recover. The cumulative fatigue is relentless."
+        "explanation": "7,000m of climbing. Not one epic climb—dozens of punchy efforts that never let you recover. The cumulative fatigue is brutal."
       },
       "climate": {
         "score": 3,
-        "explanation": "May in Catalonia is generally mild. Pack layers, but it's not Unbound heat or Reiver cold. Variable spring weather requires flexibility."
+        "explanation": "May in Catalonia is generally mild. Pack layers, but it's not Unbound heat or Reiver cold. Variable spring weather is the main challenge."
       },
       "altitude": {
         "score": 2,
-        "explanation": "Tops out ~1,400m. Not high enough to significantly impact oxygen. Volume of climbing, not altitude of climbing."
+        "explanation": "Tops out ~1,400m. Not high enough to impact oxygen. Volume of climbing, not altitude of climbing."
       },
       "adventure": {
         "score": 5,
-        "explanation": "Girona is cycling's spiritual home. Riding trails where Pogačar trains. Night racing through Pyrenean foothills. This is bucket-list terrain with pro cycling credibility."
+        "explanation": "Girona is cycling's spiritual home. Riding trails where Pogačar trains. Night racing through Pyrenean foothills. This is bucket-list terrain."
       },
       "logistics": {
         "score": 4,
-        "explanation": "Barcelona (BCN) 100km or Girona (GRO) 12km. Book 6+ months early. Race week is chaos. €100-200/night. Consider Barcelona + train for better availability."
+        "explanation": "Barcelona airport 100km away, Girona airport 12km. Well-organized with European production standards. Accommodation books fast."
       },
       "race_quality": {
         "score": 5,
-        "explanation": "UCI World Series production value. Equal prize purse from day one. Professional organization that matches the field's international scope."
+        "explanation": "UCI World Series event with professional organization. Equal prize purse from day one. WorldTour-level production."
       },
       "experience": {
         "score": 5,
-        "explanation": "You'll remember riding through Girona at night. The Pyrenean foothills. The international field. This is gravel racing as it should be—ambitious, beautiful, and genuinely challenging."
+        "explanation": "You'll remember Traka. The night riding. The Pyrenean views. The moment you realize you're on the same roads Pogačar trains on."
       },
       "community": {
         "score": 5,
-        "explanation": "74 countries creates genuine international community. WorldTour crossover athletes mix with weekend warriors. The Girona cycling culture permeates everything."
+        "explanation": "74 countries represented. WorldTour crossover athletes. International gravel community at its finest."
       },
       "field_depth": {
         "score": 5,
-        "explanation": "WorldTour crossover athletes regularly compete. The international field brings serious depth. This isn't a regional race—it's a global event."
+        "explanation": "WorldTour pros mix with weekend warriors. The field depth is genuine—this is where European gravel's best show up."
       },
       "value": {
-        "score": 4,
-        "explanation": "€80-200 entry is reasonable for a UCI World Series event. Travel costs add up (flights to Spain, accommodation), but the experience justifies the investment."
+        "score": 3,
+        "explanation": "€80-200 entry is reasonable for European events. But transatlantic travel adds significant cost for US riders."
       },
       "expenses": {
         "score": 3,
-        "explanation": "Transatlantic flights, accommodation in Girona (€100-200/night), bike transport. Total easily exceeds $2,000-3,000. This is a destination event."
+        "explanation": "Flights to Barcelona/Girona, accommodation in resort town, bike transport. Total easily exceeds $2,000-3,000 for US riders."
       }
     },
     
     "biased_opinion": {
       "verdict": "ESSENTIAL EUROPEAN",
       "summary": "If you're serious about gravel and have any connection to European cycling culture, Traka is a must. It's not just a race—it's a pilgrimage to the sport's spiritual home. Where else can you suffer on the same roads that Pogačar trains on?",
-      "quote": "Europe's Unbound. Born in cycling's spiritual home. 23,000 feet of climbing. You'll see sunrise and sunset.",
+      "quote": "Europe's Unbound—and arguably more technical.",
       "strengths": [
         "The location: Girona is cycling heaven. The race is the excuse; the destination is the reward.",
         "The international field: 74 countries. This isn't a regional race.",
-        "The legitimacy: UCI points, WorldTour crossover athletes, equal prize purse.",
-        "The terrain: Pyrenean foothills, Mediterranean gravel, technical descents—proper European challenge"
+        "The legitimacy: UCI points, WorldTour crossover athletes, equal prize purse."
       ],
       "weaknesses": [
         "Transatlantic distance: Travel cost and jet lag add complexity for US riders",
         "Crowded early kilometers: 4,000 riders creates bottlenecks",
-        "Night racing reality: The 360 almost certainly means riding through darkness",
-        "The cost: Total trip easily exceeds $2,000-3,000 with flights and accommodation"
+        "Night racing reality: The 360 almost certainly means riding through darkness"
       ],
       "bottom_line": "Traka is Europe's Unbound—and arguably more technical. If European gravel is on your bucket list, this is the defining event."
     },
@@ -194,31 +195,30 @@
         "You'll spend $2,000-3,000 minimum (flights, entry, lodging, bike transport)",
         "You'll ride through the night. 16-24 hours means darkness is mandatory",
         "The technical descents after 15+ hours test skills you don't have when exhausted",
-        "Jet lag compounds fatigue. Arriving from the US means you're racing on compromised recovery",
-        "The climbing never stops. Not one epic climb—dozens of efforts that accumulate into 7,000 meters"
+        "The climbing never stops. Not one epic climb—dozens that accumulate into 7,000 meters"
       ],
       "quote": "Train for climbing. Then train for more climbing. Your FTP matters less than your ability to repeat threshold efforts for 20 hours.",
       "expectation_reset": "This is a mountainous ultra-endurance event disguised as a gravel race. Train for climbing. Then train for more climbing. Your FTP matters less than your ability to repeat threshold efforts for 20 hours."
     },
     
     "tldr": {
-      "should_race_if": "You want Europe's premier gravel event, you can handle 16-24 hours of racing, and you're ready for technical terrain on exhausted legs.",
-      "skip_if": "You need guaranteed good weather, you can't handle night racing, or you're looking for smooth, fast gravel without technical challenges."
+      "should_race_if": "You want Europe's premier gravel experience, you can handle 16-24 hours of racing, and you're ready for technical terrain on exhausted legs.",
+      "skip_if": "You need guaranteed good weather, you can't handle night racing, or you're looking for smooth, fast gravel without surprises."
     },
     
     "final_verdict": {
       "score": "91 / 100",
-      "one_liner": "Europe's Unbound where 23,000 feet of climbing meets technical Mediterranean terrain in cycling's spiritual home.",
-      "should_you_race": "Yes, if you want Europe's premier gravel event and can handle 16-24 hours of racing. Traka delivers international credibility, stunning Pyrenean terrain, and a genuine challenge that matches its reputation. Just be ready for night racing and relentless climbing.",
-      "alternatives": "If you want European gravel without the ultra distance: Dirty Reiver (UK, 210km). If you want bucket-list adventure: The Rift (Iceland, volcanic terrain). If you want American ultra: Unbound 200 (Kansas, heat challenge)."
+      "one_liner": "Europe's Unbound where 23,000 feet of climbing meets technical Mediterranean terrain and night racing.",
+      "should_you_race": "Yes, if you want Europe's premier gravel experience and can handle 16-24 hours of racing. Traka delivers WorldTour-level legitimacy, stunning Pyrenean terrain, and a field from 74 countries. Just be ready for the climbing, the technical descents on fried legs, and the reality of night racing.",
+      "alternatives": "If you want European gravel without the ultra distance: Dirty Reiver (UK, 210km). If you want bucket-list adventure: The Rift (Iceland, volcanic terrain). If you want guaranteed good weather: Unbound (Kansas, June)."
     },
     
     "logistics": {
-      "airport": "Barcelona (BCN) - 100km, 1.5 hours / Girona (GRO) - 12km, 20 minutes",
-      "lodging_strategy": "Book 6+ months early. Race week is chaos. €100-200/night. Consider Barcelona + train for better availability and lower prices.",
-      "food": "Girona has excellent restaurants. Catalan cuisine is world-class. Book reservations early—race week fills up.",
-      "packet_pickup": "Friday in Girona. Expo atmosphere, budget 90 minutes. International field means crowds.",
-      "parking": "Limited. Public transport or hotel shuttles recommended. Girona is walkable.",
+      "airport": "Barcelona (BCN) - 100km / Girona (GRO) - 12km",
+      "lodging_strategy": "Book 6+ months early. Race week is chaos. €100-200/night. Consider Barcelona + train to Girona.",
+      "food": "Girona has excellent restaurants. Book reservations race week—town fills with cyclists.",
+      "packet_pickup": "Friday in Girona. Expo atmosphere, budget 90 minutes.",
+      "parking": "Limited. Public transport or hotel shuttles recommended.",
       "official_site": "https://trfraka.com"
     },
     
@@ -234,7 +234,7 @@
     "seo": {
       "title": "Traka 360 Race Guide | Training Plans & Girona Course Intel",
       "meta_description": "Traka 360 Girona guide: 224-mile Spanish gravel race. Europe's Unbound with 23,000 feet of climbing on technical Mediterranean terrain. Get training plans & course breakdown.",
-      "focus_keyword": "traka 360",
+      "focus_keyword": "traka 360 race",
       "slug": "traka-360"
     }
   }

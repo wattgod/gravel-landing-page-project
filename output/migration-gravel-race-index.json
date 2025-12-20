@@ -11,7 +11,7 @@
     "distance_miles": 404,
     "elevation_gain_feet": 39000,
     "terrain_type": "Red volcanic dust and savanna trails",
-    "terrain_surface": "Red volcanic dust, hard-packed savanna trails, game reserve roads. Unfamiliar surfaces demand adaptation.",
+    "terrain_surface": "Red volcanic dust, hard-packed savanna trails, game reserve roads",
     "technical_rating": 3,
     "signature_challenge": "It's not one thing—it's everything. Heat. Altitude. Dust. Distance. Wildlife. Four days of sensory overload.",
     "character": "Four days through the Maasai Mara ecosystem. Wildlife crossings. Cultural immersion. Volcanic terrain. It's a safari with a timing chip.",
@@ -19,44 +19,42 @@
       "Active game reserve riding (wildlife on course)",
       "River crossings",
       "Volcanic dust bowls",
-      "Remote backcountry through Maasai lands",
-      "Highland terrain reaches 2,800m"
+      "Remote backcountry through Maasai lands"
     ],
     "suffering_zones": [
       {
-        "mile": 93,
-        "label": "Day 1 - Savanna Introduction",
+        "stage": 1,
+        "label": "Savanna Introduction",
         "desc": "150km across the open Mara. The scale hits you. So does the dust.",
-        "terrain_detail": "First exposure to volcanic dust and savanna terrain"
+        "terrain_detail": "First exposure to volcanic dust and game reserve terrain"
       },
       {
-        "mile": 186,
-        "label": "Day 2 - Volcanic Highlands",
+        "stage": 2,
+        "label": "Volcanic Highlands",
         "desc": "Climbing into the highlands. Altitude starts to bite. Heat doesn't quit.",
-        "terrain_detail": "Altitude reaches 2,800m, heat compounds"
+        "terrain_detail": "Reaches 2,800m elevation"
       },
       {
-        "mile": 280,
-        "label": "Day 3 - Queen Stage",
+        "stage": 3,
+        "label": "Queen Stage",
         "desc": "The longest, hardest day. Remote. Exposed. Beautiful. Breaking point for many.",
-        "terrain_detail": "Cumulative fatigue from Days 1-2 hits hardest"
+        "terrain_detail": "Cumulative fatigue compounds"
       },
       {
-        "mile": 373,
-        "label": "Day 4 - Victory Lap",
+        "stage": 4,
+        "label": "Victory Lap",
         "desc": "Final stage to finish. Wildebeest may join your peloton. Not a joke.",
-        "terrain_detail": "Wildlife encounters, final push to finish"
+        "terrain_detail": "Wildlife encounters most likely"
       }
     ],
     "location": "Maasai Mara, Kenya",
     "climate_primary": "Equatorial heat at altitude",
     "climate_description": "15-30°C (59-86°F), equatorial sun, possible afternoon storms. Heat + altitude combination that compounds daily.",
     "climate_challenges": [
-      "Equatorial sun intensity",
-      "Heat + altitude combination",
-      "Cumulative daily stress",
-      "Afternoon storm potential",
-      "UV exposure at elevation"
+      "Equatorial sun at altitude",
+      "Heat + UV + altitude = dehydration risk that compounds daily",
+      "Cumulative stress over 4 days",
+      "Afternoon storm potential"
     ]
   },
   "ratings": {
@@ -69,7 +67,7 @@
     "climate_score": 5,
     "altitude_score": 4,
     "adventure_score": 5,
-    "logistics_score": 3,
+    "logistics_score": 4,
     "prestige_score": 4
   },
   "biased_opinion": {
@@ -88,18 +86,18 @@
   "logistics": {
     "location": "Maasai Mara, Kenya",
     "location_badge": "MAASAI MARA, KENYA",
-    "county": "Narok County",
+    "county": "",
     "city": "Maasai Mara",
     "state": "Kenya",
     "country": "USA",
     "date": "Early June annually",
     "date_specific": "2026: June 10-14",
     "venue": null,
-    "parking": "N/A - airport transfers included in package",
+    "parking": "N/A - airport transfers included",
     "lodging": null,
     "travel_tips": null,
-    "registration": "Limited field, sells out quickly. Cost: €4,000-5,000 all-inclusive",
-    "start_time": "Stage starts vary by day",
+    "registration": "Limited field, sells out fast. Cost: €4,000-5,000 all-inclusive",
+    "start_time": "Stage racing format - daily starts",
     "field_size": "230+ riders (capped)"
   },
   "final_verdict": {
@@ -115,11 +113,11 @@
     "editions": null,
     "notable_facts": [],
     "random_facts": [
-      "Zebras and giraffes literally on course",
-      "Safari lodges serve as race accommodation",
-      "Maasai villages along the route",
+      "Four-day stage race through active game reserve",
+      "Wildlife literally on course—zebras, giraffes, wildebeest",
+      "All-inclusive package with safari lodges and tented camps",
       "Proceeds support Safari Simbaz cycling development in Kenya",
-      "Four days of 150km+ stages = cumulative fatigue unlike single-day events"
+      "€4,000-5,000 entry includes lodging, meals, support"
     ],
     "timeline": []
   },
@@ -127,20 +125,20 @@
     "available": true,
     "model": "on-demand",
     "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=migration-gravel-race",
-    "race_challenge_tagline": "heat, altitude, and cumulative fatigue across four days"
+    "race_challenge_tagline": "heat, altitude, dust, distance, and wildlife over four consecutive days"
   },
   "seo": {
     "title": "Migration Gravel Race Guide | Training Plans & Maasai Mara Course Intel",
-    "meta_description": "Migration Gravel Race Maasai Mara guide: 404-mile 4-day Kenya gravel race. Heat, altitude, and wildlife encounters. Get training plans & course breakdown.",
+    "meta_description": "Migration Gravel Race Kenya guide: 404-mile 4-day stage race through Maasai Mara. Heat, altitude, dust, and wildlife. Get training plans & course breakdown.",
     "focus_keyword": "migration gravel race",
     "slug": "migration-gravel-race"
   },
-  "index_generated_at": "2025-12-19T21:02:58.319376",
+  "index_generated_at": "2025-12-19T21:40:23.764944",
   "landing_page_url": "/races/migration-gravel-race",
   "ridewithgps_id": "TBD",
   "prize_purse": "Varies",
   "field_size": "230+ riders (capped)",
-  "searchable_text": "Migration Gravel Race Four days through Kenya's Maasai Mara. Zebras on course. Four days through the Maasai Mara ecosystem. Wildlife crossings. Cultural immersion. Volcanic terrain. It's a safari with a timing chip. It's not one thing—it's everything. Heat. Altitude. Dust. Distance. Wildlife. Four days of sensory overload. Active game reserve riding (wildlife on course) River crossings Volcanic dust bowls Remote backcountry through Maasai lands Highland terrain reaches 2,800m Maasai Mara, Kenya Narok County Equatorial heat at altitude Red volcanic dust and savanna trails",
+  "searchable_text": "Migration Gravel Race Four days through Kenya's Maasai Mara. Zebras on course. Four days through the Maasai Mara ecosystem. Wildlife crossings. Cultural immersion. Volcanic terrain. It's a safari with a timing chip. It's not one thing—it's everything. Heat. Altitude. Dust. Distance. Wildlife. Four days of sensory overload. Active game reserve riding (wildlife on course) River crossings Volcanic dust bowls Remote backcountry through Maasai lands Maasai Mara, Kenya Equatorial heat at altitude Red volcanic dust and savanna trails",
   "filter_tags": [
     "tier-1",
     "distance-ultra",

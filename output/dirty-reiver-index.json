@@ -10,8 +10,8 @@
   "course": {
     "distance_miles": 130,
     "elevation_gain_feet": 14100,
-    "terrain_type": "Forest gravel roads with technical sections",
-    "terrain_surface": "Forest gravel roads, technical singletrack, moorland crossings. Varies from smooth forest roads to rocky singletrack to exposed moorland.",
+    "terrain_type": "Forest gravel roads with technical singletrack",
+    "terrain_surface": "Forest gravel roads, technical singletrack, moorland crossings",
     "technical_rating": 4,
     "signature_challenge": "The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders.",
     "character": "Classic British suffering. Cold, wet, hilly, and beautiful. Kielder Forest doesn't negotiate.",
@@ -19,27 +19,29 @@
       "Kielder Forest fire roads",
       "Exposed moorland crossings",
       "Technical rocky descents",
-      "Notorious mud potential",
-      "MTB skills required in sections"
+      "Notorious mud potential"
     ],
     "suffering_zones": [
       {
         "mile": 31,
         "label": "First Moorland Crossing",
         "desc": "Exposed. Wind hits. Weather reveals itself. Your clothing choices get tested.",
-        "terrain_detail": "Exposed moorland, no shelter"
+        "terrain_detail": "Exposed moorland with no shelter",
+        "named_section": "The Exposure Test"
       },
       {
         "mile": 62,
         "label": "Midway Reality Check",
         "desc": "If it's wet, you're wet. If it's cold, you're cold. No changing that now.",
-        "terrain_detail": "Weather compounds fatigue"
+        "terrain_detail": "Deep in Kielder Forest",
+        "named_section": "The Acceptance Zone"
       },
       {
         "mile": 106,
         "label": "Final Climbs",
         "desc": "Tired legs meet technical terrain. The finish is still 40km away.",
-        "terrain_detail": "Technical sections on exhausted legs"
+        "terrain_detail": "Rocky descents on exhausted legs",
+        "named_section": "The Grind Home"
       }
     ],
     "location": "Kielder, Northumberland, England",
@@ -48,7 +50,6 @@
     "climate_challenges": [
       "Cold + wet + wind combination",
       "High rain probability",
-      "British April gamble",
       "Hypothermia risk in bad years",
       "Weather determines your race"
     ]
@@ -89,11 +90,11 @@
     "date": "Late April annually",
     "date_specific": "2026: April 25",
     "venue": null,
-    "parking": "On-site available. Arrive early for best spots.",
+    "parking": "On-site available. Arrive early.",
     "lodging": null,
     "travel_tips": null,
-    "registration": "Opens winter/spring. Sells out in 6 hours. Cost: £100-150",
-    "start_time": "Saturday early morning (exact time TBD)",
+    "registration": "Opens winter. Sells out in 6 hours. Cost: £100-150",
+    "start_time": "Saturday early morning",
     "field_size": "2,000 riders (sells out in 6 hours)"
   },
   "final_verdict": {
@@ -110,10 +111,10 @@
     "notable_facts": [],
     "random_facts": [
       "Named after Scottish border 'reivers'—raiders who once roamed these lands",
-      "Sells out in 6 hours every year—registration is a competitive sport",
-      "Kielder Forest is England's largest man-made forest",
-      "The course crosses Scottish-English border multiple times",
-      "Mud years turn the race into survival mode"
+      "Sells out in 6 hours every year",
+      "Kielder Forest is genuinely remote and beautiful",
+      "UK's answer to American gravel racing",
+      "Northumberland border history adds character"
     ],
     "timeline": []
   },
@@ -121,20 +122,20 @@
     "available": true,
     "model": "on-demand",
     "questionnaire_url": "https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=dirty-reiver",
-    "race_challenge_tagline": "cold, wet, and hilly in British April conditions"
+    "race_challenge_tagline": "4,300 meters of climbing on technical terrain in British weather"
   },
   "seo": {
     "title": "Dirty Reiver Race Guide | Training Plans & Kielder Course Intel",
-    "meta_description": "Dirty Reiver Kielder guide: 130-mile UK gravel race. Britain's original gravel race with 4,300 meters of climbing in British April weather. Get training plans & course breakdown.",
-    "focus_keyword": "dirty reiver",
+    "meta_description": "Dirty Reiver Kielder guide: 130-mile UK gravel race. Britain's original gravel race with 4,300 meters of climbing on technical terrain in British weather. Get training plans & course breakdown.",
+    "focus_keyword": "dirty reiver race",
     "slug": "dirty-reiver"
   },
-  "index_generated_at": "2025-12-19T21:02:58.394488",
+  "index_generated_at": "2025-12-19T21:40:23.817274",
   "landing_page_url": "/races/dirty-reiver",
   "ridewithgps_id": "TBD",
   "prize_purse": "Varies",
   "field_size": "2,000 riders (sells out in 6 hours)",
-  "searchable_text": "Dirty Reiver Britain's original gravel race. Sells out in 6 hours. Classic British suffering. Cold, wet, hilly, and beautiful. Kielder Forest doesn't negotiate. The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders. Kielder Forest fire roads Exposed moorland crossings Technical rocky descents Notorious mud potential MTB skills required in sections Kielder, Northumberland, England Northumberland British April weather gamble Forest gravel roads with technical sections",
+  "searchable_text": "Dirty Reiver Britain's original gravel race. Sells out in 6 hours. Classic British suffering. Cold, wet, hilly, and beautiful. Kielder Forest doesn't negotiate. The combination: 4,300 meters of climbing on technical terrain in British weather. Any one factor is manageable. Together, they break riders. Kielder Forest fire roads Exposed moorland crossings Technical rocky descents Notorious mud potential Kielder, Northumberland, England Northumberland British April weather gamble Forest gravel roads with technical singletrack",
   "filter_tags": [
     "tier-1",
     "distance-long",

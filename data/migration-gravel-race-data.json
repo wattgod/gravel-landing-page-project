@@ -4,44 +4,44 @@
     "slug": "migration-gravel-race",
     "display_name": "Migration Gravel Race",
     "tagline": "Four days through Kenya's Maasai Mara. Zebras on course.",
-    "race_challenge_tagline": "heat, altitude, and cumulative fatigue across four days",
+    "race_challenge_tagline": "heat, altitude, dust, distance, and wildlife over four consecutive days",
     
     "vitals": {
       "distance_mi": 404,
       "elevation_ft": 39000,
       "location": "Maasai Mara, Kenya",
       "location_badge": "MAASAI MARA, KENYA",
-      "county": "Narok County",
+      "county": "",
       "date": "Early June annually",
       "date_specific": "2026: June 10-14",
       "terrain_types": ["Red volcanic dust", "hard-packed savanna trails", "game reserve roads", "river crossings"],
       "field_size": "230+ riders (capped)",
-      "start_time": "Stage starts vary by day",
-      "registration": "Limited field, sells out quickly. Cost: €4,000-5,000 all-inclusive",
+      "start_time": "Stage racing format - daily starts",
+      "registration": "Limited field, sells out fast. Cost: €4,000-5,000 all-inclusive",
       "prize_purse": "Varies",
-      "aid_stations": "Full camp support + mid-stage water stations",
-      "cutoff_time": "Daily stage cutoffs enforced"
+      "aid_stations": "Full camp support + mid-stage water",
+      "cutoff_time": "Daily stage cutoffs"
     },
     
     "climate": {
       "primary": "Equatorial heat at altitude",
       "description": "15-30°C (59-86°F), equatorial sun, possible afternoon storms. Heat + altitude combination that compounds daily.",
-      "challenges": ["Equatorial sun intensity", "Heat + altitude combination", "Cumulative daily stress", "Afternoon storm potential", "UV exposure at elevation"]
+      "challenges": ["Equatorial sun at altitude", "Heat + UV + altitude = dehydration risk that compounds daily", "Cumulative stress over 4 days", "Afternoon storm potential"]
     },
     
     "terrain": {
       "primary": "Red volcanic dust and savanna trails",
-      "surface": "Red volcanic dust, hard-packed savanna trails, game reserve roads. Unfamiliar surfaces demand adaptation.",
-      "gravel_percentage": 90,
-      "pavement_percentage": 10,
+      "surface": "Red volcanic dust, hard-packed savanna trails, game reserve roads",
+      "gravel_percentage": 80,
+      "pavement_percentage": 20,
       "technical_rating": 3,
-      "features": ["Active game reserve riding (wildlife on course)", "River crossings", "Volcanic dust bowls", "Remote backcountry through Maasai lands", "Highland terrain reaches 2,800m"]
+      "features": ["Active game reserve riding (wildlife on course)", "River crossings", "Volcanic dust bowls", "Remote backcountry through Maasai lands"]
     },
     
     "altitude": {
       "start_elevation_ft": 5000,
       "max_elevation_ft": 9200,
-      "min_elevation_ft": 4500,
+      "min_elevation_ft": 5000,
       "altitude_impact": "SIGNIFICANT - Course reaches 2,800m (9,200 feet). Combined with heat and multi-day efforts, impact is significant.",
       "acclimatization_required": true
     },
@@ -59,26 +59,25 @@
       "climate": 5,
       "altitude": 4,
       "adventure": 5,
-      "logistics": 3
+      "logistics": 4
     },
     
     "history": {
       "founded": 2019,
       "founder": "Safari Simbaz Foundation",
-      "origin_story": "Created to combine world-class racing with African adventure and conservation. Proceeds support local cycling development. Expanded from 40 riders to 230 cap.",
+      "origin_story": "Created by Safari Simbaz Foundation to combine world-class racing with African adventure and conservation. Proceeds support local cycling development.",
       "notable_moments": [
-        "2019: Inaugural event with 40 riders",
-        "Expanded to 230 rider cap",
+        "Expanded from 40 riders to 230 cap",
         "19K+ Instagram following, sells out in days",
         "Proceeds fund Kenyan cycling development"
       ],
       "reputation": "The ultimate bucket-list gravel event. Not about racing—about experiencing cycling adventure at its most raw.",
       "random_facts": [
-        "Zebras and giraffes literally on course",
-        "Safari lodges serve as race accommodation",
-        "Maasai villages along the route",
+        "Four-day stage race through active game reserve",
+        "Wildlife literally on course—zebras, giraffes, wildebeest",
+        "All-inclusive package with safari lodges and tented camps",
         "Proceeds support Safari Simbaz cycling development in Kenya",
-        "Four days of 150km+ stages = cumulative fatigue unlike single-day events"
+        "€4,000-5,000 entry includes lodging, meals, support"
       ]
     },
     
@@ -86,109 +85,108 @@
       "character": "Four days through the Maasai Mara ecosystem. Wildlife crossings. Cultural immersion. Volcanic terrain. It's a safari with a timing chip.",
       "suffering_zones": [
         {
-          "mile": 93,
-          "label": "Day 1 - Savanna Introduction",
+          "stage": 1,
+          "label": "Savanna Introduction",
           "desc": "150km across the open Mara. The scale hits you. So does the dust.",
-          "terrain_detail": "First exposure to volcanic dust and savanna terrain"
+          "terrain_detail": "First exposure to volcanic dust and game reserve terrain"
         },
         {
-          "mile": 186,
-          "label": "Day 2 - Volcanic Highlands",
+          "stage": 2,
+          "label": "Volcanic Highlands",
           "desc": "Climbing into the highlands. Altitude starts to bite. Heat doesn't quit.",
-          "terrain_detail": "Altitude reaches 2,800m, heat compounds"
+          "terrain_detail": "Reaches 2,800m elevation"
         },
         {
-          "mile": 280,
-          "label": "Day 3 - Queen Stage",
+          "stage": 3,
+          "label": "Queen Stage",
           "desc": "The longest, hardest day. Remote. Exposed. Beautiful. Breaking point for many.",
-          "terrain_detail": "Cumulative fatigue from Days 1-2 hits hardest"
+          "terrain_detail": "Cumulative fatigue compounds"
         },
         {
-          "mile": 373,
-          "label": "Day 4 - Victory Lap",
+          "stage": 4,
+          "label": "Victory Lap",
           "desc": "Final stage to finish. Wildebeest may join your peloton. Not a joke.",
-          "terrain_detail": "Wildlife encounters, final push to finish"
+          "terrain_detail": "Wildlife encounters most likely"
         }
       ],
       "signature_challenge": "It's not one thing—it's everything. Heat. Altitude. Dust. Distance. Wildlife. Four days of sensory overload.",
       "ridewithgps_id": "TBD",
-      "ridewithgps_name": "Migration Gravel Race"
+      "ridewithgps_name": "Migration Gravel Race",
+      "map_url": null
     },
     
     "ratings_breakdown": {
       "prestige": {
         "score": 4,
-        "explanation": "Not Unbound elite field, but 'you did WHAT?' factor is off the charts. The story, not the result. Within adventure gravel, Migration carries serious weight."
+        "explanation": "Not Unbound elite field, but 'you did WHAT?' factor is off the charts. The story, not the result."
       },
       "length": {
         "score": 5,
-        "explanation": "650km over 4 days = 160km daily average. Cumulative fatigue by Day 3 is brutal. This is ultra-endurance stage racing."
+        "explanation": "650km over 4 days = 160km daily average. Cumulative fatigue by Day 3 is brutal."
       },
       "technicality": {
         "score": 3,
-        "explanation": "Volcanic dust is unpredictable. River crossings require judgment. Not technical, but unfamiliar. Adaptation to surface matters more than bike handling."
+        "explanation": "Volcanic dust is unpredictable. River crossings require judgment. Not technical, but unfamiliar."
       },
       "elevation": {
         "score": 4,
-        "explanation": "12,000m total across 4 days. Stage 3 delivers the climbing. Highland terrain reaches 2,800m. Combined with heat and fatigue, demanding."
+        "explanation": "12,000m total across 4 days. Stage 3 delivers the climbing. Highland terrain reaches 2,800m."
       },
       "climate": {
         "score": 5,
-        "explanation": "Equatorial sun at altitude. Heat + UV + altitude = dehydration risk that compounds daily. Heat acclimation essential."
+        "explanation": "Equatorial sun at altitude. Heat + UV + altitude = dehydration risk that compounds daily."
       },
       "altitude": {
         "score": 4,
-        "explanation": "Course reaches 2,800m (9,200 feet). Combined with heat and multi-day efforts, impact is significant. Pre-acclimatization recommended."
+        "explanation": "Course reaches 2,800m (9,200 feet). Combined with heat and multi-day efforts, impact is significant."
       },
       "adventure": {
         "score": 5,
-        "explanation": "Maximum score. Zebras. Giraffes. Safari lodges. Maasai villages. This is gravel as expedition. No other race combines this level of adventure."
+        "explanation": "Maximum score. Zebras. Giraffes. Safari lodges. Maasai villages. This is gravel as expedition."
       },
       "logistics": {
-        "score": 3,
-        "explanation": "Kenya requires visas, vaccinations, logistics planning. Nairobi (NBO) then charter/transfer to Mara. Complex but included in package."
+        "score": 4,
+        "explanation": "All-inclusive package simplifies logistics. But getting to Kenya requires visas, vaccinations, planning."
       },
       "race_quality": {
         "score": 5,
-        "explanation": "Full support: You carry nothing. Bags transported. Meals provided. Safari lodges. This is expedition-level organization."
+        "explanation": "Full support. Bags transported. Meals provided. Safari lodge experience. This is premium adventure racing."
       },
       "experience": {
         "score": 5,
-        "explanation": "Four days through Kenya's Maasai Mara with wildlife encounters and landscapes that rewire your brain. This is the gravel adventure of a lifetime."
+        "explanation": "You'll remember Migration forever. The wildlife encounters. The Maasai villages. The landscapes that rewire your brain."
       },
       "community": {
         "score": 5,
-        "explanation": "Proceeds support Safari Simbaz cycling development in Kenya. The cause is real, not marketing. Community impact matters."
+        "explanation": "Proceeds support Safari Simbaz cycling development. The cause adds meaning to the experience."
       },
       "field_depth": {
         "score": 3,
-        "explanation": "230 riders is intimate. Field is serious but not massive. The experience, not the competition, is the draw."
+        "explanation": "230 riders is intimate. Field is serious but not WorldTour-level depth. The experience, not the competition."
       },
       "value": {
-        "score": 3,
-        "explanation": "€4,000-5,000 is a vacation budget, not a race entry. But you get full support, safari lodges, meals, and an experience unlike any other race."
+        "score": 2,
+        "explanation": "€4,000-5,000 is a vacation budget, not a race entry. But all-inclusive with safari lodges justifies the cost."
       },
       "expenses": {
         "score": 2,
-        "explanation": "Total cost easily exceeds €5,000-7,000 with flights, gear, tips. This is premium adventure pricing. Not accessible to everyone."
+        "explanation": "Total cost easily exceeds €5,000-7,000 with flights, gear, tips. This is premium adventure, not budget racing."
       }
     },
     
     "biased_opinion": {
       "verdict": "ONCE-IN-A-LIFETIME",
       "summary": "Migration isn't a race you do for a time or placing. It's a race you do for the experience. Four days through Kenya's Maasai Mara with full support, wildlife encounters, and landscapes that rewire your brain. If bucket-list gravel exists, this is it.",
-      "quote": "Four days through Kenya's Maasai Mara. Zebras on course. Heat, altitude, and cumulative fatigue. This is gravel as expedition.",
+      "quote": "This isn't a race you do for a time—it's an experience you buy for a lifetime.",
       "strengths": [
         "The experience: Safari lodges, Maasai villages, wildlife literally on course",
         "Full support: You carry nothing. Bags transported. Meals provided. Just ride.",
-        "The cause: Proceeds support Safari Simbaz cycling development in Kenya",
-        "The protocol fit: Heat + altitude = perfect match for combined protocols"
+        "The cause: Proceeds support Safari Simbaz cycling development in Kenya"
       ],
       "weaknesses": [
         "The price: €4,000-5,000 is a vacation budget, not a race entry",
         "Limited field: 230 spots sell fast. Speed matters.",
-        "Travel complexity: Kenya requires visas, vaccinations, logistics planning",
-        "Health risks: Altitude sickness, heat exhaustion, GI issues from unfamiliar food/water"
+        "Travel complexity: Kenya requires visas, vaccinations, logistics planning"
       ],
       "bottom_line": "If you can afford it and can get a spot, Migration is the gravel adventure of a lifetime. No other race combines this level of support, experience, and pure adventure."
     },
@@ -200,31 +198,30 @@
         "Total cost easily exceeds €5,000-7,000 with flights, gear, tips",
         "You'll ride 4+ days of 150km stages. Recovery is partial, not complete.",
         "Health risks are real: altitude sickness, heat exhaustion, GI issues from unfamiliar food/water",
-        "Jet lag compounds everything. Arriving from US means racing on compromised recovery",
-        "The cumulative stress: Four consecutive long days means fatigue compounds, not resets"
+        "The cumulative stress compounds daily. Day 3 breaks people who survived Days 1-2."
       ],
       "quote": "Train for stage racing, not single events. Back-to-back long rides with heat and altitude exposure.",
-      "expectation_reset": "This is an ultra-endurance stage race in a challenging environment. Train for stage racing, not single events. Back-to-back long rides with heat and altitude exposure. Your body needs to adapt to cumulative stress, not peak-and-recover patterns."
+      "expectation_reset": "Your body needs to adapt to cumulative stress, not peak-and-recover patterns. This is expedition racing disguised as gravel."
     },
     
     "tldr": {
-      "should_race_if": "You want the ultimate bucket-list gravel adventure, you can afford €5,000-7,000 total, and you're ready for four days of cumulative fatigue in challenging conditions.",
-      "skip_if": "You need predictable conditions, you're price-sensitive, or you can't handle multi-day stage racing with heat and altitude."
+      "should_race_if": "You want the ultimate bucket-list gravel adventure, you can afford €5,000-7,000 total, and you're ready for 4 days of cumulative suffering in Kenya.",
+      "skip_if": "You need predictable conditions, you're price-sensitive, or you're looking for a single-day race experience."
     },
     
     "final_verdict": {
       "score": "94 / 100",
-      "one_liner": "Four days through Kenya's Maasai Mara where heat, altitude, and wildlife encounters create the ultimate gravel expedition.",
-      "should_you_race": "Yes, if you can afford it and can get a spot. Migration is the gravel adventure of a lifetime. No other race combines this level of support, experience, and pure adventure. Just be ready for the price tag and the cumulative fatigue.",
-      "alternatives": "If you want single-day ultra: Unbound 200 (Kansas, heat). If you want European adventure: Traka 360 (Spain, climbing). If you want bucket-list without the price: The Rift (Iceland, volcanic)."
+      "one_liner": "Four days through Kenya's Maasai Mara where heat, altitude, dust, and wildlife create the ultimate gravel adventure.",
+      "should_you_race": "Yes, if you can afford it and can get a spot. Migration is the gravel adventure of a lifetime. No other race combines this level of support, experience, and pure adventure. Just be ready for the price tag and the cumulative stress of four consecutive days.",
+      "alternatives": "If you want single-day bucket-list: The Rift (Iceland, volcanic terrain). If you want European adventure: Traka 360 (Spain, 360km). If you want premium without Africa: Unbound (Kansas, established event)."
     },
     
     "logistics": {
-      "airport": "Nairobi (NBO) - then charter/transfer to Mara (included in package)",
-      "lodging_strategy": "Included in race package. Safari lodges/tented camps. All accommodation handled by organizers.",
-      "food": "All meals included. Safari lodge dining. Dietary requirements accommodated with advance notice.",
-      "packet_pickup": "Race briefing at start location. All gear handled. Full support throughout.",
-      "parking": "N/A - airport transfers included in package",
+      "airport": "Nairobi (NBO) - then charter/transfer to Mara",
+      "lodging_strategy": "Included in race package. Safari lodges/tented camps. All-inclusive.",
+      "food": "Included in race package. Meals provided at camps.",
+      "packet_pickup": "Race briefing at start location. All gear handled.",
+      "parking": "N/A - airport transfers included",
       "official_site": "https://migrationgravel.com"
     },
     
@@ -239,7 +236,7 @@
     
     "seo": {
       "title": "Migration Gravel Race Guide | Training Plans & Maasai Mara Course Intel",
-      "meta_description": "Migration Gravel Race Maasai Mara guide: 404-mile 4-day Kenya gravel race. Heat, altitude, and wildlife encounters. Get training plans & course breakdown.",
+      "meta_description": "Migration Gravel Race Kenya guide: 404-mile 4-day stage race through Maasai Mara. Heat, altitude, dust, and wildlife. Get training plans & course breakdown.",
       "focus_keyword": "migration gravel race",
       "slug": "migration-gravel-race"
     }

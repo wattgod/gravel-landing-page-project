@@ -11,7 +11,7 @@
     "distance_miles": 124,
     "elevation_gain_feet": 9800,
     "terrain_type": "Black volcanic sand and sharp lava rock",
-    "terrain_surface": "Black volcanic sand, sharp lava rock, loose highland roads. Sharp lava shreds tires/skin. Loose sand swallows wheels.",
+    "terrain_surface": "Black volcanic sand, sharp lava rock, loose highland roads",
     "technical_rating": 4,
     "signature_challenge": "The weather. Iceland doesn't care about your race plans. You can experience four seasons in four hours.",
     "character": "Otherworldly. Black volcanic sand, lava fields, glacier views. It looks like Mars with better air.",
@@ -27,30 +27,32 @@
         "mile": 25,
         "label": "Lava Field Entry",
         "desc": "Sharp volcanic rock demands focus. This is where flats happen.",
-        "terrain_detail": "Sharp lava shreds tires and skin"
+        "terrain_detail": "Sharp lava shreds tires and skin",
+        "named_section": "The Tire Killer"
       },
       {
         "mile": 62,
         "label": "Highland Exposure",
         "desc": "Wind and weather hit hardest. No shelter. Nowhere to hide.",
-        "terrain_detail": "Exposed volcanic plateaus, weather compounds"
+        "terrain_detail": "Exposed volcanic plateaus",
+        "named_section": "The Weather Zone"
       },
       {
-        "mile": 99,
+        "mile": 100,
         "label": "River Crossings",
         "desc": "Glacier-fed rivers. Cold water, uncertain depth. Dismount or regret.",
-        "terrain_detail": "River fords require judgment calls"
+        "terrain_detail": "Multiple river fords require judgment",
+        "named_section": "The Cold Water Test"
       }
     ],
     "location": "Hvolsvöllur, Southern Iceland",
     "climate_primary": "Icelandic weather chaos",
     "climate_description": "10-15°C (50-59°F) with extreme variability. Cold + wet + wind. Hypothermia risk is real.",
     "climate_challenges": [
-      "Cold + wet + wind combination",
-      "Hypothermia risk",
+      "Iceland can deliver rain, wind, fog simultaneously",
+      "Hypothermia risk in bad weather",
       "Weather changes faster than you can unzip a jacket",
-      "Four seasons possible in four hours",
-      "Exposed terrain with nowhere to hide"
+      "Four seasons possible in four hours"
     ]
   },
   "ratings": {
@@ -82,18 +84,18 @@
   "logistics": {
     "location": "Hvolsvöllur, Southern Iceland",
     "location_badge": "HVOLSVÖLLUR, SOUTHERN ICELAND",
-    "county": "Rangárvallasýsla",
+    "county": "",
     "city": "Hvolsvöllur",
     "state": "Southern Iceland",
     "country": "USA",
     "date": "Early July annually",
     "date_specific": "2026: July 4",
     "venue": null,
-    "parking": "Limited village parking. Carpool or hotel shuttles recommended.",
+    "parking": "Limited village parking. Carpool or hotel shuttles.",
     "lodging": null,
     "travel_tips": null,
     "registration": "Opens winter/spring. Cost: €150-250",
-    "start_time": "Saturday early morning (exact time TBD)",
+    "start_time": "Saturday early morning",
     "field_size": "1,000+ riders"
   },
   "final_verdict": {
@@ -109,11 +111,11 @@
     "editions": null,
     "notable_facts": [],
     "random_facts": [
-      "The course crosses the Mid-Atlantic Ridge—you literally ride between continents",
-      "Black volcanic sand looks like Mars with better air",
-      "Glacier-fed river crossings require dismount decisions",
-      "Midnight sun in July means 24-hour daylight",
-      "Sharp lava rock has shredded countless tires"
+      "Course crosses Mid-Atlantic Ridge—literally between North American and Eurasian tectonic plates",
+      "Volcanic terrain looks like Mars with better air",
+      "UCI Gravel World Series event",
+      "Midnight sun in July means extended daylight",
+      "Glacier-fed river crossings require dismount decisions"
     ],
     "timeline": []
   },
@@ -125,16 +127,16 @@
   },
   "seo": {
     "title": "The Rift Race Guide | Training Plans & Iceland Course Intel",
-    "meta_description": "The Rift Hvolsvöllur guide: 124-mile Iceland gravel race. Cross the Mid-Atlantic Ridge on volcanic terrain. Get training plans & course breakdown.",
-    "focus_keyword": "the rift gravel race",
+    "meta_description": "The Rift Iceland guide: 124-mile volcanic gravel race. Cross the Mid-Atlantic Ridge between continents. Volcanic terrain and unpredictable weather. Get training plans & course breakdown.",
+    "focus_keyword": "the rift iceland",
     "slug": "the-rift"
   },
-  "index_generated_at": "2025-12-19T21:02:58.355267",
+  "index_generated_at": "2025-12-19T21:40:23.790984",
   "landing_page_url": "/races/the-rift",
   "ridewithgps_id": "TBD",
   "prize_purse": "Varies",
   "field_size": "1,000+ riders",
-  "searchable_text": "The Rift Ride the divide between two continents. Literally cross the Mid-Atlantic Ridge. Otherworldly. Black volcanic sand, lava fields, glacier views. It looks like Mars with better air. The weather. Iceland doesn't care about your race plans. You can experience four seasons in four hours. Lava field crossings Glacier-fed river fords Highland F-road terrain Exposed volcanic plateaus Continental divide crossing (literally between tectonic plates) Hvolsvöllur, Southern Iceland Rangárvallasýsla Icelandic weather chaos Black volcanic sand and sharp lava rock",
+  "searchable_text": "The Rift Ride the divide between two continents. Literally cross the Mid-Atlantic Ridge. Otherworldly. Black volcanic sand, lava fields, glacier views. It looks like Mars with better air. The weather. Iceland doesn't care about your race plans. You can experience four seasons in four hours. Lava field crossings Glacier-fed river fords Highland F-road terrain Exposed volcanic plateaus Continental divide crossing (literally between tectonic plates) Hvolsvöllur, Southern Iceland Icelandic weather chaos Black volcanic sand and sharp lava rock",
   "filter_tags": [
     "tier-1",
     "distance-long",
