@@ -7910,39 +7910,12 @@
         ],
         "_last_verified": "2025-12-20",
         "_added_date": "2025-12-20"
-      },
-      {
-        "Race Name": "USA Cycling Gravel Nationals",
-        "Location": "La Crescent MN",
-        "Country": "USA",
-        "Region": "Driftless",
-        "Date/Month": "September 20",
-        "Distance (mi)": "September TBD",
-        "Elevation (ft)": "100/74/31",
-        "Field Size": "7171",
-        "Entry Cost": "760+",
-        "Tier": 3,
-        "Competition": "1",
-        "Protocol Fit": "MAXIMUM",
-        "Priority Score": 5.0,
-        "Notes": "10",
-        "_data_quality": {
-          "field_size": "Verified",
-          "competition": "Estimated",
-          "elevation": "Verified"
-        },
-        "_sources": [
-          "Small Races PDF",
-          "Claude research"
-        ],
-        "_last_verified": "2025-12-20",
-        "_added_date": "2025-12-20"
       }
     ]
   },
   "_metadata": {
-    "last_updated": "2025-12-20 00:10:23",
-    "total_races": 394,
+    "last_updated": "2025-12-20",
+    "total_races": 393,
     "small_races_added": 147
   }
 }
