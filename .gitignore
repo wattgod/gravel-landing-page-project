@@ -1,3 +1,7 @@
+# Environment variables (secrets)
+.env
+wordpress/.env
+
 # Python
 __pycache__/
 *.py[cod]
