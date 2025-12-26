@@ -1,0 +1,255 @@
+<!-- Pull Quotes and Section Breaks - Neo Brutalist Style -->
+
+<!-- ============================================================================
+     STYLE 1: LARGE PULL QUOTE (centered, impactful)
+     ============================================================================ -->
+<div class="gg-pullquote-large">
+  <span class="gg-pullquote-mark">"</span>
+  <p class="gg-pullquote-text">{{QUOTE_TEXT}}</p>
+  <span class="gg-pullquote-mark gg-pullquote-mark--close">"</span>
+</div>
+
+<!-- ============================================================================
+     STYLE 2: SIDEBAR CALLOUT (float left/right)
+     ============================================================================ -->
+<aside class="gg-callout gg-callout--left">
+  <div class="gg-callout-label">Key Insight</div>
+  <p class="gg-callout-text">{{CALLOUT_TEXT}}</p>
+</aside>
+
+<!-- ============================================================================
+     STYLE 3: STAT HIGHLIGHT (single impressive number)
+     ============================================================================ -->
+<div class="gg-stat-highlight">
+  <div class="gg-stat-number">{{STAT_NUMBER}}</div>
+  <div class="gg-stat-label">{{STAT_LABEL}}</div>
+</div>
+
+<!-- ============================================================================
+     STYLE 4: SECTION BREAK (decorative divider)
+     ============================================================================ -->
+<div class="gg-section-break">
+  <span class="gg-break-diamond">◆</span>
+  <span class="gg-break-diamond">◆</span>
+  <span class="gg-break-diamond">◆</span>
+</div>
+
+<!-- ============================================================================
+     STYLE 5: WARNING/BLACKPILL BOX
+     ============================================================================ -->
+<div class="gg-warning-box">
+  <div class="gg-warning-header">
+    <span class="gg-warning-icon">⚠</span>
+    <span class="gg-warning-title">{{WARNING_TITLE}}</span>
+  </div>
+  <p class="gg-warning-text">{{WARNING_TEXT}}</p>
+</div>
+
+<style>
+/* ============================================================================
+   PULL QUOTES AND SECTION BREAKS - NEO BRUTALIST
+   ============================================================================ */
+
+/* Large Pull Quote */
+.gg-pullquote-large {
+  margin: 3rem 0;
+  padding: 2rem 2.5rem;
+  background: #F4D03F;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0 #000000;
+  text-align: center;
+  position: relative;
+}
+
+.gg-pullquote-mark {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: #59473C;
+  opacity: 0.5;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+}
+
+.gg-pullquote-mark--close {
+  left: auto;
+  right: 1rem;
+  top: auto;
+  bottom: 0;
+}
+
+.gg-pullquote-text {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+/* Sidebar Callout */
+.gg-callout {
+  width: 280px;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: #4ECDC4;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+}
+
+.gg-callout--left {
+  float: left;
+  margin-right: 2rem;
+}
+
+.gg-callout--right {
+  float: right;
+  margin-left: 2rem;
+}
+
+.gg-callout-label {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #000000;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #000000;
+}
+
+.gg-callout-text {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0;
+}
+
+/* Stat Highlight */
+.gg-stat-highlight {
+  display: inline-block;
+  margin: 2rem 1rem;
+  padding: 1.5rem 2rem;
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0 #59473C;
+  text-align: center;
+}
+
+.gg-stat-number {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.gg-stat-label {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #59473C;
+}
+
+/* Section Break */
+.gg-section-break {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 1rem 0;
+}
+
+.gg-break-diamond {
+  font-size: 1rem;
+  color: #59473C;
+  opacity: 0.6;
+}
+
+.gg-break-diamond:nth-child(2) {
+  font-size: 1.25rem;
+  opacity: 1;
+}
+
+/* Warning/Blackpill Box */
+.gg-warning-box {
+  margin: 2rem 0;
+  background: #000000;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0 #59473C;
+  overflow: hidden;
+}
+
+.gg-warning-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #F4D03F;
+  border-bottom: 4px solid #000000;
+}
+
+.gg-warning-icon {
+  font-size: 1.25rem;
+}
+
+.gg-warning-title {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #000000;
+}
+
+.gg-warning-text {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .gg-callout {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .gg-pullquote-large {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .gg-pullquote-text {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .gg-pullquote-mark {
+    font-size: 2.5rem;
+  }
+
+  .gg-stat-highlight {
+    margin: 1.5rem 0;
+    display: block;
+  }
+}
+
+/* Clear floats after callouts */
+.gg-clear {
+  clear: both;
+}
+</style>

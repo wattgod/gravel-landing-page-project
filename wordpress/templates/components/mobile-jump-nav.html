@@ -1,0 +1,257 @@
+<!-- Mobile-Responsive Jump Navigation - Neo Brutalist Style -->
+<style>
+/* ============================================================================
+   JUMP NAVIGATION - NEO BRUTALIST MOBILE-RESPONSIVE
+   ============================================================================ */
+
+.gg-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #F5F5DC; /* Cream background */
+  border-bottom: 4px solid #000000;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.gg-topnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.gg-topnav-inner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.gg-topnav-label {
+  font-family: 'Sometype Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #59473C;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.gg-topnav-link {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  color: #000000 !important;
+  border: 3px solid #000000;
+  text-decoration: none !important;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 #000000;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+}
+
+.gg-topnav-link:hover {
+  background: #4ECDC4;
+  color: #000000 !important;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.gg-topnav-link:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000000;
+}
+
+/* Training link - highlighted */
+.gg-topnav-link--training {
+  background: #F4D03F;
+  font-weight: 800;
+}
+
+.gg-topnav-link--training:hover {
+  background: #4ECDC4;
+}
+
+/* Mobile toggle button - hidden on desktop */
+.gg-topnav-toggle {
+  display: none;
+  width: 100%;
+  padding: 14px 20px;
+  background: #59473C;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Sometype Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.gg-topnav-toggle::after {
+  content: '▼';
+  float: right;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.gg-topnav-toggle.is-open::after {
+  transform: rotate(180deg);
+}
+
+/* ============================================================================
+   MOBILE STYLES - COLLAPSIBLE DROPDOWN
+   ============================================================================ */
+@media (max-width: 768px) {
+  .gg-topnav {
+    position: sticky;
+    top: 0;
+  }
+
+  .gg-topnav-toggle {
+    display: block;
+  }
+
+  .gg-topnav-inner {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .gg-topnav-inner.is-open {
+    display: flex;
+  }
+
+  .gg-topnav-label {
+    display: none;
+  }
+
+  .gg-topnav-link {
+    width: 100%;
+    padding: 14px 20px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid #000000;
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  .gg-topnav-link:last-child {
+    border-bottom: none;
+  }
+
+  .gg-topnav-link:hover {
+    transform: none;
+    box-shadow: none;
+    background: #4ECDC4;
+  }
+
+  .gg-topnav-link:active {
+    transform: none;
+    box-shadow: none;
+    background: #59473C;
+    color: #FFFFFF !important;
+  }
+}
+
+/* ============================================================================
+   HORIZONTAL SCROLL INDICATORS (DESKTOP/TABLET)
+   ============================================================================ */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .gg-topnav {
+    position: relative;
+  }
+
+  /* Fade edges to hint at scrollability */
+  .gg-topnav::before,
+  .gg-topnav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .gg-topnav::before {
+    left: 0;
+    background: linear-gradient(to right, #F5F5DC 0%, transparent 100%);
+  }
+
+  .gg-topnav::after {
+    right: 0;
+    background: linear-gradient(to left, #F5F5DC 0%, transparent 100%);
+  }
+
+  .gg-topnav-inner {
+    padding: 12px 50px;
+  }
+}
+</style>
+
+<nav class="gg-topnav" aria-label="Guide Navigation">
+  <button class="gg-topnav-toggle" aria-expanded="false" aria-controls="topnav-links">
+    Jump to Section
+  </button>
+  <div class="gg-topnav-inner" id="topnav-links">
+    <span class="gg-topnav-label">Jump to:</span>
+    <a href="#course-map" class="gg-topnav-link">Course Map</a>
+    <a href="#race-vitals" class="gg-topnav-link">Race Vitals</a>
+    <a href="#history" class="gg-topnav-link">Facts & History</a>
+    <a href="#course-ratings" class="gg-topnav-link">Course Breakdown</a>
+    <a href="#biased-opinion" class="gg-topnav-link">Biased Opinion</a>
+    <a href="#overall-score" class="gg-topnav-link">Final Score</a>
+    <a href="#volume-tracks" class="gg-topnav-link gg-topnav-link--training">Training Plans</a>
+    <a href="#logistics" class="gg-topnav-link">Logistics</a>
+  </div>
+</nav>
+
+<script>
+(function() {
+  const toggle = document.querySelector('.gg-topnav-toggle');
+  const nav = document.querySelector('.gg-topnav-inner');
+
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', function() {
+    const isOpen = nav.classList.contains('is-open');
+    nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', !isOpen);
+  });
+
+  // Close nav when clicking a link (mobile)
+  nav.querySelectorAll('.gg-topnav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close nav when clicking outside (mobile)
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768 &&
+        !e.target.closest('.gg-topnav') &&
+        nav.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
