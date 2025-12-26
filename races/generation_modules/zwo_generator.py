@@ -9,6 +9,14 @@ import html
 import re
 from pathlib import Path
 
+# Import the workout description generator for proper formatting
+try:
+    from workout_description_generator import generate_workout_description, detect_archetype
+    DESCRIPTION_GENERATOR_AVAILABLE = True
+except ImportError:
+    DESCRIPTION_GENERATOR_AVAILABLE = False
+    print("⚠️  workout_description_generator not available - using legacy descriptions")
+
 # ZWO Template structure
 ZWO_TEMPLATE = """<?xml version='1.0' encoding='UTF-8'?>
 <workout_file>
@@ -303,30 +311,55 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
 def create_zwo_file(workout, output_path, race_data, plan_info):
     """Create a single ZWO workout file"""
     name = workout.get("name", "")
-    description, new_name = enhance_workout_description(workout, workout.get("week_number", 1), race_data, plan_info)
-    
+    week_num = workout.get("week_number", 1)
+    blocks = workout.get("blocks", "    <FreeRide Duration=\"60\"/>\n")
+    original_description = workout.get("description", "")
+
+    # Generate proper description using new generator if available
+    if DESCRIPTION_GENERATOR_AVAILABLE:
+        # Calculate level based on week number (rough mapping)
+        level = min(6, max(1, (week_num - 1) // 2 + 1))
+
+        # Generate structured description
+        description = generate_workout_description(
+            workout_name=name,
+            blocks=blocks,
+            week_num=week_num,
+            level=level,
+            existing_description=original_description
+        )
+    else:
+        # Fall back to original description
+        description = original_description
+
+    # Add race-specific enhancements (hydration, heat, etc.)
+    description, new_name = enhance_workout_description(
+        {"name": name, "description": description, "blocks": blocks, "week_number": week_num},
+        week_num,
+        race_data,
+        plan_info
+    )
+
     # Use new name if provided (for survey workout)
     if new_name:
         name = new_name
-    
-    blocks = workout.get("blocks", "    <FreeRide Duration=\"60\"/>\n")
-    
+
     # Escape XML special characters
     name_escaped = html.escape(name, quote=False)
     description_escaped = html.escape(description, quote=False)
-    
+
     # Generate ZWO content
     zwo_content = ZWO_TEMPLATE.format(
         name=name_escaped,
         description=description_escaped,
         blocks=blocks
     )
-    
+
     # Write file
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(zwo_content)
-    
+
     return True
 
 def generate_all_zwo_files(plan_template, race_data, plan_info, output_dir):
