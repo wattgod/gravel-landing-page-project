@@ -184,12 +184,20 @@ def add_survey_link(week_num, workout_name, race_data, plan_info):
         survey_url = f"https://wattgod.github.io/gravel-landing-page-project/guides/{race_slug}/surveys/{survey_filename}"
         
         # GG brand tone congratulations
-        tier_display = plan_info.get("tier", "").title()
+        # Map tier names to display names
+        tier = plan_info.get("tier", "").lower()
+        tier_display_map = {
+            "ayahuasca": "Time Crunched",
+            "finisher": "Finisher",
+            "compete": "Compete",
+            "podium": "Podium"
+        }
+        tier_display = tier_display_map.get(tier, tier.title())
+        
         level_display = plan_info.get("level", "").replace("_", " ").title()
         if level_display == "Save My Race":
             level_display = "Save My Race"
-        elif level_display == "Advanced Goat":
-            level_display = "Advanced GOAT"
+        # Note: GOAT removed - no longer used
         
         description_addition = f"""
 

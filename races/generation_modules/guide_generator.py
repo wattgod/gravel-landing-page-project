@@ -73,7 +73,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     
     Args:
         race_data: Dict containing race information
-        tier_name: str - "AYAHUASCA", "FINISHER", "COMPETE", or "PODIUM"
+        tier_name: str - "TIME CRUNCHED", "FINISHER", "COMPETE", or "PODIUM"
         ability_level: str - "Beginner", "Intermediate", or "Advanced"
         output_path: str - Where to save the generated HTML
     """
@@ -344,10 +344,12 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
 def get_weekly_hours(tier_name):
     """Return weekly hours for each tier"""
     hours = {
+        'TIME CRUNCHED': '0-5',
+        'FINISHER': '5-8',
+        'COMPETE': '8-12',
+        'PODIUM': '12+',
+        # Legacy support
         'AYAHUASCA': '0-5',
-        'FINISHER': '8-12',
-        'COMPETE': '12-18',
-        'PODIUM': '18+'
     }
     return hours.get(tier_name, '8-12')
 
@@ -355,10 +357,12 @@ def get_weekly_hours(tier_name):
 def get_weekly_structure(tier_name):
     """Return weekly structure description for each tier"""
     structures = {
-        'AYAHUASCA': '3-4 sessions per week: 2 high-intensity intervals, 1-2 endurance rides',
+        'TIME CRUNCHED': '3-4 sessions per week: 2 high-intensity intervals, 1-2 endurance rides',
         'FINISHER': '4-5 sessions per week: 1-2 intervals, 2-3 endurance rides, 1 long weekend ride',
         'COMPETE': '5-6 sessions per week: 2-3 intervals, 2-3 endurance rides, 1 long ride, 1 recovery',
-        'PODIUM': '6-7 sessions per week: 3 intervals, 2-3 endurance rides, 1 long ride, 1-2 recovery'
+        'PODIUM': '6-7 sessions per week: 3 intervals, 2-3 endurance rides, 1 long ride, 1-2 recovery',
+        # Legacy support
+        'AYAHUASCA': '3-4 sessions per week: 2 high-intensity intervals, 1-2 endurance rides',
     }
     return structures.get(tier_name, structures['FINISHER'])
 
@@ -1243,8 +1247,8 @@ def main():
     plan_path = Path(args.plan)
     plan_name = plan_path.stem.lower()
     
-    if 'ayahuasca' in plan_name:
-        tier_name = 'AYAHUASCA'
+    if 'ayahuasca' in plan_name or 'time crunched' in plan_name or 'time_crunched' in plan_name:
+        tier_name = 'TIME CRUNCHED'  # Updated from AYAHUASCA
     elif 'finisher' in plan_name:
         tier_name = 'FINISHER'
     elif 'compete' in plan_name:
@@ -1256,10 +1260,9 @@ def main():
         ability_level = 'Beginner'
     elif 'intermediate' in plan_name:
         ability_level = 'Intermediate'
-    elif 'advanced' in plan_name and 'goat' in plan_name:
-        ability_level = 'Advanced GOAT'
     elif 'advanced' in plan_name:
         ability_level = 'Advanced'
+        # Note: GOAT removed - no longer used
     elif 'masters' in plan_name:
         ability_level = 'Masters'
     elif 'save_my_race' in plan_name:
@@ -1479,10 +1482,15 @@ def generate_plan_preparation_summary(race_data):
 def get_plan_title(tier_name, ability_level):
     """Return descriptive title for each plan combination"""
     titles = {
-        ('AYAHUASCA', 'Beginner'): 'Survival Plan',
+        ('TIME CRUNCHED', 'Beginner'): 'Time Crunched Plan',
+        ('TIME CRUNCHED', 'Intermediate'): 'Time Crunched Plan',
+        ('TIME CRUNCHED', 'Masters'): 'Time Crunched Plan',
+        ('TIME CRUNCHED', 'Save My Race'): 'Time Crunched Plan',
+        # Legacy support
+        ('AYAHUASCA', 'Beginner'): 'Time Crunched Plan',
         ('AYAHUASCA', 'Intermediate'): 'Time Crunched Plan',
-        ('AYAHUASCA', 'Masters'): '50+ Plan',
-        ('AYAHUASCA', 'Save My Race'): 'Emergency Plan',
+        ('AYAHUASCA', 'Masters'): 'Time Crunched Plan',
+        ('AYAHUASCA', 'Save My Race'): 'Time Crunched Plan',
         ('FINISHER', 'Beginner'): 'First Timer Plan',
         ('FINISHER', 'Intermediate'): 'Solid Finisher Plan',
         ('FINISHER', 'Advanced'): 'Strong Finish Plan',
@@ -1491,7 +1499,6 @@ def get_plan_title(tier_name, ability_level):
         ('COMPETE', 'Masters'): '50+ Performance Plan',
         ('COMPETE', 'Save My Race'): 'Emergency Plan',
         ('PODIUM', 'Advanced'): 'Elite Preparation',
-        ('PODIUM', 'Advanced GOAT'): 'The G.O.A.T. Plan',
     }
     return titles.get((tier_name, ability_level), f'{ability_level} Plan')
 
@@ -1504,8 +1511,8 @@ def get_ability_level_explanation(ability_level, tier_name):
         return f'<strong>Your ability level (Beginner)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re a beginner if you\'ve never trained systematically for endurance sports, you\'re currently out of shape or returning after significant time off (2+ years), you don\'t know your FTP, and long rides for you are 1-2 hours. Beginner plans build base fitness first. They assume you need to develop aerobic capacity, muscular endurance, and durability before you can handle intensity.'
     elif ability_level == 'Intermediate':
         return f'<strong>Your ability level (Intermediate)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re intermediate if you\'ve got endurance sports background—cycling, running, triathlon, or other aerobic training, you\'re currently fit enough to ride 3-4 hours without falling apart, you understand pacing, you\'ve practiced fueling on long rides, and you know what "sustainable discomfort" feels like. Intermediate plans assume you can handle two quality sessions per week plus endurance volume. They use polarized training (80% easy, 20% hard) because your body can absorb that stress without breaking.'
-    elif ability_level == 'Advanced' or ability_level == 'Advanced GOAT':
-        return f'<strong>Your ability level (Advanced)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re advanced if you\'re already fast, you\'ve raced seriously (road, gravel, MTB, triathlon—doesn\'t matter), you know your FTP, you understand interval structure, and you\'ve trained with power or heart rate zones for years. Advanced plans use block periodization or the GOAT Method—concentrated periods of specific intensity (threshold blocks, VO2 blocks) followed by recovery. They assume you know your body well enough to execute hard sessions without burying yourself.'
+    elif ability_level == 'Advanced':
+        return f'<strong>Your ability level (Advanced)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re advanced if you\'re already fast, you\'ve raced seriously (road, gravel, MTB, triathlon—doesn\'t matter), you know your FTP, you understand interval structure, and you\'ve trained with power or heart rate zones for years. Advanced plans use block periodization—concentrated periods of specific intensity (threshold blocks, VO2 blocks) followed by recovery. They assume you know your body well enough to execute hard sessions without burying yourself.'
     elif ability_level == 'Masters':
         return f'<strong>Your ability level (Masters)</strong> reflects your training experience and current fitness—not one or the other, but both. You\'re 50+ (or 40+ with significant recovery needs) with intermediate experience. Masters plans use moderate volume, emphasize recovery, and integrate HRV monitoring for autoregulation. They acknowledge that recovery takes longer as you age.'
     else:
@@ -1516,8 +1523,8 @@ def get_tier_volume_explanation(tier_name):
     """Provide detailed explanation for volume category"""
     weekly_hours = get_weekly_hours(tier_name)
     
-    if tier_name == 'AYAHUASCA':
-        return f'<strong>Your volume category (AYAHUASCA)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the AYAHUASCA category. Ayahuasca plans use high-intensity interval training (HIIT) to maximize fitness from minimal time. Two to three hard sessions per week, short endurance rides, and minimal long rides (capped at 2-3 hours). Critical caveat: These plans assume you already have fitness and experience. HIIT doesn\'t build base fitness—it sharpens existing fitness.'
+    if tier_name == 'TIME CRUNCHED' or tier_name == 'AYAHUASCA':
+        return f'<strong>Your volume category (TIME CRUNCHED)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the TIME CRUNCHED category. Time Crunched plans use high-intensity interval training (HIIT) to maximize fitness from minimal time. Two to three hard sessions per week, short endurance rides, and minimal long rides (capped at 2-3 hours). Critical caveat: These plans assume you already have fitness and experience. HIIT doesn\'t build base fitness—it sharpens existing fitness.'
     elif tier_name == 'FINISHER':
         return f'<strong>Your volume category (FINISHER)</strong> is based on the hours you\'ll actually spend riding each week, week after week, for the full training block. Be honest. Don\'t count the time you wish you had—count the time you\'ll realistically ride. Life will interfere. Plan for 80% completion and you\'ll hit closer to 100%. At <strong>~{weekly_hours} hours per week</strong>, you\'re in the FINISHER category. This is the sweet spot for most gravel racers. You\'ve got enough time to build a real aerobic base, practice race-specific intensity, and complete long rides that prepare you for race distance. Finisher plans include two quality sessions per week (threshold, tempo, climbing work), several endurance rides, and one long ride that builds to 4-5 hours by peak weeks.'
     elif tier_name == 'COMPETE':
@@ -1532,8 +1539,8 @@ def get_performance_expectations(tier_name):
     """Provide performance expectations based on tier"""
     weekly_hours = get_weekly_hours(tier_name)
     
-    if tier_name == 'AYAHUASCA':
-        return f"With {weekly_hours} hours per week, you're building minimal viable fitness. This is survival mode training. Realistic expectations: You'll finish the race, but it will be hard. You won't be competitive, but you'll complete the distance. If you're a true beginner on an Ayahuasca plan, adjust expectations further—you're showing up underprepared and should prioritize finishing over performance."
+    if tier_name == 'TIME CRUNCHED' or tier_name == 'AYAHUASCA':
+        return f"With {weekly_hours} hours per week, you're building minimal viable fitness. This is survival mode training. Realistic expectations: You'll finish the race, but it will be hard. You won't be competitive, but you'll complete the distance. If you're a true beginner on a Time Crunched plan, adjust expectations further—you're showing up underprepared and should prioritize finishing over performance."
     elif tier_name == 'FINISHER':
         return f"With {weekly_hours} hours per week, you're building solid aerobic base fitness. Realistic expectations: You'll finish strong at most gravel races. You won't be competing for podiums at Tier 1 events, but you'll complete the distance at a moderate pace without heroics."
     elif tier_name == 'COMPETE':

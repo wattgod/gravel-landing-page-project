@@ -93,13 +93,9 @@ PLAN_TYPES = {
 # DURATIONS
 DURATIONS = [12, 16, 20]
 
-# VARIATIONS (3-5 per plan)
+# VARIATIONS (Standard only - no variations)
 VARIATIONS = {
-    "variation_1": {"name": "Standard", "description": "Standard progression"},
-    "variation_2": {"name": "Volume Focus", "description": "Slightly higher volume emphasis"},
-    "variation_3": {"name": "Intensity Focus", "description": "Slightly higher intensity emphasis"},
-    "variation_4": {"name": "Balanced", "description": "Balanced volume and intensity"},
-    "variation_5": {"name": "Conservative", "description": "More conservative progression"}
+    "variation_1": {"name": "Standard", "description": "Standard progression"}
 }
 
 # FTP TEST CONFIGURATION (for 20-week plans)
@@ -495,11 +491,11 @@ def main():
     race_data = load_race_data(race_json_path)
     race_name = race_data["race_metadata"]["name"]
     
-    print(f"\n🚀 Generating Expanded Plans for: {race_name}")
-    print(f"   Plan Types: {len(PLAN_TYPES)}")
+    print(f"\n🚀 Generating Plans for: {race_name}")
+    print(f"   Tiers: {len(PLAN_TYPES)}")
     print(f"   Durations: {', '.join(map(str, DURATIONS))} weeks")
-    print(f"   Variations: {len(VARIATIONS)} per plan")
-    print(f"   Total Plans: {len(PLAN_TYPES) * len(DURATIONS) * len(VARIATIONS)}")
+    print(f"   Variation: Standard only")
+    print(f"   Total Plans: {len(PLAN_TYPES)} tiers × {len(DURATIONS)} durations = {len(PLAN_TYPES) * len(DURATIONS)}")
     
     if ftp_test_template:
         print(f"   ✓ FTP test template loaded - will be inserted in 20-week plans")
