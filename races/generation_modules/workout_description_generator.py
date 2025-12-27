@@ -216,7 +216,8 @@ def parse_xml_blocks(blocks: str) -> Dict:
         "main_sets": [],
         "cooldown": None,
         "total_duration_minutes": 0,
-        "pattern_type": None,  # 'intervals', 'over_under', 'steady', 'mixed'
+        "pattern_type": None,  # 'intervals', 'over_under', 'steady', 'mixed', 'durability'
+        "durability_structure": None,  # For durability workouts: Z2 blocks before/after intervals
     }
 
     # Parse warmup
@@ -254,7 +255,7 @@ def parse_xml_blocks(blocks: str) -> Dict:
         total_interval_time = reps * (on_duration + off_duration)
         structure["total_duration_minutes"] += total_interval_time // 60
 
-    # Parse steady state blocks for over/under pattern detection
+    # Parse steady state blocks for over/under pattern detection and durability detection
     steady_pattern = r'<SteadyState\s+Duration="(\d+)"\s+Power="([0-9.]+)"[^/]*/>'
     steady_matches = list(re.finditer(steady_pattern, blocks))
 
@@ -269,6 +270,21 @@ def parse_xml_blocks(blocks: str) -> Dict:
             "power": power,
             "power_pct": int(power * 100),
         })
+    
+    # Detect durability workout: Z2 blocks (0.65-0.72 power) BEFORE intervals
+    # Pattern: Z2 endurance → intervals → possibly more Z2
+    if structure["main_sets"] and any(s["type"] == "intervals" for s in structure["main_sets"]):
+        # Check if there are Z2 blocks before the intervals
+        z2_blocks = [b for b in steady_blocks if 0.65 <= b["power"] <= 0.72]
+        if z2_blocks:
+            # Find where intervals start in the block sequence
+            # This is approximate - we'll detect based on structure
+            structure["durability_structure"] = {
+                "is_durability": True,
+                "z2_blocks": z2_blocks,
+                "has_intervals": True,
+            }
+            structure["pattern_type"] = "durability"
 
     # Detect over/under pattern (alternating tempo/threshold with recovery)
     if len(steady_blocks) >= 4:
@@ -354,8 +370,12 @@ def detect_over_under_pattern(steady_blocks: List[Dict]) -> Optional[Dict]:
 
 def format_main_set_description(structure: Dict, archetype: str) -> str:
     """Format the MAIN SET section based on parsed structure."""
-    if not structure["main_sets"]:
+    if not structure or not structure.get("main_sets"):
         return "Unstructured session"
+
+    # Handle durability workouts specially
+    if structure.get("durability_structure") and structure["durability_structure"].get("is_durability"):
+        return format_durability_workout(structure)
 
     lines = []
 
@@ -397,6 +417,47 @@ def format_main_set_description(structure: Dict, archetype: str) -> str:
             lines.append(f"• {duration}min @ {power}% FTP")
 
     return "\n".join(lines)
+
+def format_durability_workout(structure: Dict) -> str:
+    """Format durability workout: long Z2 ride → intervals → more Z2"""
+    lines = []
+    durability = structure.get("durability_structure", {})
+    z2_blocks = durability.get("z2_blocks", [])
+    
+    # Get total Z2 time
+    total_z2_min = sum(b["duration_min"] for b in z2_blocks)
+    
+    # Get intervals
+    intervals = [s for s in structure["main_sets"] if s["type"] == "intervals"]
+    
+    if intervals and total_z2_min >= 60:
+        # Format as durability workout
+        first_z2_hours = total_z2_min // 60
+        if first_z2_hours >= 1:
+            lines.append(f"• First {first_z2_hours} hour{'s' if first_z2_hours > 1 else ''} Z2")
+        
+        # Add intervals
+        for interval in intervals:
+            reps = interval["reps"]
+            on_min = interval["on_duration_min"]
+            on_power = interval["on_power_pct"]
+            off_min = interval["off_duration_min"]
+            lines.append(f"→ {reps}x{on_min}min @ {on_power}% FTP ({off_min}min recovery)")
+        
+        # Check if there's more Z2 after (would need full block parsing)
+        lines.append("→ Final Z2 to complete ride")
+        
+        return "\n".join(lines)
+    
+    # Fallback: format intervals normally
+    interval_lines = []
+    for interval in intervals:
+        reps = interval["reps"]
+        on_min = interval["on_duration_min"]
+        on_power = interval["on_power_pct"]
+        off_min = interval["off_duration_min"]
+        interval_lines.append(f"• {reps}x{on_min}min @ {on_power}% FTP ({off_min}min recovery)")
+    return "\n".join(interval_lines) if interval_lines else "Durability workout structure"
 
 # =============================================================================
 # MAIN DESCRIPTION GENERATOR
@@ -447,11 +508,35 @@ def generate_workout_description(
     main_set_desc = format_main_set_description(structure, archetype)
     main_set_section = f"MAIN SET:\n{main_set_desc}"
 
-    # Add cadence and position if quality session
-    if cadence_rpm and archetype not in ["endurance", "rest", "testing"]:
-        main_set_section += f"\n• Cadence: {cadence_rpm} ({cadence_why})"
-    if position and archetype not in ["endurance", "rest", "testing"]:
-        main_set_section += f"\n• Position: {position}"
+    # Add cadence and position guidance
+    # Check if this is a durability workout
+    is_durability = False
+    if structure and structure.get("durability_structure"):
+        is_durability = structure["durability_structure"].get("is_durability", False)
+    
+    if is_durability:
+        # Durability workouts: position alternation on Z2, specific guidance on intervals
+        main_set_section += f"\n• Z2 sections: Position alternation every 30 min (drops ↔ hoods)"
+        main_set_section += f"\n• Intervals: Position as specified for interval type"
+        main_set_section += f"\n• Cadence: Z2 self-selected, intervals per archetype"
+    elif archetype == "endurance":
+        # For endurance/durability rides, add position alternation guidance
+        if structure["total_duration_minutes"] >= 90:
+            # Long endurance = durability workout
+            main_set_section += f"\n• Position: {position} - Alternate every 30 min: 30 min drops (aero) → 30 min hoods (power)"
+            main_set_section += f"\n• Cadence: {cadence_rpm if cadence_rpm else 'Self-selected'} - Comfortable endurance cadence"
+        else:
+            # Shorter endurance rides
+            if position:
+                main_set_section += f"\n• Position: {position}"
+            if cadence_rpm:
+                main_set_section += f"\n• Cadence: {cadence_rpm} ({cadence_why})"
+    elif archetype not in ["rest", "testing"]:
+        # Quality sessions get specific cadence and position
+        if cadence_rpm:
+            main_set_section += f"\n• Cadence: {cadence_rpm} ({cadence_why})"
+        if position:
+            main_set_section += f"\n• Position: {position}"
 
     sections.append(main_set_section)
 
@@ -460,7 +545,17 @@ def generate_workout_description(
         sections.append(f"COOL-DOWN:\n• {structure['cooldown']}min easy spin Z1-Z2")
 
     # PURPOSE
-    purpose = get_progression_purpose(archetype, level)
+    # Special handling for durability workouts
+    is_durability_purpose = False
+    if structure and structure.get("durability_structure"):
+        is_durability_purpose = structure["durability_structure"].get("is_durability", False)
+    
+    if is_durability_purpose:
+        purpose = "Durability development. Building your ability to perform intervals when already fatigued—this is race simulation. The long Z2 ride first builds fatigue, then the intervals teach your body to sustain power when tired. This is exactly what you'll face in a 12-16 hour gravel race: needing to push hard after hours of riding."
+        if level > 1:
+            purpose += f"\n\nLevel {level}: {get_progression_purpose(archetype, level).split('Level')[1] if 'Level' in get_progression_purpose(archetype, level) else 'Building race-specific durability through accumulated fatigue.'}"
+    else:
+        purpose = get_progression_purpose(archetype, level)
     sections.append(f"PURPOSE:\n{purpose}")
 
     # Preserve HRV notes if present in original
