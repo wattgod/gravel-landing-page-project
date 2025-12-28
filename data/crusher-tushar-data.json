@@ -31,7 +31,7 @@
       "challenges": [
         "Altitude adaptation critical",
         "Extreme UV exposure",
-        "Temperature swings 40-80\u00b0F",
+        "Temperature swings 40-80°F",
         "Afternoon storm risk"
       ]
     },
@@ -133,20 +133,20 @@
       },
       "climate": {
         "score": 4,
-        "explanation": "July in Utah at altitude is unpredictable. Morning can be 50\u00b0F, afternoon 80\u00b0F. Thunderstorms roll in fast. Sun exposure at elevation is brutal. Layer options matter."
+        "explanation": "July in Utah at altitude is unpredictable. Morning can be 50°F, afternoon 80°F. Thunderstorms roll in fast. Sun exposure at elevation is brutal. Layer options matter."
       },
       "altitude": {
         "score": 5,
-        "explanation": "Much of the race is above 9,000 feet, topping out at 11,500. If you live at sea level, you NEED altitude adaptation time. This isn't optional\u2014it's survival."
+        "explanation": "Much of the race is above 9,000 feet, topping out at 11,500. If you live at sea level, you NEED altitude adaptation time. This isn't optional—it's survival."
       },
       "adventure": {
         "score": 5,
-        "explanation": "The Tushar Mountains are remote and stunning. Alpine meadows, aspen groves, and 360-degree mountain views. This isn't just a race\u2014it's an expedition through one of Utah's hidden gems."
+        "explanation": "The Tushar Mountains are remote and stunning. Alpine meadows, aspen groves, and 360-degree mountain views. This isn't just a race—it's an expedition through one of Utah's hidden gems."
       }
     },
     "biased_opinion": {
       "verdict": "Climber's Paradise",
-      "summary": "Crusher is what happens when you take a mountain stage of the Tour and add gravel. It's not for everyone\u2014flat-landers and non-climbers will suffer disproportionately. But if you love vertical and want to test yourself against thin air, this is your race.",
+      "summary": "Crusher is what happens when you take a mountain stage of the Tour and add gravel. It's not for everyone—flat-landers and non-climbers will suffer disproportionately. But if you love vertical and want to test yourself against thin air, this is your race.",
       "strengths": [
         "The scenery: Tushar Mountains are criminally underrated. World-class alpine beauty.",
         "The challenge: Pure climbing race with technical descents. Rewards complete cyclists.",
@@ -157,7 +157,7 @@
         "Logistics: Beaver, Utah isn't exactly a travel hub. Plan for a road trip.",
         "The climbing: 10,000 feet in 69 miles is relentless. Recovery from this takes time."
       ],
-      "bottom_line": "If you're a climber looking for a gravel race that plays to your strengths, Crusher is your Super Bowl. If you're not\u2014this will humble you."
+      "bottom_line": "If you're a climber looking for a gravel race that plays to your strengths, Crusher is your Super Bowl. If you're not—this will humble you."
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
@@ -171,7 +171,7 @@
     },
     "final_verdict": {
       "score": "86 / 100",
-      "one_liner": "The climber's gravel race\u2014where thin air separates pretenders from contenders.",
+      "one_liner": "The climber's gravel race—where thin air separates pretenders from contenders.",
       "should_you_race": "If you love climbing and want a race that rewards it, absolutely. If you're a diesel-engine flat-lander, consider something else. The altitude alone makes this a specialist's race.",
       "alternatives": "If you want climbing without altitude: Leadville (higher but different format). If you want gravel without the vertical: SBT GRVL Green offers similar beauty with less suffering per mile."
     },
@@ -208,6 +208,7 @@
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
     },
-    "race_challenge_tagline": "The altitude. 10,000+ feet average means your power is down 10-15%. Plan accordi"
+    "race_challenge_tagline": "The altitude. 10,000+ feet average means your power is down 10-15%. Plan accordi",
+    "validation_tier": "gold"
   }
 }

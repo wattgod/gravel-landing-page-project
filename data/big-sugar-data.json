@@ -29,8 +29,8 @@
       "primary": "Ozark fall",
       "description": "Late October brings crisp mornings, mild afternoons, and peak fall colors",
       "challenges": [
-        "Morning temps 35-50\u00b0F",
-        "Afternoon can reach 65-70\u00b0F",
+        "Morning temps 35-50°F",
+        "Afternoon can reach 65-70°F",
         "Occasional rain creates mud",
         "Humidity varies"
       ]
@@ -80,7 +80,7 @@
       "reputation": "The fall classic. Where the Grand Prix battles play out in the Ozark Mountains."
     },
     "course_description": {
-      "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs\u2014they have endless short ones.",
+      "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs—they have endless short ones.",
       "suffering_zones": [
         {
           "mile": 21,
@@ -114,7 +114,7 @@
       },
       "length": {
         "score": 4,
-        "explanation": "100 miles with nearly 10,000 feet of climbing in the punchy Ozarks. This isn't a cruiser\u2014expect 6-10 hours depending on fitness."
+        "explanation": "100 miles with nearly 10,000 feet of climbing in the punchy Ozarks. This isn't a cruiser—expect 6-10 hours depending on fitness."
       },
       "technicality": {
         "score": 4,
@@ -139,7 +139,7 @@
     },
     "biased_opinion": {
       "verdict": "Fall Showstopper",
-      "summary": "Big Sugar takes everything great about fall gravel\u2014colors, weather, community\u2014and combines it with a legitimately hard course. The Ozarks' endless punchy terrain creates a unique challenge. Add Bentonville's cycling culture and you've got a complete experience.",
+      "summary": "Big Sugar takes everything great about fall gravel—colors, weather, community—and combines it with a legitimately hard course. The Ozarks' endless punchy terrain creates a unique challenge. Add Bentonville's cycling culture and you've got a complete experience.",
       "strengths": [
         "The destination: Bentonville is cycling paradise. Trails, restaurants, coffee, culture.",
         "The scenery: Peak fall colors make suffering beautiful.",
@@ -156,7 +156,7 @@
       "title": "THE THING NOBODY TELLS YOU",
       "reality": "The 'punchy' climbing style of the Ozarks rewards a specific rider type. If you're all about steady-state power and long climbs, this course will shred you with its repeated accelerations.",
       "consequences": [
-        "Training should include VO2max work and repeated short efforts\u2014not just tempo.",
+        "Training should include VO2max work and repeated short efforts—not just tempo.",
         "Bentonville is awesome but hotels book up. Plan early.",
         "The technical descents when tired create real crash risk. Stay focused late in the race."
       ],
@@ -164,7 +164,7 @@
     },
     "final_verdict": {
       "score": "88 / 100",
-      "one_liner": "Fall gravel perfection\u2014stunning scenery, world-class town, legitimately hard course.",
+      "one_liner": "Fall gravel perfection—stunning scenery, world-class town, legitimately hard course.",
       "should_you_race": "Yes if you love punchy terrain and want a complete cycling destination experience. Maybe not if you're strictly a flat-course diesel.",
       "alternatives": "If you want fall gravel without the punchy terrain: Gravel Worlds (Nebraska, flatter). If you want Ozarks without the distance: shorter Big Sugar distances."
     },
@@ -201,6 +201,7 @@
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
     },
-    "race_challenge_tagline": "9K+ feet of climbing"
+    "race_challenge_tagline": "9K+ feet of climbing",
+    "validation_tier": "gold"
   }
 }

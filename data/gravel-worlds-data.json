@@ -29,7 +29,7 @@
       "primary": "Nebraska summer",
       "description": "August brings humidity, heat, and the kind of Midwest summer that tests your heat tolerance",
       "challenges": [
-        "Heat index can exceed 100\u00b0F",
+        "Heat index can exceed 100°F",
         "Humidity is brutal",
         "Limited shade on course",
         "Hydration is critical"
@@ -104,7 +104,7 @@
           "named_section": "Mind Games"
         }
       ],
-      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional\u2014it's survival.",
+      "signature_challenge": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's survival.",
       "map_url": "https://ridewithgps.com/routes/51659517"
     },
     "ratings_breakdown": {
@@ -118,7 +118,7 @@
       },
       "technicality": {
         "score": 3,
-        "explanation": "Nebraska gravel isn't technical in the traditional sense\u2014but loose surfaces, minimum maintenance roads, and fatigue create challenges."
+        "explanation": "Nebraska gravel isn't technical in the traditional sense—but loose surfaces, minimum maintenance roads, and fatigue create challenges."
       },
       "elevation": {
         "score": 3,
@@ -134,7 +134,7 @@
       },
       "adventure": {
         "score": 4,
-        "explanation": "The Nebraska prairie is its own kind of beautiful\u2014endless sky, rural isolation, agricultural landscapes that stretch forever."
+        "explanation": "The Nebraska prairie is its own kind of beautiful—endless sky, rural isolation, agricultural landscapes that stretch forever."
       }
     },
     "biased_opinion": {
@@ -154,17 +154,17 @@
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The 'World Championship' is self-proclaimed and tongue-in-cheek\u2014but the race is legitimately hard. Don't let the name fool you into thinking it's a marketing gimmick. The course will humble you.",
+      "reality": "The 'World Championship' is self-proclaimed and tongue-in-cheek—but the race is legitimately hard. Don't let the name fool you into thinking it's a marketing gimmick. The course will humble you.",
       "consequences": [
-        "August heat training is mandatory. If you can't handle 90\u00b0F+ humidity, don't start.",
-        "150 miles is ultra-endurance. This isn't a 'long ride'\u2014it's a day-long test.",
+        "August heat training is mandatory. If you can't handle 90°F+ humidity, don't start.",
+        "150 miles is ultra-endurance. This isn't a 'long ride'—it's a day-long test.",
         "Lincoln, Nebraska isn't a destination. You're coming for the race."
       ],
       "expectation_reset": "This is a grassroots ultra-endurance race in brutal conditions. The prestige is earned through suffering, not production value."
     },
     "final_verdict": {
       "score": "86 / 100",
-      "one_liner": "The OG grassroots gravel race\u2014where the spirit of the sport lives on in Nebraska summer heat.",
+      "one_liner": "The OG grassroots gravel race—where the spirit of the sport lives on in Nebraska summer heat.",
       "should_you_race": "Yes if you value authenticity, community, and genuine challenge over polish. Yes if you can handle August Midwest heat. Not if you need corporate production value.",
       "alternatives": "If you want heat without the distance: Unbound 100. If you want distance without the heat: fall ultra events. If you want grassroots elsewhere: local favorites."
     },
@@ -201,6 +201,7 @@
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
     },
-    "race_challenge_tagline": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional\u2014it's "
+    "race_challenge_tagline": "The heat. August in Nebraska is oppressive. Heat adaptation isn't optional—it's ",
+    "validation_tier": "gold"
   }
 }

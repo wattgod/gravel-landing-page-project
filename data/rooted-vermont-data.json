@@ -31,13 +31,13 @@
       "challenges": [
         "Humidity can be high",
         "Summer thunderstorm risk",
-        "Temperature 60-85\u00b0F",
+        "Temperature 60-85°F",
         "Muddy conditions if recent rain"
       ]
     },
     "terrain": {
       "primary": "Classic Vermont gravel and Class 4 roads with steep pitches",
-      "surface": "Varied\u2014packed gravel to loose rocks to Class 4 'adventure' roads",
+      "surface": "Varied—packed gravel to loose rocks to Class 4 'adventure' roads",
       "technical_rating": 4,
       "features": [
         "Steep Vermont pitches",
@@ -79,7 +79,7 @@
       "reputation": "New England gravel at its finest. Where steep pitches and covered bridges define the experience."
     },
     "course_description": {
-      "character": "Quintessential Vermont\u2014steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
+      "character": "Quintessential Vermont—steep pitches, beautiful forests, Class 4 adventure. Nothing is flat.",
       "suffering_zones": [
         {
           "mile": 25,
@@ -103,7 +103,7 @@
           "named_section": "Final Pitches"
         }
       ],
-      "signature_challenge": "The pitch grades. Vermont climbs aren't long\u2014they're steep. 15-20% pitches shred legs that expected steady grades.",
+      "signature_challenge": "The pitch grades. Vermont climbs aren't long—they're steep. 15-20% pitches shred legs that expected steady grades.",
       "map_url": "https://ridewithgps.com/routes/30629483"
     },
     "ratings_breakdown": {
@@ -113,7 +113,7 @@
       },
       "length": {
         "score": 3,
-        "explanation": "87 miles is moderate distance, but 10,000 feet of climbing\u2014much of it steep\u2014makes it feel longer."
+        "explanation": "87 miles is moderate distance, but 10,000 feet of climbing—much of it steep—makes it feel longer."
       },
       "technicality": {
         "score": 4,
@@ -121,7 +121,7 @@
       },
       "elevation": {
         "score": 5,
-        "explanation": "10,000 feet in 87 miles is 115 feet per mile average. But the grades are the story\u2014steep pitches rather than steady climbs."
+        "explanation": "10,000 feet in 87 miles is 115 feet per mile average. But the grades are the story—steep pitches rather than steady climbs."
       },
       "climate": {
         "score": 2,
@@ -138,7 +138,7 @@
     },
     "biased_opinion": {
       "verdict": "New England Classic",
-      "summary": "Rooted Vermont is what New England gravel should be\u2014steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event.",
+      "summary": "Rooted Vermont is what New England gravel should be—steep, beautiful, and authentically difficult. The terrain rewards complete cyclists who can climb, descend, and handle adventure roads. It's become the marquee East Coast gravel event.",
       "strengths": [
         "Authenticity: This is real Vermont, not a manufactured course.",
         "The terrain: Steep pitches create drama that steady climbs don't.",
@@ -153,7 +153,7 @@
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The 'average grade' stats hide the reality. Vermont climbs in steep bursts\u201415-20% pitches that hurt worse than sustained 8% grades. Train for power, not just endurance.",
+      "reality": "The 'average grade' stats hide the reality. Vermont climbs in steep bursts—15-20% pitches that hurt worse than sustained 8% grades. Train for power, not just endurance.",
       "consequences": [
         "East Burke requires intentional travel. Burlington airport is 1.5+ hours away.",
         "Lodging is limited. Book 6+ months early or consider camping.",
@@ -163,7 +163,7 @@
     },
     "final_verdict": {
       "score": "85 / 100",
-      "one_liner": "The New England gravel showcase\u2014steep pitches, covered bridges, and Green Mountain beauty.",
+      "one_liner": "The New England gravel showcase—steep pitches, covered bridges, and Green Mountain beauty.",
       "should_you_race": "Yes if you want East Coast gravel at its finest. Yes if you can handle steep grades. Not if you're strictly a tempo/steady-state rider.",
       "alternatives": "If you want Vermont without the intensity: Vermont Overland. If you want East Coast gravel elsewhere: Rasputitsa, Gravel Worlds."
     },
@@ -200,6 +200,7 @@
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
     },
-    "race_challenge_tagline": "10K+ feet of climbing"
+    "race_challenge_tagline": "10K+ feet of climbing",
+    "validation_tier": "gold"
   }
 }

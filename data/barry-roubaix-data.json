@@ -30,18 +30,18 @@
     },
     "climate": {
       "primary": "April Michigan weather chaos",
-      "description": "Historical race temps range from 20\u00b0F to 81\u00b0F\u2014a 61-degree swing. In bad years (2017, 2022), DNF rates hit 40%+. In good years, course records fall.",
+      "description": "Historical race temps range from 20°F to 81°F—a 61-degree swing. In bad years (2017, 2022), DNF rates hit 40%+. In good years, course records fall.",
       "challenges": [
         "Weather unpredictability is THE defining feature",
-        "35\u00b0F with 19\u00b0F wind chill possible (2022)",
+        "35°F with 19°F wind chill possible (2022)",
         "Freezing rain and snow possible (2017)",
-        "Perfect 58\u00b0F conditions possible (2025)",
+        "Perfect 58°F conditions possible (2025)",
         "Equipment strategy must account for all scenarios"
       ]
     },
     "terrain": {
       "primary": "Seasonal two-track roads with sand, mud, and rocks",
-      "surface": "Sager Road isn't gravel\u2014it's an unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks",
+      "surface": "Sager Road isn't gravel—it's an unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks",
       "gravel_percentage": 70,
       "pavement_percentage": 30,
       "technical_rating": 4,
@@ -66,6 +66,7 @@
       "biased_opinion": 35,
       "tier": 1,
       "tier_label": "TIER 1",
+      "score_note": "World's largest gravel race (5,300+ riders). Editorial +3 and overall +4 for scale and cultural impact.",
       "length": 4,
       "technicality": 4,
       "elevation": 2,
@@ -87,9 +88,9 @@
       "origin_story": "Started as a local gravel race in Hastings, Michigan. Grew to become the world's largest gravel race with 5,500+ riders from 48 states and 9 countries.",
       "notable_moments": [
         "2009: Inaugural race with local field",
-        "2017: 39\u00b0F with freezing rain, 41.9% DNF rate",
-        "2022: 35\u00b0F with 19\u00b0F wind chill, 30 mph gusts, 43.1% DNF rate",
-        "2025: Perfect 58\u00b0F conditions, multiple course records broken, 21.1% DNF rate",
+        "2017: 39°F with freezing rain, 41.9% DNF rate",
+        "2022: 35°F with 19°F wind chill, 30 mph gusts, 43.1% DNF rate",
+        "2025: Perfect 58°F conditions, multiple course records broken, 21.1% DNF rate",
         "2026: 17th edition, sells out in 24 hours"
       ],
       "reputation": "World's Largest Gravel Race. The race that proved gravel could scale without losing its soul. On BikeExchange's bucket list. On GCN's Top Five.",
@@ -103,7 +104,7 @@
       ]
     },
     "course_description": {
-      "character": "Punchy, technical, unpredictable. Michigan doesn't do sustained climbs\u2014it does 50+ rollers that hit you constantly. Sager Road defines the race's character.",
+      "character": "Punchy, technical, unpredictable. Michigan doesn't do sustained climbs—it does 50+ rollers that hit you constantly. Sager Road defines the race's character.",
       "suffering_zones": [
         {
           "mile": 1.5,
@@ -134,7 +135,7 @@
           "named_section": "MAD WALL"
         }
       ],
-      "signature_challenge": "The weather. April Michigan weather spans 20\u00b0F to 81\u00b0F. You're gambling on conditions you can't know until race morning.",
+      "signature_challenge": "The weather. April Michigan weather spans 20°F to 81°F. You're gambling on conditions you can't know until race morning.",
       "ridewithgps_id": "27062354",
       "ridewithgps_name": "Barry-Roubaix 100 mile Psycho Killer",
       "map_url": "https://ridewithgps.com/routes/27062354"
@@ -142,31 +143,31 @@
     "ratings_breakdown": {
       "prestige": {
         "score": 5,
-        "explanation": "'World's Largest Gravel Race' isn't marketing\u2014it's fact. 5,500+ riders from 48 states and 9 countries. On BikeExchange's bucket list. On GCN's Top Five. The race that proved gravel could scale without losing its soul."
+        "explanation": "'World's Largest Gravel Race' isn't marketing—it's fact. 5,500+ riders from 48 states and 9 countries. On BikeExchange's bucket list. On GCN's Top Five. The race that proved gravel could scale without losing its soul."
       },
       "length": {
         "score": 4,
-        "explanation": "Four distances span 18 to 100 miles. The 100-mile Psycho Killer with 7,000+ feet pushes into serious ultra territory. The flagship 62-mile Killer is substantial\u2014long enough to hurt, technical enough to break you."
+        "explanation": "Four distances span 18 to 100 miles. The 100-mile Psycho Killer with 7,000+ feet pushes into serious ultra territory. The flagship 62-mile Killer is substantial—long enough to hurt, technical enough to break you."
       },
       "technicality": {
         "score": 4,
-        "explanation": "Sager Road isn't gravel\u2014it's a seasonal two-track with sand ruts, mud holes, and baby-head rocks that eat unprepared riders alive. Add Three Sisters at mile 1.5 and The Wall's 11% pitch, and you're looking at a course that demands real bike handling."
+        "explanation": "Sager Road isn't gravel—it's a seasonal two-track with sand ruts, mud holes, and baby-head rocks that eat unprepared riders alive. Add Three Sisters at mile 1.5 and The Wall's 11% pitch, and you're looking at a course that demands real bike handling."
       },
       "elevation": {
         "score": 2,
-        "explanation": "4,000 feet for the 62-mile isn't extreme on paper, but Michigan doesn't do sustained climbs\u2014it does punchy rollers that hit you 50+ times. More Belgian classic than Colorado mountain race. The cumulative fatigue sneaks up on you."
+        "explanation": "4,000 feet for the 62-mile isn't extreme on paper, but Michigan doesn't do sustained climbs—it does punchy rollers that hit you 50+ times. More Belgian classic than Colorado mountain race. The cumulative fatigue sneaks up on you."
       },
       "climate": {
         "score": 5,
-        "explanation": "April in Michigan is chaos. Historical race temps range from 20\u00b0F to 81\u00b0F\u2014a 61-degree swing. In bad years (2017, 2022), DNF rates hit 40%+. In good years, course records fall. You're gambling on weather no matter how well you train."
+        "explanation": "April in Michigan is chaos. Historical race temps range from 20°F to 81°F—a 61-degree swing. In bad years (2017, 2022), DNF rates hit 40%+. In good years, course records fall. You're gambling on weather no matter how well you train."
       },
       "altitude": {
         "score": 1,
-        "explanation": "Sea level. No altitude concerns. Your lungs work fine here\u2014it's your legs and your ability to handle cold that get tested."
+        "explanation": "Sea level. No altitude concerns. Your lungs work fine here—it's your legs and your ability to handle cold that get tested."
       },
       "adventure": {
         "score": 4,
-        "explanation": "The adventure here isn't Instagram vistas\u2014it's the unpredictability. Weather roulette. Sager Road survival stories. The post-winter reunion with the cycling community. Every Barry-Roubaix is different, and that chaos IS the adventure."
+        "explanation": "The adventure here isn't Instagram vistas—it's the unpredictability. Weather roulette. Sager Road survival stories. The post-winter reunion with the cycling community. Every Barry-Roubaix is different, and that chaos IS the adventure."
       },
       "logistics": {
         "score": 5,
@@ -182,7 +183,7 @@
       },
       "community": {
         "score": 5,
-        "explanation": "Hastings doesn't just tolerate cyclists\u2014it celebrates them. $1M+ economic impact. Blackrocks Brewery Street Party with bonfires and live music. 100% of beer proceeds go to Hastings Rotary. This isn't a race that happens despite the town; it's a race the town owns."
+        "explanation": "Hastings doesn't just tolerate cyclists—it celebrates them. $1M+ economic impact. Blackrocks Brewery Street Party with bonfires and live music. 100% of beer proceeds go to Hastings Rotary. This isn't a race that happens despite the town; it's a race the town owns."
       },
       "field_depth": {
         "score": 5,
@@ -194,7 +195,7 @@
       },
       "expenses": {
         "score": 5,
-        "explanation": "This is the Midwest\u2014not Steamboat, not Sun Valley. Hotels run $107/night. Flight to Grand Rapids is cheap from anywhere in the country. For millions of Midwesterners, it's a day trip."
+        "explanation": "This is the Midwest—not Steamboat, not Sun Valley. Hotels run $107/night. Flight to Grand Rapids is cheap from anywhere in the country. For millions of Midwesterners, it's a day trip."
       }
     },
     "biased_opinion": {
@@ -212,14 +213,14 @@
         "The weather: You can't control April Michigan. Bad years see 40%+ DNF rates.",
         "The registration: Sells out in 24 hours. You can't procrastinate.",
         "The distance options: Four distances means you need to pick the right one for your fitness.",
-        "The cold: If you're not prepared for 35\u00b0F conditions, you'll suffer.",
+        "The cold: If you're not prepared for 35°F conditions, you'll suffer.",
         "The technicality: Sager Road breaks bikes and breaks riders who aren't ready."
       ],
       "bottom_line": "If you want the world's largest gravel race experience with unmatched value and community support, Barry-Roubaix delivers. Just be ready for whatever weather Michigan throws at you."
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "Barry-Roubaix's 'World's Largest' status comes with asterisks. The weather is completely unpredictable\u2014you can train perfectly and still DNF if Michigan decides to throw 35\u00b0F windchill and snow at you. The registration sells out in 24 hours, so you can't wait to decide. And Sager Road breaks unprepared riders\u2014both physically and mentally.",
+      "reality": "Barry-Roubaix's 'World's Largest' status comes with asterisks. The weather is completely unpredictable—you can train perfectly and still DNF if Michigan decides to throw 35°F windchill and snow at you. The registration sells out in 24 hours, so you can't wait to decide. And Sager Road breaks unprepared riders—both physically and mentally.",
       "consequences": [
         "Weather roulette means you can't know conditions until 48 hours before. Your equipment strategy, nutrition approach, and pacing all depend on a forecast that might change.",
         "The registration window is brutal. If you don't sign up within 24 hours of opening, you're out. No second chances.",
@@ -227,7 +228,7 @@
         "The 100-mile Psycho Killer requires GPS navigation. If your device dies or you miss a turn, you're lost on an unmarked course.",
         "April in Michigan means training through a Midwest winter. Most of your preparation happens indoors. The weather you train in won't match race day."
       ],
-      "quote": "You can train perfectly and still DNF if Michigan decides to throw 35\u00b0F windchill at you.",
+      "quote": "You can train perfectly and still DNF if Michigan decides to throw 35°F windchill at you.",
       "expectation_reset": "Barry-Roubaix is a fantastic race that rewards preparation and punishes assumptions. If you're ready for technical terrain, cold weather, and complete unpredictability, you'll have an unforgettable experience. Just don't expect California sunshine or smooth gravel roads."
     },
     "tldr": {
@@ -241,8 +242,8 @@
       "alternatives": "If you want guaranteed good weather: Unbound (late May, Kansas heat). If you want smooth gravel: SBT GRVL (champagne gravel, altitude challenge). If you want less technical: Mid South (red dirt, weather lottery but less technical)."
     },
     "logistics": {
-      "airport": "Gerald R. Ford International (GRR), Grand Rapids\u201426 miles, 30 min drive",
-      "lodging_strategy": "Book immediately when registration opens\u2014hotels fill with racers. Holiday Inn Express Hastings ~$107/night. Sharp Park Campground 10% discount with code 'BarryRoubaix'. Grand Rapids hotels 30 minutes away with more availability.",
+      "airport": "Gerald R. Ford International (GRR), Grand Rapids—26 miles, 30 min drive",
+      "lodging_strategy": "Book immediately when registration opens—hotels fill with racers. Holiday Inn Express Hastings ~$107/night. Sharp Park Campground 10% discount with code 'BarryRoubaix'. Grand Rapids hotels 30 minutes away with more availability.",
       "food": "Hastings has restaurants but they're packed race weekend. Blackrocks Brewery Street Party post-race with bonfires, live music, food vendors.",
       "packet_pickup": "Cannonsburg Ski Area (April 12): Pre-ride, expo, $10,000+ gear giveaway. Hastings Ace Hardware (April 17): 2:00-8:00 PM. Race Morning (April 18): 5:30-9:45 AM at start line.",
       "parking": "Available near start line. Arrive early for best spots.",
@@ -266,6 +267,7 @@
       "meta_description": "Barry-Roubaix Hastings guide: 62-mile Michigan gravel race. World's largest gravel race with unpredictable April weather and technical Sager Road. Get traini...",
       "focus_keyword": "barry roubaix race",
       "slug": "barry-roubaix"
-    }
+    },
+    "validation_tier": "gold"
   }
 }

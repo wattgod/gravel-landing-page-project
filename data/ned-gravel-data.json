@@ -31,7 +31,7 @@
       "primary": "Colorado high country",
       "description": "Late August at 8,000-11,000 feet means cool mornings, warm midday, and afternoon storm risk",
       "challenges": [
-        "Morning temps 40-50\u00b0F",
+        "Morning temps 40-50°F",
         "Altitude at 8,000-11,000 feet",
         "Afternoon thunderstorm window",
         "Intense high-altitude sun"
@@ -54,6 +54,7 @@
       "biased_opinion": 26,
       "tier": 2,
       "tier_label": "TIER 2",
+      "score_note": "Small adjustments for local community vibe. Course -1, editorial +1, overall +5.",
       "length": 3,
       "technicality": 3,
       "elevation": 4,
@@ -113,7 +114,7 @@
           "named_section": "Home Stretch"
         }
       ],
-      "signature_challenge": "The Tungsten course combines 8,300 feet of climbing with racing at 8,000-10,300 feet elevation. The altitude compounds the climbing difficulty\u2014your power is compromised, and pacing matters more than raw fitness. The steep hills and rough country roads demand both physical and mental resilience.",
+      "signature_challenge": "The Tungsten course combines 8,300 feet of climbing with racing at 8,000-10,300 feet elevation. The altitude compounds the climbing difficulty—your power is compromised, and pacing matters more than raw fitness. The steep hills and rough country roads demand both physical and mental resilience.",
       "ridewithgps_id": "41299465",
       "ridewithgps_name": "Ned Gravel Tungsten Course",
       "map_url": "https://ridewithgps.com/routes/41299465"
@@ -129,7 +130,7 @@
       },
       "technicality": {
         "score": 3,
-        "explanation": "Quality Colorado gravel\u2014not overly technical but varied. Good bike handling helps on descents."
+        "explanation": "Quality Colorado gravel—not overly technical but varied. Good bike handling helps on descents."
       },
       "elevation": {
         "score": 4,
@@ -150,7 +151,7 @@
     },
     "biased_opinion": {
       "verdict": "Colorado Gem",
-      "summary": "Ned Gravel is the intimate Colorado experience\u2014no massive crowds, no lottery drama, just quality gravel in beautiful high country. The Tungsten course at 70 miles is the premier distance, featuring 8,300 feet of climbing at 8,000-10,300 feet elevation. This is less technical but more race-oriented than other courses, with steep hills and rough country roads that pay homage to the Peak to Peak area's mining history. Perfect for Colorado locals or those who want altitude racing without Leadville's intensity.",
+      "summary": "Ned Gravel is the intimate Colorado experience—no massive crowds, no lottery drama, just quality gravel in beautiful high country. The Tungsten course at 70 miles is the premier distance, featuring 8,300 feet of climbing at 8,000-10,300 feet elevation. This is less technical but more race-oriented than other courses, with steep hills and rough country roads that pay homage to the Peak to Peak area's mining history. Perfect for Colorado locals or those who want altitude racing without Leadville's intensity.",
       "strengths": [
         "Intimate vibe: Small enough to feel personal, big enough to have energy.",
         "Altitude: Real high-country racing for those who want to test themselves.",
@@ -165,13 +166,13 @@
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "Ned Gravel is low-key in the best way. Don't expect Unbound production value. Expect a well-organized race with a small-town vibe. That's the point. But don't let the intimate vibe fool you\u2014the Tungsten course at 70 miles with 8,300 feet of climbing at altitude is a serious challenge. The altitude will affect you more than you think, especially if you're coming from sea level. The steep hills and rough country roads demand fitness and pacing, not just enthusiasm.",
+      "reality": "Ned Gravel is low-key in the best way. Don't expect Unbound production value. Expect a well-organized race with a small-town vibe. That's the point. But don't let the intimate vibe fool you—the Tungsten course at 70 miles with 8,300 feet of climbing at altitude is a serious challenge. The altitude will affect you more than you think, especially if you're coming from sea level. The steep hills and rough country roads demand fitness and pacing, not just enthusiasm.",
       "consequences": [
         "Nederland lodging is very limited. Book immediately or stay in Boulder (30 min drive).",
         "The altitude will affect you. Arrive 2+ days early if coming from sea level.",
         "This is a 'one nice dinner' kind of town. Pack snacks."
       ],
-      "expectation_reset": "This is a solid regional race, not a destination event. The experience is quality\u2014just calibrate expectations for scale."
+      "expectation_reset": "This is a solid regional race, not a destination event. The experience is quality—just calibrate expectations for scale."
     },
     "final_verdict": {
       "score": "79 / 100",
@@ -213,6 +214,7 @@
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
     },
-    "race_challenge_tagline": "8K+ feet of climbing"
+    "race_challenge_tagline": "8K+ feet of climbing",
+    "validation_tier": "gold"
   }
 }

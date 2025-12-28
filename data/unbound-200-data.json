@@ -28,7 +28,7 @@
     },
     "climate": {
       "primary": "Flint Hills heat",
-      "description": "June brings 85-95\u00b0F days with high humidity",
+      "description": "June brings 85-95°F days with high humidity",
       "challenges": [
         "Heat adaptation critical",
         "Hydration demands extreme",
@@ -53,6 +53,7 @@
       "tier": 1,
       "tier_label": "TIER 1",
       "tier_note": "Lifetime Grand Prix flagship event - THE race by which all gravel events are measured",
+      "score_note": "THE gravel race. Editorial +5 and overall +13 for flagship status and cultural significance.",
       "length": 5,
       "technicality": 3,
       "elevation": 3,
@@ -111,7 +112,7 @@
     "ratings_breakdown": {
       "prestige": {
         "score": 5,
-        "explanation": "This is the race. The one everyone knows. Finishing Unbound carries weight\u2014not because of Instagram, but because riders know what it takes. It's the benchmark. The Ironman of gravel. If you're serious about this sport, you either want to do this race or you've already done it and are deciding if you want to go back."
+        "explanation": "This is the race. The one everyone knows. Finishing Unbound carries weight—not because of Instagram, but because riders know what it takes. It's the benchmark. The Ironman of gravel. If you're serious about this sport, you either want to do this race or you've already done it and are deciding if you want to go back."
       },
       "length": {
         "score": 5,
@@ -119,15 +120,15 @@
       },
       "technicality": {
         "score": 3,
-        "explanation": "Not a technical course by modern gravel standards\u2014no white-knuckle descents, minimal singletrack. But chunky limestone, cattle guards, and the occasional muddy section (in wet years) demand bike-handling confidence. The challenge isn't navigating; it's maintaining speed on rough surfaces for 200 miles without breaking yourself or your equipment."
+        "explanation": "Not a technical course by modern gravel standards—no white-knuckle descents, minimal singletrack. But chunky limestone, cattle guards, and the occasional muddy section (in wet years) demand bike-handling confidence. The challenge isn't navigating; it's maintaining speed on rough surfaces for 200 miles without breaking yourself or your equipment."
       },
       "elevation": {
         "score": 3,
-        "explanation": "10,000+ feet sounds intimidating. It's not. There are no sustained climbs\u2014just constant rolling terrain. Think: punchy 2-5% grades that never stop. The Flint Hills don't let you settle into a rhythm. You're either accelerating out of a dip or grinding over a rise. The cumulative fatigue is real, but this isn't climbing in the traditional sense."
+        "explanation": "10,000+ feet sounds intimidating. It's not. There are no sustained climbs—just constant rolling terrain. Think: punchy 2-5% grades that never stop. The Flint Hills don't let you settle into a rhythm. You're either accelerating out of a dip or grinding over a rise. The cumulative fatigue is real, but this isn't climbing in the traditional sense."
       },
       "climate": {
         "score": 5,
-        "explanation": "June in Kansas is a lottery. Best case: 75\u00b0F and overcast. Worst case: 95\u00b0F, full sun, and humidity that makes breathing feel expensive. Heat adaptation isn't optional\u2014it's the difference between finishing strong and crawling to the line. The unrelenting sun exposure, combined with duration, makes this one of the most climate-punishing gravel races in North America."
+        "explanation": "June in Kansas is a lottery. Best case: 75°F and overcast. Worst case: 95°F, full sun, and humidity that makes breathing feel expensive. Heat adaptation isn't optional—it's the difference between finishing strong and crawling to the line. The unrelenting sun exposure, combined with duration, makes this one of the most climate-punishing gravel races in North America."
       },
       "altitude": {
         "score": 1,
@@ -135,12 +136,12 @@
       },
       "adventure": {
         "score": 5,
-        "explanation": "The Flint Hills are stunning\u2014big sky, endless horizons, wildflowers if you're lucky. But 'adventure' here means isolation. Miles 80-140 feel remote. If something goes wrong (mechanicals, bonking, existential crisis), you're managing it yourself. Aid stations are sparse. The course is beautiful in a 'this could go very wrong' kind of way."
+        "explanation": "The Flint Hills are stunning—big sky, endless horizons, wildflowers if you're lucky. But 'adventure' here means isolation. Miles 80-140 feel remote. If something goes wrong (mechanicals, bonking, existential crisis), you're managing it yourself. Aid stations are sparse. The course is beautiful in a 'this could go very wrong' kind of way."
       }
     },
     "biased_opinion": {
       "verdict": "Icon",
-      "summary": "Unbound is gravel racing's Mount Everest\u2014not because it's the hardest course, but because it's the race that defines the sport. Riders don't 'do' Unbound casually. They plan for it, obsess over heat protocols, and show up knowing that crossing the line in Emporia means something. The course itself isn't revolutionary\u2014rolling terrain, gravel, heat. What makes it legendary is the field, the atmosphere, and the weight of the finish line. If you finish Unbound, you've earned it.",
+      "summary": "Unbound is gravel racing's Mount Everest—not because it's the hardest course, but because it's the race that defines the sport. Riders don't 'do' Unbound casually. They plan for it, obsess over heat protocols, and show up knowing that crossing the line in Emporia means something. The course itself isn't revolutionary—rolling terrain, gravel, heat. What makes it legendary is the field, the atmosphere, and the weight of the finish line. If you finish Unbound, you've earned it.",
       "strengths": [
         "The field: Pros, weekend warriors, and everyone in between. Starting alongside Keegan Swenson or Alexey Vermeulen is surreal.",
         "The finish line vibe: Bobby Wintle (race director) hugs every single finisher. People cry. It's real.",
@@ -155,18 +156,18 @@
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "Finishing Unbound doesn't make you a gravel legend. It makes you someone who survived 200 miles of gravel in Kansas. The Instagram glow lasts a week. The pride lasts longer. But the real reward? Knowing you showed up to the hardest day you could design for yourself\u2014and you didn't quit.",
+      "reality": "Finishing Unbound doesn't make you a gravel legend. It makes you someone who survived 200 miles of gravel in Kansas. The Instagram glow lasts a week. The pride lasts longer. But the real reward? Knowing you showed up to the hardest day you could design for yourself—and you didn't quit.",
       "consequences": [
         "You'll spend $1,500+ (entry, travel, lodging, gear). For one race.",
         "You'll train 10-20 hours a week for 12+ weeks. That's time away from family, friends, hobbies.",
-        "You'll probably suffer more than you've ever suffered on a bike. The heat, the distance, the relentless terrain\u2014none of it cares about your FTP."
+        "You'll probably suffer more than you've ever suffered on a bike. The heat, the distance, the relentless terrain—none of it cares about your FTP."
       ],
       "expectation_reset": "Unbound is a test of will, not watts. Show up undertrained, and you'll finish broken. Show up overtrained, and you'll finish tired. The sweet spot? Prepared, durable, and mentally ready to hurt for 10-14 hours. That's what training plans are for."
     },
     "final_verdict": {
       "score": "93 / 100",
       "one_liner": "The gravel race by which all others are measured.",
-      "should_you_race": "If you're asking whether Unbound is 'worth it,' the answer is probably yes\u2014but only if you're willing to commit to the training, the logistics, and the reality that this race will test every assumption you have about your durability. It's not fun. It's not easy. But it's unforgettable.",
+      "should_you_race": "If you're asking whether Unbound is 'worth it,' the answer is probably yes—but only if you're willing to commit to the training, the logistics, and the reality that this race will test every assumption you have about your durability. It's not fun. It's not easy. But it's unforgettable.",
       "alternatives": "If you want the prestige without the chaos: try Belgian Waffle Ride (similar vibe, better logistics). If you want the distance without the heat: try Gravel Worlds in August (still hard, slightly cooler). If you want to test yourself without the hype: try Mid South (intimate, brutal, beautiful)."
     },
     "logistics": {
@@ -338,6 +339,7 @@
       "min_elevation_ft": 0,
       "altitude_impact": "NONE - Altitude data not specified.",
       "acclimatization_required": false
-    }
+    },
+    "validation_tier": "gold"
   }
 }

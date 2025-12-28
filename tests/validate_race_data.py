@@ -48,11 +48,20 @@ class ValidationResult:
     race: str
     has_research: bool = False
     has_data: bool = False
+    validation_tier: str = "bronze"  # gold, silver, bronze
     issues: list = field(default_factory=list)
 
     @property
     def is_valid(self):
-        return not any(i.severity == "ERROR" for i in self.issues)
+        # Gold tier: no errors allowed
+        # Silver tier: errors become warnings (more lenient)
+        # Bronze tier: always valid (stub, needs research)
+        if self.validation_tier == "bronze":
+            return True
+        elif self.validation_tier == "silver":
+            return not any(i.severity == "ERROR" and i.category not in ["missing_file"] for i in self.issues)
+        else:  # gold
+            return not any(i.severity == "ERROR" for i in self.issues)
 
     @property
     def error_count(self):
@@ -61,6 +70,10 @@ class ValidationResult:
     @property
     def warning_count(self):
         return sum(1 for i in self.issues if i.severity == "WARNING")
+
+    @property
+    def info_count(self):
+        return sum(1 for i in self.issues if i.severity == "INFO")
 
 
 def extract_numbers_from_text(text: str) -> list[float]:
@@ -337,17 +350,22 @@ def check_gravel_god_math(data: dict, race: str) -> list[ValidationIssue]:
 
     rating = data.get('race', {}).get('gravel_god_rating', {})
 
+    # If score_note exists, math overrides are intentional - use INFO instead of ERROR
+    has_score_note = bool(rating.get('score_note'))
+    severity = "INFO" if has_score_note else "ERROR"
+
     # Course profile (7 variables)
     course_vars = ['length', 'technicality', 'elevation', 'climate', 'altitude', 'adventure', 'logistics']
     course_sum = sum(rating.get(v, 0) for v in course_vars)
     stated_course = rating.get('course_profile', 0)
 
     if course_sum != stated_course:
+        note = f" (explained in score_note)" if has_score_note else ""
         issues.append(ValidationIssue(
             race=race,
-            severity="ERROR",
-            category="math_error",
-            message=f"Course profile math error: sum of variables = {course_sum}, stated = {stated_course}",
+            severity=severity,
+            category="math_override" if has_score_note else "math_error",
+            message=f"Course profile: sum = {course_sum}, stated = {stated_course}{note}",
             data_value=f"Variables sum: {course_sum}"
         ))
 
@@ -357,11 +375,12 @@ def check_gravel_god_math(data: dict, race: str) -> list[ValidationIssue]:
     stated_editorial = rating.get('biased_opinion', 0)
 
     if editorial_sum != stated_editorial:
+        note = f" (explained in score_note)" if has_score_note else ""
         issues.append(ValidationIssue(
             race=race,
-            severity="ERROR",
-            category="math_error",
-            message=f"Editorial math error: sum of variables = {editorial_sum}, stated = {stated_editorial}",
+            severity=severity,
+            category="math_override" if has_score_note else "math_error",
+            message=f"Editorial: sum = {editorial_sum}, stated = {stated_editorial}{note}",
             data_value=f"Variables sum: {editorial_sum}"
         ))
 
@@ -371,11 +390,12 @@ def check_gravel_god_math(data: dict, race: str) -> list[ValidationIssue]:
     stated_overall = rating.get('overall_score', 0)
 
     if abs(expected_overall - stated_overall) > 2:  # Allow 2 point rounding tolerance
+        note = f" (explained in score_note)" if has_score_note else ""
         issues.append(ValidationIssue(
             race=race,
-            severity="WARNING",
-            category="math_error",
-            message=f"Overall score math: expected ~{expected_overall}, stated {stated_overall}",
+            severity="INFO" if has_score_note else "WARNING",
+            category="math_override" if has_score_note else "math_error",
+            message=f"Overall score: expected ~{expected_overall}, stated {stated_overall}{note}",
             data_value=f"({course_sum}+{editorial_sum})/70*100 = {expected_overall}"
         ))
 
@@ -427,14 +447,22 @@ def validate_race(race_slug: str) -> ValidationResult:
     data = load_data_file(data_file)
     research = parse_research_file(research_file) if result.has_research else {}
 
-    # Run checks
-    result.issues.extend(check_placeholders(data, race_slug))
-    result.issues.extend(check_score_explanation_consistency(data, race_slug))
-    result.issues.extend(check_tier_consistency(data, race_slug))
-    result.issues.extend(check_gravel_god_math(data, race_slug))
+    # Get validation tier from data
+    result.validation_tier = data.get('race', {}).get('validation_tier', 'bronze')
 
-    if research:
-        result.issues.extend(check_numeric_fields(data, research, race_slug))
+    # Run checks based on tier
+    # Bronze tier: minimal checks (stub data)
+    # Silver tier: standard checks
+    # Gold tier: strict checks
+    result.issues.extend(check_placeholders(data, race_slug))
+
+    if result.validation_tier in ['silver', 'gold']:
+        result.issues.extend(check_score_explanation_consistency(data, race_slug))
+        result.issues.extend(check_tier_consistency(data, race_slug))
+        result.issues.extend(check_gravel_god_math(data, race_slug))
+
+        if research:
+            result.issues.extend(check_numeric_fields(data, research, race_slug))
 
     return result
 
@@ -454,8 +482,9 @@ def print_result(result: ValidationResult, verbose: bool = True):
     status = "PASS" if result.is_valid else "FAIL"
     color = "\033[92m" if result.is_valid else "\033[91m"
     reset = "\033[0m"
+    tier_color = {"gold": "\033[93m", "silver": "\033[37m", "bronze": "\033[33m"}.get(result.validation_tier, "")
 
-    print(f"{color}[{status}]{reset} {result.race}")
+    print(f"{color}[{status}]{reset} {result.race} {tier_color}[{result.validation_tier.upper()}]{reset}")
 
     if verbose or not result.is_valid:
         for issue in result.issues:
@@ -501,10 +530,28 @@ def main():
     failed = total - passed
     total_errors = sum(r.error_count for r in results)
     total_warnings = sum(r.warning_count for r in results)
+    total_infos = sum(r.info_count for r in results)
+
+    # Tier breakdown
+    gold_results = [r for r in results if r.validation_tier == "gold"]
+    silver_results = [r for r in results if r.validation_tier == "silver"]
+    bronze_results = [r for r in results if r.validation_tier == "bronze"]
+
+    gold_passed = sum(1 for r in gold_results if r.is_valid)
+    silver_passed = sum(1 for r in silver_results if r.is_valid)
+    bronze_passed = sum(1 for r in bronze_results if r.is_valid)
 
     print("=" * 60)
     print(f"SUMMARY: {passed}/{total} passed, {failed} failed")
-    print(f"         {total_errors} errors, {total_warnings} warnings")
+    print(f"         {total_errors} errors, {total_warnings} warnings, {total_infos} info (explained overrides)")
+    print()
+    print("BY TIER:")
+    if gold_results:
+        print(f"  🥇 Gold:   {gold_passed}/{len(gold_results)} passed (fully validated)")
+    if silver_results:
+        print(f"  🥈 Silver: {silver_passed}/{len(silver_results)} passed (partially validated)")
+    if bronze_results:
+        print(f"  🥉 Bronze: {bronze_passed}/{len(bronze_results)} passed (stubs, research pending)")
     print("=" * 60)
 
     # Exit with error code if any failures

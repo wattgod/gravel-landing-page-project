@@ -208,6 +208,7 @@
       "altitude_impact": "SIGNIFICANT - Race starts at 6,000 ft and climbs to 9,000 ft. Acclimatization recommended.",
       "acclimatization_required": true
     },
-    "race_challenge_tagline": "10,600+ feet of climbing with 18-mile sustained effort"
+    "race_challenge_tagline": "10,600+ feet of climbing with 18-mile sustained effort",
+    "validation_tier": "gold"
   }
 }

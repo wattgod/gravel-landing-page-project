@@ -22,14 +22,14 @@
       ],
       "field_size": "4,000+ riders from 74 countries",
       "start_time": "Saturday early morning",
-      "registration": "Opens winter/spring. Cost: \u20ac80-200",
+      "registration": "Opens winter/spring. Cost: €80-200",
       "prize_purse": "Varies",
       "aid_stations": "Multiple feed zones with staffed stops plus town resupply",
       "cutoff_time": "18-20 hours"
     },
     "climate": {
       "primary": "Variable spring weather",
-      "description": "18-28\u00b0C (65-82\u00b0F), variable spring weather with morning cold, afternoon heat, possible mountain rain",
+      "description": "18-28°C (65-82°F), variable spring weather with morning cold, afternoon heat, possible mountain rain",
       "challenges": [
         "Temperature swings throughout the day",
         "Mountain weather unpredictability",
@@ -39,7 +39,7 @@
     },
     "terrain": {
       "primary": "Rocky Mediterranean gravel with forest singletrack",
-      "surface": "Rocky Mediterranean gravel, forest trails, technical descents\u2014not smooth gravel",
+      "surface": "Rocky Mediterranean gravel, forest trails, technical descents—not smooth gravel",
       "gravel_percentage": 85,
       "pavement_percentage": 15,
       "technical_rating": 4,
@@ -83,7 +83,7 @@
     "history": {
       "founded": 2019,
       "founder": "Local Girona cycling community",
-      "origin_story": "Born in Girona\u2014where WorldTour pros live and train. Exploded from grassroots to Europe's largest gravel event in four years.",
+      "origin_story": "Born in Girona—where WorldTour pros live and train. Exploded from grassroots to Europe's largest gravel event in four years.",
       "notable_moments": [
         "2022: Joined UCI Gravel World Series",
         "2023: 4,000+ participants from 74 countries",
@@ -93,7 +93,7 @@
       "random_facts": [
         "4,000+ riders from 74 countries",
         "WorldTour pros cross over to race",
-        "Girona is cycling's spiritual home\u2014where Poga\u010dar trains",
+        "Girona is cycling's spiritual home—where Pogačar trains",
         "UCI Gravel World Series event",
         "Equal prize purse men/women"
       ]
@@ -162,7 +162,7 @@
       },
       "adventure": {
         "score": 5,
-        "explanation": "Girona is cycling's spiritual home. Riding trails where Poga\u010dar trains. Night racing through Pyrenean foothills. This is bucket-list terrain."
+        "explanation": "Girona is cycling's spiritual home. Riding trails where Pogačar trains. Night racing through Pyrenean foothills. This is bucket-list terrain."
       },
       "logistics": {
         "score": 4,
@@ -174,7 +174,7 @@
       },
       "experience": {
         "score": 5,
-        "explanation": "You'll remember Traka. The night riding. The Pyrenean views. The moment you realize you're on the same roads Poga\u010dar trains on."
+        "explanation": "You'll remember Traka. The night riding. The Pyrenean views. The moment you realize you're on the same roads Pogačar trains on."
       },
       "community": {
         "score": 5,
@@ -182,11 +182,11 @@
       },
       "field_depth": {
         "score": 5,
-        "explanation": "WorldTour pros mix with weekend warriors. The field depth is genuine\u2014this is where European gravel's best show up."
+        "explanation": "WorldTour pros mix with weekend warriors. The field depth is genuine—this is where European gravel's best show up."
       },
       "value": {
         "score": 3,
-        "explanation": "\u20ac80-200 entry is reasonable for European events. But transatlantic travel adds significant cost for US riders."
+        "explanation": "€80-200 entry is reasonable for European events. But transatlantic travel adds significant cost for US riders."
       },
       "expenses": {
         "score": 3,
@@ -195,8 +195,8 @@
     },
     "biased_opinion": {
       "verdict": "ESSENTIAL EUROPEAN",
-      "summary": "If you're serious about gravel and have any connection to European cycling culture, Traka is a must. It's not just a race\u2014it's a pilgrimage to the sport's spiritual home. Where else can you suffer on the same roads that Poga\u010dar trains on?",
-      "quote": "Europe's Unbound\u2014and arguably more technical.",
+      "summary": "If you're serious about gravel and have any connection to European cycling culture, Traka is a must. It's not just a race—it's a pilgrimage to the sport's spiritual home. Where else can you suffer on the same roads that Pogačar trains on?",
+      "quote": "Europe's Unbound—and arguably more technical.",
       "strengths": [
         "The location: Girona is cycling heaven. The race is the excuse; the destination is the reward.",
         "The international field: 74 countries. This isn't a regional race.",
@@ -207,7 +207,7 @@
         "Crowded early kilometers: 4,000 riders creates bottlenecks",
         "Night racing reality: The 360 almost certainly means riding through darkness"
       ],
-      "bottom_line": "Traka is Europe's Unbound\u2014and arguably more technical. If European gravel is on your bucket list, this is the defining event."
+      "bottom_line": "Traka is Europe's Unbound—and arguably more technical. If European gravel is on your bucket list, this is the defining event."
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
@@ -233,8 +233,8 @@
     },
     "logistics": {
       "airport": "Barcelona (BCN) - 100km / Girona (GRO) - 12km",
-      "lodging_strategy": "Book 6+ months early. Race week is chaos. \u20ac100-200/night. Consider Barcelona + train to Girona.",
-      "food": "Girona has excellent restaurants. Book reservations race week\u2014town fills with cyclists.",
+      "lodging_strategy": "Book 6+ months early. Race week is chaos. €100-200/night. Consider Barcelona + train to Girona.",
+      "food": "Girona has excellent restaurants. Book reservations race week—town fills with cyclists.",
       "packet_pickup": "Friday in Girona. Expo atmosphere, budget 90 minutes.",
       "parking": "Limited. Public transport or hotel shuttles recommended.",
       "official_site": "https://trfraka.com"
@@ -257,6 +257,7 @@
       "meta_description": "Traka 360 Girona guide: 360km Spanish gravel race (TIER 1). Europe's Unbound with 10,000+ ft climbing. Get training plans & course breakdown.",
       "focus_keyword": "traka 360 race",
       "slug": "traka-360"
-    }
+    },
+    "validation_tier": "gold"
   }
 }
