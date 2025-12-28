@@ -11,7 +11,7 @@
       "location_badge": "BENTONVILLE, ARKANSAS",
       "county": "Benton County / McDonald County (crosses into Missouri)",
       "date": "Late October annually",
-      "date_specific": "2025: October 18",
+      "date_specific": "2025: October 5 (festival Oct 3-5)",
       "terrain_types": [
         "Ozark gravel",
         "Punchy climbs",
@@ -37,7 +37,7 @@
     },
     "terrain": {
       "primary": "Ozark Mountain gravel with punchy repeated climbs",
-      "surface": "Variable gravel quality\u2014smooth to chunky, with some technical sections",
+      "surface": "Chunky, loose, and sharp gravel over hardpack. Higher mechanical failure rate than typical races.",
       "technical_rating": 4,
       "features": [
         "Sugar Creek descent",
@@ -76,24 +76,25 @@
       "character": "Relentless punchy climbing with technical descents. The Ozarks don't have long climbs\u2014they have endless short ones.",
       "suffering_zones": [
         {
-          "mile": 25,
-          "label": "Welcome to the Ozarks",
-          "desc": "The punchy climbs start adding up. You realize there's no flat.",
-          "terrain_detail": "Key section at mile 25",
-          "named_section": "Welcome to the Ozarks"
+          "mile": 21,
+          "label": "Suicide Hill",
+          "desc": "The legendary Suicide Hill. Brutal reputation earned through years of carnage. 90° corners with descents—straight down into a turn at the bottom. Sharp gravel increases crash and puncture risk.",
+          "terrain_detail": "Steep descent with 90° turn at bottom, sharp loose gravel",
+          "named_section": "Suicide Hill"
         },
         {
           "mile": 55,
-          "label": "War Eagle Territory",
-          "desc": "Deep in the course. The climbing feels personal.",
-          "terrain_detail": "Key section at mile 55",
-          "named_section": "War Eagle Territory"
+          "label": "Missouri Border Grind",
+          "desc": "You've crossed into Missouri. The punchy 13%+ grade climbs keep coming. No sustained efforts—just repeated accelerations that shred diesel riders.",
+          "terrain_detail": "Punchy climbs 13%+ grade, crosses state line",
+          "named_section": "Missouri Section"
         },
         {
-          "mile": 85,
-          "label": "Final Challenge",
-          "desc": "Legs are shattered but the Ozarks aren't done with you yet.",
-          "terrain_detail": "Key section at mile 85"
+          "mile": 80,
+          "label": "Exposed Gravel Stretch",
+          "desc": "Two miles of exposed threshold effort at 9-10 mph pace. 20+ mph wind gusts with nowhere to hide. The finish is close but these final 20 miles will empty you.",
+          "terrain_detail": "Exposed windy section, threshold pace required",
+          "named_section": "The Finishing Grind"
         }
       ],
       "signature_challenge": "The accumulated vertical. 9,500 feet sounds manageable until you realize it comes in 50+ individual climbs. Death by a thousand punches.",

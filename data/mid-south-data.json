@@ -7,7 +7,7 @@
     "race_challenge_tagline": "unpredictable weather and potential red dirt chaos",
     "vitals": {
       "distance_mi": 100,
-      "elevation_ft": 4500,
+      "elevation_ft": 6000,
       "location": "Stillwater, Oklahoma",
       "location_badge": "STILLWATER, OKLAHOMA",
       "county": "Payne County",
@@ -38,7 +38,7 @@
     },
     "terrain": {
       "primary": "Rolling red clay gravel",
-      "surface": "Oklahoma red clay\u2014fast when dry, adhesive mud when wet",
+      "surface": "98-99% unpaved Oklahoma red clay (iron oxide). Hard-pack when dry = slick center tread tires work well. 'Peanut butter mud' when wet—wheels stop spinning. Not the chunky gravel of Unbound.",
       "technical_rating": 2,
       "features": [
         "Constant rolling terrain",
@@ -64,9 +64,9 @@
       "logistics": 3
     },
     "history": {
-      "founded": 2013,
-      "founder": "Bobby and Crystal Wintle (owners of District Bicycles)",
-      "origin_story": "Started with 121 riders exploring Oklahoma's red dirt roads. Bobby Wintle was inspired by Dirty Kanza and relocated to Stillwater to open District Bicycles and create his own gravel event. The finish-line hug tradition started year one\u2014Bobby hugs every single finisher. The event grew explosively: 350 riders year two, 1,000 by year five, 2,500+ today. Renamed 'The Mid South' to reflect its evolution beyond just the 100-mile distance.",
+      "founded": 2006,
+      "founder": "Bobby and Crystal Wintle (owners of District Bicycles, 712 South Main)",
+      "origin_story": "Started in 2006 as 'Land Run 100' with 121 riders, 107 miles, 6,000+ ft elevation. Bobby discovered 'every direction two miles out of Stillwater we've got some of the best dirt roads on planet Earth.' Opened District Bicycles in Sept 2008. Renamed to 'The Mid South' in 2013. The finish-line hug tradition started year one—Bobby hugs every single finisher. 'I still need my Bobby Hug!' is a common refrain from returning riders who travel 1,000+ miles just for this race. The event grew explosively to 2,500+ today.",
       "notable_moments": [
         "2019: Fast, dry conditions encouraged tactical pack racing",
         "2024: Record-fast edition with average speeds over 20mph for front groups",

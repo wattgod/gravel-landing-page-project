@@ -12,7 +12,7 @@
       "location_badge": "DEL MAR, CALIFORNIA",
       "county": "San Diego County",
       "date": "Late April annually",
-      "date_specific": "2025: April 27 (completed). 2026: TBD (registration opened October 14, 2025)",
+      "date_specific": "2025: April 27 (completed). 2026: May 2-3, 2026",
       "terrain_types": [
         "50% pavement",
         "50% unroad (dirt, gravel, single-track, sand, rock gardens)",
@@ -38,7 +38,7 @@
     },
     "terrain": {
       "primary": "Mixed unroad and pavement",
-      "surface": "50% pavement, 50% unroad\u2014dirt, gravel, single-track, sand, water crossings, rock gardens",
+      "surface": "60-70% pavement, 30-40% unroad—dirt, gravel, single-track, sand, water crossings, rock gardens. MTB experience STRONGLY recommended.",
       "technical_rating": 5,
       "features": [
         "Single-track sections",
