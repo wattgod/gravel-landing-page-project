@@ -88,14 +88,27 @@ def generate_neo_brutalist_html(race):
             exp = ratings[var]
             course_explanations_html += f"<p><strong>{var.title()} ({exp['score']}/5):</strong> {exp['explanation']}</p>"
 
-    # Build Editorial/Biased Opinion ratings
-    opinion_vars = ['prestige', 'race_quality', 'experience', 'community', 'field_depth', 'value', 'expenses']
+    # Build Editorial/Biased Opinion ratings - show ALL dimension scores with explanations
     opinion_ratings_html = ""
-    for var in opinion_vars:
-        if var in ratings:
-            score = ratings[var]['score']
+    opinion_explanations_html = ""
+
+    # All dimensions we want to show in the editorial section
+    all_dims = [
+        ('prestige', 'Prestige'),
+        ('length', 'Length'),
+        ('technicality', 'Technicality'),
+        ('elevation', 'Elevation'),
+        ('climate', 'Climate'),
+        ('altitude', 'Altitude'),
+        ('adventure', 'Adventure'),
+        ('logistics', 'Logistics')
+    ]
+
+    for key, label in all_dims:
+        # Get score from gravel_god_rating
+        score = rating.get(key, 0)
+        if score > 0:
             pct = score * 20
-            label = var.replace('_', ' ').title()
             opinion_ratings_html += f'''
             <div class="rating-metric">
                 <span class="rating-metric-label">{label}</span>
@@ -104,13 +117,9 @@ def generate_neo_brutalist_html(race):
                 </div>
                 <span class="rating-metric-value">{score}/5</span>
             </div>'''
-
-    opinion_explanations_html = ""
-    for var in opinion_vars:
-        if var in ratings:
-            exp = ratings[var]
-            label = var.replace('_', ' ').title()
-            opinion_explanations_html += f"<p><strong>{label} ({exp['score']}/5):</strong> {exp['explanation']}</p>"
+            # Get explanation from ratings_breakdown if available
+            if key in ratings and 'explanation' in ratings[key]:
+                opinion_explanations_html += f"<p><strong>{label} ({score}/5):</strong> {ratings[key]['explanation']}</p>"
 
     # Build history timeline
     timeline_html = ""
