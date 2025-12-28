@@ -728,7 +728,8 @@ Good luck! You've got this. 🚴"""
     workouts_dir = Path(output_dir) / "workouts"
     workouts_dir.mkdir(parents=True, exist_ok=True)
     
-    filename = f"RACE_DAY_-_{race_name.replace(' ', '_')}.zwo"
+    # Standardized filename (no race name for drag-and-drop compatibility)
+    filename = "RACE_DAY.zwo"
     output_path = workouts_dir / filename
     
     # Escape XML
