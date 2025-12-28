@@ -191,7 +191,6 @@
   This is "Rebuild the Frame" ─ master the movement first.
   Quality > load. Every rep clean.
   If form breaks → reduce reps or rest longer.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -240,7 +239,6 @@
 ★ NOTES
   Light load introduced. Same movement quality standard.
   The weight should feel like "assistance" not "challenge."
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -290,7 +288,6 @@
 ★ NOTES
   Final Red phase. Testing readiness for Yellow.
   If goblet squat + push-up feel solid → you're ready.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -348,7 +345,6 @@
 ★ NOTES
   Learn the hinge. Dowel maintains 3 points of contact.
   Row from whatever angle lets you keep shoulders packed.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -407,7 +403,6 @@
 ★ NOTES
   Load the hinge. Keep spine neutral throughout.
   Inverted row > band row when possible.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -467,7 +462,6 @@
 ★ NOTES
   Ready for Yellow. RDL form should be locked in.
   If hinge feels solid under moderate load → progress.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -528,7 +522,6 @@
   → BSS hurting your knee? Swap to Goblet Squat, same reps.
   → KB jump too big? Add reps or 2-sec pause before adding weight.
   → Unilateral failing? Go bilateral. Strength > wobble.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -591,7 +584,6 @@
   → Unilateral failing? Go bilateral. Strength > wobble.
   → KB jump too big? Add reps or pause before adding weight.
   → Week 12: Test day OR deload (cut volume 30%).
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -653,7 +645,6 @@
   → SL RDL wobbling? Switch to Conventional RDL.
   → No pull-up bar? Inverted row IS the exercise.
   → KB jump too big? Add reps or pause before adding weight.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -720,7 +711,6 @@
   → No pull-up bar? Steep inverted row with pause at top.
   → KB jump too big? Add reps or pause before adding weight.
   → Week 12: Test day OR deload (cut volume 30%).
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -785,7 +775,6 @@
   → Can't do plyo push-up? Fast regular push-up works.
   → KB jump too big? Add reps or pause before adding weight.
   → If tired, skip a set. Quality only.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -841,7 +830,6 @@
   You're transferring strength → pedal power.
   Feel athletic after this, not destroyed.
   → Unilateral failing? Go bilateral. Strength > wobble.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -896,7 +884,6 @@
   Minimal effective dose. Don't dig a hole.
   Race week? Consider skipping or 1 set only.
   You're sharp. Stay sharp. Trust the work.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -962,7 +949,6 @@
   → No pull-up bar? Inverted row IS the exercise.
   → KB jump too big? Add reps or pause before adding weight.
   → If form breaks → lighter weight or more rest.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -1020,7 +1006,6 @@
   Feel athletic, not fatigued.
   → SL DL to Hop not clicking? Broad jump works.
   → No pull-up bar? Inverted row IS the exercise.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
@@ -1077,7 +1062,6 @@
   Minimal dose. Maximum freshness.
   Race week? Consider skipping or 1 set only.
   Trust the work you've done.
-  → Full guide: https://gravelgod.com/strength
 ```
 
 ---
