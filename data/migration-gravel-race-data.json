@@ -7,7 +7,7 @@
     "race_challenge_tagline": "heat, altitude, dust, distance, and wildlife over four consecutive days",
     "vitals": {
       "distance_mi": 404,
-      "elevation_ft": 39000,
+      "elevation_ft": 26000,
       "location": "Maasai Mara, Kenya",
       "location_badge": "MAASAI MARA, KENYA",
       "county": "",
@@ -147,7 +147,7 @@
       },
       "elevation": {
         "score": 4,
-        "explanation": "12,000m total across 4 days. Stage 3 delivers the climbing. Highland terrain reaches 2,800m."
+        "explanation": "~8,000m (~26,000 ft) total across 4 days. Stage 3 delivers the climbing. Highland terrain reaches 2,800m."
       },
       "climate": {
         "score": 5,

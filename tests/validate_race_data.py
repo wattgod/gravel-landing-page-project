@@ -114,8 +114,9 @@ def parse_research_file(filepath: Path) -> dict:
         if any(term in line_lower for term in ['elevation', 'climbing', 'gain', 'vert']):
             numbers = extract_numbers_from_text(line)
             # Filter to reasonable elevation values (100-50000 ft or 30-15000 m)
+            # Exclude likely year values (2015-2030)
             for n in numbers:
-                if 100 <= n <= 50000:
+                if 100 <= n <= 50000 and not (2015 <= n <= 2030):
                     facts['elevations'].append(n)
 
         # Location extraction
@@ -241,23 +242,35 @@ def check_numeric_fields(data: dict, research: dict, race: str) -> list[Validati
     research_elevations = research.get('elevations', [])
 
     if data_elevation and research_elevations:
-        # Find the closest research elevation
+        # Find the closest research elevation (considering unit conversion m->ft)
         min_diff = float('inf')
         closest = None
+        closest_unit = "ft"
         for re in research_elevations:
-            diff = abs(data_elevation - re) / max(data_elevation, re)
-            if diff < min_diff:
-                min_diff = diff
+            # Try direct comparison (both in feet)
+            diff_ft = abs(data_elevation - re) / max(data_elevation, re)
+            # Try m->ft conversion (research might be in meters)
+            re_as_ft = re * 3.281
+            diff_m = abs(data_elevation - re_as_ft) / max(data_elevation, re_as_ft)
+
+            if diff_ft < min_diff:
+                min_diff = diff_ft
                 closest = re
+                closest_unit = "ft"
+            if diff_m < min_diff:
+                min_diff = diff_m
+                closest = re
+                closest_unit = "m"
 
         if min_diff > ELEVATION_TOLERANCE_PCT:
+            unit_note = f" ({closest * 3.281:.0f} ft)" if closest_unit == "m" else ""
             issues.append(ValidationIssue(
                 race=race,
                 severity="ERROR",
                 category="elevation_mismatch",
                 message=f"Elevation differs by {min_diff*100:.0f}% from research",
                 data_value=f"{data_elevation:,} ft",
-                research_value=f"{closest:,.0f} ft (closest found)"
+                research_value=f"{closest:,.0f} {closest_unit}{unit_note} (closest found)"
             ))
 
     # Check distance

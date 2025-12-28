@@ -7,7 +7,7 @@
     "race_challenge_tagline": "volcanic terrain and unpredictable Iceland weather",
     "vitals": {
       "distance_mi": 124,
-      "elevation_ft": 9800,
+      "elevation_ft": 6400,
       "location": "Hvolsv\u00f6llur, Southern Iceland",
       "location_badge": "HVOLSV\u00d6LLUR, SOUTHERN ICELAND",
       "county": "",
@@ -58,11 +58,12 @@
       "acclimatization_required": false
     },
     "gravel_god_rating": {
-      "overall_score": 80,
+      "overall_score": 74,
       "course_profile": 25,
-      "biased_opinion": 28,
+      "biased_opinion": 27,
       "tier": 2,
       "tier_label": "TIER 2",
+      "tier_note": "UCI Gravel World Series event - bucket-list adventure prestige override",
       "length": 4,
       "technicality": 4,
       "elevation": 3,
@@ -141,7 +142,7 @@
       },
       "elevation": {
         "score": 3,
-        "explanation": "3,000m is significant but not extreme. Challenge is surface, not gradient. Expect to walk sections."
+        "explanation": "~1,950m (6,400 ft) of climbing. Not extreme, but combined with volcanic terrain it's demanding. Challenge is surface, not gradient."
       },
       "climate": {
         "score": 5,
