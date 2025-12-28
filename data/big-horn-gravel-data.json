@@ -3,170 +3,195 @@
     "name": "Big Horn Gravel",
     "slug": "big-horn-gravel",
     "display_name": "Big Horn Gravel",
-    "tagline": "Wyoming wilderness gravel. Where the mountains meet the high plains.",
+    "tagline": "High, rough, and lonesome. Colorado's rowdiest gravel race.",
+    "race_challenge_tagline": "10,000 ft climbing at altitude with brutal opening 3,000 ft wall",
     "vitals": {
-      "distance_mi": 100,
-      "elevation_ft": 8000,
-      "location": "Sheridan, Wyoming",
-      "location_badge": "SHERIDAN, WYOMING",
-      "county": "Sheridan County",
-      "date": "Early August annually",
-      "date_specific": "2025: August 2",
+      "distance_mi": 85,
+      "elevation_ft": 10000,
+      "location": "Gypsum, Colorado",
+      "location_badge": "GYPSUM, COLORADO",
+      "county": "Eagle County",
+      "date": "Late June annually",
+      "date_specific": "2025: June 22 (Sunday) - First high-altitude race of the season",
       "terrain_types": [
-        "High plains gravel",
-        "Mountain foothills",
-        "Forest service roads",
-        "Open range"
+        "Rugged singletrack",
+        "Alpine mountain roads",
+        "Backcountry BLM/Jeep roads",
+        "County gravel",
+        "White River National Forest"
       ],
-      "field_size": "400+ riders",
-      "start_time": "Saturday 6:00 AM",
-      "registration": "Opens winter/spring. Cost: ~$150",
-      "prize_purse": "Varies",
-      "aid_stations": "Multiple aid stations along course",
-      "cutoff_time": "14 hours"
+      "distance_options": "85 mi 'Ram's Horn Escape', 50 mi 'Little Bighorn Loop', 20 mi 'Gravel Curious'",
+      "field_size": "~500 riders (2024), growing from 250 in earlier years",
+      "start_time": "Gypsum Sports Complex, downtown Gypsum",
+      "registration": "Online via bighornevents.com, $100-200 depending on distance",
+      "prize_purse": "Dylan Johnson noted biggest podium check of his career",
+      "aid_stations": "85mi: 3 official + 1 neutral water zone. 50mi: 2 official + 1 neutral. All support is neutral - NO crews allowed on course.",
+      "cutoff_time": "Checkpoint cutoffs at aid stations (exact times in rider guide)"
     },
     "climate": {
-      "primary": "High plains Wyoming",
-      "description": "August brings warm days, cool mornings, and the ever-present Wyoming wind",
+      "primary": "High altitude Colorado",
+      "description": "Late June at 7-11K ft. Chilly starts (40s-50s°F), warming to 70s-80s°F in exposed valleys. Very strong UV at altitude.",
       "challenges": [
-        "Wind is constant",
-        "High-altitude sun exposure",
-        "Temperature swings 45-85\u00b0F",
-        "Afternoon storm potential"
+        "Big temperature swings (start vs afternoon)",
+        "Strong UV exposure above 9-10K ft",
+        "Dehydration and altitude stress",
+        "Long exposure at elevation compounds fatigue"
       ]
     },
     "terrain": {
-      "primary": "Big Horn Mountain foothills meeting high plains",
-      "surface": "Variable gravel\u2014maintained county roads to rougher forest service roads",
-      "technical_rating": 3,
+      "primary": "Rugged Jeep roads, singletrack, backcountry dirt",
+      "surface": "'High, rough, and lonesome' - mix of rugged singletrack, alpine mountain roads, backcountry dirt, county gravel, and rough Jeep/BLM roads. Conditions vary with weather ruts.",
+      "gravel_percentage": 95,
+      "pavement_percentage": 5,
+      "technical_rating": 5,
       "features": [
-        "Big Horn Mountain views",
-        "Open range terrain",
-        "Creek crossings",
-        "Rolling high plains"
+        "Opening 3,000 ft climb in first 13 miles",
+        "Rutted Jeep road descents",
+        "2 miles of new downhill singletrack",
+        "Swoopy bermed singletrack near finish",
+        "Tops out at ~11,000 ft"
       ]
     },
+    "altitude": {
+      "start_elevation_ft": 6500,
+      "max_elevation_ft": 11000,
+      "min_elevation_ft": 6300,
+      "altitude_impact": "SEVERE - Long exposure above 9-10K ft. Sea level riders report the combination of vert and elevation is what makes it such a 'tough one.'",
+      "acclimatization_required": true
+    },
     "gravel_god_rating": {
-      "overall_score": 80,
-      "course_profile": 30,
-      "biased_opinion": 41,
-      "tier": 2,
-      "tier_label": "TIER 2",
-      "prestige": 2,
+      "overall_score": 88,
+      "course_profile": 35,
+      "biased_opinion": 43,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "prestige": 3,
       "length": 4,
-      "technicality": 3,
-      "elevation": 4,
+      "technicality": 5,
+      "elevation": 5,
       "climate": 3,
-      "altitude": 3,
-      "adventure": 5
+      "altitude": 5,
+      "adventure": 5,
+      "logistics": 3
     },
     "history": {
       "founded": 2020,
-      "founder": "Local Wyoming gravel enthusiasts",
-      "origin_story": "Created to showcase the Big Horn Mountain region's incredible gravel roads and wild landscapes. Part of Wyoming's growing gravel scene.",
+      "founder": "Mike Brumbaugh and Jake Wells",
+      "origin_story": "Created to showcase White River National Forest gravel and bring a genuinely rough, high-country option to the early-season calendar. The Vegan Cyclist called it 'the best gravel race you've never heard of.' Dylan Johnson raced his drop bar MTB there with great success and got his biggest podium check ever.",
       "notable_moments": [
-        "Positioned as true backcountry adventure racing",
-        "Benefits from Wyoming's uncrowded wilderness",
-        "Growing reputation for authentic Western experience"
+        "Field grew from ~250 to ~500 riders by 2024",
+        "Dylan Johnson's biggest podium check of his career",
+        "Vegan Cyclist rode both courses back-to-back (130 mi / 15K vert)",
+        "Known as 'aggressive Colorado gravel' - drop-bar hardtail territory"
       ],
-      "reputation": "True Wyoming adventure. Remote, wild, and utterly beautiful."
+      "reputation": "The rowdiest gravel race in Colorado. More XC MTB than Midwest gravel. 'The best gravel race you've never heard of.'"
     },
     "course_description": {
-      "character": "Big sky, big views, big wind. Classic high-plains gravel with mountain backdrop.",
+      "character": "'A rowdy race with nearly 10,000 feet of climbing at elevation and a few miles of singletrack.' Rugged Jeep roads where 'you really need to keep your focus or you could crash pretty badly.'",
       "suffering_zones": [
         {
-          "mile": 30,
-          "label": "Wind Games Begin",
-          "desc": "Wyoming's famous wind starts testing your patience.",
-          "terrain_detail": "Open terrain where wind is a factor",
-          "named_section": "Wind Games Begin"
+          "mile": 0,
+          "label": "The Opening Wall",
+          "desc": "First 13 miles gain ~3,000 ft. The signature gut-punch that sets up your entire day. Many mid-pack riders blow up here by treating it like a short road climb instead of the opener of a 6-9 hour day.",
+          "terrain_detail": "Brutally steep, sustained opening climb on fairly rough roads",
+          "named_section": "The Opening Wall"
         },
         {
-          "mile": 55,
-          "label": "Remote Section",
-          "desc": "Miles from anything. Self-sufficiency matters.",
-          "terrain_detail": "Key section at mile 55",
-          "named_section": "Remote Section"
+          "mile": 35,
+          "label": "High Jeep-Road Sector",
+          "desc": "Rutted and rocky. Riders report needing 'to keep your focus or you could crash pretty badly.' Fatigue + rough surface = crashes and flats.",
+          "terrain_detail": "Ruts, rocks, high-speed descending",
+          "named_section": "The Focus Zone"
         },
         {
-          "mile": 80,
-          "label": "Mountain Shadows",
-          "desc": "The Big Horns loom. You're not done yet.",
-          "terrain_detail": "Key section at mile 80",
-          "named_section": "Mountain Shadows"
+          "mile": 75,
+          "label": "Final Singletrack & Berms",
+          "desc": "New ~2 mi downhill singletrack plus swoopy berms near finish. Even riders on hardtails call this 'rowdy' - ruts and berms testing tired handling and braking.",
+          "terrain_detail": "Technical singletrack descent on exhausted legs",
+          "named_section": "The Rowdy Finish"
         }
       ],
-      "signature_challenge": "The wind. Wyoming wind is relentless and unpredictable. Headwind miles feel twice as long. The isolation amplifies everything.",
-      "map_url": "https://ridewithgps.com/routes/48561741"
+      "signature_challenge": "The opening 3,000 ft in 13 miles is the signature gut-punch. Nearly every long-course discussion references that initial climb and how it sets up the rest of your day.",
+      "map_url": "https://www.bighornevents.com/race-day-gravel"
     },
     "ratings_breakdown": {
       "prestige": {
-        "score": 2,
-        "explanation": "Regional race without national recognition\u2014yet. As the event matures and word spreads, this could grow. Right now it's a hidden gem."
+        "score": 3,
+        "explanation": "Growing reputation but still 'the best gravel race you've never heard of.' Dylan Johnson and Vegan Cyclist coverage is raising the profile. Not yet Tier 1 prestige but climbing fast."
       },
       "length": {
         "score": 4,
-        "explanation": "100 miles in remote Wyoming terrain is serious. The combination of distance, wind, and isolation creates a proper challenge."
+        "explanation": "85 miles of rugged terrain at altitude. The 50-mile 'Little Bighorn Loop' is 'the most challenging course I've ever done' according to one rider. Distance is deceptive when every mile is rough."
       },
       "technicality": {
-        "score": 3,
-        "explanation": "Variable gravel quality but nothing overly technical. The challenge is duration and conditions, not bike handling."
+        "score": 5,
+        "explanation": "Frequently called 'rowdy,' 'aggressive,' and 'MTB-ish.' Dylan Johnson raced his drop bar MTB here. Ben Delaney switched from gravel bike to hardtail after getting beat up. This is not smooth gravel."
       },
       "elevation": {
-        "score": 4,
-        "explanation": "8,000 feet of climbing is meaningful, especially combined with altitude and wind. The terrain is rolling rather than steep."
+        "score": 5,
+        "explanation": "~10,000 ft total with 3,000 ft in the first 13 miles. The Ram's Horn Escape tops out around 11,000 ft. 'Even the winner said at a couple points she was crying it was so hard.'"
       },
       "climate": {
         "score": 3,
-        "explanation": "August Wyoming is generally pleasant for riding, but wind is ever-present. Prepare for exposure and temperature swings."
+        "explanation": "Late June at altitude means chilly starts, hot exposed valleys, and brutal UV. Temperature swings and sun exposure are the main risks."
       },
       "altitude": {
-        "score": 3,
-        "explanation": "Racing at 4,000-6,000+ feet. Not extreme but noticeable for sea-level riders. Arrive a day or two early."
+        "score": 5,
+        "explanation": "Start at 6,500 ft, top out at ~11,000 ft. Long exposure above 9-10K ft creates dehydration, sunburn, and altitude stress. Sea level riders get crushed."
       },
       "adventure": {
         "score": 5,
-        "explanation": "This is genuine Wyoming wilderness. Big Horn Mountains, open range, cowboy country. Few gravel races offer this level of authenticity."
+        "explanation": "White River National Forest, BLM backcountry, genuine wilderness. This is 'cowboy gravel' - remote, rough, and beautiful. True adventure racing."
+      },
+      "logistics": {
+        "score": 3,
+        "explanation": "Eagle County Regional (EGE) is right next to Gypsum. Denver (DEN) is the cheaper hub with I-70 drive. Gypsum is small - many stay in Eagle or Vail/Edwards."
       }
     },
     "biased_opinion": {
-      "verdict": "Hidden Gem",
-      "summary": "Big Horn Gravel delivers what many big races have lost: genuine adventure in actual wilderness. No crowds, no chaos, just you and the Wyoming landscape. If you want to feel small against something vast, this is your race.",
+      "verdict": "ROWDY SLEEPER HIT",
+      "summary": "Big Horn Gravel is what happens when you build a gravel race for people who think gravel races aren't hard enough. The 3,000 ft opening wall, the rutted Jeep roads, the technical singletrack - this is 'aggressive Colorado gravel' that makes pros switch to hardtails. Dylan Johnson got his biggest check here. The Vegan Cyclist calls it the best gravel race you've never heard of. It won't stay unknown for long.",
+      "quote": "'Just because a race is advertised as a gravel race does not necessarily mean that a gravel bike is the right bike for the job.' - Dylan Johnson",
       "strengths": [
-        "Authenticity: Real Wyoming, real remoteness, real adventure.",
-        "The scenery: Big Horn Mountains + high plains = stunning.",
-        "Low crowds: Intimate race with genuine community."
+        "The terrain: Genuinely rowdy. Drop-bar hardtail territory.",
+        "The challenge: 10K ft at altitude with technical surfaces. Real consequences.",
+        "The obscurity (for now): Small field, big payoff, growing fast."
       ],
       "weaknesses": [
-        "Obscurity: Not a resume race. Few people know it.",
-        "Logistics: Sheridan is remote. Plan your travel carefully.",
-        "The wind: Wyoming wind can make or break your day."
+        "The obscurity: Not a resume race yet. Few people outside Colorado know it.",
+        "The technicality: If you've only done smooth gravel, you'll suffer.",
+        "The opening wall: Blow up in the first 13 miles and your day is ruined."
       ],
-      "bottom_line": "For adventure seekers who want gravel racing in actual wilderness, Big Horn delivers. Not for those chasing prestige or Instagram clout."
+      "bottom_line": "If you want Colorado gravel that actually hurts, Big Horn delivers. This is not a destination race for Instagram. This is a destination race for suffering."
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "Sheridan, Wyoming is not a cycling destination. You're going specifically for this race into genuine backcountry. That's the beauty and the challenge.",
+      "reality": "The opening 3,000 ft climb in 13 miles will wreck your race if you treat it like a road race. Multiple riders report blowing up here and never recovering. Add rutted Jeep roads at altitude and you've got a recipe for suffering that most gravel races can't match.",
       "consequences": [
-        "Travel logistics require effort. Fly into Billings (2+ hours) or Denver (5+ hours).",
-        "Limited accommodation. Book early in Sheridan.",
-        "Self-sufficiency matters. Remote sections mean real consequences for mechanicals."
+        "Wrong bike choice = misery. Many riders wish they'd brought a hardtail or drop-bar MTB instead of a pure gravel race rig.",
+        "Wrong tire choice = flats. 38mm tires get destroyed. People run up to 2.1 MTB tires.",
+        "Wrong pacing = DNF. The opening wall sets up your whole day. Go out too hard and you'll detonate before halfway."
       ],
-      "expectation_reset": "This is backcountry adventure racing. The infrastructure is minimal by design. Come prepared, mentally and physically, for genuine challenge."
+      "quote": "'Even though the race is only 75 miles I did not talk to a single person who wanted to go out and do more.' - Ben Delaney",
+      "expectation_reset": "This is not Midwest gravel. This is 'aggressive Colorado gravel' that demands MTB skills, wider tires, and conservative pacing. Come prepared or come home broken."
+    },
+    "tldr": {
+      "should_race_if": "You want genuine technical challenge at altitude, you can handle rutted Jeep roads and singletrack, and you're okay racing a course that makes pros switch to hardtails.",
+      "skip_if": "You expect smooth gravel, you can't handle 3,000 ft in 13 miles at altitude, or you need a resume race with national recognition."
     },
     "final_verdict": {
-      "score": "80 / 100",
-      "one_liner": "True Wyoming wilderness gravel\u2014where prestige takes a backseat to genuine adventure.",
-      "should_you_race": "Yes if you value authentic backcountry experience over recognition. Yes if you want to feel small against something big. Not if you need crowds and clout.",
-      "alternatives": "If you want Western gravel with more infrastructure: SBT GRVL or Crusher. If you want similar intimacy: other regional races in less traveled areas."
+      "score": "88 / 100",
+      "one_liner": "Colorado's rowdiest gravel race where the 3,000 ft opening wall and rutted Jeep roads make pros switch to hardtails.",
+      "should_you_race": "Yes if you want genuinely hard gravel racing that tests your technical skills, altitude tolerance, and pacing discipline. Big Horn is 'the best gravel race you've never heard of' - but it won't stay unknown for long. Come prepared for aggressive terrain and you'll have an unforgettable day.",
+      "alternatives": "If you want Colorado altitude without the tech: SBT GRVL (champagne gravel). If you want similar rowdiness: Gunni Grinder. If you want technical but less altitude: BWR California."
     },
     "logistics": {
-      "airport": "Billings, MT (BIL) - 2.5 hours. Denver (DEN) - 5+ hours.",
-      "lodging_strategy": "Sheridan has limited hotels. Book 2+ months ahead. Consider camping or VRBO.",
-      "food": "Small-town dining. Don't expect big-city options.",
-      "packet_pickup": "Friday in Sheridan.",
-      "parking": "Start area parking is generally manageable.",
-      "official_site": "https://www.bighorngravel.com"
+      "airport": "Eagle County Regional (EGE) - right next to Gypsum. Denver (DEN) - I-70 drive to Eagle Valley.",
+      "lodging_strategy": "Gypsum is small. Many stay in Eagle, Vail, or Edwards and drive to start. Lodging fills up - 'first high-altitude race of the season' draws crowds.",
+      "food": "Small town. Plan meals. Vail/Edwards have more options.",
+      "packet_pickup": "Standard pre-race pickup + limited morning check-in at Gypsum Sports Complex.",
+      "parking": "Gypsum Sports Complex / downtown. Big paved and gravel lots with overflow. No major complaints.",
+      "official_site": "https://www.bighornevents.com"
     },
     "training_plans": {
       "total_count": 15,
@@ -178,21 +203,14 @@
       ],
       "base_price": 99,
       "save_my_race_price": 59,
-      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
+      "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling",
+      "plans": []
     },
     "seo": {
-      "title": "Big Horn Gravel Race Guide | Training Plans & Sheridan Course Intel",
-      "meta_description": "Big Horn Gravel Sheridan guide: 100-mile gravel race featuring 8K+ feet of climbing (TIER 2 event). Get training plans & course breakdown.",
+      "title": "Big Horn Gravel Race Guide | Training Plans & Gypsum Course Intel",
+      "meta_description": "Big Horn Gravel Gypsum guide: 85-mile Colorado gravel race with 10K ft climbing at altitude. Rowdy Jeep roads, singletrack, and a brutal 3K ft opening wall.",
       "focus_keyword": "big horn gravel",
       "slug": "big-horn-gravel"
-    },
-    "altitude": {
-      "start_elevation_ft": 0,
-      "max_elevation_ft": 0,
-      "min_elevation_ft": 0,
-      "altitude_impact": "NONE - Altitude data not specified.",
-      "acclimatization_required": false
-    },
-    "race_challenge_tagline": "8K+ feet of climbing"
+    }
   }
 }
