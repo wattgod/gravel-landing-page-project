@@ -329,7 +329,7 @@ def generate_strength_workout(week, day, template_key, templates_dict, output_di
     
     return output_path
 
-def generate_strength_workout_for_plan_week(plan_week, plan_weeks, template_key, templates_dict, output_dir):
+def generate_strength_workout_for_plan_week(plan_week, plan_weeks, template_key, templates_dict, output_dir, day=None):
     """
     Generate a single strength workout for a specific plan week
     
@@ -338,6 +338,14 @@ def generate_strength_workout_for_plan_week(plan_week, plan_weeks, template_key,
     - Plan weeks 4-6 → YELLOW_A/B_MAX (strength weeks 10-12)
     - Plan weeks 7-10 → GREEN_A/B_POWER (strength weeks 13-16)
     - Plan weeks 11-12 → GREEN_A/B_CONV (strength weeks 17-18)
+    
+    Args:
+        plan_week: Plan week number
+        plan_weeks: Total plan weeks
+        template_key: Template key (e.g., "GREEN_A_MAINT")
+        templates_dict: Dictionary of templates
+        output_dir: Output directory
+        day: Day of week ("Mon", "Thu", etc.) - defaults based on session A/B
     """
     # Get description from templates
     if template_key not in templates_dict:
@@ -345,13 +353,19 @@ def generate_strength_workout_for_plan_week(plan_week, plan_weeks, template_key,
     
     description = templates_dict[template_key]
     
+    # Determine day if not provided (A = Mon, B = Thu)
+    if day is None:
+        session = get_session_letter(template_key)
+        day = "Mon" if session == "A" else "Thu"
+    
     # Generate title using plan week, not strength week
     pathway_name = get_pathway_name(template_key)
     session = get_session_letter(template_key)
     name = f"W{plan_week:02d} STR: {pathway_name} ({session})"
     
-    # Generate filename using plan week
-    filename = f"W{plan_week:02d}_STR_{pathway_name.replace(' ', '_')}_{session}.zwo"
+    # Generate filename with day: W{week:02d}_{day}_STR_{pathway}_{session}.zwo
+    pathway_slug = pathway_name.replace(' ', '_').replace("'", "").replace("*", "")
+    filename = f"W{plan_week:02d}_{day}_STR_{pathway_slug}_{session}.zwo"
     output_path = Path(output_dir) / filename
     
     # Create ZWO file (using plan_week for title, but template_key for content)
@@ -398,7 +412,7 @@ def generate_strength_files(plan_info, output_dir, templates_file_path):
             for day, template_key in [("Mon", template_a), ("Thu", template_b)]:
                 try:
                     filepath = generate_strength_workout_for_plan_week(
-                        plan_week, plan_weeks, template_key, templates, workouts_dir
+                        plan_week, plan_weeks, template_key, templates, workouts_dir, day=day
                     )
                     generated_files.append(filepath)
                 except Exception as e:
@@ -425,7 +439,7 @@ def generate_strength_files(plan_info, output_dir, templates_file_path):
             for day, template_key in [("Mon", template_a), ("Thu", template_b)]:
                 try:
                     filepath = generate_strength_workout_for_plan_week(
-                        plan_week, plan_weeks, template_key, templates, workouts_dir
+                        plan_week, plan_weeks, template_key, templates, workouts_dir, day=day
                     )
                     generated_files.append(filepath)
                 except Exception as e:
