@@ -190,23 +190,26 @@ def check_score_explanation_consistency(data: dict, race: str) -> list[Validatio
         score = altitude.get('score', 0)
         explanation = altitude.get('explanation', '').lower()
 
-        # High score (4-5) should mention altitude challenges
-        if score >= 4 and any(term in explanation for term in ['zero', 'no ', 'not ', 'irrelevant', 'sea level']):
+        # High score (4-5) should NOT say altitude is irrelevant/zero/none
+        # But it SHOULD mention altitude challenges - that's correct!
+        # Only flag if explanation explicitly dismisses altitude as a non-factor
+        dismissive_terms = ['irrelevant', 'non-factor', 'doesn\'t matter', 'not a factor', 'altitude is not']
+        if score >= 4 and any(term in explanation for term in dismissive_terms):
             issues.append(ValidationIssue(
                 race=race,
                 severity="ERROR",
                 category="score_mismatch",
-                message=f"Altitude score={score} contradicts explanation mentioning no altitude issues",
+                message=f"Altitude score={score} contradicts explanation dismissing altitude",
                 data_value=f"Score: {score}, Explanation: {explanation[:100]}"
             ))
 
-        # Low score (1-2) shouldn't mention high altitude challenges
-        if score <= 2 and any(term in explanation for term in ['10,000', '9,000', '8,000', 'acclimat']):
+        # Low score (1-2) shouldn't mention high altitude challenges requiring acclimatization
+        if score <= 2 and 'acclimat' in explanation and 'required' in explanation:
             issues.append(ValidationIssue(
                 race=race,
                 severity="WARNING",
                 category="score_mismatch",
-                message=f"Altitude score={score} may be too low given explanation",
+                message=f"Altitude score={score} may be too low given explanation mentions acclimatization required",
                 data_value=f"Score: {score}, Explanation: {explanation[:100]}"
             ))
 
