@@ -55,11 +55,14 @@ def generate_neo_brutalist_html(race):
     suffering_zones_html = ""
     for i, zone in enumerate(course.get('suffering_zones', [])[:6]):
         highlight_class = ' course-card--highlight' if i == 1 else ''
+        # Handle both 'mile' and 'stage' formats
+        mile_label = zone.get('mile', zone.get('stage', i+1))
+        mile_prefix = 'Stage' if 'stage' in zone else 'Mile'
         suffering_zones_html += f'''
             <div class="course-card{highlight_class}">
-                <div class="course-mile">Mile {zone['mile']}</div>
-                <div class="course-name">{zone['label']}</div>
-                <div class="course-desc">{zone['desc']}</div>
+                <div class="course-mile">{mile_prefix} {mile_label}</div>
+                <div class="course-name">{zone.get('label', zone.get('named_section', ''))}</div>
+                <div class="course-desc">{zone.get('desc', '')}</div>
             </div>'''
 
     # Build ratings HTML (Course Profile)
