@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unbound Gravel 200 - Neo-Brutalist Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --cream: #FAF6F0;
+            --brown: #59473C;
+            --accent: #4ECDC4;
+            --warning: #F4D03F;
+            --danger: #E74C3C;
+            --border: 3px solid var(--black);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Sometype Mono', monospace;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* STICKY TOC */
+        .toc {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--black);
+            border-bottom: var(--border);
+            padding: 12px 0;
+        }
+        .toc-inner {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .toc-inner::-webkit-scrollbar { display: none; }
+        .toc-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .toc-link:hover { opacity: 1; color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            background: var(--cream);
+            padding: 60px 0;
+            border-bottom: var(--border);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: start;
+        }
+        .hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--black);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .badge--tier { background: var(--accent); }
+        .badge--location { background: var(--white); }
+        .badge--date { background: var(--warning); }
+        .badge--distance { background: #FFB830; }
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+        .hero-tagline {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--brown);
+            margin-bottom: 32px;
+        }
+        .hero-intro {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--brown);
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        /* SCORE CARD */
+        .score-card {
+            background: var(--brown);
+            color: var(--white);
+            border: var(--border);
+            padding: 32px;
+        }
+        .score-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+        .score-main {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .score-main span { font-size: 32px; opacity: 0.6; }
+        .tier-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        .score-breakdown {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .breakdown-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+        }
+        .breakdown-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 16px;
+        }
+        .breakdown-bar-fill { height: 100%; background: var(--accent); }
+        .breakdown-score {
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 60px 0;
+            border-bottom: var(--border);
+        }
+        .section--dark { background: var(--brown); color: var(--white); }
+        .section--black { background: var(--black); color: var(--white); }
+        .section-header { margin-bottom: 40px; }
+        .section-kicker {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--warning);
+            border: 2px solid var(--black);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+        .section-kicker--dark {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--brown);
+            max-width: 600px;
+        }
+        .section--dark .section-subtitle,
+        .section--black .section-subtitle { color: rgba(255,255,255,0.7); }
+
+        /* COURSE MAP */
+        .map-container {
+            background: var(--white);
+            border: var(--border);
+            padding: 24px;
+        }
+        .map-embed {
+            width: 100%;
+            height: 500px;
+            border: 2px solid var(--black);
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--brown);
+        }
+        .map-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .stats-grid--6 { grid-template-columns: repeat(6, 1fr); }
+        .stat-card {
+            background: var(--white);
+            border: var(--border);
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-value { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .stat-value--large { font-size: 36px; }
+        .stat-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--brown);
+        }
+        .stat-sublabel {
+            font-size: 9px;
+            color: var(--brown);
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        /* HISTORY TIMELINE */
+        .timeline { margin-top: 32px; }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-year {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .timeline-content { font-size: 13px; line-height: 1.6; }
+
+        /* COURSE BREAKDOWN */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .course-card {
+            background: var(--white);
+            border: var(--border);
+            padding: 24px;
+        }
+        .course-card--highlight {
+            background: var(--danger);
+            color: var(--white);
+        }
+        .course-card--highlight .course-mile,
+        .course-card--highlight .course-desc { color: rgba(255,255,255,0.85); }
+        .course-mile {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brown);
+            margin-bottom: 8px;
+        }
+        .course-name {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .course-desc {
+            font-size: 12px;
+            color: var(--brown);
+            line-height: 1.6;
+        }
+
+        /* RATINGS */
+        .rating-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .rating-card {
+            background: var(--white);
+            border: var(--border);
+            padding: 32px;
+        }
+        .rating-card--dark {
+            background: var(--brown);
+            color: var(--white);
+        }
+        .rating-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+        .rating-score { font-size: 48px; font-weight: 700; margin-bottom: 4px; }
+        .rating-score span { font-size: 20px; opacity: 0.6; }
+        .rating-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .rating-metrics { display: grid; gap: 12px; }
+        .rating-metric {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+        }
+        .rating-metric-label {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 100px;
+            flex-shrink: 0;
+        }
+        .rating-metric-bar {
+            flex: 1;
+            height: 12px;
+            background: #eee;
+            border: 1px solid var(--black);
+        }
+        .rating-card--dark .rating-metric-bar {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .rating-metric-fill { height: 100%; background: var(--accent); }
+        .rating-metric-value { font-weight: 700; width: 40px; text-align: right; }
+        .rating-explanation {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        .rating-card--dark .rating-explanation { border-top-color: rgba(255,255,255,0.2); }
+        .rating-explanation p {
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* OPINION */
+        .opinion-card {
+            background: var(--accent);
+            border: var(--border);
+            padding: 32px;
+        }
+        .opinion-verdict {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+        .opinion-title {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .opinion-text { font-size: 14px; line-height: 1.8; margin-bottom: 16px; }
+        .opinion-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .opinion-col-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .opinion-col ul { list-style: none; font-size: 12px; line-height: 1.8; }
+        .opinion-col li { padding-left: 16px; position: relative; }
+        .opinion-col li::before { content: ">"; position: absolute; left: 0; }
+
+        /* BLACK PILL */
+        .blackpill {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 0;
+            border-bottom: var(--border);
+        }
+        .blackpill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 2px solid var(--white);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 24px;
+        }
+        .blackpill-title {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+        .blackpill-body {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.85;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+        .blackpill-quote {
+            font-size: 16px;
+            font-style: italic;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+            margin: 32px 0;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .forum-quote {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        .forum-quote cite {
+            display: block;
+            font-size: 10px;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 12px;
+            opacity: 0.5;
+        }
+
+        /* VERDICT */
+        .verdict-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .verdict-card { border: var(--border); padding: 24px; }
+        .verdict-card--yes { background: var(--accent); }
+        .verdict-card--no { background: var(--white); }
+        .verdict-header {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .verdict-list { list-style: none; }
+        .verdict-list li {
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .verdict-list li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* TRAINING PLANS */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+        .plan-card {
+            border: var(--border);
+            padding: 20px 16px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.1s ease;
+        }
+        .plan-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .plan-card--1 { background: var(--cream); }
+        .plan-card--2 { background: #FFF8E1; }
+        .plan-card--3 { background: var(--warning); }
+        .plan-card--4 { background: #FFB830; }
+        .plan-card--masters { background: var(--accent); }
+        .plan-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--black);
+            color: var(--white);
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 2px 8px;
+            white-space: nowrap;
+        }
+        .plan-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            margin-top: 8px;
+        }
+        .plan-desc {
+            font-size: 10px;
+            color: var(--brown);
+            margin-bottom: 8px;
+            min-height: 2em;
+        }
+        .plan-hours { font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+        .plan-cta {
+            display: block;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--black);
+            transition: all 0.1s ease;
+        }
+        .plan-cta:hover { background: var(--brown); }
+
+        /* LOGISTICS */
+        .logistics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .logistics-card {
+            background: var(--white);
+            border: var(--border);
+            padding: 24px;
+        }
+        .logistics-icon {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .logistics-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+        .logistics-value { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .logistics-detail { font-size: 11px; color: var(--brown); line-height: 1.6; }
+
+        /* TWO COL */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: var(--border);
+            transition: all 0.1s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--brown);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .btn--accent { background: var(--accent); color: var(--black); }
+        .btn--outline { background: transparent; color: var(--black); }
+        .btn--outline:hover { background: var(--black); color: var(--white); }
+
+        /* FOOTER */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 40px 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-grid, .two-col, .rating-grid, .opinion-list { grid-template-columns: 1fr; }
+            .stats-grid, .course-grid, .verdict-grid, .logistics-grid { grid-template-columns: 1fr; }
+            .stats-grid--6, .map-stats { grid-template-columns: repeat(2, 1fr); }
+            .plans-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-title { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badges">
+                        <span class="badge badge--tier">TIER 1 / ICONIC</span>
+                        <span class="badge badge--location">EMPORIA, KANSAS</span>
+                        <span class="badge badge--date">JUNE 7, 2025</span>
+                        <span class="badge badge--distance">202.4 MI</span>
+                    </div>
+                    <h1 class="hero-title">Unbound<br>Gravel 200</h1>
+                    <p class="hero-tagline">"You don't race Unbound. You survive it."</p>
+                    <p class="hero-intro">
+                        The Super Bowl of gravel. 200 miles of Kansas flint that has ended more races via derailleur destruction than any other event in the sport. This isn't about whether you're fast enough. It's about whether your equipment survives long enough for your fitness to matter.
+                    </p>
+                    <a href="#training" class="btn">GET YOUR TRAINING PLAN</a>
+                </div>
+                <div class="score-card">
+                    <div class="score-label">Gravel God Rating</div>
+                    <div class="score-main">88<span>/100</span></div>
+                    <div class="tier-label">TIER 1 / HIGH CONSEQUENCE</div>
+                    <div class="score-breakdown">
+                        <div class="breakdown-row">
+                            <span class="breakdown-label">Course Profile</span>
+                            <div class="breakdown-bar"><div class="breakdown-bar-fill" style="width: 63%;"></div></div>
+                            <span class="breakdown-score">22 / 35</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="breakdown-label">Biased Opinion</span>
+                            <div class="breakdown-bar"><div class="breakdown-bar-fill" style="width: 94%;"></div></div>
+                            <span class="breakdown-score">33 / 35</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY TOC -->
+    <nav class="toc">
+        <div class="container">
+            <div class="toc-inner">
+                <a href="#map" class="toc-link">Course Map</a>
+                <a href="#vitals" class="toc-link">Course Vitals</a>
+                <a href="#history" class="toc-link">Facts & History</a>
+                <a href="#course" class="toc-link">The Course</a>
+                <a href="#ratings" class="toc-link">The Ratings</a>
+                <a href="#opinion" class="toc-link">Biased Opinion</a>
+                <a href="#blackpill" class="toc-link">The Black Pill</a>
+                <a href="#verdict" class="toc-link">Final Verdict</a>
+                <a href="#training" class="toc-link">Training Plans</a>
+                <a href="#logistics" class="toc-link">Race Logistics</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- COURSE MAP -->
+    <section class="section" id="map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[01] COURSE MAP</span>
+                <h2 class="section-title">What 200 Miles of Flint Hills Actually Looks Like</h2>
+            </div>
+            <div class="map-container">
+                <div class="map-embed">
+                    <iframe src="https://ridewithgps.com/embeds?type=route&id=46551378&title=Unbound%20200&sampleGraph=true&distanceMarkers=true" style="width: 100%; height: 500px; border: none;"></iframe>
+                </div>
+                <div class="map-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">202.4</div>
+                        <div class="stat-label">Miles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">11,000</div>
+                        <div class="stat-label">Feet Climbing</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Gravel</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Aid Stations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSE VITALS -->
+    <section class="section" id="vitals">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[02] COURSE VITALS</span>
+                <h2 class="section-title">The Numbers That Matter</h2>
+            </div>
+            <div class="stats-grid--6 stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">202.4</div>
+                    <div class="stat-label">Miles</div>
+                    <div class="stat-sublabel">Varies by year</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">11K</div>
+                    <div class="stat-label">Feet Elevation</div>
+                    <div class="stat-sublabel">10,000-11,800 ft</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">1,077</div>
+                    <div class="stat-label">Starters</div>
+                    <div class="stat-sublabel">200-mile field</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">2</div>
+                    <div class="stat-label">Aid Stations</div>
+                    <div class="stat-sublabel">Mile 70 + 148</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">20.5</div>
+                    <div class="stat-label">Hour Cutoff</div>
+                    <div class="stat-sublabel">3:07 AM finish</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-value--large">23%</div>
+                    <div class="stat-label">2023 DNF Rate</div>
+                    <div class="stat-sublabel">Brutal year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACTS & HISTORY -->
+    <section class="section" id="history">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[03] FACTS & HISTORY</span>
+                <h2 class="section-title">How It Became THE Race</h2>
+            </div>
+            <div class="two-col">
+                <div>
+                    <p style="font-size: 14px; line-height: 1.8; margin-bottom: 16px;">
+                        In 2006, Jim Cummins and Joel Dyke had a simple idea: "We wanted the event to exist so we could ride it." 34 riders showed up with compasses--navigation was required because GPS wasn't reliable yet. They called it Dirty Kanza, after the Kanza (Kaw) people who once called the Flint Hills home.
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.8; margin-bottom: 16px;">
+                        The race grew organically, through word of mouth and forum posts about suffering. By 2018, Life Time acquired the event. In 2020, "Dirty Kanza" became "Unbound Gravel"--a name change that sparked debate but didn't change what happened on the roads.
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        Today, nearly 5,000 riders compete across all distances. The expo has become "the Sea Otter of gravel." The 200-mile field reads like a who's-who of endurance cycling. But the roads haven't changed. The flint is still sharp. The heat still crushes. The Flint Hills remain indifferent.
+                    </p>
+                </div>
+                <div>
+                    <div style="background: var(--white); border: var(--border); padding: 24px;">
+                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700;">Key Moments</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-year">2006</span>
+                                <span class="timeline-content">First Dirty Kanza. 34 starters. Compass navigation required.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2018</span>
+                                <span class="timeline-content">Life Time acquires the event. Infrastructure scales up.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2020</span>
+                                <span class="timeline-content">Dirty Kanza becomes Unbound Gravel. Name changes, suffering doesn't.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2023</span>
+                                <span class="timeline-content">Mud disaster: 23% DNF, hailstorm, 45 mph crosswinds.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2024</span>
+                                <span class="timeline-content">Course record: Cameron Jones, 8:37:09.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE COURSE -->
+    <section class="section" id="course">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[04] THE COURSE</span>
+                <h2 class="section-title">Key Moments on the Route</h2>
+                <p class="section-subtitle">The locations that define this race. Know them. Plan for them.</p>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-mile">Mile 28</div>
+                    <div class="course-name">First Selection</div>
+                    <div class="course-desc">Rough double track. "First major selection point, front pack of 1,100 drops to less than 50 riders." Position matters--being stuck in the chaos costs minutes you can't recover.</div>
+                </div>
+                <div class="course-card course-card--highlight">
+                    <div class="course-mile">Mile 40</div>
+                    <div class="course-name">Divide Road</div>
+                    <div class="course-desc">"Minimally maintained, rutted and muddy stretch infamous for derailing races." Where winning moves happen. Where mechanicals end races. The crucible.</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-mile">Miles 30-37</div>
+                    <div class="course-name">Cattle Country</div>
+                    <div class="course-desc">"Chunky, rutted, cow pie laden. 3-5 folks on the side fixing flats at every descent." Line choice is everything. Slow down or pay later.</div>
+                </div>
+            </div>
+            <div class="course-grid" style="margin-top: 16px;">
+                <div class="course-card">
+                    <div class="course-mile">Mile 59</div>
+                    <div class="course-name">BE-YOTCH Climb</div>
+                    <div class="course-desc">14-17% grade switchback that arrives when you're already hurting. Named for exactly what you'll say when you see it. Short but vicious.</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-mile">Mile 104</div>
+                    <div class="course-name">Little Egypt</div>
+                    <div class="course-desc">"Rugged terrain makes final selection. Sharp rocks, high-speed danger." Last chance for elite separation. Where the race breaks apart for good.</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-mile">Mile 160+</div>
+                    <div class="course-name">Exposed Prairie</div>
+                    <div class="course-desc">2023: "45 mph crosswind hailstorm convinced me sheltering in a ditch was the most prudent course of action." Alone, in the dark, with 40 miles left.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE RATINGS -->
+    <section class="section" id="ratings">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[05] THE RATINGS</span>
+                <h2 class="section-title">Course Profile Analysis</h2>
+            </div>
+            <div class="rating-grid">
+                <div class="rating-card">
+                    <div class="rating-title">Course Profile Score</div>
+                    <div class="rating-score">22<span>/35</span></div>
+                    <div class="rating-label">RADAR BREAKDOWN</div>
+                    <div class="rating-metrics">
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Length</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Technicality</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 60%;"></div></div>
+                            <span class="rating-metric-value">3/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Elevation</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 60%;"></div></div>
+                            <span class="rating-metric-value">3/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Climate</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 80%; background: var(--danger);"></div></div>
+                            <span class="rating-metric-value">4/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Altitude</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 20%;"></div></div>
+                            <span class="rating-metric-value">1/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Adventure</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 80%;"></div></div>
+                            <span class="rating-metric-value">4/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Logistics</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 40%;"></div></div>
+                            <span class="rating-metric-value">2/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-card">
+                    <div class="rating-title">What Each Score Means</div>
+                    <div class="rating-explanation">
+                        <p><strong>Length (5/5):</strong> 200+ miles is as long as mainstream gravel gets. Elite: 8-10 hours. Mid-pack: 12-16 hours. Back markers finish near 3 AM. This is ultra territory.</p>
+                        <p><strong>Technicality (3/5):</strong> Not MTB, but bike handling separates finishers from DNFs. Divide Road's ruts, cattle country's chunky gravel, Little Egypt's sharp rocks. Line choice matters.</p>
+                        <p><strong>Elevation (3/5):</strong> 10,000-11,800 ft total climbing. Rolling, punchy, relentless--not big mountain climbing but never flat. The accumulation kills you.</p>
+                        <p><strong>Climate (4/5):</strong> Heat is the variable that "scares the shit out of" race directors. Low 90s common. 2023: lightning, hail, 45 mph crosswinds. Thunderstorms develop mid-race.</p>
+                        <p><strong>Altitude (1/5):</strong> Start ~1,100 ft, max ~1,500 ft. Altitude is irrelevant. Sea level athletes have no acclimatization concerns.</p>
+                        <p><strong>Adventure (4/5):</strong> The race that defines American gravel. Flint Hills are genuinely beautiful--vast prairie, historic cattle country. Worth traveling for the experience alone.</p>
+                        <p><strong>Logistics (2/5):</strong> Kansas City airport 2 hours away. Lodging in Emporia books a year out--hotels take waiting lists at checkout. Expand search to surrounding towns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIASED OPINION -->
+    <section class="section" id="opinion">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[06] BIASED OPINION</span>
+                <h2 class="section-title">The Verdict</h2>
+                <p class="section-subtitle">The course is one thing. What it means is something else entirely.</p>
+            </div>
+            <div class="rating-grid">
+                <div class="rating-card">
+                    <div class="rating-title">Editorial Profile</div>
+                    <div class="rating-score">33<span>/35</span></div>
+                    <div class="rating-label">OPINION SCORE</div>
+                    <div class="rating-metrics">
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Prestige</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Race Quality</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Experience</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Community</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Field Depth</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 100%;"></div></div>
+                            <span class="rating-metric-value">5/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Value</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 80%;"></div></div>
+                            <span class="rating-metric-value">4/5</span>
+                        </div>
+                        <div class="rating-metric">
+                            <span class="rating-metric-label">Expenses</span>
+                            <div class="rating-metric-bar"><div class="rating-metric-fill" style="width: 80%;"></div></div>
+                            <span class="rating-metric-value">4/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-card">
+                    <div class="rating-title">What Each Score Means</div>
+                    <div class="rating-explanation">
+                        <p><strong>Prestige (5/5):</strong> In gravel, Unbound is the reference point. It's the race brands name-drop, the event that shows up in every "bucket list" article, the one that strangers recognize when you mention it at a coffee shop. Finishing means something; failing means education. There's no gravel equivalent.</p>
+                        <p><strong>Race Quality (5/5):</strong> The course is dialed, the production is professional, and the finish-line atmosphere rivals any bike race in North America. Life Time's ownership has added infrastructure without sterilizing the vibe. You're still suffering on farm roads, just with better timing chips.</p>
+                        <p><strong>Experience (5/5):</strong> From lottery stress to race-week expo chaos to the 3 AM finish line, Unbound delivers a complete arc. You don't just ride a bike; you participate in something that feels bigger than the sum of its parts. The Flint Hills do the rest.</p>
+                        <p><strong>Community (5/5):</strong> Emporia goes all-in. Locals cheer at random intersections, the town treats race week like a festival, and the finish line on Commercial Street is one of the best atmospheres in amateur cycling. You feel welcomed, not tolerated.</p>
+                        <p><strong>Field Depth (5/5):</strong> The lottery makes entry random, but the result is a field that spans absolute elites to total beginners. You're riding with world-class athletes and weekend warriors on the same roads, which is either inspiring or demoralizing depending on your position.</p>
+                        <p><strong>Value (4/5):</strong> Entry isn't cheap, and the travel adds up, but you're getting a flagship event with flagship production. For what it delivers--experience, infrastructure, cultural weight--it's a bargain.</p>
+                        <p><strong>Expenses (4/5):</strong> Kansas isn't expensive by race standards, but lodging scarcity inflates prices and forces early booking. Budget for flights, rental car, hotel, and the inevitable gear you'll convince yourself you need. Plan ahead and it's manageable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE BLACK PILL -->
+    <section class="blackpill" id="blackpill">
+        <div class="container">
+            <div class="blackpill-badge">[X] THE BLACK PILL</div>
+            <h2 class="blackpill-title">The Fastest Tire at Unbound Is the One With Air in It</h2>
+
+            <p class="blackpill-body">
+                Your race will probably end because something broke, not because you weren't fit enough. The forums are littered with the same story: trained for months, flew to Kansas, broken derailleur at mile 40, sat at cattle pens waiting for pickup with 7 other riders and their "battered bodies."
+            </p>
+
+            <div class="forum-quote">
+                "I heard a loud snap, and my derailleur went crashing into the cassette, instantly bringing me to a stop. The spoke had done more damage than I initially thought. My derailleur's inner pulley cage was broken, and the upper pulley was nowhere to be seen. The chain was twisted up around it all. The whole thing was mangled beyond repair."
+                <cite>-- Reddit, r/gravelcycling</cite>
+            </div>
+
+            <p class="blackpill-body">
+                23% of the field DNF'd in 2023. Not because they weren't ready. Because peanut butter mud snapped chains and ate derailleurs alive.
+            </p>
+
+            <blockquote class="blackpill-quote">
+                "You build a season around Unbound, then decide if the version of you that shows up was worth the cost."
+            </blockquote>
+
+            <p class="blackpill-body">
+                <strong>Expectation Reset:</strong> Train your body, yes. But also: learn to convert to singlespeed mid-race. Carry a paint stirrer for mud. Accept that 30% of your pre-rides will result in tire plugging. "Conservative equipment selection > marginal gains."
+            </p>
+        </div>
+    </section>
+
+    <!-- FINAL VERDICT -->
+    <section class="section" id="verdict">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[07] FINAL VERDICT</span>
+                <h2 class="section-title">Is This Race For You?</h2>
+            </div>
+            <div class="verdict-grid">
+                <div class="verdict-card verdict-card--yes">
+                    <div class="verdict-header">[+] Race This If:</div>
+                    <ul class="verdict-list">
+                        <li>You want to test your absolute limits on the biggest stage</li>
+                        <li>You've done 100+ mile gravel events</li>
+                        <li>You can commit 10-15 hrs/week of quality training</li>
+                        <li>You have proper equipment and know how to fix it mid-race</li>
+                        <li>You embrace suffering as growth</li>
+                        <li>You want gravel credibility--finishing Unbound means something</li>
+                    </ul>
+                </div>
+                <div class="verdict-card verdict-card--no">
+                    <div class="verdict-header">[-] Skip This If:</div>
+                    <ul class="verdict-list">
+                        <li>This would be your first gravel race</li>
+                        <li>You can't handle 12+ hours in the saddle</li>
+                        <li>You're not prepared for extreme heat (95F+)</li>
+                        <li>You need perfect road surfaces</li>
+                        <li>DNF would devastate you mentally--23% didn't finish in 2023</li>
+                        <li>You're prioritizing speed over survival</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINING PLANS -->
+    <section class="section" id="training">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[08] TRAINING PLANS</span>
+                <h2 class="section-title">Get Ready for Unbound Gravel 200</h2>
+                <p class="section-subtitle">5 ways to prepare. Pick what fits your life.</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card plan-card--1">
+                    <span class="plan-badge">Level 1</span>
+                    <div class="plan-title">Time Crunched</div>
+                    <div class="plan-desc">Minimal time, HIIT-focused</div>
+                    <div class="plan-hours">0-5 hrs/week</div>
+                    <a href="#" class="plan-cta">$100</a>
+                </div>
+                <div class="plan-card plan-card--2">
+                    <span class="plan-badge">Level 2</span>
+                    <div class="plan-title">Finisher</div>
+                    <div class="plan-desc">Traditional base building</div>
+                    <div class="plan-hours">8-10 hrs/week</div>
+                    <a href="#" class="plan-cta">$100</a>
+                </div>
+                <div class="plan-card plan-card--3">
+                    <span class="plan-badge">Level 3</span>
+                    <div class="plan-title">Compete</div>
+                    <div class="plan-desc">Polarized for performance</div>
+                    <div class="plan-hours">12-17 hrs/week</div>
+                    <a href="#" class="plan-cta">$100</a>
+                </div>
+                <div class="plan-card plan-card--4">
+                    <span class="plan-badge">Level 4</span>
+                    <div class="plan-title">Podium</div>
+                    <div class="plan-desc">Elite high volume</div>
+                    <div class="plan-hours">18-25 hrs/week</div>
+                    <a href="#" class="plan-cta">$100</a>
+                </div>
+                <div class="plan-card plan-card--masters">
+                    <span class="plan-badge">50+</span>
+                    <div class="plan-title">Masters 50+</div>
+                    <div class="plan-desc">Recovery-optimized</div>
+                    <div class="plan-hours">8-12 hrs/week</div>
+                    <a href="#" class="plan-cta">$100</a>
+                </div>
+            </div>
+            <!-- TIER 2: CUSTOM PLAN CTA -->
+            <div class="tier-cta-box" style="margin-top: 32px; border: 3px solid #000; padding: 24px; background: #fff; box-shadow: 6px 6px 0 #000;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <div style="font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin-bottom: 8px;">BUILT FOR YOU AND THIS RACE</div>
+                        <p style="font-size: 0.85rem; color: #59473C; margin: 0;">Answer questions about your schedule, experience, and goals. Get a personalized plan for however many weeks you have.</p>
+                    </div>
+                    <a href="https://wattgod.github.io/training-plans-component/training-plan-questionnaire.html?race=unbound-gravel-200" class="btn btn--accent" style="white-space: nowrap;">BUILD MY PLAN</a>
+                </div>
+            </div>
+
+            <!-- TIER 3: COACHING CTA -->
+            <div class="tier-cta-box" style="margin-top: 16px; border: 3px solid #000; padding: 24px; background: var(--accent); box-shadow: 6px 6px 0 #000;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <div style="font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin-bottom: 8px;">TRAINING THAT ADAPTS TO YOUR LIFE</div>
+                        <p style="font-size: 0.85rem; color: #000; margin: 0;">Plans are templates. Coaching is personal. Get someone who adjusts your training week-to-week based on how you're actually responding.</p>
+                    </div>
+                    <a href="https://gravelgodcycling.com/coaching/" class="btn" style="background: #000; color: #fff; white-space: nowrap;">APPLY FOR COACHING</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RACE LOGISTICS -->
+    <section class="section" id="logistics">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">[09] RACE LOGISTICS</span>
+                <h2 class="section-title">Getting There and Staying There</h2>
+            </div>
+            <div class="logistics-grid">
+                <div class="logistics-card">
+                    <div class="logistics-icon">[AIR]</div>
+                    <div class="logistics-title">Airport</div>
+                    <div class="logistics-value">Kansas City (MCI)</div>
+                    <div class="logistics-detail">120 miles, 2 hours drive. Book rental car early.</div>
+                </div>
+                <div class="logistics-card">
+                    <div class="logistics-icon">[BED]</div>
+                    <div class="logistics-title">Lodging</div>
+                    <div class="logistics-value">Book 1 Year Ahead</div>
+                    <div class="logistics-detail">Hotels take waiting lists at checkout. ESU dorms open December 3.</div>
+                </div>
+                <div class="logistics-card">
+                    <div class="logistics-icon">[PIN]</div>
+                    <div class="logistics-title">Start/Finish</div>
+                    <div class="logistics-value">Downtown Emporia</div>
+                    <div class="logistics-detail">Granada Theatre area. Street parking.</div>
+                </div>
+                <div class="logistics-card">
+                    <div class="logistics-icon">[BOX]</div>
+                    <div class="logistics-title">Packet Pickup</div>
+                    <div class="logistics-value">Lyon County History Center</div>
+                    <div class="logistics-detail">Thursday 3-6 PM, Friday 10 AM-7 PM.</div>
+                </div>
+                <div class="logistics-card">
+                    <div class="logistics-icon">[AID]</div>
+                    <div class="logistics-title">Aid Stations</div>
+                    <div class="logistics-value">Mile 70 + 148</div>
+                    <div class="logistics-detail">Plus water oases at Mile 40 and 112. 70-78 mile gaps.</div>
+                </div>
+                <div class="logistics-card">
+                    <div class="logistics-icon">[TIX]</div>
+                    <div class="logistics-title">Entry</div>
+                    <div class="logistics-value">Lottery System</div>
+                    <div class="logistics-detail">100-mile is harder to get than 200.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--black">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 16px;">The Race Won't Wait</h2>
+            <p class="section-subtitle" style="margin: 0 auto 32px; text-align: center; max-width: 500px;">
+                First Saturday in June. 202 miles. The Flint Hills don't care if you're ready.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#training" class="btn btn--accent">GET A TRAINING PLAN</a>
+                <a href="https://gravelgodcycling.com/coaching/" class="btn btn--outline" style="border-color: var(--white); color: var(--white);">APPLY FOR COACHING</a>
+            </div>
+            <div style="margin-top: 24px;">
+                <a href="https://unboundgravel.com" target="_blank" style="color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Official Race Site</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>[C] 2025 GRAVEL GOD CYCLING</div>
+            <div style="font-size: 10px; opacity: 0.7;">119 citations from Reddit, TrainerRoad Forum, race reports</div>
+            <div><a href="#">ABOUT</a> / <a href="#">CONTACT</a> / <a href="#">ALL RACES</a></div>
+        </div>
+    </footer>
+</body>
+</html>

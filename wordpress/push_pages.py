@@ -6,6 +6,7 @@ Replaces placeholders in template with race-specific data.
 """
 
 import json
+import re
 import requests
 import os
 from typing import Dict, List, Any
@@ -366,7 +367,22 @@ class WordPressPagePusher:
         
         for placeholder_name, value in long_content_fields.items():
             replacements[f"{{{{{placeholder_name}}}}}"] = str(value) if value else ''
-        
+
+        # TrainingPeaks link placeholders
+        # These link to race-specific training plans on TrainingPeaks
+        race_slug = replacements.get('{{RACE_SLUG}}', '').strip('{}')
+        if race_slug:
+            tp_base = 'https://www.trainingpeaks.com/training-plans/cycling/gravel'
+            tp_links = {
+                'TP_LINK_TIME_CRUNCHED': f'{tp_base}/tp-gravel-god-time-crunched-{race_slug}',
+                'TP_LINK_FINISHER': f'{tp_base}/tp-gravel-god-finisher-{race_slug}',
+                'TP_LINK_COMPETE': f'{tp_base}/tp-gravel-god-compete-{race_slug}',
+                'TP_LINK_PODIUM': f'{tp_base}/tp-gravel-god-podium-{race_slug}',
+                'TP_LINK_MASTERS': f'{tp_base}/tp-gravel-god-masters-{race_slug}',
+            }
+            for placeholder_name, value in tp_links.items():
+                replacements[f"{{{{{placeholder_name}}}}}"] = value
+
         return replacements
     
     def _build_map_embed_url(self, race: Dict[str, Any]) -> str:
@@ -458,7 +474,60 @@ class WordPressPagePusher:
             print(f"✗ Connection error: {e}")
             return False
     
-    def create_page(self, page_data: Dict[str, Any], regenerate_css: bool = True) -> Dict[str, Any]:
+    def validate_before_push(self, page_data: Dict[str, Any], skip_validation: bool = False) -> bool:
+        """
+        Validate page data before pushing to WordPress.
+
+        Checks for:
+        - Unreplaced placeholders ({{RACE_NAME}}, {{TP_LINK_*}}, etc.)
+        - Required CSS classes for complete pages
+        - Valid structure
+
+        Args:
+            page_data: Page data to validate
+            skip_validation: If True, skip validation (use with caution)
+
+        Returns:
+            True if valid
+
+        Raises:
+            ValueError: If validation fails with details of what's wrong
+        """
+        if skip_validation:
+            return True
+
+        # Convert to string for placeholder checking
+        content_str = json.dumps(page_data)
+
+        # Find all {{PLACEHOLDER}} patterns
+        placeholders = re.findall(r'\{\{[A-Z][A-Z0-9_]*\}\}', content_str)
+
+        # Filter out allowed Elementor internal placeholders
+        allowed = {'{{ID}}', '{{_CSS_CLASSES}}', '{{_ELEMENT_ID}}', '{{_ELEMENT_WIDTH}}'}
+        bad_placeholders = [p for p in placeholders if p not in allowed]
+
+        if bad_placeholders:
+            unique = sorted(set(bad_placeholders))
+            raise ValueError(
+                f"VALIDATION FAILED: Unreplaced placeholders found:\n"
+                f"  {', '.join(unique)}\n"
+                f"  \n"
+                f"  This usually means:\n"
+                f"  1. You pushed a template without calling replace_placeholders()\n"
+                f"  2. Race data is missing required fields\n"
+                f"  \n"
+                f"  Use pusher.replace_placeholders(template, race_data) before create_page()"
+            )
+
+        # Check for required sections (warning only, logged but doesn't fail)
+        required_classes = ['gg-hero', 'gg-plans-grid', 'gg-plan-card']
+        missing = [c for c in required_classes if c not in content_str]
+        if missing:
+            print(f"  ⚠ Warning: Missing CSS classes: {', '.join(missing)}")
+
+        return True
+
+    def create_page(self, page_data: Dict[str, Any], regenerate_css: bool = True, skip_validation: bool = False) -> Dict[str, Any]:
         """
         Create a WordPress page via REST API.
 
@@ -466,13 +535,24 @@ class WordPressPagePusher:
         Creates pages as published by default.
         Automatically regenerates Elementor CSS after creation.
 
+        IMPORTANT: This method validates content before pushing. If you see
+        validation errors about unreplaced placeholders, use replace_placeholders()
+        or push_race_page() instead of calling create_page() directly.
+
         Args:
             page_data: Page data including title, content, Elementor data, etc.
             regenerate_css: If True, regenerate Elementor CSS after creation (default: True)
+            skip_validation: If True, skip pre-push validation (NOT RECOMMENDED)
 
         Returns:
             Created page data from WordPress API
+
+        Raises:
+            ValueError: If validation fails (unreplaced placeholders, etc.)
         """
+        # VALIDATE BEFORE PUSH
+        self.validate_before_push(page_data, skip_validation)
+
         url = f"{self.api_url}/pages"
 
         # Format page data for WordPress REST API
