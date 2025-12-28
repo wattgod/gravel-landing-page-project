@@ -3,170 +3,185 @@
     "name": "The Rad",
     "slug": "the-rad",
     "display_name": "The Rad Dirt Fest",
-    "tagline": "Fall gravel in the Flint Hills. The off-season Unbound you can actually get into.",
+    "tagline": "High-desert climbing in southern Colorado. Spanish Peaks backdrop, 10,000+ feet of vertical.",
     "vitals": {
-      "distance_mi": 100,
-      "elevation_ft": 7000,
-      "location": "Emporia, Kansas",
-      "location_badge": "EMPORIA, KANSAS",
-      "county": "Lyon County",
-      "date": "Late October annually",
-      "date_specific": "2025: October 25",
+      "distance_mi": 113,
+      "elevation_ft": 10613,
+      "location": "Trinidad, Colorado",
+      "location_badge": "TRINIDAD, COLORADO",
+      "county": "Las Animas County",
+      "date": "Early October annually",
+      "date_specific": "2025: Early October",
       "terrain_types": [
-        "Flint Hills gravel",
-        "Rolling terrain",
-        "Limestone roads",
-        "Creek crossings"
+        "High-desert gravel",
+        "Mesa terrain",
+        "Long sustained climbs",
+        "Technical two-track"
       ],
       "field_size": "500+ riders across distances",
-      "start_time": "Saturday 8:00 AM",
-      "registration": "Opens summer. Cost: ~$100-150",
-      "prize_purse": "Varies by year",
+      "start_time": "Saturday morning",
+      "registration": "Opens via theraddirt.com. Tiered pricing by distance.",
+      "prize_purse": "Life Time event purse",
       "aid_stations": "Multiple aid stations along course",
-      "cutoff_time": "Varies by distance"
+      "cutoff_time": "Time limits per route with sweeps"
     },
     "climate": {
-      "primary": "Late fall Midwest",
-      "description": "October in Kansas means cool mornings, mild afternoons, and chance of everything from Indian summer to early freeze",
+      "primary": "High-desert Colorado",
+      "description": "Early fall in Trinidad means cool mornings, warm afternoons. High desert sun plus altitude makes climbs hot.",
       "challenges": [
-        "Temperature range 35-65\u00b0F typical",
-        "Wind is always a factor",
-        "Occasional rain/mud",
-        "Shorter daylight hours"
+        "Heat on long 18-mile climb",
+        "Exposed mesa terrain",
+        "Localized mud/ruts if rain",
+        "Altitude 6,000-9,000 ft"
       ]
     },
     "terrain": {
-      "primary": "Classic Flint Hills gravel\u2014same roads as Unbound",
-      "surface": "Chunky limestone gravel, some paved connectors, maintained county roads",
+      "primary": "High-desert gravel with long sustained climbs",
+      "surface": "Over 90% maintained gravel roads, short technical section at Trinidad Lake State Park",
       "technical_rating": 3,
       "features": [
-        "Rolling hills",
-        "Cattle guards",
-        "Open prairie exposure",
-        "Creek bed crossings"
+        "18-mile climb to 9,000 ft",
+        "Spanish Peaks backdrop",
+        "Technical two-track sections",
+        "Fast descents with ruts"
       ]
     },
     "gravel_god_rating": {
-      "overall_score": 78,
-      "course_profile": 28,
-      "biased_opinion": 40,
+      "overall_score": 79,
+      "course_profile": 27,
+      "biased_opinion": 24,
       "tier": 2,
       "tier_label": "TIER 2",
-      "prestige": 3,
-      "length": 4,
+      "length": 5,
       "technicality": 3,
-      "elevation": 3,
-      "climate": 2,
-      "altitude": 1,
-      "adventure": 4
+      "elevation": 5,
+      "climate": 3,
+      "altitude": 4,
+      "adventure": 4,
+      "logistics": 3,
+      "prestige": 3,
+      "race_quality": 4,
+      "experience": 4,
+      "community": 3,
+      "field_depth": 3,
+      "value": 4,
+      "expenses": 3
     },
     "history": {
-      "founded": 2019,
-      "founder": "Same organizers as local Emporia cycling community",
-      "origin_story": "Created as a fall festival to extend Emporia's gravel season beyond Unbound. Offers a chance to ride the Flint Hills when they're not trying to kill you with heat.",
+      "founded": 2021,
+      "founder": "Life Time",
+      "origin_story": "Created by Life Time in Trinidad to showcase gravel roads rarely experienced, with Spanish Peaks backdrops and high-desert terrain. Lauren De Crescenzo won the inaugural 110-mile event.",
       "notable_moments": [
-        "Positioned as the 'accessible' Emporia experience",
-        "Shares roads and vibe with Unbound without the lottery",
-        "Fall colors add different character to familiar terrain"
+        "Inaugural 2021 event established Trinidad as gravel destination",
+        "Was Lifetime Grand Prix stop #5 in 2024",
+        "2025 edition includes UNBOUND Gravel qualifier coin allocation"
       ],
-      "reputation": "Unbound's cooler, more approachable sibling. Same great roads, less suffering."
+      "reputation": "High-desert Colorado climbing race with stunning Spanish Peaks scenery. Long sustained climbs at altitude define the challenge."
     },
     "course_description": {
-      "character": "The Flint Hills you know (or want to know) without June's heat. Rolling, relentless, beautiful.",
+      "character": "Long sustained climbs through high-desert Colorado. Spanish Peaks views and 10,000+ feet of vertical define the challenge.",
       "suffering_zones": [
         {
-          "mile": 30,
-          "label": "First Major Test",
-          "desc": "The rollers are adding up. Legs are talking.",
-          "terrain_detail": "Key section at mile 30"
+          "mile": 6,
+          "label": "Trinidad Lake Roller Coaster",
+          "desc": "Six-mile series of hills in the state park. Packs stay together but legs start to sting.",
+          "terrain_detail": "Rolling terrain in state park",
+          "named_section": "Roller Coaster"
         },
         {
-          "mile": 60,
-          "label": "Wind Games",
-          "desc": "Open prairie means exposure. Wind direction determines your fate.",
-          "terrain_detail": "Open terrain where wind is a factor",
-          "named_section": "Wind Games"
+          "mile": 24,
+          "label": "18-Mile Climb",
+          "desc": "The main selection. 18 miles up to 9,000 ft with grades up to 18%. Heat, altitude, and gradient blow up groups.",
+          "terrain_detail": "Long sustained climb with steep pitches",
+          "named_section": "The Big Climb"
         },
         {
-          "mile": 85,
-          "label": "Closing Miles",
-          "desc": "You can see the finish but the hills don't stop coming.",
-          "terrain_detail": "Key section at mile 85",
-          "named_section": "Closing Miles"
+          "mile": 65,
+          "label": "Highest Point & Descent",
+          "desc": "After climbing to the highest point, screaming descent with mud and deep do-not-change-your-line ruts for about a mile.",
+          "terrain_detail": "Rutted technical descent",
+          "named_section": "Top of Course"
+        },
+        {
+          "mile": 100,
+          "label": "Chunky Sector",
+          "desc": "The chunkiest part of the course. Most susceptible to flatting. Right before fast run-in to town.",
+          "terrain_detail": "Rocky/chunky gravel near Trinidad Lake",
+          "named_section": "Flat Zone"
         }
       ],
-      "signature_challenge": "The wind. Fall in Kansas means consistent 15-25 mph winds. Half your race is headwind. The other half is beautiful.",
-      "map_url": "https://ridewithgps.com/routes/51731077"
+      "signature_challenge": "The 18-mile climb to 9,000 ft. Long, steep, at altitude. This is where races are won and lost.",
+      "map_url": "https://www.theraddirt.com"
     },
     "ratings_breakdown": {
       "prestige": {
         "score": 3,
-        "explanation": "Not Unbound, and it doesn't pretend to be. But racing the same Flint Hills roads with the same community carries weight. Think of it as Unbound's training race."
+        "explanation": "Was Lifetime Grand Prix stop #5 in 2024. Solid Life Time event with strong organization. Includes UNBOUND qualifier coin allocation."
       },
       "length": {
-        "score": 4,
-        "explanation": "100 miles of gravel is serious regardless of season. The cooler temps help, but the distance still demands respect and proper preparation."
+        "score": 5,
+        "explanation": "113 miles (Stubborn Delores) is serious ultra-distance. Combined with 10,600+ feet of climbing, this is a full-day effort."
       },
       "technicality": {
         "score": 3,
-        "explanation": "Same terrain as Unbound\u2014chunky limestone, cattle guards, nothing crazy technical. Bike handling helps, but this is a fitness race."
+        "explanation": "Over 90% maintained gravel. Technical sections limited to ~2 miles at Trinidad Lake State Park and occasional rutted descents."
       },
       "elevation": {
-        "score": 3,
-        "explanation": "7,000 feet across 100 miles is constant rolling, not climbing. The Flint Hills never let you settle. Expect punchy efforts all day."
+        "score": 5,
+        "explanation": "10,613 feet of climbing across 113 miles. The 18-mile climb with grades up to 18% is the defining challenge."
       },
       "climate": {
-        "score": 2,
-        "explanation": "Fall is the kindest season in the Flint Hills. No June heat trying to kill you. But Kansas wind is ever-present, and late October can surprise with cold snaps."
+        "score": 3,
+        "explanation": "High-desert Colorado in early fall. Cool mornings, warm afternoons. Heat and sun exposure on the long climb are the main concerns."
       },
       "altitude": {
-        "score": 1,
-        "explanation": "Emporia sits at ~1,200 feet. Altitude is irrelevant. Train anywhere, show up ready."
+        "score": 4,
+        "explanation": "Start at ~6,000 ft in Trinidad, climb to ~9,000 ft. Altitude is a real factor. Sea-level riders will feel it."
       },
       "adventure": {
         "score": 4,
-        "explanation": "The Flint Hills are stunning in fall\u2014golden grasses, big sky, solitude. It's the same beautiful desolation as Unbound, just in a gentler season."
+        "explanation": "Spanish Peaks backdrop, sweeping mesas, high-desert beauty. Trinidad is off the beaten path but stunning terrain."
       }
     },
     "biased_opinion": {
-      "verdict": "Unbound Lite",
-      "summary": "The Rad is perfect if you want to experience Emporia gravel without the Unbound commitment. Same roads, same community, cooler temps, lower stakes. It's also a great prep race if you're building toward Unbound the following June.",
+      "verdict": "Climber's High-Desert Challenge",
+      "summary": "The Rad is a climbing race set against stunning Spanish Peaks scenery. The 18-mile climb to 9,000 ft with grades up to 18% defines the event. Well-organized Life Time production with challenging terrain.",
       "strengths": [
-        "No lottery: You can actually register and race.",
-        "Cooler weather: October > June in the Flint Hills.",
-        "Community: Same Emporia vibe, same great volunteers.",
-        "Training race: Perfect Unbound prep 8 months before the main event."
+        "The scenery: Spanish Peaks and sweeping mesas are stunning.",
+        "The climb: 18-mile sustained effort is a true test of climbing fitness.",
+        "The organization: Life Time event quality and support.",
+        "UNBOUND qualifier: Finishers earn qualifier coins for 2025."
       ],
       "weaknesses": [
-        "Less prestige: It's not Unbound. The Instagram engagement is lower.",
-        "Wind: Fall means consistent wind. Some years it's brutal.",
-        "Smaller field: Less energy, fewer pros, quieter experience."
+        "Logistics: Trinidad is remote. Denver/Colorado Springs are hours away.",
+        "Altitude: 6,000-9,000 ft range affects sea-level riders.",
+        "Technical sections: Muddy/rutted descents can catch riders off-guard."
       ],
-      "bottom_line": "If you want the Flint Hills without the suffering, The Rad delivers. If you want the full Emporia experience, it's a great appetizer before the main course."
+      "bottom_line": "A serious climbing race in beautiful high-desert Colorado. Come prepared for altitude and long sustained efforts."
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "The Rad is overshadowed by its famous sibling. Finishing doesn't carry the same weight as an Unbound buckle. That's okay\u2014not every race needs to be a life-defining moment.",
+      "reality": "The 18-mile climb with grades up to 18% at altitude will humble you. If you train at sea level and show up expecting smooth gravel, the altitude and gradient will wreck your day.",
       "consequences": [
-        "October weather in Kansas is unpredictable. Pack layers and rain gear.",
-        "Wind can make or break your day. Headwind miles feel twice as long.",
-        "Post-race options in Emporia are limited compared to June's festival atmosphere."
+        "Trinidad is remote. Nearest major airports are Denver or Colorado Springs, hours away.",
+        "Altitude matters. Start at 6,000 ft, climb to 9,000 ft. Acclimatization helps.",
+        "The muddy/rutted descent at the top can cause flats and crashes. Hold your line."
       ],
-      "expectation_reset": "This is a great race, not a legendary one. Treat it as a training race, a preview, or simply a fun day on great roads. Don't expect Unbound's atmosphere at Unbound's off-peak event."
+      "expectation_reset": "This is a legitimate climbing challenge at altitude. Train for long sustained efforts and come prepared for high-desert conditions."
     },
     "final_verdict": {
-      "score": "78 / 100",
-      "one_liner": "The accessible Flint Hills experience\u2014same great roads, lower stakes, better temps.",
-      "should_you_race": "Yes if you want to experience Emporia gravel without the Unbound circus. Yes if you're prepping for Unbound next year. Maybe not if you're chasing prestige.",
-      "alternatives": "If you want the full Emporia experience: Unbound 200 in June. If you want fall gravel elsewhere: Big Sugar (Arkansas) or Gravel Worlds (Nebraska)."
+      "score": "79 / 100",
+      "one_liner": "High-desert climbing race with Spanish Peaks views and 10,000+ feet of vertical.",
+      "should_you_race": "Yes if you love climbing and want a challenging altitude race in stunning Colorado scenery. The 18-mile climb is the real deal.",
+      "alternatives": "If you want Colorado gravel without the massive climb: Ned Gravel. If you want similar climbing: Crusher in the Tushar."
     },
     "logistics": {
-      "airport": "Wichita (ICT) - 90 minutes to Emporia. Kansas City (MCI) - 2 hours.",
-      "lodging_strategy": "Easier to book than Unbound. Hotels in Emporia are available. Book 1-2 months ahead.",
-      "food": "Same Emporia options as Unbound weekend. Less crowded.",
-      "packet_pickup": "Friday evening or Saturday morning at event venue.",
-      "parking": "Much easier than Unbound. Ample space near start.",
-      "official_site": "Check Emporia cycling event calendar"
+      "airport": "Denver (DEN) or Colorado Springs (COS) - several hours drive to Trinidad. Consider Pueblo for closer regional option.",
+      "lodging_strategy": "Trinidad and surrounding area. Event weekend likely sells out local hotels/campsites. Book early.",
+      "food": "Trinidad is a small town. Plan accordingly.",
+      "packet_pickup": "Standard Life Time check-in protocols. Athlete guide covers timing and mandatory gear.",
+      "parking": "Start in downtown Trinidad. Standard event footprint.",
+      "official_site": "https://www.theraddirt.com"
     },
     "training_plans": {
       "total_count": 15,
@@ -181,18 +196,18 @@
       "marketplace_base_url": "https://www.trainingpeaks.com/training-plans/cycling"
     },
     "seo": {
-      "title": "The Rad Dirt Fest Race Guide | Training Plans & Emporia Course Intel",
-      "meta_description": "The Rad Dirt Fest Emporia guide: 100-mile gravel race featuring 7K+ feet of climbing (TIER 2 event). Get training plans & course breakdown.",
+      "title": "The Rad Dirt Fest Race Guide | Training Plans & Trinidad Course Intel",
+      "meta_description": "The Rad Dirt Fest Trinidad guide: 113-mile gravel race with 10,600 ft climbing (TIER 2). Get training plans & course breakdown.",
       "focus_keyword": "the rad dirt fest",
       "slug": "the-rad"
     },
     "altitude": {
-      "start_elevation_ft": 0,
-      "max_elevation_ft": 0,
-      "min_elevation_ft": 0,
-      "altitude_impact": "NONE - Altitude data not specified.",
-      "acclimatization_required": false
+      "start_elevation_ft": 6000,
+      "max_elevation_ft": 9000,
+      "min_elevation_ft": 6000,
+      "altitude_impact": "SIGNIFICANT - Race starts at 6,000 ft and climbs to 9,000 ft. Acclimatization recommended.",
+      "acclimatization_required": true
     },
-    "race_challenge_tagline": "7K+ feet of climbing"
+    "race_challenge_tagline": "10,600+ feet of climbing with 18-mile sustained effort"
   }
 }

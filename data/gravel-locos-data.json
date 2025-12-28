@@ -60,19 +60,25 @@
       "acclimatization_required": false
     },
     "gravel_god_rating": {
-      "overall_score": 85,
-      "course_profile": 28,
-      "biased_opinion": 47,
-      "tier": 1,
-      "tier_label": "TIER 1",
-      "prestige": 4,
+      "overall_score": 79,
+      "course_profile": 24,
+      "biased_opinion": 31,
+      "tier": 2,
+      "tier_label": "TIER 2",
       "length": 5,
       "technicality": 2,
       "elevation": 4,
       "climate": 5,
       "altitude": 1,
       "adventure": 4,
-      "logistics": 3
+      "logistics": 3,
+      "prestige": 4,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 5,
+      "field_depth": 4,
+      "value": 5,
+      "expenses": 4
     },
     "history": {
       "founded": 2021,
@@ -147,6 +153,30 @@
       "logistics": {
         "score": 3,
         "explanation": "DFW is a few hours drive. Hico is 'the middle of nowhere.' Boondocking on site available. Glen Rose, Stephenville nearby for lodging."
+      },
+      "race_quality": {
+        "score": 4,
+        "explanation": "Well-organized charity event with good aid stations and community support. The 2022 water shortage was a one-time issue. Solid execution for a free event."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Legendary Texas hospitality, wildflower-lined roads, cowboy town charm, and post-race BBQ. 'What else could you possibly want?'"
+      },
+      "community": {
+        "score": 5,
+        "explanation": "Community-driven charity event raising money for Hico first responders. Free entry with donation model creates incredible grassroots atmosphere."
+      },
+      "field_depth": {
+        "score": 4,
+        "explanation": "Deep pro field uses this as Unbound tune-up. Justine Barrow, Julien Gagne among winners. International competitors and serious amateurs."
+      },
+      "value": {
+        "score": 5,
+        "explanation": "IT'S FREE. $0 entry for 150 miles of world-class gravel racing. Donations go to first responders. Best value in gravel by definition."
+      },
+      "expenses": {
+        "score": 4,
+        "explanation": "Texas is affordable. Camping/boondocking on site. DFW flights are cheap. Hico lodging is budget-friendly. No Colorado/California prices."
       }
     },
     "biased_opinion": {
@@ -181,7 +211,7 @@
       "skip_if": "You can't handle heat, you expect technical terrain, or you need a 'name' race for your gravel resume."
     },
     "final_verdict": {
-      "score": "85 / 100",
+      "score": "79 / 100",
       "one_liner": "Free 150-mile Unbound tune-up on gorgeous Texas gravel where Texas heat is the great equalizer.",
       "should_you_race": "Yes if you want a legitimate ultra-gravel experience for free with international competition and legendary Texas hospitality. Gravel Locos proves you don't need a $250 entry fee to have a world-class gravel race. Just train for heat.",
       "alternatives": "If you want similar distance with mud risk: Unbound. If you want Texas gravel with less heat: wait for fall events. If you want free racing: this is the gold standard."

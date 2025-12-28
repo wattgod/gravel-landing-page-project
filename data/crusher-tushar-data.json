@@ -47,18 +47,26 @@
       ]
     },
     "gravel_god_rating": {
-      "overall_score": 88,
-      "course_profile": 35,
-      "biased_opinion": 43,
+      "overall_score": 86,
+      "course_profile": 29,
+      "biased_opinion": 31,
       "tier": 1,
       "tier_label": "TIER 1",
-      "prestige": 4,
+      "tier_note": "Lifetime Grand Prix race - prestige override applied",
       "length": 3,
       "technicality": 4,
       "elevation": 5,
       "climate": 4,
       "altitude": 5,
-      "adventure": 5
+      "adventure": 5,
+      "logistics": 3,
+      "prestige": 5,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 4,
+      "field_depth": 5,
+      "value": 4,
+      "expenses": 4
     },
     "history": {
       "founded": 2011,
@@ -108,8 +116,8 @@
     },
     "ratings_breakdown": {
       "prestige": {
-        "score": 4,
-        "explanation": "Not Unbound-famous, but deeply respected in the gravel community. Finishing Crusher means you can climb AND descend. The mixed-surface format and pro field give it serious credibility."
+        "score": 5,
+        "explanation": "Lifetime Grand Prix race. Featured on the premier pro circuit, attracting the best gravel racers in the world. Finishing Crusher means you can climb AND descend at altitude. The mixed-surface format and international pro field give it elite credibility."
       },
       "length": {
         "score": 3,
@@ -162,7 +170,7 @@
       "expectation_reset": "This isn't a gravel race you can 'just show up' to. The altitude and terrain demand specific preparation. A 12-week training plan with altitude simulation is table stakes for a respectable finish."
     },
     "final_verdict": {
-      "score": "88 / 100",
+      "score": "86 / 100",
       "one_liner": "The climber's gravel race\u2014where thin air separates pretenders from contenders.",
       "should_you_race": "If you love climbing and want a race that rewards it, absolutely. If you're a diesel-engine flat-lander, consider something else. The altitude alone makes this a specialist's race.",
       "alternatives": "If you want climbing without altitude: Leadville (higher but different format). If you want gravel without the vertical: SBT GRVL Green offers similar beauty with less suffering per mile."
@@ -189,7 +197,7 @@
     },
     "seo": {
       "title": "Crusher in the Tushar Race Guide | Training Plans & Beaver Course Intel",
-      "meta_description": "Crusher in the Tushar Beaver guide: 69-mile gravel race (TIER 1 event). Get comprehensive training plans and detailed course breakdown & course breakdown.",
+      "meta_description": "Crusher in the Tushar Beaver guide: 69-mile Lifetime Grand Prix gravel race (TIER 1). Get training plans & course breakdown.",
       "focus_keyword": "crusher in the tushar",
       "slug": "crusher-in-the-tushar"
     },

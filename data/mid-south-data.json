@@ -54,14 +54,20 @@
       "biased_opinion": 32,
       "tier": 1,
       "tier_label": "TIER 1",
-      "prestige": 5,
       "length": 4,
       "technicality": 2,
       "elevation": 2,
       "climate": 5,
       "altitude": 1,
       "adventure": 4,
-      "logistics": 3
+      "logistics": 3,
+      "prestige": 5,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 5,
+      "field_depth": 5,
+      "value": 4,
+      "expenses": 4
     },
     "history": {
       "founded": 2006,

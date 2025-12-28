@@ -60,19 +60,25 @@
       "acclimatization_required": true
     },
     "gravel_god_rating": {
-      "overall_score": 88,
-      "course_profile": 35,
-      "biased_opinion": 43,
-      "tier": 1,
-      "tier_label": "TIER 1",
-      "prestige": 3,
+      "overall_score": 73,
+      "course_profile": 30,
+      "biased_opinion": 21,
+      "tier": 3,
+      "tier_label": "TIER 3",
       "length": 4,
       "technicality": 5,
       "elevation": 5,
       "climate": 3,
       "altitude": 5,
       "adventure": 5,
-      "logistics": 3
+      "logistics": 3,
+      "prestige": 2,
+      "race_quality": 3,
+      "experience": 4,
+      "community": 3,
+      "field_depth": 2,
+      "value": 4,
+      "expenses": 3
     },
     "history": {
       "founded": 2020,
@@ -115,10 +121,6 @@
       "map_url": "https://www.bighornevents.com/race-day-gravel"
     },
     "ratings_breakdown": {
-      "prestige": {
-        "score": 3,
-        "explanation": "Growing reputation but still 'the best gravel race you've never heard of.' Dylan Johnson and Vegan Cyclist coverage is raising the profile. Not yet Tier 1 prestige but climbing fast."
-      },
       "length": {
         "score": 4,
         "explanation": "85 miles of rugged terrain at altitude. The 50-mile 'Little Bighorn Loop' is 'the most challenging course I've ever done' according to one rider. Distance is deceptive when every mile is rough."
@@ -146,6 +148,34 @@
       "logistics": {
         "score": 3,
         "explanation": "Eagle County Regional (EGE) is right next to Gypsum. Denver (DEN) is the cheaper hub with I-70 drive. Gypsum is small - many stay in Eagle or Vail/Edwards."
+      },
+      "prestige": {
+        "score": 2,
+        "explanation": "Still 'the best gravel race you've never heard of.' Growing YouTube coverage (Dylan Johnson, Vegan Cyclist) but unknown nationally. Not a resume race. No major media coverage. Tier 3 prestige climbing toward Tier 2."
+      },
+      "race_quality": {
+        "score": 3,
+        "explanation": "Well-organized small event with good aid stations and clear course marking. Not Life Time production quality but solid grassroots execution. Growing pains as field expands."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "Genuine adventure racing in beautiful Colorado wilderness. The rowdy terrain and altitude challenge create memorable suffering. Post-race small-town vibe is authentic."
+      },
+      "community": {
+        "score": 3,
+        "explanation": "Small but growing community. ~500 riders means you'll know people by the end. Not the massive festival atmosphere of Unbound. More intimate, less spectacle."
+      },
+      "field_depth": {
+        "score": 2,
+        "explanation": "Not a major pro draw. Dylan Johnson's podium was notable because it's NOT a stacked field. Local and regional competitors dominate. No international field."
+      },
+      "value": {
+        "score": 4,
+        "explanation": "$100-200 entry is reasonable for the experience. Good bang for buck if you want genuine challenge without paying Unbound prices."
+      },
+      "expenses": {
+        "score": 3,
+        "explanation": "Colorado travel required. Gypsum lodging is limited (Eagle/Vail nearby but pricier). Not a cheap destination but not extreme either."
       }
     },
     "biased_opinion": {
@@ -180,7 +210,7 @@
       "skip_if": "You expect smooth gravel, you can't handle 3,000 ft in 13 miles at altitude, or you need a resume race with national recognition."
     },
     "final_verdict": {
-      "score": "88 / 100",
+      "score": "73 / 100",
       "one_liner": "Colorado's rowdiest gravel race where the 3,000 ft opening wall and rutted Jeep roads make pros switch to hardtails.",
       "should_you_race": "Yes if you want genuinely hard gravel racing that tests your technical skills, altitude tolerance, and pacing discipline. Big Horn is 'the best gravel race you've never heard of' - but it won't stay unknown for long. Come prepared for aggressive terrain and you'll have an unforgettable day.",
       "alternatives": "If you want Colorado altitude without the tech: SBT GRVL (champagne gravel). If you want similar rowdiness: Gunni Grinder. If you want technical but less altitude: BWR California."

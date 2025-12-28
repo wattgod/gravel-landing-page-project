@@ -57,19 +57,25 @@
       "acclimatization_required": true
     },
     "gravel_god_rating": {
-      "overall_score": 94,
-      "course_profile": 35,
-      "biased_opinion": 50,
-      "tier": 1,
-      "tier_label": "TIER 1",
-      "prestige": 4,
+      "overall_score": 82,
+      "course_profile": 29,
+      "biased_opinion": 27,
+      "tier": 2,
+      "tier_label": "TIER 2",
       "length": 5,
       "technicality": 3,
       "elevation": 4,
       "climate": 5,
       "altitude": 4,
       "adventure": 5,
-      "logistics": 4
+      "logistics": 3,
+      "prestige": 4,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 3,
+      "field_depth": 3,
+      "value": 2,
+      "expenses": 2
     },
     "history": {
       "founded": 2019,

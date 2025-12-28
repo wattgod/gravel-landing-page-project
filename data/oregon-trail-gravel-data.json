@@ -47,18 +47,25 @@
       ]
     },
     "gravel_god_rating": {
-      "overall_score": 92,
-      "course_profile": 38,
-      "biased_opinion": 45,
-      "tier": 1,
-      "tier_label": "TIER 1",
-      "prestige": 4,
+      "overall_score": 82,
+      "course_profile": 28,
+      "biased_opinion": 28,
+      "tier": 2,
+      "tier_label": "TIER 2",
       "length": 5,
       "technicality": 3,
       "elevation": 5,
       "climate": 3,
       "altitude": 4,
-      "adventure": 5
+      "adventure": 5,
+      "logistics": 3,
+      "prestige": 4,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 3,
+      "field_depth": 3,
+      "value": 3,
+      "expenses": 3
     },
     "history": {
       "founded": 2015,

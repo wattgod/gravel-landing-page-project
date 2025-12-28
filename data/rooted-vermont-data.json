@@ -7,9 +7,9 @@
     "vitals": {
       "distance_mi": 87,
       "elevation_ft": 10000,
-      "location": "East Burke, Vermont",
-      "location_badge": "EAST BURKE, VERMONT",
-      "county": "Caledonia County",
+      "location": "Richmond, Vermont",
+      "location_badge": "RICHMOND, VERMONT",
+      "county": "Chittenden County",
       "date": "Late July / Early August annually",
       "date_specific": "2025: August 2",
       "terrain_types": [
@@ -47,23 +47,30 @@
       ]
     },
     "gravel_god_rating": {
-      "overall_score": 85,
-      "course_profile": 33,
-      "biased_opinion": 43,
+      "overall_score": 80,
+      "course_profile": 23,
+      "biased_opinion": 29,
       "tier": 2,
       "tier_label": "TIER 2",
-      "prestige": 4,
       "length": 3,
       "technicality": 4,
-      "elevation": 5,
-      "climate": 2,
+      "elevation": 4,
+      "climate": 3,
       "altitude": 1,
-      "adventure": 5
+      "adventure": 4,
+      "logistics": 4,
+      "prestige": 4,
+      "race_quality": 4,
+      "experience": 5,
+      "community": 4,
+      "field_depth": 4,
+      "value": 4,
+      "expenses": 4
     },
     "history": {
       "founded": 2019,
-      "founder": "Local Vermont gravel enthusiasts",
-      "origin_story": "Created to showcase Vermont's legendary gravel roads and Kingdom Trails region. The race celebrates the rugged beauty and cycling heritage of the Green Mountain State.",
+      "founder": "Ted King & Laura King",
+      "origin_story": "Created by ex-WorldTour pro Ted King and Laura King to 'cultivate a welcoming and celebratory gravel community' with a 'physically challenging and Vermont-centric race experience.' Based in Richmond, VT (not East Burke), the race showcases central Vermont's legendary gravel roads with Class IV sectors and steep punchy climbs.",
       "notable_moments": [
         "Part of Life Time Grand Prix series",
         "Features iconic Vermont covered bridges",

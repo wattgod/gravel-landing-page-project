@@ -47,18 +47,26 @@
       ]
     },
     "gravel_god_rating": {
-      "overall_score": 75,
-      "course_profile": 26,
-      "biased_opinion": 39,
-      "tier": 2,
-      "tier_label": "TIER 2",
-      "prestige": 3,
+      "overall_score": 85,
+      "course_profile": 18,
+      "biased_opinion": 32,
+      "tier": 1,
+      "tier_label": "TIER 1",
+      "tier_note": "Lifetime Grand Prix race (as of 2025) - prestige override applied",
       "length": 2,
       "technicality": 3,
       "elevation": 3,
       "climate": 2,
       "altitude": 1,
-      "adventure": 4
+      "adventure": 4,
+      "logistics": 5,
+      "prestige": 5,
+      "race_quality": 5,
+      "experience": 5,
+      "community": 5,
+      "field_depth": 5,
+      "value": 3,
+      "expenses": 4
     },
     "history": {
       "founded": 1991,
@@ -100,8 +108,8 @@
     },
     "ratings_breakdown": {
       "prestige": {
-        "score": 3,
-        "explanation": "Sea Otter is famous for the festival, not specifically the gravel race. It's respected but not a bucket-list gravel event. More of a 'while you're there' opportunity."
+        "score": 5,
+        "explanation": "Lifetime Grand Prix race as of 2025. Sea Otter's addition to the premier pro circuit elevates it from festival side-show to serious gravel competition. Expect the world's best gravel racers."
       },
       "length": {
         "score": 2,
@@ -154,7 +162,7 @@
       "expectation_reset": "This is a cycling vacation with a race attached. Set expectations accordingly. Great experience, not a defining gravel challenge."
     },
     "final_verdict": {
-      "score": "75 / 100",
+      "score": "85 / 100",
       "one_liner": "A gravel race wrapped in North America's biggest bike festival. Experience > competition.",
       "should_you_race": "Yes if you want the full Sea Otter experience and gravel is your discipline. No if you're looking for a pure gravel bucket-list race.",
       "alternatives": "If you want California gravel without the circus: Lost & Found (Tahoe), Grasshopper. If you want the expo but different racing: Sea Otter MTB or road events."
@@ -181,7 +189,7 @@
     },
     "seo": {
       "title": "Sea Otter Classic Gravel Race Guide | Training Plans & Monterey Course Intel",
-      "meta_description": "Sea Otter Classic Gravel Monterey guide: 65-mile gravel race at 6K+ feet of climbing. Get training plans & course breakdown.",
+      "meta_description": "Sea Otter Classic Gravel Monterey guide: Lifetime Grand Prix gravel race (TIER 1). Get training plans & course breakdown.",
       "focus_keyword": "sea otter classic gravel",
       "slug": "sea-otter-gravel"
     },
