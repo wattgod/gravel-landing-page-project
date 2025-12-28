@@ -3,11 +3,11 @@
     "name": "Traka 360",
     "slug": "traka-360",
     "display_name": "Traka 360",
-    "tagline": "Europe's answer to Unbound\u2014born in Girona, the pro cycling mecca",
-    "race_challenge_tagline": "23,000 feet of climbing on technical Mediterranean terrain",
+    "tagline": "Europe's answer to Unbound—born in Girona, the pro cycling mecca",
+    "race_challenge_tagline": "360km with 10,000+ feet of climbing on technical Mediterranean terrain",
     "vitals": {
       "distance_mi": 224,
-      "elevation_ft": 23000,
+      "elevation_ft": 11000,
       "location": "Girona, Catalonia, Spain",
       "location_badge": "GIRONA, CATALONIA, SPAIN",
       "county": "",
@@ -24,8 +24,8 @@
       "start_time": "Saturday early morning",
       "registration": "Opens winter/spring. Cost: \u20ac80-200",
       "prize_purse": "Varies",
-      "aid_stations": "Every 40-50km with full support",
-      "cutoff_time": "24 hours"
+      "aid_stations": "Multiple feed zones with staffed stops plus town resupply",
+      "cutoff_time": "18-20 hours"
     },
     "climate": {
       "primary": "Variable spring weather",
@@ -40,8 +40,8 @@
     "terrain": {
       "primary": "Rocky Mediterranean gravel with forest singletrack",
       "surface": "Rocky Mediterranean gravel, forest trails, technical descents\u2014not smooth gravel",
-      "gravel_percentage": 70,
-      "pavement_percentage": 30,
+      "gravel_percentage": 85,
+      "pavement_percentage": 15,
       "technical_rating": 4,
       "features": [
         "Sustained Category 1 climbs on gravel",
@@ -59,14 +59,15 @@
       "acclimatization_required": false
     },
     "gravel_god_rating": {
-      "overall_score": 88,
-      "course_profile": 28,
+      "overall_score": 84,
+      "course_profile": 27,
       "biased_opinion": 32,
       "tier": 1,
       "tier_label": "TIER 1",
+      "tier_note": "Europe's largest gravel event, UCI World Series, 4,000+ riders from 74 countries - prestige override applied",
       "length": 5,
       "technicality": 4,
-      "elevation": 5,
+      "elevation": 4,
       "climate": 3,
       "altitude": 2,
       "adventure": 5,
@@ -98,31 +99,38 @@
       ]
     },
     "course_description": {
-      "character": "Relentless climbing on Mediterranean gravel. Not one killer climb\u20147,000 meters of accumulated suffering spread across 360km.",
+      "character": "Relentless climbing on Mediterranean gravel. 85% gravel with rough sections better suited to MTB. Flowing early terrain gives way to rougher mid-course chunks.",
       "suffering_zones": [
         {
-          "mile": 50,
-          "label": "First Mountain Pass",
-          "desc": "The opening act. Legs still fresh, ego intact. You think you've got this.",
-          "terrain_detail": "First real test of the day",
-          "named_section": "The Selection Point"
+          "mile": 84,
+          "label": "Early Sectors",
+          "desc": "First 135km feels great—flowing terrain outside Girona. But burning matches here costs you later.",
+          "terrain_detail": "Nice flowing terrain, cool morning air",
+          "named_section": "The Honeymoon"
         },
         {
-          "mile": 112,
-          "label": "Halfway Reality",
-          "desc": "The climbing doesn't stop. Your legs know exactly what's coming for the next 180km.",
-          "terrain_detail": "Pyrenean foothills reveal themselves",
-          "named_section": "The Grind Begins"
+          "mile": 140,
+          "label": "Mid-Race Rough Sectors",
+          "desc": "Some sections questionably rough and better suited to a mountain bike. The terrain starts demanding attention.",
+          "terrain_detail": "Rocky farm tracks, rougher gravel",
+          "named_section": "Reality Check"
         },
         {
           "mile": 186,
-          "label": "Night Falls",
-          "desc": "Headlamps on. The final 60km in darkness. Technical terrain on empty legs.",
-          "terrain_detail": "Forest singletrack on fried legs",
-          "named_section": "The Dark Hours"
+          "label": "Garmin Hill",
+          "desc": "The steepest, slowest, most brutal climb of the day. Deep into the ride when legs are cooked. This is where races are decided.",
+          "terrain_detail": "Iconic brutal climb after 300+ km",
+          "named_section": "Garmin Hill"
+        },
+        {
+          "mile": 210,
+          "label": "Final Flat Run",
+          "desc": "After Garmin Hill and one more climb, a long flat roll home. Fatigue and headwind can make riders crawl.",
+          "terrain_detail": "Long flat drag back to Girona",
+          "named_section": "The Grind Home"
         }
       ],
-      "signature_challenge": "23,000 feet of climbing on technical Mediterranean terrain. The pro cycling training ground becomes YOUR proving ground.",
+      "signature_challenge": "Garmin Hill—the steepest, slowest, most brutal climb of the day, hitting when you have 300+ km in your legs.",
       "ridewithgps_id": "TBD",
       "ridewithgps_name": "Traka 360",
       "map_url": null
@@ -141,8 +149,8 @@
         "explanation": "Mediterranean rock isn't forgiving. Technical descents on fried legs separate finishers from DNFs. Forest singletrack that punishes tired legs."
       },
       "elevation": {
-        "score": 5,
-        "explanation": "7,000m of climbing. Not one epic climb\u2014dozens of punchy efforts that never let you recover. The cumulative fatigue is brutal."
+        "score": 4,
+        "explanation": "2,900-3,700m (9,500-12,000 ft) of climbing depending on year. Many medium-length climbs rather than monster passes. The cumulative fatigue is brutal."
       },
       "climate": {
         "score": 3,
@@ -203,24 +211,24 @@
     },
     "black_pill": {
       "title": "THE THING NOBODY TELLS YOU",
-      "reality": "Traka will break you in ways Unbound can't. American gravel is rolling and rough. European gravel is climbing and technical. 23,000 feet of elevation gain on rocky terrain requires a different kind of fitness\u2014and a different kind of suffering tolerance.",
+      "reality": "Traka will break you in ways Unbound can't. Some sections are 'questionably rough and better suited to a mountain bike.' Bigger tires are always better—50mm if you can fit them. And Garmin Hill will destroy you after 300km.",
       "consequences": [
         "You'll spend $2,000-3,000 minimum (flights, entry, lodging, bike transport)",
-        "You'll ride through the night. 16-24 hours means darkness is mandatory",
+        "You'll ride through the night. 12-18 hours means darkness is likely for back-of-pack",
         "The technical descents after 15+ hours test skills you don't have when exhausted",
-        "The climbing never stops. Not one epic climb\u2014dozens that accumulate into 7,000 meters"
+        "Heat and dehydration in midday Catalan sun—long stretches between resupply if mis-planned"
       ],
-      "quote": "Train for climbing. Then train for more climbing. Your FTP matters less than your ability to repeat threshold efforts for 20 hours.",
-      "expectation_reset": "This is a mountainous ultra-endurance event disguised as a gravel race. Train for climbing. Then train for more climbing. Your FTP matters less than your ability to repeat threshold efforts for 20 hours."
+      "quote": "Bigger is always better when it comes to tire choice at The Traka. I was lucky to be able to fit 50mm tires.",
+      "expectation_reset": "This is a 360km ultra-endurance event with rough terrain. Run the biggest tires you can fit. Plan nutrition carefully. And save something for Garmin Hill."
     },
     "tldr": {
       "should_race_if": "You want Europe's premier gravel experience, you can handle 16-24 hours of racing, and you're ready for technical terrain on exhausted legs.",
       "skip_if": "You need guaranteed good weather, you can't handle night racing, or you're looking for smooth, fast gravel without surprises."
     },
     "final_verdict": {
-      "score": "91 / 100",
-      "one_liner": "Europe's Unbound where 23,000 feet of climbing meets technical Mediterranean terrain and night racing.",
-      "should_you_race": "Yes, if you want Europe's premier gravel experience and can handle 16-24 hours of racing. Traka delivers WorldTour-level legitimacy, stunning Pyrenean terrain, and a field from 74 countries. Just be ready for the climbing, the technical descents on fried legs, and the reality of night racing.",
+      "score": "88 / 100",
+      "one_liner": "Europe's Unbound—360km of technical Mediterranean gravel with Garmin Hill waiting to break you at km 300.",
+      "should_you_race": "Yes, if you want Europe's premier gravel experience and can handle 12-18+ hours of racing. Traka delivers WorldTour-level legitimacy, stunning Catalan terrain, and a field from 74 countries. Just be ready for rough sections, Garmin Hill after 300km, and run 44-50mm tires.",
       "alternatives": "If you want European gravel without the ultra distance: Dirty Reiver (UK, 210km). If you want bucket-list adventure: The Rift (Iceland, volcanic terrain). If you want guaranteed good weather: Unbound (Kansas, June)."
     },
     "logistics": {
@@ -246,7 +254,7 @@
     },
     "seo": {
       "title": "Traka 360 Race Guide | Training Plans & Girona Course Intel",
-      "meta_description": "Traka 360 Girona guide: 224-mile Spanish gravel race. Europe's Unbound with 23,000 feet of climbing on technical Mediterranean terrain. Get training plans & ...",
+      "meta_description": "Traka 360 Girona guide: 360km Spanish gravel race (TIER 1). Europe's Unbound with 10,000+ ft climbing. Get training plans & course breakdown.",
       "focus_keyword": "traka 360 race",
       "slug": "traka-360"
     }
