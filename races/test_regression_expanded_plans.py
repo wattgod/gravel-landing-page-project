@@ -49,11 +49,14 @@ def test_tier_hours_in_guides(plan_dir):
             with open(guide_file, 'r', encoding='utf-8') as f:
                 content = f.read()
                 
-                # Check for correct hours
+                # Check for correct hours - be flexible with format
                 for tier, hours in EXPECTED_TIERS.items():
                     if tier in guide_file.name or tier.upper() in content:
-                        if hours not in content:
-                            errors.append(f"{guide_file.name}: Missing correct hours for {tier}")
+                        # Extract hour range (e.g., "12-17" from "12-17 hrs/week" or "12-17 hours")
+                        hour_range = hours.split()[0]  # Get "12-17" from "12-17 hrs/week"
+                        # Check if hour range appears in content (flexible format)
+                        if hour_range not in content:
+                            errors.append(f"{guide_file.name}: Missing correct hours ({hour_range}) for {tier}")
         except Exception as e:
             errors.append(f"{guide_file.name}: Error reading - {e}")
     

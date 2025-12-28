@@ -208,23 +208,29 @@ def extend_plan_template(base_template, target_weeks, ftp_test_template=None):
     if target_weeks == 12:
         return base_template
     
+    # Deep copy the template to avoid modifying original
+    import copy
+    extended_template = copy.deepcopy(base_template)
+    
     # Calculate how many additional weeks needed
     additional_weeks = target_weeks - 12
     
-    # Get the last few weeks as a pattern
-    last_weeks = base_template.get("weeks", [])[-4:]  # Last 4 weeks as pattern
+    # Get the last few weeks as a pattern (use weeks 9-12 for better progression)
+    last_weeks = extended_template.get("weeks", [])[-4:]  # Last 4 weeks as pattern
     
     # Create new weeks by repeating and modifying the pattern
-    new_weeks = base_template.get("weeks", [])[:]
+    new_weeks = extended_template.get("weeks", [])[:]
     
     for i in range(additional_weeks):
         # Use pattern from last weeks, cycling through
-        pattern_week = last_weeks[i % len(last_weeks)]
+        pattern_week_idx = i % len(last_weeks)
+        pattern_week = last_weeks[pattern_week_idx]
         
-        # Create new week
-        new_week = pattern_week.copy()
-        new_week["week_number"] = 13 + i
-        new_week["focus"] = f"Extended Build - Week {13 + i}"
+        # Deep copy the pattern week to avoid modifying original
+        new_week = copy.deepcopy(pattern_week)
+        new_week_number = 13 + i
+        new_week["week_number"] = new_week_number
+        new_week["focus"] = f"Extended Build - Week {new_week_number}"
         
         # Adjust volume percent slightly (build phase)
         if i < additional_weeks // 2:
@@ -232,19 +238,24 @@ def extend_plan_template(base_template, target_weeks, ftp_test_template=None):
         else:
             new_week["volume_percent"] = pattern_week.get("volume_percent", 100)
         
-        # Update workout week numbers
+        # Update workout week numbers - use regex to properly replace week numbers
+        import re
         for workout in new_week.get("workouts", []):
             old_name = workout.get("name", "")
-            # Replace week number in name
-            workout["name"] = old_name.replace("W0", f"W{13+i:02d}").replace("W1", f"W{13+i:02d}")
-            workout["week_number"] = 13 + i
+            # Replace week number pattern (W01, W02, W12, etc.) with new week number
+            # Pattern: W followed by 1-2 digits at start of name
+            new_name = re.sub(r'^W\d{1,2}_', f'W{new_week_number:02d}_', old_name)
+            # Also handle cases like "W01" in middle of name (less common)
+            new_name = re.sub(r'W(\d{1,2})(?=[^0-9])', f'W{new_week_number:02d}', new_name)
+            workout["name"] = new_name
+            workout["week_number"] = new_week_number
         
         new_weeks.append(new_week)
     
-    base_template["weeks"] = new_weeks
-    base_template["plan_metadata"]["duration_weeks"] = target_weeks
+    extended_template["weeks"] = new_weeks
+    extended_template["plan_metadata"]["duration_weeks"] = target_weeks
     
-    return base_template
+    return extended_template
 
 def insert_ftp_tests(plan_template, ftp_test_path, plan_weeks, tier):
     """Insert FTP test and durability test workouts into plan template at appropriate weeks"""
