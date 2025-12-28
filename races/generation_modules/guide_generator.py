@@ -345,13 +345,13 @@ def get_weekly_hours(tier_name):
     """Return weekly hours for each tier"""
     hours = {
         'TIME CRUNCHED': '0-5',
-        'FINISHER': '5-8',
-        'COMPETE': '8-12',
-        'PODIUM': '12+',
+        'FINISHER': '8-10',
+        'COMPETE': '12-17',
+        'PODIUM': '18-25',
         # Legacy support
         'AYAHUASCA': '0-5',
     }
-    return hours.get(tier_name, '8-12')
+    return hours.get(tier_name, '12-17')
 
 
 def get_weekly_structure(tier_name):

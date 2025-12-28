@@ -178,7 +178,14 @@ def add_survey_link(week_num, workout_name, race_data, plan_info):
         
         # Generate plan-specific survey URL
         race_slug = race_name.lower().replace(' ', '-').replace('the ', '')
-        tier_slug = tier.lower()
+        # Map tier to survey slug (use "time-crunched" instead of "ayahuasca")
+        tier_slug_map = {
+            "ayahuasca": "time-crunched",
+            "finisher": "finisher",
+            "compete": "compete",
+            "podium": "podium"
+        }
+        tier_slug = tier_slug_map.get(tier.lower(), tier.lower())
         level_slug = level.lower().replace('_', '-')
         survey_filename = f"survey-{race_slug}-{tier_slug}-{level_slug}.html"
         survey_url = f"https://wattgod.github.io/gravel-landing-page-project/guides/{race_slug}/surveys/{survey_filename}"

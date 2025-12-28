@@ -46,7 +46,7 @@ PLAN_TYPES = {
     "2. Finisher": {
         "tier": "finisher",
         "level": "beginner",
-        "target_hours": "5-8 hrs/week",
+        "target_hours": "8-10 hrs/week",
         "goal": "Finish confidently, learn proper training",
         "philosophy": "Traditional Pyramidal",
         "source_plans": [
@@ -57,7 +57,7 @@ PLAN_TYPES = {
     "3. Compete": {
         "tier": "compete",
         "level": "intermediate",
-        "target_hours": "8-12 hrs/week",
+        "target_hours": "12-17 hrs/week",
         "goal": "Competitive finish, race for position",
         "philosophy": "Polarized Training",
         "source_plans": [
@@ -68,7 +68,7 @@ PLAN_TYPES = {
     "4. Compete Masters": {
         "tier": "compete",
         "level": "masters",
-        "target_hours": "8-12 hrs/week",
+        "target_hours": "12-17 hrs/week",
         "goal": "Age-group competitive",
         "philosophy": "Masters-optimized Polarized Training",
         "source_plans": [
@@ -80,7 +80,7 @@ PLAN_TYPES = {
     "5. Podium": {
         "tier": "podium",
         "level": "advanced",
-        "target_hours": "12+ hrs/week",
+        "target_hours": "18-25 hrs/week",
         "goal": "Race to win, podium finish",
         "philosophy": "High-volume, race-specific preparation",
         "source_plans": [
