@@ -318,10 +318,11 @@ def generate_strength_workout(week, day, template_key, templates_dict, output_di
     
     description = templates_dict[template_key]
     
-    # Generate filename
+    # Generate filename with day: W{week:02d}_{day}_STR_{pathway}_{session}.zwo
     pathway_name = get_pathway_name(template_key)
     session = get_session_letter(template_key)
-    filename = f"W{week:02d}_STR_{pathway_name.replace(' ', '_')}_{session}.zwo"
+    pathway_slug = pathway_name.replace(' ', '_').replace("'", "").replace("*", "")
+    filename = f"W{week:02d}_{day}_STR_{pathway_slug}_{session}.zwo"
     output_path = Path(output_dir) / filename
     
     # Create ZWO file with plan_weeks for context generation
