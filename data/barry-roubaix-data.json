@@ -21,7 +21,7 @@
         "punchy rollers",
         "pavement sections"
       ],
-      "field_size": "5,500+ riders from 48 states and 9 countries",
+      "field_size": "5,300+ riders (2024) from 44 states and 8 countries",
       "start_time": "62-mile: 10:00 AM, 36-mile: 9:00 AM, 18-mile: 10:15 AM, 100-mile: 7:00 AM",
       "registration": "Opens November 15 annually. Sells out in 24 hours. Cost: $79-119 depending on distance",
       "prize_purse": "$40,000+ distributed",
@@ -104,21 +104,28 @@
           "label": "Three Sisters",
           "desc": "Three consecutive punchy climbs immediately after leaving pavement. Primary selection point. If you're not with the lead group here, you won't bridge.",
           "terrain_detail": "First real test of the day",
-          "named_section": "The Selection Point"
+          "named_section": "Three Sisters"
         },
         {
           "mile": 18,
           "label": "Sager Road",
-          "desc": "Unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks. This is the signature section that defines Barry-Roubaix.",
+          "desc": "'Full of sand traps, rutted stony climbs'—the most technical section. Unmaintained seasonal two-track with sand ruts, mud holes, and baby-head rocks. This is the signature section that defines Barry-Roubaix.",
           "terrain_detail": "100-mile version adds 'Big Papa' with more sand, more climbing, and two unavoidable mud puddles",
-          "named_section": "The Signature Suffering"
+          "named_section": "Sager Road"
         },
         {
-          "mile": 25,
-          "label": "The Wall",
-          "desc": "0.2-mile climb averaging 11% with a false summit and a 'fun little final pitch.' Many athletes walk portions.",
-          "terrain_detail": "Comes late enough to expose fatigue but early enough to not be the final climb",
-          "named_section": "The Walk Zone"
+          "mile": 47,
+          "label": "Chainsaw Massacre",
+          "desc": "Late-race technical section where fatigue meets rough terrain. Named appropriately—this section chews through tired riders.",
+          "terrain_detail": "Technical section late in race",
+          "named_section": "Chainsaw Massacre"
+        },
+        {
+          "mile": 55,
+          "label": "MAD WALL",
+          "desc": "The last (and hardest) climb. Signals the end is approaching, but you still have to get over it. 11% pitch with a false summit and 'fun little final pitch.' Many athletes walk portions.",
+          "terrain_detail": "Final major climb before finish",
+          "named_section": "MAD WALL"
         }
       ],
       "signature_challenge": "The weather. April Michigan weather spans 20\u00b0F to 81\u00b0F. You're gambling on conditions you can't know until race morning.",

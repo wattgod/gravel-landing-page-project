@@ -12,13 +12,14 @@
       "location_badge": "KIELDER, NORTHUMBERLAND, ENGLAND",
       "county": "Northumberland",
       "date": "Late April annually",
-      "date_specific": "2026: April 25",
+      "date_specific": "2025: April 12 (Spring)",
       "terrain_types": [
-        "Forest gravel roads",
-        "technical singletrack",
-        "moorland crossings",
-        "rocky descents"
+        "Forest gravel roads (two-track)",
+        "Fist-size embedded rocks",
+        "Rocky Mountain-style forest roads",
+        "Moorland crossings"
       ],
+      "distance_options": "65km (40mi), 130km (80mi), 200km (124mi) - 'Rite of passage in the gravel world'",
       "field_size": "2,000 riders (sells out in 6 hours)",
       "start_time": "Saturday early morning",
       "registration": "Opens winter. Sells out in 6 hours. Cost: \u00a3100-150",
@@ -38,7 +39,7 @@
     },
     "terrain": {
       "primary": "Forest gravel roads with technical singletrack",
-      "surface": "Forest gravel roads, technical singletrack, moorland crossings",
+      "surface": "Forest two-track with 'fist or larger size rocks embedded.' Less like Midwest hero gravel, more like Rocky Mountain forest roads. Mix of 'delightfully smooth road' and chunky rocky sections. 95% gravel for 200km distance.",
       "gravel_percentage": 70,
       "pavement_percentage": 30,
       "technical_rating": 4,
@@ -73,8 +74,8 @@
     },
     "history": {
       "founded": 2015,
-      "founder": "Local UK gravel community",
-      "origin_story": "Created to bring American-style gravel racing to the UK. Named after the 'reivers'\u2014Scottish border raiders who once roamed these lands.",
+      "founder": "Paul Errington (inspired by Dirty Kanza and Land Run)",
+      "origin_story": "11th edition in 2025. Paul Errington brought 'proper gravel event to the U.K.' with an 'English touch,' inspired by American races like Dirty Kanza and Land Run. Named after the 'reivers'—Northumbrian border raiders who once roamed these lands. Venue: Kielder Castle, a 200-year-old hunting lodge now mountain bike center. 60+ miles singletrack trails, hundreds of miles forest service two-track gravel roads. 'Nowhere in the UK like this for riding.'",
       "notable_moments": [
         "2016: Sold out in hours, became instant classic",
         "Expanded to 2,000 riders",
