@@ -36,6 +36,100 @@ def estimate_workout_duration(blocks):
         total_seconds += int(duration_str)
     return total_seconds // 60
 
+def generate_standardized_filename(workout_name, week_num, blocks=""):
+    """
+    Generate standardized filename for drag-and-drop compatibility across all plans.
+    Format: W{week:02d}_{day}_{archetype}.zwo
+    
+    This ensures the same workout type has the same filename across all plans,
+    allowing drag-and-drop once and reuse across thousands of training plans.
+    """
+    # Extract day of week from workout name
+    day_map = {
+        "Mon": ["Mon", "Monday"],
+        "Tue": ["Tue", "Tuesday", "Tues"],
+        "Wed": ["Wed", "Wednesday"],
+        "Thu": ["Thu", "Thursday", "Thurs"],
+        "Fri": ["Fri", "Friday"],
+        "Sat": ["Sat", "Saturday"],
+        "Sun": ["Sun", "Sunday"]
+    }
+    
+    day = None
+    for day_code, patterns in day_map.items():
+        for pattern in patterns:
+            if pattern in workout_name:
+                day = day_code
+                break
+        if day:
+            break
+    
+    if not day:
+        # Fallback: try to extract from name pattern
+        day_match = re.search(r'([A-Z][a-z]{2,3})\s*-', workout_name)
+        if day_match:
+            day_str = day_match.group(1)
+            for day_code, patterns in day_map.items():
+                if day_str in patterns:
+                    day = day_code
+                    break
+    
+    # Default to Mon if no day found
+    if not day:
+        day = "Mon"
+    
+    # Detect archetype for standardized naming
+    try:
+        from workout_description_generator import detect_archetype
+        archetype = detect_archetype(workout_name)
+    except:
+        archetype = "general"
+    
+    # Map archetypes to standardized names
+    archetype_map = {
+        "vo2_steady": "VO2max",
+        "vo2_30_30": "VO2max_30_30",
+        "vo2_40_20": "VO2max_40_20",
+        "vo2_extended": "VO2max_Extended",
+        "threshold_steady": "Threshold",
+        "threshold_progressive": "Threshold_Progressive",
+        "threshold_touch": "Threshold_Touch",
+        "mixed_climbing": "Mixed_Climbing",
+        "mixed_intervals": "Mixed_Intervals",
+        "sfr": "SFR",
+        "tempo": "Tempo",
+        "g_spot": "G_Spot",
+        "stomps": "Stomps",
+        "microbursts": "Microbursts",
+        "race_simulation": "Race_Simulation",
+        "endurance": "Endurance",
+        "testing": "FTP_Test",
+        "rest": "Rest",
+        "general": "General"
+    }
+    
+    # Special handling for specific workout types
+    name_upper = workout_name.upper()
+    if "FTP TEST" in name_upper or "FTP_TEST" in name_upper:
+        archetype_name = "FTP_Test"
+    elif "DURABILITY" in name_upper:
+        archetype_name = "Durability_Test"
+    elif "RACE DAY" in name_upper or "RACE_DAY" in name_upper:
+        archetype_name = "Race_Day"
+    elif "LONG" in name_upper and ("ENDURANCE" in name_upper or "EASY" in name_upper):
+        archetype_name = "Long_Endurance"
+    elif "EASY" in name_upper or "RECOVERY" in name_upper or "SPIN" in name_upper:
+        archetype_name = "Easy_Recovery"
+    elif "REST" in name_upper:
+        archetype_name = "Rest"
+    else:
+        archetype_name = archetype_map.get(archetype, "General")
+    
+    # Generate standardized filename
+    filename = f"W{week_num:02d}_{day}_{archetype_name}.zwo"
+    
+    return filename
+
 def get_heat_protocol_tier(week_num, race_data):
     """Determine heat/weather training tier based on week type and race data"""
     # Check for weather_training (Mid South) or heat_training (Unbound)
@@ -397,9 +491,17 @@ def generate_all_zwo_files(plan_template, race_data, plan_info, output_dir):
                     workout_copy = workout.copy()
                     workout_copy["week_number"] = week_num
                     
-                    # Clean filename
-                    base_name = workout_copy['name'].replace(' ', '_').replace('/', '_').replace('#', '').replace('(', '').replace(')', '')
-                    filename = f"{base_name}_{block_name}.zwo"
+                    # Use standardized filename for drag-and-drop compatibility
+                    filename = generate_standardized_filename(
+                        workout_copy['name'], 
+                        week_num, 
+                        workout_copy.get('blocks', '')
+                    )
+                    # Add block suffix if multiple blocks
+                    if len(week_data["workouts_by_block"]) > 1:
+                        base_name = filename.replace('.zwo', '')
+                        filename = f"{base_name}_{block_name}.zwo"
+                    
                     output_path = workouts_dir / filename
                     
                     create_zwo_file(workout_copy, output_path, race_data, plan_info)
@@ -411,9 +513,13 @@ def generate_all_zwo_files(plan_template, race_data, plan_info, output_dir):
                 workout_copy = workout.copy()
                 workout_copy["week_number"] = week_num
                 
-                # Clean filename
-                base_name = workout_copy['name'].replace(' ', '_').replace('/', '_').replace('#', '').replace('(', '').replace(')', '')
-                filename = f"{base_name}.zwo"
+                # Use standardized filename for drag-and-drop compatibility
+                filename = generate_standardized_filename(
+                    workout_copy['name'], 
+                    week_num, 
+                    workout_copy.get('blocks', '')
+                )
+                
                 output_path = workouts_dir / filename
                 
                 create_zwo_file(workout_copy, output_path, race_data, plan_info)
