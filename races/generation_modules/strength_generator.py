@@ -378,29 +378,21 @@ def generate_strength_files(plan_info, output_dir, templates_file_path):
         print(f"     ⏭️  Skipping strength (6-week plan too short)")
         return 0
     elif plan_weeks == 12:
-        # 12-week plans: Compress Yellow + Green across all 12 weeks
-        # Plan weeks 1-3 → YELLOW_A/B_HYPER
-        # Plan weeks 4-6 → YELLOW_A/B_MAX  
-        # Plan weeks 7-10 → GREEN_A/B_POWER
-        # Plan weeks 11-12 → GREEN_A/B_CONV
+        # 12-week plans: Maintenance only (compressed progression)
+        # Plan weeks 1-3 → GREEN_MAINT (maintenance phase)
+        # Plan weeks 4-6 → GREEN_MAINT (maintenance phase)
+        # Plan weeks 7-10 → GREEN_MAINT (maintenance phase)
+        # Plan weeks 11-12 → GREEN_MAINT (maintenance phase)
         
         for plan_week in range(1, plan_weeks + 1):
-            if plan_week <= 3:
-                # Weeks 1-3: YELLOW_HYPER
-                template_a = "YELLOW_A_HYPER"
-                template_b = "YELLOW_B_HYPER"
-            elif plan_week <= 6:
-                # Weeks 4-6: YELLOW_MAX
-                template_a = "YELLOW_A_MAX"
-                template_b = "YELLOW_B_MAX"
-            elif plan_week <= 10:
-                # Weeks 7-10: GREEN_POWER
-                template_a = "GREEN_A_POWER"
-                template_b = "GREEN_B_POWER"
+            # 12-week plans: Maintenance only (GREEN_MAINT)
+            # Alternate between A and B sessions
+            if plan_week % 2 == 1:
+                template_a = "GREEN_A_MAINT"
+                template_b = "GREEN_B_MAINT"
             else:
-                # Weeks 11-12: GREEN_CONV
-                template_a = "GREEN_A_CONV"
-                template_b = "GREEN_B_CONV"
+                template_a = "GREEN_A_MAINT"
+                template_b = "GREEN_B_MAINT"
             
             # Generate both sessions (Mon and Thu)
             for day, template_key in [("Mon", template_a), ("Thu", template_b)]:
@@ -412,28 +404,23 @@ def generate_strength_files(plan_info, output_dir, templates_file_path):
                 except Exception as e:
                     print(f"     ⚠️  Error generating week {plan_week}, {day}: {e}")
         
-    elif plan_weeks == 20:
-        # 20-week plans: Full progression weeks 1-20
+    elif plan_weeks == 16 or plan_weeks == 20:
+        # 16 and 20-week plans: Full strength training progression
+        # Full progression: RED (weeks 1-6) → YELLOW (weeks 7-12) → GREEN (weeks 13-18) → GREEN_MAINT (weeks 19-20)
         files = generate_all_strength_workouts(
             templates_file_path,
             str(workouts_dir),
             start_week=1,
-            end_week=20
+            end_week=plan_weeks
         )
         generated_files = files
     else:
-        # Default: assume 12-week plan logic
-        print(f"     ⚠️  Unknown plan duration ({plan_weeks} weeks), using 12-week logic")
-        # Use same logic as 12-week plans
+        # Default: assume 12-week plan logic (maintenance only)
+        print(f"     ⚠️  Unknown plan duration ({plan_weeks} weeks), using 12-week maintenance logic")
+        # Use same logic as 12-week plans (maintenance only)
         for plan_week in range(1, min(plan_weeks, 12) + 1):
-            if plan_week <= 3:
-                template_a, template_b = "YELLOW_A_HYPER", "YELLOW_B_HYPER"
-            elif plan_week <= 6:
-                template_a, template_b = "YELLOW_A_MAX", "YELLOW_B_MAX"
-            elif plan_week <= 10:
-                template_a, template_b = "GREEN_A_POWER", "GREEN_B_POWER"
-            else:
-                template_a, template_b = "GREEN_A_CONV", "GREEN_B_CONV"
+            template_a = "GREEN_A_MAINT"
+            template_b = "GREEN_B_MAINT"
             
             for day, template_key in [("Mon", template_a), ("Thu", template_b)]:
                 try:

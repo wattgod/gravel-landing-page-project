@@ -415,6 +415,37 @@ def generate_plan_set(race_data, plan_type_info, duration, variation_key, variat
     race_workout_file = generate_race_workout(race_data, plan_info, plan_output_dir)
     print(f"     ✓ Generated race day workout")
     
+    # Generate strength workouts based on plan duration
+    # 12-week plans: Maintenance only (compressed progression)
+    # 16 and 20-week plans: Full strength training
+    try:
+        from strength_generator import generate_strength_files
+        import os
+        
+        # Find strength templates file
+        templates_file = Path(__file__).parent / "generation_modules" / "MASTER_TEMPLATES_V2.md"
+        if not templates_file.exists():
+            # Try alternative locations
+            alt_paths = [
+                Path(__file__).parent.parent / "generation_modules" / "MASTER_TEMPLATES_V2.md",
+                Path(__file__).parent / "MASTER_TEMPLATES_V2.md"
+            ]
+            for alt_path in alt_paths:
+                if alt_path.exists():
+                    templates_file = alt_path
+                    break
+        
+        if templates_file.exists():
+            strength_count = generate_strength_files(plan_info, plan_output_dir, str(templates_file))
+            if strength_count > 0:
+                print(f"     ✓ Generated {strength_count} strength workout files")
+        else:
+            print(f"     ⚠️  Strength templates not found, skipping strength generation")
+    except ImportError as e:
+        print(f"     ⚠️  Strength generator not available: {e}")
+    except Exception as e:
+        print(f"     ⚠️  Error generating strength workouts: {e}")
+    
     return True
 
 def generate_training_guide(race_data, plan_template, plan_info, plan_output_dir, race_json_path, duration):
