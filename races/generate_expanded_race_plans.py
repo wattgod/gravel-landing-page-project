@@ -382,14 +382,25 @@ def generate_plan_set(race_data, plan_type_info, duration, variation_key, variat
     # Create variation
     variation_template = create_plan_variation(extended_template, variation_key, variation_info)
     
-    # Create plan info
+    # Create plan info with methodology mapping
+    philosophy = plan_type_info["philosophy"]
+    # Map philosophy to methodology for v2 generator
+    philosophy_lower = philosophy.lower()
+    if "hiit" in philosophy_lower or "survival" in philosophy_lower:
+        methodology = "HIT"
+    elif "pyramidal" in philosophy_lower:
+        methodology = "PYRAMIDAL"
+    else:
+        methodology = "POLARIZED"  # Default for Gravel God
+
     plan_info = {
         "tier": plan_type_info["tier"],
         "level": plan_type_info["level"],
         "weeks": duration,
         "target_hours": plan_type_info["target_hours"],
         "goal": plan_type_info["goal"],
-        "philosophy": plan_type_info["philosophy"],
+        "philosophy": philosophy,
+        "methodology": methodology,  # V2 generator methodology
         "variation": variation_info["name"]
     }
     

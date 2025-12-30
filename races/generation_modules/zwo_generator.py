@@ -2,6 +2,8 @@
 """
 ZWO File Generator
 Generates TrainingPeaks-compatible ZWO workout files from plan templates
+
+V2 Integration: Now uses Nate archetype library with training methodology support
 """
 
 import os
@@ -9,13 +11,57 @@ import html
 import re
 from pathlib import Path
 
-# Import the workout description generator for proper formatting
+# Import the workout description generator - prefer V2 Nate integration
 try:
-    from workout_description_generator import generate_workout_description, detect_archetype
+    from workout_description_generator_v2_nate import (
+        generate_nate_workout_description,
+        detect_archetype,
+        select_archetype_for_methodology,
+        generate_zwo_blocks_from_archetype,
+        NATE_ARCHETYPES_AVAILABLE,
+        TRAINING_METHODOLOGIES
+    )
+    DESCRIPTION_GENERATOR_V2 = True
     DESCRIPTION_GENERATOR_AVAILABLE = True
 except ImportError:
-    DESCRIPTION_GENERATOR_AVAILABLE = False
-    print("⚠️  workout_description_generator not available - using legacy descriptions")
+    DESCRIPTION_GENERATOR_V2 = False
+    # Fall back to V1 legacy generator
+    try:
+        from workout_description_generator import generate_workout_description, detect_archetype
+        DESCRIPTION_GENERATOR_AVAILABLE = True
+    except ImportError:
+        DESCRIPTION_GENERATOR_AVAILABLE = False
+        print("⚠️  No workout description generator available - using legacy descriptions")
+
+# Methodology mapping from plan philosophy to v2 generator
+PHILOSOPHY_TO_METHODOLOGY = {
+    "hiit": "HIT",
+    "hiit-focused": "HIT",
+    "survival": "HIT",
+    "pyramidal": "PYRAMIDAL",
+    "traditional pyramidal": "PYRAMIDAL",
+    "polarized": "POLARIZED",
+    "polarized training": "POLARIZED",
+    "masters-optimized": "POLARIZED",
+    "high-volume": "POLARIZED",
+    "race-specific": "POLARIZED"
+}
+
+def get_methodology_from_plan(plan_info):
+    """Extract training methodology from plan_info."""
+    # Check for explicit methodology field first
+    if "methodology" in plan_info:
+        return plan_info["methodology"]
+
+    # Fall back to parsing philosophy field
+    philosophy = plan_info.get("philosophy", "").lower()
+
+    for key, methodology in PHILOSOPHY_TO_METHODOLOGY.items():
+        if key in philosophy:
+            return methodology
+
+    # Default to POLARIZED (Gravel God default)
+    return "POLARIZED"
 
 # ZWO Template structure
 ZWO_TEMPLATE = """<?xml version='1.0' encoding='UTF-8'?>
@@ -80,7 +126,7 @@ def generate_standardized_filename(workout_name, week_num, blocks=""):
     
     # Detect archetype for standardized naming
     try:
-        from workout_description_generator import detect_archetype
+        # Use detect_archetype from whichever generator is available (already imported)
         archetype = detect_archetype(workout_name)
     except:
         archetype = "general"
@@ -414,19 +460,68 @@ def create_zwo_file(workout, output_path, race_data, plan_info):
     blocks = workout.get("blocks", "    <FreeRide Duration=\"60\"/>\n")
     original_description = workout.get("description", "")
 
-    # Generate proper description using new generator if available
+    # Generate proper description using generator
     if DESCRIPTION_GENERATOR_AVAILABLE:
-        # Calculate level based on week number (rough mapping)
-        level = min(6, max(1, (week_num - 1) // 2 + 1))
+        # Get methodology from plan
+        methodology = get_methodology_from_plan(plan_info)
+        total_weeks = plan_info.get("weeks", 12)
 
-        # Generate structured description
-        description = generate_workout_description(
-            workout_name=name,
-            blocks=blocks,
-            week_num=week_num,
-            level=level,
-            existing_description=original_description
-        )
+        # Calculate progression level (1-6) based on week position
+        progress = week_num / total_weeks
+        if progress < 0.17:
+            level = 1
+        elif progress < 0.33:
+            level = 2
+        elif progress < 0.50:
+            level = 3
+        elif progress < 0.67:
+            level = 4
+        elif progress < 0.83:
+            level = 5
+        else:
+            level = 6
+
+        # Use V2 Nate generator if available
+        if DESCRIPTION_GENERATOR_V2 and NATE_ARCHETYPES_AVAILABLE:
+            # Detect workout type and get matching archetype
+            workout_type = detect_archetype(name)
+            archetype, rec_level = select_archetype_for_methodology(
+                workout_type,
+                methodology=methodology,
+                week_num=week_num,
+                total_weeks=total_weeks
+            )
+
+            if archetype:
+                # Generate description from Nate archetype
+                description = generate_nate_workout_description(
+                    archetype,
+                    level,
+                    methodology=methodology,
+                    include_dimensions=True
+                )
+            else:
+                # Fall back to V1 generator for non-Nate archetypes
+                try:
+                    from workout_description_generator import generate_workout_description as v1_generate
+                    description = v1_generate(
+                        workout_name=name,
+                        blocks=blocks,
+                        week_num=week_num,
+                        level=level,
+                        existing_description=original_description
+                    )
+                except:
+                    description = original_description
+        else:
+            # Use V1 legacy generator
+            description = generate_workout_description(
+                workout_name=name,
+                blocks=blocks,
+                week_num=week_num,
+                level=level,
+                existing_description=original_description
+            )
     else:
         # Fall back to original description
         description = original_description
