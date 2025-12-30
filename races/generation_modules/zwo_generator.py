@@ -155,9 +155,6 @@ def add_heat_training_note(week_num, race_data, heat_tier, is_endurance):
     if not heat_tier:
         return ""
     
-    race_name = race_data["race_metadata"]["name"]
-    race_name_upper = race_name.upper()
-    
     # Check if this is weather training (Mid South) or heat training (Unbound)
     weather_config = race_data.get("workout_modifications", {}).get("weather_training", {})
     heat_config = race_data.get("workout_modifications", {}).get("heat_training", {})
@@ -178,34 +175,33 @@ def add_heat_training_note(week_num, race_data, heat_tier, is_endurance):
     # Training protocol period
     if week_num in training_weeks:
         if is_weather_training:
-            # Mid South: Weather adaptation (cold, heat, wind)
+            # Weather adaptation (cold, heat, wind)
             if is_endurance:
-                return f"\n\n• {race_name_upper} - {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for weather adaptation training. Mid South's weather lottery means you could face 40°F freezing rain or 75°F heat. Train in varied conditions:\n\nOPTION 1 - COLD WEATHER TRAINING:\n• Ride in cold conditions (40-50°F) with appropriate clothing\n• Practice fueling and hydration in cold (harder to drink when cold)\n• Test clothing layers and wind protection\n\nOPTION 2 - HEAT TRAINING (if available):\n• Ride in warm conditions (70-75°F) if weather permits\n• Practice hydration and cooling strategies\n• Test clothing for heat\n\nOPTION 3 - WIND TRAINING:\n• Ride on exposed roads/ridgelines when windy\n• Practice aero positioning and pacing in wind\n• Build strength and tactics for windy conditions\n\nEFFECT: Adapting to varied conditions prevents race-day shock. Mid South's weather unpredictability is THE defining feature—be ready for anything.\n\nSAFETY: Don't train in dangerous conditions (ice, extreme cold, severe weather). Safety first."
+                return f"\n\n• {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for weather adaptation training. Race day weather can be unpredictable—you could face 40°F freezing rain or 75°F heat. Train in varied conditions:\n\nOPTION 1 - COLD WEATHER TRAINING:\n• Ride in cold conditions (40-50°F) with appropriate clothing\n• Practice fueling and hydration in cold (harder to drink when cold)\n• Test clothing layers and wind protection\n\nOPTION 2 - HEAT TRAINING (if available):\n• Ride in warm conditions (70-75°F) if weather permits\n• Practice hydration and cooling strategies\n• Test clothing for heat\n\nOPTION 3 - WIND TRAINING:\n• Ride on exposed roads/ridgelines when windy\n• Practice aero positioning and pacing in wind\n• Build strength and tactics for windy conditions\n\nEFFECT: Adapting to varied conditions prevents race-day shock. Weather unpredictability is THE defining feature—be ready for anything.\n\nSAFETY: Don't train in dangerous conditions (ice, extreme cold, severe weather). Safety first."
             else:
                 # Quality sessions: Complete in normal conditions, note weather prep
-                return f"\n\n• {race_name_upper} - {training_type} (Weeks {week_range}):\nComplete this quality session in normal conditions (preserve workout quality). Weather adaptation happens on endurance rides. For Mid South, prepare for unpredictable conditions—cold, heat, wind, or mud. Practice your race-day clothing and nutrition strategies during long rides."
+                return f"\n\n• {training_type} (Weeks {week_range}):\nComplete this quality session in normal conditions (preserve workout quality). Weather adaptation happens on endurance rides. Prepare for unpredictable conditions—cold, heat, wind, or mud. Practice your race-day clothing and nutrition strategies during long rides."
         else:
-            # Unbound: Heat acclimatization
+            # Heat acclimatization
             if is_endurance:
-                return f"\n\n• {race_name_upper} - {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
+                return f"\n\n• {training_type} PROTOCOL (Weeks {week_range}):\nThis endurance ride is ideal for heat training. Choose ONE option:\n\nOPTION 1 - INDOOR TRAINER (Cool Climate):\n• Turn OFF all fans\n• Close windows/doors\n• Wear: thermal base + rain jacket + leg warmers + gloves + beanie\n• Target core temp: 38.5-39.0°C for 45-60 min\n• If temp >39.5°C: reduce power 10% or stop\n\nOPTION 2 - POST-EXERCISE HOT WATER IMMERSION:\n• Complete ride in normal conditions\n• Immediately after: 30-40 min hot bath at 40°C (104°F)\n• Submerged to shoulders, head exposed\n• Relief breaks: sit up 2 min every 10 min if needed\n\nOPTION 3 - SAUNA (Maintenance):\n• Complete ride in normal conditions\n• Post-ride: 25-30 min sauna at 80-100°C\n• 3-4 sessions per week for adaptation\n\nEFFECT: 5-8% performance improvement in hot conditions. Plasma volume expansion, enhanced sweating, reduced cardiovascular strain.\n\nSAFETY: Never exceed 39.5°C core temp. Stop if confused, dizzy, or nauseous. Skip if ill, dehydrated, or poorly recovered."
             else:
-                return f"\n\n• {race_name_upper} - {training_type} (Weeks {week_range}):\nComplete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:\n\nPOST-EXERCISE OPTION:\n• 30-40 min hot bath at 40°C (104°F) OR\n• 25-30 min sauna at 80-100°C\n\nEFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.\n\nNOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides."
+                return f"\n\n• {training_type} (Weeks {week_range}):\nComplete this quality session in COOL conditions (preserve workout quality). After workout, add heat exposure:\n\nPOST-EXERCISE OPTION:\n• 30-40 min hot bath at 40°C (104°F) OR\n• 25-30 min sauna at 80-100°C\n\nEFFECT: Heat adaptation without compromising interval quality. Research shows post-exercise heat exposure produces adaptations comparable to active heat training.\n\nNOTE: Heat training should NOT compromise workout quality. Reserve active heat training for easy endurance rides."
     
     # Outside training weeks: Maintenance protocol
     if is_weather_training:
-        return f"\n\n• {race_name_upper} - WEATHER MAINTENANCE:\nContinue training in varied conditions when possible. Mid South's weather lottery means race day could be anything—stay adaptable."
+        return f"\n\n• WEATHER MAINTENANCE:\nContinue training in varied conditions when possible. Race day weather can be unpredictable—stay adaptable."
     else:
-        return f"\n\n• {race_name_upper} - HEAT MAINTENANCE:\nAdaptations decay 2.5% per day without exposure. Maintenance: One 60-90 min heat session every 3-5 days OR 30 min sauna 3x/week OR 30-40 min hot bath every 3 days."
+        return f"\n\n• HEAT MAINTENANCE:\nAdaptations decay 2.5% per day without exposure. Maintenance: One 60-90 min heat session every 3-5 days OR 30 min sauna 3x/week OR 30-40 min hot bath every 3 days."
 
 def add_hydration_note(duration_minutes, is_quality_session, race_data):
     """Add hydration note based on duration and intensity"""
-    race_name_upper = race_data["race_metadata"]["name"].upper()
     if duration_minutes < 90:
-        return f"\n\n• {race_name_upper} - HYDRATION:\n<90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated."
+        return f"\n\n• HYDRATION:\n<90 min (any intensity): 1 bottle/hr with electrolytes mandatory. Before hard efforts, take 1 gel. Light urine color (not clear) = well hydrated."
     elif duration_minutes >= 90 and not is_quality_session:
-        return f"\n\n• {race_name_upper} - HYDRATION:\n>90 min low intensity: 60g carbs/hr. 1-1.5 bottles/hr. 600-1200 mg sodium/hr depending on heat. Monitor sweat rate—if losing >1-1.5% bodyweight, increase sodium."
+        return f"\n\n• HYDRATION:\n>90 min low intensity: 60g carbs/hr. 1-1.5 bottles/hr. 600-1200 mg sodium/hr depending on heat. Monitor sweat rate—if losing >1-1.5% bodyweight, increase sodium."
     else:  # >90 min high intensity/intervals/heat
-        return f"\n\n• {race_name_upper} - HYDRATION:\n>90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride."
+        return f"\n\n• HYDRATION:\n>90 min high intensity/intervals/heat: 90g carbs/hr. 1.5 bottles/hr minimum. 1000-1500 mg sodium/hr. Aggressive cooling: ice sock, dump water, shade stops when practical. Replace ~75% of losses within 2 hours post-ride."
 
 def add_aggressive_fueling_note(is_long_ride, race_data):
     """Add aggressive fueling note for long rides"""
@@ -213,10 +209,8 @@ def add_aggressive_fueling_note(is_long_ride, race_data):
         return ""
     
     target_carbs = race_data.get("workout_modifications", {}).get("aggressive_fueling", {}).get("target_carbs_per_hour", 60)
-    race_name = race_data["race_metadata"]["name"]
-    race_name_upper = race_name.upper()
     
-    return f"\n\n• {race_name_upper} - AGGRESSIVE FUELING:\nTarget {target_carbs}-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for {race_name}'s long day. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1."
+    return f"\n\n• AGGRESSIVE FUELING:\nTarget {target_carbs}-90g carbs/hour (up to 100g on dress rehearsal). Train your gut aggressively. This is critical for long race days. Competitors need aggressive fueling—race day isn't the time to discover your stomach can't handle 80g carbs/hour. Practice your race-day nutrition products. Start fueling from mile 1."
 
 def add_dress_rehearsal_note(week_num, workout_name, race_data, plan_info):
     """Add dress rehearsal note if applicable"""
@@ -233,10 +227,8 @@ def add_dress_rehearsal_note(week_num, workout_name, race_data, plan_info):
     
     tier = plan_info.get("tier", "compete")
     duration_hours = dress_config.get("duration_hours", {}).get(tier, 9)
-    race_name = race_data["race_metadata"]["name"]
-    race_name_upper = race_name.upper()
     
-    return f"\n\n• {race_name_upper} - DRESS REHEARSAL:\nTHIS IS YOUR {duration_hours}-HOUR 'BLOW OUT DAY.' CLEAR YOUR SCHEDULE. This is logistics practice, fueling practice, heat practice, and mental preparation all in one. Test EVERYTHING: nutrition products, hydration system, clothing, bike setup, tire pressure. Practice eating while riding. Practice bottle handoffs. Practice pacing. For Competitors, this {duration_hours}-hour ride is worth 15 shorter rides for race prep. This is the difference between finishing and performing at your best."
+    return f"\n\n• DRESS REHEARSAL:\nTHIS IS YOUR {duration_hours}-HOUR 'BLOW OUT DAY.' CLEAR YOUR SCHEDULE. This is logistics practice, fueling practice, heat practice, and mental preparation all in one. Test EVERYTHING: nutrition products, hydration system, clothing, bike setup, tire pressure. Practice eating while riding. Practice bottle handoffs. Practice pacing. For Competitors, this {duration_hours}-hour ride is worth 15 shorter rides for race prep. This is the difference between finishing and performing at your best."
 
 def add_robust_taper_note(week_num, race_data):
     """Add robust taper note if applicable"""
@@ -248,9 +240,8 @@ def add_robust_taper_note(week_num, race_data):
     if week_num not in taper_config.get("weeks", []):
         return ""
     
-    race_name_upper = race_data["race_metadata"]["name"].upper()
     race_distance = race_data["race_metadata"].get("distance_miles", 100)
-    return f"\n\n• {race_name_upper} - ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a {race_distance}-mile day."
+    return f"\n\n• ROBUST TAPER:\nFreshness/form counts for A LOT in this race. You don't want to show up half-cooked when you're going to go so deep in the well. Volume is low, but maintain sharpness. For competitive athletes, freshness is everything for a {race_distance}-mile day."
 
 def add_survey_link(week_num, workout_name, race_data, plan_info):
     """Add survey link to the final workout (last week, Sunday)
@@ -331,8 +322,8 @@ def add_gravel_grit_note(week_num, workout_name, race_data):
     if "RACE" not in workout_name.upper():
         return ""
     
-    race_name_upper = race_data["race_metadata"]["name"].upper()
-    return f"\n\n• {race_name_upper} - GRAVEL GRIT:\nMental preparation is as important as physical. When mile {race_data.get('race_hooks', {}).get('dark_mile', 150)} hits and everything hurts, mental toughness gets you through. Visualize success. Break the race into manageable chunks. You've trained for this. You're ready."
+    dark_mile = race_data.get('race_hooks', {}).get('dark_mile', 150)
+    return f"\n\n• GRAVEL GRIT:\nMental preparation is as important as physical. When mile {dark_mile} hits and everything hurts, mental toughness gets you through. Visualize success. Break the race into manageable chunks. You've trained for this. You're ready."
 
 def add_position_alternation_note(workout_name, description, duration_minutes, is_long_ride, is_endurance):
     """
@@ -397,8 +388,7 @@ def enhance_workout_description(workout, week_num, race_data, plan_info):
     
     if duration_minutes > 0:
         description += add_hydration_note(duration_minutes, is_quality_session, race_data)
-        race_name_upper = race_data["race_metadata"]["name"].upper()
-        description += f"\n\n• {race_name_upper} - DAILY BASELINE HYDRATION:\nStart day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear)."
+        description += f"\n\n• DAILY BASELINE HYDRATION:\nStart day hydrated: ~500 ml water + 500-1000 mg sodium with breakfast. Pre-ride (60 min before): 500 ml fluid + 300-600 mg sodium. Aim for light urine color (not clear)."
     
     if is_long_ride:
         description += add_aggressive_fueling_note(is_long_ride, race_data)
