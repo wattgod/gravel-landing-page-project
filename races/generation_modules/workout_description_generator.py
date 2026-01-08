@@ -53,12 +53,20 @@ ARCHETYPE_PATTERNS = {
 
     # Endurance
     "endurance": [r"Endurance", r"Easy\s+Aerobic", r"Long\s+Aerobic", r"Z[12]\s+"],
+    "endurance_blocks": [r"Endurance\s+\+", r"Endurance\s+Blocks", r"Structured\s+Endurance"],
 
     # Testing
     "testing": [r"FTP\s+Test", r"Assessment", r"Power\s+Profile", r"Testing"],
 
     # Rest
     "rest": [r"^Rest", r"Rest\s+Day", r"Recovery\s+Day"],
+    
+    # NEW ARCHETYPES
+    "vo2_bookend": [r"VO2\s+Bookend", r"Bookend.*VO2"],
+    "tempo_accelerations": [r"UnSteady", r"Tempo.*Acceleration", r"Tempo.*Surge"],
+    "threshold_accumulation": [r"Fish\s+and\s+Chips", r"Threshold\s+Accumulation", r"\d+x\d+\s*min.*Z4"],
+    "cadence_work": [r"Cadence\s+Clown", r"Cadence\s+Work", r"High\s+Cadence.*Acceleration"],
+    "blended_vo2_gspot": [r"Buffers.*30/30", r"Blended.*VO2.*G\s*Spot", r"30/30.*Bookend.*SS"],
 }
 
 def detect_archetype(workout_name: str) -> str:
@@ -156,9 +164,17 @@ def get_rpe_for_archetype(archetype: str, power_pct: float = None) -> str:
         "race_simulation": "6-9",
         "normalized_power": "6-7",
         "endurance": "3-4",
+        "endurance_blocks": "3-4",
         "testing": "9-10",
         "rest": "1-2",
         "general": "5-6",
+        
+        # NEW ARCHETYPES
+        "vo2_bookend": "9 (intervals), 3-4 (Z2)",
+        "tempo_accelerations": "5-6 (tempo), 9 (accelerations)",
+        "threshold_accumulation": "7-8",
+        "cadence_work": "5-6",
+        "blended_vo2_gspot": "9 (VO2), 6-7 (SS)",
     }
     return archetype_rpe.get(archetype, "5-6")
 
@@ -189,9 +205,17 @@ CADENCE_PRESCRIPTIONS = {
     "normalized_power": ("variable", "match terrain and strategy"),
 
     "endurance": ("self-selected", "comfortable endurance cadence"),
+    "endurance_blocks": ("self-selected", "comfortable endurance cadence"),
     "testing": ("self-selected", "natural test cadence"),
     "rest": (None, None),
     "general": ("85-95rpm", "comfortable training cadence"),
+    
+    # NEW ARCHETYPES
+    "vo2_bookend": ("90-100rpm (intervals), self-selected (Z2)", "high turnover for VO2, comfortable for endurance"),
+    "tempo_accelerations": ("85-95rpm (tempo), 100+ rpm (accelerations)", "sustainable tempo with high-cadence bursts"),
+    "threshold_accumulation": ("85-95rpm", "race cadence for threshold work"),
+    "cadence_work": ("105-115rpm", "high cadence leg speed development"),
+    "blended_vo2_gspot": ("90-100rpm (VO2), 85-95rpm (SS)", "high turnover for VO2, sustainable for SS"),
 }
 
 # Position prescriptions by archetype
@@ -221,9 +245,17 @@ POSITION_PRESCRIPTIONS = {
     "normalized_power": ("Variable", "match terrain demands - hard on uphills, easier on downhills"),
 
     "endurance": ("Alternating", "comfort and position practice"),
+    "endurance_blocks": ("Alternating", "comfort and position practice"),
     "testing": ("Seated, hoods", "consistent test position"),
     "rest": (None, None),
     "general": ("Seated, hoods", "training position"),
+    
+    # NEW ARCHETYPES
+    "vo2_bookend": ("Seated, hoods (intervals), alternating (Z2)", "stable for VO2, varied for endurance"),
+    "tempo_accelerations": ("Alternating in/out of saddle", "position changes during accelerations"),
+    "threshold_accumulation": ("Seated, drops or hoods", "race position for threshold"),
+    "cadence_work": ("Seated, hoods", "focus on leg speed, not position"),
+    "blended_vo2_gspot": ("Seated, hoods", "sustainable position for both intensities"),
 }
 
 # =============================================================================
@@ -265,10 +297,18 @@ PURPOSE_TEMPLATES = {
     "normalized_power": "Normalized Power (NP) and Intensity Factor (IF) training. Target IF of 0.85 for the duration. How you achieve it is up to you—high average power, hard on uphills, easier on downhills. This teaches race-pace management and power distribution across variable terrain.",
 
     "endurance": "Aerobic base building. Easy riding builds mitochondrial density and fat oxidation—the foundation everything else rests on.",
+    "endurance_blocks": "Structured aerobic endurance. Block intervals at high Z2/low Z3 build aerobic capacity while allowing brief recovery. This format tests and extends your aerobic limit—the power you can sustain for hours.",
 
     "testing": "Assessment and baseline. Accurate testing sets accurate training zones. Today's numbers guide tomorrow's training.",
 
     "rest": "Recovery. Adaptation happens during rest. Trust the process.",
+    
+    # NEW ARCHETYPES
+    "vo2_bookend": "VO2 bookend training. VO2 intervals at the start and end maintain high-intensity stimulus while the long Z2 block in the middle builds endurance. This structure simulates race demands where you need power at the start and finish.",
+    "tempo_accelerations": "Tempo with accelerations. Sustained tempo work with periodic short bursts builds the ability to maintain race pace while responding to attacks and terrain changes. Position alternation adds race-specific demands.",
+    "threshold_accumulation": "Threshold accumulation. Many short threshold intervals with brief recovery build high-volume threshold work. This format accumulates more time at threshold than longer intervals allow, building race-pace endurance.",
+    "cadence_work": "Cadence development. High-cadence accelerations (>105rpm) build leg speed and neuromuscular coordination. Power falls where it does, but maintain Z3 minimum—focus is on turnover, not power.",
+    "blended_vo2_gspot": "Blended VO2max and G Spot. Combines 30/30 VO2 intervals with sweet spot work in the same session. This format builds both max aerobic power and sustainable race pace in one efficient workout.",
 
     "general": "Quality training. Building race-specific fitness through structured work.",
 }
