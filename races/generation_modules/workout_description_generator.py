@@ -96,6 +96,25 @@ RPE_BY_ZONE = {
     "Z7": "10",
 }
 
+def get_zone_range_for_power(power_pct: float) -> str:
+    """Get zone range string matching Master Zone Chart for a given power percentage."""
+    if power_pct < 0.55:
+        return "<55%"  # Z1
+    elif power_pct < 0.76:
+        return "56-75%"  # Z2
+    elif power_pct < 0.88:
+        return "76-87%"  # Z3
+    elif power_pct < 0.93:
+        return "88-92%"  # G Spot
+    elif power_pct < 1.06:
+        return "93-105%"  # Z4
+    elif power_pct < 1.21:
+        return "106-120%"  # Z5
+    elif power_pct < 1.51:
+        return "121-150%"  # Z6
+    else:
+        return ">150%"  # Z7
+
 def get_rpe_for_power(power_pct: float) -> str:
     """Get RPE range for a given power percentage of FTP."""
     if power_pct < 0.55:
@@ -491,9 +510,10 @@ def format_main_set_description(structure: Dict, archetype: str) -> str:
             else:
                 duration_str = f"{on_min}min"
 
-            # Get RPE for this interval
+            # Get RPE and zone range for this interval
             interval_rpe = get_rpe_for_power(on_power / 100.0)
-            lines.append(f"• {reps}x{duration_str} @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery)")
+            zone_range = get_zone_range_for_power(on_power / 100.0)
+            lines.append(f"• {reps}x{duration_str} @ {zone_range} FTP, RPE {interval_rpe} ({off_min}min recovery)")
 
         elif workout_set["type"] == "over_under":
             # Format over/under climbing pattern
@@ -507,18 +527,21 @@ def format_main_set_description(structure: Dict, archetype: str) -> str:
 
             under_rpe = get_rpe_for_power(under_pwr / 100.0)
             over_rpe = get_rpe_for_power(over_pwr / 100.0)
+            under_range = get_zone_range_for_power(under_pwr / 100.0)
+            over_range = get_zone_range_for_power(over_pwr / 100.0)
             recovery_rpe = "1-2"  # Z1 recovery
             if sets > 1:
-                lines.append(f"• {sets} sets of: ({under_dur}min @ {under_pwr}%, RPE {under_rpe} / {over_dur}min @ {over_pwr}%, RPE {over_rpe}) x{reps}")
+                lines.append(f"• {sets} sets of: ({under_dur}min @ {under_range} FTP, RPE {under_rpe} / {over_dur}min @ {over_range} FTP, RPE {over_rpe}) x{reps}")
                 lines.append(f"• {recovery}min Z1 recovery between sets (RPE {recovery_rpe})")
             else:
-                lines.append(f"• ({under_dur}min @ {under_pwr}%, RPE {under_rpe} / {over_dur}min @ {over_pwr}%, RPE {over_rpe}) x{reps}")
+                lines.append(f"• ({under_dur}min @ {under_range} FTP, RPE {under_rpe} / {over_dur}min @ {over_range} FTP, RPE {over_rpe}) x{reps}")
 
         elif workout_set["type"] == "steady":
             duration = workout_set["duration_min"]
             power = workout_set["power_pct"]
             steady_rpe = get_rpe_for_power(power / 100.0)
-            lines.append(f"• {duration}min @ {power}% FTP, RPE {steady_rpe}")
+            zone_range = get_zone_range_for_power(power / 100.0)
+            lines.append(f"• {duration}min @ {zone_range} FTP, RPE {steady_rpe}")
 
     return "\n".join(lines)
 
@@ -548,7 +571,8 @@ def format_durability_workout(structure: Dict) -> str:
             on_power = interval["on_power_pct"]
             off_min = interval["off_duration_min"]
             interval_rpe = get_rpe_for_power(on_power / 100.0)
-            lines.append(f"→ {reps}x{on_min}min @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
+            zone_range = get_zone_range_for_power(on_power / 100.0)
+            lines.append(f"→ {reps}x{on_min}min @ {zone_range} FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
         
         # Check if there's more Z2 after (would need full block parsing)
         lines.append(f"→ Final Z2 to complete ride (RPE {z2_rpe})")
@@ -563,7 +587,8 @@ def format_durability_workout(structure: Dict) -> str:
         on_power = interval["on_power_pct"]
         off_min = interval["off_duration_min"]
         interval_rpe = get_rpe_for_power(on_power / 100.0)
-        interval_lines.append(f"• {reps}x{on_min}min @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
+        zone_range = get_zone_range_for_power(on_power / 100.0)
+        interval_lines.append(f"• {reps}x{on_min}min @ {zone_range} FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
     return "\n".join(interval_lines) if interval_lines else "Durability workout structure"
 
 # =============================================================================
