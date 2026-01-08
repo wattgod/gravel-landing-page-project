@@ -48,6 +48,9 @@ ARCHETYPE_PATTERNS = {
     # Race simulation
     "race_simulation": [r"Race\s+Simulation", r"Race\s+Sim"],
 
+    # Normalized Power / Intensity Factor
+    "normalized_power": [r"Normalized\s+Power", r"NP\s+Workout", r"IF\s+Target", r"Intensity\s+Factor", r"NP.*IF", r"IF.*0\.85", r"NP.*0\.85"],
+
     # Endurance
     "endurance": [r"Endurance", r"Easy\s+Aerobic", r"Long\s+Aerobic", r"Z[12]\s+"],
 
@@ -80,6 +83,66 @@ def detect_archetype(workout_name: str) -> str:
 # DIMENSIONAL PRESCRIPTIONS
 # =============================================================================
 
+# RPE prescriptions by power zone
+# Based on Master Zone Chart: Z1=1-2, Z2=3-4, Z3=5-6, G Spot=6-7, Z4=7-8, Z5=9, Z6-Z7=10
+RPE_BY_ZONE = {
+    "Z1": "1-2",
+    "Z2": "3-4",
+    "Z3": "5-6",
+    "G_Spot": "6-7",
+    "Z4": "7-8",
+    "Z5": "9",
+    "Z6": "10",
+    "Z7": "10",
+}
+
+def get_rpe_for_power(power_pct: float) -> str:
+    """Get RPE range for a given power percentage of FTP."""
+    if power_pct < 0.55:
+        return "1-2"  # Z1
+    elif power_pct < 0.76:
+        return "3-4"  # Z2
+    elif power_pct < 0.88:
+        return "5-6"  # Z3
+    elif power_pct < 0.93:
+        return "6-7"  # G Spot
+    elif power_pct < 1.06:
+        return "7-8"  # Z4
+    elif power_pct < 1.21:
+        return "9"    # Z5
+    else:
+        return "10"   # Z6-Z7
+
+def get_rpe_for_archetype(archetype: str, power_pct: float = None) -> str:
+    """Get RPE range for an archetype, optionally using power percentage."""
+    if power_pct:
+        return get_rpe_for_power(power_pct)
+    
+    # Archetype-specific RPE defaults
+    archetype_rpe = {
+        "vo2_steady": "9",
+        "vo2_30_30": "9",
+        "vo2_40_20": "9",
+        "vo2_extended": "9",
+        "threshold_steady": "7-8",
+        "threshold_progressive": "7-8",
+        "threshold_touch": "7-8",
+        "mixed_climbing": "6-7",
+        "mixed_intervals": "7-9",
+        "sfr": "7-8",
+        "tempo": "5-6",
+        "g_spot": "6-7",
+        "stomps": "10",
+        "microbursts": "9-10",
+        "race_simulation": "6-9",
+        "normalized_power": "6-7",
+        "endurance": "3-4",
+        "testing": "9-10",
+        "rest": "1-2",
+        "general": "5-6",
+    }
+    return archetype_rpe.get(archetype, "5-6")
+
 # Cadence prescriptions by archetype
 CADENCE_PRESCRIPTIONS = {
     "vo2_steady": ("90-100rpm", "high turnover for VO2max efficiency"),
@@ -103,6 +166,8 @@ CADENCE_PRESCRIPTIONS = {
     "microbursts": ("100-110rpm", "high leg speed"),
 
     "race_simulation": ("variable", "match race demands"),
+
+    "normalized_power": ("variable", "match terrain and strategy"),
 
     "endurance": ("self-selected", "comfortable endurance cadence"),
     "testing": ("self-selected", "natural test cadence"),
@@ -133,6 +198,8 @@ POSITION_PRESCRIPTIONS = {
     "microbursts": ("Seated, hoods", "quick turnover"),
 
     "race_simulation": ("Race position", "full race gear"),
+
+    "normalized_power": ("Variable", "match terrain demands - hard on uphills, easier on downhills"),
 
     "endurance": ("Alternating", "comfort and position practice"),
     "testing": ("Seated, hoods", "consistent test position"),
@@ -176,6 +243,8 @@ PURPOSE_TEMPLATES = {
 
     "race_simulation": "Race simulation. Practicing race-day execution—pacing, fueling, mental strategies. This is dress rehearsal.",
 
+    "normalized_power": "Normalized Power (NP) and Intensity Factor (IF) training. Target IF of 0.85 for the duration. How you achieve it is up to you—high average power, hard on uphills, easier on downhills. This teaches race-pace management and power distribution across variable terrain.",
+
     "endurance": "Aerobic base building. Easy riding builds mitochondrial density and fat oxidation—the foundation everything else rests on.",
 
     "testing": "Assessment and baseline. Accurate testing sets accurate training zones. Today's numbers guide tomorrow's training.",
@@ -199,6 +268,19 @@ def get_progression_purpose(archetype: str, level: int) -> str:
         5: "Extended sets. More work per set. This is where real adaptations lock in.",
         6: "Peak volume. Maximum training load. You're building the capacity race day demands.",
     }
+    
+    # Special progression for normalized power workouts
+    normalized_power_progressions = {
+        1: "Introduction to NP/IF training. Target IF 0.85 for 2 hours. Focus on understanding how variable power affects NP.",
+        2: "Building duration. Target IF 0.85 for 2.5 hours. Experiment with different strategies (high average vs. variable).",
+        3: "Refining strategy. Target IF 0.85 for 2.5 hours. Focus on optimizing power distribution across terrain.",
+        4: "Consolidation. Target IF 0.85 for 2 hours. Let the body absorb the previous weeks' work.",
+        5: "Extended duration. Target IF 0.85 for 3 hours. This is where real race-pace management skills develop.",
+        6: "Peak duration. Target IF 0.85 for 3 hours. Maximum training load for race-pace management.",
+    }
+
+    if archetype == "normalized_power" and level in normalized_power_progressions:
+        return f"{base_purpose}\n\nLevel {level}: {normalized_power_progressions[level]}"
 
     if level in level_additions and archetype not in ["rest", "testing", "endurance"]:
         return f"{base_purpose}\n\nLevel {level}: {level_additions[level]}"
@@ -233,6 +315,17 @@ def parse_xml_blocks(blocks: str) -> Dict:
         duration_sec = int(cooldown_match.group(1))
         structure["cooldown"] = duration_sec // 60
         structure["total_duration_minutes"] += duration_sec // 60
+
+    # Parse FreeRide blocks (for normalized power workouts)
+    freeride_match = re.search(r'<FreeRide\s+Duration="(\d+)"[^/]*Power="([0-9.]+)"[^/]*/>', blocks)
+    if freeride_match:
+        duration_sec = int(freeride_match.group(1))
+        power = float(freeride_match.group(2))
+        structure["total_duration_minutes"] += duration_sec // 60
+        # Mark as normalized power structure
+        structure["has_freeride"] = True
+        structure["freeride_duration"] = duration_sec // 60
+        structure["freeride_power"] = power
 
     # Parse intervals (IntervalsT)
     intervals_pattern = r'<IntervalsT\s+Repeat="(\d+)"\s+OnDuration="(\d+)"\s+OnPower="([0-9.]+)"[^/]*OffDuration="(\d+)"[^/]*/>'
@@ -370,6 +463,11 @@ def detect_over_under_pattern(steady_blocks: List[Dict]) -> Optional[Dict]:
 
 def format_main_set_description(structure: Dict, archetype: str) -> str:
     """Format the MAIN SET section based on parsed structure."""
+    # Handle normalized power workouts specially (before checking main_sets)
+    if archetype == "normalized_power" or structure.get("has_freeride"):
+        duration_min = structure.get("freeride_duration") or structure.get("total_duration_minutes", 180)
+        return f"• Target IF of 0.85 for {duration_min} minutes\n• Put Normalized Power (NP) field on your head unit\n• How you achieve it is up to you:\n  - High average power throughout\n  - Hard on uphills, easier on downhills\n  - Variable power matching terrain\n• Focus on managing NP to maintain IF of 0.85\n• RPE: 6-7 (uncomfortably sustainable)"
+    
     if not structure or not structure.get("main_sets"):
         return "Unstructured session"
 
@@ -393,7 +491,9 @@ def format_main_set_description(structure: Dict, archetype: str) -> str:
             else:
                 duration_str = f"{on_min}min"
 
-            lines.append(f"• {reps}x{duration_str} @ {on_power}% FTP ({off_min}min recovery)")
+            # Get RPE for this interval
+            interval_rpe = get_rpe_for_power(on_power / 100.0)
+            lines.append(f"• {reps}x{duration_str} @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery)")
 
         elif workout_set["type"] == "over_under":
             # Format over/under climbing pattern
@@ -405,16 +505,20 @@ def format_main_set_description(structure: Dict, archetype: str) -> str:
             over_pwr = workout_set["over_power"]
             recovery = workout_set["recovery_duration"]
 
+            under_rpe = get_rpe_for_power(under_pwr / 100.0)
+            over_rpe = get_rpe_for_power(over_pwr / 100.0)
+            recovery_rpe = "1-2"  # Z1 recovery
             if sets > 1:
-                lines.append(f"• {sets} sets of: ({under_dur}min @ {under_pwr}% / {over_dur}min @ {over_pwr}%) x{reps}")
-                lines.append(f"• {recovery}min Z1 recovery between sets")
+                lines.append(f"• {sets} sets of: ({under_dur}min @ {under_pwr}%, RPE {under_rpe} / {over_dur}min @ {over_pwr}%, RPE {over_rpe}) x{reps}")
+                lines.append(f"• {recovery}min Z1 recovery between sets (RPE {recovery_rpe})")
             else:
-                lines.append(f"• ({under_dur}min @ {under_pwr}% / {over_dur}min @ {over_pwr}%) x{reps}")
+                lines.append(f"• ({under_dur}min @ {under_pwr}%, RPE {under_rpe} / {over_dur}min @ {over_pwr}%, RPE {over_rpe}) x{reps}")
 
         elif workout_set["type"] == "steady":
             duration = workout_set["duration_min"]
             power = workout_set["power_pct"]
-            lines.append(f"• {duration}min @ {power}% FTP")
+            steady_rpe = get_rpe_for_power(power / 100.0)
+            lines.append(f"• {duration}min @ {power}% FTP, RPE {steady_rpe}")
 
     return "\n".join(lines)
 
@@ -433,8 +537,9 @@ def format_durability_workout(structure: Dict) -> str:
     if intervals and total_z2_min >= 60:
         # Format as durability workout
         first_z2_hours = total_z2_min // 60
+        z2_rpe = get_rpe_for_power(0.70)  # Z2 RPE
         if first_z2_hours >= 1:
-            lines.append(f"• First {first_z2_hours} hour{'s' if first_z2_hours > 1 else ''} Z2")
+            lines.append(f"• First {first_z2_hours} hour{'s' if first_z2_hours > 1 else ''} Z2 (RPE {z2_rpe})")
         
         # Add intervals
         for interval in intervals:
@@ -442,10 +547,11 @@ def format_durability_workout(structure: Dict) -> str:
             on_min = interval["on_duration_min"]
             on_power = interval["on_power_pct"]
             off_min = interval["off_duration_min"]
-            lines.append(f"→ {reps}x{on_min}min @ {on_power}% FTP ({off_min}min recovery)")
+            interval_rpe = get_rpe_for_power(on_power / 100.0)
+            lines.append(f"→ {reps}x{on_min}min @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
         
         # Check if there's more Z2 after (would need full block parsing)
-        lines.append("→ Final Z2 to complete ride")
+        lines.append(f"→ Final Z2 to complete ride (RPE {z2_rpe})")
         
         return "\n".join(lines)
     
@@ -456,7 +562,8 @@ def format_durability_workout(structure: Dict) -> str:
         on_min = interval["on_duration_min"]
         on_power = interval["on_power_pct"]
         off_min = interval["off_duration_min"]
-        interval_lines.append(f"• {reps}x{on_min}min @ {on_power}% FTP ({off_min}min recovery)")
+        interval_rpe = get_rpe_for_power(on_power / 100.0)
+        interval_lines.append(f"• {reps}x{on_min}min @ {on_power}% FTP, RPE {interval_rpe} ({off_min}min recovery, RPE 1-2)")
     return "\n".join(interval_lines) if interval_lines else "Durability workout structure"
 
 # =============================================================================
@@ -502,7 +609,8 @@ def generate_workout_description(
 
     # WARM-UP
     if structure["warmup"]:
-        sections.append(f"WARM-UP:\n• {structure['warmup']}min building from Z1 to Z2")
+        warmup_rpe = get_rpe_for_power(0.65)  # Z1-Z2 range
+        sections.append(f"WARM-UP:\n• {structure['warmup']}min building from Z1 to Z2 (RPE {warmup_rpe})")
 
     # MAIN SET
     main_set_desc = format_main_set_description(structure, archetype)
@@ -531,6 +639,11 @@ def generate_workout_description(
                 main_set_section += f"\n• Position: {position}"
             if cadence_rpm:
                 main_set_section += f"\n• Cadence: {cadence_rpm} ({cadence_why})"
+    elif archetype == "normalized_power":
+        # Normalized power workouts: variable cadence and position based on strategy
+        main_set_section += f"\n• Cadence: {cadence_rpm} ({cadence_why})"
+        main_set_section += f"\n• Position: {position}"
+        main_set_section += f"\n• Strategy: Your choice—high average power, hard on uphills/easier on downhills, or variable matching terrain"
     elif archetype not in ["rest", "testing"]:
         # Quality sessions get specific cadence and position
         if cadence_rpm:
@@ -542,7 +655,8 @@ def generate_workout_description(
 
     # COOL-DOWN
     if structure["cooldown"]:
-        sections.append(f"COOL-DOWN:\n• {structure['cooldown']}min easy spin Z1-Z2")
+        cooldown_rpe = get_rpe_for_power(0.60)  # Z1-Z2 range
+        sections.append(f"COOL-DOWN:\n• {structure['cooldown']}min easy spin Z1-Z2 (RPE {cooldown_rpe})")
 
     # PURPOSE
     # Special handling for durability workouts
