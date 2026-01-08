@@ -318,7 +318,7 @@ ARCHETYPE_PROGRESSIONS = {
             3: {"endurance_duration": 10800, "work_accumulation": 2400, "chunk_30_30_reps": 5, "z3_duration": 360, "z4_duration": 180},  # 3hrs, 40min work, 5x30/30, 6min Z3
             4: {"endurance_duration": 12600, "work_accumulation": 2400, "chunk_30_30_reps": 5, "z3_duration": 360, "z4_duration": 180},  # 3.5hrs, 40min work
             5: {"endurance_duration": 12600, "work_accumulation": 2700, "chunk_30_30_reps": 6, "z3_duration": 360, "z4_duration": 180},  # 3.5hrs, 45min work, 6x30/30
-            6: {"endurance_duration": 14400, "work_accumulation": 2700, "chunk_30_30_reps": 6, "z3_duration": 420, "z4_duration": 180},  # 4hrs, 45min work, 7min Z3
+            6: {"endurance_duration": 14400, "work_accumulation": 3000, "chunk_30_30_reps": 6, "z3_duration": 420, "z4_duration": 180},  # 4hrs, 50min work, 7min Z3 (more work)
         }
     },
     "mixed_climbing_variations": {
