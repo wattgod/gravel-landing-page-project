@@ -61,12 +61,20 @@ ARCHETYPE_PATTERNS = {
     # Rest
     "rest": [r"^Rest", r"Rest\s+Day", r"Recovery\s+Day"],
     
-    # NEW ARCHETYPES
+    # NEW ARCHETYPES (Round 1)
     "vo2_bookend": [r"VO2\s+Bookend", r"Bookend.*VO2"],
     "tempo_accelerations": [r"UnSteady", r"Tempo.*Acceleration", r"Tempo.*Surge"],
     "threshold_accumulation": [r"Fish\s+and\s+Chips", r"Threshold\s+Accumulation", r"\d+x\d+\s*min.*Z4"],
     "cadence_work": [r"Cadence\s+Clown", r"Cadence\s+Work", r"High\s+Cadence.*Acceleration"],
     "blended_vo2_gspot": [r"Buffers.*30/30", r"Blended.*VO2.*G\s*Spot", r"30/30.*Bookend.*SS"],
+    
+    # NEW ARCHETYPES (Round 2)
+    "endurance_with_surges": [r"Endurance.*Surges", r"Climbing\s+End.*Surges", r"Long.*Endurance.*Surges"],
+    "buffer_workout": [r"Buffer", r"Buffer\s+Progression", r"Embedded.*Intervals"],
+    "mixed_climbing_variations": [r"Mixed\s+Climbs", r"3×15.*Mixed", r"Climbing.*Variations"],
+    "blended_30_30_sfr": [r"30.*SFR", r"30/30.*SFR", r"Transition.*30/30.*SFR"],
+    "tempo_sprints": [r"10/50.*Sprint", r"Tempo.*Sprint", r"Z3.*Sprint"],
+    "blended_endurance_threshold_sprints": [r"Aerobic\s+Cap.*Torque", r"Endurance.*Threshold.*Sprint", r"Tired.*Torque.*Sprint"],
 }
 
 def detect_archetype(workout_name: str) -> str:
@@ -169,12 +177,20 @@ def get_rpe_for_archetype(archetype: str, power_pct: float = None) -> str:
         "rest": "1-2",
         "general": "5-6",
         
-        # NEW ARCHETYPES
+        # NEW ARCHETYPES (Round 1)
         "vo2_bookend": "9 (intervals), 3-4 (Z2)",
         "tempo_accelerations": "5-6 (tempo), 9 (accelerations)",
         "threshold_accumulation": "7-8",
         "cadence_work": "5-6",
         "blended_vo2_gspot": "9 (VO2), 6-7 (SS)",
+        
+        # NEW ARCHETYPES (Round 2)
+        "endurance_with_surges": "3-4 (endurance), 10 (surges)",
+        "buffer_workout": "3-4 (base), 9 (30/30), 5-6 (Z3), 7-8 (Z4)",
+        "mixed_climbing_variations": "5-6 (Z3 base), 9 (surges), 6-7 (over/under), 7-8 (Z4)",
+        "blended_30_30_sfr": "9 (30/30), 7-8 (SFR), 5-6 (Z3)",
+        "tempo_sprints": "5-6 (Z3), 10 (sprints)",
+        "blended_endurance_threshold_sprints": "3-4 (base), 7-8 (climbs), 10 (sprints)",
     }
     return archetype_rpe.get(archetype, "5-6")
 
@@ -210,12 +226,20 @@ CADENCE_PRESCRIPTIONS = {
     "rest": (None, None),
     "general": ("85-95rpm", "comfortable training cadence"),
     
-    # NEW ARCHETYPES
+    # NEW ARCHETYPES (Round 1)
     "vo2_bookend": ("90-100rpm (intervals), self-selected (Z2)", "high turnover for VO2, comfortable for endurance"),
     "tempo_accelerations": ("85-95rpm (tempo), 100+ rpm (accelerations)", "sustainable tempo with high-cadence bursts"),
     "threshold_accumulation": ("85-95rpm", "race cadence for threshold work"),
     "cadence_work": ("105-115rpm", "high cadence leg speed development"),
     "blended_vo2_gspot": ("90-100rpm (VO2), 85-95rpm (SS)", "high turnover for VO2, sustainable for SS"),
+    
+    # NEW ARCHETYPES (Round 2)
+    "endurance_with_surges": ("self-selected (endurance), 100+ rpm (surges)", "comfortable endurance cadence, high cadence for surges"),
+    "buffer_workout": ("90-100rpm (30/30), 85-95rpm (Z3/Z4), self-selected (base)", "variable cadence based on intensity"),
+    "mixed_climbing_variations": ("70-80rpm (climbs), variable (surges)", "climbing cadence with position-specific variations"),
+    "blended_30_30_sfr": ("90-100rpm (30/30), 50-60rpm (SFR), 85+ rpm (Z3)", "variable cadence: high for VO2, low for force, sustainable for tempo"),
+    "tempo_sprints": ("85-95rpm (Z3), 100+ rpm (sprints)", "sustainable tempo cadence, high cadence for sprints"),
+    "blended_endurance_threshold_sprints": ("self-selected (base), 85-95rpm (climbs), variable (sprints)", "comfortable base, race cadence for climbs, high cadence or low torque for sprints"),
 }
 
 # Position prescriptions by archetype
@@ -250,12 +274,20 @@ POSITION_PRESCRIPTIONS = {
     "rest": (None, None),
     "general": ("Seated, hoods", "training position"),
     
-    # NEW ARCHETYPES
+    # NEW ARCHETYPES (Round 1)
     "vo2_bookend": ("Seated, hoods (intervals), alternating (Z2)", "stable for VO2, varied for endurance"),
     "tempo_accelerations": ("Alternating in/out of saddle", "position changes during accelerations"),
     "threshold_accumulation": ("Seated, drops or hoods", "race position for threshold"),
     "cadence_work": ("Seated, hoods", "focus on leg speed, not position"),
     "blended_vo2_gspot": ("Seated, hoods", "sustainable position for both intensities"),
+    
+    # NEW ARCHETYPES (Round 2)
+    "endurance_with_surges": ("Alternating (endurance), seated/standing (surges)", "comfort for endurance, power for surges"),
+    "buffer_workout": ("Seated, hoods (intervals), variable (base)", "stable for intervals, comfortable for base"),
+    "mixed_climbing_variations": ("Seated, hoods (climbs), variable (surges)", "climbing position with position-specific guidance for each pattern"),
+    "blended_30_30_sfr": ("Seated, hoods (30/30), seated (SFR), seated hoods/drops (Z3)", "stable for intervals and force, variable for tempo"),
+    "tempo_sprints": ("Seated, hoods (Z3), seated/standing (sprints)", "sustainable for tempo, power for sprints"),
+    "blended_endurance_threshold_sprints": ("Alternating (base), seated drops (climbs), seated/standing alternating (sprints)", "comfort for base, aero for climbs, power variation for sprints"),
 }
 
 # =============================================================================
@@ -303,12 +335,20 @@ PURPOSE_TEMPLATES = {
 
     "rest": "Recovery. Adaptation happens during rest. Trust the process.",
     
-    # NEW ARCHETYPES
+    # NEW ARCHETYPES (Round 1)
     "vo2_bookend": "VO2 bookend training. VO2 intervals at the start and end maintain high-intensity stimulus while the long Z2 block in the middle builds endurance. This structure simulates race demands where you need power at the start and finish.",
     "tempo_accelerations": "Tempo with accelerations. Sustained tempo work with periodic short bursts builds the ability to maintain race pace while responding to attacks and terrain changes. Position alternation adds race-specific demands.",
     "threshold_accumulation": "Threshold accumulation. Many short threshold intervals with brief recovery build high-volume threshold work. This format accumulates more time at threshold than longer intervals allow, building race-pace endurance.",
     "cadence_work": "Cadence development. High-cadence accelerations (>105rpm) build leg speed and neuromuscular coordination. Power falls where it does, but maintain Z3 minimum—focus is on turnover, not power.",
     "blended_vo2_gspot": "Blended VO2max and G Spot. Combines 30/30 VO2 intervals with sweet spot work in the same session. This format builds both max aerobic power and sustainable race pace in one efficient workout.",
+    
+    # NEW ARCHETYPES (Round 2)
+    "endurance_with_surges": "Ultra-endurance with frequent surges. Very long endurance rides (4-6 hours) with periodic short surges (6-8sec) throughout build ultra-endurance capacity while maintaining neuromuscular stimulus. The frequent surges prevent neuromuscular detraining during long rides.",
+    "buffer_workout": "Buffer workout. Long endurance ride with embedded 30/30 intervals and Z3/Z4 work, distributed throughout the ride based on terrain. This format accumulates high-intensity work within an endurance ride, making it adaptable to real-world terrain while building both aerobic and anaerobic capacity.",
+    "mixed_climbing_variations": "Mixed climbing variations. Multiple climbing interval patterns within one workout—surge patterns, over/under intervals, and steady Z4 efforts. Each pattern targets different climbing demands, with specific cadence and position prescriptions for each variation.",
+    "blended_30_30_sfr": "Blended 30/30 and SFR. Transitions from 30/30 VO2 intervals into SFR (force) work, then sustained Z3 tempo. This format builds max aerobic power, then force development, then sustainable tempo—teaching your body to transition between different energy systems.",
+    "tempo_sprints": "Tempo with sprints. Z3 tempo blocks with very short sprints (10sec) embedded throughout. The spiky nature of 10sec sprints with 50sec recovery creates a different neuromuscular stimulus than tempo accelerations—more explosive, less sustained.",
+    "blended_endurance_threshold_sprints": "Blended endurance, threshold, and sprints. Three-phase workout: endurance base → threshold climbs → sprint work (alternating high torque and high cadence). This format builds aerobic capacity, threshold climbing, then neuromuscular work when fatigued—simulating race demands where you need power at different points.",
 
     "general": "Quality training. Building race-specific fitness through structured work.",
 }

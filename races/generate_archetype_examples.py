@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate example ZWO files for all workout archetypes at all 6 progression levels.
-Creates 25 archetypes × 6 levels = 150 example ZWO files.
+Creates 31 archetypes × 6 levels = 186 example ZWO files.
 """
 
 import os
@@ -298,6 +298,73 @@ ARCHETYPE_PROGRESSIONS = {
             6: {"warmup_z3": 300, "sets": 4, "vo2_reps": 6, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "ss_duration": 720, "ss_power": 0.90, "recovery": 240},  # Peak volume
         }
     },
+    # ROUND 2 NEW ARCHETYPES
+    "endurance_with_surges": {
+        "name": "Endurance with Surges",
+        "levels": {
+            1: {"endurance_duration": 14400, "endurance_power": 0.70, "surge_count": 15, "surge_duration": 6, "surge_power": 1.50, "climbing_power": 0.80},  # 4hrs, 15x6sec surges, climbing @ 80% FTP
+            2: {"endurance_duration": 16200, "endurance_power": 0.70, "surge_count": 18, "surge_duration": 6, "surge_power": 1.50, "climbing_power": 0.82},  # 4.5hrs, 18 surges
+            3: {"endurance_duration": 18000, "endurance_power": 0.70, "surge_count": 20, "surge_duration": 7, "surge_power": 1.50, "climbing_power": 0.82},  # 5hrs, 20x7sec surges
+            4: {"endurance_duration": 18000, "endurance_power": 0.70, "surge_count": 20, "surge_duration": 8, "surge_power": 1.50, "climbing_power": 0.85},  # 5hrs, 20x8sec surges
+            5: {"endurance_duration": 21600, "endurance_power": 0.70, "surge_count": 25, "surge_duration": 8, "surge_power": 1.50, "climbing_power": 0.85},  # 6hrs, 25 surges
+            6: {"endurance_duration": 21600, "endurance_power": 0.70, "surge_count": 30, "surge_duration": 8, "surge_power": 1.50, "climbing_power": 0.88},  # 6hrs, 30 surges
+        }
+    },
+    "buffer_workout": {
+        "name": "Buffer Workout",
+        "levels": {
+            1: {"endurance_duration": 10800, "work_accumulation": 1800, "chunk_30_30_reps": 3, "z3_duration": 300, "z4_duration": 180},  # 3hrs, 30min work, 3x30/30 per chunk, 5min Z3, 3min Z4
+            2: {"endurance_duration": 10800, "work_accumulation": 2100, "chunk_30_30_reps": 4, "z3_duration": 300, "z4_duration": 180},  # 3hrs, 35min work, 4x30/30
+            3: {"endurance_duration": 10800, "work_accumulation": 2400, "chunk_30_30_reps": 5, "z3_duration": 360, "z4_duration": 180},  # 3hrs, 40min work, 5x30/30, 6min Z3
+            4: {"endurance_duration": 12600, "work_accumulation": 2400, "chunk_30_30_reps": 5, "z3_duration": 360, "z4_duration": 180},  # 3.5hrs, 40min work
+            5: {"endurance_duration": 12600, "work_accumulation": 2700, "chunk_30_30_reps": 6, "z3_duration": 360, "z4_duration": 180},  # 3.5hrs, 45min work, 6x30/30
+            6: {"endurance_duration": 14400, "work_accumulation": 2700, "chunk_30_30_reps": 6, "z3_duration": 420, "z4_duration": 180},  # 4hrs, 45min work, 7min Z3
+        }
+    },
+    "mixed_climbing_variations": {
+        "name": "Mixed Climbing Variations",
+        "levels": {
+            1: {"blocks": 2, "pattern1_surge_freq": 180, "pattern1_base_power": 0.86, "pattern2_under_duration": 240, "pattern2_under_power": 0.91, "pattern2_over_duration": 60, "pattern2_over_power": 1.17, "pattern3_power": 0.93},  # 2x15min: surge pattern, over/under, steady Z4
+            2: {"blocks": 3, "pattern1_surge_freq": 180, "pattern1_base_power": 0.86, "pattern2_under_duration": 240, "pattern2_under_power": 0.91, "pattern2_over_duration": 60, "pattern2_over_power": 1.17, "pattern3_power": 0.93},  # 3x15min
+            3: {"blocks": 3, "pattern1_surge_freq": 150, "pattern1_base_power": 0.88, "pattern2_under_duration": 240, "pattern2_under_power": 0.91, "pattern2_over_duration": 60, "pattern2_over_power": 1.20, "pattern3_power": 0.95},  # More frequent surges, higher power
+            4: {"blocks": 3, "pattern1_surge_freq": 150, "pattern1_base_power": 0.88, "pattern2_under_duration": 300, "pattern2_under_power": 0.91, "pattern2_over_duration": 75, "pattern2_over_power": 1.20, "pattern3_power": 0.95},  # Longer intervals
+            5: {"blocks": 4, "pattern1_surge_freq": 150, "pattern1_base_power": 0.88, "pattern2_under_duration": 300, "pattern2_under_power": 0.91, "pattern2_over_duration": 75, "pattern2_over_power": 1.20, "pattern3_power": 0.95},  # 4x15min
+            6: {"blocks": 4, "pattern1_surge_freq": 120, "pattern1_base_power": 0.90, "pattern2_under_duration": 300, "pattern2_under_power": 0.93, "pattern2_over_duration": 75, "pattern2_over_power": 1.23, "pattern3_power": 0.98},  # Peak intensity
+        }
+    },
+    "blended_30_30_sfr": {
+        "name": "Blended 30/30 and SFR",
+        "levels": {
+            1: {"base_duration": 1800, "sets": 4, "vo2_reps": 1, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 240, "sfr_power": 0.86, "sfr_cadence": 55, "recovery": 180, "z3_duration": 1200},  # 4 sets: 1x30/30, 4min SFR, 20min Z3
+            2: {"base_duration": 1800, "sets": 5, "vo2_reps": 1, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 240, "sfr_power": 0.86, "sfr_cadence": 55, "recovery": 180, "z3_duration": 1200},  # 5 sets
+            3: {"base_duration": 1800, "sets": 6, "vo2_reps": 1, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 240, "sfr_power": 0.88, "sfr_cadence": 55, "recovery": 180, "z3_duration": 1200},  # 6 sets, higher SFR power
+            4: {"base_duration": 1800, "sets": 6, "vo2_reps": 2, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 300, "sfr_power": 0.88, "sfr_cadence": 55, "recovery": 180, "z3_duration": 1200},  # 2x30/30, 5min SFR
+            5: {"base_duration": 1800, "sets": 6, "vo2_reps": 2, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 300, "sfr_power": 0.90, "sfr_cadence": 55, "recovery": 150, "z3_duration": 1200},  # Less recovery
+            6: {"base_duration": 1800, "sets": 6, "vo2_reps": 2, "vo2_on": 30, "vo2_off": 30, "vo2_power": 1.25, "sfr_duration": 300, "sfr_power": 0.90, "sfr_cadence": 55, "recovery": 120, "z3_duration": 1500},  # 25min Z3
+        }
+    },
+    "tempo_sprints": {
+        "name": "Tempo with Sprints",
+        "levels": {
+            1: {"base_duration": 600, "z3_blocks": 2, "z3_duration": 600, "z3_power": 0.85, "sprint_reps": 4, "sprint_duration": 10, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # 2x10min Z3, 4x10sec sprints each
+            2: {"base_duration": 600, "z3_blocks": 2, "z3_duration": 600, "z3_power": 0.85, "sprint_reps": 6, "sprint_duration": 10, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # 6x10sec sprints
+            3: {"base_duration": 600, "z3_blocks": 2, "z3_duration": 720, "z3_power": 0.85, "sprint_reps": 6, "sprint_duration": 10, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # 12min Z3
+            4: {"base_duration": 600, "z3_blocks": 3, "z3_duration": 600, "z3_power": 0.85, "sprint_reps": 6, "sprint_duration": 10, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # 3x10min Z3
+            5: {"base_duration": 600, "z3_blocks": 3, "z3_duration": 720, "z3_power": 0.85, "sprint_reps": 8, "sprint_duration": 10, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # 3x12min, 8 sprints
+            6: {"base_duration": 600, "z3_blocks": 3, "z3_duration": 720, "z3_power": 0.87, "sprint_reps": 8, "sprint_duration": 12, "sprint_power": 2.00, "sprint_recovery": 50, "block_recovery": 300},  # Higher Z3, longer sprints
+        }
+    },
+    "blended_endurance_threshold_sprints": {
+        "name": "Blended Endurance, Threshold, and Sprints",
+        "levels": {
+            1: {"base_duration": 3600, "base_power": 0.68, "climb_reps": 2, "climb_duration": 1200, "climb_power": 0.91, "climb_recovery": 900, "sprint_reps": 4, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # 1hr base, 2x20min climbs, 4x20sec sprints
+            2: {"base_duration": 3600, "base_power": 0.68, "climb_reps": 2, "climb_duration": 1500, "climb_power": 0.91, "climb_recovery": 900, "sprint_reps": 5, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # 2x25min climbs, 5 sprints
+            3: {"base_duration": 3600, "base_power": 0.68, "climb_reps": 3, "climb_duration": 1200, "climb_power": 0.91, "climb_recovery": 900, "sprint_reps": 5, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # 3x20min climbs
+            4: {"base_duration": 3600, "base_power": 0.68, "climb_reps": 3, "climb_duration": 1500, "climb_power": 0.93, "climb_recovery": 900, "sprint_reps": 6, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # 3x25min, higher power
+            5: {"base_duration": 4500, "base_power": 0.68, "climb_reps": 3, "climb_duration": 1500, "climb_power": 0.93, "climb_recovery": 900, "sprint_reps": 6, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # Longer base
+            6: {"base_duration": 4500, "base_power": 0.68, "climb_reps": 3, "climb_duration": 1500, "climb_power": 0.95, "climb_recovery": 900, "sprint_reps": 6, "sprint_duration": 20, "sprint_power": 2.00, "sprint_recovery": 40},  # Peak intensity
+        }
+    },
 }
 
 def generate_workout_blocks(archetype: str, level: int) -> str:
@@ -523,6 +590,170 @@ def generate_workout_blocks(archetype: str, level: int) -> str:
             blocks.append(f'    <SteadyState Duration="{ss_dur}" Power="{ss_pwr}"/>')
             if s < sets - 1:
                 blocks.append(f'    <SteadyState Duration="{recovery}" Power="0.55"/>')  # Recovery between sets
+    
+    elif archetype == "endurance_with_surges":
+        # Ultra-long endurance with frequent short surges
+        end_dur = config["endurance_duration"]
+        end_pwr = config["endurance_power"]
+        surge_count = config["surge_count"]
+        surge_dur = config["surge_duration"]
+        surge_pwr = config["surge_power"]
+        climb_pwr = config["climbing_power"]
+        
+        # Distribute surges throughout endurance ride
+        # For simplicity, create a pattern: base → surge → base → surge...
+        surge_interval = end_dur // (surge_count + 1)
+        for i in range(surge_count):
+            base_segment = surge_interval - surge_dur
+            blocks.append(f'    <SteadyState Duration="{base_segment}" Power="{end_pwr}"/>')  # Base endurance
+            blocks.append(f'    <SteadyState Duration="{surge_dur}" Power="{surge_pwr}"/>')  # Surge
+        # Final base segment
+        blocks.append(f'    <SteadyState Duration="{surge_interval}" Power="{end_pwr}"/>')
+        # Note: Climbing power would be applied during climbs in actual terrain
+    
+    elif archetype == "buffer_workout":
+        # Long endurance with embedded 30/30 intervals and Z3/Z4 work
+        end_dur = config["endurance_duration"]
+        work_acc = config["work_accumulation"]
+        chunk_reps = config["chunk_30_30_reps"]
+        z3_dur = config["z3_duration"]
+        z4_dur = config["z4_duration"]
+        
+        # Distribute work chunks throughout endurance
+        # Each chunk: 30/30 intervals → Z3 → Z4
+        num_chunks = work_acc // (chunk_reps * 60 + z3_dur + z4_dur)  # Approximate
+        chunk_interval = end_dur // (num_chunks + 1)
+        
+        for i in range(num_chunks):
+            # Base endurance
+            blocks.append(f'    <SteadyState Duration="{chunk_interval // 2}" Power="0.70"/>')
+            # 30/30 intervals
+            blocks.append(f'    <IntervalsT Repeat="{chunk_reps}" OnDuration="30" OnPower="1.25" OffDuration="30" OffPower="0.50"/>')
+            # Z3
+            blocks.append(f'    <SteadyState Duration="{z3_dur}" Power="0.85"/>')
+            # Z4
+            blocks.append(f'    <SteadyState Duration="{z4_dur}" Power="0.93"/>')
+            # Base endurance
+            blocks.append(f'    <SteadyState Duration="{chunk_interval // 2}" Power="0.70"/>')
+    
+    elif archetype == "mixed_climbing_variations":
+        # Multiple climbing patterns in one workout
+        num_blocks = config["blocks"]
+        surge_freq = config["pattern1_surge_freq"]
+        base_pwr = config["pattern1_base_power"]
+        under_dur = config["pattern2_under_duration"]
+        under_pwr = config["pattern2_under_power"]
+        over_dur = config["pattern2_over_duration"]
+        over_pwr = config["pattern2_over_power"]
+        z4_pwr = config["pattern3_power"]
+        
+        for b in range(num_blocks):
+            if b % 3 == 0:
+                # Pattern 1: Z3 base with surges every 3min
+                block_dur = 900  # 15min
+                segments = block_dur // surge_freq
+                for s in range(segments - 1):
+                    blocks.append(f'    <SteadyState Duration="{surge_freq - 15}" Power="{base_pwr}"/>')
+                    blocks.append(f'    <SteadyState Duration="15" Power="1.15"/>')  # Surge
+                blocks.append(f'    <SteadyState Duration="{surge_freq}" Power="{base_pwr}"/>')
+            elif b % 3 == 1:
+                # Pattern 2: Over/under (4min @ 91% / 1min @ 117%)
+                reps = 3  # 3 reps = 15min
+                for r in range(reps):
+                    blocks.append(f'    <SteadyState Duration="{under_dur}" Power="{under_pwr}"/>')
+                    blocks.append(f'    <SteadyState Duration="{over_dur}" Power="{over_pwr}"/>')
+            else:
+                # Pattern 3: Steady Z4
+                blocks.append(f'    <SteadyState Duration="900" Power="{z4_pwr}"/>')
+            
+            if b < num_blocks - 1:
+                blocks.append('    <SteadyState Duration="300" Power="0.70"/>')  # Recovery
+    
+    elif archetype == "blended_30_30_sfr":
+        # 30/30 intervals transitioning to SFR, then Z3
+        base_dur = config["base_duration"]
+        sets = config["sets"]
+        vo2_reps = config["vo2_reps"]
+        vo2_on = config["vo2_on"]
+        vo2_off = config["vo2_off"]
+        vo2_pwr = config["vo2_power"]
+        sfr_dur = config["sfr_duration"]
+        sfr_pwr = config["sfr_power"]
+        sfr_cad = config["sfr_cadence"]
+        recovery = config["recovery"]
+        z3_dur = config["z3_duration"]
+        
+        # Base
+        blocks.append(f'    <SteadyState Duration="{base_dur}" Power="0.70"/>')
+        
+        for s in range(sets):
+            # 30/30 intervals
+            blocks.append(f'    <IntervalsT Repeat="{vo2_reps}" OnDuration="{vo2_on}" OnPower="{vo2_pwr}" OffDuration="{vo2_off}" OffPower="0.50"/>')
+            # SFR block
+            blocks.append(f'    <SteadyState Duration="{sfr_dur}" Power="{sfr_pwr}" Cadence="{sfr_cad}"/>')
+            if s < sets - 1:
+                blocks.append(f'    <SteadyState Duration="{recovery}" Power="0.55"/>')
+        
+        # Final Z3 block
+        blocks.append(f'    <SteadyState Duration="{z3_dur}" Power="0.85"/>')
+    
+    elif archetype == "tempo_sprints":
+        # Z3 blocks with very short sprints embedded
+        base_dur = config["base_duration"]
+        z3_blocks = config["z3_blocks"]
+        z3_dur = config["z3_duration"]
+        z3_pwr = config["z3_power"]
+        sprint_reps = config["sprint_reps"]
+        sprint_dur = config["sprint_duration"]
+        sprint_pwr = config["sprint_power"]
+        sprint_rec = config["sprint_recovery"]
+        block_rec = config["block_recovery"]
+        
+        # Base
+        blocks.append(f'    <SteadyState Duration="{base_dur}" Power="0.70"/>')
+        
+        for b in range(z3_blocks):
+            # Z3 block with embedded sprints
+            # Distribute sprints throughout Z3 block
+            sprint_interval = z3_dur // (sprint_reps + 1)
+            for s in range(sprint_reps):
+                blocks.append(f'    <SteadyState Duration="{sprint_interval - sprint_dur}" Power="{z3_pwr}"/>')
+                blocks.append(f'    <SteadyState Duration="{sprint_dur}" Power="{sprint_pwr}"/>')
+                blocks.append(f'    <SteadyState Duration="{sprint_rec}" Power="0.50"/>')
+            blocks.append(f'    <SteadyState Duration="{sprint_interval}" Power="{z3_pwr}"/>')
+            
+            if b < z3_blocks - 1:
+                blocks.append(f'    <SteadyState Duration="{block_rec}" Power="0.70"/>')
+    
+    elif archetype == "blended_endurance_threshold_sprints":
+        # Endurance base → Threshold climbs → Sprints
+        base_dur = config["base_duration"]
+        base_pwr = config["base_power"]
+        climb_reps = config["climb_reps"]
+        climb_dur = config["climb_duration"]
+        climb_pwr = config["climb_power"]
+        climb_rec = config["climb_recovery"]
+        sprint_reps = config["sprint_reps"]
+        sprint_dur = config["sprint_duration"]
+        sprint_pwr = config["sprint_power"]
+        sprint_rec = config["sprint_recovery"]
+        
+        # Base endurance
+        blocks.append(f'    <SteadyState Duration="{base_dur}" Power="{base_pwr}"/>')
+        
+        # Threshold climbs
+        for c in range(climb_reps):
+            blocks.append(f'    <SteadyState Duration="{climb_dur}" Power="{climb_pwr}"/>')
+            if c < climb_reps - 1:
+                blocks.append(f'    <SteadyState Duration="{climb_rec}" Power="0.70"/>')
+        
+        # Recovery before sprints
+        blocks.append('    <SteadyState Duration="300" Power="0.70"/>')
+        
+        # Sprints (alternating torque/cadence)
+        for s in range(sprint_reps):
+            blocks.append(f'    <SteadyState Duration="{sprint_dur}" Power="{sprint_pwr}"/>')
+            blocks.append(f'    <SteadyState Duration="{sprint_rec}" Power="0.50"/>')
     
     # Cooldown
     blocks.append('    <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.65"/>')
