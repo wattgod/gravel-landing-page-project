@@ -14,7 +14,8 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 # Archetypes that might have different warmup structures
-SPECIAL_WARMUP_ARCHETYPES = ["testing", "rest", "endurance"]  # These may have different structures
+# Endurance workouts don't need warmup - they start easy and build naturally
+SPECIAL_WARMUP_ARCHETYPES = ["testing", "rest", "endurance", "endurance_blocks", "endurance_with_surges"]
 
 def parse_zwo_file(filepath: str) -> Dict:
     """Parse a ZWO file and extract warmup information."""

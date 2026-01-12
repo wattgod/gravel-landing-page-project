@@ -713,11 +713,14 @@ def generate_workout_description(
     sections = []
 
     # WARM-UP
-    # Check for high cadence Z3 block after warmup
-    warmup_z3_match = re.search(r'<SteadyState\s+Duration="(\d+)"\s+Power="0\.85"[^/]*Cadence="(\d+)"[^/]*/>', blocks)
-    has_warmup_z3 = warmup_z3_match is not None
+    # Endurance workouts don't need warmup - they start easy and build naturally
+    endurance_archetypes = ["endurance", "endurance_blocks", "endurance_with_surges"]
     
-    if structure["warmup"]:
+    if archetype not in endurance_archetypes and structure["warmup"]:
+        # Check for high cadence Z3 block after warmup
+        warmup_z3_match = re.search(r'<SteadyState\s+Duration="(\d+)"\s+Power="0\.85"[^/]*Cadence="(\d+)"[^/]*/>', blocks)
+        has_warmup_z3 = warmup_z3_match is not None
+        
         warmup_rpe = get_rpe_for_power(0.65)  # Z1-Z2 range
         warmup_text = f"WARM-UP:\n• 10min building from Z1 to Z2 (RPE {warmup_rpe})"
         if has_warmup_z3:

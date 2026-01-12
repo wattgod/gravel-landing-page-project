@@ -375,10 +375,14 @@ def generate_workout_blocks(archetype: str, level: int) -> str:
     config = ARCHETYPE_PROGRESSIONS[archetype]["levels"][level]
     blocks = []
     
-    # Warmup: 10min Z1/Z2 progression
-    blocks.append('    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>')  # 10min Z1-Z2
-    # High cadence Z3 work preceding efforts (5min)
-    blocks.append('    <SteadyState Duration="300" Power="0.85" Cadence="100"/>')  # 5min high cadence Z3
+    # Endurance workouts don't need warmup - they start easy and build naturally
+    endurance_archetypes = ["endurance", "endurance_blocks", "endurance_with_surges"]
+    
+    if archetype not in endurance_archetypes:
+        # Warmup: 10min Z1/Z2 progression
+        blocks.append('    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>')  # 10min Z1-Z2
+        # High cadence Z3 work preceding efforts (5min)
+        blocks.append('    <SteadyState Duration="300" Power="0.85" Cadence="100"/>')  # 5min high cadence Z3
     
     # Main set based on archetype
     if archetype in ["vo2_steady", "vo2_30_30", "vo2_40_20", "vo2_extended", "threshold_steady", "threshold_touch", "sfr", "stomps", "microbursts"]:
