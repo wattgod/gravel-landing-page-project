@@ -375,8 +375,10 @@ def generate_workout_blocks(archetype: str, level: int) -> str:
     config = ARCHETYPE_PROGRESSIONS[archetype]["levels"][level]
     blocks = []
     
-    # Warmup
-    blocks.append('    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>')
+    # Warmup: 10min Z1/Z2 progression
+    blocks.append('    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>')  # 10min Z1-Z2
+    # High cadence Z3 work preceding efforts (5min)
+    blocks.append('    <SteadyState Duration="300" Power="0.85" Cadence="100"/>')  # 5min high cadence Z3
     
     # Main set based on archetype
     if archetype in ["vo2_steady", "vo2_30_30", "vo2_40_20", "vo2_extended", "threshold_steady", "threshold_touch", "sfr", "stomps", "microbursts"]:
@@ -490,8 +492,7 @@ def generate_workout_blocks(archetype: str, level: int) -> str:
         blocks.append(f'    <SteadyState Duration="{duration_sec}" Power="{power}"/>')
     
     elif archetype == "testing":
-        # FTP test structure
-        blocks.append('    <SteadyState Duration="600" Power="0.70"/>')  # 10min warmup
+        # FTP test structure - already has proper warmup in generate_workout_blocks
         blocks.append('    <SteadyState Duration="300" Power="0.85"/>')  # 5min build
         blocks.append('    <SteadyState Duration="60" Power="1.20"/>')  # 1min open
         blocks.append('    <SteadyState Duration="300" Power="0.70"/>')  # 5min recovery
@@ -580,8 +581,8 @@ def generate_workout_blocks(archetype: str, level: int) -> str:
         ss_pwr = config["ss_power"]
         recovery = config["recovery"]
         
-        # Warmup Z3
-        blocks.append(f'    <SteadyState Duration="{warmup_z3}" Power="0.85"/>')
+        # High cadence Z3 warmup (already included in base warmup, this is additional)
+        blocks.append(f'    <SteadyState Duration="{warmup_z3}" Power="0.85" Cadence="100"/>')
         
         for s in range(sets):
             # 30/30 VO2 intervals

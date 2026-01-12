@@ -713,9 +713,19 @@ def generate_workout_description(
     sections = []
 
     # WARM-UP
+    # Check for high cadence Z3 block after warmup
+    warmup_z3_match = re.search(r'<SteadyState\s+Duration="(\d+)"\s+Power="0\.85"[^/]*Cadence="(\d+)"[^/]*/>', blocks)
+    has_warmup_z3 = warmup_z3_match is not None
+    
     if structure["warmup"]:
         warmup_rpe = get_rpe_for_power(0.65)  # Z1-Z2 range
-        sections.append(f"WARM-UP:\n• {structure['warmup']}min building from Z1 to Z2 (RPE {warmup_rpe})")
+        warmup_text = f"WARM-UP:\n• 10min building from Z1 to Z2 (RPE {warmup_rpe})"
+        if has_warmup_z3:
+            z3_dur = int(warmup_z3_match.group(1)) // 60
+            z3_cad = warmup_z3_match.group(2)
+            z3_rpe = get_rpe_for_power(0.85)
+            warmup_text += f"\n• {z3_dur}min high cadence Z3 ({z3_cad}+ rpm) to prime efforts (RPE {z3_rpe})"
+        sections.append(warmup_text)
 
     # MAIN SET
     main_set_desc = format_main_set_description(structure, archetype)
