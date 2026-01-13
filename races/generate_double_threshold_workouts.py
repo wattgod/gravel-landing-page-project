@@ -8,7 +8,7 @@ Creates ZWO files for:
 - Alternative Session 2 options
 """
 
-import xml.etree.ElementTree as ET
+import html
 from pathlib import Path
 from datetime import datetime
 
@@ -50,30 +50,28 @@ EXECUTION:
 • If power drops >5% in later intervals, reduce volume next session
 • Recovery should feel easy—you're ready for the next interval"""
     
-    # Create XML
-    root = ET.Element("workout_file")
-    ET.SubElement(root, "author").text = "Gravel God Training"
-    ET.SubElement(root, "name").text = f"Week {week} - Threshold Accumulation ({reps}×3min)"
-    ET.SubElement(root, "description").text = description
-    ET.SubElement(root, "sportType").text = "bike"
+    # Create XML using template approach (like archetype examples)
+    import html
+    from xml.etree.ElementTree import tostring
     
-    workout = ET.SubElement(root, "workout")
-    workout.text = "\n"
-    workout.tail = "\n"
+    # Build blocks string
+    blocks = warmup_xml + "\n" + main_set_xml + "\n" + cooldown_xml
     
-    # Add blocks
-    for line in warmup_xml.split('\n'):
-        if line.strip():
-            workout.text += line + "\n"
-    workout.text += main_set_xml + "\n"
-    workout.text += cooldown_xml + "\n"
+    # Use template format
+    zwo_content = f"""<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>{html.escape(f'Week {week} - Threshold Accumulation ({reps}×3min)', quote=False)}</name>
+  <description>{html.escape(description, quote=False)}</description>
+  <sportType>bike</sportType>
+  <workout>
+{blocks}  </workout>
+</workout_file>"""
     
     # Write file
     filename = f"Week_{week}_Threshold_Accumulation_{reps}x3min.zwo"
     filepath = output_dir / filename
-    tree = ET.ElementTree(root)
-    ET.indent(tree, space="  ")
-    tree.write(filepath, encoding="utf-8", xml_declaration=True)
+    filepath.write_text(zwo_content, encoding='utf-8')
     
     return str(filepath)
 
@@ -133,31 +131,30 @@ EXECUTION:
 • If you can't complete all intervals, reduce duration next session
 • Focus on smooth, controlled power—no surges"""
     
-    # Create XML
-    root = ET.Element("workout_file")
-    ET.SubElement(root, "author").text = "Gravel God Training"
-    ET.SubElement(root, "name").text = f"Week {week} - Threshold Steady ({reps}×{duration_min}min)"
-    ET.SubElement(root, "description").text = description
-    ET.SubElement(root, "sportType").text = "bike"
+    # Create XML using template approach
+    import html
     
-    workout = ET.SubElement(root, "workout")
-    workout.text = "\n"
-    workout.tail = "\n"
-    
-    # Add blocks
-    for line in warmup_xml.split('\n'):
-        if line.strip():
-            workout.text += line + "\n"
+    # Build blocks string
+    blocks = warmup_xml + "\n"
     for block in main_set_blocks:
-        workout.text += block + "\n"
-    workout.text += cooldown_xml + "\n"
+        blocks += block + "\n"
+    blocks += cooldown_xml
+    
+    # Use template format
+    zwo_content = f"""<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>{html.escape(f'Week {week} - Threshold Steady ({reps}×{duration_min}min)', quote=False)}</name>
+  <description>{html.escape(description, quote=False)}</description>
+  <sportType>bike</sportType>
+  <workout>
+{blocks}  </workout>
+</workout_file>"""
     
     # Write file
     filename = f"Week_{week}_Threshold_Steady_{reps}x{duration_min}min.zwo"
     filepath = output_dir / filename
-    tree = ET.ElementTree(root)
-    ET.indent(tree, space="  ")
-    tree.write(filepath, encoding="utf-8", xml_declaration=True)
+    filepath.write_text(zwo_content, encoding='utf-8')
     
     return str(filepath)
 
@@ -203,31 +200,30 @@ EXECUTION:
 • Transition smoothly to 100% FTP—no sudden jump
 • Focus on maintaining power through the transition"""
     
-    # Create XML
-    root = ET.Element("workout_file")
-    ET.SubElement(root, "author").text = "Gravel God Training"
-    ET.SubElement(root, "name").text = f"Week {week} - Threshold Progressive (2×20min)"
-    ET.SubElement(root, "description").text = description
-    ET.SubElement(root, "sportType").text = "bike"
+    # Create XML using template approach
+    import html
     
-    workout = ET.SubElement(root, "workout")
-    workout.text = "\n"
-    workout.tail = "\n"
-    
-    # Add blocks
-    for line in warmup_xml.split('\n'):
-        if line.strip():
-            workout.text += line + "\n"
+    # Build blocks string
+    blocks = warmup_xml + "\n"
     for block in main_set_blocks:
-        workout.text += block + "\n"
-    workout.text += cooldown_xml + "\n"
+        blocks += block + "\n"
+    blocks += cooldown_xml
+    
+    # Use template format
+    zwo_content = f"""<?xml version='1.0' encoding='UTF-8'?>
+<workout_file>
+  <author>Gravel God Training</author>
+  <name>{html.escape(f'Week {week} - Threshold Progressive (2×20min)', quote=False)}</name>
+  <description>{html.escape(description, quote=False)}</description>
+  <sportType>bike</sportType>
+  <workout>
+{blocks}  </workout>
+</workout_file>"""
     
     # Write file
     filename = f"Week_{week}_Threshold_Progressive_2x20min.zwo"
     filepath = output_dir / filename
-    tree = ET.ElementTree(root)
-    ET.indent(tree, space="  ")
-    tree.write(filepath, encoding="utf-8", xml_declaration=True)
+    filepath.write_text(zwo_content, encoding='utf-8')
     
     return str(filepath)
 
